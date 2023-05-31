@@ -1,0 +1,71 @@
+<?php
+// Conexion a la base de datos
+require "config/conexionProvi.php";
+//  Funciones requeridas para la validacion de los datos.
+require "function.php";
+
+ if ($_POST['registrar']) {
+    header("Location: admin.php");
+ }else {
+
+    $usuario = limpiarDatos(htmlspecialchars($_POST['usuario'])) ;
+if($usuario == "") {	
+ echo "<script>
+            alert('Ingrese un usuario');
+        </script>";
+}
+    $nombre = limpiarDatos(htmlspecialchars($_POST['nombre'])) ;
+if($nombre == ""){
+	 echo "<script>
+            alert('Ingrese su nombre Correctamente');
+        </script>";
+}
+    $cedula = limpiarDatos(htmlspecialchars($_POST['cedula']));
+if($cedula == ""){
+	 echo "<script>
+            alert('Ingrese la cedula');
+        </script>";
+}
+    $password = limpiarDatos(htmlspecialchars($_POST['password']));
+if($password == ""){
+	 echo "<script>
+            	alert('Ingrese una contraseña valida');
+        	</script>";
+}
+    $correo = limpiarDatos(htmlspecialchars($_POST['correo']));
+if($correo == ""){
+	 echo "<script>
+            alert('Ingrese un correo valido');
+        </script>";
+}
+    $perfil = limpiarDatos(htmlspecialchars($_POST['perfil'])) ;
+if($perfil == ""){
+	 echo "<script>
+            alert('Seleccione un perfil correcto');
+        </script>";
+}
+    $pass_c = sha1($password);
+
+    $conex = $mysqli;    
+    $sql = "INSERT INTO usuarios (id_usuarios, usuario, apellido, cedula, password, correo, id_roles) VALUES (NULL, '$usuario', '$nombre', '$cedula', '$pass_c', '$correo', '$perfil');";
+
+    $resultado = $conex->query($sql);
+
+    if ($resultado) {
+        echo "<script>
+            alert('El usuario se registro correctamente');
+            location.assign('admin.php');
+        </script>";
+    }else {
+        echo "<script>
+            alert('El usuario no se registro correctamente');
+            location.assign('admin.php');
+        </script>";
+    }
+ }
+
+
+
+
+
+
