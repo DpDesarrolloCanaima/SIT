@@ -1,8 +1,8 @@
 -- --------------------------------------------------------
 -- Host:                         127.0.0.1
--- Versión del servidor:         10.4.24-MariaDB - mariadb.org binary distribution
--- SO del servidor:              Win64
--- HeidiSQL Versión:             12.0.0.6468
+-- Versión del servidor:         10.1.36-MariaDB - mariadb.org binary distribution
+-- SO del servidor:              Win32
+-- HeidiSQL Versión:             12.2.0.6576
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
@@ -16,10 +16,12 @@
 
 
 -- Volcando estructura de base de datos para oac_prueba
+DROP DATABASE IF EXISTS `oac_prueba`;
 CREATE DATABASE IF NOT EXISTS `oac_prueba` /*!40100 DEFAULT CHARACTER SET utf8 */;
 USE `oac_prueba`;
 
 -- Volcando estructura para tabla oac_prueba.area
+DROP TABLE IF EXISTS `area`;
 CREATE TABLE IF NOT EXISTS `area` (
   `id_area` int(11) NOT NULL AUTO_INCREMENT,
   `nombre_del_area` varchar(150) NOT NULL,
@@ -33,6 +35,7 @@ INSERT INTO `area` (`id_area`, `nombre_del_area`) VALUES
 	(2, 'Producción');
 
 -- Volcando estructura para tabla oac_prueba.año
+DROP TABLE IF EXISTS `año`;
 CREATE TABLE IF NOT EXISTS `año` (
   `id_year_o_grado` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(150) NOT NULL,
@@ -43,6 +46,7 @@ CREATE TABLE IF NOT EXISTS `año` (
 DELETE FROM `año`;
 
 -- Volcando estructura para tabla oac_prueba.cargo
+DROP TABLE IF EXISTS `cargo`;
 CREATE TABLE IF NOT EXISTS `cargo` (
   `id_cargo` int(11) NOT NULL AUTO_INCREMENT,
   `tipo_de_cargo` varchar(60) NOT NULL,
@@ -56,6 +60,7 @@ INSERT INTO `cargo` (`id_cargo`, `tipo_de_cargo`) VALUES
 	(2, 'Gerente');
 
 -- Volcando estructura para tabla oac_prueba.datos_del_dispotivo
+DROP TABLE IF EXISTS `datos_del_dispotivo`;
 CREATE TABLE IF NOT EXISTS `datos_del_dispotivo` (
   `id_datos_del_dispositivo` int(11) NOT NULL AUTO_INCREMENT,
   `id_tipo_de_dispositivo` int(11) NOT NULL,
@@ -71,7 +76,9 @@ CREATE TABLE IF NOT EXISTS `datos_del_dispotivo` (
   `fecha_de_entrega` int(10) NOT NULL,
   `responsable` varchar(60) NOT NULL,
   `observaciones` varchar(150) NOT NULL,
+  `comprobaciones` varchar(60) NOT NULL,
   `equipo_reincidio` varchar(150) NOT NULL,
+  `motivo_reincidencia` varchar(60) NOT NULL,
   `id_roles` int(11) NOT NULL,
   `id_origen` int(11) NOT NULL,
   `id_grado` int(11) NOT NULL,
@@ -93,16 +100,19 @@ CREATE TABLE IF NOT EXISTS `datos_del_dispotivo` (
   CONSTRAINT `datos_del_dispotivo_ibfk_7` FOREIGN KEY (`id_tipo_de_dispositivo`) REFERENCES `tipo_de_equipo` (`id_tipo_de_equipo`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `datos_del_dispotivo_ibfk_8` FOREIGN KEY (`id_estatus`) REFERENCES `estatus` (`id_estatus`),
   CONSTRAINT `datos_del_dispotivo_ibfk_9` FOREIGN KEY (`id_motivo`) REFERENCES `motivo` (`id_motivo`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla oac_prueba.datos_del_dispotivo: ~3 rows (aproximadamente)
+-- Volcando datos para la tabla oac_prueba.datos_del_dispotivo: ~5 rows (aproximadamente)
 DELETE FROM `datos_del_dispotivo`;
-INSERT INTO `datos_del_dispotivo` (`id_datos_del_dispositivo`, `id_tipo_de_dispositivo`, `serial_equipo`, `serial_de_migracion`, `serial_de_cargador`, `serial_de_cargador_salida`, `pertenencia_del_equipo`, `institucion_educativa`, `institucion_donde_estudia`, `fecha_de_recepcion`, `estado_recepcion_equipo`, `fecha_de_entrega`, `responsable`, `observaciones`, `equipo_reincidio`, `id_roles`, `id_origen`, `id_grado`, `id_estatus`, `id_motivo`, `id_datos_del_beneficiario`) VALUES
-	(1, 7, 'JV2100176H44406276', '', '', '', '', 'Dr. Manuel Diaz Rodriguez', 'Dr. Manuel Diaz Rodriguez', '0000-00-00', 1, 0, '', '', '', 2, 3, 11, 1, 1, 1),
-	(2, 7, 'JV2100176H44406276', '', '', '', '', 'Dr. Manuel Diaz Rodriguez', 'Dr. Manuel Diaz Rodriguez', '2023-01-09', 1, 0, '', '', '', 1, 3, 5, 1, 1, 1),
-	(5, 1, '806JV2012H50409754', '', '', '', '', 'Universidad Politecnica Territorial Mariscal Sucre', 'Universidad Politecnica Territorial Mariscal Sucre', '0000-00-00', 3, 0, '', '', '', 6, 2, 11, 1, 2, 2);
+INSERT INTO `datos_del_dispotivo` (`id_datos_del_dispositivo`, `id_tipo_de_dispositivo`, `serial_equipo`, `serial_de_migracion`, `serial_de_cargador`, `serial_de_cargador_salida`, `pertenencia_del_equipo`, `institucion_educativa`, `institucion_donde_estudia`, `fecha_de_recepcion`, `estado_recepcion_equipo`, `fecha_de_entrega`, `responsable`, `observaciones`, `comprobaciones`, `equipo_reincidio`, `motivo_reincidencia`, `id_roles`, `id_origen`, `id_grado`, `id_estatus`, `id_motivo`, `id_datos_del_beneficiario`) VALUES
+	(1, 7, 'JV2100176H44406276', '', 'No posee', '', '', 'Dr. Manuel Diaz Rodriguez', 'Dr. Manuel Diaz Rodriguez', '0000-00-00', 1, 0, '', 'No tiene observaciones', '', '', '', 2, 3, 11, 1, 1, 1),
+	(2, 7, 'JV2100176H44406276', '', 'No posee', '', '', 'Dr. Manuel Diaz Rodriguez', 'Dr. Manuel Diaz Rodriguez', '2023-01-09', 1, 0, '', 'No tiene observaciones', '', '', '', 1, 3, 5, 1, 1, 1),
+	(5, 1, '806JV2012H50409754', '', 'No posee', '', '', 'Universidad Politecnica Territorial Mariscal Sucre', 'Universidad Politecnica Territorial Mariscal Sucre', '0000-00-00', 3, 0, '', 'No tiene observaciones', '', '', '', 6, 2, 11, 1, 2, 2),
+	(6, 5, 'SZLEF10MI250514357', '', 'No posee', '', '', 'U.E.N Consuelo Navas Tovar', 'U.E.N Luis Urbaneja Achelpohl', '0000-00-00', 1, 0, '', 'No tiene observaciones', '', '1', '', 6, 1, 1, 1, 1, 2),
+	(7, 1, 'SZLEF10MI250514357', '', 'No posee', '', '', 'Otros', 'Otros', '0000-00-00', 1, 0, '', 'Cara B en mal estado', '', '1', '', 6, 1, 1, 1, 1, 2);
 
 -- Volcando estructura para tabla oac_prueba.datos_del_entregante
+DROP TABLE IF EXISTS `datos_del_entregante`;
 CREATE TABLE IF NOT EXISTS `datos_del_entregante` (
   `id_datos_del_entregante` int(11) NOT NULL AUTO_INCREMENT,
   `ic` int(60) NOT NULL,
@@ -139,13 +149,14 @@ CREATE TABLE IF NOT EXISTS `datos_del_entregante` (
   CONSTRAINT `datos_del_entregante_ibfk_7` FOREIGN KEY (`id_tipo_de_equipo`) REFERENCES `tipo_de_equipo` (`id_tipo_de_equipo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla oac_prueba.datos_del_entregante: ~1 rows (aproximadamente)
+-- Volcando datos para la tabla oac_prueba.datos_del_entregante: ~2 rows (aproximadamente)
 DELETE FROM `datos_del_entregante`;
 INSERT INTO `datos_del_entregante` (`id_datos_del_entregante`, `ic`, `nombre_del_beneficiario`, `cedula`, `edad`, `Id_genero`, `fecha_de_nacimiento`, `unidad_de_adscripcion`, `id_area`, `id_cargo`, `nombre_del_representante`, `correo`, `telefono`, `estado`, `municipio`, `direccion`, `posee_discapacidad_o_condicion`, `descripcion_discapacidad_condicion`, `id_tipo_de_equipo`, `id_origen`) VALUES
-	(2, 2022260123, 'danyerbert', 27047631, 22, 1, '2000-04-10', '', 1, 1, 'Danyerbert', 'danyerbert@gamil.com', '0412-6296504', 1, 'libertador', 'av principal del cementerio', 'si', '', 7, 3),
-	(3, 2022260123, 'danyerbert', 27047631, 22, 1, '2000-04-11', '', 1, 2, 'Danyerbert', 'danyerbert@gmail.com', '0412-6296504', 1, 'libertador', 'av. principal', 'no', '', 6, 3);
+	(2, 2022260123, 'danyerbert', 27047631, 22, 1, '2000-04-10', 'No posee', 1, 1, 'Danyerbert', 'danyerbert@gamil.com', '0412-6296504', 1, 'libertador', 'av principal del cementerio', 'no', 'No posee ninguna discapacidad', 7, 3),
+	(3, 2022260123, 'danyerbert', 27047631, 22, 1, '2000-04-11', 'No posee', 1, 2, 'Danyerbert', 'danyerbert@gmail.com', '0412-6296504', 1, 'libertador', 'av. principal', 'no', 'No posee ninguna discapacidad', 6, 3);
 
 -- Volcando estructura para tabla oac_prueba.estados_venezuela
+DROP TABLE IF EXISTS `estados_venezuela`;
 CREATE TABLE IF NOT EXISTS `estados_venezuela` (
   `id_estados` int(11) NOT NULL AUTO_INCREMENT,
   `estado_nombre` varchar(30) NOT NULL,
@@ -181,6 +192,7 @@ INSERT INTO `estados_venezuela` (`id_estados`, `estado_nombre`) VALUES
 	(24, 'Zulia');
 
 -- Volcando estructura para tabla oac_prueba.estatus
+DROP TABLE IF EXISTS `estatus`;
 CREATE TABLE IF NOT EXISTS `estatus` (
   `id_estatus` int(11) NOT NULL AUTO_INCREMENT,
   `estatus` varchar(20) NOT NULL,
@@ -196,6 +208,7 @@ INSERT INTO `estatus` (`id_estatus`, `estatus`) VALUES
 	(4, 'Entregado');
 
 -- Volcando estructura para tabla oac_prueba.genero
+DROP TABLE IF EXISTS `genero`;
 CREATE TABLE IF NOT EXISTS `genero` (
   `id_genero` int(11) NOT NULL AUTO_INCREMENT,
   `genero` varchar(10) NOT NULL,
@@ -209,6 +222,7 @@ INSERT INTO `genero` (`id_genero`, `genero`) VALUES
 	(2, 'Femenino');
 
 -- Volcando estructura para tabla oac_prueba.grado
+DROP TABLE IF EXISTS `grado`;
 CREATE TABLE IF NOT EXISTS `grado` (
   `id_grado` int(11) NOT NULL AUTO_INCREMENT,
   `grado` varchar(60) NOT NULL,
@@ -234,6 +248,7 @@ INSERT INTO `grado` (`id_grado`, `grado`) VALUES
 	(14, '11 Decimo Primero');
 
 -- Volcando estructura para tabla oac_prueba.motivo
+DROP TABLE IF EXISTS `motivo`;
 CREATE TABLE IF NOT EXISTS `motivo` (
   `id_motivo` int(11) NOT NULL AUTO_INCREMENT,
   `tipo_de_motivo` varchar(30) NOT NULL,
@@ -247,6 +262,7 @@ INSERT INTO `motivo` (`id_motivo`, `tipo_de_motivo`) VALUES
 	(2, 'Pantalla No enciende');
 
 -- Volcando estructura para tabla oac_prueba.origen
+DROP TABLE IF EXISTS `origen`;
 CREATE TABLE IF NOT EXISTS `origen` (
   `id_origen` int(11) NOT NULL AUTO_INCREMENT,
   `origen` varchar(60) NOT NULL,
@@ -261,6 +277,7 @@ INSERT INTO `origen` (`id_origen`, `origen`) VALUES
 	(3, 'Trabajadores');
 
 -- Volcando estructura para tabla oac_prueba.reparacion
+DROP TABLE IF EXISTS `reparacion`;
 CREATE TABLE IF NOT EXISTS `reparacion` (
   `id_reparacion` int(11) NOT NULL AUTO_INCREMENT,
   `equipo` varchar(20) NOT NULL,
@@ -283,6 +300,7 @@ INSERT INTO `reparacion` (`id_reparacion`, `equipo`, `propietario`, `migracion`,
 	(3, 'SZLEF10MI244302164', 2022509, '', 7, 3);
 
 -- Volcando estructura para tabla oac_prueba.roles
+DROP TABLE IF EXISTS `roles`;
 CREATE TABLE IF NOT EXISTS `roles` (
   `id_roles` int(11) NOT NULL AUTO_INCREMENT,
   `roles` varchar(60) NOT NULL,
@@ -302,6 +320,7 @@ INSERT INTO `roles` (`id_roles`, `roles`) VALUES
 	(8, 'Verificador');
 
 -- Volcando estructura para tabla oac_prueba.tipo_de_equipo
+DROP TABLE IF EXISTS `tipo_de_equipo`;
 CREATE TABLE IF NOT EXISTS `tipo_de_equipo` (
   `id_tipo_de_equipo` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(20) NOT NULL,
@@ -325,6 +344,7 @@ INSERT INTO `tipo_de_equipo` (`id_tipo_de_equipo`, `nombre`, `modelo`, `estado`,
 	(8, 'Canaima Docente', 'MGEDMG3XLVZO3B', '', 30, 40);
 
 -- Volcando estructura para tabla oac_prueba.tipo_estado
+DROP TABLE IF EXISTS `tipo_estado`;
 CREATE TABLE IF NOT EXISTS `tipo_estado` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `estado` varchar(60) NOT NULL,
@@ -341,6 +361,7 @@ INSERT INTO `tipo_estado` (`id`, `estado`) VALUES
 	(5, 'Muy Malo');
 
 -- Volcando estructura para tabla oac_prueba.usuarios
+DROP TABLE IF EXISTS `usuarios`;
 CREATE TABLE IF NOT EXISTS `usuarios` (
   `id_usuarios` int(11) NOT NULL AUTO_INCREMENT,
   `usuario` varchar(60) NOT NULL,
@@ -349,13 +370,13 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(60) NOT NULL,
   `correo` varchar(120) NOT NULL,
   `id_roles` int(11) NOT NULL,
-  `registro` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `registro` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_usuarios`),
   KEY `id_roles` (`id_roles`),
   CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`id_roles`) REFERENCES `roles` (`id_roles`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4;
 
--- Volcando datos para la tabla oac_prueba.usuarios: ~24 rows (aproximadamente)
+-- Volcando datos para la tabla oac_prueba.usuarios: ~37 rows (aproximadamente)
 DELETE FROM `usuarios`;
 INSERT INTO `usuarios` (`id_usuarios`, `usuario`, `apellido`, `cedula`, `password`, `correo`, `id_roles`, `registro`) VALUES
 	(1, 'Abraham', 'Quizhpi', 30825631, '123456789', '', 1, '2022-11-09 13:00:12'),
@@ -381,7 +402,20 @@ INSERT INTO `usuarios` (`id_usuarios`, `usuario`, `apellido`, `cedula`, `passwor
 	(47, 'yamaibe', 'Brito', 15789632, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'ybrito@gmail.com', 2, '2023-01-26 09:32:35'),
 	(48, 'paoly', 'brito', 15789423, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'bpaoly@gmail.com', 6, '2023-01-26 09:33:25'),
 	(49, 'paola', 'brito', 30745123, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'pao@gmail.com', 7, '2023-01-26 09:34:38'),
-	(50, 'david', 'brito', 16742563, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'david@gmail.com', 8, '2023-01-26 09:36:10');
+	(50, 'david', 'brito', 16742563, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'david@gmail.com', 8, '2023-01-26 09:36:10'),
+	(51, 'yamaibe', 'Brito', 15916293, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'bbrito@gmail.com', 2, '2023-01-30 14:33:54'),
+	(52, 'paoly', 'Brito', 15789456, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'brito@gmail.com', 6, '2023-01-30 14:34:22'),
+	(53, 'paola', 'brito', 30789561, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'pau@gmail.com', 7, '2023-01-30 14:34:59'),
+	(54, 'david', 'brito', 1578426, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'david@gmail.com', 8, '2023-01-30 14:35:43'),
+	(55, 'leonel', 'sosa', 12789563, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'leonal@gmail.com', 1, '2023-03-09 14:20:47'),
+	(56, 'jhon', 'mujica', 25489641, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'jhon@gmail.com', 6, '2023-03-22 13:49:40'),
+	(57, 'josefa', 'Rodriguez', 5798423, '7c4a8d09ca3762af61e59520943dc26494f8941b', 'josefa@gmail.com', 6, '2023-03-22 14:09:18'),
+	(58, 'apinto', 'quizpi', 0, '78693654', 'danyerbert@gmail.com', 6, '2023-03-23 16:17:31'),
+	(59, 'apinto', 'quizpi', 0, '78693654', 'danyerbert@gmail.com', 6, '2023-03-23 16:17:31'),
+	(60, 'mariaTecno', 'Maria', 25874961, '', 'maria@gmail.com', 7, '2023-04-13 10:05:55'),
+	(61, 'mariaTecno', 'Maria', 25874961, '', 'maria@gmail.com', 7, '2023-04-13 10:05:55'),
+	(62, 'PedroTecno', 'Pedro Rodriguez', 25784631, '', 'pedro@gmail.com', 8, '2023-04-20 14:03:40'),
+	(63, 'PedroTecno', 'Pedro Rodriguez', 25784631, '', 'pedro@gmail.com', 8, '2023-04-20 14:03:41');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
