@@ -4,18 +4,16 @@ require "config/conexionProvi.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
-}else{
-    if ($_SESSION['id_roles'] != 2) {
-        header("Location: index.php");
-    }
 }
-
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
 $consulta = "SELECT u.usuario, u.nombre, u.cedula, u.password, u.correo, u.registro, r.roles FROM usuarios AS u INNER JOIN roles AS r ON r.id_roles=u.id_roles";
 $resultado = $mysqli->query($consulta);
+
+$consulta1 = "SELECT id_roles, roles FROM roles";
+$resultado1 = $mysqli->query($consulta1);
 ?>
 
 <!DOCTYPE html>
@@ -77,21 +75,21 @@ $resultado = $mysqli->query($consulta);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>Usuario</th>
                                             <th>Nombre</th>
-                                            <th>Apellido</th>
                                             <th>Cedula</th>
                                             <th>Password</th>
                                             <th>Correo</th>
                                             <th>Perfil</th>
                                             <th>Fecha De Registro</th>
-					    <?php 
-						switch($rol){
-							case 1:
-								echo ' <th>Options</th>';
-							break;
-								}
-					    ?>
-					</tr>
+                                            <?php 
+						                        switch($rol){
+							                        case 1:
+								                        echo ' <th>Options</th>';
+							                            break;
+								                    }
+					                        ?>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <?php
@@ -105,30 +103,29 @@ $resultado = $mysqli->query($consulta);
                                             <td><?php echo $row['correo']; ?></td>
                                             <td><?php echo $row['roles']; ?></td>
                                             <td><?php echo $row['registro']; ?></td>
-					    <?php 
-						switch($rol){
-							case 1:
-								echo ' 	<td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info dropdown-toggle"
-                                                        data-toggle="dropdown" aria-expanded="false">
-                                                        Options
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                            data-target="#ModalEditar" href="#"><img
-                                                                src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Editar</a>
-                                                        <a class="dropdown-item btn btn-danger" href="#"><img
-                                                                src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Eliminar</a>
-                                                    </div>
-                                                </div>
-                                            </td>'; 	
-							break;
-							}
-					    ?> 
-				       </tr>
+                                            <?php 
+						                        switch($rol){
+							                        case 1:
+								                        echo ' 	<td>
+                                                                <div class="btn-group">
+                                                                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                                    options
+                                                                    </button>
+                                                                    <div class="dropdown-menu">
+                                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
+                                                                            data-target="#ModalEditar" href="#"><img
+                                                                            src="img/svg/editar.svg " alt="Industrias Canaima"
+                                                                            width="15" height="15"> Editar</a>
+                                                                        <a class="dropdown-item btn btn-danger" href="#"><img
+                                                                            src="img/svg/eliminar.svg " alt="Industrias Canaima"
+                                                                            width="15" height="15"> Eliminar</a>
+                                                                    </div>
+                                                                </div>
+                                                                </td>'; 	
+							                                break;
+							                        }
+					                        ?>
+                                        </tr>
                                         <?php
                                             }
                                             ?>
@@ -181,14 +178,13 @@ $resultado = $mysqli->query($consulta);
                                         <div class="form-group">
                                             <label for="perfil">Perfil</label>
                                             <select name="perfil" id="" class="form-control form-control-lg">
-                                                <option value="1">Administrador</option>
-                                                <option value="2">Presidencia</option>
-                                                <option value="3">Director de Area</option>
-                                                <option value="4">Gerente</option>
-                                                <option value="5">Supervisor de Linea</option>
-                                                <option value="6">Analista</option>
-                                                <option value="7">Técnico</option>
-                                                <option value="8">Verificador</option>
+                                                <?php 
+                                                foreach($resultado1 as $row1):
+                                                ?>
+                                                <option value="<?php echo $row1['id_roles'];?>">
+                                                    <?php echo $row1['roles'];?>
+                                                </option>
+                                                <?php endforeach;?>
                                             </select>
                                         </div>
                                         <hr>
@@ -244,14 +240,13 @@ $resultado = $mysqli->query($consulta);
                                         <div class="form-group">
                                             <label for="perfil">Perfil</label>
                                             <select name="perfil" id="" class="form-control form-control-lg">
-                                                <option value="1">Administrador</option>
-                                                <option value="2">Presidencia</option>
-                                                <option value="3">Director de Area</option>
-                                                <option value="4">Gerente</option>
-                                                <option value="5">Supervisor de Linea</option>
-                                                <option value="6">Analista</option>
-                                                <option value="7">Técnico</option>
-                                                <option value="8">Verificador</option>
+                                                <?php 
+                                                foreach($resultado1 as $row1):
+                                                ?>
+                                                <option value="<?php echo $row1['id_roles'];?>">
+                                                    <?php echo $row1['roles'];?>
+                                                </option>
+                                                <?php endforeach;?>
                                             </select>
                                         </div>
                                         <hr>
