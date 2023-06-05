@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "root", "Canaima.123", "oac_prueba");
+$mysqli = new mysqli("localhost", "root", "", "oac_prueba");
 
 
 if ($mysqli->connect_error) {
