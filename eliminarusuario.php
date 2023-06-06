@@ -1,9 +1,18 @@
 <?php
 require "config/conexionProvi.php";
+session_start();
+if (!isset($_SESSION['id_usuarios'])) {
+	header("Location:index.php");
+}else{
+    if ($_SESSION['id_roles'] != 1) {
+        header("Location: index.php");
+    }
+}
+
 	$id = $_REQUEST['id'];
 	$conex = $mysqli;
-	$sql = "DELETE FROM usuarios WHERE id='".$id."'"; 
-	$respuesta = mysqli_query($conex,sql);
+	$sql = "DELETE FROM usuarios WHERE id_usuarios ='".$id."'"; 
+	$respuesta = mysqli_query($conex,$sql);
 	
 	if($respuesta){
 	echo "<script>
@@ -18,5 +27,6 @@ require "config/conexionProvi.php";
 		</script>";	
 	}
 
-?>
 
+	
+?>

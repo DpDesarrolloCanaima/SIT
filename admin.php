@@ -6,7 +6,7 @@ if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }else{
     if ($_SESSION['id_roles'] != 1) {
-        header("Location: index.php");
+        header("Location: 404.php");
     }
 }
 
@@ -20,23 +20,7 @@ $resultado = $mysqli->query($consulta);
 $consulta1 = "SELECT id_roles, roles FROM roles";
 $resultado1 = $mysqli->query($consulta1);
 
-if($GET['id']){
-	$idUsuario = $_GET['id'];
-	$conex = $mysqli;
-	$sql = "SELECT * FROM usuarios WHERE id_usuarios='". $idUsuario . "'";
-	$resultado2 = mysqli_query($conex, $sql);
-	
-	$row2 = mysqli_fetch_assoc($resultado);
-	$usuarioEdit = $row2['usuario'];
-	$nombre = $row2['nombre'];
-	$cedula = $row2['cedula'];
-	$password = $row2['password'];
-	$correo = $row2['correo'];
-	$id_roles = $row2['id_roles'];
-	
-	mysqli_close($conex);
 
-}
 ?>
 
 <!DOCTYPE html>
@@ -200,11 +184,11 @@ if($GET['id']){
                                                             Options
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                data-target="#ModalEditar"
-                                                                href="admin.php?id=<?php echo $row['id_usuarios'];?>"><img
-                                                                    src="img/svg/editar.svg " alt="Industrias Canaima"
-								    width="15" height="15"> Editar</a>	
+                                                            <?php echo "<a class='dropdown-item btn btn-warning' data-toggle='modal'
+                                                                data-target='#ModalEditar'
+                                                                href='modaleditusuario.php?id=".$row['id_usuarios']."'><img
+                                                                src='img/svg/editar.svg' alt='Industrias Canaima'
+                                                                width='1' height='15'> Editar</a>";?>
                                                             <a class="dropdown-item btn btn-danger"
                                                                 href="eliminarusuario.php?id=<?php echo $row['id_usuarios'];?>"><img
                                                                     src="img/svg/eliminar.svg " alt="Industrias Canaima"
