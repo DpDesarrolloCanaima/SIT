@@ -173,7 +173,9 @@ $resultado1 = $mysqli->query($consulta1);
                                                 <td><?php echo $row['usuario']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
                                                 <td><?php echo $row['cedula']; ?></td>
-                                                <td><?php echo $row['password']; ?></td>
+                                                <td><?php $passdb = $row['password'];
+                                                           $passview = sha1($passdb);
+                                                           echo $passview;      ?></td>
                                                 <td><?php echo $row['correo']; ?></td>
                                                 <td><?php echo $row['roles']; ?></td>
                                                 <td><?php echo $row['registro']; ?></td>
