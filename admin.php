@@ -179,27 +179,25 @@ $resultado1 = $mysqli->query($consulta1);
                                                 <td><?php echo $row['correo']; ?></td>
                                                 <td><?php echo $row['roles']; ?></td>
                                                 <td><?php echo $row['registro']; ?></td>
-                                                <td>
+                                                <?php 
+                                                    echo ' <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-info dropdown-toggle"
                                                             data-toggle="dropdown" aria-expanded="false">
                                                             Options
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <?php echo "<a class='dropdown-item btn btn-warning' data-toggle='modal'
-                                                                data-target='#ModalEditar'
-                                                                href='modaleditusuario.php?id=".$row['id_usuarios']."'><img
-                                                                src='img/svg/editar.svg' alt='Industrias Canaima'
-                                                                width='1' height='15'> Editar</a>";?>
-                                                            <a class="dropdown-item btn btn-danger"
-                                                                href="eliminarusuario.php?id=<?php echo $row['id_usuarios'];?>"><img
+                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal"
+                                                                data-target="#ModalEditar'.$row['id_usuarios'].'" href="#"><img
+                                                                    src="img/svg/editar.svg " alt="Industrias Canaima"
+                                                                    width="15" height="15"> Editar</a>
+                                                            <a class="dropdown-item btn btn-danger" href="#"><img
                                                                     src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                    width="15" height="15"
-                                                                    onclick="return confirm('¿Estas seguro?'); false">
-                                                                Eliminar</a>
+                                                                    width="15" height="15"> Eliminar</a>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td>';
+                                               ?>
                                             </tr>
                                             <?php
                                             }

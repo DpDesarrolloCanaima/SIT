@@ -1,89 +1,78 @@
 <?php
-require "config/conexionProvi.php" ;
-if($_GET['id']){
-    $id = $_GET['id'];
-    $conex = $mysqli;
-    $sql = "SELECT * FROM usuarios WHERE id_usuarios ='" . $id . "'";
-    $resultado3 = mysqli_query($conex, $sql);
+    require "config/conexionProvi.php";
 
-    $row3 = mysqli_fetch_assoc($resultado3);
-	
-	$usuarioEdit = $row3['usuario'];
-	$nombreEdit = $row3['nombre'];
-	$cedulaEdit = $row3['cedula'];
-	$passwordEdit = $row3['password'];
-	$correoEdit = $row3['correo'];
-	$id_rolesEdit = $row3['id_roles'];
-	
-	mysqli_close($conex);
+    $sql = "SELECT * FROM usuarios";
+    $result = mysqli_query($mysqli, $sql);
+    while ($row2 = $result->fetch_assoc()) {
+        $idEdit = $row2['id_usuarios'];
+        $usuarioEdit = $row2['usuario'];
+        $nombreEdit = $row2['nombre'];
+        $cedulaEdit = $row2['cedula'];
+        $passwordEdit = $row2['password'];
+        $correoEdit = $row2['correo'];
+        $rolesEdit = $row2['id_roles'];
 
-
-?>
-<!-- Modal de editar información del usuario -->
-<div class="modal fade" id="ModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-titlen text-dark mx-auto" id="exampleModalLabel">Editar
-                    Usuario</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <form name="crearusuario" action="" method="POST" class="FormularioAjax" autocomplete="off"
-                    data-form="save">
-                    <div class="form-group">
-                        <label for="exampleInputUser1">Usuario</label>
-                        <input type="text" class="form-control" id="usuario" aria-describedby="nameHelp" name="nombre"
-                            value="<?php echo $row3['usuario'];?>">
+        echo '
+        <!-- Modal de editar información del usuario -->
+        <div class="modal fade" id="ModalEditar'.$idEdit.'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-titlen text-dark mx-auto" id="exampleModalLabel">Editar
+                            Usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputUser1">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp" name="nombre"
-                            value="<?php echo $row3['nombre'];?>">
+                    <div class="modal-body">
+                        <form name="crearusuario" action="updateUser.php?=id'.$idEdit.'" method="POST" class="FormularioAjax" autocomplete="off"
+                            data-form="save">
+                            <div class="form-group">
+                                <label for="exampleInputUser1">Nombre</label>
+                                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
+                                    name="nombre" value = "'.$usuarioEdit.'">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputUser1">Apellido</label>
+                                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
+                                    name="apellido" value = "'.$nombreEdit.'">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Contraseña</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" value = "'.$passwordEdit.'">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">Cédula</label>
+                                <input type="text" class="form-control" id="exampleInputCedula1" name="cedula" value = "'.$cedulaEdit.'">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Correo</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    name="correo" value = "'.$correoEdit.'">
+                            </div>
+                            <div class="form-group">
+                                <label for="perfil">Perfil</label>
+                                <select name="perfil" id="" class="form-control form-control-lg">
+                                    <option value="1">Administrador</option>
+                                    <option value="2">Presidencia</option>
+                                    <option value="3">Director de Area</option>
+                                    <option value="4">Gerente</option>
+                                    <option value="5">Supervisor de Linea</option>
+                                    <option value="6">Analista</option>
+                                    <option value="7">Técnico</option>
+                                    <option value="8">Verificador</option>
+                                </select>
+                            </div>
+                            <hr>
+                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <button type="reset" class="btn btn-danger">Refrescar</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password"
-                            value="<?php echo $row3['password'];?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedula"
-                            value="<?php echo $row3['cedula'];?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Correo</label>
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo"
-                            value="<?php echo $row3['correo'];?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="perfil">Perfil</label>
-                        <select name="perfil" id="perfil" class="form-control form-control-lg">
-                            <option select disabled>
-                                <?php echo $row3['id_roles'];?>
-                            </option>
-                            <?php 
-                                foreach($resultado1 as $row1):
-                            ?>
-                            <option value="<?php echo $row1['id_roles'];?>">
-                                <?php echo $row1['roles'];?>
-                            </option>
-                            <?php endforeach;?>
-                        </select>
-                    </div>
-                    <hr>
-                    <button type="submit" class="btn btn-success">Enviar</button>
-                    <button type="reset" class="btn btn-danger">Refrescar</button>
-                </form>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 
-</div>
-<?php
-}
+        ';
+    }
+
 ?>
