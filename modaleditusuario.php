@@ -25,15 +25,15 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="crearusuario" action="updateUser.php?=id'.$idEdit.'" method="POST" class="FormularioAjax" autocomplete="off"
-                            data-form="save">
+                        <form name="crearusuario" action="updateUser.php?=id'.$idEdit.'" method="POST" autocomplete="off"
+				    data-form="save">
                             <div class="form-group">
                                 <label for="exampleInputUser1">Nombre</label>
                                 <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
                                     name="nombre" value = "'.$usuarioEdit.'">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputUser1">Apellido</label>
+                               <label for="exampleInputUser1">Apellido</label>
                                 <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
                                     name="apellido" value = "'.$nombreEdit.'">
                             </div>
@@ -46,7 +46,7 @@
                                 <input type="text" class="form-control" id="exampleInputCedula1" name="cedula" value = "'.$cedulaEdit.'">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Correo</label>
+                               <label for="exampleInputEmail1">Correo</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
                                     name="correo" value = "'.$correoEdit.'">
                             </div>

@@ -11,8 +11,8 @@
     <script src="js/demo/chart-bar-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
     <!-- SweetAlert Scripts -->
-    <script src="js/sweetalert2.min.js"></script>
-    <script src="js/alertas.js"></script>
+   <!-- <script src="js/sweetalert2.min.js"></script>
+    <script src="js/alertas.js"></script>-->
     <!-- DataTable Scripts -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
