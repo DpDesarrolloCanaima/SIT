@@ -4,10 +4,6 @@ require "config/conexionProvi.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
-}else{
-    if ($_SESSION['id_roles'] != 2) {
-        header("Location: index.php");
-    }
 }
 
 $usuario = $_SESSION['usuario'];
@@ -167,7 +163,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Modelo</th>
                                             <th>Origen</th>
                                             <?php
-						switch(){
+						switch($rol){
 							   case 1:
 								echo ' <th>Opciones</th> ';
 							   break;
@@ -199,8 +195,11 @@ $resultado8 = $mysqli->query($sql2);
                                                 <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
                                                 <td><?php echo $row['modelo']; ?></td>
-                                                <td><?php echo $row['origen']; ?></td>
-                                                <td>
+						<td><?php echo $row['origen']; ?></td>
+						<?php
+						   switch($rol){
+								  case 1:
+									echo '  <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             Options
@@ -208,6 +207,11 @@ $resultado8 = $mysqli->query($sql2);
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                             <a class="dropdown-item btn btn-danger" href="#"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
+ ';
+								  break;
+								}
+						?>
+                                               
                                                         </div>
                                                     </div>
                                                 </td>
