@@ -98,11 +98,14 @@ if ($_POST) {
                 <input type="password" name="password" id="inputPassword" class="input" placeholder="a">
                 <label for="" class="label">Contraseña</label>
             </div>
+
             <div class="button">
                 <input type="submit" class="submitBtn" value="Ingresar">
             </div>
         </form>
     </div>
+    <script>
+    </script>
 </body>
 
 </html>

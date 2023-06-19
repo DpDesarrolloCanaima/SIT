@@ -5,11 +5,11 @@ session_start();
 $usuario = $_SESSION['usuario'];
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
-}else{
-    if ($_SESSION['id_roles'] != 2) {
-        header("Location: index.php");
-    }
 }
+$usuario = $_SESSION['usuario'];
+$rol = $_SESSION['id_roles'];
+
+
 ?>
 
 <!DOCTYPE html>
@@ -29,10 +29,10 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 
     <!-- Custom fonts for this template-->
-    <link href=".../fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
     
-    <link href=".../fontawesome-free/css/Chart.min.jscss" rel="stylesheet" type="text/css">
+    <link href="vendor/fontawesome-free/css/Chart.min.jscss" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->

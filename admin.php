@@ -6,7 +6,7 @@ if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }else{
     if ($_SESSION['id_roles'] != 1) {
-        header("Location: index.php");
+        header("Location: 404.php");
     }
 }
 
@@ -20,23 +20,7 @@ $resultado = $mysqli->query($consulta);
 $consulta1 = "SELECT id_roles, roles FROM roles";
 $resultado1 = $mysqli->query($consulta1);
 
-if($GET['id']){
-	$idUsuario = $_GET['id'];
-	$conex = $mysqli;
-	$sql = "SELECT * FROM usuarios WHERE id_usuarios='". $idUsuario . "'";
-	$resultado2 = mysqli_query($conex, $sql);
-	
-	$row2 = mysqli_fetch_assoc($resultado);
-	$usuarioEdit = $row2['usuario'];
-	$nombre = $row2['nombre'];
-	$cedula = $row2['cedula'];
-	$password = $row2['password'];
-	$correo = $row2['correo'];
-	$id_roles = $row2['id_roles'];
-	
-	mysqli_close($conex);
 
-}
 ?>
 
 <!DOCTYPE html>
@@ -138,17 +122,6 @@ if($GET['id']){
                                     <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
                                     </div>
-                                    <div class="mt-4 text-center small">
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-primary"></i> Reparadas
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-success"></i> En la linea
-                                        </span>
-                                        <span class="mr-2">
-                                            <i class="fas fa-circle text-info"></i> Entregadas
-                                        </span>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -189,11 +162,14 @@ if($GET['id']){
                                                 <td><?php echo $row['usuario']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
                                                 <td><?php echo $row['cedula']; ?></td>
-                                                <td><?php echo $row['password']; ?></td>
+                                                <td><?php $passdb = $row['password'];
+                                                           $passview = sha1($passdb);
+                                                           echo $passview;      ?></td>
                                                 <td><?php echo $row['correo']; ?></td>
                                                 <td><?php echo $row['roles']; ?></td>
                                                 <td><?php echo $row['registro']; ?></td>
-                                                <td>
+                                                <?php 
+                                                    echo ' <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-info dropdown-toggle"
                                                             data-toggle="dropdown" aria-expanded="false">
@@ -201,19 +177,16 @@ if($GET['id']){
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                data-target="#ModalEditar"
-                                                                href="admin.php?id=<?php echo $row['id_usuarios'];?>"><img
+                                                                data-target="#ModalEditar'.$row['id_usuarios'].'" href="#"><img
                                                                     src="img/svg/editar.svg " alt="Industrias Canaima"
-								    width="15" height="15"> Editar</a>	
-                                                            <a class="dropdown-item btn btn-danger"
-                                                                href="eliminarusuario.php?id=<?php echo $row['id_usuarios'];?>"><img
+                                                                    width="15" height="15"> Editar</a>
+                                                            <a class="dropdown-item btn btn-danger" href="#"><img
                                                                     src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                    width="15" height="15"
-                                                                    onclick="return confirm('¿Estas seguro?'); false">
-                                                                Eliminar</a>
+                                                                    width="15" height="15"> Eliminar</a>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td>';
+                                               ?>
                                             </tr>
                                             <?php
                                             }
