@@ -4,5 +4,5 @@
 #RewriteCond %{REQUEST_FILENAME}\.php -f
 #RewriteRule ^(.*)$ $1.php
 Options ALL -Indexes
-ErrorDocument 404 /Canaima1.16/404.html
-ErrorDocument 403 /Canaima1.16/403.html
+ErrorDocument 404 /SIT/404.html
+ErrorDocument 403 /SIT/403.html
