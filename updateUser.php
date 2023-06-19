@@ -1,8 +1,8 @@
 <?php
     require "function.php";
    
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $idUpdate = $_GET['id'];
+if ($_POST['Update']) {
+    $idUpdate = $_POST['id'];
     $usuarioupdate = limpiarDatos(htmlspecialchars($_POST['usuario']));
     $nombreupdate = limpiarDatos(htmlspecialchars($_POST['nombre']));
     $cedulaupdate = limpiarDatos(htmlspecialchars($_POST['cedula']));

@@ -25,7 +25,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form name="crearusuario" action="updateUser.php?=id'.$idEdit.'" method="POST" autocomplete="off"
+                        <form name="crearusuario" action="updateUser.php" method="POST" autocomplete="off"
 				    data-form="save">
                             <div class="form-group">
                                 <label for="exampleInputUser1">Nombre</label>
@@ -62,9 +62,10 @@
                                     <option value="7">Técnico</option>
                                     <option value="8">Verificador</option>
                                 </select>
-                            </div>
+			    </div>
+				<input type = "hidden" value = "'.$idEdit.'">
                             <hr>
-                            <button type="submit" class="btn btn-success">Enviar</button>
+                            <button type="submit" class="btn btn-success" name = "Update">Enviar</button>
                             <button type="reset" class="btn btn-danger">Refrescar</button>
                         </form>
                     </div>
