@@ -28,14 +28,14 @@
                         <form name="crearusuario" action="updateUser.php" method="POST" autocomplete="off"
 				    data-form="save">
                             <div class="form-group">
-                                <label for="exampleInputUser1">Nombre</label>
+                                <label for="exampleInputUser1">Usuario</label>
                                 <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
-                                    name="nombre" value = "'.$usuarioEdit.'">
+                                    name="usuario" value = "'.$usuarioEdit.'">
                             </div>
                             <div class="form-group">
-                               <label for="exampleInputUser1">Apellido</label>
+                               <label for="exampleInputUser1">Nombre</label>
                                 <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
-                                    name="apellido" value = "'.$nombreEdit.'">
+                                    name="nombre" value = "'.$nombreEdit.'">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputPassword1">Contraseña</label>
@@ -62,8 +62,8 @@
                                     <option value="7">Técnico</option>
                                     <option value="8">Verificador</option>
                                 </select>
-			    </div>
-				<input type = "hidden" value = "'.$idEdit.'">
+			                </div>
+				                <input type = "hidden" value = "'.$idEdit.'">
                             <hr>
                             <button type="submit" class="btn btn-success" name = "Update">Enviar</button>
                             <button type="reset" class="btn btn-danger">Refrescar</button>
