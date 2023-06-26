@@ -2,7 +2,7 @@
     require "function.php";
    
 if ($_POST) {
-    $idUpdate = $_POST['id'];
+    $idUpdate = $_POST['idEdit'];
     $usuarioupdate = limpiarDatos(htmlspecialchars($_POST['usuario']));
     $nombreupdate = limpiarDatos(htmlspecialchars($_POST['nombre']));
     $passwordupdate = limpiarDatos(htmlspecialchars($_POST['password']));

@@ -63,7 +63,7 @@
                                     <option value="8">Verificador</option>
                                 </select>
 			                </div>
-				                <input type = "hidden" value = "'.$idEdit.'">
+				                <input type = "hidden" name = "idEdit" value = "'.$idEdit.'">
                             <hr>
                             <button type="submit" class="btn btn-success" name = "Update">Enviar</button>
                             <button type="reset" class="btn btn-danger">Refrescar</button>
