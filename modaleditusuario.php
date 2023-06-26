@@ -53,7 +53,7 @@
                             <div class="form-group">
                                 <label for="perfil">Perfil</label>
                                 <select name="perfil" id="" class="form-control form-control-lg">
-                                    <option value="1">Administrador</option>
+                                    <option value="'.$rolesEdit.'"></option>
                                     <option value="2">Presidencia</option>
                                     <option value="3">Director de Area</option>
                                     <option value="4">Gerente</option>

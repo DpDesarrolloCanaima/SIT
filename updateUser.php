@@ -16,16 +16,9 @@ if ($_POST) {
     $result = mysqli_query($mysqli, $sql);
 
     if ($result) {
-        echo "<script>
-            alert('Se realizaron los cambios correctamente');
-            location.assign('admin.php');
-        </script>";
+        echo "Se realizo el cambio";
     }else {
-        
-        echo "<script>
-            alert('No se realizaron los cambios');
-            location.assign('admin.php');
-        </script>";
+        echo "No se a registrado cambios";
     }
 }
 
