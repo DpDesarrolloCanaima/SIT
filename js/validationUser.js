@@ -1,3 +1,4 @@
+
 const usuarioField = document.querySelector("[name = usuario]");
 
 const nombreField = document.querySelector("[name = nombre]");
