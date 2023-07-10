@@ -10,17 +10,26 @@ if ($_POST) {
     $passwordupdate = limpiarDatos(htmlspecialchars($_POST['password']));
     $cedulaupdate = limpiarDatos(htmlspecialchars($_POST['cedula']));
     $correoupdate = limpiarDatos(htmlspecialchars($_POST['correo']));
-    $rolesupdate = limpiarDatos(htmlspecialchars($_POST['id_roles']));
+    $rolesupdate = limpiarDatos(htmlspecialchars($_POST['perfil']));
     $pass_cupdate = sha1($passwordupdate);
     
     require "config/conexionProvi.php";
-    $sql = "UPDATE usuarios SET usuario = ' $usuarioupdate ', nombre = ' $nombreupdate ', cedula = ' $cedulaupdate ', password = ' $pass_cupdate ', id_roles = ' $rolesupdate ' WHERE id_usuarios = $idUpdate";
+    //$sql = "UPDATE usuarios SET usuario = ' $usuarioupdate ', nombre = ' $nombreupdate ', cedula = ' $cedulaupdate ', password = ' $pass_cupdate ',correo =', id_roles = ' $rolesupdate ' WHERE id_usuarios = $idUpdate";
+
+    $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate', cedula = '$cedulaupdate', password = '$pass_cupdate', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = $idUpdate";
+
     $result = mysqli_query($mysqli, $sql);
 
     if ($result) {
-        echo "Se realizo el cambio";
+        echo "<script>
+        alert('Se a realizado los cambios Correctamente.');
+        location.assign('admin.php');
+    </script>";
     }else {
-        echo "No se a registrado cambios";
+        echo "<script>
+        alert('Ocurrio un error, no se realizaron los cambios');
+        location.assign('admin.php');
+    </script>";
     }
 }
 
