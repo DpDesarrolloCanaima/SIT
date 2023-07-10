@@ -19,3 +19,5 @@
     <script src="js/demo/datatables-demo.js"></script>
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!--Validation JS-->
+    <link rel="stylesheet" href="js/validationUser.js">
