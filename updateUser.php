@@ -1,5 +1,7 @@
 <?php
     require "function.php";
+
+    // 
    
 if ($_POST) {
     $idUpdate = $_POST['idEdit'];
