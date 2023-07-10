@@ -28,26 +28,26 @@
                         <form name="crearusuario" action="updateUser.php" method="POST" autocomplete="off"
 				    data-form="save">
                             <div class="form-group">
-                                <label for="exampleInputUser1">Usuario</label>
-                                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
+                                <label for="usuario">Usuario</label>
+                                <input type="text" class="form-control" id="usuario" aria-describedby="nameHelp"
                                     name="usuario" value = "'.$usuarioEdit.'">
                             </div>
                             <div class="form-group">
-                               <label for="exampleInputUser1">Nombre</label>
-                                <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp"
+                               <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp"
                                     name="nombre" value = "'.$nombreEdit.'">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Contraseña</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" value = "'.$passwordEdit.'">
+                                <label for="password">Contraseña</label>
+                                <input type="password" class="form-control" id="password" name="password" value = "'.$passwordEdit.'">
                             </div>
                             <div class="form-group">
-                                <label for="exampleInputPassword1">Cédula</label>
-                                <input type="text" class="form-control" id="exampleInputCedula1" name="cedula" value = "'.$cedulaEdit.'">
+                                <label for="cedula">Cédula</label>
+                                <input type="text" class="form-control" id="cedula" name="cedula" value = "'.$cedulaEdit.'">
                             </div>
                             <div class="form-group">
-                               <label for="exampleInputEmail1">Correo</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                               <label for="correo">Correo</label>
+                                <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
                                     name="correo" value = "'.$correoEdit.'">
                             </div>
                             <div class="form-group">
