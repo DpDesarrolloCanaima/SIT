@@ -24,7 +24,7 @@ INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado ";
 
 $resultado = $mysqli->query($sql1);
 
-
+// Consultas de para mostrar datos en formulario
 // Consulta para mostrar los datos e enviar
 $consulta2 = "SELECT * FROM genero";
 $resultado2 = $mysqli->query($consulta2);

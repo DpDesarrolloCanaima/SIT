@@ -47,6 +47,7 @@ $resultado1 = $mysqli->query($consulta1);
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/error.css">
 </head>
 
 <body id="page-top">
@@ -180,7 +181,7 @@ $resultado1 = $mysqli->query($consulta1);
                                                                 data-target="#ModalEditar'.$row['id_usuarios'].'" href="#"><img
                                                                     src="img/svg/editar.svg " alt="Industrias Canaima"
                                                                     width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="#"><img
+                                                            <a class="dropdown-item btn btn-danger" href="eliminarusuario.php?id='.$row['id_usuarios'].'"><img
                                                                     src="img/svg/eliminar.svg " alt="Industrias Canaima"
                                                                     width="15" height="15"> Eliminar</a>
                                                         </div>

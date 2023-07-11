@@ -23,7 +23,7 @@ if ($_POST) {
         //    Comprobación de inicion de sesión y roles
             if (isset($_SESSION['id_roles'])) {
                 switch ($_SESSION['id_roles']) {
-                    case 1:
+                   case 1:
                         header("Location: admin.php");
                         break;
                     case 2:

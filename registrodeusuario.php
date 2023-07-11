@@ -43,7 +43,7 @@ if($perfil == ""){
 	 echo "<script>
             alert('Seleccione un perfil correcto');
         </script>";
-}
+}   
     $pass_c = sha1($password);
 
     $conex = $mysqli;    
