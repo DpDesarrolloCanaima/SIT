@@ -47,7 +47,7 @@ if($perfil == ""){
     $pass_c = sha1($password);
 
     $conex = $mysqli;    
-    $sql = "INSERT INTO usuarios (id_usuarios, usuario, apellido, cedula, password, correo, id_roles) VALUES (NULL, '$usuario', '$nombre', '$cedula', '$pass_c', '$correo', '$perfil');";
+    $sql = "INSERT INTO usuarios (id_usuarios, usuario, nombre, cedula, password, correo, id_roles) VALUES (NULL, '$usuario', '$nombre', '$cedula', '$pass_c', '$correo', '$perfil');";
 
     $resultado = $conex->query($sql);
 
@@ -87,9 +87,3 @@ if($perfil == ""){
         </script>";
     }
  }
-
-
-
-
-
-

@@ -132,8 +132,8 @@ $resultado1 = $mysqli->query($consulta1);
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
                         </div>
                         <!-- DataTales Example -->
                         <div class="card shadow mb-4">
@@ -209,61 +209,61 @@ $resultado1 = $mysqli->query($consulta1);
                         <div class="row">
 
 
-                        <!-- Content Row -->
-                        <div class="row">
+                            <!-- Content Row -->
+                            <div class="row">
 
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
+                                <!-- Content Column -->
+                                <div class="col-lg-6 mb-4">
+
+                                </div>
 
                             </div>
+                            <!-- /.container-fluid -->
 
                         </div>
-                        <!-- /.container-fluid -->
+                        <!-- End of Main Content -->
+
+                        <!-- Footer -->
+                        <footer class="sticky-footer bg-white">
+                            <div class="container my-auto">
+                                <div class="copyright text-center my-auto">
+                                    <span>Copyright &copy; Industrias Canaima 2022</span>
+                                </div>
+                            </div>
+                        </footer>
+                        <!-- End of Footer -->
 
                     </div>
-                    <!-- End of Main Content -->
+                    <!-- End of Content Wrapper -->
 
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Industrias Canaima 2022</span>
+                </div>
+                <!-- End of Page Wrapper -->
+
+                <!-- Scroll to Top Button-->
+                <a class="scroll-to-top rounded" href="#page-top">
+                    <i class="fas fa-angle-up"></i>
+                </a>
+
+                <!-- Logout Modal-->
+                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
+                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">×</span>
+                                </button>
+                            </div>
+                            <div class="modal-footer">
+                                <a class="btn btn-success" href="logout.php">Salir</a>
+                                <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
                             </div>
                         </div>
-                    </footer>
-                    <!-- End of Footer -->
-
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-success" href="logout.php">Salir</a>
-                            <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                        </div>
                     </div>
                 </div>
-            </div>
 
-            <?php include "inc/script.php"; ?>
+                <?php include "inc/script.php"; ?>
 </body>
 
 </html>
