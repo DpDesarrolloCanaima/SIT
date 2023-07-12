@@ -8,7 +8,7 @@ if ($_POST) {
     $passwordupdate = limpiarDatos(htmlspecialchars($_POST['password']));
     $cedulaupdate = limpiarDatos(htmlspecialchars($_POST['cedula']));
     $correoupdate = limpiarDatos(htmlspecialchars($_POST['correo']));
-    $rolesupdate = limpiarDatos(htmlspecialchars($_POST['id_roles']));
+    $rolesupdate = limpiarDatos(htmlspecialchars($_POST['perfil']));
     $pass_cupdate = sha1($passwordupdate);
     
     require "config/conexionProvi.php";
