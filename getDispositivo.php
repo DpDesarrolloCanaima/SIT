@@ -1,6 +1,6 @@
 <?php
 
-require("config/conexionProvi.php");
+require ("config/conexionProvi.php");
 
 $id = $mysqli->real_escape_string($_POST['id_datos_del_dispositivo']);
 
