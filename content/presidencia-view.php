@@ -54,18 +54,7 @@
                 <!-- Card Body -->
                 <div class="card-body">
                     <div class="chart-pie pt-4 pb-2">
-                        <canvas id="mypieChart"></canvas>
-                    </div>
-                    <div class="mt-4 text-center small">
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-primary"></i> Entregadas
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-success"></i> En la linea
-                        </span>
-                        <span class="mr-2">
-                            <i class="fas fa-circle text-info"></i> Recibidas
-                        </span>
+                        <canvas id="myPieChart"></canvas>
                     </div>
                 </div>
             </div>

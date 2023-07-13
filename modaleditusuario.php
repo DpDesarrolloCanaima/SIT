@@ -13,6 +13,18 @@
         $rolesEdit = $row2['id_roles'];
 
         echo '
+        <!DOCTYPE html>
+<html lang="es-MX">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+</head>
+
         <!-- Modal de editar información del usuario -->
         <div class="modal fade" id="ModalEditar'.$idEdit.'" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -72,7 +84,7 @@
                 </div>
             </div>
         </div>
-
+        </html>
         ';
     }
 

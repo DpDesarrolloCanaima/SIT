@@ -14,22 +14,45 @@ if ($_POST) {
     $pass_cupdate = sha1($passwordupdate);
     
     require "config/conexionProvi.php";
-    //$sql = "UPDATE usuarios SET usuario = ' $usuarioupdate ', nombre = ' $nombreupdate ', cedula = ' $cedulaupdate ', password = ' $pass_cupdate ',correo =', id_roles = ' $rolesupdate ' WHERE id_usuarios = $idUpdate";
 
     $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate', cedula = '$cedulaupdate', password = '$pass_cupdate', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = $idUpdate";
 
     $result = mysqli_query($mysqli, $sql);
 
     if ($result) {
-        echo "<script>
-        alert('Se a realizado los cambios Correctamente.');
-        location.assign('admin.php');
-    </script>";
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'El registro fue actualizado correctamente',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+                location.assign('admin.php');
+              });
+    });
+        </script>";
     }else {
-        echo "<script>
-        alert('Ocurrio un error, no se realizaron los cambios');
-        location.assign('admin.php');
-    </script>";
+         echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Algo salio mal. Intenta de nuevo',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+                location.assign('index.php');
+              });
+    });
+        </script>";
     }
 }
 
