@@ -113,7 +113,20 @@ $resultado8 = $mysqli->query($sql2);
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "inc/navbarlateral.php"; ?>
+        <?php 
+            switch ($rol) {
+                case 1:
+                        include "inc/navbarlateral.php";
+                    ;
+                    break;
+                case 2:
+                        include "inc/navbarlateral.php";
+                    break;
+                case 6:
+                         include "inc/navbarlateral2.php";
+                break;    
+            }
+         ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

@@ -68,7 +68,8 @@
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Listas:</h6>
-                 <a class="collapse-item" href="dispositivosentrada.php">Lista de dispositivos</a>
+                 <a class="collapse-item" href="listadeusuario.php">Lista de Usuario</a>
+                <a class="collapse-item" href="dispositivosentrada.php">Lista de dispositivos</a>
                 <a class="collapse-item" href="listadebeneficiario.php">Lista de beneficiario</a>
             </div>
         </div>
