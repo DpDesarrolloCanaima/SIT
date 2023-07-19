@@ -31,11 +31,11 @@
                             pattern="[a-zA-z0-9]">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Institucion Educativa</label>
+                        <label for="exampleInputPassword1">Institucion Educativa (Donde se recibio el equipo)</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" name="institucion_educativa">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Institucion Educativa (Donde Estudia)</label>
+                        <label for="exampleInputPassword1">Institucion Educativa (Donde Estudia el beneficiario)</label>
                         <input type="text" class="form-control" id="exampleInputPassword1"
                             name="institucion_donde_estudia">
                     </div>
@@ -62,19 +62,24 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">El Equipo Reincidio</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="equipo_reincidio" id="exampleRadios1"
+                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="exampleRadios1"
                                 value="si" checked>
                             <label class="form-check-label" for="exampleRadios1">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="equipo_reincidio" id="exampleRadios2"
+                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="exampleRadios2"
                                 value="no">
                             <label class="form-check-label" for="exampleRadios2">
                                 No
                             </label>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivoReincidencia">Motivo de reincidencia</label>
+                        <textarea class="form-control reincidencia" id="motivoReincidencia" rows="3"
+                            name="observaciones"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="motivo">Falla del Equipo</label>
