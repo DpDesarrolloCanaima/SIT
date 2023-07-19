@@ -10,19 +10,6 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
 
-// Consulta para traer los datos almacenados
-
-$sql1 = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.unidad_de_adscripcion, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
-INNER JOIN genero AS g ON  g.id_genero=e.id_genero
-INNER JOIN area AS a ON a.id_area = e.id_area
-INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
-INNER JOIN origen AS o ON o.id_origen = e.id_origen
-INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado ";
-
-$resultado = $mysqli->query($sql1);
-
-
 // Consulta para mostrar los datos e enviar
 $consulta2 = "SELECT * FROM genero";
 $resultado2 = $mysqli->query($consulta2);
@@ -125,111 +112,6 @@ $resultado8 = $mysqli->query($sql2);
                 <?php include "inc/navbar.php"; ?>
                 <!-- End of Topbar -->
 
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#exampleModal"> Registrar Beneficiario</a>
-                    </div>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Beneficiario</h6>
-
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>IC</th>
-                                            <th>Nombre del Beneficiario</th>
-                                            <th>Cedula</th>
-                                            <th>Edad</th>
-                                            <th>Genero</th>
-                                            <th>Fecha de Nacimiento</th>
-                                            <th>Unidad de Adscripción</th>
-                                            <th>Area</th>
-                                            <th>Cargo</th>
-                                            <th>Nombre del Representante</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Estado</th>
-                                            <th>Municipio</th>
-                                            <th>Dirección</th>
-                                            <th>Posee Discapacidad o Condición</th>
-                                            <th>Descripcion de Discapacidad</th>
-                                            <th>Tipo de dispositivo</th>
-                                            <th>Modelo</th>
-                                            <th>Origen</th>
-                                            <?php
-						switch($rol){
-							   case 1:
-								echo ' <th>Opciones</th> ';
-							   break;
-							}
-                                            ?>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        while ($row = $resultado->fetch_assoc()) {
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $row['ic']; ?></td>
-                                                <td><?php echo $row['nombre_del_beneficiario']; ?></td>
-                                                <td><?php echo $row['cedula']; ?></td>
-                                                <td><?php echo $row['edad']; ?></td>
-                                                <td><?php echo $row['genero']; ?></td>
-                                                <td><?php echo $row['fecha_de_nacimiento']; ?></td>
-                                                <td><?php echo $row['unidad_de_adscripcion']; ?></td>
-                                                <td><?php echo $row['nombre_del_area']; ?></td>
-                                                <td><?php echo $row['tipo_de_cargo']; ?></td>
-                                                <td><?php echo $row['nombre_del_representante']; ?></td>
-                                                <td><?php echo $row['correo']; ?></td>
-                                                <td><?php echo $row['telefono']; ?></td>
-                                                <td><?php echo $row['estado_nombre']; ?></td>
-                                                <td><?php echo $row['municipio']; ?></td>
-                                                <td><?php echo $row['direccion']; ?></td>
-                                                <td><?php echo $row['posee_discapacidad_o_condicion']; ?></td>
-                                                <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
-                                                <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php echo $row['modelo']; ?></td>
-						<td><?php echo $row['origen']; ?></td>
-						<?php
-						   switch($rol){
-								  case 1:
-									echo '  <td>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                            Options
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="#"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
-								  break;
-								}
-						?>
-                                               
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal de registro -->
-
-                    <?php 
-                    include "modalRegistroBene.php";
-
-                    include "modalEditBene.php";
-                    ?>
                     
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
