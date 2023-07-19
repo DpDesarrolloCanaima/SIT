@@ -206,8 +206,7 @@ $resultado8 = $mysqli->query($sql2);
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="#"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
- ';
+                                                            <a class="dropdown-item btn btn-danger" href="#"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
 								  break;
 								}
 						?>
@@ -316,13 +315,13 @@ $resultado8 = $mysqli->query($sql2);
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <footer class="sticky-footer bg-white">
+             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
                         <span>Copyright &copy; Industrias Canaima 2022</span>
                     </div>
-                </div>
-            </footer>
+                 </div>
+             </footer>
             <!-- End of Footer -->
 
         </div>

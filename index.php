@@ -23,7 +23,7 @@ if ($_POST) {
         //    Comprobación de inicion de sesión y roles
             if (isset($_SESSION['id_roles'])) {
                 switch ($_SESSION['id_roles']) {
-                    case 1:
+                   case 1:
                         header("Location: admin.php");
                         break;
                     case 2:
@@ -79,8 +79,6 @@ if ($_POST) {
     <!-- STYLESHEETS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/login.css">
-    <link rel="stylesheet" href="assets/SweetAlert/dist/sweetalert2.min.css">
-    <!-- SCRIPTS -->
 </head>
 
 <body>
@@ -104,8 +102,6 @@ if ($_POST) {
             </div>
         </form>
     </div>
-    <script>
-    </script>
 </body>
 
 </html>
