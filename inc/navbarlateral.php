@@ -70,6 +70,7 @@
                 <h6 class="collapse-header">Administrar</h6>
                 <a class="collapse-item" href="listadeusuario.php">Lista de Usuarios</a>
                 <a class="collapse-item" href="dispositivosEntrada.php">Lista de Dispositivos</a>
+                <a class="collapse-item" href="listadebeneficiario.php">Lista de Beneficiario</a>
             </div>
         </div>
     </li>
