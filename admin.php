@@ -75,8 +75,6 @@ $resultado1 = $mysqli->query($consulta1);
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#exampleModal"> Registrar Usuario</a>
                     </div>
 
                     <div class="row">
@@ -129,6 +127,7 @@ $resultado1 = $mysqli->query($consulta1);
                     </div>
 
                     <!-- /.container-fluid -->
+<<<<<<< HEAD
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -205,6 +204,8 @@ $resultado1 = $mysqli->query($consulta1);
                         ?>
 
 
+=======
+>>>>>>> e0740bab8a9ca335eedced7403525f374904f570
                         <!-- Content Row -->
                         <div class="row">
 
@@ -216,10 +217,17 @@ $resultado1 = $mysqli->query($consulta1);
                                 <div class="col-lg-6 mb-4">
 
                                 </div>
+<<<<<<< HEAD
 
                             </div>
                             <!-- /.container-fluid -->
 
+=======
+
+                            </div>
+                            <!-- /.container-fluid -->
+
+>>>>>>> e0740bab8a9ca335eedced7403525f374904f570
                         </div>
                         <!-- End of Main Content -->
 
