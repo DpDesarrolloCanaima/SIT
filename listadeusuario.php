@@ -41,6 +41,7 @@ $resultado1 = $mysqli->query($consulta1);
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/error.css">
+    <link rel="stylesheet" type="text/css" href="css/validation.css">
 </head>
 
 <body id="page-top">
