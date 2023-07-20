@@ -63,13 +63,14 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
             aria-controls="collapseTwo">
             <img src="img/svg/setting.svg " alt="Industrias Canaima" width="22" height="22">
-            <span>Admin</span>
+            <span>Administrar</span>
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Administrar</h6>
                 <a class="collapse-item" href="listadeusuario.php">Lista de Usuarios</a>
                 <a class="collapse-item" href="dispositivosEntrada.php">Lista de Dispositivos</a>
+                <a class="collapse-item" href="listadebeneficiario.php">Lista de Beneficiario</a>
             </div>
         </div>
     </li>

@@ -8,7 +8,6 @@
         $usuarioEdit = $row2['usuario'];
         $nombreEdit = $row2['nombre'];
         $cedulaEdit = $row2['cedula'];
-        $passwordEdit = $row2['password'];
         $correoEdit = $row2['correo'];
         $rolesEdit = $row2['id_roles'];
 
@@ -49,15 +48,18 @@
                                 <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp"
                                     name="nombre" value = "'.$nombreEdit.'">
                             </div>
-                            <div class="form-group">
-                                <label for="password">Contraseña</label>
-                                <input type="password" class="form-control" id="password" name="password" value = "'.$passwordEdit.'">
-                            </div>
+                    
                             <div class="form-group">
                                 <label for="cedula">Cédula</label>
                                 <input type="text" class="form-control" id="cedula" name="cedula" value = "'.$cedulaEdit.'">
                             </div>
                             <div class="form-group">
+
+                                <label for="cedula">Cédula</label>
+                                <input type="text" class="form-control" id="cedula" name="cedula" value = "'.$cedulaEdit.'">
+                            </div>
+                            <div class="form-group">
+
                                <label for="correo">Correo</label>
                                 <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
                                     name="correo" value = "'.$correoEdit.'">

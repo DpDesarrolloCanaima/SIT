@@ -85,7 +85,11 @@ require "function.php";
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
+<<<<<<< HEAD
                         location.assign('admin.php');
+=======
+                        location.assign('listadeusuario.php.php');
+>>>>>>> e0740bab8a9ca335eedced7403525f374904f570
                       });
             });
                 </script>";
@@ -102,7 +106,11 @@ require "function.php";
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
+<<<<<<< HEAD
                         location.assign('index.php');
+=======
+                        location.assign('listadeusuario.php');
+>>>>>>> e0740bab8a9ca335eedced7403525f374904f570
                       });
             });
                 </script>";
