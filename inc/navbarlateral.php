@@ -98,18 +98,12 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-<<<<<<< HEAD
-                <h6 class="collapse-header">Tablas de Dispositivos:</h6>
-                <a class="collapse-item" href="dispositivosentrada.php">Tablas de Recibidos</a>
-                <a class="collapse-item" href="dispositivosdeSalida.php">Tabla en la Linea</a>
-                <a class="collapse-item" href="dispositivosVerificados.php">Tala de Verificados</a>
-                <a class="collapse-item" href="dispositivosEntregados.php">Tabla de Entregados</a>
-=======
+
                 <a class="collapse-item" href="dispositivosEntrada.php">Recibidos</a>
                 <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
                 <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
                 <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>
->>>>>>> 1165e3d04410d2c337cdffbb6ce34aee7433f7a5
+
 
             </div>
         </div>
