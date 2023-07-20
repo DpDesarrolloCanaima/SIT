@@ -101,7 +101,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Tablas de Dispositivos:</h6>
-                <a class="collapse-item" href="dispositivosEntrada.php">Tablas de Recibidos</a>
+                <a class="collapse-item" href="dispositivosentrada.php">Tablas de Recibidos</a>
                 <a class="collapse-item" href="dispositivosdeSalida.php">Tabla en la Linea</a>
                 <a class="collapse-item" href="dispositivosVerificados.php">Tala de Verificados</a>
                 <a class="collapse-item" href="dispositivosEntregados.php">Tabla de Entregados</a>
