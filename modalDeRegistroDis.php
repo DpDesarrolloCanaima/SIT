@@ -1,10 +1,12 @@
 <!-- Modal -->
-<div class="modal fade" id="nuevoModal" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" id="modalDispo" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="NuevoModalLabel">Agregar Dispositivo</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-titlen text-dark mx-auto" id="NuevoModalLabel">Agregar Dispositivo</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
             </div>
             <div class="modal-body">
                 <form name="crearusuario" action="guardaDispo.php" method="POST" class="">

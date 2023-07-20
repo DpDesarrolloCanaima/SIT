@@ -3,6 +3,8 @@
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal"
             data-target="#exampleModal"> Registrar Beneficiario</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal"
+            data-target="#modalDispo"> Registrar Dispositivo</a>
     </div>
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
