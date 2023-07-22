@@ -48,11 +48,6 @@
                                 <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp"
                                     name="nombre" value = "'.$nombreEdit.'">
                             </div>
-                    
-                            <div class="form-group">
-                                <label for="cedula">Cédula</label>
-                                <input type="text" class="form-control" id="cedula" name="cedula" value = "'.$cedulaEdit.'">
-                            </div>
                             <div class="form-group">
 
                                 <label for="cedula">Cédula</label>

@@ -67,9 +67,9 @@
         </a>
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Listas:</h6>
-                 <a class="collapse-item" href="dispositivosentrada.php">Lista de dispositivos</a>
-                <a class="collapse-item" href="listadebeneficiario.php">Lista de beneficiario</a>
+                 <a class="collapse-item" href="listadeusuario.php">Usuario</a>
+                <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+                <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
             </div>
         </div>
     </li>
@@ -83,9 +83,8 @@
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Dispositivos:</h6>
-                <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidas</a>
-                <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregadas</a>
+                <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
+                <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregados</a>
             </div>
         </div>
     </li>
@@ -99,11 +98,12 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Tablas de Dispositivos:</h6>
-                <a class="collapse-item" href="dispositivosEntrada.php">Tablas de Recibidos</a>
-                <a class="collapse-item" href="dispositivosdeSalida.php">Tabla en la Linea</a>
-                <a class="collapse-item" href="dispositivosVerificados.php">Tala de Verificados</a>
-                <a class="collapse-item" href="dispositivosEntregados.php">Tabla de Entregados</a>
+
+                <a class="collapse-item" href="dispositivosEntrada.php">Recibidos</a>
+                <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
+                <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
+                <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>
+
 
             </div>
         </div>
