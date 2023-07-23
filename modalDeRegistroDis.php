@@ -1,10 +1,12 @@
 <!-- Modal -->
-<div class="modal fade" id="nuevoModal" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
+<div class="modal fade" id="modalDispo" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="NuevoModalLabel">Agregar Dispositivo</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <h1 class="modal-titlen text-dark mx-auto" id="NuevoModalLabel">Agregar Dispositivo</h1>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
             </div>
             <div class="modal-body">
                 <form name="crearusuario" action="guardaDispo.php" method="POST" class="">
@@ -29,11 +31,11 @@
                             pattern="[a-zA-z0-9]">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Institucion Educativa</label>
+                        <label for="exampleInputPassword1">Institucion Educativa (Donde se recibio el equipo)</label>
                         <input type="text" class="form-control" id="exampleInputPassword1" name="institucion_educativa">
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">Institucion Educativa (Donde Estudia)</label>
+                        <label for="exampleInputPassword1">Institucion Educativa (Donde Estudia el beneficiario)</label>
                         <input type="text" class="form-control" id="exampleInputPassword1"
                             name="institucion_donde_estudia">
                     </div>
@@ -60,19 +62,24 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">El Equipo Reincidio</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="equipo_reincidio" id="exampleRadios1"
+                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="exampleRadios1"
                                 value="si" checked>
                             <label class="form-check-label" for="exampleRadios1">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="equipo_reincidio" id="exampleRadios2"
+                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="exampleRadios2"
                                 value="no">
                             <label class="form-check-label" for="exampleRadios2">
                                 No
                             </label>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="motivoReincidencia">Motivo de reincidencia</label>
+                        <textarea class="form-control reincidencia" id="motivoReincidencia" rows="3"
+                            name="observaciones"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="motivo">Falla del Equipo</label>

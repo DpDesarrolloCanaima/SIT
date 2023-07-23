@@ -105,7 +105,9 @@ $resultado8 = $mysqli->query($sql2);
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="css/validation.css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -113,7 +115,20 @@ $resultado8 = $mysqli->query($sql2);
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "inc/navbarlateral.php"; ?>
+        <?php 
+            switch ($rol) {
+                case 1:
+                        include "inc/navbarlateral.php";
+                    ;
+                    break;
+                case 2:
+                        include "inc/navbarlateral.php";
+                    break;
+                case 6:
+                         include "inc/navbarlateral2.php";
+                break;    
+            }
+         ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -127,122 +142,21 @@ $resultado8 = $mysqli->query($sql2);
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#exampleModal"> Registrar Beneficiario</a>
-                    </div>
-                    <!-- DataTales Example -->
-                    <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Beneficiario</h6>
-
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>IC</th>
-                                            <th>Nombre del Beneficiario</th>
-                                            <th>Cedula</th>
-                                            <th>Edad</th>
-                                            <th>Genero</th>
-                                            <th>Fecha de Nacimiento</th>
-                                            <th>Unidad de Adscripción</th>
-                                            <th>Area</th>
-                                            <th>Cargo</th>
-                                            <th>Nombre del Representante</th>
-                                            <th>Correo</th>
-                                            <th>Telefono</th>
-                                            <th>Estado</th>
-                                            <th>Municipio</th>
-                                            <th>Dirección</th>
-                                            <th>Posee Discapacidad o Condición</th>
-                                            <th>Descripcion de Discapacidad</th>
-                                            <th>Tipo de dispositivo</th>
-                                            <th>Modelo</th>
-                                            <th>Origen</th>
-                                            <?php
-						switch($rol){
-							   case 1:
-								echo ' <th>Opciones</th> ';
-							   break;
-							}
-                                            ?>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        while ($row = $resultado->fetch_assoc()) {
-                                        ?>
-                                            <tr>
-                                                <td><?php echo $row['ic']; ?></td>
-                                                <td><?php echo $row['nombre_del_beneficiario']; ?></td>
-                                                <td><?php echo $row['cedula']; ?></td>
-                                                <td><?php echo $row['edad']; ?></td>
-                                                <td><?php echo $row['genero']; ?></td>
-                                                <td><?php echo $row['fecha_de_nacimiento']; ?></td>
-                                                <td><?php echo $row['unidad_de_adscripcion']; ?></td>
-                                                <td><?php echo $row['nombre_del_area']; ?></td>
-                                                <td><?php echo $row['tipo_de_cargo']; ?></td>
-                                                <td><?php echo $row['nombre_del_representante']; ?></td>
-                                                <td><?php echo $row['correo']; ?></td>
-                                                <td><?php echo $row['telefono']; ?></td>
-                                                <td><?php echo $row['estado_nombre']; ?></td>
-                                                <td><?php echo $row['municipio']; ?></td>
-                                                <td><?php echo $row['direccion']; ?></td>
-                                                <td><?php echo $row['posee_discapacidad_o_condicion']; ?></td>
-                                                <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
-                                                <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php echo $row['modelo']; ?></td>
-						<td><?php echo $row['origen']; ?></td>
-						<?php
-						   switch($rol){
-								  case 1:
-									echo '  <td>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                            Options
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="#"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
-								  break;
-								}
-						?>
-                                               
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <!-- Modal de registro -->
 
-                    <?php 
-                    include "modalRegistroBene.php";
-
-                    include "modalEditBene.php";
-                    ?>
-                    
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Dispositivos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos</h6>
 
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>Tipo de Dispositivo</th>
