@@ -11,36 +11,40 @@
                                 <div class="modal-body">
                                     <form name="crearusuario" action="registroDeBene.php" method="POST" class="">
                                         <div class="form-group">
-                                            <label for="exampleInputUser1">IC</label>
-                                            <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp" name="ic" pattern="[a-zA-z0-9]">
+                                            <label for="identificador">IC</label>
+                                            <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp" name="ic" pattern="[a-zA-z0-9]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputUser1">Nombre del Beneficiario</label>
-                                            <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp" name="nombre_del_beneficiario" pattern="[a-zA-Z]{4,30}">
+                                            <label for="nombreBene">Nombre del Beneficiario</label>
+                                            <input type="text" class="form-control" id="nombreBene" aria-describedby="nameHelp" name="nombre_del_beneficiario" pattern="[a-zA-Z]{4,30}">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Cédula</label>
-                                            <input type="text" class="form-control" id="exampleInputCedula1" name="cedula" pattern="[0-9]">
+                                            <label for="cedula">Cédula</label>
+                                            <input type="text" class="form-control" id="cedula" name="cedulaBene" pattern="[0-9]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Edad</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1" name="edad" pattern="[0-9]">
+                                            <label for="edadBene">Edad</label>
+                                            <input type="text" class="form-control" id="edadBene" name="edadBene" pattern="[0-9]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="genero">Genero</label>
-                                            <select name="genero" id="" class="form-control form-control-lg">
+                                            <select name="genero" id="genero" class="form-control form-control-lg">
                                                 <?php foreach ($resultado2 as $row2) : ?>
                                                     <option value="<?php echo $row2['id_genero']; ?>"><?php echo $row2['genero']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Fecha de Nacimiento</label>
-                                            <input type="date" class="form-control" id="exampleInputPassword1" name="fecha_de_nacimiento">
+                                            <label for="fechaNacBene">Fecha de Nacimiento</label>
+                                            <input type="date" class="form-control" id="fechaNacBene" name="fecha_de_nacimiento">
                                         </div>
                                         <div class="form-group">
                                             <label for="area">Area</label>
-                                            <select name="area" id="" class="form-control form-control-lg">
+                                            <select name="area" id="area" class="form-control form-control-lg">
                                                 <?php foreach ($resultado3 as $row3) : ?>
                                                     <option value="<?php echo $row3['id_area']; ?>"><?php echo $row3['nombre_del_area']; ?></option>
                                                 <?php endforeach; ?>
@@ -48,39 +52,44 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="cargo">Cargo</label>
-                                            <select name="cargo" id="" class="form-control form-control-lg">
+                                            <select name="cargo" id="cargo" class="form-control form-control-lg">
                                                 <?php foreach ($resultado4 as $row4) : ?>
                                                     <option value="<?php echo $row4['id_cargo']; ?>"><?php echo $row4['tipo_de_cargo']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Nombre del Representante</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1" name="nombre_del_representante" pattern="[a-zA-Z]">
+                                            <label for="nombreRepre">Nombre del Representante</label>
+                                            <input type="text" class="form-control" id="nombreRepre" name="nombre_del_representante" pattern="[a-zA-Z]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputEmail1">Correo</label>
-                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="correo" pattern="[a-zA-Z@.]">
+                                            <label for="correoBene">Correo</label>
+                                            <input type="email" class="form-control" id="correoBene" aria-describedby="emailHelp" name="correoBene" pattern="[a-zA-Z@.]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Telefono</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1" name="phone" pattern="[0-9-]">
+                                            <label for="telfBene">Telefono</label>
+                                            <input type="text" class="form-control" id="telfBene" name="phone" pattern="[0-9-]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
-                                            <label for="area">Estado</label>
-                                            <select name="estado" id="" class="form-control form-control-lg">
+                                            <label for="estado">Estado</label>
+                                            <select name="estado" id="estado" class="form-control form-control-lg">
                                                 <?php foreach ($resultado7 as $row7) : ?>
                                                     <option value="<?php echo $row7['id_estados']; ?>"><?php echo $row7['estado_nombre']; ?></option>
                                                 <?php endforeach; ?>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <label for="exampleInputPassword1">Municipio</label>
-                                            <input type="text" class="form-control" id="exampleInputPassword1" name="municipio" pattern="[a-zA-Z.]">
+                                            <label for="municipio">Municipio</label>
+                                            <input type="text" class="form-control" id="municipio" name="municipio" pattern="[a-zA-Z.]">
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Dirección</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="direccion" pattern="[a-zA-Z0-9.]"></textarea>
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
@@ -100,6 +109,7 @@
                                         <div class="form-group">
                                             <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion_discapacidad" pattern="[a-zA-Z0-9]"></textarea>
+                                            <span></span>
                                         </div>
                                         <div class="form-group">
                                             <label for="tipo_De_equipo">Tipo de Equipo</label>

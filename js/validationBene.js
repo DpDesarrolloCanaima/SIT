@@ -6,7 +6,7 @@ const nombreDeBeneficiario = document.querySelector("[name=nombre_del_beneficiar
 
 const cedulaDeIdentidad = document.querySelector("[name=cedulaBene]");
 
-const edadBeneficiario = document.querySelector("[name=edad]");
+const edadBeneficiario = document.querySelector("[name=edadBene]");
 
 const nombreRepresentante = document.querySelector("[name=nombre_del_representante]");
 
