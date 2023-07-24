@@ -79,11 +79,8 @@ $resultado1 = $mysqli->query($consulta1);
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-<<<<<<< HEAD
+
                             <h6 class="m-0 font-weight-bold text-primary">Usuario</h6>
-=======
-                            <h6 class="m-0 font-weight-bold text-primary">Usuarios</h6>
->>>>>>> c4d94690f39219dcced05f0fa7a60da8b29cc0ad
 
                         </div>
                         <div class="card-body">
