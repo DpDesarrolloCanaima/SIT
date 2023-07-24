@@ -1,4 +1,4 @@
-console.log("Archivo enlazado");
+console.log("Archivo enlazado Dispo");
 
 const serialEquipoField = document.querySelector("[name=serial_del_equipo]");
 

@@ -22,3 +22,4 @@
     <!--Validation JS-->
     <script src="js/validationUser.js"></script>
     <script src="js/validationDispo.js"></script>
+    <script type="js/validationBene.js"></script>

@@ -106,6 +106,7 @@ $resultado8 = $mysqli->query($sql2);
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/error.css">
 </head>
 
 <body id="page-top">
@@ -142,12 +143,12 @@ $resultado8 = $mysqli->query($sql2);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#exampleModal"> Registrar Beneficiario</a>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Beneficiario</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Beneficiario</h6>
 
                         </div>
                         <div class="card-body">
