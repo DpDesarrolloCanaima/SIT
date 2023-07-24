@@ -13,7 +13,7 @@
 
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
-                        <select name="tipo_de_equipo" id="" class="form-control form-control-lg">
+                        <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">
                             <?php foreach ($resultado5 as $row5) : ?>
                             <option value="<?php echo $row5['id_tipo_de_equipo']; ?>"><?php echo $row5['nombre']; ?>
                             </option>
@@ -24,20 +24,24 @@
                         <label for="serial_del_equipo">Serial del Equipo</label>
                         <input type="text" class="form-control" id="serial_del_equipo" aria-describedby="nameHelp"
                             name="serial_del_equipo">
+                            <span></span>
                     </div>
                     <div class="form-group">
                         <label for="serial_del_cargador">Serial del Cargador</label>
                         <input type="text" class="form-control" id="serial_del_cargador" name="serial_cargador"
                             pattern="[a-zA-z0-9]">
+                            <span></span>
                     </div>
                     <div class="form-group">
                         <label for="institucion_educativa">Institucion Educativa (Donde se recibio el equipo)</label>
                         <input type="text" class="form-control" id="institucion_educativa" name="institucion_educativa">
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <label for="institucion_donde_estudia">Institucion Educativa (Donde Estudia el beneficiario)</label>
                         <input type="text" class="form-control" id="institucion_donde_estudia"
                             name="institucion_donde_estudia">
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <label for="grado">Grado</label>
@@ -79,7 +83,8 @@
                     <div class="form-group">
                         <label for="motivoReincidencia">Motivo de reincidencia</label>
                         <textarea class="form-control reincidencia" id="motivoReincidencia" rows="3"
-                            name="observaciones"></textarea>
+                            name="motivoReincidencia"></textarea>
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <label for="falla">Falla del Equipo</label>
@@ -94,6 +99,7 @@
                         <label for="observaciones">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="3"
                             name="observaciones"></textarea>
+                            <span></span>
                     </div>
                     <div class="form-group">
                         <label for="cargo">Cargo</label>

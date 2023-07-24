@@ -67,9 +67,9 @@
         </a>
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="listadeusuario.php">Usuario</a>
+                 <a class="collapse-item" href="listadeusuario.php">Usuarios</a>
                 <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
+                <a class="collapse-item" href="listadebeneficiario.php">Beneficiarios</a>
             </div>
         </div>
     </li>
@@ -98,13 +98,10 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-
                 <a class="collapse-item" href="dispositivosentrada.php">Recibidos</a>
                 <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
                 <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
                 <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>
-
-
             </div>
         </div>
     </li>
