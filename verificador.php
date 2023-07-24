@@ -91,7 +91,7 @@ $resultado8 = $mysqli->query($sql2);
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "inc/navbarlateral.php"; ?>
+        <?php include "inc/navbarlateral3.php"; ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -100,7 +100,7 @@ $resultado8 = $mysqli->query($sql2);
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "inc/navbar.php"; ?>
+                <?php include "inc/navbar3.php"; ?>
                 <!-- End of Topbar -->
 
                 <?php 
