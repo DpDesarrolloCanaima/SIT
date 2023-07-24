@@ -99,7 +99,7 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
 
-                <a class="collapse-item" href="dispositivosEntrada.php">Recibidos</a>
+                <a class="collapse-item" href="dispositivosentrada.php">Recibidos</a>
                 <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
                 <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
                 <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>

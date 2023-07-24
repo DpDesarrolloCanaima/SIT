@@ -107,6 +107,7 @@ $resultado8 = $mysqli->query($sql2);
     <!-- Custom styles for this template-->
     <link rel="stylesheet" href="css/validation.css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/error.css">
 
 </head>
 
