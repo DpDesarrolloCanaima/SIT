@@ -125,8 +125,8 @@
                     </div>
                     <input type="hidden" name="id_roles" id="id_roles" value="6">
                     <hr>
-                    <button type="submit" class="btn btn-primary" name="registrar">Enviar</button>
-                    <button type="reset" class="btn btn-secondary">Refrescar</button>
+                    <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
+                    <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>
         </div>

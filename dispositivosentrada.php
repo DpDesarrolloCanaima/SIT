@@ -107,6 +107,7 @@ $resultado8 = $mysqli->query($sql2);
     <!-- Custom styles for this template-->
     <link rel="stylesheet" href="css/validation.css">
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/error.css">
 
 </head>
 
@@ -124,9 +125,13 @@ $resultado8 = $mysqli->query($sql2);
                 case 2:
                         include "inc/navbarlateral.php";
                     break;
+                
                 case 6:
                          include "inc/navbarlateral2.php";
-                break;    
+                break; 
+                case 7:
+                        include "inc/navbarlateral2.php";
+                    break;   
             }
          ?>
         <!-- End of Sidebar -->

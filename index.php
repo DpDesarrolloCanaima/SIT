@@ -52,17 +52,45 @@ if ($_POST) {
             }
         } else {
             // Envia un mensaje de alerta por si el password no coincide
-            echo "<script>
-                alert('la contraseña no coincide');
-                location.assing('index.php');
-            </script>";
+             echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El usuario no coincide',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 1500
+                      }).then(() => {
+
+                        location.assign('index.php');
+
+                      });
+            });
+                </script>";
         }
     } else {
         // Envia un mensaje de alerta por si el usuario no coincide no coincide
-        echo "<script>
-        alert('El usuario no coincide');
-        location.assing('index.php');
-    </script>";
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'La contrasena no coincide',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 1500
+                      }).then(() => {
+
+                        location.assign('listadeusuario.php');
+
+                      });
+            });
+                </script>";
     }
 }
 ?>
