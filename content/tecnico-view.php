@@ -3,12 +3,12 @@
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800"><?php echo company; ?></h1>
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generate Reporte</a>
         </div>
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Lista de Dispositivos</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Dispositivos</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
