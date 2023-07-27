@@ -85,7 +85,9 @@ require "function.php";
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
-                        location.assign('admin.php');
+
+                        location.assign('listadeusuario.php');
+
                       });
             });
                 </script>";
@@ -102,8 +104,10 @@ require "function.php";
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
-                        location.assign('index.php');
-                      });
+
+                        location.assign('listadeusuario.php');
+
+                     });
             });
                 </script>";
             }

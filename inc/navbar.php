@@ -35,8 +35,38 @@
           <!-- Nav Item - User Information -->
           <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $usuario;
-                    echo "<br>". $rol;?></span>
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                    <?php 
+                    switch ($rol) {
+                   case 1:
+                        echo "Administrador";
+                        break;
+                    case 2:
+                        echo "Presidencia";
+                        break;
+                    case 3:
+                        header("Location: 404.php");
+                        break;
+                    case 4:
+                        header("Location: 404.php");
+                        break;
+                    case 5:
+                        header("Location: 404.php");
+                        break;
+                    case 6:
+                        echo "Analista";
+                        break;
+                    case 7:
+                        echo "Tecnico";
+                        break;
+                    case 8:
+                        echo "Verificador";
+                        break;
+                }
+
+                    ?>
+                      
+                    </span>
                   <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
               </a>
               <!-- Dropdown - User Information -->

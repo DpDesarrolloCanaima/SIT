@@ -57,12 +57,12 @@ $resultado = $mysqli->query($consulta);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                       <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Lista de Dispositivos En la linea</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">En linea</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -76,13 +76,22 @@ $resultado = $mysqli->query($consulta);
                                             <th>Tipo de Equipo</th>
                                             <th>Modelo</th>
                                             <th>Origen</th>
-                                            <th>Options</th>
+                                            <?php 
+                                                switch ($rol) {
+                                                    case 1:
+                                                        echo '<th>Options</th>';
+                                                        break;
+                                                }
+
+                                            ?>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
+                                        //Treamos los diferentes registros de la base de datos
                                         while ($row = $resultado->fetch_assoc()) {
-                                            # code...
+                                            
                                         ?>
                                             <tr>
                                                 <td><?php echo $row['id_reparacion']; ?></td>
@@ -92,7 +101,11 @@ $resultado = $mysqli->query($consulta);
                                                 <td><?php echo $row['nombre']; ?></td>
                                                 <td><?php echo $row['modelo']; ?></td>
                                                 <td><?php echo $row['origen']; ?></td>
-                                                <td>
+                                                <?php
+                                                    switch ($rol) {
+                                                        case 1:
+                                                                echo '
+                                                                   <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             Options
@@ -101,7 +114,13 @@ $resultado = $mysqli->query($consulta);
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                         </div>
                                                     </div>
-                                                </td>
+                                                </td> 
+                                                                ';
+                                                            break;
+                                                    }
+
+                                                ?>
+                                                
                                             </tr>
                                         <?php
                                         }

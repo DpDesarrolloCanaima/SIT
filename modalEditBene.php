@@ -3,7 +3,7 @@
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-titlen text-dark mx-auto" id="exampleModalLabel">Registrar Dispositivo</h5>
+                                    <h5 class="modal-titlen text-dark mx-auto" id="exampleModalLabel">Registrar Beneficiario</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -118,8 +118,8 @@
                                             </select>
                                         </div>
                                         <hr>
-                                        <button type="submit" class="btn btn-primary" name="registrar">Enviar</button>
-                                        <button type="reset" class="btn btn-secondary">Refrescar</button>
+                                        <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
+                                        <button type="reset" class="btn btn-danger">Refrescar</button>
                                     </form>
                                 </div>
                             </div>

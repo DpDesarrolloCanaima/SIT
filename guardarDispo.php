@@ -1,6 +1,6 @@
 <?php
 
-require("config/database.php");
+require("config/conexionProvi.php");
 
 
 $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
@@ -21,18 +21,48 @@ $estatus = limpiarDatos($_POST['estatus']);
 $beneficiario = limpiarDatos($_POST['beneficiario']);
 
 $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, pertenencia_del_equipo, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, observaciones, equipo_reincidio,id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$pertenencia','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$observaciones','$cargo','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
-    if ($conexion->query($sql)) {
-        $id = $conexion->insert_id;
-    };
+$resultado = myslqi_query($conexion, $sql);
 
-header("Location: index.php");
+if ($resultado) {
+                echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Se registro correctamente el dispositivo',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 1500
+                      }).then(() => {
 
+                        location.assign('dispositivosentrada.php.php');
 
+                      });
+            });
+                </script>";
+            }else {
+                 echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Algo salio mal. Intenta de nuevo',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 1500
+                      }).then(() => {
 
+                        location.assign('dispositivosentrada.php');
 
-
-
-
+                     });
+            });
+                </script>";
+            }
+    }
 													
 function limpiarDatos($data)
 {
