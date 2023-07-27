@@ -115,7 +115,7 @@ $resultado = $mysqli->query($consulta);
                                                 <td><?php echo $row['observaciones']; ?></td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             Options
                                                         </button>
                                                         <div class="dropdown-menu">

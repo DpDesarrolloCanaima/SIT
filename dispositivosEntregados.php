@@ -137,7 +137,7 @@ $resultado8 = $mysqli->query($sqlEntregados);
                                             <td></td>
                                             <td>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-info dropdown-toggle"
+                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
                                                         data-toggle="dropdown" aria-expanded="false">
                                                         Options
                                                     </button>

@@ -55,7 +55,7 @@
                                                 <td><?php echo $row8['estatus']; ?></td>
                                                 <td>
                                                     <div class="btn-group">
-                                                        <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                                        <button type="button" class="" data-toggle="dropdown" aria-expanded="false">
                                                             Options
                                                         </button>
                                                         <div class="dropdown-menu">
