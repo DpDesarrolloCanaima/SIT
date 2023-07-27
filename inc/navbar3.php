@@ -34,6 +34,10 @@
              </div>
          </li>
 
+         <button type="button" id="btnNotificacion">
+       <img width="30" height="30" src="notificaciones/icono/notificacion.svg" alt="Icono svg">
+    </button>
+
          <div class="topbar-divider d-none d-sm-block"></div>
 
          <!-- Nav Item - User Information -->
@@ -90,9 +94,6 @@
  </nav>
  
  
- <button type="button" id="btnNotificacion">
-       <img width="30" height="30" src="notificaciones/icono/notificacion.svg" alt="Icono svg">
-    </button>
     <script src="notificaciones/index.js"></script>
         
         

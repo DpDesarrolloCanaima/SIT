@@ -20,7 +20,7 @@ function crearNotificacion() {
     
     const notificacion = new Notification('Trabajo',{
         body:'Canaimas pendientes',
-        icon: 'img/canaima.png',
+        icon: '../img/canaima.png',
     });
 
     //const notificacion2 = new Notification('CapiDeveloper',{
