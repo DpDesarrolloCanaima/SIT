@@ -88,6 +88,7 @@ $resultado8 = $mysqli->query($sql2);
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -158,6 +159,10 @@ $resultado8 = $mysqli->query($sql2);
         </div>
 
         <?php include "inc/script.php"; ?>
+        
+
+        
+        
 </body>
 
 </html>

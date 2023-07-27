@@ -1,0 +1,26 @@
+body{
+    //height: 100vh;
+    //overflow: hidden;
+    //width: auto;
+    //background-color: rgb(43, 43, 43);
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-weight: 900;
+    font-size: 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    background-color: rgb(70, 70, 70);
+    padding: 5px;
+}
+button:hover{
+    background-color: rgb(34, 34, 34);
+}
