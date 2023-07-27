@@ -125,9 +125,13 @@ $resultado8 = $mysqli->query($sql2);
                 case 2:
                         include "inc/navbarlateral.php";
                     break;
+                
                 case 6:
                          include "inc/navbarlateral2.php";
-                break;    
+                break; 
+                case 7:
+                        include "inc/navbarlateral2.php";
+                    break;   
             }
          ?>
         <!-- End of Sidebar -->

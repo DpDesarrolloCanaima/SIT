@@ -11,14 +11,14 @@ $rol = $_SESSION['id_roles'];
 
 
 
-//Consulta para traer los datos almacenados de los dispositivos
+Consulta para traer los datos almacenados de los dispositivos
 
-//$sqlEntregados = "SELECT d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
-//INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
-//INNER JOIN origen AS k ON k.id_origen = d.id_origen
-//INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario";
+$sqlEntregados = "SELECT d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.fecha_de_entrega , j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula FROM datos_del_dispotivo AS d 
+INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
+INNER JOIN origen AS k ON k.id_origen = d.id_origen
+INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario";
 
-//$resultado8 = $mysqli->query($sqlEntregados);
+$resultado8 = $mysqli->query($sqlEntregados);
 
 
 
