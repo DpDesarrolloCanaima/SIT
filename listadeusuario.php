@@ -119,7 +119,7 @@ $resultado1 = $mysqli->query($consulta1);
                                                         case 1:
                                                              echo ' <td>
                                                     <div class="btn-group">
-                                                        <button type="button" class="btn btn-info dropdown-toggle"
+                                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle"
                                                             data-toggle="dropdown" aria-expanded="false">
                                                             Opciones
                                                         </button>
