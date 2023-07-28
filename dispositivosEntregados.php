@@ -9,19 +9,14 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-
-
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sqlEntregados = "SELECT d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.fecha_de_entrega , j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula FROM datos_del_dispotivo AS d 
+$sqlEntregados = "SELECT  d.id_datos_del_beneficiario, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.fecha_de_entrega , j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario";
 
 $resultadoEntregados = $mysqli->query($sqlEntregados);
-
-
-
 
 ?>
 
@@ -93,7 +88,14 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                                             <th>origen</th>
                                             <th>Nombre del Beneficiario</th>
                                             <th>Cedula</th>
-                                            <th>Opciones</th>
+                                            <?php
+                                                switch ($rol) {
+                                                    case 1:
+                                                            echo '<th>Opciones</th>';
+                                                        break;
+                                                }
+                                            ?>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -122,12 +124,11 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                data-target="#ModalEditar" href="#"><img
+                                                                data-target="#ModalEditar'.$row['d.id_datos_del_beneficiario'].'" href="#"><img
                                                                     src="img/svg/editar.svg " alt="Industrias Canaima"
                                                                     width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="#"><img
-                                                                    src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                    width="15" height="15"> Eliminar</a>
+                                                            <a class="dropdown-item btn btn-danger" href="eliminardispositivo.php?id='.$row['d.id_datos_del_beneficiario'].'">
+                                                            <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                                         </div>
                                                     </div>
                                                         ';
@@ -144,8 +145,9 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                             </div>
                         </div>
                     </div>
-
+                    <!-- incluir los modales -->
                 </div>
+
             </div>
             <!-- End of Main Content -->
 

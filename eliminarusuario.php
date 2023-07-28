@@ -15,18 +15,44 @@ if (!isset($_SESSION['id_usuarios'])) {
 	$respuesta = mysqli_query($conex,$sql);
 	
 	if($respuesta){
-	echo "<script>
-		alert('Eliminado usuario con exito');
-		location.assign('admin.php');
+		echo "
+		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+		<script language='JavaScript'>
+		document.addEventListener('DOMContentLoaded', function() {
+			Swal.fire({
+				icon: 'success',
+				title: 'El registro fue actualizado correctamente',
+				showCancelButton: false,
+				confirmButtonColor: '#3085d6',
+				confirmButtonText: 'OK',
+				timer: 1500
+			  }).then(() => {
+
+				location.assign('listadeusuario.php');
+
+			  });
+	});
 		</script>";
+	}else {
+		 echo "
+		<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+		<script language='JavaScript'>
+		document.addEventListener('DOMContentLoaded', function() {
+			Swal.fire({
+				icon: 'error',
+				title: 'Algo salio mal. Intenta de nuevo',
+				showCancelButton: false,
+				confirmButtonColor: '#3085d6',
+				confirmButtonText: 'OK',
+				timer: 1500
+			  }).then(() => {
 
-	}else{
-	echo "<script>
-		alert('No se puedo elimnar el usuario con exito');
-		location.assign('admin.php');
-		</script>";	
+				location.assign('listadeusuario.php');
+
+			 });
+	});
+		</script>";
 	}
-
 
 
 
