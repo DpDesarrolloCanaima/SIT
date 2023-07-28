@@ -140,8 +140,10 @@ $resultado8 = $mysqli->query($sql2);
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                            data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
+                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
                     </div>
 
 
@@ -192,8 +194,8 @@ $resultado8 = $mysqli->query($sql2);
                                 </div>
                             </div>
                         </div>
-                        
-                    <?php
+
+                        <?php
                         include "modalRegistroBene.php";
 
                         include "modalDeRegistroDis.php";
@@ -203,49 +205,49 @@ $resultado8 = $mysqli->query($sql2);
 
                     <!-- /.container-fluid -->
 
-                    
 
-                        <!-- Footer -->
-                        <footer class="sticky-footer bg-white">
-                            <div class="container my-auto">
-                                <div class="copyright text-center my-auto">
-                                    <span>Copyright &copy; Industrias Canaima 2022</span>
-                                </div>
+
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Industrias Canaima 2022</span>
                             </div>
-                        </footer>
-                        <!-- End of Footer -->
-
-                    </div>
-                    <!-- End of Content Wrapper -->
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
 
                 </div>
-                <!-- End of Page Wrapper -->
+                <!-- End of Content Wrapper -->
 
-                <!-- Scroll to Top Button-->
-                <a class="scroll-to-top rounded" href="#page-top">
-                    <i class="fas fa-angle-up"></i>
-                </a>
+            </div>
+            <!-- End of Page Wrapper -->
 
-                <!-- Logout Modal-->
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-footer">
-                                <a class="btn btn-success" href="logout.php">Salir</a>
-                                <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                            </div>
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-success" href="logout.php">Salir</a>
+                            <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <?php include "inc/script.php"; ?>
+            <?php include "inc/script.php"; ?>
 </body>
 
 </html>
