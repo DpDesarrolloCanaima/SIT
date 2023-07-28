@@ -18,7 +18,7 @@ INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario";
 
-$resultado8 = $mysqli->query($sqlEntregados);
+$resultadoEntregados = $mysqli->query($sqlEntregados);
 
 
 
@@ -71,7 +71,7 @@ $resultado8 = $mysqli->query($sqlEntregados);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                       <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
                     </div>
                     <!-- DataTales Example -->
@@ -93,66 +93,52 @@ $resultado8 = $mysqli->query($sqlEntregados);
                                             <th>origen</th>
                                             <th>Nombre del Beneficiario</th>
                                             <th>Cedula</th>
-                                            <th>Options</th>
+                                            <th>Opciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                        <?php
+                                            while ($row = $resultadoEntregados -> fetch_assoc() ) {
+                                        ?>
                                         <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
-                                                        data-toggle="dropdown" aria-expanded="false">
-                                                        Options
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                            data-target="#ModalEditar" href="#"><img
-                                                                src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Editar</a>
-                                                        <a class="dropdown-item btn btn-danger" href="#"><img
-                                                                src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Eliminar</a>
+                                            <td><?php echo $row['nombre'];?></td>
+                                            <td><?php echo $row['modelo'];?></td>
+                                            <td><?php echo $row['serial_equipo'];?></td>
+                                            <td><?php echo $row['serial_de_cargador'];?></td>
+                                            <td><?php echo $row['fecha_de_recepcion'];?></td>
+                                            <td><?php echo $row['fecha_de_entregado'];?></td>
+                                            <td><?php echo $row['origen'];?></td>
+                                            <td><?php echo $row['nombre_de_beneficiario'];?></td>
+                                            <td><?php echo $row['cedula'];?></td>
+                                            <?php
+                                                switch ($rol) {
+                                                    case 1:
+                                                        echo '
+                                                        <div class="btn-group">
+                                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle"
+                                                            data-toggle="dropdown" aria-expanded="false">
+                                                            Options
+                                                        </button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal"
+                                                                data-target="#ModalEditar" href="#"><img
+                                                                    src="img/svg/editar.svg " alt="Industrias Canaima"
+                                                                    width="15" height="15"> Editar</a>
+                                                            <a class="dropdown-item btn btn-danger" href="#"><img
+                                                                    src="img/svg/eliminar.svg " alt="Industrias Canaima"
+                                                                    width="15" height="15"> Eliminar</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </td>
+                                                        ';
+                                                        break;
+                                                }
+                                            
+                                            ?>
                                         </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
-                                                        data-toggle="dropdown" aria-expanded="false">
-                                                        Options
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                            data-target="#ModalEditar" href="#"><img
-                                                                src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Editar</a>
-                                                        <a class="dropdown-item btn btn-danger" href="#"><img
-                                                                src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Eliminar</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                            }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -66,7 +66,7 @@ $resultado1 = $mysqli->query($consulta1);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                                   <?php 
+                        <?php 
                                                 switch($rol){
                                                     case 1:
                                                         echo '   <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
@@ -74,7 +74,7 @@ $resultado1 = $mysqli->query($consulta1);
                                                         break;
                                                     }
                                             ?>
-                             
+
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -114,7 +114,7 @@ $resultado1 = $mysqli->query($consulta1);
                                             <td><?php echo $row['correo']; ?></td>
                                             <td><?php echo $row['roles']; ?></td>
                                             <td><?php echo $row['registro']; ?></td>
-                                                <?php 
+                                            <?php 
                                                    switch($rol){
                                                         case 1:
                                                              echo ' <td>
@@ -146,9 +146,9 @@ $resultado1 = $mysqli->query($consulta1);
                             </div>
                         </div>
                     </div>
-                  <!-- Modales -->
+                    <!-- Modales -->
 
-                        <?php
+                    <?php
                             include "modalderegistro.php";
                             include "modaleditusuario.php";
                         ?>
