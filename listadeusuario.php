@@ -66,7 +66,7 @@ $resultado1 = $mysqli->query($consulta1);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                                   <?php 
+                        <?php 
                                                 switch($rol){
                                                     case 1:
                                                         echo '   <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
@@ -74,7 +74,7 @@ $resultado1 = $mysqli->query($consulta1);
                                                         break;
                                                     }
                                             ?>
-                             
+
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -104,6 +104,7 @@ $resultado1 = $mysqli->query($consulta1);
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        <!-- Mostramos los resultados de la consultas realizadas de la tabla usuarios -->
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) {
                                             ?>
@@ -114,7 +115,7 @@ $resultado1 = $mysqli->query($consulta1);
                                             <td><?php echo $row['correo']; ?></td>
                                             <td><?php echo $row['roles']; ?></td>
                                             <td><?php echo $row['registro']; ?></td>
-                                                <?php 
+                                            <?php 
                                                    switch($rol){
                                                         case 1:
                                                              echo ' <td>
@@ -123,14 +124,11 @@ $resultado1 = $mysqli->query($consulta1);
                                                             data-toggle="dropdown" aria-expanded="false">
                                                             Opciones
                                                         </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                data-target="#ModalEditar'.$row['id_usuarios'].'" href="#"><img
-                                                                    src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                    width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="eliminarusuario.php?id='.$row['id_usuarios'].'"><img
-                                                                    src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                    width="15" height="15"> Eliminar</a>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar'.$row['id_usuarios'].'" href="#">
+                                                        <img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
+                                                            <a class="dropdown-item btn btn-danger" href="eliminarusuario.php?id='.$row['id_usuarios'].'">
+                                                            <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                                         </div>
                                                     </div>
                                                 </td>';
@@ -146,9 +144,9 @@ $resultado1 = $mysqli->query($consulta1);
                             </div>
                         </div>
                     </div>
-                  <!-- Modales -->
+                    <!-- Modales -->
 
-                        <?php
+                    <?php
                             include "modalderegistro.php";
                             include "modaleditusuario.php";
                         ?>

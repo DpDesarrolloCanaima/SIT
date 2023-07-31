@@ -9,6 +9,18 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
+//Consulta para traer los datos almacenados de los dispositivos
+
+$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
+INNER JOIN origen AS k ON k.id_origen = d.id_origen
+INNER JOIN grado AS l ON l.id_grado = d.id_grado
+INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
+INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo";
+
+$resultado8 = $mysqli->query($sql2);
+
 
 ?>
 
@@ -44,7 +56,7 @@ $rol = $_SESSION['id_roles'];
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-        <?php include "inc/navbarlateral3.php"; ?>
+        <?php include "inc/navbarlateral2.php"; ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -53,7 +65,7 @@ $rol = $_SESSION['id_roles'];
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "inc/navbar3.php"; ?>
+                <?php include "inc/navbar.php"; ?>
                 <!-- End of Topbar -->
 
                 <?php 
@@ -94,18 +106,18 @@ $rol = $_SESSION['id_roles'];
                         </button>
                     </div>
                     <div class="modal-footer">
-                        <a class="btn btn-success" href="logout.php">Salir</a>
                         <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+                        <a class="btn btn-success" href="logout.php">Salir</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <?php include "inc/script.php"; ?>
-        
 
-        
-        
+
+
+
 </body>
 
 </html>

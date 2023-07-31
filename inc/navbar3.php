@@ -25,7 +25,7 @@
                              aria-label="Search" aria-describedby="basic-addon2">
                          <div class="input-group-append">
                              <button class="btn btn-primary" type="button">
-                                
+
                                  <i class="fas fa-search fa-sm"></i>
                              </button>
                          </div>
@@ -35,8 +35,8 @@
          </li>
 
          <button type="button" id="btnNotificacion">
-       <img width="30" height="30" src="notificaciones/icono/notificacion.svg" alt="Icono svg">
-    </button>
+             <img width="30" height="30" src="notificaciones/icono/notificacion.svg" alt="Icono svg">
+         </button>
 
          <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -85,18 +85,18 @@
                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                      Salir
                  </a>
-                 
+
              </div>
          </li>
 
      </ul>
 
  </nav>
- 
- 
-    <script src="notificaciones/index.js"></script>
-        
-        
- 
- 
+
+
+ <script src="notificaciones/index.js"></script>
+
+
+
+
  <!-- End of Topbar -->
