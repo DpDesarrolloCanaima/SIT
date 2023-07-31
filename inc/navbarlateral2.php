@@ -3,13 +3,13 @@
 
 <?php    
     switch($rol){
-    case 6:
+    case 3:
                     echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="analista.php">';
                     break;
-                case 7:
+                case 4:
                     echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="tecnico.php">';
                     break;
-                case 8:
+                case 5:
                     echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="verificador.php">';
                     break;    
                 default:
@@ -39,13 +39,13 @@
                 case 2:
                     echo '<a class="nav-link" href="presidencia.php">';
                     break;
-                case 6:
+                case 3:
                     echo '<a class="nav-link" href="analista.php">';
                     break;
-                case 7:
+                case 4:
                     echo '<a class="nav-link" href="tecnico.php">';
                     break;
-                case 8:
+                case 5:
                     echo '<a class="nav-link" href="verificador.php">';
                     break;    
             }    
