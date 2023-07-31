@@ -106,8 +106,7 @@ $resultado1 = $mysqli->query($consulta1);
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
@@ -124,7 +123,16 @@ $resultado1 = $mysqli->query($consulta1);
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="card shadow mb-4" style="width: 18rem; padding-left: 10 rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                 <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                        </div> -->
                     </div>
+                 </div>
 
                     <!-- /.container-fluid -->
 
