@@ -74,7 +74,7 @@ $resultado8 = $mysqli->query($sql2);
 
                 <?php 
 
-                    include "content/verificador-view.php";
+                    //include "content/verificador-view.php";
                 
                 ?>
                 <!-- Footer -->

@@ -39,7 +39,7 @@ if ($_POST) {
                         header("Location: verificador.php");
                         break;
                     default:
-                            "
+                           echo  "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
@@ -54,6 +54,7 @@ if ($_POST) {
               });
     });
         </script>";
+    
                         break;
                 }
 
@@ -66,7 +67,7 @@ if ($_POST) {
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
                         icon: 'error',
-                        title: 'El usuario no coincide',
+                        title: 'La contraseña no coincide',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
@@ -87,14 +88,14 @@ if ($_POST) {
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
                         icon: 'error',
-                        title: 'La contrasena no coincide',
+                        title: 'El usuario no coincide',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
 
-                        location.assign('listadeusuario.php');
+                        location.assign('index.php');
 
                       });
             });
