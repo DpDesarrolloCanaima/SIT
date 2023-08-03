@@ -34,13 +34,13 @@
                 case 2:
                     echo '<a class="nav-link" href="presidencia.php">';
                     break;
-                case 6:
+                case 3:
                     echo '<a class="nav-link" href="analista.php">';
                     break;
-                case 7:
+                case 4:
                     echo '<a class="nav-link" href="tecnico.php">';
                     break;
-                case 8:
+                case 5:
                     echo '<a class="nav-link" href="verificador.php">';
                     break;    
             }    
@@ -98,7 +98,7 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="dispositivosentrada.php">Recibidos</a>
+                <a class="collapse-item" href="dispositivosRecibidos.php">Recibidos</a>
                 <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
                 <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
                 <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>

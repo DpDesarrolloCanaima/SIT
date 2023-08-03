@@ -5,7 +5,7 @@ session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }else{
-    if ($_SESSION['id_roles'] != 6) {
+    if ($_SESSION['id_roles'] != 3) {
         header("Location: index.php");
     }
 }

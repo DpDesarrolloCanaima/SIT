@@ -15,7 +15,7 @@
 
           <?php
             switch ($rol) {
-                case 8:
+                case 4:
                     echo ' <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
@@ -88,21 +88,12 @@
                         echo "Presidencia";
                         break;
                     case 3:
-                        header("Location: 404.php");
-                        break;
-                    case 4:
-                        header("Location: 404.php");
-                        break;
-                    case 5:
-                        header("Location: 404.php");
-                        break;
-                    case 6:
                         echo "Analista";
                         break;
-                    case 7:
+                    case 4:
                         echo "Tecnico";
                         break;
-                    case 8:
+                    case 5:
                         echo "Verificador";
                         break;
                 }
