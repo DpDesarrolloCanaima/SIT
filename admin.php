@@ -86,10 +86,24 @@ $resultado1 = $mysqli->query($consulta1);
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Productividad de OAC</h6>
+
+                                    <div class="input-group sm-2">
+                                        <div class="input-group-prepend">
+                                         <label class="input-group-text" for="inputGroupSelect01">Fechas</label>
+                                     </div>
+                                        <select class="custom-select" id="inputGroupSelect01">
+                                            <option selected>Choose...</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+
+
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            
                                         </a>
                                     </div>
                                 </div>
@@ -111,7 +125,6 @@ $resultado1 = $mysqli->query($consulta1);
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                     </div>
                                 </div>
