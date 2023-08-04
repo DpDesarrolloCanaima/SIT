@@ -77,12 +77,12 @@ $resultado1 = $mysqli->query($consulta1);
                                 <span class="sr-only">Toggle Dropright</span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=1">Administrador</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=2">Presidencia</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=3">Analista</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=4">Tecnico</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=5">Verificador</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuarioAll.php">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=1" target="_blank">Administrador</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=2" target="_blank">Presidencia</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=3" target="_blank">Analista</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=4" target="_blank">Tecnico</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=5" target="_blank">Verificador</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuarioAll.php" target="_blank">Todos</a></li>
 
                             </div>
                         </div>
