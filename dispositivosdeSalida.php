@@ -62,7 +62,10 @@ $resultado = $mysqli->query($consulta);
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Dispositivo en linea</h6>
+
+                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos En linea</h6>
+
+
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
