@@ -3,7 +3,7 @@
 	require "plantilla.php";
 
 	$id = $_REQUEST['id'];
-$consulta = "SELECT u.id_usuarios, u.usuario, u.nombre, u.cedula, u.password, u.correo, u.registro, r.roles FROM usuarios AS u INNER JOIN roles AS r ON r.id_roles=u.id_roles WHERE u.id_usuarios = $id";
+$consulta = "SELECT u.id_usuarios, u.usuario, u.nombre, u.cedula, u.password, u.correo, u.registro, r.roles FROM usuarios AS u INNER JOIN roles AS r ON r.id_roles=u.id_roles WHERE u.id_roles = $id";
 $resultado = $mysqli->query($consulta);
 
 
