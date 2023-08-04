@@ -151,7 +151,25 @@ $resultado8 = $mysqli->query($sql2);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                         <?php
+                                    switch ($rol) {
+                                        case 1:
+                                            echo '
+                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                            ';
+                                            break;
+                                        case 3:
+                                                echo '
+                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                                ';
+                                            break;
+                                        default:
+                                            // code...
+                                            break;
+                                    }
+
+                                ?>
+                       
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
