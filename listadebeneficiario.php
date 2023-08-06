@@ -168,7 +168,7 @@ $resultado8 = $mysqli->query($sql2);
                                 
                                 ?>
                                 <li><a class="dropdown-item"
-                                        href="report/reportedipositivos.php?id=<?php echo $fila['id_origen'];?>"
+                                        href="report/reportebeneficiario.php?id=<?php echo $fila['id_origen'];?>"
                                         target="_blank"><?php echo $fila['origen'];?></a></li>
                                 <?php
                                     endforeach;
