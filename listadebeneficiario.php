@@ -190,9 +190,6 @@ $resultado8 = $mysqli->query($sql2);
                                                      <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
                                                 ';
                                             break;
-                                        default:
-                                            // code...
-                                            break;
                                     }
 
                                 ?>
