@@ -89,9 +89,25 @@ $resultado1 = $mysqli->query($consulta1);
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            
                                         </a>
                                     </div>
+
+                                    <div class="input-group justify-content-end">
+  
+                                <div class="input-group-append ">
+                                    <button type="button" class="btn btn-outline-secondary">Opciones</button>
+                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
+                                    </button>
+                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Action</a>
+                                    <a class="dropdown-item" href="#">Another action</a>
+                                    <a class="dropdown-item" href="#">Something else here</a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                 <a class="dropdown-item" href="#">Separated link</a>
+                             </div>
+                         </div>
+                    </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -106,13 +122,11 @@ $resultado1 = $mysqli->query($consulta1);
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -124,7 +138,16 @@ $resultado1 = $mysqli->query($consulta1);
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="card shadow mb-4" style="width: 18rem; padding-left: 10 rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                 <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                        </div> -->
                     </div>
+                 </div>
 
                     <!-- /.container-fluid -->
 
