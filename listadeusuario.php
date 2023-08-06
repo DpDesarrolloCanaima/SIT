@@ -64,25 +64,29 @@ $resultado1 = $mysqli->query($consulta1);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
-                        <!-- Split dropright button -->
                         <div class="btn-group dropright">
                             <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> 
+                                    class="fas fa-download fa-sm text-white-50"></i>
                                 Generar Reporte
                             </button>
-                            <button type="button" class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
+                            <button type="button"
+                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
                                 data-toggle="dropdown" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropright</span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=1" target="_blank">Administrador</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=2" target="_blank">Presidencia</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=3" target="_blank">Analista</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=4" target="_blank">Tecnico</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=5" target="_blank">Verificador</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuarioAll.php" target="_blank">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=1"
+                                        target="_blank">Administrador</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=2"
+                                        target="_blank">Presidencia</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=3"
+                                        target="_blank">Analista</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=4"
+                                        target="_blank">Tecnico</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=5"
+                                        target="_blank">Verificador</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuarioAll.php"
+                                        target="_blank">Todos</a></li>
 
                             </div>
                         </div>

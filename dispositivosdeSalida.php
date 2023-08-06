@@ -8,9 +8,20 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-$consulta = "SELECT r.id_reparacion, r.equipo, r.propietario, r.migracion, t.nombre, t.modelo, o.origen FROM reparacion AS r INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=r.id_tipo_de_equipo INNER JOIN origen AS o ON r.id_origen=o.id_origen";
+// $consulta = "SELECT r.id_reparacion, r.equipo, r.propietario, r.migracion, t.nombre, t.modelo, o.origen FROM reparacion AS r INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=r.id_tipo_de_equipo INNER JOIN origen AS o ON r.id_origen=o.id_origen";
 
-$resultado = $mysqli->query($consulta);
+// $resultado = $mysqli->query($consulta);
+
+
+$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
+INNER JOIN origen AS k ON k.id_origen = d.id_origen
+INNER JOIN grado AS l ON l.id_grado = d.id_grado
+INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
+INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo";
+
+$resultado8 = $mysqli->query($sql2);
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +42,9 @@ $resultado = $mysqli->query($consulta);
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -57,137 +70,53 @@ $resultado = $mysqli->query($consulta);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                       <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
+                        <a href="report/reportedipositivos.php?id=2"
+                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Dispositivos En la linea</h6>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>Tipo</th>
+                                                <th>Modelo</th>
+                                                <th>Serial del Equipo</th>
+                                                <th>Serial del Cargador</th>
+                                                <th>Pertenencia</th>
+                                                <th>Fecha de Ingreso</th>
+                                                <th>Estado</th>
+                                                <th>Fecha de Entrega</th>
+                                                <th>Observaciones</th>
+                                                <th>Estatus</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                        while ($row = $resultado8->fetch_assoc()) {
 
-                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos En linea</h6>
-
-
-                        </div>
-                        <div class="card-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>N°</th>
-                                            <th>Equipo</th>
-                                            <th>Propietario</th>
-                                            <th>Migración</th>
-                                            <th>Tipo de Equipo</th>
-                                            <th>Modelo</th>
-                                            <th>Origen</th>
-                                            <?php 
-                                                switch ($rol) {
-                                                    case 1:
-                                                        echo '<th>Options</th>';
-                                                        break;
-                                                }
-
-                                            ?>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php
-                                        //Treamos los diferentes registros de la base de datos
-                                        while ($row = $resultado->fetch_assoc()) {
-                                            
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['id_reparacion']; ?></td>
-                                                <td><?php echo $row['equipo']; ?></td>
-                                                <td><?php echo $row['propietario']; ?></td>
-                                                <td><?php echo $row['migracion']; ?></td>
                                                 <td><?php echo $row['nombre']; ?></td>
                                                 <td><?php echo $row['modelo']; ?></td>
-                                                <td><?php echo $row['origen']; ?></td>
-                                                <?php
-                                                    switch ($rol) {
-                                                        case 1:
-                                                                echo '
-                                                                   <td>
-                                                    <div class="btn-group">
-                                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                            Options
-                                                        </button>
-                                                        <div class="dropdown-menu">
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                        </div>
-                                                    </div>
-                                                </td> 
-                                                                ';
-                                                            break;
-                                                    }
-
-                                                ?>
-                                                
+                                                <td><?php echo $row['serial_equipo']; ?></td>
+                                                <td><?php echo $row['serial_de_cargador']; ?></td>
+                                                <td><?php echo $row['fecha_recepcion_equipo']; ?></td>
+                                                <td><?php echo $row['estado_recepcion_equipo']; ?></td>
+                                                <td><?php echo $row['observaciones']; ?></td>
+                                                <td><?php echo $row['estatus']; ?></td>
                                             </tr>
-                                        <?php
+                                            <?php
                                         }
                                         ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Modal de registro -->
-
-                    <!-- Modal -->
-                    <div class="modal fade" id="ModalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-titlen text-dark mx-auto" id="exampleModalLabel">Editar Equipo</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <form name="crearusuario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="">
-                                        <div class="form-group">
-                                            <label for="exampleInputUser1">N°</label>
-                                            <input type="text" class="form-control" id="disabledInput" disabled aria-describedby="nameHelp" name="id_reparacion">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputUser1">Equipo</label>
-                                            <input type="text" class="form-control" id="exampleInputUser1" aria-describedby="nameHelp" name="equipo">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Propietario</label>
-                                            <input type="password" class="form-control" id="exampleInputPassword1" name="propietario">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputPassword1">Migración</label>
-                                            <input type="text" class="form-control" id="exampleInputCedula1" name="migracion">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="tipo_de_equipo">Tipo de Equipo</label>
-                                            <select name="tipoDeEquipo" id="" class="form-control form-control-lg">
-                                                <option value="1">Table 1</option>
-                                                <option value="2">Table 2</option>
-                                                <option value="3">Canaima 1</option>
-                                                <option value="4">Canaima 2</option>
-                                                <option value="5">Canaima 3</option>
-                                                <option value="6">Canaima 4</option>
-                                                <option value="7">Canaima 5</option>
-                                                <option value="8">Canaima Docente</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Origen">Origen</label>
-                                            <select name="origen" id="" class="form-control form-control-lg">
-                                                <option value="1">Apoyo</option>
-                                                <option value="2">Beneficiario</option>
-                                                <option value="3">Trabajadores</option>
-                                            </select>
-                                        </div>
-                                        <hr>
-                                        <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
-                                        <button type="reset" class="btn btn-secondary">Refrescar</button>
-                                    </form>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -218,7 +147,8 @@ $resultado = $mysqli->query($consulta);
         </a>
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

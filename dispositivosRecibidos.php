@@ -89,7 +89,9 @@ $resultado8 = $mysqli->query($sql2);
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -115,7 +117,9 @@ $resultado8 = $mysqli->query($sql2);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                        <a href="report/reportedipositivos.php?id=1"
+                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -127,7 +131,6 @@ $resultado8 = $mysqli->query($sql2);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>N°</th>
                                             <th>Tipo</th>
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
@@ -142,6 +145,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Reincidio</th>
                                             <th>Motivo de Reincidencia</th>
                                             <th>Observaciones</th>
+                                            <th>Estatus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -149,21 +153,22 @@ $resultado8 = $mysqli->query($sql2);
                                         while ($row = $resultado8->fetch_assoc()) {
 
                                         ?>
-                                            <tr>
-                                                <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php echo $row['modelo']; ?></td>
-                                                <td><?php echo $row['serial_equipo']; ?></td>
-                                                <td><?php echo $row['serial_de_cargador']; ?></td>
-                                                <td><?php echo $row['pertenecia_del_equipo']; ?></td>
-                                                <td><?php echo $row['institucion_educativa']; ?></td>
-                                                <td><?php echo $row['grado']; ?></td>
-                                                <td><?php echo $row['institucion_donde_estudia']; ?></td>
-                                                <td><?php echo $row['fecha_recepcion_equipo']; ?></td>
-                                                <td><?php echo $row['estado_recepcion_equipo']; ?></td>
-                                                <td><?php echo $row['equipo_reincidio']; ?></td>
-                                                <td><?php echo $row['motivo_de_reincidencia']; ?></td>
-                                                <td><?php echo $row['observaciones']; ?></td>
-                                            </tr>
+                                        <tr>
+                                            <td><?php echo $row['nombre']; ?></td>
+                                            <td><?php echo $row['modelo']; ?></td>
+                                            <td><?php echo $row['serial_equipo']; ?></td>
+                                            <td><?php echo $row['serial_de_cargador']; ?></td>
+                                            <td><?php echo $row['pertenecia_del_equipo']; ?></td>
+                                            <td><?php echo $row['institucion_educativa']; ?></td>
+                                            <td><?php echo $row['grado']; ?></td>
+                                            <td><?php echo $row['institucion_donde_estudia']; ?></td>
+                                            <td><?php echo $row['fecha_recepcion_equipo']; ?></td>
+                                            <td><?php echo $row['estado_recepcion_equipo']; ?></td>
+                                            <td><?php echo $row['equipo_reincidio']; ?></td>
+                                            <td><?php echo $row['motivo_de_reincidencia']; ?></td>
+                                            <td><?php echo $row['observaciones']; ?></td>
+                                            <td><?php echo $row['estatus']; ?></td>
+                                        </tr>
                                         <?php
                                         }
                                         ?>
@@ -199,7 +204,8 @@ $resultado8 = $mysqli->query($sql2);
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
