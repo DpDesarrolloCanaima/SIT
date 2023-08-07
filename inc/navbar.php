@@ -1,3 +1,6 @@
+<?php
+require "config/conexionProvi.php";
+?>
   <!-- Topbar -->
   <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -15,56 +18,81 @@
 
           <?php
             switch ($rol) {
+<<<<<<< HEAD
+                case 8:
+                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 3 ." ORDER BY registro DESC";
+                                
+                    $resultadover = $mysqli->query($consultaver);
+
+                    $numr = $resultadover->num_rows;
+
+=======
                 case 4:
+>>>>>>> 8db22ede027bf21d88bd09b6db9e82d559149392
                     echo ' <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <i class="fas fa-bell fa-fw"></i>
                             <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">3+</span>
+                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
                         </a>
                         <!-- Dropdown - Alerts -->
                         <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
                             aria-labelledby="alertsDropdown">
                             <h6 class="dropdown-header">
-                                Alerts Center
-                            </h6>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
+                              NOTIFICACIONES
+                            </h6>';
+
+                            setlocale(LC_TIME, 'es_VE');
+
+                            $i = 0;
+
+                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                                echo '<a class="dropdown-item d-flex align-items-center" href="detalles.php?id='.$verNot['id_datos_del_dispositivo'].'">
                                 <div class="mr-3">
-                                    <div class="icon-circle bg-primary">
-                                        <i class="fas fa-file-alt text-white"></i>
+                                    <div class="bg-primary icon-circle">';
+                            $icono;
+                            switch($verNot['id_tipo_de_dispositivo']) {
+                                case 1: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                                case 3: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                                case 4: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                                case 5: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                                case 6: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                                case 7: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                                case 8: 
+                                    $icono = "img/canaimalogo2.jpg";
+                                    break;
+                            }
+
+
+                                    echo '<img class="img-fluid " src="'.$icono.'">
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="small text-gray-500">December 12, 2019</div>
-                                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-success">
-                                        <i class="fas fa-donate text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 7, 2019</div>
-                                    $290.29 has been deposited into your account!
-                                </div>
-                            </a>
-                            <a class="dropdown-item d-flex align-items-center" href="#">
-                                <div class="mr-3">
-                                    <div class="icon-circle bg-warning">
-                                        <i class="fas fa-exclamation-triangle text-white"></i>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="small text-gray-500">December 2, 2019</div>
-                                    Spending Alert: We ve noticed unusually high spending for your account.
-                                </div>
-                            </a>
-                            <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
-                        </div>
+                                <div>';
+
+                                $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+                            
+                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por verificar, observación: '.$verNot['observaciones'].'</span>
+                                 </div>
+                            </a>';
+                            $i++;
+                            }
+
+                        echo '</div>
                     </li>';
                     break;
             }
