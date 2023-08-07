@@ -17,24 +17,23 @@ if ($_POST['registrar']) {
     if ($nombre_del_beneficiario == "") {
         $nombre_del_beneficiario = "No se realizaron observaciones";
     }
-    $cedula = limpiarDatos($_POST['cedula']);
+    $cedula = limpiarDatos($_POST['cedulaBene']);
     if ($cedula == "") {
         $cedula = "No se realizaron observaciones";
     }
-    $edad = limpiarDatos($_POST['edad']);
+    $edad = limpiarDatos($_POST['edadBene']);
     if ($edad == "") {
         $edad = "No se realizaron observaciones";
     }
     $genero = limpiarDatos($_POST['genero']);
     $fecha_nac = limpiarDatos($_POST['fecha_de_nacimiento']);
-    $unidadAdscripcion = limpiarDatos($_POST['unidad_de_adscripcion']);
     $area = limpiarDatos($_POST['area']);
     $cargo = limpiarDatos($_POST['cargo']);
     $nombre_del_representante = limpiarDatos($_POST['nombre_del_representante']);
     if ($nombre_del_representante == "") {
         $nombre_del_representante = "No se realizaron observaciones";
     }
-    $correo = limpiarDatos($_POST['correo']);
+    $correo = limpiarDatos($_POST['correoBene']);
     if ($correo == "") {
         $correo = "No se realizaron observaciones";
     }
@@ -60,7 +59,7 @@ if ($_POST['registrar']) {
     $origen = limpiarDatos($_POST['origen']);
 
     $conex = $mysqli;
-    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, cedula, edad, Id_genero, fecha_de_nacimiento, unidad_de_adscripcion, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_tipo_de_equipo, id_origen) VALUES ('$ic', '$nombre_del_beneficiario', '$cedula', '$edad', '$genero', '$fecha_nac','$unidadAdscripcion','$area','$cargo','$nombre_del_representante','$correo','$telefono','$estado','$municipio','$direccion','$discapacidadCondicion','$descripcionDiscapacidadCondicion','$tipoDeEquipo', '$origen');";
+    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_tipo_de_equipo, id_origen) VALUES ('$ic', '$nombre_del_beneficiario', '$cedula', '$edad', '$genero', '$fecha_nac','$area','$cargo','$nombre_del_representante','$correo','$telefono','$estado','$municipio','$direccion','$discapacidadCondicion','$descripcionDiscapacidadCondicion','$tipoDeEquipo', '$origen');";
 
     $resultado = mysqli_query($conex, $sql);
 

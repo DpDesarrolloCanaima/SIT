@@ -12,7 +12,7 @@ $rol = $_SESSION['id_roles'];
 
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.unidad_de_adscripcion, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
 INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN area AS a ON a.id_area = e.id_area
@@ -212,7 +212,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Edad</th>
                                             <th>Genero</th>
                                             <th>Fecha de Nacimiento</th>
-                                            <th>Unidad de Adscripción</th>
                                             <th>Area</th>
                                             <th>Cargo</th>
                                             <th>Nombre del Representante</th>
@@ -246,7 +245,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row['edad']; ?></td>
                                             <td><?php echo $row['genero']; ?></td>
                                             <td><?php echo $row['fecha_de_nacimiento']; ?></td>
-                                            <td><?php echo $row['unidad_de_adscripcion']; ?></td>
                                             <td><?php echo $row['nombre_del_area']; ?></td>
                                             <td><?php echo $row['tipo_de_cargo']; ?></td>
                                             <td><?php echo $row['nombre_del_representante']; ?></td>

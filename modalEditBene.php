@@ -1,4 +1,19 @@
 <!-- Modal -->
+
+<?php
+    require "config/conexionProvi.php";
+
+    $sql = "SELECT * FROM datos_del_entregante";
+    $result = mysqli_query($mysqli, $sql);
+    while ($row2 = $result->fetch_assoc()) {
+        $idEdit = $row2['id_usuarios'];
+        $usuarioEdit = $row2['usuario'];
+        $nombreEdit = $row2['nombre'];
+        $cedulaEdit = $row2['cedula'];
+        $correoEdit = $row2['correo'];
+        $rolesEdit = $row2['id_roles'];
+        echo'';
+    ?>
 <div class="modal fade" id="editarBeneModal" tabindex="-1" aria-labelledby="editarBeneModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
