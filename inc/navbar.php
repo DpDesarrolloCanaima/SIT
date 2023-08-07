@@ -18,17 +18,15 @@ require "config/conexionProvi.php";
 
           <?php
             switch ($rol) {
-<<<<<<< HEAD
-                case 8:
+
+                case 5:
                     $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 3 ." ORDER BY registro DESC";
                                 
                     $resultadover = $mysqli->query($consultaver);
 
                     $numr = $resultadover->num_rows;
 
-=======
-                case 4:
->>>>>>> 8db22ede027bf21d88bd09b6db9e82d559149392
+                
                     echo ' <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
