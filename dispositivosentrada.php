@@ -142,10 +142,32 @@ $resultado8 = $mysqli->query($sql2);
                     <!-- Modal de registro -->
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                        <div class="btn-group dropright">
+                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-download fa-sm text-white-50"></i>
+                                Generar Reporte
+                            </button>
+                            <button type="button"
+                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <span class="sr-only"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=1"
+                                        target="_blank">Recibidos</a></li>
+                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=2"
+                                        target="_blank">En la linea</a></li>
+                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=3"
+                                        target="_blank">Verificados</a></li>
+                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=4"
+                                        target="_blank">Entregados</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
+                                        target="_blank">Todos</a></li>
 
-                                <?php
+                            </div>
+                        </div>
+
+                        <?php
                                     switch ($rol) {
                                         case 1:
                                             echo '
