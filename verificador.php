@@ -4,6 +4,10 @@ require "config/conexionProvi.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
+}else{
+    if ($_SESSION['id_roles'] != 5) {
+        header("Location: index.php");
+    }
 }
 
 $usuario = $_SESSION['usuario'];
@@ -70,7 +74,7 @@ $resultado8 = $mysqli->query($sql2);
 
                 <?php 
 
-                    include "content/verificador-view.php";
+                    //include "content/verificador-view.php";
                 
                 ?>
                 <!-- Footer -->

@@ -20,6 +20,13 @@ $resultado = $mysqli->query($consulta);
 $consulta1 = "SELECT id_roles, roles FROM roles";
 $resultado1 = $mysqli->query($consulta1);
 
+/* Consulta para los opciones de fechas de las graficas */
+
+$consulta2 = "SELECT * FROM  datos_del_dispotivo";
+
+$resultado2 = $mysqli->query($consulta2);
+
+
 
 ?>
 
@@ -86,11 +93,19 @@ $resultado1 = $mysqli->query($consulta1);
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Productividad de OAC</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                                        </a>
+                                    <!-- Buscardor de fechas-->
+                                    <div class="input-group">
+                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                        <option selected>Seleccione la fecha...</option>
+                                            <?php
+                                                while ($row1 = $resultado2->fetch_assoc())  {
+                                                    echo  '<option value="">'.$row1['fecha_de_recepcion'];'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                        <div class="input-group-append">
+                                             <button class="btn btn-outline-secondary" type="button">Buscar</button>
+                                        </div>
                                     </div>
                                 </div>
                                 <!-- Card Body -->
@@ -106,13 +121,12 @@ $resultado1 = $mysqli->query($consulta1);
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
+                                    
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -124,7 +138,16 @@ $resultado1 = $mysqli->query($consulta1);
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="card shadow mb-4" style="width: 18rem; padding-left: 10 rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                 <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                        </div> -->
                     </div>
+                 </div>
 
                     <!-- /.container-fluid -->
 

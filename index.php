@@ -30,22 +30,31 @@ if ($_POST) {
                         header("Location: presidencia.php");
                         break;
                     case 3:
-                        header("Location: 404.php");
-                        break;
-                    case 4:
-                        header("Location: 404.php");
-                        break;
-                    case 5:
-                        header("Location: 404.php");
-                        break;
-                    case 6:
                         header("Location: analista.php");
                         break;
-                    case 7:
+                    case 4:
                         header("Location: tecnico.php");
                         break;
-                    case 8:
+                    case 5:
                         header("Location: verificador.php");
+                        break;
+                    default:
+                           echo  "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Rol no existente',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('index.php');
+              });
+    });
+        </script>";
+    
                         break;
                 }
 
@@ -58,7 +67,7 @@ if ($_POST) {
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
                         icon: 'error',
-                        title: 'El usuario no coincide',
+                        title: 'La contraseña no coincide',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
@@ -79,14 +88,14 @@ if ($_POST) {
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
                         icon: 'error',
-                        title: 'La contrasena no coincide',
+                        title: 'El usuario no coincide',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
 
-                        location.assign('listadeusuario.php');
+                        location.assign('index.php');
 
                       });
             });

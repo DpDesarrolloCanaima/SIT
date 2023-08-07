@@ -102,7 +102,9 @@ $resultado8 = $mysqli->query($sql2);
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -124,13 +126,16 @@ $resultado8 = $mysqli->query($sql2);
                         include "inc/navbarlateral.php";
                     break;
 
-                case 6:
+                case 3:
                          include "inc/navbarlateral2.php";
                     break;    
 
-                case 7:
+                case 4:
                         include "inc/navbarlateral2.php";
                     break;
+                case 5:
+                    include "inc/navbarlateral2.php";
+                break;
             }
          ?>
         <!-- End of Sidebar -->
@@ -147,8 +152,48 @@ $resultado8 = $mysqli->query($sql2);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                        <div class="btn-group dropright">
+                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-download fa-sm text-white-50"></i>
+                                Generar Reporte
+                            </button>
+                            <button type="button"
+                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <span class="sr-only"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <?php
+                                    foreach ($resultado6 as $fila) :
+                                
+                                ?>
+                                <li><a class="dropdown-item"
+                                        href="report/reportebeneficiario.php?id=<?php echo $fila['id_origen'];?>"
+                                        target="_blank"><?php echo $fila['origen'];?></a></li>
+                                <?php
+                                    endforeach;
+                                ?>
+                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
+                                        target="_blank">Todos</a></li>
+
+                            </div>
+                        </div>
+                        <?php
+                                    switch ($rol) {
+                                        case 1:
+                                            echo '
+                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                            ';
+                                            break;
+                                        case 3:
+                                                echo '
+                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                                ';
+                                            break;
+                                    }
+
+                                ?>
+
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -194,28 +239,28 @@ $resultado8 = $mysqli->query($sql2);
                                         <?php
                                         while ($row = $resultado->fetch_assoc()) {
                                         ?>
-                                            <tr>
-                                                <td><?php echo $row['ic']; ?></td>
-                                                <td><?php echo $row['nombre_del_beneficiario']; ?></td>
-                                                <td><?php echo $row['cedula']; ?></td>
-                                                <td><?php echo $row['edad']; ?></td>
-                                                <td><?php echo $row['genero']; ?></td>
-                                                <td><?php echo $row['fecha_de_nacimiento']; ?></td>
-                                                <td><?php echo $row['unidad_de_adscripcion']; ?></td>
-                                                <td><?php echo $row['nombre_del_area']; ?></td>
-                                                <td><?php echo $row['tipo_de_cargo']; ?></td>
-                                                <td><?php echo $row['nombre_del_representante']; ?></td>
-                                                <td><?php echo $row['correo']; ?></td>
-                                                <td><?php echo $row['telefono']; ?></td>
-                                                <td><?php echo $row['estado_nombre']; ?></td>
-                                                <td><?php echo $row['municipio']; ?></td>
-                                                <td><?php echo $row['direccion']; ?></td>
-                                                <td><?php echo $row['posee_discapacidad_o_condicion']; ?></td>
-                                                <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
-                                                <td><?php echo $row['nombre']; ?></td>
-                                                <td><?php echo $row['modelo']; ?></td>
-                        <td><?php echo $row['origen']; ?></td>
-                        <?php
+                                        <tr>
+                                            <td><?php echo $row['ic']; ?></td>
+                                            <td><?php echo $row['nombre_del_beneficiario']; ?></td>
+                                            <td><?php echo $row['cedula']; ?></td>
+                                            <td><?php echo $row['edad']; ?></td>
+                                            <td><?php echo $row['genero']; ?></td>
+                                            <td><?php echo $row['fecha_de_nacimiento']; ?></td>
+                                            <td><?php echo $row['unidad_de_adscripcion']; ?></td>
+                                            <td><?php echo $row['nombre_del_area']; ?></td>
+                                            <td><?php echo $row['tipo_de_cargo']; ?></td>
+                                            <td><?php echo $row['nombre_del_representante']; ?></td>
+                                            <td><?php echo $row['correo']; ?></td>
+                                            <td><?php echo $row['telefono']; ?></td>
+                                            <td><?php echo $row['estado_nombre']; ?></td>
+                                            <td><?php echo $row['municipio']; ?></td>
+                                            <td><?php echo $row['direccion']; ?></td>
+                                            <td><?php echo $row['posee_discapacidad_o_condicion']; ?></td>
+                                            <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
+                                            <td><?php echo $row['nombre']; ?></td>
+                                            <td><?php echo $row['modelo']; ?></td>
+                                            <td><?php echo $row['origen']; ?></td>
+                                            <?php
                            switch($rol){
                                   case 1:
                                     echo '  <td>
@@ -229,43 +274,43 @@ $resultado8 = $mysqli->query($sql2);
                                   break;
                                 }
                         ?>
-                                               
-                                                        </div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        <?php
-                                        }
-                                        ?>
-                                    </tbody>
-                                </table>
+
                             </div>
                         </div>
+                        </td>
+                        </tr>
+                        <?php
+                                        }
+                                        ?>
+                        </tbody>
+                        </table>
                     </div>
-                    <!-- Modal de registro -->
+                </div>
+            </div>
+            <!-- Modal de registro -->
 
-                    <?php 
+            <?php 
                     include "modalRegistroBene.php";
 
                     include "modalEditBene.php";
                     ?>
-                    
-                </div>
-            </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-             <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Industrias Canaima 2022</span>
-                    </div>
-                 </div>
-             </footer>
-            <!-- End of Footer -->
 
         </div>
-        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Industrias Canaima 2022</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
@@ -276,7 +321,8 @@ $resultado8 = $mysqli->query($sql2);
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

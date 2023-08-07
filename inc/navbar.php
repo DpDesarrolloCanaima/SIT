@@ -18,6 +18,7 @@ require "config/conexionProvi.php";
 
           <?php
             switch ($rol) {
+<<<<<<< HEAD
                 case 8:
                     $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 3 ." ORDER BY registro DESC";
                                 
@@ -25,6 +26,9 @@ require "config/conexionProvi.php";
 
                     $numr = $resultadover->num_rows;
 
+=======
+                case 4:
+>>>>>>> 8db22ede027bf21d88bd09b6db9e82d559149392
                     echo ' <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
@@ -112,21 +116,12 @@ require "config/conexionProvi.php";
                         echo "Presidencia";
                         break;
                     case 3:
-                        header("Location: 404.php");
-                        break;
-                    case 4:
-                        header("Location: 404.php");
-                        break;
-                    case 5:
-                        header("Location: 404.php");
-                        break;
-                    case 6:
                         echo "Analista";
                         break;
-                    case 7:
+                    case 4:
                         echo "Tecnico";
                         break;
-                    case 8:
+                    case 5:
                         echo "Verificador";
                         break;
                 }
@@ -138,7 +133,6 @@ require "config/conexionProvi.php";
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                       <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                       Salir
