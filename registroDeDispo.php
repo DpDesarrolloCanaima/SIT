@@ -91,15 +91,15 @@ if ($_POST['registrar']) {
 
     $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
     $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-    if ($serialEquipo = "") {
+    if ($serialEquipo == "") {
         $serialEquipo = "No posee serial";
     }
     $serialCargador = limpiarDatos($_POST['serial_cargador']);
-    if ($serialCargador = "") {
+    if ($serialCargador == "") {
         $serialCargador = "No posee serial";
     }
     $pertenencia = limpiarDatos($_POST['pertenencia_del_equipo']);
-    if ($pertenencia = "") {
+    if ($pertenencia == "") {
         $pertenencia = "No posee pertenencia";
     }
     $institucionEducativa = limpiarDatos($_POST['institucion_educativa']);
@@ -109,7 +109,7 @@ if ($_POST['registrar']) {
     $fechaRecepcion = validar_fecha($_POST['fecha_de_recepcion']);
     $estadoRecepcion = limpiarDatos($_POST['estado_recepcion']);
     $observaciones = limpiarDatos($_POST['observaciones']);
-    if ($observaciones) {
+    if ($observaciones == "") {
         $observaciones = "No se realizaron observaciones";
     }
     $cargo = limpiarDatos($_POST['cargo']);
