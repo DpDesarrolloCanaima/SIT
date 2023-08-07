@@ -8,97 +8,54 @@ if ($_POST['registrar']) {
     header("Location: dispositivoEntrada.php");
 } else {
 
-    if (!preg_match("/^[a-zA-z0-9]/", $_POST['ic'])) {
-        echo "<script>
-            alert('El IC no coincide con el formato solicitado');
-            </script>";
-    };
-    if (!preg_match("/^[a-zA-Z]/", $_POST['nombre_del_beneficiario'])) {
-        echo "<script>
-                alert('La CÉDULA no coincide con el formato solicitado');
-            </script>";
-    };
-    if (!preg_match("/^[0-9]/", $_POST['cedula'])) {
-        echo "<script>
-                alert('La CÉDULA no coincide con el formato solicitado');
-            </script>";
-    };
-    if (!preg_match("/^[0-9]/", $_POST['edad'])) {
-        echo "<script>
-                alert('La EDAD no coincide con el formato solicitado');
-            </script>";
-    };
-    if ($_POST['genero'] = "") {
-        echo "<script>
-            alert('Seleccione un genero');
-        </script>";
-    }
-    if ($_POST['area'] = "") {
-        echo "<script>
-            alert('Seleccione un area');
-        </script>";
-    }
-    if ($_POST['cargo'] = "") {
-        echo "<script>
-            alert('Seleccione un cargo');
-        </script>";
-    }
-    if (!preg_match("/^[a-zA-Z@]/", $_POST['correo'])) {
-        echo "<script>
-            alert('El Correo no coincide con el formato solicitado');
-        </>";
-    };
-    if (!preg_match("/^[0-9+-]/", $_POST['telefono'])) {
-        echo "<script>
-            alert('El Telefono no coincide con el formato solicitado');
-        </script>";
-    };
-    if (!preg_match("/^[a-zA-Z]/", $_POST['estado'])) {
-        echo "<script>
-            alert('El Telefono no coincide con el formato solicitado');
-        </script>";
-    };
-    if (!preg_match("/^[a-zA-Z]/", $_POST['municipio'])) {
-        echo "<script>
-            alert('El Telefono no coincide con el formato solicitado');
-        </script>";
-    };
-    if (!preg_match("/^[a-zA-Z0-9]/", $_POST['direccion'])) {
-        echo "<script>
-            alert('El Dirección no coincide con el formato solicitado');
-        </script>";
-    };
-    if (isset($_POST['discapacidad_o_condicion'])) {
-        $discapacidad_o_condicion = $_POST['discapacidad_o_condicion'];
-        if ($discapacidad_o_condicion = "") {
-            echo "<script>
-                alert('Selecione SI o NO');
-            </script>";
-        }
-    };
-    if (!preg_match("/^[a-zA-Z0-9]/", $_POST['direccion'])) {
-        echo "<script>
-        alert('El Dirección no coincide con el formato solicitado');
-            </script>";
-        exit();
-    }; 
+
     $ic = limpiarDatos($_POST['ic']);
+    if ($ic == "") {
+        $ic = "No se realizaron observaciones";
+    }
     $nombre_del_beneficiario = limpiarDatos($_POST['nombre_del_beneficiario']);
+    if ($nombre_del_beneficiario == "") {
+        $nombre_del_beneficiario = "No se realizaron observaciones";
+    }
     $cedula = limpiarDatos($_POST['cedula']);
+    if ($cedula == "") {
+        $cedula = "No se realizaron observaciones";
+    }
     $edad = limpiarDatos($_POST['edad']);
+    if ($edad == "") {
+        $edad = "No se realizaron observaciones";
+    }
     $genero = limpiarDatos($_POST['genero']);
     $fecha_nac = limpiarDatos($_POST['fecha_de_nacimiento']);
     $unidadAdscripcion = limpiarDatos($_POST['unidad_de_adscripcion']);
     $area = limpiarDatos($_POST['area']);
     $cargo = limpiarDatos($_POST['cargo']);
     $nombre_del_representante = limpiarDatos($_POST['nombre_del_representante']);
+    if ($nombre_del_representante == "") {
+        $nombre_del_representante = "No se realizaron observaciones";
+    }
     $correo = limpiarDatos($_POST['correo']);
+    if ($correo == "") {
+        $correo = "No se realizaron observaciones";
+    }
     $telefono = limpiarDatos($_POST['phone']);
+    if ($telefono == "") {
+        $telefono = "No se realizaron observaciones";
+    }
     $estado = limpiarDatos($_POST['estado']);
     $municipio = limpiarDatos($_POST['municipio']);
+    if ($municipio == "") {
+        $municipio = "No se realizaron observaciones";
+    }
     $direccion = limpiarDatos($_POST['direccion']);
+    if ($direccion == "") {
+        $direccion = "No se realizaron observaciones";
+    }
     $discapacidadCondicion = limpiarDatos($_POST['discapacidad_o_condicion']);
     $descripcionDiscapacidadCondicion = limpiarDatos($_POST['descripcion_discapacidad']);
+    if ($descripcionDiscapacidadCondicion == "") {
+        $descripcionDiscapacidadCondicion = "No se realizaron observaciones";
+    }
     $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
     $origen = limpiarDatos($_POST['origen']);
 

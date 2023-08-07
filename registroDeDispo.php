@@ -63,6 +63,8 @@ if ($_POST['registrar']) {
     }
 
     $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
+    $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
+
     if ($serialEquipo == "") {
         $serialEquipo = "No posee serial";
     }
