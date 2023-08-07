@@ -1,105 +1,77 @@
 <?php
+session_start();
+if (!isset($_SESSION['id_usuarios'])) {
+    header("Location: index.php");
+}
+
+
+$usuario = $_SESSION['usuario'];
+$rol = $_SESSION['id_roles'];
 // Conexion a la base de datos
 require "config/conexionProvi.php";
-//  Funciones requeridas para la validacion de los datos.
-// require "function.php";
+//  Funciones requeridas para la validacion de los datos
 
 if ($_POST['registrar']) {
     header("Location: analista.php");
 } else {
-    // Validaciones de ingreso de datos
-    // if ($_POST['tipo_de_equipo'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione un dispositivo);
-    //     </script>";
-    // };
-    // if (!preg_match("/^[a-zA-z0-9]/", $_POST['serial_del_equipo'])) {
-    //     echo "<script>
-    //         alert('El IC no coincide con el formato solicitado');
-    //         </script>";
-    // };
-    // if (!preg_match("/^[a-zA-z0-9]/", $_POST['serial_cargador'])) {
-    //     echo "<script>
-    //             alert('La CÉDULA no coincide con el formato solicitado');
-    //         </script>";
-    // };
-    // if (!preg_match("/^[a-zA-Z]/", $_POST['pertenencia_del_equipo'])) {
-    //     echo "<script>
-    //             alert('La PERTENENCIA no coincide con el formato solicitado');
-    //         </script>";
-    // };
-    // if (!preg_match("/^[a-zA-Z]/", $_POST['institucion_educativa'])) {
-    //     echo "<script>
-    //             alert('La INSTITUCIÓN EDUCATIVA no coincide con el formato solicitado');
-    //         </script>";
-    // };
-    // if (!preg_match("/^[a-zA-Z]/", $_POST['institucion_donde_estudia'])) {
-    //     echo "<script>
-    //             alert('La INSTITUCIÓN EDUCATIVA no coincide con el formato solicitado');
-    //         </script>";
-    // };
-    // if ($_POST['grado'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione un grado');
-    //     </script>";
-    // };
-    // if ($_POST['estado_recepcion'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione el Estado de Recepcion Correcto');
-    //     </script>";
-    // };
-    // if ($_POST['falla'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione una falla Correcto');
-    //     </script>";
-    // };
-    // if (isset($_POST['equipo_reincidio'])) {
-    //     $equipoReincidio = $_POST['equipo_reincidio'];
-    //     if ($equipoReincidio = "") {
-    //         echo "<script>
-    //             alert('Selecione SI o NO');
-    //         </script>";
-    //     }
-    // };
-    // if (!preg_match("/^[a-zA-Z0-9]/", $_POST['observaciones"'])) {
-    //     echo "<script>
-    //     alert('rellene el campo de observaciones dentro de los caracteres establecidos');
-    //         </script>";
-    //     exit();
-    // };
-    // if ($_POST['cargo'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione una cargo Correcto');
-    //     </script>";
-    // }; 
-    // if ($_POST['origen'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione una origen Correcto');
-    //     </script>";
-    // };
-    // if ($_POST['estatus'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione una estatus Correcto');
-    //     </script>";
-    // };
-    // if ($_POST['beneficiario'] = "") {
-    //     echo "<script>
-    //         alert('Seleccione una cedula');
-    //     </script>";
-    // };
+    
     // captacion de datos y limpiaza de caracteres
+    $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
+
+    $sqlvalidation = "SELECT serial_equipo FROM datos_del_dispositivo WHERE serial_equipo = ". $serialEquipo;
+    $resultValidation = mysqli_query($mysqli, $sqlvalidation);
+    if (mysqli_num_rows($resultValidation)>0) {
+        
+        switch ($rol) {
+            case 1:
+                echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El registro ya existe',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                      }).then(() => {
+                        location.assign('admin.php');
+                      });
+            });
+                </script>
+                ";    
+                break;
+            case 3:
+                echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El registro ya existe',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('analista.php');
+              });
+    });
+        </script>
+        ";
+                break;
+        }
+    }
 
     $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
-    $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-    if ($serialEquipo = "") {
+    if ($serialEquipo == "") {
         $serialEquipo = "No posee serial";
     }
     $serialCargador = limpiarDatos($_POST['serial_cargador']);
-    if ($serialCargador = "") {
+    if ($serialCargador == "") {
         $serialCargador = "No posee serial";
     }
     $pertenencia = limpiarDatos($_POST['pertenencia_del_equipo']);
-    if ($pertenencia = "") {
+    if ($pertenencia == "") {
         $pertenencia = "No posee pertenencia";
     }
     $institucionEducativa = limpiarDatos($_POST['institucion_educativa']);
@@ -109,7 +81,7 @@ if ($_POST['registrar']) {
     $fechaRecepcion = validar_fecha($_POST['fecha_de_recepcion']);
     $estadoRecepcion = limpiarDatos($_POST['estado_recepcion']);
     $observaciones = limpiarDatos($_POST['observaciones']);
-    if ($observaciones) {
+    if ($observaciones == "") {
         $observaciones = "No se realizaron observaciones";
     }
     $cargo = limpiarDatos($_POST['cargo']);
@@ -118,22 +90,88 @@ if ($_POST['registrar']) {
     $estatus = limpiarDatos($_POST['estatus']);
     $beneficiario = limpiarDatos($_POST['beneficiario']);
 
-
-    $conex = $mysqli;
     $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, pertenencia_del_equipo, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, observaciones, equipo_reincidio,id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$pertenencia','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$observaciones','$cargo','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
 
-    $resultado = mysqli_query($conex, $sql);
+    $resultado = mysqli_query($mysqli, $sql);
 
     if ($resultado) {
-        echo "<script>
-            alert('El dispositivo se registro correctamente');
-            location.assign('analista.php');
-        </script>";
+        switch ($rol) {
+            case 1:
+                echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'sucess',
+                        title: 'Se realizo el registro',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                      }).then(() => {
+                        location.assign('admin.php');
+                      });
+            });
+                </script>
+                ";    
+                break;
+            case 3:
+                echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Se realizo el registro',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('analista.php');
+              });
+    });
+        </script>
+        ";
+                break;
+        }
     } else {
-        echo "<script>
-            alert('El dispositivo no se registro correctamente');
-            location.assign('analista.php');
-        </script>";
+        switch ($rol) {
+            case 1:
+                echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El registro fallo',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                      }).then(() => {
+                        location.assign('admin.php');
+                      });
+            });
+                </script>
+                ";    
+                break;
+            case 3:
+                echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El registro fallo',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('analista.php');
+              });
+    });
+        </script>
+        ";
+                break;
+        }
     }
 }
 
@@ -156,10 +194,9 @@ function limpiarDatos($data)
     $data = str_ireplace("SHOW TABLES;", "", $data);
     $data = str_ireplace("<?php", "", $data);
     $data = str_ireplace("?>", "", $data);
-    $data = str_ireplace("--", "", $data);
-    $data = str_ireplace("^", "", $data);
-    $data = str_ireplace("<", "", $data);
-    $data = str_ireplace(">", "", $data);
+$data = str_ireplace("--", "", $data);
+$data = str_ireplace("^", "", $data);
+$data = str_ireplace("<", "" , $data); $data=str_ireplace(">", "", $data);
     $data = str_ireplace("[", "", $data);
     $data = str_ireplace("]", "", $data);
     $data = str_ireplace("==", "", $data);
@@ -169,18 +206,15 @@ function limpiarDatos($data)
     $data = stripslashes($data);
 
     return $data;
-}
+    }
 
-function validar_fecha($fecha)
-{
+    function validar_fecha($fecha)
+    {
     $valores = explode('/', $fecha);
 
     if (count($valores) == 3 && checkdate($valores[1], $valores[0], $valores[2])) {
-        return true;
+    return true;
     } else {
-        return false;
+    return false;
     }
-}
-
-
-
+    }
