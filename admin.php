@@ -20,6 +20,13 @@ $resultado = $mysqli->query($consulta);
 $consulta1 = "SELECT id_roles, roles FROM roles";
 $resultado1 = $mysqli->query($consulta1);
 
+/* Consulta para los opciones de fechas de las graficas */
+
+$consulta2 = "SELECT * FROM  datos_del_dispotivo";
+
+$resultado2 = $mysqli->query($consulta2);
+
+
 
 ?>
 
@@ -86,28 +93,20 @@ $resultado1 = $mysqli->query($consulta1);
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Productividad de OAC</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            
-                                        </a>
+                                    <!-- Buscardor de fechas-->
+                                    <div class="input-group">
+                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                                        <option selected>Seleccione la fecha...</option>
+                                            <?php
+                                                while ($row1 = $resultado2->fetch_assoc())  {
+                                                    echo  '<option value="">'.$row1['fecha_de_recepcion'];'</option>';
+                                                }
+                                            ?>
+                                        </select>
+                                        <div class="input-group-append">
+                                             <button class="btn btn-outline-secondary" type="button">Buscar</button>
+                                        </div>
                                     </div>
-
-                                    <div class="input-group justify-content-end">
-  
-                                <div class="input-group-append ">
-                                    <button type="button" class="btn btn-outline-secondary">Opciones</button>
-                                    <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
-                                    </button>
-                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                <div role="separator" class="dropdown-divider"></div>
-                                 <a class="dropdown-item" href="#">Separated link</a>
-                             </div>
-                         </div>
-                    </div>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -124,6 +123,7 @@ $resultado1 = $mysqli->query($consulta1);
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
+                                    
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

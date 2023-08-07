@@ -18,7 +18,6 @@ $resultado2 = $mysqli->query($consulta2);
 $consulta3 = "SELECT * FROM area";
 $resultado3 = $mysqli->query($consulta3);
 
-
 // Consulta para mostrar los datos e enviar
 $consulta4 = "SELECT * FROM cargo";
 $resultado4 = $mysqli->query($consulta4);
