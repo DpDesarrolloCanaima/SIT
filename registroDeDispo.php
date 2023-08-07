@@ -15,53 +15,7 @@ if ($_POST['registrar']) {
     header("Location: analista.php");
 } else {
     
-    // captacion de datos y limpiaza de caracteres
-    $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-
-    $sqlvalidation = "SELECT serial_equipo FROM datos_del_dispositivo WHERE serial_equipo = ". $serialEquipo;
-    $resultValidation = mysqli_query($mysqli, $sqlvalidation);
-    if (mysqli_num_rows($resultValidation)>0) {
-        
-        switch ($rol) {
-            case 1:
-                echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                <script language='JavaScript'>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'El registro ya existe',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
-                      }).then(() => {
-                        location.assign('admin.php');
-                      });
-            });
-                </script>
-                ";    
-                break;
-            case 3:
-                echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'El registro ya existe',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-              }).then(() => {
-                location.assign('analista.php');
-              });
-    });
-        </script>
-        ";
-                break;
-        }
-    }
-
+    // captacion de datos y limpiaza de caracteres        
     $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
     $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
 
@@ -72,15 +26,12 @@ if ($_POST['registrar']) {
     if ($serialCargador == "") {
         $serialCargador = "No posee serial";
     }
-    $pertenencia = limpiarDatos($_POST['pertenencia_del_equipo']);
-    if ($pertenencia == "") {
-        $pertenencia = "No posee pertenencia";
-    }
     $institucionEducativa = limpiarDatos($_POST['institucion_educativa']);
     $institucionDondeEstudia = limpiarDatos($_POST['institucion_donde_estudia']);
     $falla = limpiarDatos($_POST['falla']);
     $grado = limpiarDatos($_POST['grado']);
     $fechaRecepcion = validar_fecha($_POST['fecha_de_recepcion']);
+    $fechaEntrega = validar_fecha($_POST['fecha_de_entrega']);
     $estadoRecepcion = limpiarDatos($_POST['estado_recepcion']);
     $observaciones = limpiarDatos($_POST['observaciones']);
     if ($observaciones == "") {
@@ -92,90 +43,17 @@ if ($_POST['registrar']) {
     $estatus = limpiarDatos($_POST['estatus']);
     $beneficiario = limpiarDatos($_POST['beneficiario']);
 
-    $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, pertenencia_del_equipo, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, observaciones, equipo_reincidio,id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$pertenencia','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$observaciones','$cargo','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
+    $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador ,  institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, observaciones, equipo_reincidio, motivo_reincidencia, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario)  VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$fechaEntrega','$observaciones','$cargo','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
 
     $resultado = mysqli_query($mysqli, $sql);
 
     if ($resultado) {
-        switch ($rol) {
-            case 1:
-                echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                <script language='JavaScript'>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        icon: 'sucess',
-                        title: 'Se realizo el registro',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
-                      }).then(() => {
-                        location.assign('admin.php');
-                      });
-            });
-                </script>
-                ";    
-                break;
-            case 3:
-                echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Se realizo el registro',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-              }).then(() => {
-                location.assign('analista.php');
-              });
-    });
-        </script>
-        ";
-                break;
-        }
+        echo "Se registo el dispositivo";
     } else {
-        switch ($rol) {
-            case 1:
-                echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                <script language='JavaScript'>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'El registro fallo',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
-                      }).then(() => {
-                        location.assign('admin.php');
-                      });
-            });
-                </script>
-                ";    
-                break;
-            case 3:
-                echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'El registro fallo',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-              }).then(() => {
-                location.assign('analista.php');
-              });
-    });
-        </script>
-        ";
-                break;
-        }
+        echo "No se registro el dispositivo";
     }
 }
+
 
 													
 function limpiarDatos($data)

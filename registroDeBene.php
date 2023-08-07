@@ -7,8 +7,6 @@ require "function.php";
 if ($_POST['registrar']) {
     header("Location: dispositivoEntrada.php");
 } else {
-
-
     $ic = limpiarDatos($_POST['ic']);
     if ($ic == "") {
         $ic = "No se realizaron observaciones";

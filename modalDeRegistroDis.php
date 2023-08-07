@@ -135,6 +135,10 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <label for="fechaEntrega">Fecha de Entrega</label>
+                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
+                    </div>
                     <input type="hidden" name="id_roles">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
