@@ -12,9 +12,9 @@
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    
+
                     <tbody>
-                    
+
                         <?php
 
 
@@ -48,12 +48,7 @@
                         $rowde['serial_de_cargador']."
                         </td>
                         </tr>
-                        <tr>
-                        <th>Pertenencia del Equipo</th>
-                        <td>".
-                        $rowde['pertenencia_del_equipo']."
-                        </td>
-                        </tr>
+                        
                         <tr>
                         <th>Institucion Educativa</th>
                         <td>".
