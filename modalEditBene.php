@@ -3,7 +3,7 @@
 <?php
     require "config/conexionProvi.php";
 
-    $sql = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+    $sql = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
     INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
     INNER JOIN genero AS g ON  g.id_genero=e.id_genero
     INNER JOIN area AS a ON a.id_area = e.id_area
@@ -12,25 +12,22 @@
     INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado ";
     $result = mysqli_query($mysqli, $sql);
     while ($row2 = $result->fetch_assoc()) {
-        $idEdit = $row['id_datos_del_entregante'];
-        $icEdit = $row['ic']; 
-        $nombreBeneEdit = $row['nombre_del_beneficiario'];    
-        $cedulaBeneEdit = $row['cedula']; 
-        $edadBeneEdit = $row['edad']; 
-        $fechaDeNacimiento = $row['fecha_de_nacimiento'];
-        $nombreDeAreaEdit = $row['nombre_del_area'];
-        $tipodeCargo = $row['tipo_de_cargo']; 
-        $nombreDeRepresentanteEdit = $row['nombre_del_representante']; 
-        $correoEdit = $row['correo']; 
-        $telefonoEdit =  $row['telefono']; 
-        $EstadoEdit = $row['estado_nombre']; 
-        $municipioEdit = $row['municipio']; 
-        $direccionEdit = $row['direccion'];
-        $DiscapacidadEdit = $row['posee_discapacidad_o_condicion'];
-        $descripcionEdit =  $row['descripcion_discapacidad_condicion']; 
-        $EditNombreDispo = $row['nombre'];
-        $modeloEditDispo = $row['modelo'];
-        $origenDipos = $row['origen'];
+        $idEdit = $row2['id_datos_del_entregante'];
+        $icEdit = $row2['ic']; 
+        $nombreBeneEdit = $row2['nombre_del_beneficiario'];    
+        $cedulaBeneEdit = $row2['cedula']; 
+        $edadBeneEdit = $row2['edad']; 
+        $fechaDeNacimiento = $row2['fecha_de_nacimiento'];
+        $nombreDeAreaEdit = $row2['nombre_del_area'];
+        $tipodeCargo = $row2['tipo_de_cargo']; 
+        $nombreDeRepresentanteEdit = $row2['nombre_del_representante']; 
+        $correoEdit = $row2['correo']; 
+        $telefonoEdit =  $row2['telefono']; 
+        $EstadoEdit = $row2['estado_nombre']; 
+        $municipioEdit = $row2['municipio']; 
+        $direccionEdit = $row2['direccion'];
+        $DiscapacidadEdit = $row2['posee_discapacidad_o_condicion'];
+        $descripcionEdit =  $row2['descripcion_discapacidad_condicion']; 
         echo '
         <div class="modal fade" id="editarBeneModal'.$idEdit.'" tabindex="-1" aria-labelledby="editarBeneModalLabel" aria-hidden="true">
         <div class="modal-dialog">

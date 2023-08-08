@@ -264,7 +264,7 @@ $resultado8 = $mysqli->query($sql2);
                                     echo '  <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                                            Options
+                                                            Opciones
                                                         </button>
                                                         <div class="dropdown-menu">
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editarBeneModalgit'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>

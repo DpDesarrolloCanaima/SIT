@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="registroDeDispo.php" method="POST">
+                <form name="crearusuario" action="guardarDispo.php" method="POST">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">
@@ -101,15 +101,6 @@
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="cargo">Cargo</label>
-                        <select name="cargo" id="cargo" class="form-control form-control-lg">
-                            <?php foreach ($resultado4 as $row4) : ?>
-                            <option value="<?php echo $row4['id_cargo']; ?>"><?php echo $row4['tipo_de_cargo']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="origen">Origen</label>
                         <select name="origen" id="origen" class="form-control form-control-lg">
                             <?php foreach ($resultado6 as $row6) : ?>
@@ -139,7 +130,7 @@
                         <label for="fechaEntrega">Fecha de Entrega</label>
                         <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
                     </div>
-                    <input type="hidden" name="id_roles">
+                    <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

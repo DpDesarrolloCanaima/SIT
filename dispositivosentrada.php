@@ -202,7 +202,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
-                                            <th>Pertenencia del Equipo</th>
                                             <th>Institucion Educativa</th>
                                             <th>Institucion Educativa (Donde estudia)</th>
                                             <th>Grado</th>
@@ -226,7 +225,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row8['modelo']; ?></td>
                                             <td><?php echo $row8['serial_equipo']; ?></td>
                                             <td><?php echo $row8['serial_de_cargador']; ?></td>
-                                            <td><?php echo $row8['pertenencia_del_equipo']; ?></td>
                                             <td><?php echo $row8['institucion_educativa']; ?></td>
                                             <td><?php echo $row8['institucion_donde_estudia']; ?></td>
                                             <td><?php echo $row8['grado']; ?></td>
