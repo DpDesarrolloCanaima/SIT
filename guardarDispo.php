@@ -3,14 +3,10 @@
 require("config/conexionProvi.php");
 
 $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
-    if ($tipoDeEquipo == "") {
-        echo 'Tiene que elegir un Tipo de equipo';
-    }
 $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
     if ($serialEquipo == "") {
         $serialEquipo = "No posee serial de equipo";
     }
-
 $serialCargador = limpiarDatos($_POST['serial_cargador']);
     if ($serialCargador == "") {
         $serialCargador = "No posee serial de cargador";
@@ -21,7 +17,7 @@ $institucionEducativa = limpiarDatos($_POST['institucion_educativa']);
     }
 $institucionDondeEstudia = limpiarDatos($_POST['institucion_donde_estudia']);
     if ($institucionDondeEstudia == "") {
-        institucionDondeEstudia = "No posee";
+        $institucionDondeEstudia = "No posee";
     }
 $fechaRecepcion = validar_fecha($_POST['fecha_de_recepcion']);
 $estadoRecepcion = limpiarDatos($_POST['estado_recepcion']);
@@ -43,7 +39,7 @@ $falla = limpiarDatos($_POST['falla']);
 $beneficiario = limpiarDatos($_POST['beneficiario']);
 
 
-$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo,fecha_de_entrega, observaciones, equipo_reincidio, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$fechaEntrega','$observaciones','$reincidio','$motivoreincidencia','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
+$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo,fecha_de_entrega, observaciones, equipo_reincidio, motivo_reincidencia, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$fechaEntrega','$observaciones','$reincidio','$motivoreincidencia','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
 $resultado = mysqli_query($mysqli, $sql);
 
 if ($resultado) {
@@ -128,4 +124,5 @@ $data = str_ireplace("<", "" , $data); $data=str_ireplace(">", "", $data);
     return false;
     }
     }
+
     ?>
