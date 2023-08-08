@@ -5,12 +5,11 @@
             <div class="modal-header">
                 <h1 class="modal-titlen text-dark mx-auto" id="agregarDispo">Agregar Dispositivo</h1>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="guardaDispo.php" method="POST" class="">
-
+                <form name="crearusuario" action="guardarDispo.php" method="POST">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">
@@ -24,13 +23,12 @@
                         <label for="serial_del_equipo">Serial del Equipo</label>
                         <input type="text" class="form-control" id="serial_del_equipo" aria-describedby="nameHelp"
                             name="serial_del_equipo">
-                            <span></span>
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <label for="serial_del_cargador">Serial del Cargador</label>
-                        <input type="text" class="form-control" id="serial_del_cargador" name="serial_cargador"
-                            pattern="[a-zA-z0-9]">
-                            <span></span>
+                        <input type="text" class="form-control" id="serial_del_cargador" name="serial_cargador">
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <label for="institucion_educativa">Institucion Educativa (Donde se recibio el equipo)</label>
@@ -38,7 +36,8 @@
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="institucion_donde_estudia">Institucion Educativa (Donde Estudia el beneficiario)</label>
+                        <label for="institucion_donde_estudia">Institucion Educativa (Donde Estudia el
+                            beneficiario)</label>
                         <input type="text" class="form-control" id="institucion_donde_estudia"
                             name="institucion_donde_estudia">
                         <span></span>
@@ -57,7 +56,8 @@
                     </div>
                     <div class="form-group">
                         <label for="Estado_de_Recepción_Del_Equipo">Estado de Recepción Del Equipo</label>
-                        <select name="estado_recepcion" id="Estado_de_Recepción_Del_Equipo" class="form-control form-control-lg">
+                        <select name="estado_recepcion" id="Estado_de_Recepción_Del_Equipo"
+                            class="form-control form-control-lg">
                             <?php foreach ($resultado11 as $row11) : ?>
                             <option value="<?php echo $row11['id']; ?>"><?php echo $row11['estado']; ?></option>
                             <?php endforeach; ?>
@@ -97,18 +97,8 @@
                     </div>
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
-                        <textarea class="form-control" id="observaciones" rows="3"
-                            name="observaciones"></textarea>
-                            <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="cargo">Cargo</label>
-                        <select name="cargo" id="cargo" class="form-control form-control-lg">
-                            <?php foreach ($resultado4 as $row4) : ?>
-                            <option value="<?php echo $row4['id_cargo']; ?>"><?php echo $row4['tipo_de_cargo']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
+                        <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
+                        <span></span>
                     </div>
                     <div class="form-group">
                         <label for="origen">Origen</label>
@@ -136,7 +126,11 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <input type="hidden" name="id_roles">
+                    <div class="form-group">
+                        <label for="fechaEntrega">Fecha de Entrega</label>
+                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
+                    </div>
+                    <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

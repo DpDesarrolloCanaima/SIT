@@ -18,7 +18,7 @@ require "function.php";
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
-                icon: 'success',
+                icon: 'error',
                 title: 'El registro ya existe',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
