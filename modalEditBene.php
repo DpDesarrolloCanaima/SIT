@@ -14,6 +14,7 @@
     $result = mysqli_query($mysqli, $sql);
     
     while ($row2 = $result->fetch_assoc()) {
+
         $idBeneEdit = $row['id_datos_del_entregante'];
         $icEdit = $row['ic']; 
         $nombreBeneEdit = $row['nombre_del_beneficiario'];    
