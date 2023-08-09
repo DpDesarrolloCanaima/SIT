@@ -153,12 +153,12 @@ $result = $mysqli->query($sql3);
                                 
                                 ?>
                                 <li><a class="dropdown-item"
-                                        href="report/reportebeneficiario.php?id=<?php echo $fila['id_origen'];?>"
+                                        href="report/reportebeneficiarioapoyo.php?id=<?php echo $fila['id_origen'];?>"
                                         target="_blank"><?php echo $fila['origen'];?></a></li>
                                 <?php
                                     endforeach;
                                 ?>
-                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
                                         target="_blank">Todos</a></li>
 
                             </div>
