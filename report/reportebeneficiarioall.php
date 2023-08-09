@@ -3,11 +3,8 @@
 
 	require "../config/conexionProvi.php";
 	require "plantillabeneficiario.php";
-<<<<<<< HEAD:report/reportebeneficiario.php
+
 $sql = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento,e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-=======
-$sql = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
->>>>>>> aed1ad6e041eeabde8a3de7c0cab3303f3f68a36:report/reportebeneficiarioall.php
 INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
 INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN area AS a ON a.id_area = e.id_area
@@ -28,13 +25,8 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(20, 5,"Edad", 1, 0, "C");
 	$pdf->Cell(20, 5,"Genero", 1, 0, "C");
 	$pdf->Cell(50, 5,"Fecha de nacimiento", 1, 0, "C");
-<<<<<<< HEAD:report/reportebeneficiario.php
-	$pdf->Cell(20, 5,"Area", 1, 0, "C");
-	$pdf->Cell(20, 5,"Cargo", 1, 0, "C");
-=======
 	$pdf->Cell(30, 5,"Area", 1, 0, "C");
 	$pdf->Cell(30, 5,"Cargo", 1, 0, "C");
->>>>>>> aed1ad6e041eeabde8a3de7c0cab3303f3f68a36:report/reportebeneficiarioall.php
 	$pdf->Cell(40, 5,"Representante", 1, 0, "C");
 	$pdf->Cell(50, 5,"Correo", 1, 0, "C");
 	$pdf->Cell(30, 5,"Telefono", 1, 0, "C");
@@ -52,13 +44,8 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(20, 5,$row['edad'], 1, 0, "C");
 	$pdf->Cell(20, 5,$row['genero'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['fecha_de_nacimiento'], 1, 0, "C");
-<<<<<<< HEAD:report/reportebeneficiario.php
-	$pdf->Cell(20, 5,$row['nombre_de_area'], 1, 0, "C");
-	$pdf->Cell(20, 5,$row['tipo_de_cargo'], 1, 0, "C");
-=======
 	$pdf->Cell(30, 5,utf8_decode($row['nombre_del_area']), 1, 0, "C");
 	$pdf->Cell(30, 5,utf8_decode($row['tipo_de_cargo']), 1, 0, "C");
->>>>>>> aed1ad6e041eeabde8a3de7c0cab3303f3f68a36:report/reportebeneficiarioall.php
 	$pdf->Cell(40, 5,$row['nombre_del_representante'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
