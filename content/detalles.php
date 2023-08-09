@@ -88,7 +88,7 @@
                         </td>
                         </tr>
                         <tr>
-                        <th>Motivo de Reincidencia</th>
+                        <th>Falla</th>
                         <td>".
                         $rowde['tipo_de_motivo'].'
                         </td>
@@ -97,7 +97,7 @@
                         <th>Observaciones</th>
                         <td>
                             <div class="form-group">
-                                <label for="Observacion" class="sr-only w-100">Observacion</label>
+                                <label for="Observacion" class="sr-only w-100">Observación</label>
                                 <textarea class="form-control" rows="5" id="Observacion" name="Observacion">'.$rowde['observaciones']."</textarea>                            
                                 </div>
                         </td>
