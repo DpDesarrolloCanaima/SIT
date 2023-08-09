@@ -13,6 +13,7 @@
         $correoEdit = $row2['correo'];
         $rolesEdit = $row2['id_roles'];
         echo'';
+    }
     ?>
 <div class="modal fade" id="editarBeneModal" tabindex="-1" aria-labelledby="editarBeneModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

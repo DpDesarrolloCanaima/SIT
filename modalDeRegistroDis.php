@@ -101,15 +101,6 @@
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="cargo">Cargo</label>
-                        <select name="cargo" id="cargo" class="form-control form-control-lg">
-                            <?php foreach ($resultado4 as $row4) : ?>
-                            <option value="<?php echo $row4['id_cargo']; ?>"><?php echo $row4['tipo_de_cargo']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="origen">Origen</label>
                         <select name="origen" id="origen" class="form-control form-control-lg">
                             <?php foreach ($resultado6 as $row6) : ?>
