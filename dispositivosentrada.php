@@ -157,7 +157,7 @@ $resultado8 = $mysqli->query($sql2);
                                         target="_blank">Recibidos</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
                                         target="_blank">En la linea</a></li>
-                                <li><a class="dropdown-item" href="report/reportedipositivosverificados.php?id=3"
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
                                         target="_blank">Verificados</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
                                         target="_blank">Entregados</a></li>

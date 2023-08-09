@@ -2,7 +2,7 @@
 
 
 	require "../config/conexionProvi.php";
-	require "plantillaverificados.php";
+	require "plantillaverificado.php";
 
 
 	$id = $_REQUEST['id'];
