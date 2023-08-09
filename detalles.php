@@ -4,7 +4,6 @@ require "config/conexionProvi.php";
 session_start();
 if (!isset($_SESSION['id_usuarios']) OR !isset($_GET['id'])) {
     header("Location: index.php");
-    session_destroy();
 }
 
 $usuario = $_SESSION['usuario'];

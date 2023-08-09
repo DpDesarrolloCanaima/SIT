@@ -1,9 +1,10 @@
 <!-- Modal -->
-<div class="modal fade" id="editarModal" tabindex="-1" aria-labelledby="editarModalLabel" aria-hidden="true">
+<div class="modal fade" id="editDis<?php echo $row['id_datos_del_dispositivo'];?>" tabindex="-1"
+    aria-labelledby="editarModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5" id="NuevoModalLabel">Editar Dispositivo</h1>
+                <h3 class="modal-titlen text-dark mx-auto" id="title-head-modal">Editar Dispositivo</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             </div>
             <div class="modal-body">
@@ -21,21 +22,22 @@
                     <div class="form-group">
                         <label for="exampleInputUser1">Serial del Equipo</label>
                         <input type="text" class="form-control" id="serial_del_equipo" aria-describedby="nameHelp"
-                            name="serial_del_equipo">
+                            name="serial_del_equipo" value="<?php echo $row['serial_equipo'];?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Serial del Cargador</label>
                         <input type="text" class="form-control" id="serial_cargador" name="serial_cargador"
-                            pattern="[a-zA-z0-9]">
+                            value="<?php echo $row['serial_de_cargador'];?>">
                     </div>
-                    <div class="form-group">
+                    <div class=" form-group">
                         <label for="exampleInputPassword1">Institucion Educativa</label>
-                        <input type="text" class="form-control" id="institucion_educativa" name="institucion_educativa">
+                        <input type="text" class="form-control" id="institucion_educativa" name="institucion_educativa"
+                            value="<?php echo $row['institucion_educativa'];?>">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Institucion Educativa (Donde Estudia)</label>
                         <input type="text" class="form-control" id="institucion_donde_estudia"
-                            name="institucion_donde_estudia">
+                            name="institucion_donde_estudia" value="<?php echo $row['institucion_donde_estudia'];?>">
                     </div>
                     <div class="form-group">
                         <label for="grado">Grado</label>
@@ -75,6 +77,12 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="motivoReincidencia">Motivo de reincidencia</label>
+                        <textarea class="form-control reincidencia" id="motivoReincidencia" rows="3"
+                            name="motivoReincidencia"><?php echo $row['motivo_reincidencia'];?></textarea>
+                        <span></span>
+                    </div>
+                    <div class="form-group">
                         <label for="motivo">Falla del Equipo</label>
                         <select name="falla" id="falla" class="form-control form-control-lg">
                             <?php foreach ($resultado9 as $row9) : ?>
@@ -86,16 +94,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="3"
-                            name="observaciones"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="cargo">Cargo</label>
-                        <select name="cargo" id="cargo" class="form-control form-control-lg">
-                            <?php foreach ($resultado4 as $row4) : ?>
-                            <option value="<?php echo $row4['id_cargo']; ?>"><?php echo $row4['tipo_de_cargo']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
+                            name="observaciones"><?php echo $row['observaciones'];?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="origen">Origen</label>
@@ -119,7 +118,7 @@
                         <select name="beneficiario" id="beneficiario" class="form-control form-control-lg">
                             <?php foreach ($result as $row13) : ?>
                             <option value="<?php echo $row13['id_datos_del_entregante']; ?>">
-                                <?php echo $row13['cedula']; ?></option>
+                                <?php echo $row13['nombre_del_beneficiario']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>

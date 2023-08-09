@@ -130,7 +130,7 @@ $resultado1 = $mysqli->query($consulta1);
                                     <tbody>
                                         <!-- Mostramos los resultados de la consultas realizadas de la tabla usuarios -->
                                         <?php
-                                            while ($row = $resultado->fetch_assoc()) {
+                                            while ($row = $resultado->fetch_assoc()) :
                                             ?>
                                         <tr>
                                             <td><?php echo $row['usuario']; ?></td>
@@ -149,20 +149,25 @@ $resultado1 = $mysqli->query($consulta1);
                                                             Opciones
                                                         </button>
                                                     <div class="dropdown-menu">
-                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#ModalEditar'.$row['id_usuarios'].'" href="#">
+                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editarUser'.$row['id_usuarios'].'" href="#">
                                                         <img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                             <a class="dropdown-item btn btn-danger" href="eliminarusuario.php?id='.$row['id_usuarios'].'">
                                                             <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                                         </div>
                                                     </div>
-                                                </td>';
+                                                ';
                                                             break;
                                                    }
                                                ?>
-                                        </tr>
-                                        <?php
-                                            }
+                                            </td>
+                                            <?php
+                                                include "modaleditusuario.php";
                                             ?>
+                                            <?php 
+                                                endwhile;
+                                            ?>
+                                        </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -172,7 +177,6 @@ $resultado1 = $mysqli->query($consulta1);
 
                     <?php
                             include "modalderegistro.php";
-                            include "modaleditusuario.php";
                         ?>
 
                 </div>

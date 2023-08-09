@@ -13,13 +13,13 @@ $rol = $_SESSION['id_roles'];
 // $resultado = $mysqli->query($consulta);
 
 
-$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo";
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.id_estatus = 2";
 
 $resultado8 = $mysqli->query($sql2);
 ?>
@@ -70,7 +70,7 @@ $resultado8 = $mysqli->query($sql2);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportedipositivos.php?id=2"
+                        <a href="report/reportedispositivosenlinea.php?id=2"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
@@ -89,7 +89,6 @@ $resultado8 = $mysqli->query($sql2);
                                                 <th>Modelo</th>
                                                 <th>Serial del Equipo</th>
                                                 <th>Serial del Cargador</th>
-                                                <th>Pertenencia</th>
                                                 <th>Fecha de Ingreso</th>
                                                 <th>Estado</th>
                                                 <th>Fecha de Entrega</th>
@@ -107,8 +106,9 @@ $resultado8 = $mysqli->query($sql2);
                                                 <td><?php echo $row['modelo']; ?></td>
                                                 <td><?php echo $row['serial_equipo']; ?></td>
                                                 <td><?php echo $row['serial_de_cargador']; ?></td>
-                                                <td><?php echo $row['fecha_recepcion_equipo']; ?></td>
+                                                <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                                 <td><?php echo $row['estado_recepcion_equipo']; ?></td>
+                                                <td><?php echo $row['fecha_de_entrega']; ?></td>
                                                 <td><?php echo $row['observaciones']; ?></td>
                                                 <td><?php echo $row['estatus']; ?></td>
                                             </tr>

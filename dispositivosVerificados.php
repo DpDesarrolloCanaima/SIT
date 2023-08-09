@@ -13,7 +13,7 @@ $sql1 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargado
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
-INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo";
+INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = 3";
 
 $resultado1 = $mysqli->query($sql1);
 
@@ -66,7 +66,7 @@ $resultado1 = $mysqli->query($sql1);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportedipositivos.php?id=3"
+                        <a href="report/reportedispositivoverificados.php?id=3"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
@@ -88,9 +88,8 @@ $resultado1 = $mysqli->query($sql1);
                                             <th>Motivo</th>
                                             <th>Observaciones</th>
                                             <th>Origen</th>
-                                            <th>Estatus</th>
                                             <th>Comprobaciones</th>
-                                            <th>Options</th>
+                                            <th>Estatus</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -106,25 +105,8 @@ $resultado1 = $mysqli->query($sql1);
                                             <td><?php echo $row1['tipo_de_motivo']; ?></td>
                                             <td><?php echo $row1['observaciones']; ?></td>
                                             <td><?php echo $row1['origen']; ?></td>
-                                            <td><?php echo $row1['estatus']; ?></td>
                                             <td><?php echo $row1['comprobaciones']; ?></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
-                                                        data-toggle="dropdown" aria-expanded="false">
-                                                        Options
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                            data-target="#ModalEditar" href="#"><img
-                                                                src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Editar</a>
-                                                        <a class="dropdown-item btn btn-danger" href="#"><img
-                                                                src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Eliminar</a>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td><?php echo $row1['estatus']; ?></td>
                                         </tr>
                                         <?php
                                         }

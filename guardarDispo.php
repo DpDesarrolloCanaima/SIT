@@ -19,9 +19,9 @@ $institucionDondeEstudia = limpiarDatos($_POST['institucion_donde_estudia']);
     if ($institucionDondeEstudia == "") {
         $institucionDondeEstudia = "No posee";
     }
-$fechaRecepcion = validar_fecha($_POST['fecha_de_recepcion']);
+$fechaRecepcion = $_POST['fecha_de_recepcion'];
 $estadoRecepcion = limpiarDatos($_POST['estado_recepcion']);
-$fechaEntrega = validar_fecha($_POST['fecha_de_entrega']);
+$fechaEntrega = $_POST['fecha_de_entrega'];
 $observaciones = limpiarDatos($_POST['observaciones']);
 if ($observaciones == "") {
     $observaciones = "No posee observaciones";
