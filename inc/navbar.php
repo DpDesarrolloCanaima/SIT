@@ -25,6 +25,7 @@ require "config/conexionProvi.php";
                     $resultadover = $mysqli->query($consultaver);
 
                     $numr = $resultadover->num_rows;
+
                     echo ' <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
@@ -91,7 +92,7 @@ require "config/conexionProvi.php";
                         echo '</div>
                     </li>';
                     break;
-            }
+            }   
           
           
           ?>
@@ -117,7 +118,7 @@ require "config/conexionProvi.php";
                     case 4:
                         echo "Tecnico";
                         break;
-                    case 5:
+                    case 8:
                         echo "Verificador";
                         break;
                 }

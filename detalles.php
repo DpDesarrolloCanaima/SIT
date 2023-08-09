@@ -11,6 +11,7 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
 $idDispositivo = intval($_GET['id']);
+$_SESSION['lastId'] = $idDispositivo;
 
 //Consulta para traer los datos almacenados de los dispositivos
 
