@@ -64,23 +64,8 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
-$sql3 = "SELECT id_datos_del_entregante, cedula FROM datos_del_entregante";
+$sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
-
-
-
-//Consulta para traer los datos almacenados de los dispositivos
-
-$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
-INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
-INNER JOIN origen AS k ON k.id_origen = d.id_origen
-INNER JOIN grado AS l ON l.id_grado = d.id_grado
-INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
-INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo";
-
-$resultado8 = $mysqli->query($sql2);
-
 
 ?>
 
@@ -236,7 +221,7 @@ $resultado8 = $mysqli->query($sql2);
                                     </thead>
                                     <tbody>
                                         <?php
-                                        while ($row = $resultado->fetch_assoc()) {
+                                        while ($row = $resultado->fetch_assoc()) :
                                         ?>
                                         <tr>
                                             <td><?php echo $row['ic']; ?></td>
@@ -267,7 +252,8 @@ $resultado8 = $mysqli->query($sql2);
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu">
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editarBeneModalgit'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
+
+                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                             <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
                                   break;
                                 }
@@ -276,10 +262,13 @@ $resultado8 = $mysqli->query($sql2);
                             </div>
                         </div>
                         </td>
-                        </tr>
                         <?php
-                                        }
-                                        ?>
+                            include "modalEditBene.php";
+                        ?>
+                        <?php
+                            endwhile;
+                        ?>
+                        </tr>
                         </tbody>
                         </table>
                     </div>
@@ -289,8 +278,6 @@ $resultado8 = $mysqli->query($sql2);
 
             <?php 
                     include "modalRegistroBene.php";
-
-                    include "modalEditBene.php";
                     ?>
 
         </div>

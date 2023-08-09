@@ -11,6 +11,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+            <form class="form-inline" action="verificar.php" method="get">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                     <tbody>
@@ -23,10 +24,11 @@
                         $rowdeid = $mysqli->query($sqlid);*/
                         $rowde = $resultado->fetch_assoc();
 
-                        echo "
+                        echo '
+                        
                         <tr>
                         <th>Tipo de Dispositivo</th>
-                        <td>".
+                        <td>'.
                         $rowde['nombre']."
                         </td>
                         </tr>
@@ -88,13 +90,16 @@
                         <tr>
                         <th>Motivo de Reincidencia</th>
                         <td>".
-                        $rowde['tipo_de_motivo']."
+                        $rowde['tipo_de_motivo'].'
                         </td>
                         </tr>
                         <tr>
                         <th>Observaciones</th>
-                        <td>".
-                        $rowde['observaciones']."
+                        <td>
+                            <div class="form-group">
+                                <label for="Observacion" class="sr-only w-100">Observacion</label>
+                                <textarea class="form-control" rows="5" id="Observacion" name="Observacion">'.$rowde['observaciones']."</textarea>                            
+                                </div>
                         </td>
                         </tr>
                         <tr>
@@ -108,29 +113,36 @@
                         <td>".
                         $rowde['estatus']."
                         </td>
-                        </tr>
-                        <tr>
-                        <th>Opciones</th>".'   
-                        <td>
-                            <div class="btn-group">
-                                <button type="button" class="" data-toggle="dropdown" aria-expanded="false">
-                                    Options
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                        data-target="#modalEdit" href="#"><img src="img/svg/editar.svg "
-                                            alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                    <a class="dropdown-item btn btn-danger" href="#"><img
-                                            src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                            height="15"> Eliminar</a>
-                                </div>
-                            </div>
-                        </td>
-                        </tr>                         
-                        ';
+                        </tr>";
+                        
                         ?>
                     </tbody>
                 </table>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#verificarModal">
+                        Guardar y Verificar
+                    </button>
+                        
+                        <!-- Modal -->
+                    <div class="modal fade" id="verificarModal" tabindex="-1" aria-labelledby="verificarModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="verificarModalLabel">¿Seguro que quieres realizar cambios?</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                              
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                                <button type="submit" class="btn btn-primary">Verificar</button>
+
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+                </form> 
             </div>
         </div>
     </div>
