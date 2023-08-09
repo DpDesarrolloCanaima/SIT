@@ -20,7 +20,7 @@ require "config/conexionProvi.php";
             switch ($rol) {
 
                 case 4:
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 3 ." ORDER BY registro DESC";
+                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 2 ." ORDER BY registro DESC";
                                 
                     $resultadover = $mysqli->query($consultaver);
 
@@ -46,7 +46,7 @@ require "config/conexionProvi.php";
                             $i = 0;
 
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="detalles.php?id='.$verNot['id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="detalletecnico.php?id='.$verNot['id_datos_del_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                             $icono;

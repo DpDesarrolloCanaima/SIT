@@ -12,10 +12,6 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-$consulta = "SELECT r.equipo, r.propietario, r.migracion, t.nombre, t.modelo, o.origen FROM reparacion AS r 
-INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo = r.id_tipo_de_equipo
-INNER JOIN origen AS o ON o.id_origen = r.id_origen";
-$resultado = $mysqli->query($consulta);
 
 ?>
 
@@ -62,7 +58,7 @@ $resultado = $mysqli->query($consulta);
 
                 <?php
 
-                    include "content/tecnico-view.php";
+                   //include "content/detallestecnico.php";
 
                 ?>
 
