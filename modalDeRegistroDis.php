@@ -122,7 +122,7 @@
                         <select name="beneficiario" id="beneficiario" class="form-control form-control-lg">
                             <?php foreach ($result as $row13) : ?>
                             <option value="<?php echo $row13['id_datos_del_entregante']; ?>">
-                                <?php echo $row13['cedula']; ?></option>
+                                <?php echo $row13['nombre_del_beneficiario']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
