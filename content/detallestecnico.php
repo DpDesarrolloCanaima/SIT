@@ -1,9 +1,5 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
-    </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Lista de Dispositivos</h6>
@@ -11,7 +7,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-            <form class="form-inline" action="verificar.php" method="get">
+            <form class="form-inline" action="verificartecnico.php" method="get">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                     <tbody>
