@@ -10,17 +10,6 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
 
-// Consulta para mostrar los datos e enviar
-$consulta2 = "SELECT * FROM genero";
-$resultado2 = $mysqli->query($consulta2);
-
-// Consulta para mostrar los datos e enviar
-$consulta3 = "SELECT * FROM area";
-$resultado3 = $mysqli->query($consulta3);
-
-// Consulta para mostrar los datos e enviar
-$consulta4 = "SELECT * FROM cargo";
-$resultado4 = $mysqli->query($consulta4);
 
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
@@ -29,10 +18,6 @@ $resultado5 = $mysqli->query($consulta5);
 // Consulta para mostrar los datos e enviar
 $consulta6 = "SELECT * FROM origen";
 $resultado6 = $mysqli->query($consulta6);
-
-// Consulta para mostrar los datos e enviar
-$consulta7 = "SELECT * FROM estados_venezuela";
-$resultado7 = $mysqli->query($consulta7);
 
 // Consulta para mostrar los datos e enviar
 $consulta9 = "SELECT * FROM motivo";
@@ -50,14 +35,14 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
-$sql3 = "SELECT id_datos_del_entregante, cedula FROM datos_del_entregante";
+$sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
 
 
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
@@ -153,13 +138,13 @@ $resultado8 = $mysqli->query($sql2);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=1"
+                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
                                         target="_blank">Recibidos</a></li>
-                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=2"
+                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
                                         target="_blank">En la linea</a></li>
-                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=3"
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
                                         target="_blank">Verificados</a></li>
-                                <li><a class="dropdown-item" href="report/reportedipositivos.php?id=4"
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
                                         target="_blank">Entregados</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
@@ -181,9 +166,6 @@ $resultado8 = $mysqli->query($sql2);
                             data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
                                                 ';
                                             break;
-                                        default:
-                                            // code...
-                                            break;
                                     }
 
                                 ?>
@@ -202,7 +184,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
-                                            <th>Pertenencia del Equipo</th>
                                             <th>Institucion Educativa</th>
                                             <th>Institucion Educativa (Donde estudia)</th>
                                             <th>Grado</th>
@@ -219,72 +200,85 @@ $resultado8 = $mysqli->query($sql2);
                                     </thead>
                                     <tbody>
                                         <?php
-                                        while ($row8 = $resultado8->fetch_assoc()) {
+                                        while ($row = $resultado8->fetch_assoc()) :
                                         ?>
                                         <tr>
-                                            <td><?php echo $row8['nombre']; ?></td>
-                                            <td><?php echo $row8['modelo']; ?></td>
-                                            <td><?php echo $row8['serial_equipo']; ?></td>
-                                            <td><?php echo $row8['serial_de_cargador']; ?></td>
-                                            <td><?php echo $row8['pertenencia_del_equipo']; ?></td>
-                                            <td><?php echo $row8['institucion_educativa']; ?></td>
-                                            <td><?php echo $row8['institucion_donde_estudia']; ?></td>
-                                            <td><?php echo $row8['grado']; ?></td>
-                                            <td><?php echo $row8['fecha_de_recepcion']; ?></td>
-                                            <td><?php echo $row8['estado']; ?></td>
-                                            <td><?php echo $row8['equipo_reincidio']; ?></td>
-                                            <td><?php echo $row8['motivo_reincidencia']; ?></td>
-                                            <td><?php echo $row8['tipo_de_motivo']; ?></td>
-                                            <td><?php echo $row8['observaciones']; ?></td>
-                                            <td><?php echo $row8['origen']; ?></td>
-                                            <td><?php echo $row8['estatus']; ?></td>
-                                            <td>
-                                                <div class="btn-group">
-                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
-                                                        data-toggle="dropdown" aria-expanded="false">
-                                                        Options
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                            data-target="#modalEdit" href="#"><img
-                                                                src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Editar</a>
-                                                        <a class="dropdown-item btn btn-danger" href="#"><img
-                                                                src="img/svg/eliminar.svg " alt="Industrias Canaima"
-                                                                width="15" height="15"> Eliminar</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                        };
-                                        ?>
-                                    </tbody>
-                                </table>
+                                            <td><?php echo $row['nombre']; ?></td>
+                                            <td><?php echo $row['modelo']; ?></td>
+                                            <td><?php echo $row['serial_equipo']; ?></td>
+                                            <td><?php echo $row['serial_de_cargador']; ?></td>
+                                            <td><?php echo $row['institucion_educativa']; ?></td>
+                                            <td><?php echo $row['institucion_donde_estudia']; ?></td>
+                                            <td><?php echo $row['grado']; ?></td>
+                                            <td><?php echo $row['fecha_de_recepcion']; ?></td>
+                                            <td><?php echo $row['estado']; ?></td>
+                                            <td><?php echo $row['equipo_reincidio']; ?></td>
+                                            <td><?php echo $row['motivo_reincidencia']; ?></td>
+                                            <td><?php echo $row['tipo_de_motivo']; ?></td>
+                                            <td><?php echo $row['observaciones']; ?></td>
+                                            <td><?php echo $row['origen']; ?></td>
+                                            <td><?php echo $row['estatus']; ?></td>
+
+                                            <?php
+                                                    switch ($rol) {
+                                                        case 1:
+                                                            echo '
+                                                            <td>
+                                                            <div class="btn-group">
+                                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle"
+                                                                data-toggle="dropdown" aria-expanded="false">
+                                                                Opciones
+                                                            </button>
+                                                            <div class="dropdown-menu">
+                                                                <a class="dropdown-item btn btn-warning" data-toggle="modal"
+                                                                    data-target="#editDis'.$row['id_datos_del_dispositivo'].'"
+                                                href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima"
+                                                    width="15" height="15">
+                                                Editar</a>
+                                                <a class="dropdown-item btn btn-danger"
+                                                    href="eliminardispositivo.php?id='.$row['id_datos_del_dispositivo'].'"><img
+                                                    src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
+                                                    height="15"> Eliminar</a>
+                         ';
+                        break;
+                        }
+
+                        ?>
                             </div>
                         </div>
-                    </div>
-                    <?php
-                        include "modalDeRegistroDis.php";
+                        </td>
 
-                        include "modalEditDis.php";
-                    ?>
+                        <?php
+                                            include "modalEditDis.php";
+                                        ?>
+
+                        </tr>
+                        <?php endwhile;?>
+                        </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-            <!-- End of Main Content -->
-
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Industrias Canaima 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
+            <?php
+                        include "modalDeRegistroDis.php";
+                    ?>
         </div>
-        <!-- End of Content Wrapper -->
+    </div>
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Industrias Canaima 2022</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->

@@ -1,5 +1,12 @@
 <?php
+session_start();
+if (!isset($_SESSION['id_usuarios'])) {
+    header("Location: index.php");
+}
+
+
 require('../fpdf/fpdf.php');
+
 
 class PDF extends FPDF
 {
@@ -13,7 +20,7 @@ function Header()
     // Movernos a la derecha
     $this->Cell(80);
     // Título
-    $this->Cell(380,10,'Dispositivos Entregados',0,0,'C');
+    $this->Cell(380,10,'Dispositivos',0,0,'C');
     // Salto de línea
     $this->Ln(20);
 }

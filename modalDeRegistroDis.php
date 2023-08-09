@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="registroDeDispo.php" method="POST">
+                <form name="crearusuario" action="guardarDispo.php" method="POST">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">
@@ -122,7 +122,7 @@
                         <select name="beneficiario" id="beneficiario" class="form-control form-control-lg">
                             <?php foreach ($result as $row13) : ?>
                             <option value="<?php echo $row13['id_datos_del_entregante']; ?>">
-                                <?php echo $row13['cedula']; ?></option>
+                                <?php echo $row13['nombre_del_beneficiario']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
@@ -130,7 +130,7 @@
                         <label for="fechaEntrega">Fecha de Entrega</label>
                         <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
                     </div>
-                    <input type="hidden" name="id_roles">
+                    <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

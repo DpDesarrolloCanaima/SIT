@@ -15,7 +15,7 @@ $sqlEntregados = "SELECT  d.id_datos_del_beneficiario, d.serial_equipo, d.serial
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario
-INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus";
+INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus WHERE d.id_estatus = 4";
 
 $resultadoEntregados = $mysqli->query($sqlEntregados);
 
@@ -67,7 +67,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportedipositivos.php?id=4"
+                        <a href="report/reportedispositivosentregados.php?id=4"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
@@ -104,9 +104,9 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                                             <td><?php echo $row['serial_equipo'];?></td>
                                             <td><?php echo $row['serial_de_cargador'];?></td>
                                             <td><?php echo $row['fecha_de_recepcion'];?></td>
-                                            <td><?php echo $row['fecha_de_entregado'];?></td>
+                                            <td><?php echo $row['fecha_de_entrega'];?></td>
                                             <td><?php echo $row['origen'];?></td>
-                                            <td><?php echo $row['nombre_de_beneficiario'];?></td>
+                                            <td><?php echo $row['nombre_del_beneficiario'];?></td>
                                             <td><?php echo $row['cedula'];?></td>
                                             <td><?php echo $row['estatus'];?></td>
                                         </tr>

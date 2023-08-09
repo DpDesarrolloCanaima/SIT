@@ -4,13 +4,13 @@ require "config/conexionProvi.php";
 session_start();
 if (!isset($_SESSION['id_usuarios']) OR !isset($_GET['id'])) {
     header("Location: index.php");
-    session_destroy();
 }
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
 $idDispositivo = intval($_GET['id']);
+$_SESSION['lastId'] = $idDispositivo;
 
 //Consulta para traer los datos almacenados de los dispositivos
 
