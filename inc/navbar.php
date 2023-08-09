@@ -192,7 +192,7 @@ require "config/conexionProvi.php";
                     case 4:
                         echo "Tecnico";
                         break;
-                    case 8:
+                    case 5:
                         echo "Verificador";
                         break;
                 }
