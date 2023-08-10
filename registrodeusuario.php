@@ -31,39 +31,129 @@ require "function.php";
     }else {
         $usuario = limpiarDatos(htmlspecialchars($_POST['usuario'])) ;
         if($usuario == "") {	
-         echo "<script>
-                    alert('Ingrese un usuario');
-                </script>";
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese el usuario',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadeusuario.php');
+
+                  });
+        });
+            </script>";
         }
             $nombre = limpiarDatos(htmlspecialchars($_POST['nombre'])) ;
         if($nombre == ""){
-             echo "<script>
-                    alert('Ingrese su nombre Correctamente');
-                </script>";
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese el Nombre Completo',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadeusuario.php');
+
+                  });
+        });
+            </script>";
         }
             $cedula = limpiarDatos(htmlspecialchars($_POST['cedula']));
         if($cedula == ""){
-             echo "<script>
-                    alert('Ingrese la cedula');
-                </script>";
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese la cedula',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadeusuario.php');
+
+                  });
+        });
+            </script>";
         }
             $password = limpiarDatos(htmlspecialchars($_POST['password']));
         if($password == ""){
-             echo "<script>
-                        alert('Ingrese una contraseña valida');
-                    </script>";
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese password',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadeusuario.php');
+
+                  });
+        });
+            </script>";
         }
             $correo = limpiarDatos(htmlspecialchars($_POST['correo']));
         if($correo == ""){
-             echo "<script>
-                    alert('Ingrese un correo valido');
-                </script>";
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese el correo',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadeusuario.php');
+
+                  });
+        });
+            </script>";
         }
             $perfil = limpiarDatos(htmlspecialchars($_POST['perfil'])) ;
         if($perfil == ""){
-             echo "<script>
-                    alert('Seleccione un perfil correcto');
-                </script>";
+            echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Ingrese el perfil',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadeusuario.php');
+
+                  });
+        });
+            </script>";
         }   
             $pass_c = sha1($password);
         
