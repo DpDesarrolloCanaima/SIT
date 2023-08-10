@@ -157,7 +157,7 @@ require "config/conexionProvi.php";
                                 $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
                             
                                 echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                    <span class="font-weight-bold">Nuevo equipo por verificar, observación: '.$verNot['observaciones'].'</span>
+                                    <span class="font-weight-bold">Nuevo equipo por REPARAR, observación: '.$verNot['observaciones'].'</span>
                                  </div>
                             </a>';
                             $i++;
