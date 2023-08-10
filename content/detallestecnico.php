@@ -69,7 +69,7 @@
                 </table>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#verificarModal">
-                        Guardar y Verificar
+                        Guardar y Actualizar
                     </button>
                         
                         <!-- Modal -->
@@ -85,7 +85,7 @@
                               
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                <button type="submit" class="btn btn-primary">Verificar</button>
+                                <button type="submit" class="btn btn-primary">Actualizar</button>
 
                               </div>
                             </div>
