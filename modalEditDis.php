@@ -8,8 +8,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="actualizarDispo.php" method="POST" class="">
-                    <input type="hidden" name="id_datos_del_dispositivo" id="id_datos_del_dispositivo">
+                <form name="crearusuario" action="updateDispo.php" method="POST">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_de_equipo" class="form-control form-control-lg">
@@ -49,7 +48,8 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Fecha de Recepcion</label>
-                        <input type="date" class="form-control" id="fecha_de_recepcion" name="fecha_de_recepcion">
+                        <input type="date" class="form-control" id="fecha_de_recepcion" name="fecha_de_recepcion"
+                            value="<?php echo $row['fecha_de_recepcion'];?>">
                     </div>
                     <div class="form-group">
                         <label for="Estado de Recepción Del Equipo">Estado de Recepción Del Equipo</label>
@@ -122,7 +122,13 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <input type="hidden" name="id_roles" id="id_roles" value="6">
+                    <div class="form-group">
+                        <label for="fechaEntrega">Fecha de Entrega</label>
+                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega"
+                            value="<?php echo $row['fecha_de_entrega'];?>">
+                    </div>
+                    <input type="hidden" name="id_roles" id="id_roles" value="<?php echo $rol?>">
+                    <input type="hidden" name="idEditDispo" value="<?php echo $row['id_datos_del_dispositivo'];?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
