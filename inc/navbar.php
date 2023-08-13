@@ -19,7 +19,7 @@ require "config/conexionProvi.php";
         <?php
             switch ($rol) {
                 case 3:
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 4 ." ORDER BY registro DESC";
+                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 6 ." ORDER BY registro DESC";
                                 
                     $resultadover = $mysqli->query($consultaver);
 

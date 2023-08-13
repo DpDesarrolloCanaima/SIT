@@ -68,12 +68,14 @@
                                     <?php echo $rowde['estatus'];?>
                                 </td>
                             </tr>
+                            <input type="hidden" name="id_status" value="6">
                         </tbody>
                     </table>
+
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                         data-target="#verificarModal">
-                        Guardar y Verificar
+                        Verificar
                     </button>
 
                     <!-- Modal -->

@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-<?php    
+    <?php    
     switch($rol){
     case 3:
                     echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="analista.php">';
@@ -19,10 +19,10 @@
 ?>
 
 
-           <div class="sidebar-brand-icon rotate-n-15">
-            <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
-        </div>
-        <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
+    <div class="sidebar-brand-icon rotate-n-15">
+        <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
+    </div>
+    <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
     </a>
 
     <!-- Divider -->
@@ -50,9 +50,9 @@
                     break;    
             }    
         ?>
-       
-            <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
-            <span>Home</span></a>
+
+        <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
+        <span>Home</span></a>
     </li>
 
     <!-- divider -->
@@ -72,8 +72,17 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
+                <a class="collapse-item" href="dispositivos.php">Dispositivos</a>
+                <?php
+             //    Comprobación de rol de usuario y muestra de enlace de la lista necesario para el rol.
+            switch ($rol) {
+                case 2:
+                    echo ' <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>">';
+                    break;  
+            }    
+        ?>
+
+
             </div>
         </div>
     </li>

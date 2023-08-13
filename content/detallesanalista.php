@@ -3,10 +3,11 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Dispositivo</h6>
+
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <form class="form-inline" action="verificartecnico.php" method="get">
+                <form class="form-inline" action="verificar.php" method="get">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                         <tbody>
@@ -64,16 +65,17 @@
                                     <?php echo $rowde['estatus'];?>
                                 </td>
                             </tr>
+                            <input type="hidden" name="id_status" value="4">
                         </tbody>
                     </table>
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                        data-target="#verificarModal">
-                        Guardar y Actualizar
+                        data-target="#entregarDispo">
+                        Entregado
                     </button>
 
                     <!-- Modal -->
-                    <div class="modal fade" id="verificarModal" tabindex="-1" aria-labelledby="verificarModalLabel"
+                    <div class="modal fade" id="entregarDispo" tabindex="-1" aria-labelledby="verificarModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
                             <div class="modal-content">
@@ -87,7 +89,7 @@
 
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                    <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    <button type="submit" class="btn btn-primary">Entregado</button>
 
                                 </div>
                             </div>
