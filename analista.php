@@ -66,8 +66,11 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
-// Consulta para mostrar los datos e enviar
-$sql3 = "SELECT id_datos_del_entregante, cedula FROM datos_del_entregante";
+//Consulta para traer nombre del usuario
+$consulta14 = "SELECT id_usuarios, nombre  FROM usuarios WHERE id_roles = 4";
+$resultado14 = $mysqli->query($consulta14);
+
+$sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
 
@@ -159,7 +162,7 @@ $resultado8 = $mysqli->query($sql2);
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                           
+
                                         </a>
                                     </div>
                                 </div>

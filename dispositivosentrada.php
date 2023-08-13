@@ -35,10 +35,11 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
+$consulta14 = "SELECT id_usuarios, nombre  FROM usuarios WHERE id_roles = 4";
+$resultado14 = $mysqli->query($consulta14);
+
 $sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
-
-
 
 //Consulta para traer los datos almacenados de los dispositivos
 

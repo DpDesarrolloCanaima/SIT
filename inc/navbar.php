@@ -1,22 +1,22 @@
 <?php
 require "config/conexionProvi.php";
 ?>
-  <!-- Topbar -->
-  <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+<!-- Topbar -->
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-      <!-- Sidebar Toggle (Topbar) -->
-      <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-          <i class="fa fa-bars"></i>
-      </button>
-
-
-      <!-- Topbar Navbar -->
-      <ul class="navbar-nav ml-auto">
+    <!-- Sidebar Toggle (Topbar) -->
+    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <i class="fa fa-bars"></i>
+    </button>
 
 
-          <!-- Dropdown - Messages -->
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
 
-          <?php
+
+        <!-- Dropdown - Messages -->
+
+        <?php
             switch ($rol) {
                 case 3:
                     $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 4 ." ORDER BY registro DESC";
@@ -45,7 +45,7 @@ require "config/conexionProvi.php";
                             $i = 0;
 
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="detalletecnico.php?id='.$verNot['id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="detalleanalista.php?id='.$verNot['id_datos_del_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                             $icono;
@@ -243,14 +243,14 @@ require "config/conexionProvi.php";
           
           ?>
 
-          <div class="topbar-divider d-none d-sm-block"></div>
+        <div class="topbar-divider d-none d-sm-block"></div>
 
-          <!-- Nav Item - User Information -->
-          <li class="nav-item dropdown no-arrow">
-              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
-                  aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                      <?php 
+        <!-- Nav Item - User Information -->
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                    <?php 
                     switch ($rol) {
                    case 1:
                         echo "Administrador";
@@ -271,19 +271,19 @@ require "config/conexionProvi.php";
 
                     ?>
 
-                  </span>
-                  <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
-              </a>
-              <!-- Dropdown - User Information -->
-              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                  <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                      Salir
-                  </a>
-              </div>
-          </li>
+                </span>
+                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+            </a>
+            <!-- Dropdown - User Information -->
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    Salir
+                </a>
+            </div>
+        </li>
 
-      </ul>
+    </ul>
 
-  </nav>
-  <!-- End of Topbar -->
+</nav>
+<!-- End of Topbar -->

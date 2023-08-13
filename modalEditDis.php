@@ -123,6 +123,15 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="responsable">Responsable</label>
+                        <select name="responsable" id="responsable" class="form-control form-control-lg">
+                            <?php foreach ($resultado14 as $row14) : ?>
+                            <option value="<?php echo $row14['id_usuarios']; ?>">
+                                <?php echo $row14['nombre']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
                         <label for="fechaEntrega">Fecha de Entrega</label>
                         <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega"
                             value="<?php echo $row['fecha_de_entrega'];?>">

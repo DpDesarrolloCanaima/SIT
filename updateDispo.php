@@ -20,9 +20,10 @@ if ($_POST) {
     $estatusEdit = limpiarDatos($_POST['estatus']);
     $beneficiarioEdit = limpiarDatos($_POST['beneficiario']);
     $idRoledit = limpiarDatos($_POST['id_roles']);
+    $responsableEdit = limpiarDatos($_POST['responsable']);
     
     require "config/conexionProvi.php";
-    $sql = "UPDATE datos_del_dispotivo SET id_tipo_de_dispositivo = '$tipoDeEquipoEdit', serial_equipo = '$SerialEquipoEdit', serial_de_cargador = '$serialCargadorEdit', institucion_educativa = '$institucionEduEdit', institucion_donde_estudia = '$institucionDondeEstudiaEdit', fecha_de_recepcion = '$fechaRecepEdit', estado_recepcion_equipo = '$estadoDeRecepcionEdit', fecha_de_entrega = '$fechaDeEntregaEdit', observaciones = '$observacionesEdit', equipo_reincidio = '$equipoReincidioEdit', motivo_reincidencia = '$motivoReincidenciaEdit', id_roles = '$idRoledit', id_origen = '$origenEdit', id_grado = '$gradoEdit', id_estatus = '$estatusEdit', id_motivo = '$fallaEdit', id_datos_del_beneficiario = '$beneficiarioEdit' WHERE id_datos_del_dispositivo = $idEditDispo";
+    $sql = "UPDATE datos_del_dispotivo SET id_tipo_de_dispositivo = '$tipoDeEquipoEdit', serial_equipo = '$SerialEquipoEdit', serial_de_cargador = '$serialCargadorEdit', institucion_educativa = '$institucionEduEdit', institucion_donde_estudia = '$institucionDondeEstudiaEdit', fecha_de_recepcion = '$fechaRecepEdit', estado_recepcion_equipo = '$estadoDeRecepcionEdit', fecha_de_entrega = '$fechaDeEntregaEdit',responsable = '$responsableEdit' ,observaciones = '$observacionesEdit', equipo_reincidio = '$equipoReincidioEdit', motivo_reincidencia = '$motivoReincidenciaEdit', id_roles = '$idRoledit', id_origen = '$origenEdit', id_grado = '$gradoEdit', id_estatus = '$estatusEdit', id_motivo = '$fallaEdit', id_datos_del_beneficiario = '$beneficiarioEdit' WHERE id_datos_del_dispositivo = $idEditDispo";
 
     $resultado = mysqli_query($mysqli, $sql);
 
