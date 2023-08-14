@@ -9,6 +9,7 @@ if (!isset($_SESSION['id_usuarios'])) {
         header("Location: index.php");
     }
 }
+$id_usuario = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $idDispositivo = $_GET['id'];
@@ -78,7 +79,7 @@ $resultado = $mysqli->query($sql);
 
                 <?php
 
-                   include "content/detallestecnico.php";
+                   include "content/detallesanalista.php";
 
                 ?>
 

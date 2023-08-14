@@ -64,6 +64,9 @@
                                     <?php echo $rowde['estatus'];?>
                                 </td>
                             </tr>
+                            <input type="hidden" name="id_status" value="5">
+                            <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
+                            <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                         </tbody>
                     </table>
                     <!-- Button trigger modal -->

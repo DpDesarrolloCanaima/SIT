@@ -6,6 +6,7 @@ if (!isset($_SESSION['id_usuarios']) OR !isset($_GET['id'])) {
     header("Location: index.php");
 }
 
+$id_usuario = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
