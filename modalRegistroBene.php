@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="registroDeBene.php" method="POST" class="">
+                <form action="registroDeBene.php" method="POST">
                     <div class="form-group">
                         <label for="identificador">IC</label>
                         <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp"

@@ -186,7 +186,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <?php
                                                     switch ($rol) {
                                                         case 3:
-                                                            echo '<td><a class="btn btn-primary" href="detallesanalista.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                            echo '<td><a class="btn btn-primary" href="detalleanalista.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
                                                             break;
                                                             case 4:
                                                                 echo '<td><a class="btn btn-primary" href="detalletecnico.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
@@ -208,6 +208,7 @@ $resultado8 = $mysqli->query($sql2);
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <footer class="sticky-footer bg-white">

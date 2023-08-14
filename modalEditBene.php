@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="updateBene.php" method="POST">
+                <form action="updateBene.php" method="POST">
                     <div class="form-group">
                         <label for="identificador">IC</label>
                         <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp" name="icedit"

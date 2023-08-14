@@ -25,7 +25,7 @@ if ($resultado) {
     <script language='JavaScript'>
     document.addEventListener('DOMContentLoaded', function() {
         Swal.fire({
-            icon: 'error',
+            icon: 'success',
             title: 'Se realizaron los cambios',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
@@ -53,5 +53,5 @@ if ($resultado) {
         </script>";
 }
 
-header("Location: verificador.php");
+//header("Location: verificador.php");
 ?>
