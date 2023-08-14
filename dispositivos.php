@@ -50,7 +50,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE responsable = $id_usuario";
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.responsable = $id_usuario AND d.id_roles = $rol ";
 
 $resultado8 = $mysqli->query($sql2);
 
@@ -140,7 +140,33 @@ $resultado8 = $mysqli->query($sql2);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
+                                <?php
+                                    switch ($rol) {
+                                        case 3:
+                                            echo '
+                                            <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
+                                            target="_blank">Recibidos</a></li>
+                                            <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
+                                            target="_blank">Entregados</a></li>
+                                            ';
+                                            break;
+                                        
+                                        case 4:
+                                            echo '
+                                            <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
+                                            target="_blank">En la linea</a></li>
+                                            ';
+                                            break;
+                                        case 5:
+                                            echo '
+                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
+                                            target="_blank">Verificados</a></li>
+                                            ';
+                                            break;
+                                    }
+                                
+                                ?>
+                                <!-- <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
                                         target="_blank">Recibidos</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
                                         target="_blank">En la linea</a></li>
@@ -149,32 +175,14 @@ $resultado8 = $mysqli->query($sql2);
                                 <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
                                         target="_blank">Entregados</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
-                                        target="_blank">Todos</a></li>
+                                        target="_blank">Todos</a></li> -->
 
                             </div>
                         </div>
-
-                        <?php
-                                    switch ($rol) {
-                                        case 1:
-                                            echo '
-                                                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
-                                            ';
-                                            break;
-                                        case 3:
-                                                echo '
-                                                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
-                                                ';
-                                            break;
-                                    }
-
-                                ?>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos Recibidos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos</h6>
 
                         </div>
                         <div class="card-body">
@@ -186,9 +194,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
-                                            <th>Institucion Educativa</th>
-                                            <th>Institucion Educativa (Donde estudia)</th>
-                                            <th>Grado</th>
                                             <th>Fecha de Recepción</th>
                                             <th>Estado de Recepción Del Equipo</th>
                                             <th>Fecha de Entrega</th>
@@ -198,14 +203,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Observaciones</th>
                                             <th>Origen</th>
                                             <th>Estatus</th>
-                                            <?php 
-                                                switch ($rol) {
-                                                    case 1:
-                                                        echo "<th>Opciones</th>";
-                                                        break;
-                                                }
-                                            
-                                            ?>
+                                            <th>Opciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -217,9 +215,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row['modelo']; ?></td>
                                             <td><?php echo $row['serial_equipo']; ?></td>
                                             <td><?php echo $row['serial_de_cargador']; ?></td>
-                                            <td><?php echo $row['institucion_educativa']; ?></td>
-                                            <td><?php echo $row['institucion_donde_estudia']; ?></td>
-                                            <td><?php echo $row['grado']; ?></td>
                                             <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                             <td><?php echo $row['estado']; ?></td>
                                             <td><?php echo $row['fecha_de_entrega']; ?></td>
@@ -232,29 +227,18 @@ $resultado8 = $mysqli->query($sql2);
 
                                             <?php
                                                     switch ($rol) {
-                                                        case 1:
-                                                            echo '
-                                                            <td>
-                                                            <div class="btn-group">
-                                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle"
-                                                                data-toggle="dropdown" aria-expanded="false">
-                                                                Opciones
-                                                            </button>
-                                                            <div class="dropdown-menu">
-                                                                <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                    data-target="#editDis'.$row['id_datos_del_dispositivo'].'"
-                                                href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima"
-                                                    width="15" height="15">
-                                                Editar</a>
-                                                <a class="dropdown-item btn btn-danger"
-                                                    href="eliminardispositivo.php?id='.$row['id_datos_del_dispositivo'].'"><img
-                                                    src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
-                                                    height="15"> Eliminar</a>
-                         ';
-                        break;
-                        }
+                                                        case 3:
+                                                            echo '<td><a class="btn btn-primary" href="detallesanalista.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                            break;
+                                                            case 4:
+                                                                echo '<td><a class="btn btn-primary" href="detalletecnico.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                            break;
+                                                            case 5:
+                                                                echo '<td><a class="btn btn-primary" href="detalles.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                            break;
+                                                    }
 
-                        ?>
+                                            ?>
                             </div>
                         </div>
                         </td>

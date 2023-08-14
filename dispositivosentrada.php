@@ -197,7 +197,14 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Observaciones</th>
                                             <th>Origen</th>
                                             <th>Estatus</th>
-                                            <th>Opciones</th>
+                                            <?php
+                                                switch ($rol) {
+                                                    case 1:
+                                                        echo "<th>Opciones</th>";
+                                                        break;
+                                                }
+                                            
+                                            ?>
                                         </tr>
                                     </thead>
                                     <tbody>
