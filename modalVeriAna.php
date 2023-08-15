@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Comprobar Dispositivo</h5>
+                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Entrega Dispositivo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -11,38 +11,8 @@
             <div class="modal-body">
                 <form action="" method="POST">
                     <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="Pantalla" value="pantalla" name="comprobaciones[]">
-                            <label class="custom-control-label" for="Pantalla">Pantalla</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="Teclado" value="Teclado" name ="comprobaciones[]">
-                            <label class="custom-control-label" for="Teclado">Teclado</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="Almohadilla-tactil" value="Almohadilla Tactil" name ="comprobaciones[]">
-                            <label class="custom-control-label" for="Almohadilla-tactil">Almohadilla tactil</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="Cargador" value="Cargador" name ="comprobaciones[]">
-                            <label class="custom-control-label" for="Cargador">Cargador</label>
-                        </div>
-                    </div>
-                    <div class="form-group">          
-                        <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="Bateria" value="Bateria" name ="comprobaciones[]">
-                            <label class="custom-control-label" for="Bateria">Bateria</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="observaciones">Observaciones</label>
-                        <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
+                        <label for="fechaEntrega">Fecha de Entrega</label>
+                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
                     </div>
                     <input type="hidden" name="id_status" value="4">
                     <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
