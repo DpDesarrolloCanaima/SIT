@@ -1,4 +1,5 @@
 <!-- Modal -->
+
 <div class="modal fade" id="editBene<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
