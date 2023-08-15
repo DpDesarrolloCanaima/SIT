@@ -75,8 +75,6 @@ $resultado2 = $mysqli->query($consulta2);
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-
-                <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
