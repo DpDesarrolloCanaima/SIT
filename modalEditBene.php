@@ -5,34 +5,34 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-titlen text-dark mx-auto" id="title-head-modal">Registrar Usuario</h3>
+                <h3 class="modal-titlen text-dark mx-auto" id="title-head-modal">Editar Beneficiario</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="registroDeBene.php" method="POST" class="">
+                <form action="updateBene.php" method="POST">
                     <div class="form-group">
                         <label for="identificador">IC</label>
-                        <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp" name="ic"
+                        <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp" name="icedit"
                             value="<?php echo $row['ic'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="nombreBene">Nombre del Beneficiario</label>
                         <input type="text" class="form-control" id="nombreBene" aria-describedby="nameHelp"
-                            name="nombre_del_beneficiario" value="<?php echo $row['nombre_del_beneficiario'];?>">
+                            name="nombre_del_beneficiario_edit" value="<?php echo $row['nombre_del_beneficiario'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="cedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedulaBene"
+                        <input type="text" class="form-control" id="cedula" name="cedulaBeneEdit"
                             value="<?php echo $row['cedula'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="edadBene">Edad</label>
-                        <input type="text" class="form-control" id="edadBene" name="edadBene"
+                        <input type="text" class="form-control" id="edadBene" name="edadBeneEdit"
                             value="<?php echo $row['edad'];?>">
                         <span></span>
                     </div>
@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="fechaNacBene">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacBene" name="fecha_de_nacimiento">
+                        <input type="date" class="form-control" id="fechaNacBeneEdit" name="fecha_de_nacimiento" value="<?php echo $row['fecha_de_nacimiento'];?>">
                     </div>
                     <div class="form-group">
                         <label for="area">Area</label>
@@ -68,19 +68,19 @@
                     </div>
                     <div class="form-group">
                         <label for="nombreRepre">Nombre del Representante</label>
-                        <input type="text" class="form-control" id="nombreRepre" name="nombre_del_representante"
+                        <input type="text" class="form-control" id="nombreRepre" name="nombre_del_representanteEdit"
                             value="<?php echo $row['nombre_del_representante'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
                         <input type="email" class="form-control" id="correoBene" aria-describedby="emailHelp"
-                            name="correoBene" value="<?php echo $row['correo'];?>">
+                            name="correoBeneEdit" value="<?php echo $row['correo'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone"
+                        <input type="text" class="form-control" id="telfBene" name="phoneEdit"
                             value="<?php echo $row['telefono'];?>">
                         <span></span>
                     </div>
@@ -130,7 +130,7 @@
                     </div>
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
-                        <select name="tipo_de_equipo" id="" class="form-control form-control-lg">
+                        <select name="tipo_de_equipo" id="tipo_de_equipo" class="form-control form-control-lg">
                             <?php foreach ($resultado5 as $row5) : ?>
                             <option value="<?php echo $row5['id_tipo_de_equipo']; ?>"><?php echo $row5['nombre']; ?>
                             </option>
@@ -139,12 +139,13 @@
                     </div>
                     <div class="form-group">
                         <label for="origen">Origen</label>
-                        <select name="origen" id="" class="form-control form-control-lg">
+                        <select name="origen" id="origen" class="form-control form-control-lg">
                             <?php foreach ($resultado6 as $row6) : ?>
                             <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
+                    <input type="hidden" name="ideditbene" value="<?php echo $row['id_datos_del_entregante'];?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

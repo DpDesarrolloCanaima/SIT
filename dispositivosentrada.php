@@ -35,14 +35,15 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
+$consulta14 = "SELECT id_usuarios, nombre  FROM usuarios WHERE id_roles = 4";
+$resultado14 = $mysqli->query($consulta14);
+
 $sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
-
-
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
@@ -189,13 +190,21 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Grado</th>
                                             <th>Fecha de Recepción</th>
                                             <th>Estado de Recepción Del Equipo</th>
+                                            <th>Fecha de Entrega</th>
                                             <th>Equipo Reincidio</th>
                                             <th>Motivo de Reincidencia</th>
                                             <th>Falla</th>
                                             <th>Observaciones</th>
                                             <th>Origen</th>
                                             <th>Estatus</th>
-                                            <th>Opciones</th>
+                                            <?php
+                                                switch ($rol) {
+                                                    case 1:
+                                                        echo "<th>Opciones</th>";
+                                                        break;
+                                                }
+                                            
+                                            ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -212,6 +221,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row['grado']; ?></td>
                                             <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                             <td><?php echo $row['estado']; ?></td>
+                                            <td><?php echo $row['fecha_de_entrega']; ?></td>
                                             <td><?php echo $row['equipo_reincidio']; ?></td>
                                             <td><?php echo $row['motivo_reincidencia']; ?></td>
                                             <td><?php echo $row['tipo_de_motivo']; ?></td>

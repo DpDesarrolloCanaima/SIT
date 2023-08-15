@@ -11,10 +11,11 @@ if (!isset($_SESSION['id_usuarios'])) {
 }
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
+$id_usuario = $_SESSION['id_usuarios'];
 
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.unidad_de_adscripcion, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
 INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN area AS a ON a.id_area = e.id_area
@@ -66,8 +67,11 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
-// Consulta para mostrar los datos e enviar
-$sql3 = "SELECT id_datos_del_entregante, cedula FROM datos_del_entregante";
+//Consulta para traer nombre del usuario
+$consulta14 = "SELECT id_usuarios, nombre  FROM usuarios WHERE id_roles = 4";
+$resultado14 = $mysqli->query($consulta14);
+
+$sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
 
@@ -159,7 +163,7 @@ $resultado8 = $mysqli->query($sql2);
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                           
+
                                         </a>
                                     </div>
                                 </div>

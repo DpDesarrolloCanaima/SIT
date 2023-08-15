@@ -153,12 +153,12 @@ $result = $mysqli->query($sql3);
                                 
                                 ?>
                                 <li><a class="dropdown-item"
-                                        href="report/reportebeneficiario.php?id=<?php echo $fila['id_origen'];?>"
+                                        href="report/reportebeneficiarioapoyo.php?id=<?php echo $fila['id_origen'];?>"
                                         target="_blank"><?php echo $fila['origen'];?></a></li>
                                 <?php
                                     endforeach;
                                 ?>
-                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
                                         target="_blank">Todos</a></li>
 
                             </div>
@@ -252,6 +252,7 @@ $result = $mysqli->query($sql3);
                                                             Opciones
                                                         </button>
                                                         <div class="dropdown-menu">
+
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                             <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
                                   break;

@@ -1,12 +1,9 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>-->
-    </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Dispositivo</h6>
+
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -49,7 +46,7 @@
                             <tr>
                                 <th>Observaciones</th>
                                 <td>
-                                    <?php echo $rowde['observaciones'];?>
+                                <?php echo $rowde['observaciones'];?>
                                 </td>
                             </tr>
                             <tr>
@@ -64,16 +61,16 @@
                                     <?php echo $rowde['estatus'];?>
                                 </td>
                             </tr>
+                     
                         </tbody>
                     </table>
-
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                        data-target="#verificarDispo">
-                        Verificar
+                           <!-- Button trigger modal -->
+                           <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#entregarDispo">
+                        Entregado
                     </button>
                     <?php
-                        include "modalComprobar.php";
+                        include "modalVeriAna.php";
                     ?>
                 </form>
             </div>

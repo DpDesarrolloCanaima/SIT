@@ -3,7 +3,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-titlen text-dark mx-auto" id="agregarDispo">Agregar Dispositivo</h1>
+                <h3 class="modal-titlen text-dark mx-auto" id="agregarDispo">Agregar Dispositivo</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -123,6 +123,15 @@
                             <?php foreach ($result as $row13) : ?>
                             <option value="<?php echo $row13['id_datos_del_entregante']; ?>">
                                 <?php echo $row13['nombre_del_beneficiario']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="responsable">Responsable</label>
+                        <select name="responsable" id="responsable" class="form-control form-control-lg">
+                            <?php foreach ($resultado14 as $row14) : ?>
+                            <option value="<?php echo $row14['id_usuarios']; ?>">
+                                <?php echo $row14['nombre']; ?></option>
                             <?php endforeach; ?>
                         </select>
                     </div>
