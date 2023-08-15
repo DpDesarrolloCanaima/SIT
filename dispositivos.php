@@ -129,8 +129,12 @@ $resultado8 = $mysqli->query($sql2);
                                             break;
                                         case 5:
                                             echo '
-                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
+                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=4"
                                             target="_blank">Verificados</a></li>
+                                            ';
+                                            echo '
+                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=8"
+                                            target="_blank">Por Verificar</a></li>
                                             ';
                                             break;
                                     }
