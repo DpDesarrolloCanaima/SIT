@@ -13,9 +13,12 @@ $observacionT = $mysqli->real_escape_string($_GET['Observacion']);
 $estatus = $mysqli->real_escape_string($_GET['id_status']);
 $responsable = $mysqli->real_escape_string($_GET['responsable']);
 $id_roles = $mysqli->real_escape_string($_GET['id_roles']);
+$idDispo = $mysqli->real_escape_string($_GET['id_dispositivo']);
 
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".$estatus.",  observaciones = '".$observacionT."', responsable = '".$responsable."', id_roles = '".$id_roles."'  WHERE id_datos_del_dispositivo = ".$_SESSION['lastId']; 
+//$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".$estatus.",  observaciones = '".$observacionT."', responsable = '".$responsable."', id_roles = '".$id_roles."'  WHERE id_datos_del_dispositivo = ".$_SESSION['lastId']; 
+
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".$estatus.",  observaciones = '".$observacionT."', responsable = '".$responsable."', id_roles = '".$id_roles."'  WHERE id_datos_del_dispositivo = ".$idDispo; 
 
 $resultado = $mysqli->query($sql);
 
@@ -31,7 +34,7 @@ if ($resultado) {
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'OK'
           }).then(() => {
-            location.assign('detalles.php');
+            location.assign('detalles.php?id=".$idDispo."');
           });
 });
     </script>";
@@ -47,7 +50,7 @@ if ($resultado) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalle.php');
+                location.assign('detalles.php?id=".$idDispo."');
               });
     });
         </script>";
