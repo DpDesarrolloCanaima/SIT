@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" method="POST">
+                <form action="verificar.php" method="GET">
                     <div class="form-group">
                         <div class="custom-control custom-checkbox">
                             <input type="checkbox" class="custom-control-input" id="Pantalla" value="pantalla" name="comprobaciones[]">
