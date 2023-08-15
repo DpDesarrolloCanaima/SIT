@@ -56,6 +56,4 @@ if ($resultado) {
     });
         </script>";
 }
-
-//header("Location: verificador.php");
 ?>

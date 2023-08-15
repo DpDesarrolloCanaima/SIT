@@ -3,7 +3,6 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Dispositivo</h6>
-
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -11,10 +10,10 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                         <tbody>
-
                             <?php
                         $rowde = $resultado->fetch_assoc();
                         ?>
+                        <a class="btn btn-primary" href="actualizar.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=6" role="button">Actualizar</a>
                             <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>
