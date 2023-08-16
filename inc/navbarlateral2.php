@@ -93,8 +93,8 @@
                     break; 
                 case 5:
                             echo '
-                            <a class="collapse-item" href="dispositivos.php?idenlace=4">Dispositivos</a>
-                            <a class="collapse-item" href="dispositivos.php?idenlace=5">Dispositivos</a>
+                            <a class="collapse-item" href="dispositivos.php?idenlace=4">Por verificar</a>
+                            <a class="collapse-item" href="dispositivos.php?idenlace=5">Verificados</a>
                             ';
                     break;   
             }    

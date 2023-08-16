@@ -12,8 +12,11 @@ if (!isset($_SESSION['id_usuarios'])) {
     }
 }
 
-$consulta = "SELECT u.usuario, u.nombre, u.cedula, u.password, u.correo, u.registro, r.roles FROM usuarios AS u INNER JOIN roles AS r ON r.id_roles=u.id_roles";
-$resultado = $mysqli->query($consulta);
+
+$usuario = $_SESSION['usuario'];
+$rol = $_SESSION['id_roles'];
+$id_usuario = $_SESSION['id_usuarios'];
+
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +37,9 @@ $resultado = $mysqli->query($consulta);
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -48,13 +53,13 @@ $resultado = $mysqli->query($consulta);
         <?php include "inc/navbarlateral.php"; ?>
         <!-- End of Sidebar -->
 
-        <!-- Content Wrapper --> 
+        <!-- Content Wrapper -->
         <div id="content-wrapper" class="d-flex flex-column">
 
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "inc/navbar.php"; 
+                <?php include "inc/navbar2.php"; 
                 
                 
                 
@@ -62,7 +67,7 @@ $resultado = $mysqli->query($consulta);
                 ?>
                 <!-- End of Topbar -->
 
-                
+
 
                 <!-- Footer -->
                 <footer class="sticky-footer bg-white">
@@ -86,7 +91,8 @@ $resultado = $mysqli->query($consulta);
         </a>
 
         <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">

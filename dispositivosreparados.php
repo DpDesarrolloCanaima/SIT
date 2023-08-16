@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
-
+$id_usuario = $_SESSION['id_usuarios'];
 //Consulta para traer los datos almacenados de los dispositivos
 
 $sqlEntregados = "SELECT  d.id_datos_del_beneficiario, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.fecha_de_entrega , j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula, m.estatus FROM datos_del_dispotivo AS d 
