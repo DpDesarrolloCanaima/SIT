@@ -1,4 +1,3 @@
-
 <div class="modal fade" id="entregarDispo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -14,7 +13,7 @@
                         <label for="fechaEntrega">Fecha de Entrega</label>
                         <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
                     </div>
-                    <input type="hidden" name="id_status" value="4">
+                    <input type="hidden" name="id_status" value="7">
                     <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="id_dispositivo" value="<?php echo $rowde['id_datos_del_dispositivo']?>">

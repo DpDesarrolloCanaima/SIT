@@ -9,6 +9,9 @@ if (!isset($_SESSION['id_usuarios'])) {
 $id_usuario = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
+
+$estatusenlace = $_REQUEST['idenlace'];
+
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
 $resultado5 = $mysqli->query($consulta5);
@@ -47,7 +50,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.responsable = $id_usuario AND d.id_roles = $rol ";
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.responsable = $id_usuario AND d.id_estatus = $estatusenlace";
 
 $resultado8 = $mysqli->query($sql2);
 ?>
@@ -99,44 +102,68 @@ $resultado8 = $mysqli->query($sql2);
                 <?php include "inc/navbar.php"; ?>
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="btn-group dropright">
-                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i>
-                                Generar Reporte
-                            </button>
-                            <button type="button"
-                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only"></span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <?php
-                                    switch ($rol) {
-                                        case 3:
+                        <?php 
+                             switch ($rol) {
+                                case 3:
+                                    switch ($estatusenlace) {
+                                        case 6:
                                             echo '
-                                            <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
-                                            target="_blank">Recibidos</a></li>
-                                            <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
-                                            target="_blank">Entregados</a></li>
+                                            <a href="report/reportedispositivoporentregar.php?id=6"
+                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                                             ';
                                             break;
-                                        
+                                        case 7:
+                                            echo '
+                                            <a href="report/reportedispositivosentregados.php?id=7"
+                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                                            ';
+                                            break;
+                                    }
+                                    break;
+                                
+                                case 4:
+                                    switch ($estatusenlace) {
+                                        case 2:
+                                            echo '
+                                            <a href="report/reportedispositivosenlinea.php?id=2"
+                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                                            ';
+                                            break;
+                                        case 3:
+                                            echo '
+                                            <a href="report/reportedispositivoreparados.php?id=3"
+                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                                            ';
+                                            break;
+                                    break;
+                                    }
+                                case 5:
+                                    switch ($estatusenlace) {
                                         case 4:
                                             echo '
-                                            <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
-                                            target="_blank">En la linea</a></li>
+                                            <a href="report/reportedispositivoporverificar.php?id=4"
+                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                                             ';
                                             break;
                                         case 5:
                                             echo '
-                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
-                                            target="_blank">Verificados</a></li>
+                                            <a href="report/reportedispositivoverificados.php?id=5"
+                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                                             ';
                                             break;
+                                    break;
                                     }
-                                ?>
-                            </div>
-                        </div>
+                                    break;
+                            }
+                        
+                        
+                        ?>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">

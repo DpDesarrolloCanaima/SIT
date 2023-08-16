@@ -13,7 +13,7 @@ $sql1 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargado
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
-INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = 3";
+INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = 5";
 
 $resultado1 = $mysqli->query($sql1);
 
@@ -66,7 +66,7 @@ $resultado1 = $mysqli->query($sql1);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportedispositivoverificados.php?id=3"
+                        <a href="report/reportedispositivoverificados.php?id=5"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>

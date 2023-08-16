@@ -13,6 +13,8 @@ $id_usuario = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $idDispositivo = $_GET['id'];
+
+
 $_SESSION['lastId'] = $idDispositivo;
 
 //Consulta para traer los datos almacenados de los dispositivos
@@ -27,7 +29,6 @@ INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo
 WHERE d.id_datos_del_dispositivo = $idDispositivo";
 
 $resultado = $mysqli->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -46,8 +47,8 @@ $resultado = $mysqli->query($sql);
     <link rel="icon" href="img/Canaima.png">
 
 
- <!-- Custom fonts for this template-->
- <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">

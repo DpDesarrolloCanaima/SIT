@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-<?php    
+    <?php    
 	switch($rol){
 	case 1:
 		echo ' <a class="sidebar-brand d-flex align-items-center justify-content-center" href="admin.php">';
@@ -14,10 +14,10 @@
 ?>
 
 
-           <div class="sidebar-brand-icon rotate-n-15">
-            <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
-        </div>
-        <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
+    <div class="sidebar-brand-icon rotate-n-15">
+        <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
+    </div>
+    <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
     </a>
 
     <!-- Divider -->
@@ -45,9 +45,9 @@
                     break;    
             }    
         ?>
-       
-            <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
-            <span>Home</span></a>
+
+        <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
+        <span>Home</span></a>
     </li>
 
     <!-- divider -->
@@ -67,7 +67,7 @@
         </a>
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                <a class="collapse-item" href="listadeusuario.php">Usuarios</a>
                 <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
                 <a class="collapse-item" href="listadebeneficiario.php">Beneficiarios</a>
             </div>
@@ -100,7 +100,10 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item" href="dispositivosRecibidos.php">Recibidos</a>
                 <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
+                <a class="collapse-item" href="dispositivosreparados.php">Reparados</a>
+                <a class="collapse-item" href="dispositivoporverificar.php">Por verificar</a>
                 <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
+                <a class="collapse-item" href="dispositivosporentregar.php">Por entregar</a>
                 <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>
             </div>
         </div>
