@@ -42,7 +42,7 @@ require "config/conexionProvi.php";
                     break;
             }   
 
-            $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." ORDER BY registro DESC";
+            $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." AND responsable = $id_usuario ORDER BY registro DESC ";
 
             $resultadover = $mysqli->query($consultaver);
 
