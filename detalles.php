@@ -11,10 +11,6 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
 $idDispositivo = $_GET['id'];
-if (isset($_GET['idtecnico'] )) {
-    $roltecnico = $_GET['idtecnico'];
-}
-
 $_SESSION['lastId'] = $idDispositivo;
 
 //Consulta para traer los datos almacenados de los dispositivos

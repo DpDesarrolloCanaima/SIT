@@ -14,11 +14,16 @@
                         <tbody>
 
                             <?php
-                        $rowde = $resultado->fetch_assoc();
+                                 $rowde = $resultado->fetch_assoc();
+
+                                if ($rowde['id_estatus'] == 3) :
                         ?>
                             <a class="btn btn-primary"
                                 href="actualizarverificador.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=4"
                                 role="button">Actualizar</a>
+                            <?php
+                                endif;
+                            ?>
                             <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>

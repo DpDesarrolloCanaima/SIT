@@ -92,7 +92,7 @@ require "config/conexionProvi.php";
                     </li>';
                     break;
                 case 4:
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 2 ." ORDER BY registro DESC";
+                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 1 ." ORDER BY registro DESC";
                                 
                     $resultadover = $mysqli->query($consultaver);
 

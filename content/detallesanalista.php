@@ -13,9 +13,18 @@
                             <?php
                         $rowde = $resultado->fetch_assoc();
                         ?>
-                            <a class="btn btn-primary"
-                                href="actualizaranalist.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=6"
-                                role="button">Actualizar</a>
+                            <?php
+                                if ($rowde['id_estatus'] == 5) {
+                                    echo '
+                                    <a class="btn btn-primary"
+                                    href="actualizaranalist.php?id='.$rowde['id_datos_del_dispositivo'].'&responsable='. $id_usuario.'&rol='. $rol.'&estatus=6"
+                            role="button">Actualizar</a>
+                            ';
+                            }
+
+
+                            ?>
+
                             <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>

@@ -13,10 +13,19 @@
 
                             <?php
                         $rowde = $resultado->fetch_assoc();
-                        ?>
+                          $verestatus = $rowde['estatus'];
+                        if ($verestatus == "Recibidos") {
+                            echo '
                             <a class="btn btn-primary"
-                                href="actualizartecni.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=2"
-                                role="button">Actualizar</a>
+                            href="actualizartecni.php?id='.$rowde['id_datos_del_dispositivo'].'&responsable='.$id_usuario.'&rol='.$rol.'&estatus=2"
+                            role="button">Actualizar</a>
+
+                            ';
+                            }
+                            ?>
+
+
+
                             <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>
