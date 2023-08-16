@@ -12,9 +12,9 @@
                         <tbody>
                             <?php
                         $rowde = $resultado->fetch_assoc();
-                        ?>
-                            <?php
-                                if ($rowde['id_estatus'] == 5) {
+                       
+                        $verestatus = $rowde['estatus'];
+                        if ($verestatus == "Por entregar") {
                                     echo '
                                     <a class="btn btn-primary"
                                     href="actualizaranalist.php?id='.$rowde['id_datos_del_dispositivo'].'&responsable='. $id_usuario.'&rol='. $rol.'&estatus=6"

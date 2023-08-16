@@ -109,15 +109,6 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="estatus">Estatus</label>
-                        <select name="estatus" id="estatus" class="form-control form-control-lg">
-                            <?php foreach ($resultado12 as $row12) : ?>
-                            <option value="<?php echo $row12['id_estatus']; ?>"><?php echo $row12['estatus']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="beneficiario">Beneficiario</label>
                         <select name="beneficiario" id="beneficiario" class="form-control form-control-lg">
                             <?php foreach ($result as $row13) : ?>
@@ -135,11 +126,12 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="fechaEntrega">Fecha de Entrega</label>
                         <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
-                    </div>
+                    </div> -->
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
+                    <input type="hidden" name="estatus" value="1">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

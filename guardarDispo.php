@@ -21,7 +21,7 @@ $institucionDondeEstudia = limpiarDatos($_POST['institucion_donde_estudia']);
     }
 $fechaRecepcion = $_POST['fecha_de_recepcion'];
 $estadoRecepcion = limpiarDatos($_POST['estado_recepcion']);
-$fechaEntrega = $_POST['fecha_de_entrega'];
+//$fechaEntrega = $_POST['fecha_de_entrega'];
 $observaciones = limpiarDatos($_POST['observaciones']);
 if ($observaciones == "") {
     $observaciones = "No posee observaciones";
@@ -40,7 +40,7 @@ $beneficiario = limpiarDatos($_POST['beneficiario']);
 $responsable = limpiarDatos($_POST['responsable']);
 
 
-$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo,fecha_de_entrega, responsable, observaciones, equipo_reincidio, motivo_reincidencia, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion','$fechaEntrega', '$responsable','$observaciones','$reincidio','$motivoreincidencia','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
+$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, responsable, observaciones, equipo_reincidio, motivo_reincidencia, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion', '$responsable','$observaciones','$reincidio','$motivoreincidencia','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
 $resultado = mysqli_query($mysqli, $sql);
 
 if ($resultado) {

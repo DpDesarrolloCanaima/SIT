@@ -23,20 +23,20 @@ require "config/conexionProvi.php";
 
                 case 3:
                     
-                    $estatusDispo = 6;
+                    $estatusDispo = 5;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";        
                     break;
 
                 case 4:
-                    $estatusDispo = 2; 
+                    $estatusDispo = 1; 
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
                     break;
 
                 case 5:
 
-                    $estatusDispo = 4;
+                    $estatusDispo = 3;
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";
                     break;

@@ -9,6 +9,7 @@ if (!isset($_SESSION['id_usuarios'])) {
         header("Location: index.php");
     }
 }
+
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
