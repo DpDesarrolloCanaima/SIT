@@ -131,8 +131,7 @@ require "config/conexionProvi.php";
                 $i = 0;
 
                 while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                    echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['
-                    id_datos_del_dispositivo'].'">
+                    echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                     <div class="mr-3">
                         <div class="bg-primary icon-circle">';
                             $icono;
