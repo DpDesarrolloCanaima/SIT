@@ -20,29 +20,30 @@ require "config/conexionProvi.php";
 
             switch ($rol) {
 
-
+                
                 case 3:
                     
-                    $estatusDispo = 5;
+                    $estatusDispo = 6;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";        
                     break;
 
                 case 4:
-                    $estatusDispo = 1; 
+
+                    $estatusDispo = 2; 
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
                     break;
 
                 case 5:
 
-                    $estatusDispo = 3;
+                    $estatusDispo = 4;
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";
                     break;
             }   
 
-            $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." AND responsable = $id_usuario ORDER BY registro DESC ";
+            $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." ORDER BY registro DESC";
 
             $resultadover = $mysqli->query($consultaver);
 
