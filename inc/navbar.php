@@ -17,230 +17,103 @@ require "config/conexionProvi.php";
         <!-- Dropdown - Messages -->
 
         <?php
+
             switch ($rol) {
+
+
                 case 3:
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 6 ." ORDER BY registro DESC";
-                                
-                    $resultadover = $mysqli->query($consultaver);
-
-                    $numr = $resultadover->num_rows;
-
-                    echo ' <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bell fa-fw"></i>
-                            <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="alertsDropdown">
-                            <h6 class="dropdown-header">
-                              NOTIFICACIONES
-                            </h6>';
-
-                            setlocale(LC_TIME, 'es_VE');
-
-                            $i = 0;
-
-                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="detalleanalista.php?id='.$verNot['id_datos_del_dispositivo'].'">
-                                <div class="mr-3">
-                                    <div class="bg-primary icon-circle">';
-                            $icono;
-                            switch($verNot['id_tipo_de_dispositivo']) {
-                                case 1: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 3: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 4: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 5: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 6: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 7: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 8: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                            }
-
-
-                                    echo '<img class="img-fluid " src="'.$icono.'">
-                                    </div>
-                                </div>
-                                <div>';
-
-                                $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
-                            
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                    <span class="font-weight-bold">Nuevo equipo por entregar, observación: '.$verNot['observaciones'].'</span>
-                                 </div>
-                            </a>';
-                            $i++;
-                            }
-
-                        echo '</div>
-                    </li>';
+                    
+                    $estatusDispo = 6;
+                    $filenameDetalles = "detallesanalista.php";
+                    $notiText = "Entregar, ";        
                     break;
+
                 case 4:
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 2 ." ORDER BY registro DESC";
-                                
-                    $resultadover = $mysqli->query($consultaver);
 
-                    $numr = $resultadover->num_rows;
-
-                    echo ' <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bell fa-fw"></i>
-                            <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="alertsDropdown">
-                            <h6 class="dropdown-header">
-                              NOTIFICACIONES
-                            </h6>';
-
-                            setlocale(LC_TIME, 'es_VE');
-
-                            $i = 0;
-
-                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="detalletecnico.php?id='.$verNot['id_datos_del_dispositivo'].'">
-                                <div class="mr-3">
-                                    <div class="bg-primary icon-circle">';
-                            $icono;
-                            switch($verNot['id_tipo_de_dispositivo']) {
-                                case 1: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 3: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 4: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 5: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 6: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 7: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 8: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                            }
-
-
-                                    echo '<img class="img-fluid " src="'.$icono.'">
-                                    </div>
-                                </div>
-                                <div>';
-
-                                $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
-                            
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                    <span class="font-weight-bold">Nuevo equipo por reparar, observación: '.$verNot['observaciones'].'</span>
-                                 </div>
-                            </a>';
-                            $i++;
-                            }
-
-                        echo '</div>
-                    </li>';
+                    $estatusDispo = 2; 
+                    $filenameDetalles = "detalletecnico.php";
+                    $notiText = "Reparar, ";
                     break;
 
                 case 5:
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM datos_del_dispotivo WHERE id_estatus = ". 3 ." ORDER BY registro DESC";
-                                
-                    $resultadover = $mysqli->query($consultaver);
 
-                    $numr = $resultadover->num_rows;
-
-                    echo ' <!-- Nav Item - Alerts -->
-                    <li class="nav-item dropdown no-arrow mx-1">
-                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-bell fa-fw"></i>
-                            <!-- Counter - Alerts -->
-                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
-                        </a>
-                        <!-- Dropdown - Alerts -->
-                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                            aria-labelledby="alertsDropdown">
-                            <h6 class="dropdown-header">
-                              NOTIFICACIONES
-                            </h6>';
-
-                            setlocale(LC_TIME, 'es_VE');
-
-                            $i = 0;
-
-                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="detalles.php?id='.$verNot['id_datos_del_dispositivo'].'">
-                                <div class="mr-3">
-                                    <div class="bg-primary icon-circle">';
-                            $icono;
-                            switch($verNot['id_tipo_de_dispositivo']) {
-                                case 1: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 3: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 4: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 5: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 6: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 7: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 8: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                            }
-
-
-                                    echo '<img class="img-fluid " src="'.$icono.'">
-                                    </div>
-                                </div>
-                                <div>';
-
-                                $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
-                            
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                    <span class="font-weight-bold">Nuevo equipo por verificar, observación: '.$verNot['observaciones'].'</span>
-                                 </div>
-                            </a>';
-                            $i++;
-                            }
-
-                        echo '</div>
-                    </li>';
+                    $estatusDispo = 4;
+                    $filenameDetalles = "detalles.php";
+                    $notiText = "Verificar, ";
                     break;
             }   
-          
-          
+
+            $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." ORDER BY registro DESC";
+
+            $resultadover = $mysqli->query($consultaver);
+
+            $numr = $resultadover->num_rows;
+
+            echo ' <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-bell fa-fw"></i>
+                    <!-- Counter - Alerts -->
+                    <span class="badge badge-danger badge-counter">'.$numr.'+</span>
+                </a>
+                <!-- Dropdown - Alerts -->
+                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                    aria-labelledby="alertsDropdown">
+                    <h6 class="dropdown-header">
+                        NOTIFICACIONES
+                    </h6>';
+
+                    setlocale(LC_TIME, 'es_VE');
+
+                    $i = 0;
+
+                    while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                        echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
+                        <div class="mr-3">
+                            <div class="bg-primary icon-circle">';
+                    $icono;
+                    switch($verNot['id_tipo_de_dispositivo']) {
+                        case 1: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                        case 3: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                        case 4: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                        case 5: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                        case 6: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                        case 7: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                        case 8: 
+                            $icono = "img/canaimalogo2.jpg";
+                            break;
+                    }
+
+
+                            echo '<img class="img-fluid " src="'.$icono.'">
+                            </div>
+                        </div>
+                        <div>';
+
+                        $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+
+                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                        <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación: '.$verNot['observaciones'].'</span>
+                     </div>
+                </a>';
+                $i++;
+                }
+
+            echo '</div>
+            </li>';
           ?>
 
         <div class="topbar-divider d-none d-sm-block"></div>

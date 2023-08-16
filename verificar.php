@@ -10,12 +10,12 @@ if (!isset($_SESSION['id_usuarios']) OR !isset($_GET['Observacion'])) {
 }
 
 $observacionT = $mysqli->real_escape_string($_GET['Observacion']);
-$estatus = $mysqli->real_escape_string($_GET['id_status']);
+//$estatus = $mysqli->real_escape_string($_GET['id_status']);
 $responsable = $mysqli->real_escape_string($_GET['responsable']);
-$id_roles = $mysqli->real_escape_string($_GET['id_roles']);
+//$id_roles = $mysqli->real_escape_string($_GET['id_roles']);
 
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".$estatus.",  observaciones = '".$observacionT."', responsable = '".$responsable."', id_roles = '".$id_roles."'  WHERE id_datos_del_dispositivo = ".$_SESSION['lastId']; 
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".(4).",  observaciones = '".$observacionT."', responsable = '".$responsable."' WHERE id_datos_del_dispositivo = ".$_SESSION['lastId'];
 
 $resultado = $mysqli->query($sql);
 

@@ -1,7 +1,10 @@
 <?php
+
 require "config/app.php";
 require "config/conexionProvi.php";
+
 session_start();
+
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }else{
