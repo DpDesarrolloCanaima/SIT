@@ -1,7 +1,7 @@
 <?php
 if ($_POST) {
     require "function.php";
-    $fechaEntrega = $_POST['fechaEntrega'];
+    $fechaEntrega = $_POST['fecha_de_entrega'];
     $estatus = $_POST['id_status'];
     $responsable = limpiarDatos($_POST['responsable']);
     $rol = limpiarDatos($_POST['id_roles']);
@@ -9,9 +9,9 @@ if ($_POST) {
 
     require "config/conexionProvi.php";
 
-    $sql = "UPDATE datos_del_dispositivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', id_roles = '$rol' WHERE id_datos_del_dispositivo = $idDispo";
+    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', id_roles = '$rol' WHERE id_datos_del_dispositivo = $idDispo";
 
-    $resultado = mysqli_query($mysql, $sql);
+    $resultado = mysqli_query($mysqli, $sql);
 
     if ($resultado) {
         echo "
@@ -26,7 +26,7 @@ if ($_POST) {
                 confirmButtonText: 'OK',
                 timer: 1500
               }).then(() => {
-                location.assign('detalleanalista?id=".$idDispo.".php');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";
@@ -43,7 +43,7 @@ if ($_POST) {
                 confirmButtonText: 'OK',
                 timer: 1500
               }).then(() => {
-                location.assign('detalleanalista?id=".$idDispo.".php');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";

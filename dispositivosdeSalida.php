@@ -8,11 +8,6 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-// $consulta = "SELECT r.id_reparacion, r.equipo, r.propietario, r.migracion, t.nombre, t.modelo, o.origen FROM reparacion AS r INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=r.id_tipo_de_equipo INNER JOIN origen AS o ON r.id_origen=o.id_origen";
-
-// $resultado = $mysqli->query($consulta);
-
-
 $sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.pertenencia_del_equipo, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen

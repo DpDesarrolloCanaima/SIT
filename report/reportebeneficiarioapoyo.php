@@ -61,9 +61,3 @@ $resultado = $mysqli->query($sql);
 
 
 	$pdf-> Output();
-
-
-
-
-
-

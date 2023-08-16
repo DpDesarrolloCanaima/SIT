@@ -46,7 +46,7 @@ $result = $mysqli->query($sql3);
 
 $sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
-INNER JOIN origen AS k ON k.id_origen = d.id_origen
+INNER JOIN origen AS k ON k.id_origen = d.id_origen 
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
@@ -144,9 +144,15 @@ $resultado8 = $mysqli->query($sql2);
                                         target="_blank">Recibidos</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
                                         target="_blank">En la linea</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3"
+                                        target="_blank">Reparados</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4"
+                                        target="_blank">Por verificar</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5"
                                         target="_blank">Verificados</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6"
+                                        target="_blank">Por entregar</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7"
                                         target="_blank">Entregados</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
@@ -185,9 +191,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
-                                            <th>Institucion Educativa</th>
-                                            <th>Institucion Educativa (Donde estudia)</th>
-                                            <th>Grado</th>
                                             <th>Fecha de Recepción</th>
                                             <th>Estado de Recepción Del Equipo</th>
                                             <th>Fecha de Entrega</th>
@@ -216,9 +219,6 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row['modelo']; ?></td>
                                             <td><?php echo $row['serial_equipo']; ?></td>
                                             <td><?php echo $row['serial_de_cargador']; ?></td>
-                                            <td><?php echo $row['institucion_educativa']; ?></td>
-                                            <td><?php echo $row['institucion_donde_estudia']; ?></td>
-                                            <td><?php echo $row['grado']; ?></td>
                                             <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                             <td><?php echo $row['estado']; ?></td>
                                             <td><?php echo $row['fecha_de_entrega']; ?></td>
