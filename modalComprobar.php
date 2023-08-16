@@ -47,7 +47,7 @@
                     <input type="hidden" name="id_status" value="4">
                     <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
-                    <input type="hidden" name="id_dispositivo" value="<?php echo $rowde['id_datos_del_dispositivo']?>">
+                    <input type="hidden" name="id_dispositivo" value="<?php echo $rowde['id_datos_del_dispositivo'];?>">
                     <hr>
                     <button type="submit" class="btn btn-success">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
