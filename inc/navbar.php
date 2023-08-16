@@ -23,7 +23,7 @@ require "config/conexionProvi.php";
                 
                 case 3:
                     
-                    $estatusDispo = 6;
+                    $estatusDispo = 5;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";  
                     $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
