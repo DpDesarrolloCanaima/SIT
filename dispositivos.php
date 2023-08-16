@@ -47,7 +47,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.responsable = $id_usuario AND d.id_roles = $rol ";
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.responsable = $id_usuario AND d.id_roles = $rol";
 
 $resultado8 = $mysqli->query($sql2);
 ?>
@@ -129,8 +129,12 @@ $resultado8 = $mysqli->query($sql2);
                                             break;
                                         case 5:
                                             echo '
-                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
+                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=4"
                                             target="_blank">Verificados</a></li>
+                                            ';
+                                            echo '
+                                            <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=8"
+                                            target="_blank">Por Verificar</a></li>
                                             ';
                                             break;
                                     }
@@ -186,7 +190,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <?php
                                                     switch ($rol) {
                                                         case 3:
-                                                            echo '<td><a class="btn btn-primary" href="detallesanalista.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                            echo '<td><a class="btn btn-primary" href="detalleanalista.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
                                                             break;
                                                             case 4:
                                                                 echo '<td><a class="btn btn-primary" href="detalletecnico.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
@@ -208,6 +212,7 @@ $resultado8 = $mysqli->query($sql2);
                 </div>
             </div>
         </div>
+    </div>
     </div>
     </div>
     <footer class="sticky-footer bg-white">

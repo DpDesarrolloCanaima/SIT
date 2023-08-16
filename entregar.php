@@ -1,22 +1,19 @@
 <?php
-    require "function.php";
-   
 if ($_POST) {
-    $idUpdate = $_POST['idEdit'];
-    $usuarioupdate = limpiarDatos(htmlspecialchars($_POST['usuario']));
-    $nombreupdate = limpiarDatos(htmlspecialchars($_POST['nombre']));
-    $cedulaupdate = limpiarDatos(htmlspecialchars($_POST['cedula']));
-    $correoupdate = limpiarDatos(htmlspecialchars($_POST['correo']));
-    $rolesupdate = limpiarDatos(htmlspecialchars($_POST['perfil']));
+    require "function.php";
+    $fechaEntrega = $_POST['fechaEntrega'];
+    $estatus = $_POST['id_status'];
+    $responsable = limpiarDatos($_POST['responsable']);
+    $rol = limpiarDatos($_POST['id_roles']);
+    $idDispo = limpiarDatos($_POST['id_dispositivo']);
 
-    
     require "config/conexionProvi.php";
 
-    $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate', cedula = '$cedulaupdate', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = $idUpdate";
+    $sql = "UPDATE datos_del_dispositivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', id_roles = '$rol' WHERE id_datos_del_dispositivo = $idDispo";
 
-    $result = mysqli_query($mysqli, $sql);
+    $resultado = mysqli_query($mysql, $sql);
 
-    if ($result) {
+    if ($resultado) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -29,12 +26,12 @@ if ($_POST) {
                 confirmButtonText: 'OK',
                 timer: 1500
               }).then(() => {
-                location.assign('listadeusuario.php');
+                location.assign('detalleanalista?id=".$idDispo.".php');
               });
     });
         </script>";
     }else {
-         echo "
+        echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
@@ -46,13 +43,12 @@ if ($_POST) {
                 confirmButtonText: 'OK',
                 timer: 1500
               }).then(() => {
-                location.assign('listadeusuario.php');
+                location.assign('detalleanalista?id=".$idDispo.".php');
               });
     });
         </script>";
-    }
 }
-
+}
 
 
 ?>

@@ -14,6 +14,9 @@
                             <?php
                         $rowde = $resultado->fetch_assoc();
                         ?>
+                            <a class="btn btn-primary"
+                                href="actualizartecni.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=2"
+                                role="button">Actualizar</a>
                             <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>
@@ -45,11 +48,7 @@
                             <tr>
                                 <th>Observaciones</th>
                                 <td>
-                                    <div class="form-group">
-                                        <label for="Observacion" class="sr-only w-100">Observación</label>
-                                        <textarea class="form-control" rows="5" id="Observacion" name="Observacion"><?php echo $rowde['observaciones'];?>
-                                    </textarea>
-                                    </div>
+                                    <?php echo $rowde['observaciones'];?>
                                 </td>
                             </tr>
                             <tr>

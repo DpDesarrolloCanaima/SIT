@@ -10,12 +10,25 @@ if (!isset($_SESSION['id_usuarios']) OR !isset($_GET['Observacion'])) {
 }
 
 $observacionT = $mysqli->real_escape_string($_GET['Observacion']);
+<<<<<<< HEAD
 //$estatus = $mysqli->real_escape_string($_GET['id_status']);
 $responsable = $mysqli->real_escape_string($_GET['responsable']);
 //$id_roles = $mysqli->real_escape_string($_GET['id_roles']);
 
 
 $sql = "UPDATE datos_del_dispotivo SET id_estatus = ".(4).",  observaciones = '".$observacionT."', responsable = '".$responsable."' WHERE id_datos_del_dispositivo = ".$_SESSION['lastId'];
+=======
+$comprobacion = implode(',', $_POST['comprobaciones']);
+$estatus = $mysqli->real_escape_string($_GET['id_status']);
+$responsable = $mysqli->real_escape_string($_GET['responsable']);
+$id_roles = $mysqli->real_escape_string($_GET['id_roles']);
+$idDispo = $mysqli->real_escape_string($_GET['id_dispositivo']);
+
+
+//$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".$estatus.",  observaciones = '".$observacionT."', responsable = '".$responsable."', id_roles = '".$id_roles."'  WHERE id_datos_del_dispositivo = ".$_SESSION['lastId']; 
+
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones = '$observacionT', comprobaciones = '$comprobacion' responsable = '$responsable', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+>>>>>>> 4357bb68e6a3c45c2ebf82d6c93bc49fa7f19204
 
 $resultado = $mysqli->query($sql);
 
@@ -25,13 +38,13 @@ if ($resultado) {
     <script language='JavaScript'>
     document.addEventListener('DOMContentLoaded', function() {
         Swal.fire({
-            icon: 'error',
+            icon: 'success',
             title: 'Se realizaron los cambios',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'OK'
           }).then(() => {
-            location.assign('detalles.php');
+            location.assign('detalles.php?id=".$idDispo."');
           });
 });
     </script>";
@@ -47,11 +60,9 @@ if ($resultado) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalle.php');
+                location.assign('detalles.php?id=".$idDispo."');
               });
     });
         </script>";
 }
-
-header("Location: verificador.php");
 ?>

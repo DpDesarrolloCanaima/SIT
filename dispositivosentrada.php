@@ -149,7 +149,6 @@ $resultado8 = $mysqli->query($sql2);
                                         target="_blank">Entregados</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
-
                             </div>
                         </div>
 
