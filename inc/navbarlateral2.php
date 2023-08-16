@@ -60,7 +60,7 @@
         administrar
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Pages Collapse Menu-->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
@@ -79,18 +79,22 @@
                 case 3:
                     echo '
                     <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                    <a class="collapse-item" href="dispositivos.php">Por Entregar</a>
+                    <a class="collapse-item" href="dispositivos.php?idenlace=6">Por entregar</a>
+                    <a class="collapse-item" href="dispositivos.php?idenlace=7">Entregados</a>
                     <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
                     ';
+
                     break;  
                 case 4:
                         echo '
-                        <a class="collapse-item" href="dispositivos.php">Dispositivos</a>
+                        <a class="collapse-item" href="dispositivos.php?idenlace=2">En la linea</a>
+                        <a class="collapse-item" href="dispositivos.php?idenlace=3">Reparados</a>
                         ';
                     break; 
                 case 5:
                             echo '
-                            <a class="collapse-item" href="dispositivos.php">Dispositivos</a>
+                            <a class="collapse-item" href="dispositivos.php?idenlace=4">Dispositivos</a>
+                            <a class="collapse-item" href="dispositivos.php?idenlace=5">Dispositivos</a>
                             ';
                     break;   
             }    
