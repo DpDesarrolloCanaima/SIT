@@ -1,6 +1,6 @@
 <?php
 
-$mysqli = new mysqli("localhost", "danyerbert", "27047631ghots", "oac_prueba");
+//$mysqli = new mysqli("localhost", "danyerbert", "27047631ghots", "oac_prueba");
 
 $mysqli = new mysqli("localhost","root","","oac_prueba");
 

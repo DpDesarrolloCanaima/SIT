@@ -24,7 +24,7 @@ require "config/conexionProvi.php";
                 case 3:
                     
                     $estatusDispo = 6;
-                    $filenameDetalles = "detallesanalista.php";
+                    $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";        
                     break;
 

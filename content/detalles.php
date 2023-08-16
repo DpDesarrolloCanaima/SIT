@@ -65,12 +65,6 @@
                                     <?php echo $rowde['estatus'];?>
                                 </td>
                             </tr>
-<<<<<<< HEAD
-                            <!--<input type="hidden" name="id_status" value="3">-->
-                            <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
-                            <!--<input type="hidden" name="id_roles" value=""--><?php //echo $rol;?>
-=======
->>>>>>> 4357bb68e6a3c45c2ebf82d6c93bc49fa7f19204
                         </tbody>
                     </table>
 
