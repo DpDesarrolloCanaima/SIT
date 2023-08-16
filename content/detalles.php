@@ -1,8 +1,6 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>-->
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
@@ -18,6 +16,9 @@
                             <?php
                         $rowde = $resultado->fetch_assoc();
                         ?>
+                            <a class="btn btn-primary"
+                                href="actualizarverificador.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=4"
+                                role="button">Actualizar</a>
                             <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>
