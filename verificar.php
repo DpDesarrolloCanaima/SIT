@@ -1,25 +1,18 @@
 <?php
 
-require "config/conexionProvi.php";
 
-session_start();
-
-if (!isset($_SESSION['id_usuarios']) OR !isset($_GET['Observacion'])) {
-    header("Location: index.php");
-    session_destroy();
-}
-
-$observacionT = $mysqli->real_escape_string($_GET['Observacion']);
+if ($_POST) {
+  require "function.php";
+  
+$observacion = $_POST['observaciones'];
 $comprobacion = implode(',', $_POST['comprobaciones']);
-$estatus = $mysqli->real_escape_string($_GET['id_status']);
-$responsable = $mysqli->real_escape_string($_GET['responsable']);
-$id_roles = $mysqli->real_escape_string($_GET['id_roles']);
-$idDispo = $mysqli->real_escape_string($_GET['id_dispositivo']);
+$estatus =limpiarDatos($_POST['id_status']);
+$responsable = limpiarDatos($_POST['responsable']);
+$id_roles = limpiarDatos($_POST['id_roles']);
+$idDispo = limpiarDatos($_POST['id_dispositivo']);
 
-
-//$sql = "UPDATE datos_del_dispotivo SET id_estatus = ".$estatus.",  observaciones = '".$observacionT."', responsable = '".$responsable."', id_roles = '".$id_roles."'  WHERE id_datos_del_dispositivo = ".$_SESSION['lastId']; 
-
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones = '$observacionT', comprobaciones = '$comprobacion' responsable = '$responsable', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+require "config/conexionProvi.php";
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones = '$observacion', responsable = '$responsable', comprobaciones = '$comprobacion', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 
@@ -56,4 +49,6 @@ if ($resultado) {
     });
         </script>";
 }
+}
+
 ?>

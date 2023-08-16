@@ -6,7 +6,7 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <form class="form-inline" action="verificartecnico.php" method="get">
+                <div class="form-inline" action="verificartecnico.php" method="get">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                         <tbody>
@@ -69,9 +69,7 @@
                                     <?php echo $rowde['estatus'];?>
                                 </td>
                             </tr>
-                            <input type="hidden" name="id_status" value="5">
-                            <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
-                            <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
+
                         </tbody>
                     </table>
                     <!-- Button trigger modal -->
@@ -83,7 +81,7 @@
                             include "modaltecnico.php";
                             
                         ?>
-                </form>
+                </div>
             </div>
         </div>
     </div>
