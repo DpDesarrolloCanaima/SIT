@@ -31,8 +31,9 @@ require "config/conexionProvi.php";
                     $resultadover = $mysqli->query($consultaver);
 
                     $numr = $resultadover->num_rows;
-        
-                    echo ' <!-- Nav Item - Alerts -->
+            
+                    echo '
+                    <!-- Nav Item - Alerts -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -46,56 +47,59 @@ require "config/conexionProvi.php";
                             <h6 class="dropdown-header">
                                 NOTIFICACIONES
                             </h6>';
-        
+            
                             setlocale(LC_TIME, 'es_VE');
-        
+            
                             $i = 0;
-        
+            
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['
+                                id_datos_del_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
-                            $icono;
-                            switch($verNot['id_tipo_de_dispositivo']) {
-                                case 1: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 3: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 4: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 5: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 6: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 7: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                                case 8: 
-                                    $icono = "img/canaimalogo2.jpg";
-                                    break;
-                            }
-        
-        
-                                    echo '<img class="img-fluid " src="'.$icono.'">
+                                        $icono;
+                                        switch($verNot['id_tipo_de_dispositivo']) {
+                                        case 1:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 3:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 4:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 5:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 6:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 7:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 8:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        }
+            
+            
+                                        echo '<img class="img-fluid " src="'.$icono.'">
                                     </div>
                                 </div>
                                 <div>';
-        
-                                $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
-        
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación: '.$verNot['observaciones'].'</span>
-                             </div>
-                        </a>';
-                        $i++;
-                        }
-        
-                    echo '</div>
+            
+                                    $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+            
+                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        '.$verNot['observaciones'].'</span>
+                                </div>
+                                </a>';
+                                $i++;
+                                }
+            
+                                echo '
+                        </div>
                     </li>';
         break;
 
