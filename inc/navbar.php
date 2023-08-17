@@ -23,7 +23,7 @@ require "config/conexionProvi.php";
                 
                 case 3:
                     
-                    $estatusDispo = 6;
+                    $estatusDispo = 5;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";  
                     $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
@@ -136,8 +136,7 @@ require "config/conexionProvi.php";
                 $i = 0;
 
                 while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                    echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['
-                    id_datos_del_dispositivo'].'">
+                    echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                     <div class="mr-3">
                         <div class="bg-primary icon-circle">';
                             $icono;
@@ -218,8 +217,7 @@ require "config/conexionProvi.php";
                 $i = 0;
 
                 while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                    echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['
-                    id_datos_del_dispositivo'].'">
+                    echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                     <div class="mr-3">
                         <div class="bg-primary icon-circle">';
                             $icono;

@@ -17,7 +17,13 @@ INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = 5";
 
 $resultado1 = $mysqli->query($sql1);
 
+// $sqlComprobaciones = "SELECT comprobaciones FROM datos_del_dispotivo WHERE id_estatus = 5";
+// $comprobaciones = array();
+// $resultadoComprobaciones = mysqli_query($mysqli, $sqlComprobaciones);
 
+// while ($objeto =  mysqli_fetch_object($resultadoComprobaciones) ) {
+//     array_push($comprobaciones, $objeto);
+// }
 ?>
 
 <!DOCTYPE html>

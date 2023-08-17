@@ -93,8 +93,9 @@ $resultado2 = $mysqli->query($consulta2);
                                     <h6 class="m-0 font-weight-bold text-primary">Productividad de OAC</h6>
                                     <!-- Buscardor de fechas-->
                                     <div class="input-group">
-                                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-                                        <option selected>Seleccione la fecha...</option>
+                                        <select class="custom-select" id="inputGroupSelect04"
+                                            aria-label="Example select with button addon">
+                                            <option selected>Seleccione la fecha...</option>
                                             <?php
                                                 while ($row1 = $resultado2->fetch_assoc())  {
                                                     echo  '<option value="">'.$row1['fecha_de_recepcion'];'</option>';
@@ -102,7 +103,8 @@ $resultado2 = $mysqli->query($consulta2);
                                             ?>
                                         </select>
                                         <div class="input-group-append">
-                                             <button class="btn btn-outline-secondary" type="button" value="fecha">Buscar</button>
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                value="fecha">Buscar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -119,9 +121,10 @@ $resultado2 = $mysqli->query($consulta2);
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <div
+                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                     <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
-                                    
+
                                     <div class="dropdown no-arrow">
                                         <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -136,93 +139,85 @@ $resultado2 = $mysqli->query($consulta2);
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="card shadow mb-4" style="width: 18rem; padding-left: 10 rem;">
-                            <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                 <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                        </div> -->
                     </div>
-                 </div>
+                </div>
 
-                    <!-- /.container-fluid -->
+                <!-- /.container-fluid -->
 
-                    <!-- Begin Page Content -->
-                    <div class="container-fluid">
-                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
                                     class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
-                        </div>
+                    </div>
+
+
+                    <!-- Content Row -->
+                    <div class="row">
 
 
                         <!-- Content Row -->
                         <div class="row">
 
-
-                            <!-- Content Row -->
-                            <div class="row">
-
-                                <!-- Content Column -->
-                                <div class="col-lg-6 mb-4">
-
-                                </div>
-
+                            <!-- Content Column -->
+                            <div class="col-lg-6 mb-4">
 
                             </div>
-                            <!-- /.container-fluid -->
-
-
-
-                            </div>
-                            <!-- /.container-fluid -->
 
 
                         </div>
-                        <!-- End of Main Content -->
+                        <!-- /.container-fluid -->
 
-                        <!-- Footer -->
-                        <footer class="sticky-footer bg-white">
-                            <div class="container my-auto">
-                                <div class="copyright text-center my-auto">
-                                    <span>Copyright &copy; Industrias Canaima 2022</span>
-                                </div>
-                            </div>
-                        </footer>
-                        <!-- End of Footer -->
+
 
                     </div>
-                    <!-- End of Content Wrapper -->
+                    <!-- /.container-fluid -->
+
 
                 </div>
-                <!-- End of Page Wrapper -->
+                <!-- End of Main Content -->
 
-                <!-- Scroll to Top Button-->
-                <a class="scroll-to-top rounded" href="#page-top">
-                    <i class="fas fa-angle-up"></i>
-                </a>
-
-                <!-- Logout Modal-->
-                <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-footer">
-                                <a class="btn btn-success" href="logout.php">Salir</a>
-                                <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                            </div>
+                <!-- Footer -->
+                <footer class="sticky-footer bg-white">
+                    <div class="container my-auto">
+                        <div class="copyright text-center my-auto">
+                            <span>Copyright &copy; Industrias Canaima 2022</span>
                         </div>
                     </div>
-                </div>
+                </footer>
+                <!-- End of Footer -->
 
-                <?php include "inc/script.php"; ?>
+            </div>
+            <!-- End of Content Wrapper -->
+
+        </div>
+        <!-- End of Page Wrapper -->
+
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
+
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-success" href="logout.php">Salir</a>
+                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <?php include "inc/script.php"; ?>
 </body>
 
 </html>
