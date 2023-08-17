@@ -73,11 +73,20 @@
 
                     </tbody>
                 </table>
-                <!-- Button trigger modal -->
+                <?php
+                 $verestatus = $rowde['estatus'];
+                 if ($verestatus == "Por entregar") {
+                             echo '
+                             <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                     data-target="#entregarDispo">
                     Entregado
                 </button>
+                     ';
+                     }
+
+                
+                ?>
                 <?php
                         include "modalVeriAna.php";
                     ?>

@@ -72,12 +72,17 @@
 
                         </tbody>
                     </table>
-                    <!-- Button trigger modal -->
+                    <?php
+                     $verestatus = $rowde['estatus'];
+                     if ($verestatus == "En la linea") {
+                         echo '
+                         <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                         data-target="#verificarModal">
                         Reparado
                     </button>
-                    <?php
+                         ';
+                         }
                             include "modaltecnico.php";
                             
                         ?>

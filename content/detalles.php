@@ -71,13 +71,16 @@
                         </tr>
                     </tbody>
                 </table>
-
-                <!-- Button trigger modal -->
+                <?php
+                if ($rowde['id_estatus'] == 4) :
+                        ?>
+                        <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal"
                     data-target="#verificarDispo">
                     Verificar
                 </button>
-                <?php
+                        <?php
+                                endif;
                         include "modalComprobar.php";
                     ?>
             </div>
