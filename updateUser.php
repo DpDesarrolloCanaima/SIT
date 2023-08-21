@@ -2,7 +2,7 @@
     require "function.php";
    
 if ($_POST) {
-    $idUpdate = $_POST['idEdit'];
+    $idUpdate = $_POST['idusuarios'];
     $usuarioupdate = limpiarDatos(htmlspecialchars($_POST['usuario']));
     $nombreupdate = limpiarDatos(htmlspecialchars($_POST['nombre']));
     $cedulaupdate = limpiarDatos(htmlspecialchars($_POST['cedula']));
