@@ -22,7 +22,7 @@ var myBarChart = new Chart(ctx, {
       backgroundColor: ['#52BE80', '#AF7AC5', '#F5B041', '#85929E'],
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [400, 120, 200, 147],
+      data: [550, 150, 300, 400],
     }],
   },
   options: {
