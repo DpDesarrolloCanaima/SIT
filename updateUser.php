@@ -2,7 +2,7 @@
     require "function.php";
    
 if ($_POST) {
-    $idUpdate = $_POST['idusuarios'];
+    $idUpdate = $_POST['idEdit'];
     $usuarioupdate = limpiarDatos(htmlspecialchars($_POST['usuario']));
     $nombreupdate = limpiarDatos(htmlspecialchars($_POST['nombre']));
     $cedulaupdate = limpiarDatos(htmlspecialchars($_POST['cedula']));
@@ -12,9 +12,10 @@ if ($_POST) {
     
     require "config/conexionProvi.php";
 
-    $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate', cedula = '$cedulaupdate', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = $idUpdate";
 
-    $result = mysqli_query($mysqli, $sql);
+    $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate',  cedula = '$cedulaupdate', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = " . $idUpdate;
+
+   $result = mysqli_query($mysqli, $sql);
 
     if ($result) {
         echo "
