@@ -103,8 +103,7 @@ $resultado2 = $mysqli->query($consulta2);
                                             ?>
                                         </select>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button"
-                                                value="fecha">Buscar</button>
+                                            <button class="btn btn-outline-secondary" type="button" value="fecha">Buscar</button>
                                         </div>
                                     </div>
                                 </div>
