@@ -9,13 +9,14 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
+$estatus = $_REQUEST['id'];
 //Consulta para traer los datos almacenados de los dispositivos
 
 $sqlEntregados = "SELECT  d.id_datos_del_beneficiario, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.fecha_de_entrega , j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula, m.estatus FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario
-INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus WHERE d.id_estatus = 7";
+INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus WHERE d.id_estatus = $estatus";
 
 $resultadoEntregados = $mysqli->query($sqlEntregados);
 

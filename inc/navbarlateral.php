@@ -98,13 +98,13 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="dispositivosRecibidos.php">Recibidos</a>
-                <a class="collapse-item" href="dispositivosdeSalida.php">En Linea</a>
-                <a class="collapse-item" href="dispositivosreparados.php">Reparados</a>
-                <a class="collapse-item" href="dispositivoporverificar.php">Por verificar</a>
-                <a class="collapse-item" href="dispositivosVerificados.php">Verificados</a>
-                <a class="collapse-item" href="dispositivosporentregar.php">Por entregar</a>
-                <a class="collapse-item" href="dispositivosEntregados.php">Entregados</a>
+                <a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>
+                <a class="collapse-item" href="dispositivosdeSalida.php?id=2">En Linea</a>
+                <a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>
+                <a class="collapse-item" href="dispositivoporverificar.php?id=4">Por verificar</a>
+                <a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>
+                <a class="collapse-item" href="dispositivosporentregar.php?id=6">Por entregar</a>
+                <a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>
             </div>
         </div>
     </li>

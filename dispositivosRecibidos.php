@@ -10,7 +10,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-
+$estatus = $_REQUEST['id'];
 // Consulta para mostrar los datos e enviar
 $consulta2 = "SELECT * FROM genero";
 $resultado2 = $mysqli->query($consulta2);
@@ -65,7 +65,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.id_estatus = 1";
+INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.id_estatus = $estatus";
 
 $resultado8 = $mysqli->query($sql2);
 

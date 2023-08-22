@@ -4,12 +4,131 @@ require "function.php";
 if ($_POST) {
     $idEditBene = $_POST['ideditbene'];
     $icedit = limpiarDatos($_POST['icedit']);
+    if ($icedit == "") {
+      echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El equipo debe tener un IC',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('listadebeneficiario.php');
+              });
+    });
+        </script>";
+    }
     $nombreBeneEdit = limpiarDatos($_POST['nombre_del_beneficiario_edit']);
+    if ($nombreBeneEdit == "") {
+      echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El equipo ya esta registrado',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('listadebeneficiario.php');
+              });
+    });
+        </script>";
+    }
     $cedulaBeneEdit = limpiarDatos($_POST['cedulaBeneEdit']);
+    if ($cedulaBeneEdit == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script language='JavaScript'>
+          document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Debe ingresar la cedula del beneficiario',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK'
+                }).then(() => {
+                  location.assign('listadebeneficiario.php');
+                });
+      });
+          </script>";
+    }
     $edadBeneEdit = limpiarDatos($_POST['edadBeneEdit']);
+    if ($edadBeneEdit == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script language='JavaScript'>
+          document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Debe ingresar la edad',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK'
+                }).then(() => {
+                  location.assign('listadebeneficiario.php');
+                });
+      });
+          </script>";
+    }
     $generoEdit = limpiarDatos($_POST['genero']);
+    if ($generoEdit == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script language='JavaScript'>
+          document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'Seleccione el genero',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK'
+                }).then(() => {
+                  location.assign('listadebeneficiario.php');
+                });
+      });
+          </script>";
+    }
     $fechadenacimientoEdit = validar_fecha("fecNacBeneEdit");
+    if ($fechadenacimientoEdit == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script language='JavaScript'>
+          document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  icon: 'error',
+                  title: ' Ingrese fecha de Nacimiento',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK'
+                }).then(() => {
+                  location.assign('listadebeneficiario.php');
+                });
+      });
+          </script>";
+    }
     $areaEdit = limpiarDatos($_POST['area']);
+    if ($areaEdit == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script language='JavaScript'>
+          document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  icon: 'error',
+                  title: 'ingrese el area',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK'
+                }).then(() => {
+                  location.assign('listadebeneficiario.php');
+                });
+      });
+          </script>";
+    }
     $cargoEdit = limpiarDatos($_POST['cargo']);
     $nombreRepreBeneEdit = limpiarDatos($_POST['nombre_del_representanteEdit']);
     $correoEdit = limpiarDatos($_POST['correoBeneEdit']);
