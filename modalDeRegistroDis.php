@@ -108,28 +108,6 @@
                             <?php endforeach; ?>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="beneficiario">Beneficiario</label>
-                        <select name="beneficiario" id="beneficiario" class="form-control form-control-lg">
-                            <?php foreach ($result as $row13) : ?>
-                            <option value="<?php echo $row13['id_datos_del_entregante']; ?>">
-                                <?php echo $row13['nombre_del_beneficiario']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="responsable">Responsable</label>
-                        <select name="responsable" id="responsable" class="form-control form-control-lg">
-                            <?php foreach ($resultado14 as $row14) : ?>
-                            <option value="<?php echo $row14['id_usuarios']; ?>">
-                                <?php echo $row14['nombre']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <!-- <div class="form-group">
-                        <label for="fechaEntrega">Fecha de Entrega</label>
-                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
-                    </div> -->
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
                     <hr>

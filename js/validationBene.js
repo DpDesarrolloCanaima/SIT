@@ -41,7 +41,7 @@ identificadorCanaima.addEventListener("blur", (e) => validateBeneficiario("Ingre
 
 nombreDeBeneficiario.addEventListener("blur", (e) => validateBeneficiario("Ingrese el nombre del beneficiario", e));
 
-cedulaDeIdentidad.addEventListener("blur", (e) => validateBeneficiario("Ingrese la Cedula de Identidad del Beneficiario.", e));
+cedulaDeIdentidad.addEventListener("blur", (e) => validateBeneficiario("No debe quedar vacio", e));
 
 edadBeneficiario.addEventListener("blur", (e) => validateBeneficiario("Ingrese la Edad del beneficiario.", e));
 

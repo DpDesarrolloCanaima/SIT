@@ -16,8 +16,9 @@
   </div>
   
   <div class="form-row">
+  <label for="inputState">Ingrese</label>
       <div class="form-group col-md-4">
-        <label for="inputState">Tipo</label>
+        <!-- <label for="inputState">Tipo</label> -->
         <select id="inputState" class="form-control" name = "tipo">
         <?php foreach ($resultado14 as $row14) : ?>  
           <option value = "<?php echo $row14['id_documento'];?>"><?php echo $row14['tipo_documento'];?></option>
@@ -25,13 +26,15 @@
         </select>
       </div>
     <div class="form-group col-md-6">
-      <label for="inputCity">Cedula</label>
-      <input type="text" class="form-control" id="inputCity">
+      <!-- <label for="">cedula</label> -->
+      <input type="text" class="form-control" id="cedula" name="cedulaBene">
+      <span></span>
     </div>
 </div>
 <div class="form-group">
-    <label for="inputAddress2">Nombre del Beneficiario</label>
-    <input type="text" class="form-control" id="inputAddress2" name="nombre_del_beneficiario">
+    <label for="nombre_bene">Nombre del Beneficiario</label>
+    <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario">
+    <span></span>
   </div>
 <div class="form-group">
                         <label for="edadBene">Edad</label>

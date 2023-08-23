@@ -75,9 +75,9 @@ $resultado14 = $mysqli->query($consulta14);
 $sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
-
-
-
+//Consulta para traer el tipo de documento
+$sql14 = "SELECT id_documento, tipo_documento FROM tipo_documento";
+$resultado14 = $mysqli->query($sql14);
 
 //Consulta para traer los datos almacenados de los dispositivos
 
