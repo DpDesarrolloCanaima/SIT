@@ -12,7 +12,7 @@ $id_roles = limpiarDatos($_POST['id_roles']);
 $idDispo = limpiarDatos($_POST['id_dispositivo']);
 
 require "config/conexionProvi.php";
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones = '$observacion', responsable = '$responsable', comprobaciones = '$comprobacion', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', comprobaciones = '$comprobacion', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 

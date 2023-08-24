@@ -55,7 +55,7 @@
                         <tr>
                             <th>Observaciones</th>
                             <td>
-                                <?php echo $rowde['observaciones'];?>
+                                <?php echo $rowde['observaciones_verificador'];?>
                             </td>
                         </tr>
                         <tr>

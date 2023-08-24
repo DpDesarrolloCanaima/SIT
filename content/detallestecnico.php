@@ -54,7 +54,7 @@
                             <tr>
                                 <th>Observaciones</th>
                                 <td>
-                                    <?php echo $rowde['observaciones'];?>
+                                    <?php echo $rowde['observaciones_analista'];?>
                                 </td>
                             </tr>
                             <tr>

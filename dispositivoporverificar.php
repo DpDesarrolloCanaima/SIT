@@ -12,7 +12,7 @@ $estatus = $_REQUEST['id'];
 
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sqlEntregados = "SELECT  d.id_datos_del_beneficiario, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.fecha_de_entrega , j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula, m.estatus FROM datos_del_dispotivo AS d 
+$sqlEntregados = "SELECT  d.id_datos_del_beneficiario, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.observaciones_tecnico, j.nombre, j.modelo, k.origen , e.nombre_del_beneficiario, e.cedula, m.estatus FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario
@@ -105,7 +105,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                                             <td><?php echo $row['serial_equipo'];?></td>
                                             <td><?php echo $row['serial_de_cargador'];?></td>
                                             <td><?php echo $row['fecha_de_recepcion'];?></td>
-                                            <td><?php echo $row['fecha_de_entrega'];?></td>
+                                            <td><?php echo $row['observaciones_tecnico'];?></td>
                                             <td><?php echo $row['origen'];?></td>
                                             <td><?php echo $row['nombre_del_beneficiario'];?></td>
                                             <td><?php echo $row['cedula'];?></td>

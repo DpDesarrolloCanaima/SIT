@@ -69,8 +69,6 @@ $rol = $_SESSION['id_roles'];
                     </div>
 
                     <div class="row">
-
-                        <!-- Area Chart -->
                         <!-- Pie Chart -->
                         <div class="col-xl-12 col-lg-7">
                             <div class="card shadow mb-4">
