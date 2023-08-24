@@ -8,7 +8,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $estatus = $_REQUEST['id'];
-$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, d.observaciones_analista, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
@@ -104,7 +104,7 @@ $resultado8 = $mysqli->query($sql2);
                                                 <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                                 <td><?php echo $row['estado_recepcion_equipo']; ?></td>
                                                 <td><?php echo $row['fecha_de_entrega']; ?></td>
-                                                <td><?php echo $row['observaciones']; ?></td>
+                                                <td><?php echo $row['observaciones_analista']; ?></td>
                                                 <td><?php echo $row['estatus']; ?></td>
                                             </tr>
                                             <?php
