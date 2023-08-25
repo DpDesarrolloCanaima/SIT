@@ -286,10 +286,13 @@ require "config/conexionProvi.php";
                         echo "Analista";
                         break;
                     case 4:
-                        echo "Tecnico";
+                        echo "Técnico";
                         break;
                     case 5:
                         echo "Verificador";
+                        break;
+                    case 6:
+                        echo "Coordinador de Área";
                         break;
                 }
 

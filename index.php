@@ -38,6 +38,9 @@ if ($_POST) {
                     case 5:
                         header("Location: verificador.php");
                         break;
+                    case 6:
+                            header("Location: coordinador.php");
+                            break;
                     default:
                            echo  "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>

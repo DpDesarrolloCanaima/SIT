@@ -9,6 +9,9 @@
 	case 2:
 		echo ' <a class="sidebar-brand d-flex align-items-center justify-content-center" href="presidencia.php">';
 	break;
+    case 6:
+		echo ' <a class="sidebar-brand d-flex align-items-center justify-content-center" href="coordinador.php">';
+	break;
 } 
 
 ?>
@@ -26,7 +29,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <?php
-             //    Comprobación de rol de usuario y muestra de enlace de home.
+             // Comprobación de rol de usuario y muestra de enlace de home.
             switch ($rol) {
                 case 1:
                     echo '<a class="nav-link" href="admin.php">';
@@ -42,6 +45,9 @@
                     break;
                 case 5:
                     echo '<a class="nav-link" href="verificador.php">';
+                    break;  
+                case 6:
+                    echo '<a class="nav-link" href="coordinador.php">';
                     break;    
             }    
         ?>
@@ -63,52 +69,96 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
             aria-controls="collapsePages">
             <img src="img/svg/setting.svg" alt="Industrias Canaima" width="22" height="22">
-            <span>Administrar</span>
+
+            <?php
+           
+            if($rol != 6){
+                $nombreBoton = "Administrar";
+                
+                 $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                           <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+                           <a class="collapse-item" href="listadebeneficiario.php">Beneficiarios</a>';
+            } else{
+                $nombreBoton = "Asignar";
+
+                $items = '<a class="collapse-item" href="listadeusuario.php">Analista</a>
+                         <a class="collapse-item" href="dispositivosentrada.php">Técnico</a>
+                         <a class="collapse-item" href="listadebeneficiario.php">Verificador</a>';
+            }
+            echo "<span>$nombreBoton</span>";
+            ?>
+            
         </a>
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="listadeusuario.php">Usuarios</a>
-                <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                <a class="collapse-item" href="listadebeneficiario.php">Beneficiarios</a>
+            <?php 
+                echo $items;
+            ?>
             </div>
         </div>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <img src="img/svg/grafica.svg " alt="Industrias Canaima" width="22" height="22">
-            <span>Graficas</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
-                <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregados</a>
-            </div>
-        </div>
-    </li>
+
+    <?php
+
+        if($rol != 6){
+            echo 
+            '<li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                    aria-expanded="true" aria-controls="collapseUtilities">
+                    <img src="img/svg/grafica.svg " alt="Industrias Canaima" width="22" height="22">
+                    <span>Graficas</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
+                        <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregados</a>
+                    </div>
+                </div>
+            </li>';
+        }
+    ?>
 
     <!-- Nav Item - Pages Collapse Menu -->
+
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
             <img src="img/svg/table.svg " alt="Industrias Canaima" width="22" height="22">
             <span>Tablas</span>
         </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>
-                <a class="collapse-item" href="dispositivosdeSalida.php?id=2">En Linea</a>
-                <a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>
-                <a class="collapse-item" href="dispositivoporverificar.php?id=4">Por verificar</a>
-                <a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>
-                <a class="collapse-item" href="dispositivosporentregar.php?id=6">Por entregar</a>
-                <a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>
-            </div>
-        </div>
-    </li>
-
+        <?php 
+            switch($rol){
+                case 6: 
+                    echo
+                    '<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">'.
+                    '<div class="bg-white py-2 collapse-inner rounded">'.
+                    '<a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>'.
+                    '<a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>'.
+                    '<a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>'.
+                    '<a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>'.
+                    '</div>'.
+                    '</div>'.
+                    '</li>';
+                break;
+                default: 
+                    echo
+                    '<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">'.
+                    '<div class="bg-white py-2 collapse-inner rounded">'.
+                    '<a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>'.
+                    '<a class="collapse-item" href="dispositivosdeSalida.php?id=2">En Linea</a>'. 
+                    '<a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>'.
+                    '<a class="collapse-item" href="dispositivoporverificar.php?id=4">Por verificar</a>'. 
+                    '<a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>'.
+                    '<a class="collapse-item" href="dispositivosporentregar.php?id=6">Por entregar</a>'.
+                    '<a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>'.
+                    '</div>'.
+                    '</div>'.
+                    '</li>';
+                break;
+            }
+        ?>
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
 
