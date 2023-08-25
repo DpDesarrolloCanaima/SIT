@@ -219,6 +219,9 @@ $resultado14 = $mysqli->query($sql14);
                                case 1:
                                 echo ' <th>Opciones</th> ';
                                break;
+                               case 3:
+                                echo ' <th>Opciones</th> ';
+                               break;
                             }
                                             ?>
                                         </tr>
@@ -258,17 +261,33 @@ $resultado14 = $mysqli->query($sql14);
                                                         <div class="dropdown-menu">
 
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
+                                                            <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
+                                                            </div>
+                                                            </div>
+                                                            </td>';
+                                                            
                                   break;
+                                  case 3:
+                                    echo '  <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            Opciones
+                                        </button>
+                                        <div class="dropdown-menu">
+
+                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
+                                            </div>
+                                            </div>
+                                            </td>';
+                                    break;
                                 }
                         ?>
 
-                            </div>
-                        </div>
-                        </td>
+                          
                         <?php
                             include "modalEditBene.php";
-                           //include "modalprueba.php";
+                            include "modalDeRegistroDis.php";
+
                             endwhile;
                         ?>
                         </tr>

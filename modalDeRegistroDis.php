@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="modalDispo" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalDispo<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="guardarDispo.php" method="POST">
+                <form action="guardarDispo.php" method="POST">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">
@@ -64,29 +64,6 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">El Equipo Reincidio</label>
-                        <div class="form-check">
-                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="Estado_si"
-                                value="si" checked>
-                            <label class="form-check-label" for="Estado_si">
-                                Si
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="Estado_no"
-                                value="no">
-                            <label class="form-check-label" for="Estado_no">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="motivoReincidencia">Motivo de reincidencia</label>
-                        <textarea class="form-control reincidencia" id="motivoReincidencia" rows="3"
-                            name="motivoReincidencia"></textarea>
-                        <span></span>
-                    </div>
-                    <div class="form-group">
                         <label for="falla">Falla del Equipo</label>
                         <select name="falla" id="falla" class="form-control form-control-lg">
                             <?php foreach ($resultado9 as $row9) : ?>
@@ -110,8 +87,9 @@
                     </div>
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
+                    <input type="hidden" name="beneficiario" value = "<?php echo $row['id_datos_del_entregante'];?>">
                     <hr>
-                    <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
+                    <button type="submit" class="btn btn-success" >Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>

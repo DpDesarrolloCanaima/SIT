@@ -87,7 +87,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
                                             <th>Fecha de Recepcion</th>
-                                            <th>Fecha de Entrega</th>
+                                            <th>Observaciones</th>
                                             <th>origen</th>
                                             <th>Nombre del Beneficiario</th>
                                             <th>Cedula</th>

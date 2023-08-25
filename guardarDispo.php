@@ -82,11 +82,7 @@ $observaciones_analista = limpiarDatos($_POST['observaciones']);
 if ($observaciones_analista == "") {
 $observaciones_analista = "No posee observaciones";
 }
-$reincidio = limpiarDatos($_POST['equipo_reincidio']);
-$motivoreincidencia = limpiarDatos($_POST['motivoReincidencia']);
-if ($motivoreincidencia == "") {
-    $motivoreincidencia = "No posee motivo";
-}
+
 $rol = limpiarDatos($_POST['id_roles']);
 $origen = limpiarDatos($_POST['origen']);
 $grado = limpiarDatos($_POST['grado']);
@@ -167,7 +163,7 @@ $comprobacion = "Faltan comprobaciones";
 $observaciones_tecnico = "Falta por observaciones";
 $observaciones_verificador = "Falta por observaciones";
 
-$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_analista, comprobaciones,  equipo_reincidio, motivo_reincidencia, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$reincidio','$motivoreincidencia','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
+$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_analista, comprobaciones, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
 $resultado = mysqli_query($mysqli, $sql);
 
 if ($resultado) {

@@ -16,17 +16,17 @@
   </div>
   
   <div class="form-row">
-  <label for="inputState">Ingrese</label>
+  <!-- <label for="inputState">Ingrese</label> -->
       <div class="form-group col-md-4">
-        <!-- <label for="inputState">Tipo</label> -->
-        <select id="inputState" class="form-control" name = "tipo">
+        <label for="inputState">Tipo De Documento</label>
+        <select id="inputState" class="form-control" name="tipo_documento">
         <?php foreach ($resultado14 as $row14) : ?>  
           <option value = "<?php echo $row14['id_documento'];?>"><?php echo $row14['tipo_documento'];?></option>
           <?php endforeach; ?>
         </select>
       </div>
     <div class="form-group col-md-6">
-      <!-- <label for="">cedula</label> -->
+      <label for="">Ingresar</label>
       <input type="text" class="form-control" id="cedula" name="cedulaBene">
       <span></span>
     </div>

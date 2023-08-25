@@ -10,8 +10,6 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
 
-
-
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
 $resultado5 = $mysqli->query($consulta5);

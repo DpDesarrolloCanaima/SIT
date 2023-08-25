@@ -94,7 +94,7 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="3"
-                            name="observaciones"><?php echo $row['observaciones'];?></textarea>
+                            name="observaciones"><?php echo $row['observaciones_analista'];?></textarea>
                     </div>
                     <div class="form-group">
                         <label for="origen">Origen</label>

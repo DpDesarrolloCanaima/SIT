@@ -14,18 +14,6 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
 
-// Consulta para traer los datos almacenados
-
-$sql1 = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
-INNER JOIN genero AS g ON  g.id_genero=e.id_genero
-INNER JOIN area AS a ON a.id_area = e.id_area
-INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
-INNER JOIN origen AS o ON o.id_origen = e.id_origen
-INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado ";
-
-$resultado = $mysqli->query($sql1);
-
 // Consultas de para mostrar datos en formulario
 // Consulta para mostrar los datos e enviar
 $consulta2 = "SELECT * FROM genero";
@@ -78,18 +66,6 @@ $result = $mysqli->query($sql3);
 //Consulta para traer el tipo de documento
 $sql14 = "SELECT id_documento, tipo_documento FROM tipo_documento";
 $resultado14 = $mysqli->query($sql14);
-
-//Consulta para traer los datos almacenados de los dispositivos
-
-$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador,  d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
-INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
-INNER JOIN origen AS k ON k.id_origen = d.id_origen
-INNER JOIN grado AS l ON l.id_grado = d.id_grado
-INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
-INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo";
-
-$resultado8 = $mysqli->query($sql2);
 
 ?>
 
@@ -147,8 +123,6 @@ $resultado8 = $mysqli->query($sql2);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
                             data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
                     </div>
 
 
@@ -202,14 +176,10 @@ $resultado8 = $mysqli->query($sql2);
                         <?php
                         include "modalRegistroBene.php";
 
-                        include "modalDeRegistroDis.php";
-
                     ?>
                     </div>
 
                     <!-- /.container-fluid -->
-
-
 
                     <!-- Footer -->
                     <footer class="sticky-footer bg-white">

@@ -26,7 +26,7 @@ require "config/conexionProvi.php";
                     $estatusDispo = 5;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";  
-                    $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
+                    $consultaver = "SELECT registro, observaciones_verificador, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
 
                     $resultadover = $mysqli->query($consultaver);
 
@@ -106,7 +106,7 @@ require "config/conexionProvi.php";
         $estatusDispo = 1;
         $filenameDetalles = "detalletecnico.php";
         $notiText = "Reparar, ";
-        $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable
+        $consultaver = "SELECT registro, observaciones_analista, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable
         FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." AND responsable = ".$id_usuario." ORDER BY
         registro DESC ";
         $resultadover = $mysqli->query($consultaver);
@@ -189,7 +189,7 @@ require "config/conexionProvi.php";
         $estatusDispo = 3;
         $filenameDetalles = "detalles.php";
         $notiText = "Verificar, ";
-        $consultaver = "SELECT registro, observaciones, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM
+        $consultaver = "SELECT registro, observaciones_tecnico, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM
         datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." ORDER BY registro DESC ";
         $resultadover = $mysqli->query($consultaver);
 
