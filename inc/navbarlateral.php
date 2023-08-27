@@ -11,7 +11,7 @@
 	break;
     case 6:
 		echo ' <a class="sidebar-brand d-flex align-items-center justify-content-center" href="coordinador.php">';
-	break;
+	break;  
 } 
 
 ?>
@@ -81,9 +81,9 @@
             } else{
                 $nombreBoton = "Asignar";
 
-                $items = '<a class="collapse-item" href="listadeusuario.php">Analista</a>
-                         <a class="collapse-item" href="dispositivosentrada.php">Técnico</a>
-                         <a class="collapse-item" href="listadebeneficiario.php">Verificador</a>';
+                $items = '<a class="collapse-item" href="asignar.php?tipo=analista">Analista</a>
+                         <a class="collapse-item" href="asignar.php?tipo=tecnico">Técnico</a>
+                         <a class="collapse-item" href="asignar.php?tipo=verificador">Verificador</a>';
             }
             echo "<span>$nombreBoton</span>";
             ?>
