@@ -44,7 +44,7 @@ $result = $mysqli->query($sql3);
 
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, d.observaciones_tecnico, d.observaciones_verificador, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, d.observaciones_tecnico, d.observaciones_verificador, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
@@ -195,10 +195,7 @@ $resultado8 = $mysqli->query($sql2);
                                                         break; 
                                                 }
                                             ?>
-                                            <th>Equipo Reincidio</th>
-                                            <th>Motivo de Reincidencia</th>
                                             <th>Falla</th>
-                                            <th>Observaciones</th>
                                             <th>Origen</th>
                                             <th>Estatus</th>
                                             <th>Opciones</th>
@@ -230,10 +227,7 @@ $resultado8 = $mysqli->query($sql2);
                                                 }
                                             
                                             ?>
-                                            <td><?php echo $row['equipo_reincidio']; ?></td>
-                                            <td><?php echo $row['motivo_reincidencia']; ?></td>
                                             <td><?php echo $row['tipo_de_motivo']; ?></td>
-                                            <td><?php echo $row['observaciones']; ?></td>
                                             <td><?php echo $row['origen']; ?></td>
                                             <td><?php echo $row['estatus']; ?></td>
 

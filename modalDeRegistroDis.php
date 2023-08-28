@@ -77,14 +77,7 @@
                         <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
                         <span></span>
                     </div>
-                    <div class="form-group">
-                        <label for="origen">Origen</label>
-                        <select name="origen" id="origen" class="form-control form-control-lg">
-                            <?php foreach ($resultado6 as $row6) : ?>
-                            <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                    <input type="hidden" name="origen" value = "<?php echo $row['origen'];?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
                     <input type="hidden" name="beneficiario" value = "<?php echo $row['id_datos_del_entregante'];?>">

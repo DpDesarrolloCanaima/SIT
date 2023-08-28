@@ -171,12 +171,12 @@ $resultado14 = $mysqli->query($sql14);
                                     switch ($rol) {
                                         case 1:
                                             echo '
-                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
                                             ';
                                             break;
                                         case 3:
                                                 echo '
-                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
                                                 ';
                                             break;
                                     }
@@ -262,6 +262,7 @@ $resultado14 = $mysqli->query($sql14);
 
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                             <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
+                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/circulorelleno.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
                                                             </div>
                                                             </div>
                                                             </td>';
