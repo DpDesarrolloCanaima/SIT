@@ -155,30 +155,11 @@ $resultado8 = $mysqli->query($sql2);
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
                             </div>
-                        </div>
-
-                        <?php
-                                    switch ($rol) {
-                                        case 1:
-                                            echo '
-                                                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
-                                            ';
-                                            break;
-                                        case 3:
-                                                echo '
-                                                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
-                                                ';
-                                            break;
-                                    }
-
-                                ?>
+        </div>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Dispositivos Recibidos</h6>
-
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
