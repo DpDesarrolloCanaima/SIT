@@ -107,7 +107,7 @@ $result = $mysqli->query($consulta);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Id Dispositivo</th>
+                                        <th>No. Dispositivo</th>
                                         <th>Tipo de Dispositivo</th>
                                         <th>Serial del Equipo</th>
                                         <th>Serial del Cargador</th>
@@ -124,12 +124,12 @@ $result = $mysqli->query($consulta);
                                         <th>Equipo Reincidió</th>
                                         <th>Motivo Reincidencia</th>
                                         <th>Registro</th>
-                                        <th>Id Roles</th>
-                                        <th>Id Origen</th>
-                                        <th>Id Grado</th>
-                                        <th>Id Estatus</th>
-                                        <th>Id Motivo</th>
-                                        <th>Id Beneficiario</th>
+                                        <th>Rol</th>
+                                        <th>Origen</th>
+                                        <th>Grado</th>
+                                        <th>No. Estatus</th>
+                                        <th>Motivo</th>
+                                        <th>No. Beneficiario</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
