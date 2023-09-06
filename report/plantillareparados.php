@@ -3,11 +3,7 @@ session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }
-
-
 require('../fpdf/fpdf.php');
-
-
 class PDF extends FPDF
 {
 // Cabecera de página

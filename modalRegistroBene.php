@@ -9,7 +9,15 @@
                 </button>
             </div>
             <div class="modal-body">
-            <form>
+                <form>
+                <div class="form-group">
+                    <label for="origen">Origen</label>
+                    <select name="origen" id="" class="form-control form-control-lg">
+                        <?php foreach ($resultado6 as $row6) : ?>
+                        <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
             <div class="form-group">
     <label for="inputAddress">IC</label>
     <input type="text" class="form-control" id="inputAddress" name= "ic">
@@ -129,14 +137,6 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                             name="descripcion_discapacidad"></textarea>
                         <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="origen">Origen</label>
-                        <select name="origen" id="" class="form-control form-control-lg">
-                            <?php foreach ($resultado6 as $row6) : ?>
-                            <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
