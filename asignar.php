@@ -107,29 +107,17 @@ $result = $mysqli->query($consulta);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>No. Dispositivo</th>
-                                        <th>Tipo de Dispositivo</th>
                                         <th>Serial del Equipo</th>
                                         <th>Serial del Cargador</th>
-                                        <th>Institución Educativa</th>
-                                        <th>Institución Donde Estudia</th>
                                         <th>Fecha de Recepción</th>
                                         <th>Estado Recepción Equipo</th>
                                         <th>Fecha de Entrega</th>
                                         <th>Responsable</th>
                                         <th>Observaciones Analista</th>
-                                        <th>Observaciones Técnico</th>
-                                        <th>Observaciones Verificador</th>
-                                        <th>Comprobaciones</th>
-                                        <th>Equipo Reincidió</th>
-                                        <th>Motivo Reincidencia</th>
                                         <th>Registro</th>
-                                        <th>Rol</th>
                                         <th>Origen</th>
-                                        <th>Grado</th>
-                                        <th>No. Estatus</th>
+                                        <th>Estatus</th>
                                         <th>Motivo</th>
-                                        <th>No. Beneficiario</th>
                                         <th>Opciones</th>
                                     </tr>
                                 </thead>
@@ -139,29 +127,17 @@ $result = $mysqli->query($consulta);
                                         while ($row = $resultado->fetch_assoc()) :
                                     ?>
                                     <tr>
-                                        <td><?php echo $row['id_datos_del_dispositivo']; ?></td>
-                                        <td><?php echo $row['id_tipo_de_dispositivo']; ?></td>
                                         <td><?php echo $row['serial_equipo']; ?></td>
                                         <td><?php echo $row['serial_de_cargador']; ?></td>
-                                        <td><?php echo $row['institucion_educativa']; ?></td>
-                                        <td><?php echo $row['institucion_donde_estudia']; ?></td>
                                         <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                         <td><?php echo $row['estado_recepcion_equipo']; ?></td>
                                         <td><?php echo $row['fecha_de_entrega']; ?></td>
                                         <td><?php echo $row['nombre']; ?></td>
                                         <td><?php echo $row['observaciones_analista']; ?></td>
-                                        <td><?php echo $row['observaciones_tecnico']; ?></td>
-                                        <td><?php echo $row['observaciones_verificador']; ?></td>
-                                        <td><?php echo $row['comprobaciones']; ?></td>
-                                        <td><?php echo $row['equipo_reincidio']; ?></td>
-                                        <td><?php echo $row['motivo_reincidencia']; ?></td>
                                         <td><?php echo $row['registro']; ?></td>
-                                        <td><?php echo $row['id_roles']; ?></td>
                                         <td><?php echo $row['id_origen']; ?></td>
-                                        <td><?php echo $row['id_grado']; ?></td>
                                         <td><?php echo $row['id_estatus']; ?></td>
                                         <td><?php echo $row['id_motivo']; ?></td>
-                                        <td><?php echo $row['id_datos_del_beneficiario']; ?></td>
                                         <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle"
