@@ -25,14 +25,17 @@ switch($asignar){
     case 'analista':
         $estatus = 5;
         $role= 3;
+        $observaciones = 'observaciones_analista';
         break;
     case 'tecnico':
         $estatus = 1;
         $role= 4;
+        $observaciones = 'observaciones_tecnico';
         break;
     case 'verificador':
-        $estatus = 4;
+        $estatus = 3;
         $role= 5;
+        $observaciones= 'observaciones_verificador';
         break;
 }
 
@@ -45,6 +48,8 @@ $resultado1 = $mysqli->query($consulta);
 
 $consulta = "SELECT nombre, id_usuarios FROM usuarios WHERE id_roles = $role";
 $result = $mysqli->query($consulta);
+
+$usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
 
 ?>
 
@@ -113,7 +118,7 @@ $result = $mysqli->query($consulta);
                                         <th>Estado Recepción Equipo</th>
                                         <th>Fecha de Entrega</th>
                                         <th>Responsable</th>
-                                        <th>Observaciones Analista</th>
+                                        <th>Observaciones <?php echo $asignar; ?></th>
                                         <th>Registro</th>
                                         <th>Origen</th>
                                         <th>Estatus</th>
@@ -125,6 +130,7 @@ $result = $mysqli->query($consulta);
                                     <!-- Mostramos los resultados de las consultas realizadas de la tabla dispositivos -->
                                     <?php
                                         while ($row = $resultado->fetch_assoc()) :
+
                                     ?>
                                     <tr>
                                         <td><?php echo $row['serial_equipo']; ?></td>
@@ -133,7 +139,7 @@ $result = $mysqli->query($consulta);
                                         <td><?php echo $row['estado_recepcion_equipo']; ?></td>
                                         <td><?php echo $row['fecha_de_entrega']; ?></td>
                                         <td><?php echo $row['nombre']; ?></td>
-                                        <td><?php echo $row['observaciones_analista']; ?></td>
+                                        <td><?php echo $row[$observaciones]; ?></td>
                                         <td><?php echo $row['registro']; ?></td>
                                         <td><?php echo $row['id_origen']; ?></td>
                                         <td><?php echo $row['id_estatus']; ?></td>
@@ -153,6 +159,12 @@ $result = $mysqli->query($consulta);
                                     <?php
                                         include "modalAsignar.php";
                                         endwhile;
+                                    ?>
+                                    <?php
+                                    switch($rol){
+
+                                        
+                                    }
                                     ?>
                                 </tbody>
                                 </table>

@@ -15,10 +15,10 @@
                     <div class="form-group">
                         <label for="usuarioid">Nombre del Usuario</label>
                         <select name="usuarioid" id="usuarioid" class="form-control form-control-lg">
-                        <?php
-                           while($rows = $result->fetch_assoc()){
-                                echo '<option value="'.$rows['id_usuarios'].'">'.$rows['nombre'].'</option>';
-                           }
+                        <?php 
+                       foreach ($usuarios as $usuario) {
+                            echo '<option value="'.$usuario['id_usuarios'].'">'.$usuario['nombre'].'</option>';
+                        }
                         ?>
                         </select>
                         <input type="hidden" name="tipo" value="<?php echo $asignar?>">
