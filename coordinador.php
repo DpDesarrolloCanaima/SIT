@@ -71,7 +71,7 @@ $resultado2 = $mysqli->query($consulta2);
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "inc/navbar.php"; ?>
+                <?php include "inc/navbar2.php"; ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
