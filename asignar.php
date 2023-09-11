@@ -115,15 +115,11 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                         <th>Serial del Equipo</th>
                                         <th>Serial del Cargador</th>
                                         <th>Fecha de Recepción</th>
-                                        <th>Estado Recepción Equipo</th>
                                         <th>Fecha de Entrega</th>
                                         <th>Responsable</th>
                                         <th>Observaciones <?php echo $asignar; ?></th>
                                         <th>Registro</th>
                                         <th>Origen</th>
-                                        <th>Estatus</th>
-                                        <th>Motivo</th>
-                                        <th>Opciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -136,14 +132,11 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                         <td><?php echo $row['serial_equipo']; ?></td>
                                         <td><?php echo $row['serial_de_cargador']; ?></td>
                                         <td><?php echo $row['fecha_de_recepcion']; ?></td>
-                                        <td><?php echo $row['estado_recepcion_equipo']; ?></td>
+
                                         <td><?php echo $row['fecha_de_entrega']; ?></td>
                                         <td><?php echo $row['nombre']; ?></td>
                                         <td><?php echo $row[$observaciones]; ?></td>
                                         <td><?php echo $row['registro']; ?></td>
-                                        <td><?php echo $row['id_origen']; ?></td>
-                                        <td><?php echo $row['id_estatus']; ?></td>
-                                        <td><?php echo $row['id_motivo']; ?></td>
                                         <td>
                                         <div class="btn-group">
                                             <button type="button" class="btn btn-info btn-sm dropdown-toggle"
