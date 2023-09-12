@@ -40,7 +40,7 @@ require "config/conexionProvi.php";
             }
     
             $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = '.$id_usuario.' ORDER BY registro DESC ';
-            $resultadover = $mysqli->query($consultaver);
+            $resultadover = $mysqli->query($consultaver); 
 
             $numr = $resultadover->num_rows;
     
