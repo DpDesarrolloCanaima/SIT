@@ -123,6 +123,7 @@ $resultado14 = $mysqli->query($sql14);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
                             data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalDispo"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Dispositivo</a>
                     </div>
 
 
@@ -175,6 +176,7 @@ $resultado14 = $mysqli->query($sql14);
 
                         <?php
                         include "modalRegistroBene.php";
+                        include "modalregistroDispositivo.php";
 
                     ?>
                     </div>
