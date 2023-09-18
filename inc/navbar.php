@@ -19,28 +19,37 @@ require "config/conexionProvi.php";
         <?php
 
             switch ($rol) { 
-
                 case 3:
-                    $observacionesT = 'observaciones_verificador'; 
+
+                    $observacionesT = "observaciones_verificador"; 
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";
-                break;
-
+                    $estatusNoti = 2;
+                    
+                    break;
+            
                 case 4:
-                    $observacionesT = 'observaciones_analista';
+
+                    $observacionesT = "observaciones_analista";
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
-                break;
-
+                    $estatusNoti = 4;
+                    
+                    break;
+            
                 case 5:
-                    $observacionesT = 'observaciones_tecnico';
+
+                    $observacionesT = "observaciones_tecnico";
                     $filenameDetalles = "detalles.php";
-                    $notiText = "Verificar, ";  
-                break;
+                    $notiText = "Verificar, ";
+                    $estatusNoti = 6;  
+                
+                    break;
+                    
             }
-    
-            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = '.$id_usuario.' ORDER BY registro DESC ';
-            $resultadover = $mysqli->query($consultaver); 
+  
+            $consultaver = "SELECT registro, '".$observacionesT."', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
+            $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
     
