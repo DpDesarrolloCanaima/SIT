@@ -15,13 +15,13 @@
                         <?php
                                  $rowde = $resultado->fetch_assoc();
 
-                                if ($rowde['id_estatus'] == 3) :
+                                /**if ($rowde['id_estatus'] == 3) :
                         ?>
                         <a class="btn btn-primary"
                             href="actualizarverificador.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=4"
                             role="button">Actualizar</a>
                         <?php
-                                endif;
+                                endif;**/
                             ?>
                         <tr>
                             <th>Tipo de Dispositivo</th>
@@ -72,17 +72,47 @@
                     </tbody>
                 </table>
                 <?php
-                if ($rowde['id_estatus'] == 4) :
+                if ($rowde['id_estatus'] == 4 AND $rol == 5) :
+                    $target = "#verificarDispo";
+                    $nombreBtn = "Verificar";
                         ?>
-                        <!-- Button trigger modal -->
+                     
+                <?php
+                
+                /**POR TERMINAR 
+                 * elseif($rol == 6):
+
+                    $nombreBtn = "Asignar";
+
+
+                    switch($rowde['id_estatus']){
+
+                        case 1:
+                            $target= "#asignarTecnico"; 
+                            break;
+
+                        case 3:
+                            $target= "#asignarVerificador";
+                            break;
+
+                        case 5:
+                            $target= "#asignarAnalista";
+                            break;
+                    }
+
+
+                endif;**/
+                ?>
+                <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal"
-                    data-target="#verificarDispo">
-                    Verificar
+                    data-target="<?php echo $target?>">
+                    <?php echo $nombreBtn ?> 
                 </button>
-                        <?php
-                                endif;
-                        include "modalComprobar.php";
-                    ?>
+                <?php
+                    include "modalComprobar.php";
+                ?>
+
+            
             </div>
         </div>
     </div>
@@ -91,4 +121,4 @@
 </div>
 
 
-<!-- End of Main Content -->
+<!-- End of Main Content -->#verificarDispo 

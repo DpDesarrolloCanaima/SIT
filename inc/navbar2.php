@@ -38,8 +38,6 @@ require "config/conexionProvi.php";
                     case 6:
                         echo "Coordinador";
                         break;
-                
-                    
                 }
 
                     ?>

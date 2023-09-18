@@ -1,5 +1,8 @@
 <?php
 require "config/conexionProvi.php";
+
+$id_usuarios = $_SESSION['id_usuarios'];
+
 ?>
 <!-- Topbar -->
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
@@ -23,7 +26,8 @@ require "config/conexionProvi.php";
                 case 3:
                     $observacionesT = 'observaciones_verificador'; 
                     $filenameDetalles = "detalleanalista.php";
-                    $notiText = "Entregar, ";
+                    $notiText = "Entregar, "; 
+
                 break;
 
                 case 4:
@@ -37,9 +41,20 @@ require "config/conexionProvi.php";
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";  
                 break;
+
+                case 6:
+                    /**POR TERMINAR */
+                    $observacionesT = 'observaciones_tecnico';
+                    $notiText = "Asignar, ";
+                    $filenameDetalles = "detalles.php";
+                    
+                break;
+
+                    
+
             }
     
-            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = '.$id_usuario.' ORDER BY registro DESC ';
+            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
