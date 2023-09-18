@@ -20,8 +20,8 @@
                         <a class="btn btn-primary"
                             href="actualizarverificador.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=4"
                             role="button">Actualizar</a>
-                        <?php
-                                endif;**/
+                        <?php**/
+                                // endif;
                             ?>
                         <tr>
                             <th>Tipo de Dispositivo</th>
@@ -72,10 +72,10 @@
                     </tbody>
                 </table>
                 <?php
-                if ($rowde['id_estatus'] == 4 AND $rol == 5) :
-                    $target = "#verificarDispo";
-                    $nombreBtn = "Verificar";
-                        ?>
+                // if ($rowde['id_estatus'] == 4 AND $rol == 5) :
+                //     $target = "#verificarDispo";
+                //     $nombreBtn = "Verificar";
+                ?>
                      
                 <?php
                 
@@ -120,5 +120,3 @@
 
 </div>
 
-
-<!-- End of Main Content -->#verificarDispo 
