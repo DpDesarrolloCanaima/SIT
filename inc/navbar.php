@@ -26,18 +26,18 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
                     $observacionesT = "observaciones_verificador"; 
                     $filenameDetalles = "detalleanalista.php";
-<<<<<<< HEAD
+
                     $notiText = "Entregar, "; 
 
                 break;
 
-=======
+
                     $notiText = "Entregar, ";
                     $estatusNoti = 2;
                     
                     break;
             
->>>>>>> 0fe878985ab69ffef1d279ccc2943adbf5570b28
+
                 case 4:
 
                     $observacionesT = "observaciones_analista";
@@ -51,7 +51,6 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
                     $observacionesT = "observaciones_tecnico";
                     $filenameDetalles = "detalles.php";
-<<<<<<< HEAD
                     $notiText = "Verificar, ";  
                 break;
 
@@ -67,17 +66,9 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
             }
     
-            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
-=======
-                    $notiText = "Verificar, ";
-                    $estatusNoti = 6;  
-                
-                    break;
-                    
-            }
   
             $consultaver = "SELECT registro, '".$observacionesT."', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
->>>>>>> 0fe878985ab69ffef1d279ccc2943adbf5570b28
+
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
