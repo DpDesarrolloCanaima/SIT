@@ -17,6 +17,8 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
 
+$estatus = 4;
+
 //Consulta para traer los datos almacenados de los dispositivos
 
 $sql2 = "SELECT d.serial_equipo, d.serial_de_cargador,  d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
