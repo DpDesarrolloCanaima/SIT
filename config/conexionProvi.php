@@ -1,8 +1,4 @@
 <?php
-<<<<<<< HEAD
-$mysqli = new mysqli("localhost", "root", "", "oac_prueba");
-=======
->>>>>>> 1a9b38516d8e9f8431c0106909ec22fb8c8615b8
 
 //$mysqli = new mysqli("localhost", "root", "", "oac_prueba");
 
