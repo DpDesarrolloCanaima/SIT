@@ -61,7 +61,7 @@ $id_usuarios = $_SESSION['id_usuarios'];
                     
             }
   
-            $consultaver = "SELECT registro, ".$observacionesT.", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
+            $consultaver = "SELECT registro, '".$observacionesT."', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
