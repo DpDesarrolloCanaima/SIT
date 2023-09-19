@@ -26,24 +26,17 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
                     $observacionesT = "observaciones_verificador"; 
                     $filenameDetalles = "detalleanalista.php";
-<<<<<<< HEAD
-=======
 
                     $notiText = "Entregar, "; 
 
                 break;
 
 
->>>>>>> 4a04aa822737219306b6057c6cd8c1af3cc93ffa
                     $notiText = "Entregar, ";
                     $estatusNoti = 7;
                     
                     break;
             
-<<<<<<< HEAD
-=======
-
->>>>>>> 4a04aa822737219306b6057c6cd8c1af3cc93ffa
                 case 4:
 
                     $observacionesT = "observaciones_analista";
@@ -57,26 +50,6 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
                     $observacionesT = "observaciones_tecnico";
                     $filenameDetalles = "detalles.php";
-<<<<<<< HEAD
-                    $notiText = "Verificar, ";
-                    $estatusNoti = 6;  
-                
-                    break;
-
-                    case 6:
-                        /**POR TERMINAR */
-                        $observacionesT = "observaciones_verificador";
-                        $filenameDetalles = "detalles.php";
-                        $notiText = "Verificar, " ;
-                        $estatusNoti = 6;
-                     
-                        
-                        break;
-                    
-            }
-  
-            $consultaver = "SELECT registro, ".$observacionesT.", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
-=======
                     $notiText = "Verificar, ";  
                 break;
 
@@ -95,7 +68,6 @@ $id_usuarios = $_SESSION['id_usuarios'];
   
             $consultaver = "SELECT registro, '".$observacionesT."', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
 
->>>>>>> 4a04aa822737219306b6057c6cd8c1af3cc93ffa
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
