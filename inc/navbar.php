@@ -26,12 +26,15 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
                     $observacionesT = "observaciones_verificador"; 
                     $filenameDetalles = "detalleanalista.php";
+<<<<<<< HEAD
 
                     $notiText = "Entregar, "; 
 
                 break;
 
 
+=======
+>>>>>>> e0899c9207b1560197c89d95b0d4c0d8b850dfa7
                     $notiText = "Entregar, ";
                     $estatusNoti = 7;
                     
@@ -50,6 +53,7 @@ $id_usuarios = $_SESSION['id_usuarios'];
 
                     $observacionesT = "observaciones_tecnico";
                     $filenameDetalles = "detalles.php";
+<<<<<<< HEAD
                     $notiText = "Verificar, ";  
                 break;
 
@@ -68,6 +72,26 @@ $id_usuarios = $_SESSION['id_usuarios'];
   
             $consultaver = "SELECT registro, '".$observacionesT."', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
 
+=======
+                    $notiText = "Verificar, ";
+                    $estatusNoti = 6;  
+                
+                    break;
+
+                    case 6:
+                        /**POR TERMINAR */
+                        $observacionesT = "observaciones_verificador";
+                        $filenameDetalles = "detalles.php";
+                        $notiText = "Verificar, " ;
+                        $estatusNoti = 6;
+                     
+                        
+                        break;
+                    
+            }
+  
+            $consultaver = "SELECT registro, ".$observacionesT.", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
+>>>>>>> e0899c9207b1560197c89d95b0d4c0d8b850dfa7
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
