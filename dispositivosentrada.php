@@ -8,8 +8,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
-
-
+$id_usuario = $_SESSION['id_usuarios'];
 
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
@@ -35,16 +34,17 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
+$consulta14 = "SELECT id_usuarios, nombre  FROM usuarios WHERE id_roles = 4";
+$resultado14 = $mysqli->query($consulta14);
+
 $sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
-
-
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones, d.equipo_reincidio, d.motivo_reincidencia, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
-INNER JOIN origen AS k ON k.id_origen = d.id_origen
+INNER JOIN origen AS k ON k.id_origen = d.id_origen 
 INNER JOIN grado AS l ON l.id_grado = d.id_grado
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
@@ -142,38 +142,24 @@ $resultado8 = $mysqli->query($sql2);
                                         target="_blank">Recibidos</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
                                         target="_blank">En la linea</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=3"
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3"
+                                        target="_blank">Reparados</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4"
+                                        target="_blank">Por verificar</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5"
                                         target="_blank">Verificados</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=4"
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6"
+                                        target="_blank">Por entregar</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7"
                                         target="_blank">Entregados</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
-
                             </div>
-                        </div>
-
-                        <?php
-                                    switch ($rol) {
-                                        case 1:
-                                            echo '
-                                                <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
-                                            ';
-                                            break;
-                                        case 3:
-                                                echo '
-                                                    <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"> Registrar Dispositivo</a>
-                                                ';
-                                            break;
-                                    }
-
-                                ?>
+        </div>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
                             <h6 class="m-0 font-weight-bold text-primary">Dispositivos Recibidos</h6>
-
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -184,18 +170,21 @@ $resultado8 = $mysqli->query($sql2);
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
-                                            <th>Institucion Educativa</th>
-                                            <th>Institucion Educativa (Donde estudia)</th>
-                                            <th>Grado</th>
                                             <th>Fecha de Recepción</th>
                                             <th>Estado de Recepción Del Equipo</th>
-                                            <th>Equipo Reincidio</th>
-                                            <th>Motivo de Reincidencia</th>
+                                            <th>Fecha de Entrega</th>
                                             <th>Falla</th>
                                             <th>Observaciones</th>
                                             <th>Origen</th>
                                             <th>Estatus</th>
-                                            <th>Opciones</th>
+                                            <?php
+                                                switch ($rol) {
+                                                    case 1:
+                                                        echo "<th>Opciones</th>";
+                                                        break;
+                                                }
+                                            
+                                            ?>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -207,15 +196,11 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row['modelo']; ?></td>
                                             <td><?php echo $row['serial_equipo']; ?></td>
                                             <td><?php echo $row['serial_de_cargador']; ?></td>
-                                            <td><?php echo $row['institucion_educativa']; ?></td>
-                                            <td><?php echo $row['institucion_donde_estudia']; ?></td>
-                                            <td><?php echo $row['grado']; ?></td>
                                             <td><?php echo $row['fecha_de_recepcion']; ?></td>
                                             <td><?php echo $row['estado']; ?></td>
-                                            <td><?php echo $row['equipo_reincidio']; ?></td>
-                                            <td><?php echo $row['motivo_reincidencia']; ?></td>
+                                            <td><?php echo $row['fecha_de_entrega']; ?></td>
                                             <td><?php echo $row['tipo_de_motivo']; ?></td>
-                                            <td><?php echo $row['observaciones']; ?></td>
+                                            <td><?php echo $row['observaciones_analista']; ?></td>
                                             <td><?php echo $row['origen']; ?></td>
                                             <td><?php echo $row['estatus']; ?></td>
 

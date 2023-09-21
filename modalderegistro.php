@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,7 +11,7 @@
 </head>
 <!-- Modal -->
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="registrarUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -21,7 +21,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="registrodeusuario.php" method="POST" class="">
+                <form action="registrodeusuario.php" method="POST">
                     <div class="form-group">
                         <label for="usuario">Usuario</label>
                         <input type="text" class="form-control" id="usuario" aria-describedby="nameHelp"

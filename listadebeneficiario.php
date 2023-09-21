@@ -64,9 +64,13 @@ $resultado11 = $mysqli->query($consulta11);
 $consulta12 = "SELECT * FROM estatus";
 $resultado12 = $mysqli->query($consulta12);
 
+//Consulta para traer los datos del entregante
 $sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
 
+//Consulta para traer el tipo de documento
+$sql14 = "SELECT id_documento, tipo_documento FROM tipo_documento";
+$resultado14 = $mysqli->query($sql14);
 ?>
 
 <!DOCTYPE html>
@@ -167,12 +171,12 @@ $result = $mysqli->query($sql3);
                                     switch ($rol) {
                                         case 1:
                                             echo '
-                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
                                             ';
                                             break;
                                         case 3:
                                                 echo '
-                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
                                                 ';
                                             break;
                                     }
@@ -215,6 +219,9 @@ $result = $mysqli->query($sql3);
                                case 1:
                                 echo ' <th>Opciones</th> ';
                                break;
+                               case 3:
+                                echo ' <th>Opciones</th> ';
+                               break;
                             }
                                             ?>
                                         </tr>
@@ -254,18 +261,34 @@ $result = $mysqli->query($sql3);
                                                         <div class="dropdown-menu">
 
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>';
+                                                            <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
+                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/circulorelleno.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
+                                                            </div>
+                                                            </div>
+                                                            </td>';
+                                                            
                                   break;
+                                  case 3:
+                                    echo '  <td>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                            Opciones
+                                        </button>
+                                        <div class="dropdown-menu">
+
+                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
+                                            </div>
+                                            </div>
+                                            </td>';
+                                    break;
                                 }
                         ?>
 
-                            </div>
-                        </div>
-                        </td>
+                          
                         <?php
                             include "modalEditBene.php";
-                        ?>
-                        <?php
+                            include "modalDeRegistroDis.php";
+
                             endwhile;
                         ?>
                         </tr>

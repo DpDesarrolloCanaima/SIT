@@ -41,8 +41,7 @@
                             <option value="5">Verificador</option>
                         </select>
                     </div>
-                    <input type="hidden" name="accion" value="editar">
-                    <input type="hidden" name="idusuarios" value="<?php echo $row['id_usuarios'];?>">
+                    <input type="hidden" name="idEdit" value="<?php echo $row['id_usuarios'];?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="Update">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

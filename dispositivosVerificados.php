@@ -7,17 +7,23 @@ if (!isset($_SESSION['id_usuarios'])) {
 }
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
+$estatus = $_REQUEST['id'];
 
-
-$sql1 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.observaciones, d.comprobaciones, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo FROM datos_del_dispotivo AS d 
+$sql1 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.observaciones_verificador, d.comprobaciones, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
-INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = 3";
+INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = $estatus";
 
 $resultado1 = $mysqli->query($sql1);
 
+// $sqlComprobaciones = "SELECT comprobaciones FROM datos_del_dispotivo WHERE id_estatus = 5";
+// $comprobaciones = array();
+// $resultadoComprobaciones = mysqli_query($mysqli, $sqlComprobaciones);
 
+// while ($objeto =  mysqli_fetch_object($resultadoComprobaciones) ) {
+//     array_push($comprobaciones, $objeto);
+// }
 ?>
 
 <!DOCTYPE html>
@@ -66,7 +72,7 @@ $resultado1 = $mysqli->query($sql1);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportedispositivoverificados.php?id=3"
+                        <a href="report/reportedispositivoverificados.php?id=5"
                             class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
                                 class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
                     </div>
@@ -103,7 +109,7 @@ $resultado1 = $mysqli->query($sql1);
                                             <td><?php echo $row1['serial_de_cargador']; ?></td>
                                             <td><?php echo $row1['fecha_de_recepcion']; ?></td>
                                             <td><?php echo $row1['tipo_de_motivo']; ?></td>
-                                            <td><?php echo $row1['observaciones']; ?></td>
+                                            <td><?php echo $row1['observaciones_verificador']; ?></td>
                                             <td><?php echo $row1['origen']; ?></td>
                                             <td><?php echo $row1['comprobaciones']; ?></td>
                                             <td><?php echo $row1['estatus']; ?></td>

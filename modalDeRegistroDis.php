@@ -1,15 +1,15 @@
 <!-- Modal -->
-<div class="modal fade" id="modalDispo" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalDispo<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-titlen text-dark mx-auto" id="agregarDispo">Agregar Dispositivo</h1>
+                <h3 class="modal-titlen text-dark mx-auto" id="agregarDispo">Agregar Dispositivo</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="guardarDispo.php" method="POST">
+                <form action="guardarDispo.php" method="POST">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">
@@ -64,29 +64,6 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleInputPassword1">El Equipo Reincidio</label>
-                        <div class="form-check">
-                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="Estado_si"
-                                value="si" checked>
-                            <label class="form-check-label" for="Estado_si">
-                                Si
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input i-radio" type="radio" name="equipo_reincidio" id="Estado_no"
-                                value="no">
-                            <label class="form-check-label" for="Estado_no">
-                                No
-                            </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="motivoReincidencia">Motivo de reincidencia</label>
-                        <textarea class="form-control reincidencia" id="motivoReincidencia" rows="3"
-                            name="motivoReincidencia"></textarea>
-                        <span></span>
-                    </div>
-                    <div class="form-group">
                         <label for="falla">Falla del Equipo</label>
                         <select name="falla" id="falla" class="form-control form-control-lg">
                             <?php foreach ($resultado9 as $row9) : ?>
@@ -100,45 +77,17 @@
                         <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
                         <span></span>
                     </div>
-                    <div class="form-group">
-                        <label for="origen">Origen</label>
-                        <select name="origen" id="origen" class="form-control form-control-lg">
-                            <?php foreach ($resultado6 as $row6) : ?>
-                            <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="estatus">Estatus</label>
-                        <select name="estatus" id="estatus" class="form-control form-control-lg">
-                            <?php foreach ($resultado12 as $row12) : ?>
-                            <option value="<?php echo $row12['id_estatus']; ?>"><?php echo $row12['estatus']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="beneficiario">Beneficiario</label>
-                        <select name="beneficiario" id="beneficiario" class="form-control form-control-lg">
-                            <?php foreach ($result as $row13) : ?>
-                            <option value="<?php echo $row13['id_datos_del_entregante']; ?>">
-                                <?php echo $row13['nombre_del_beneficiario']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="fechaEntrega">Fecha de Entrega</label>
-                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega">
-                    </div>
+                    <input type="hidden" name="origen" value = "<?php echo $row['origen'];?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
+                    <input type="hidden" name="estatus" value="1">
+                    <input type="hidden" name="beneficiario" value = "<?php echo $row['id_datos_del_entregante'];?>">
                     <hr>
-                    <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
+                    <button type="submit" class="btn btn-success" >Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
 </form>
 </div>

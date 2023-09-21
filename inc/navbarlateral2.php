@@ -1,7 +1,6 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-<?php    
+    <?php    
     switch($rol){
     case 3:
                     echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="analista.php">';
@@ -17,12 +16,10 @@
                     break;} 
 
 ?>
-
-
-           <div class="sidebar-brand-icon rotate-n-15">
-            <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
-        </div>
-        <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
+    <div class="sidebar-brand-icon rotate-n-15">
+        <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
+    </div>
+    <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
     </a>
 
     <!-- Divider -->
@@ -50,9 +47,9 @@
                     break;    
             }    
         ?>
-       
-            <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
-            <span>Home</span></a>
+
+        <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
+        <span>Home</span></a>
     </li>
 
     <!-- divider -->
@@ -63,7 +60,7 @@
         administrar
     </div>
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Pages Collapse Menu-->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
@@ -72,8 +69,36 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                 <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
+
+                <?php
+             //    Comprobación de rol de usuario y muestra de enlace de la lista necesario para el rol.
+            switch ($rol) {
+                case 2:
+                    echo ' <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>">';
+                    break;  
+                case 3:
+                    echo '
+                    <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+                    <a class="collapse-item" href="dispositivos.php?idenlace=6">Por entregar</a>
+                    <a class="collapse-item" href="dispositivos.php?idenlace=7">Entregados</a>
+                    <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
+                    ';
+
+                    break;  
+                case 4:
+                        echo '
+                        <a class="collapse-item" href="dispositivos.php?idenlace=2">En la linea</a>
+                        <a class="collapse-item" href="dispositivos.php?idenlace=3">Reparados</a>
+                        ';
+                    break; 
+                case 5:
+                            echo '
+                            <a class="collapse-item" href="dispositivos.php?idenlace=4">Por verificar</a>
+                            <a class="collapse-item" href="dispositivos.php?idenlace=5">Verificados</a>
+                            ';
+                    break;   
+            }    
+             ?>
             </div>
         </div>
     </li>

@@ -9,25 +9,42 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form name="crearusuario" action="registroDeBene.php" method="POST" class="">
-                    <div class="form-group">
-                        <label for="identificador">IC</label>
-                        <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp"
-                            name="ic">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="nombreBene">Nombre del Beneficiario</label>
-                        <input type="text" class="form-control" id="nombreBene" aria-describedby="nameHelp"
-                            name="nombre_del_beneficiario">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="cedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedulaBene">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
+                <form>
+                <div class="form-group">
+                    <label for="origen">Origen</label>
+                    <select name="origen" id="" class="form-control form-control-lg">
+                        <?php foreach ($resultado6 as $row6) : ?>
+                        <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+            <div class="form-group">
+    <label for="inputAddress">IC</label>
+    <input type="text" class="form-control" id="inputAddress" name= "ic">
+  </div>
+  
+  <div class="form-row">
+  <!-- <label for="inputState">Ingrese</label> -->
+      <div class="form-group col-md-4">
+        <label for="inputState">Tipo De Documento</label>
+        <select id="inputState" class="form-control" name="tipo_documento">
+        <?php foreach ($resultado14 as $row14) : ?>  
+          <option value = "<?php echo $row14['id_documento'];?>"><?php echo $row14['tipo_documento'];?></option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+    <div class="form-group col-md-6">
+      <label for="">Ingresar</label>
+      <input type="text" class="form-control" id="cedula" name="cedulaBene">
+      <span></span>
+    </div>
+</div>
+<div class="form-group">
+    <label for="nombre_bene">Nombre del Beneficiario</label>
+    <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario">
+    <span></span>
+  </div>
+<div class="form-group">
                         <label for="edadBene">Edad</label>
                         <input type="text" class="form-control" id="edadBene" name="edadBene">
                         <span></span>
@@ -121,27 +138,10 @@
                             name="descripcion_discapacidad"></textarea>
                         <span></span>
                     </div>
-                    <div class="form-group">
-                        <label for="tipo_De_equipo">Tipo de Equipo</label>
-                        <select name="tipo_de_equipo" id="" class="form-control form-control-lg">
-                            <?php foreach ($resultado5 as $row5) : ?>
-                            <option value="<?php echo $row5['id_tipo_de_equipo']; ?>"><?php echo $row5['nombre']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="origen">Origen</label>
-                        <select name="origen" id="" class="form-control form-control-lg">
-                            <?php foreach ($resultado6 as $row6) : ?>
-                            <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
-                </form>
+</form>
             </div>
         </div>
     </div>

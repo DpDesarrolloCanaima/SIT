@@ -1,24 +1,28 @@
 <!-- Begin Page Content -->
 <div class="container-fluid">
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
     </div>
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Lista de Dispositivos</h6>
-
+            <h6 class="m-0 font-weight-bold text-primary">Dispositivo</h6>
         </div>
         <div class="card-body">
             <div class="table-responsive">
-            <form class="form-inline" action="verificar.php" method="get">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
                     <tbody>
 
                         <?php
-                        $rowde = $resultado->fetch_assoc();
+                                 $rowde = $resultado->fetch_assoc();
+
+                                /**if ($rowde['id_estatus'] == 3) :
                         ?>
+                        <a class="btn btn-primary"
+                            href="actualizarverificador.php?id=<?php echo $rowde['id_datos_del_dispositivo']; ?>&responsable=<?php echo $id_usuario;?>&rol=<?php echo $rol;?>&estatus=4"
+                            role="button">Actualizar</a>
+                        <?php**/
+                                // endif;
+                            ?>
                         <tr>
                             <th>Tipo de Dispositivo</th>
                             <td><?php echo $rowde['nombre'];?></td>
@@ -50,11 +54,7 @@
                         <tr>
                             <th>Observaciones</th>
                             <td>
-                                <div class="form-group">
-                                    <label for="Observacion" class="sr-only w-100">Observación</label>
-                                    <textarea class="form-control" rows="5" id="Observacion" name="Observacion"><?php echo $rowde['observaciones'];?>
-                                    </textarea>                            
-                                </div>
+                                <?php echo $rowde['observaciones_tecnico'];?>
                             </td>
                         </tr>
                         <tr>
@@ -71,35 +71,52 @@
                         </tr>
                     </tbody>
                 </table>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#verificarModal">
-                        Guardar y Verificar
-                    </button>
-                        
-                        <!-- Modal -->
-                    <div class="modal fade" id="verificarModal" tabindex="-1" aria-labelledby="verificarModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="verificarModalLabel">¿Seguro que quieres realizar cambios?</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                              
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
-                                <button type="submit" class="btn btn-primary">Verificar</button>
+                <?php
+                // if ($rowde['id_estatus'] == 4 AND $rol == 5) :
+                //     $target = "#verificarDispo";
+                //     $nombreBtn = "Verificar";
+                ?>
+                     
+                <?php
+                
+                /**POR TERMINAR 
+                 * elseif($rol == 6):
 
-                              </div>
-                            </div>
-                          </div>
-                    </div>
-                </form> 
+                    $nombreBtn = "Asignar";
+
+
+                    switch($rowde['id_estatus']){
+
+                        case 1:
+                            $target= "#asignarTecnico"; 
+                            break;
+
+                        case 3:
+                            $target= "#asignarVerificador";
+                            break;
+
+                        case 5:
+                            $target= "#asignarAnalista";
+                            break;
+                    }
+
+
+                endif;**/
+                ?>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                    data-target="<?php echo $target?>">
+                    <?php echo $nombreBtn ?> 
+                </button>
+                <?php
+                    include "modalComprobar.php";
+                ?>
+
+            
             </div>
         </div>
     </div>
+</div>
 
 </div>
-</div>
-<!-- End of Main Content -->
+
