@@ -10,7 +10,13 @@ $idDispo = limpiarDatos($_POST['id_dispositivo']);
 
 require "config/conexionProvi.php";
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "SELECT id_usuarios FROM usuarios WHERE id_roles = 6";
+
+$resultado = $mysqli->query($sql);
+
+$row = $resultado->fetch_assoc();
+
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = ".row['id_usuarios'].", id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 

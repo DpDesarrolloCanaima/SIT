@@ -81,6 +81,8 @@
                     </div>
                     <input type="hidden" name="id_roles" value="3">
                     <input type="hidden" name="estatus" value="1">
+
+                    <input type="hidden" name="responsable" value="<?php echo $cordinadorID ?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

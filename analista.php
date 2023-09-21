@@ -14,6 +14,17 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
 
+//consulta para obtener el id del cordinador
+
+$sql = "SELECT id_usuarios FROM usuarios WHERE id_roles = 6";
+
+$resultado = $mysqli->query($sql);
+
+$row = $resultado->fetch_assoc(); 
+
+$cordinadorID = $row['id_usuarios']; 
+
+
 // Consultas de para mostrar datos en formulario
 // Consulta para mostrar los datos e enviar
 $consulta2 = "SELECT * FROM genero";
