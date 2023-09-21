@@ -14,6 +14,8 @@ $resultado = $mysqli->query($consulta);
 
 $consulta1 = "SELECT id_roles, roles FROM roles";
 $resultado1 = $mysqli->query($consulta1);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -131,6 +133,7 @@ $resultado1 = $mysqli->query($consulta1);
                                         <!-- Mostramos los resultados de la consultas realizadas de la tabla usuarios -->
                                         <?php
                                             while ($row = $resultado->fetch_assoc()) :
+                                                
                                             ?>
                                         <tr>
                                             <td><?php echo $row['usuario']; ?></td>
@@ -160,6 +163,7 @@ $resultado1 = $mysqli->query($consulta1);
                                                    }
                                                ?>
                                             </td>
+                                           
                                             <?php
                                                 include "modaleditusuario.php";
                                             ?>
