@@ -173,6 +173,7 @@ $resultado14 = $mysqli->query($sql14);
                                             echo '
                                                  <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
                                             ';
+                                            
                                             break;
                                         case 3:
                                                 echo '
@@ -284,41 +285,41 @@ $resultado14 = $mysqli->query($sql14);
                                 }
                         ?>
 
-                          
-                        <?php
+
+                                            <?php
                             include "modalEditBene.php";
                             include "modalDeRegistroDis.php";
 
                             endwhile;
                         ?>
-                        </tr>
-                        </tbody>
-                        </table>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <!-- Modal de registro -->
+                    <!-- Modal de registro -->
 
-            <?php 
+                    <?php 
                     include "modalRegistroBene.php";
                     ?>
 
-        </div>
-    </div>
-    <!-- End of Main Content -->
-
-    <!-- Footer -->
-    <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; Industrias Canaima 2022</span>
+                </div>
             </div>
-        </div>
-    </footer>
-    <!-- End of Footer -->
+            <!-- End of Main Content -->
 
-    </div>
-    <!-- End of Content Wrapper -->
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Industrias Canaima 2022</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
