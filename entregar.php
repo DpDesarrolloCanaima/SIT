@@ -9,7 +9,13 @@ if ($_POST) {
 
     require "config/conexionProvi.php";
 
-    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', id_roles = '$rol' WHERE id_datos_del_dispositivo = $idDispo";
+    $sql = "SELECT id_usuarios FROM usuarios WHERE id_roles = 6";
+
+    $resultado = $mysqli->query($sql);
+
+    $row = $resultado->fetch_assoc();
+
+    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = ".row['id_usuario'].", id_roles = '$rol', responsable = 0 WHERE id_datos_del_dispositivo = $idDispo";
 
     $resultado = mysqli_query($mysqli, $sql);
 

@@ -22,46 +22,36 @@ $id_usuarios = $_SESSION['id_usuarios'];
         <?php
 
             switch ($rol) { 
+
                 case 3:
-
-                    $observacionesT = "observaciones_verificador"; 
+                    $observacionesT = 'observaciones_verificador'; 
                     $filenameDetalles = "detalleanalista.php";
-                    $notiText = "Entregar, ";
-                    $estatusNoti = 7;
-                    
-                    break;
-            
-                case 4:
+                    $notiText = "Entregar, "; 
 
-                    $observacionesT = "observaciones_analista";
+                break;
+
+                case 4:
+                    $observacionesT = 'observaciones_analista';
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
-                    $estatusNoti = 4;
-                    
-                    break;
-                    
+                break;
+
                 case 5:
-
-                    $observacionesT = "observaciones_tecnico";
+                    $observacionesT = 'observaciones_tecnico';
                     $filenameDetalles = "detalles.php";
-                    $notiText = "Verificar, ";
-                    $estatusNoti = 6;  
-                
-                    break;
+                    $notiText = "Verificar, ";  
+                break;
 
-                    case 6:
-                        /**POR TERMINAR */
-                        $observacionesT = "observaciones_verificador";
-                        $filenameDetalles = "detalles.php";
-                        $notiText = "Verificar, " ;
-                        $estatusNoti = 6;
-                     
-                        
-                        break;
+                case 6:
+                   
+                    $observacionesT = 'observaciones_tecnico, observaciones_analista, observaciones_verificador';
+                    $notiText = "Asignar, ";
+                    $filenameDetalles = "detalles.php";
                     
+                break;
             }
-  
-            $consultaver = "SELECT registro, '".$observacionesT."', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE id_estatus = '".$estatusNoti."' ORDER BY registro DESC ";
+    
+            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
@@ -88,7 +78,7 @@ $id_usuarios = $_SESSION['id_usuarios'];
                         echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                         <div class="mr-3">
                             <div class="bg-primary icon-circle">';
-                                $icono;
+                               
                                 switch($verNot['id_tipo_de_dispositivo']) {
                                 case 1:
                                 $icono = "img/canaimalogo2.jpg";
@@ -120,8 +110,15 @@ $id_usuarios = $_SESSION['id_usuarios'];
                         <div>';
     
                             $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
-                            
-                            if($verNot[$observacionesT] != ''){ 
+                            if($rol == 6) {
+                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                    '.$verNot[$observacionesT].'</span>
+                                </div>
+                            </a>';
+                            }
+
+                            if(!empty($verNot[$observacionesT])){ 
                                 echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                 <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
                                     '.$verNot[$observacionesT].'</span>

@@ -72,19 +72,18 @@
                     </tbody>
                 </table>
                 <?php
-                // if ($rowde['id_estatus'] == 4 AND $rol == 5) :
-                //     $target = "#verificarDispo";
-                //     $nombreBtn = "Verificar";
+                 if ($rowde['id_estatus'] == 4 AND $rol == 5) :
+                    $target = "#verificarDispo";
+                    $nombreBtn = "Verificar";
                 ?>
-                     
+                    
                 <?php
-                
-                /**POR TERMINAR 
-                 * elseif($rol == 6):
+                endif;
+               
+                 elseif($rol == 6):
 
                     $nombreBtn = "Asignar";
-
-
+                    
                     switch($rowde['id_estatus']){
 
                         case 1:
@@ -101,7 +100,8 @@
                     }
 
 
-                endif;**/
+                endif;
+                if(!empty($nombreBtn)) :
                 ?>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary float-right" data-toggle="modal"
@@ -109,6 +109,7 @@
                     <?php echo $nombreBtn ?> 
                 </button>
                 <?php
+                    endif;
                     include "modalComprobar.php";
                 ?>
 
