@@ -80,7 +80,7 @@
                 <?php
                 endif;
                
-                 elseif($rol == 6):
+                 if($rol == 6):
 
                     $nombreBtn = "Asignar";
                     
