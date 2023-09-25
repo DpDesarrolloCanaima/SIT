@@ -14,20 +14,14 @@
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">
                     </div>
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputState">Tipo De Documento</label>
-                            <select id="inputState" class="form-control" name="tipo_documento">
-                                <?php foreach ($resultado14 as $row14) : ?>
-                                <option value="<?php echo $row14['id_documento'];?>">
-                                    <?php echo $row14['tipo_documento'];?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="">Ingresar</label>
-                            <input type="text" class="form-control" id="cedula" name="cedulaBene">
-                            <span></span>
+                    <div class="form-group">
+                    <label for="inputAddress">Ingrese la cedula</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="btnGroupAddon">C.I</div>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento">
+                            <input type="hidden" name="tipo_documento" value="1">
                         </div>
                     </div>
                     <div class="form-group">

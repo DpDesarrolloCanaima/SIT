@@ -202,7 +202,31 @@ $resultado14 = $mysqli->query($sql14);
                                             break;
                                         case 3:
                                                 echo '
-                                                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
+                                                    <div class="btn-group dropright">
+                                                    <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                                    <img src="img/svg/beneplus.svg " alt="Industrias Canaima" width="15" height="15">
+                                                        Registro de Beneficiario
+                                                    </button>
+                                                    <button type="button"
+                                                        class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
+                                                        data-toggle="dropdown" aria-expanded="false">
+                                                        <span class="sr-only"></span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                    <li>
+                                                        <a class="btn" data-toggle="modal" data-target="#modalApoyo">Apoyo Institucional</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="btn" data-toggle="modal" data-target="#modalBene">Beneficiario</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="btn" data-toggle="modal" data-target="#modalTrabajador">Trabajador</a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="btn" data-toggle="modal" data-target="#modalJornada">Jornadas Especiales</a>
+                                                    </li>
+                                                    </div>
+                                                </div>
                                                 ';
                                             break;
                                     }

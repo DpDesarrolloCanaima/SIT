@@ -3,10 +3,11 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-titlen text-dark mx-auto" id="agregarBene">Registrar Beneficiario Apoyo Institucional</h3>
+                <h3 class="modal-titlen text-dark mx-auto" id="agregarBene">Registrar Beneficiario Apoyo Institucional
+                </h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
 
             </div>
             <div class="modal-body">
@@ -15,21 +16,15 @@
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">
                     </div>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-4">
-                            <label for="inputState">Tipo De Documento</label>
-                            <select id="inputState" class="form-control" name="tipo_documento">
-                                <?php foreach ($resultado14 as $row14) : ?>
-                                <option value="<?php echo $row14['id_documento'];?>">
-                                    <?php echo $row14['tipo_documento'];?></option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label for="">Ingresar</label>
-                            <input type="text" class="form-control" id="cedula" name="cedulaBene">
-                            <span></span>
+                    <!--<br> -->
+                    <div class="form-group">
+                    <label for="inputAddress">Ingrese el RIF</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text" id="btnGroupAddon">RIF</div>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento">
+                            <input type="hidden" name="tipo_documento" value="2">
                         </div>
                     </div>
                     <div class="form-group">
