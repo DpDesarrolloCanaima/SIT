@@ -169,36 +169,11 @@ $resultado14 = $mysqli->query($sql14);
                         </div>
                         <?php
                                     switch ($rol) {
-                                        case 1:    
-                                                echo '
-                                                                                            
-                                                <div class="btn-group dropright">
-                                                    <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                                    <img src="img/svg/beneplus.svg " alt="Industrias Canaima" width="15" height="15">
-                                                        Registro de Beneficiario
-                                                    </button>
-                                                    <button type="button"
-                                                        class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
-                                                        data-toggle="dropdown" aria-expanded="false">
-                                                        <span class="sr-only"></span>
-                                                    </button>
-                                                    <div class="dropdown-menu">
-                                                    <li>
-                                                        <a class="btn" data-toggle="modal" data-target="#modalApoyo">Apoyo Institucional</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="btn" data-toggle="modal" data-target="#modalBene">Beneficiario</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="btn" data-toggle="modal" data-target="#modalTrabajador">Trabajador</a>
-                                                    </li>
-                                                    <li>
-                                                        <a class="btn" data-toggle="modal" data-target="#modalJornada">Jornadas Especiales</a>
-                                                    </li>
-                                                    </div>
-                                                </div>
-                                                                    
-                                                ';
+                                        case 1:
+                                            echo '
+                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalBene"><img src="img/svg/benelinea.svg " alt="Industrias Canaima" width="15" height="15">  Registrar Beneficiario</a>
+                                            ';
+                                            
                                             break;
                                         case 3:
                                                 echo '
@@ -310,45 +285,41 @@ $resultado14 = $mysqli->query($sql14);
                                 }
                         ?>
 
-
-                                            <?php
+                          
+                        <?php
                             include "modalEditBene.php";
                             include "modalDeRegistroDis.php";
 
-
                             endwhile;
                         ?>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                        </tr>
+                        </tbody>
+                        </table>
                     </div>
-                    <!-- Modal de registro -->
-
-                    <?php 
-                    include "modal/modalBene.php";
-                    include "modal/modalApoyoInst.php";
-                    include "modal/modalTrabajador.php";
-                    include "modal/modalJornadaEsp.php";
-                    ?>
-
                 </div>
             </div>
-            <!-- End of Main Content -->
+            <!-- Modal de registro -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Industrias Canaima 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            <?php 
+                    include "modalRegistroBene.php";
+                    ?>
 
         </div>
-        <!-- End of Content Wrapper -->
+    </div>
+    <!-- End of Main Content -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; Industrias Canaima 2022</span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
 
     </div>
     <!-- End of Page Wrapper -->
