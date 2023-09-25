@@ -65,3 +65,5 @@ correoField.addEventListener("blur", (e) =>
 );
 
 correoField.addEventListener("input", validateEmailFormat);
+
+
