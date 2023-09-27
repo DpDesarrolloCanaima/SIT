@@ -1825,7 +1825,7 @@ pre code {
   border: 0;
 }
 
-.form-control {
+.form-control{
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -1840,6 +1840,7 @@ pre code {
   border-radius: 0.35rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
 
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2012,6 +2013,21 @@ textarea.form-control {
   margin-top: 0.3rem;
   margin-left: -1.25rem;
 }
+
+/* oculto los elementos */
+input.i-text{
+  display: none;
+  
+}
+/* lo muestros si está seleccionado value=si */
+input.i-radio[value="si"]:checked ~ .i-text{
+  position: absolute;
+  margin-top: 0.3rem;
+  margin-left: -1.25rem;
+  display: block;
+  
+}
+
 
 .form-check-input[disabled] ~ .form-check-label,
 .form-check-input:disabled ~ .form-check-label {
@@ -3361,6 +3377,8 @@ input[type="button"].btn-block {
   align-items: stretch;
   width: 100%;
 }
+
+
 
 .input-group > .form-control,
 .input-group > .form-control-plaintext,
