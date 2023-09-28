@@ -16,7 +16,6 @@
                         <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
                     </div>
                     <input type="hidden" name="id_status" value="3">
-                    <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="id_dispositivo" value="<?php echo $rowde['id_datos_del_dispositivo']?>">
                     <hr>

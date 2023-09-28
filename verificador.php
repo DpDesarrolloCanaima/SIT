@@ -15,6 +15,9 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
+$id_usuario = $_SESSION['id_usuarios'];
+
+$estatus = 4;
 
 //Consulta para traer los datos almacenados de los dispositivos
 

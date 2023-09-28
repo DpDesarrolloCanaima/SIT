@@ -13,13 +13,6 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-
-$consulta = "SELECT u.id_usuarios, u.usuario, u.nombre, u.cedula, u.password, u.correo, u.registro, r.roles FROM usuarios AS u INNER JOIN roles AS r ON r.id_roles=u.id_roles";
-$resultado = $mysqli->query($consulta);
-
-$consulta1 = "SELECT id_roles, roles FROM roles";
-$resultado1 = $mysqli->query($consulta1);
-
 /* Consulta para los opciones de fechas de las graficas */
 
 $consulta2 = "SELECT * FROM  datos_del_dispotivo";
@@ -71,7 +64,7 @@ $resultado2 = $mysqli->query($consulta2);
             <!-- Main Content -->
             <div id="content">
 
-                <?php include "inc/navbar.php"; ?>
+                <?php include "inc/navbar2.php"; ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
@@ -103,7 +96,8 @@ $resultado2 = $mysqli->query($consulta2);
                                             ?>
                                         </select>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" value="fecha">Buscar</button>
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                value="fecha">Buscar</button>
                                         </div>
                                     </div>
                                 </div>

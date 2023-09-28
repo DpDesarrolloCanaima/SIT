@@ -14,6 +14,17 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
 
+//consulta para obtener el id del cordinador
+
+$sql = "SELECT id_usuarios FROM usuarios WHERE id_roles = 6";
+
+$resultado = $mysqli->query($sql);
+
+$row = $resultado->fetch_assoc(); 
+
+$cordinadorID = $row['id_usuarios']; 
+
+
 // Consultas de para mostrar datos en formulario
 // Consulta para mostrar los datos e enviar
 $consulta2 = "SELECT * FROM genero";
@@ -121,8 +132,35 @@ $resultado14 = $mysqli->query($sql14);
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <div class="btn-group dropright">
+                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                                <img src="img/svg/beneplus.svg " alt="Industrias Canaima" width="15" height="15">
+                                Registro de Beneficiario
+                            </button>
+                            <button type="button"
+                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <span class="sr-only"></span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <li>
+                                    <a class="btn" data-toggle="modal" data-target="#modalApoyo">Apoyo Institucional</a>
+                                </li>
+                                <li>
+                                    <a class="btn" data-toggle="modal" data-target="#modalBene">Beneficiario</a>
+                                </li>
+                                <li>
+                                    <a class="btn" data-toggle="modal" data-target="#modalTrabajador">Trabajador</a>
+                                </li>
+                                <li>
+                                    <a class="btn" data-toggle="modal" data-target="#modalJornada">Jornadas
+                                        Especiales</a>
+                                </li>
+                            </div>
+                        </div>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalBene"> Registrar Beneficiario</a>
+                            data-toggle="modal" data-target="#modalDispo"><img src="img/svg/benelinea.svg "
+                                alt="Industrias Canaima" width="15" height="15"> Registrar Dispositivo</a>
                     </div>
 
 
@@ -174,7 +212,11 @@ $resultado14 = $mysqli->query($sql14);
                         </div>
 
                         <?php
-                        include "modalRegistroBene.php";
+                         include "modal/modalBene.php";
+                         include "modal/modalApoyoInst.php";
+                         include "modal/modalTrabajador.php";
+                         include "modal/modalJornadaEsp.php";
+                        include "modalregistroDispositivo.php";
 
                     ?>
                     </div>

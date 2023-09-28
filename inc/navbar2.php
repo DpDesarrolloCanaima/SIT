@@ -35,6 +35,9 @@ require "config/conexionProvi.php";
                     case 5:
                         echo "Verificador";
                         break;
+                    case 6:
+                        echo "Coordinador";
+                        break;
                 }
 
                     ?>

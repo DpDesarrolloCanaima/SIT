@@ -49,3 +49,8 @@ function validar_fecha($fecha)
 function nose(){
     
 }
+
+
+function yotampoco() {
+    
+}
