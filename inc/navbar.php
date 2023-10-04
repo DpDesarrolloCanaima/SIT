@@ -28,6 +28,7 @@ $usuario = $_SESSION['usuario'];
                     $notiText = "Asignar, ";
                     $filenameDetalles = "detalles.php";
                     break;
+                    //¿Qué es esto?
 
                 case 3:
                     $observacionesT = "observaciones_verificador"; 
@@ -49,15 +50,28 @@ $usuario = $_SESSION['usuario'];
                 break;
 
                 case 6:
+                    $aObservacionesT = array( 
+                        'observaciones_tecnico',
+                        'observaciones_analista',
+                        'observaciones_verificador'
+                    );
+
+                    for ($i=0; $i < count($aObservacionesT); $i++) { 
+                        if($i==0){
+                            $observacionesT= $aObservacionesT[$i];
+                        
+                        } else{
+                            $observacionesT=$observacionesT.', '.$aObservacionesT[$i];
+                        }
+                    }
                    
-                    $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
                     $notiText = "Asignar, ";
                     $filenameDetalles = "detalles.php";
                     
                 break;
             }
     
-            $consultaver = 'SELECT registro, "'.$observacionesT.'", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = "'.$id_usuarios.'" ORDER BY registro DESC';    
+            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
@@ -117,26 +131,39 @@ $usuario = $_SESSION['usuario'];
     
                             $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
                             if($rol == 6) {
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                    '.$verNot[$observacionesT].'</span>
-                                </div>
-                            </a>';
-                            }
+                                $notificacionDiv = '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación';
 
-                            if(!empty($verNot[$observacionesT])){ 
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                    '.$verNot[$observacionesT].'</span>
-                            </div>
-                            </a>';
-                        
-                            }else{
-                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                    Sin observación</span>
-                            </div>
-                            </a>';
+                                foreach ($aObservacionesT as $observacion) {
+                                    if(empty($verNot[$observacion])) {
+                                        $notificacionDiv = $notificacionDiv. " $observacion: Sin observación</span>";
+     
+                                    }else{
+                                        $notificacionDiv = $notificacionDiv.
+                                        " $observacion: ".$verNot[$observacion].'</span>';
+
+                                    }
+                                }
+                               
+
+                                $notificacionDiv = $notificacionDiv.'
+                                </div></a>';
+                            echo $notificacionDiv;
+                            } else {
+                                if(!empty($verNot[$observacionesT])){ 
+                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        '.$verNot[$observacionesT].'</span>
+                                </div>
+                                </a>';
+                            
+                                }else{
+                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        Sin observación</span>
+                                </div>
+                                </a>';
+                                }
                             }
                         }
     
