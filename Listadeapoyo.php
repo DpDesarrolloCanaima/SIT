@@ -9,7 +9,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-
+$origen = $_GET['origen'];
 // Consulta para traer los datos almacenados
 
 $sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
@@ -18,7 +18,7 @@ INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN area AS a ON a.id_area = e.id_area
 INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
-INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado ";
+INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado WHERE e.origen = $origen";
 
 $resultado = $mysqli->query($sql1);
 
