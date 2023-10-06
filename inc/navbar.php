@@ -156,7 +156,6 @@ $usuario = $_SESSION['usuario'];
                                 );
 
                                 $bTieneObservacion = false;
-                                $strObservacion;
 
                                 $i = 0;
                                 foreach ($aObservacionesT as $observacion) {
