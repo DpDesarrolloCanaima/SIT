@@ -28,7 +28,6 @@ $usuario = $_SESSION['usuario'];
                     $notiText = "Asignar, ";
                     $filenameDetalles = "detalles.php";
                     break;
-                    //¿Qué es esto?
 
                 case 3:
                     $observacionesT = "observaciones_verificador"; 
@@ -65,13 +64,13 @@ $usuario = $_SESSION['usuario'];
                         }
                     }
                    
-                    $notiText = "Asignar, ";
-                    $filenameDetalles = "detalles.php";
+                    $notiText = "Asignar ";
+                    $filenameDetalles = "asignar.php";
                     
                 break;
             }
     
-            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
+            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
@@ -95,31 +94,47 @@ $usuario = $_SESSION['usuario'];
                     setlocale(LC_TIME, 'es_VE');
     
                     while(($verNot = $resultadover->fetch_assoc())) {
-                        echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
-                        <div class="mr-3">
-                            <div class="bg-primary icon-circle">';
-                               
-                                switch($verNot['id_tipo_de_dispositivo']) {
+                        if($rol == 6) {
+                            switch($verNot['id_estatus']) {
                                 case 1:
-                                $icono = "img/canaimalogo2.jpg";
-                                break;
+                                    $notiTextAsign = "tecnico";
+                                break; 
                                 case 3:
-                                $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 4:
-                                $icono = "img/canaimalogo2.jpg";
+                                    $notiTextAsign = "verificador";
                                 break;
                                 case 5:
-                                $icono = "img/canaimalogo2.jpg";
+                                    $notiTextAsign = "analista";
+                                break;
+                            }
+                            echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
+                            <div class="mr-3">
+                                <div class="bg-primary icon-circle">';
+                        } else {
+                            echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
+                            <div class="mr-3">
+                                <div class="bg-primary icon-circle">';
+                        }
+                                switch($verNot['id_tipo_de_dispositivo']) {
+                                case 1:
+                                    $icono = "img/canaimalogo2.jpg";
+                                break;
+                                case 3:
+                                    $icono = "img/canaimalogo2.jpg";
+                                break;
+                                case 4:
+                                    $icono = "img/canaimalogo2.jpg";
+                                break;
+                                case 5:
+                                    $icono = "img/canaimalogo2.jpg";
                                 break;
                                 case 6:
-                                $icono = "img/canaimalogo2.jpg";
+                                    $icono = "img/canaimalogo2.jpg";
                                 break;
                                 case 7:
-                                $icono = "img/canaimalogo2.jpg";
+                                    $icono = "img/canaimalogo2.jpg";
                                 break;
                                 case 8:
-                                $icono = "img/canaimalogo2.jpg";
+                                    $icono = "img/canaimalogo2.jpg";
                                 break;
                                 }
     
@@ -132,20 +147,40 @@ $usuario = $_SESSION['usuario'];
                             $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
                             if($rol == 6) {
                                 $notificacionDiv = '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación';
+                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.$notiTextAsign.', ';
 
+                                $quien = array(
+                                    "tecnico",
+                                    "analista",
+                                    "verfiricador"
+                                );
+
+                                $bTieneObservacion = false;
+                                $strObservacion;
+
+                                $i = 0;
                                 foreach ($aObservacionesT as $observacion) {
-                                    if(empty($verNot[$observacion])) {
-                                        $notificacionDiv = $notificacionDiv. " $observacion: Sin observación</span>";
-     
-                                    }else{
-                                        $notificacionDiv = $notificacionDiv.
-                                        " $observacion: ".$verNot[$observacion].'</span>';
-
+                                    if($i == 0) {
+                                        if(!empty($verNot[$observacion])){
+                                            $strObservacion = $quien[$i];
+                                            $bTieneObservacion = true; 
+                                        }
+                                    } else {
+                                        if(!empty($verNot[$observacion])){
+                                            $strObservacion = $strObservacion.", $quien[$i]";
+                                            $bTieneObservacion = true;
+                                         }
                                     }
+                                    
+                                    $i++;
+                                }
+
+                                if($bTieneObservacion) {
+                                    $notificacionDiv = $notificacionDiv. " observacion/es de: $strObservacion</span>";
+                                } else {
+                                    $notificacionDiv = $notificacionDiv. " observacion/es de: Sin Observaciones</span>";
                                 }
                                
-
                                 $notificacionDiv = $notificacionDiv.'
                                 </div></a>';
                             echo $notificacionDiv;
