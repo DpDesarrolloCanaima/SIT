@@ -72,6 +72,7 @@
                         <span></span>
                     </div>
                     <hr>
+                    <input type="hidden" name="origen" value="1">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>

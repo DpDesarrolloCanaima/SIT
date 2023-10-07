@@ -82,10 +82,10 @@
                                     Beneficiario
                                 </a>
                                 <div class="dropdown-menu">
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=1">Apoyo Insittucional</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=2">Beneficiario</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=3">Trabajador</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=4">Jornadas Especiales</a>
+                                <a class ="dropdown-item" href="listadeapoyo.php">Apoyo Insittucional</a>
+                                <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                                <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
                                 </div>
                             </div>
                            ';
