@@ -9,7 +9,7 @@
         </button>
             </div>
             <div class="modal-body">
-                <form  action="" method="POST">
+                <form  action="registroDeBene.php" method="POST">
                     <div class="form-group">
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">

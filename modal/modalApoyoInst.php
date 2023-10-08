@@ -11,7 +11,7 @@
 
             </div>
             <div class="modal-body">
-                <form action="" method="POST">
+                <form action="registrarapoyo.php" method="POST">
                     <div class="form-group">
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">
@@ -29,16 +29,16 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="area">Area</label>
-                        <input type="text" name="area" id="area" class="form-control">
+                        <input type="text" name="areainsti" id="area" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="cargo">Cargo</label>
-                        <input type="text" name="cargo" id="cargo" class="form-control">
+                        <input type="text" name="cargoinsti" id="cargo" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
