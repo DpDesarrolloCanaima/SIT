@@ -76,6 +76,16 @@
                 $nombreBoton = "Administrar";
                 
                  $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                 <div class="btn-group dropright">
+                 <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                     Registro histórico
+                 </a>
+                 <div class="dropdown-menu">
+                 <a class ="dropdown-item" href="audit.php?tipo=usuario">Usuario</a>
+                 <a class ="dropdown-item" href="audit.php?tipo=beneficiario">Beneficiario</a>
+                 <a class ="dropdown-item" href="audit.php?tipo=dispositivo">Dispositivos</a>
+                 </div>
+             </div>
                            <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
                            <div class="btn-group dropright">
                                 <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">

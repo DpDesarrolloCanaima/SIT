@@ -109,7 +109,9 @@ $usuario = $_SESSION['usuario'];
                             echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
                             <div class="mr-3">
                                 <div class="bg-primary icon-circle">';
-                        } else {
+                        } else if ($rol == 3 && $verNot['id_estatus'] == 7) {
+                            continue;
+                        } else { 
                             echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                             <div class="mr-3">
                                 <div class="bg-primary icon-circle">';
