@@ -8,7 +8,7 @@ if ($_POST) {
     $ic = limpiarDatos($_POST['ic']);
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
     $documento = limpiarDatos($_POST['documento']);
-    $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
+    $nombreInstitucion = limpiarDatos($_POST['nombre_del_beneficiario']);
     $generoTrabajador = limpiarDatos($_POST['genero']);
     $areaTrabajador = limpiarDatos($_POST['area']);
     $cargoTrabajador = limpiarDatos($_POST['cargo']);
