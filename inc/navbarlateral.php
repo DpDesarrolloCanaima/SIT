@@ -92,7 +92,7 @@
                                     Beneficiario
                                 </a>
                                 <div class="dropdown-menu">
-                                <a class ="dropdown-item" href="listadeapoyo.php">Apoyo Insittucional</a>
+                                <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Insittucional</a>
                                 <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
                                 <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
                                 <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
