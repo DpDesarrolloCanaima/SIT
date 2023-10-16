@@ -65,7 +65,7 @@
                     </div>
                     <hr>
                     <input type="hidden" name="origen" value="4">
-                    <input type="hidden" name="id_beneficiario" value="<?php echo $row['id_datos_del_entregante'];?>">
+                    <input type="hidden" name="id_jornada" value="<?php echo $row['id_datos_del_entregante'];?>">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>

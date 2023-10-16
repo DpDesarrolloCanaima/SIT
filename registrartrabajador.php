@@ -39,7 +39,7 @@ if ($_POST) {
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'success',
-                title: 'El registro fue actualizado correctamente',
+                title: 'El trabajador se registro correctamente',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',

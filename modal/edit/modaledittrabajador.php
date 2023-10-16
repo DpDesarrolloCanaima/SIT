@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario" value="<?php echo $row['nombre_del_beneficiario'];?>">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_trabajador" value="<?php echo $row['nombre_del_beneficiario'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -58,7 +58,7 @@
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
                         <input type="email" class="form-control" id="correoBene" aria-describedby="emailHelp"
-                            name="correoBene" value="<?php echo $row['correo'];?>">
+                            name="correoTrabajador" value="<?php echo $row['correo'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -111,7 +111,7 @@
                     </div>
                     <hr>
                     <input type="hidden" name="origen" value="3">
-                    <input type="hidden" name="id_beneficiario" value="<?php echo $row['id_datos_del_entregante'];?>">
+                    <input type="hidden" name="id_trabajador" value="<?php echo $row['id_datos_del_entregante'];?>">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
