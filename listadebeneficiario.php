@@ -12,13 +12,13 @@ $rol = $_SESSION['id_roles'];
 
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, t.nombre, t.modelo, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-INNER JOIN tipo_de_equipo AS t ON t.id_tipo_de_equipo=e.id_tipo_de_equipo
+$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN area AS a ON a.id_area = e.id_area
 INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
-INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado ";
+INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
+INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 2 ";
 
 $resultado = $mysqli->query($sql1);
 
@@ -260,9 +260,6 @@ $resultado14 = $mysqli->query($sql14);
                                             <th>Dirección</th>
                                             <th>Posee Discapacidad o Condición</th>
                                             <th>Descripcion de Discapacidad</th>
-                                            <th>Tipo de dispositivo</th>
-                                            <th>Modelo</th>
-                                            <th>Origen</th>
                                             <?php
                         switch($rol){
                                case 1:
@@ -296,9 +293,6 @@ $resultado14 = $mysqli->query($sql14);
                                             <td><?php echo $row['direccion']; ?></td>
                                             <td><?php echo $row['posee_discapacidad_o_condicion']; ?></td>
                                             <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
-                                            <td><?php echo $row['nombre']; ?></td>
-                                            <td><?php echo $row['modelo']; ?></td>
-                                            <td><?php echo $row['origen']; ?></td>
                                             <?php
                            switch($rol){
                                   case 1:

@@ -3,14 +3,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-titlen text-dark mx-auto" id="agregarBene">Registrar Beneficiario Trabajador</h3>
+                <h3 class="modal-titlen text-dark mx-auto" id="agregarBene">Registrar Trabajador</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
             </div>
             <div class="modal-body">
-                <form  action="" method="POST">
-                    <div class="form-group">
+                <form  action="registrartrabajador.php" method="POST">
+                <div class="form-group">
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">
                     </div>
@@ -25,9 +25,17 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="nombre_bene">Nombre de la institucion</label>
+                        <label for="nombre_bene">Nombre</label>
                         <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario">
                         <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="genero">Genero</label>
+                        <select name="genero" id="genero" class="form-control form-control-lg">
+                            <?php foreach ($resultado2 as $row2) : ?>
+                            <option value="<?php echo $row2['id_genero']; ?>"><?php echo $row2['genero']; ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label for="area">Area</label>
@@ -73,12 +81,36 @@
                         <span></span>
                     </div>
                     <div class="form-group">
+                        <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="discapacidad_o_condicion"
+                                id="exampleRadios1" value="si" checked>
+                            <label class="form-check-label" for="exampleRadios1">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="discapacidad_o_condicion"
+                                id="exampleRadios2" value="no">
+                            <label class="form-check-label" for="exampleRadios2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            name="descripcion_discapacidad"></textarea>
+                        <span></span>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputPassword1">Dirección</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                             name="direccion"></textarea>
                         <span></span>
                     </div>
                     <hr>
+                    <input type="hidden" name="origen" value="3">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>

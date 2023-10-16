@@ -76,16 +76,26 @@
                 $nombreBoton = "Administrar";
                 
                  $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                 <div class="btn-group dropright">
+                 <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                     Registro histórico
+                 </a>
+                 <div class="dropdown-menu">
+                 <a class ="dropdown-item" href="audit.php?tipo=usuario">Usuario</a>
+                 <a class ="dropdown-item" href="audit.php?tipo=beneficiario">Beneficiario</a>
+                 <a class ="dropdown-item" href="audit.php?tipo=dispositivo">Dispositivos</a>
+                 </div>
+             </div>
                            <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
                            <div class="btn-group dropright">
                                 <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                     Beneficiario
                                 </a>
                                 <div class="dropdown-menu">
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=1">Apoyo Insittucional</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=2">Beneficiario</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=3">Trabajador</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php?origen=4">Jornadas Especiales</a>
+                                <a class ="dropdown-item" href="listadeapoyo.php">Apoyo Insittucional</a>
+                                <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                                <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
                                 </div>
                             </div>
                            ';
