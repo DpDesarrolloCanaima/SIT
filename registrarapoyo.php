@@ -6,8 +6,8 @@ require "function.php";
 
 if ($_POST) {
     $ic = limpiarDatos($_POST['ic']);
-    $documento = limpiarDatos($_POST['documento']);
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
+    $documento = limpiarDatos($_POST['documento']);
     $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
     $AreaInsti = limpiarDatos($_POST['areainsti']);
     $cargoInsti = limpiarDatos($_POST['cargoinsti']);
