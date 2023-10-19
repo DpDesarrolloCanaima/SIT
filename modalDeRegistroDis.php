@@ -31,26 +31,6 @@
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="institucion_educativa">Institucion Educativa (Donde se recibio el equipo)</label>
-                        <input type="text" class="form-control" id="institucion_educativa" name="institucion_educativa">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="institucion_donde_estudia">Institucion Educativa (Donde Estudia el
-                            beneficiario)</label>
-                        <input type="text" class="form-control" id="institucion_donde_estudia"
-                            name="institucion_donde_estudia">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="grado">Grado</label>
-                        <select name="grado" id="grado" class="form-control form-control-lg">
-                            <?php foreach ($resultado10 as $row10) : ?>
-                            <option value="<?php echo $row10['id_grado']; ?>"><?php echo $row10['grado']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="fecha_de_recepcion">Fecha de Recepcion</label>
                         <input type="date" class="form-control" id="fecha_de_recepcion" name="fecha_de_recepcion">
                     </div>
