@@ -14,7 +14,7 @@ if ($_POST) {
     $correoInsti = limpiarDatos($_POST['correoInsti']);
     $telefonoInsti = limpiarDatos($_POST['phone']);
     $estadoInsti = limpiarDatos($_POST['estado']);
-    $municipio = limpiarDatos($_POST['estado']);
+    $municipio = limpiarDatos($_POST['municipio']);
     $direccionInsti = limpiarDatos($_POST['direccion']);
     $origen = limpiarDatos($_POST['origen']);
 
