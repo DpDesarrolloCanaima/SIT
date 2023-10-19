@@ -24,34 +24,34 @@ $id_usuarios = $_SESSION['id_usuarios'];
             switch ($rol) { 
 
                 case 3:
-                    $observacionesT = 'observaciones_verificador'; 
+                    $observacionesT = "observaciones_verificador"; 
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, "; 
 
                 break;
 
                 case 4:
-                    $observacionesT = 'observaciones_analista';
+                    $observacionesT = "observaciones_analista";
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
                 break;
 
                 case 5:
-                    $observacionesT = 'observaciones_tecnico';
+                    $observacionesT = "observaciones_tecnico";
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";  
                 break;
 
                 case 6:
                    
-                    $observacionesT = 'observaciones_tecnico, observaciones_analista, observaciones_verificador';
+                    $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
                     $notiText = "Asignar, ";
                     $filenameDetalles = "detalles.php";
                     
                 break;
             }
     
-            $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
+            $consultaver = 'SELECT registro, "'.$observacionesT.'", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = "'.$id_usuarios.'" ORDER BY registro DESC';    
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
