@@ -73,7 +73,7 @@ if ($_POST['registrar']) {
     }
 
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
-    $cedula = limpiarDatos($_POST['cedulaBene']);
+    $cedula = limpiarDatos($_POST['documento']);
     if ($cedula == "") {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -159,48 +159,7 @@ if ($_POST['registrar']) {
     });
         </script>";
     }
-    $area = limpiarDatos($_POST['area']);
-    if ($area == "") {
-        echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Ingrese el area de trabajo',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                timer: 1500
-              }).then(() => {
 
-                location.assign('listadebeneficiario.php');
-
-              });
-    });
-        </script>";
-    }
-    $cargo = limpiarDatos($_POST['cargo']);
-    if ($cargo == "") {
-        echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Ingrese el cargo',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                timer: 1500
-              }).then(() => {
-
-                location.assign('listadebeneficiario.php');
-
-              });
-    });
-        </script>";
-    }
     $nombre_del_representante = limpiarDatos($_POST['nombre_del_representante']);
     if ($nombre_del_representante == "") {
         echo "
@@ -390,12 +349,14 @@ if ($_POST['registrar']) {
     });
         </script>";
     }
-
-    $areainsti = "Industria Canaima C.A";
-    $cargoinsti = "Industria Canaima C.A";
+    //Datos complementarios
+    $areainsti = "Industria Canaima";
+    $cargoinsti = "Industria Canaima";
+    $idarea = 1;
+    $idcargo = 1;
     $conex = $mysqli;
-    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,id_origen) VALUES ('$ic', '$nombre_del_beneficiario', '$tipoDocumento', '$cedula', '$edad', '$genero', '$fecha_nac','$area','$areainsti','$cargo','$cargoinsti','$nombre_del_representante','$correo','$telefono','$estado','$municipio','$direccion','$discapacidadCondicion','$descripcionDiscapacidadCondicion','$origen');";
-
+    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,id_origen) VALUES ('$ic', '$nombre_del_beneficiario', '$tipoDocumento', '$cedula', '$edad', '$genero', '$fecha_nac','$idarea','$areainsti','$idcargo','$cargoinsti','$nombre_del_representante','$correo','$telefono','$estado','$municipio','$direccion','$discapacidadCondicion','$descripcionDiscapacidadCondicion','$origen');";
+    
     $resultado = mysqli_query($conex, $sql);
 
     if ($resultado) {

@@ -6,13 +6,13 @@ require("function.php");
     $cedula = limpiarDatos(htmlspecialchars($_POST['cedula']));
 
     $sqlValidation = "SELECT id_datos_del_entregante, cedula, tipo_documento FROM datos_del_entregante WHERE tipo_documento = $tipo AND cedula = $cedula ";
-    $resultValidation = $conexion->query($sqlValidation);
+    $resultValidation = $mysqli->query($sqlValidation);
     
     if (mysqli_num_rows($resultValidation)>0) {
         
         $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
         // $sqlValidationSerial = ;
-        $resultValidationSerial = $conexion->query("SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo");
+        $resultValidationSerial = $mysqli->query("SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo");
         
         if ($resultValidationSerial !== false && $resultValidationSerial->num_rows >0) {
             
