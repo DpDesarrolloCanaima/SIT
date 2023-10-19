@@ -149,11 +149,16 @@ $resultado14 = $mysqli->query($sql14);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                            <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1" target="_blank">Apoyo Institucional</a></li>
-                            <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2" target="_blank">Beneficiario</a></li>
-                            <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4" target="_blank">Trabajador</a></li>
-                            <li><a class="dropdown-item" href="report/reporte.php?id=5" target="_blank">Jornadas Especiales</a></li>
-                            <li><a class="dropdown-item" href="report/reportebeneficiarioall.php" target="_blank">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1"
+                                        target="_blank">Apoyo Institucional</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2"
+                                        target="_blank">Beneficiario</a></li>
+                                <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4"
+                                        target="_blank">Trabajador</a></li>
+                                <li><a class="dropdown-item" href="report/reporte.php?id=5" target="_blank">Jornadas
+                                        Especiales</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
+                                        target="_blank">Todos</a></li>
                             </div>
                         </div>
                         <?php
