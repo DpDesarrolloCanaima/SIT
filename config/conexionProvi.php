@@ -1,6 +1,7 @@
 <?php
 
 //Manera local
+
 $mysqli = new mysqli("localhost", "root", "canaimadev", "oac_prueba");
 
 //Manera con servidor
