@@ -6,10 +6,9 @@
 
 
 	$id = $_REQUEST['id'];
-	$sql = "SELECT d.serial_equipo, d.serial_de_cargador, d.institucion_educativa, d.institucion_donde_estudia, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, j.nombre, j.modelo, l.grado, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+	$sql = "SELECT d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 	INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 	INNER JOIN origen AS k ON k.id_origen = d.id_origen
-	INNER JOIN grado AS l ON l.id_grado = d.id_grado
 	INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 	INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
 	INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE d.id_estatus = $id";
@@ -25,8 +24,6 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(30, 5,"Modelo", 1, 0, "C");
 	$pdf->Cell(50, 5,"Serial Del Equipo", 1, 0, "C");
 	$pdf->Cell(50, 5,"Serial Del Cargador", 1, 0, "C");
-	$pdf->Cell(50, 5,"Institucion Educativa", 1, 0, "C");
-	$pdf->Cell(20, 5,"Grado", 1, 0, "C");
 	$pdf->Cell(50, 5,"Fecha de Recepcion", 1, 0, "C");
 	$pdf->Cell(50, 5,"Estado De Recepcion", 1, 0, "C");
 	$pdf->Cell(50, 5,"Estado De Entrega", 1, 0, "C");
@@ -39,8 +36,6 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(30, 5,$row['modelo'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['serial_equipo'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['serial_de_cargador'], 1, 0, "C");
-	$pdf->Cell(50, 5,$row['institucion_donde_estudia'], 1, 0, "C");
-	$pdf->Cell(20, 5,$row['grado'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['fecha_de_recepcion'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['estado'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['fecha_de_entrega'], 1, 0, "C");
