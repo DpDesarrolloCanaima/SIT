@@ -74,14 +74,36 @@
              //    Comprobación de rol de usuario y muestra de enlace de la lista necesario para el rol.
             switch ($rol) {
                 case 2:
-                    echo ' <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>">';
+                    echo ' <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>">
+                    <div class="btn-group dropright">
+                                <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Beneficiario
+                                </a>
+                                <div class="dropdown-menu">
+                                <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Insittucional</a>
+                                <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                                <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
+                                </div>
+                            </div>
+                    ';
                     break;  
                 case 3:
                     echo '
                     <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
                     <a class="collapse-item" href="dispositivos.php?idenlace=6">Por entregar</a>
                     <a class="collapse-item" href="dispositivos.php?idenlace=7">Entregados</a>
-                    <a class="collapse-item" href="listadebeneficiario.php">Beneficiario</a>
+                    <div class="btn-group dropright">
+                    <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        Beneficiario
+                    </a>
+                    <div class="dropdown-menu">
+                    <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Insittucional</a>
+                    <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                    <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                    <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
+                    </div>
+                </div>
                     ';
 
                     break;  
