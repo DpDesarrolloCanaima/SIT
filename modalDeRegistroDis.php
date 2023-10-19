@@ -31,26 +31,6 @@
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="institucion_educativa">Institucion Educativa (Donde se recibio el equipo)</label>
-                        <input type="text" class="form-control" id="institucion_educativa" name="institucion_educativa">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="institucion_donde_estudia">Institucion Educativa (Donde Estudia el
-                            beneficiario)</label>
-                        <input type="text" class="form-control" id="institucion_donde_estudia"
-                            name="institucion_donde_estudia">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="grado">Grado</label>
-                        <select name="grado" id="grado" class="form-control form-control-lg">
-                            <?php foreach ($resultado10 as $row10) : ?>
-                            <option value="<?php echo $row10['id_grado']; ?>"><?php echo $row10['grado']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="fecha_de_recepcion">Fecha de Recepcion</label>
                         <input type="date" class="form-control" id="fecha_de_recepcion" name="fecha_de_recepcion">
                     </div>
@@ -81,6 +61,7 @@
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
                     <input type="hidden" name="beneficiario" value = "<?php echo $row['id_datos_del_entregante'];?>">
+                    <input type="hidden" name="responsable" value="6">
                     <hr>
                     <button type="submit" class="btn btn-success" >Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

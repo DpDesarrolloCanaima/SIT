@@ -76,8 +76,29 @@
                 $nombreBoton = "Administrar";
                 
                  $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                 <div class="btn-group dropright">
+                 <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                     Registro histórico
+                 </a>
+                 <div class="dropdown-menu">
+                 <a class ="dropdown-item" href="audit.php?tipo=usuario">Usuario</a>
+                 <a class ="dropdown-item" href="audit.php?tipo=beneficiario">Beneficiario</a>
+                 <a class ="dropdown-item" href="audit.php?tipo=dispositivo">Dispositivos</a>
+                 </div>
+             </div>
                            <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                           <a class="collapse-item" href="listadebeneficiario.php">Beneficiarios</a>';
+                           <div class="btn-group dropright">
+                                <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                    Beneficiario
+                                </a>
+                                <div class="dropdown-menu">
+                                <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Insittucional</a>
+                                <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                                <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
+                                </div>
+                            </div>
+                           ';
             } else{
                 $nombreBoton = "Asignar";
 
@@ -87,15 +108,15 @@
             }
             echo "<span>$nombreBoton</span>";
             ?>
-            
+
         </a>
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-            <?php 
+                <?php 
                 echo $items;
             ?>
             </div>
-        </div>
+        </li>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
@@ -159,13 +180,13 @@
                 break;
             }
         ?>
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
 
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
+        <!-- Sidebar Toggler (Sidebar) -->
+        <div class="text-center d-none d-md-inline">
+            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        </div>
 
 </ul>
 <!-- End of Sidebar -->

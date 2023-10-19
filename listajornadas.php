@@ -9,16 +9,11 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 
-
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-INNER JOIN genero AS g ON  g.id_genero=e.id_genero
-INNER JOIN area AS a ON a.id_area = e.id_area
-INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
+$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario, e.cedula, e.fecha_de_nacimiento, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
-INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
-INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 2 ";
+INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado WHERE e.id_origen = 4";
 
 $resultado = $mysqli->query($sql1);
 
@@ -154,8 +149,8 @@ $resultado14 = $mysqli->query($sql14);
                             <div class="dropdown-menu">
                             <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1" target="_blank">Apoyo Institucional</a></li>
                             <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2" target="_blank">Beneficiario</a></li>
-                            <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4" target="_blank">Trabajador</a></li>
-                            <li><a class="dropdown-item" href="report/reporte.php?id=5" target="_blank">Jornadas Especiales</a></li>
+                            <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=3" target="_blank">Trabajador</a></li>
+                            <li><a class="dropdown-item" href="report/reportejornadas.php?id=4" target="_blank">Jornadas Especiales</a></li>
                             <li><a class="dropdown-item" href="report/reportebeneficiarioall.php" target="_blank">Todos</a></li>
 
                             </div>
@@ -238,21 +233,14 @@ $resultado14 = $mysqli->query($sql14);
                                     <thead>
                                         <tr>
                                             <th>IC</th>
-                                            <th>Nombre del Beneficiario</th>
-                                            <th>Cedula</th>
-                                            <th>Edad</th>
-                                            <th>Genero</th>
-                                            <th>Fecha de Nacimiento</th>
-                                            <th>Area</th>
-                                            <th>Cargo</th>
-                                            <th>Nombre del Representante</th>
+                                            <th>Nª De Jornada</th>
+                                            <th>Nombre de la institución</th>
+                                            <th>Fecha de Jornada</th>
                                             <th>Correo</th>
                                             <th>Telefono</th>
                                             <th>Estado</th>
                                             <th>Municipio</th>
                                             <th>Dirección</th>
-                                            <th>Posee Discapacidad o Condición</th>
-                                            <th>Descripcion de Discapacidad</th>
                                             <?php
                         switch($rol){
                                case 1:
@@ -271,21 +259,14 @@ $resultado14 = $mysqli->query($sql14);
                                         ?>
                                         <tr>
                                             <td><?php echo $row['ic']; ?></td>
-                                            <td><?php echo $row['nombre_del_beneficiario']; ?></td>
                                             <td><?php echo $row['cedula']; ?></td>
-                                            <td><?php echo $row['edad']; ?></td>
-                                            <td><?php echo $row['genero']; ?></td>
+                                            <td><?php echo $row['nombre_del_beneficiario']; ?></td>
                                             <td><?php echo $row['fecha_de_nacimiento']; ?></td>
-                                            <td><?php echo $row['nombre_del_area']; ?></td>
-                                            <td><?php echo $row['tipo_de_cargo']; ?></td>
-                                            <td><?php echo $row['nombre_del_representante']; ?></td>
                                             <td><?php echo $row['correo']; ?></td>
                                             <td><?php echo $row['telefono']; ?></td>
                                             <td><?php echo $row['estado_nombre']; ?></td>
                                             <td><?php echo $row['municipio']; ?></td>
                                             <td><?php echo $row['direccion']; ?></td>
-                                            <td><?php echo $row['posee_discapacidad_o_condicion']; ?></td>
-                                            <td><?php echo $row['descripcion_discapacidad_condicion']; ?></td>
                                             <?php
                            switch($rol){
                                   case 1:
@@ -296,7 +277,7 @@ $resultado14 = $mysqli->query($sql14);
                                                         </button>
                                                         <div class="dropdown-menu">
 
-                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
+                                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editJornadas'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                                             <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/circulorelleno.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
                                                             </div>
@@ -322,7 +303,7 @@ $resultado14 = $mysqli->query($sql14);
 
 
                                             <?php
-                            include "modalEditBene.php";
+                            include "modal/edit/modaleditjornadas.php";
                             include "modalDeRegistroDis.php";
 
                             endwhile;

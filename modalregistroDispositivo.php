@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="guardarDispoLis.php" method="POST">
+                <form action="guardarDispoAnalista.php" method="POST">
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputState">Tipo</label>

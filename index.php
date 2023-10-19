@@ -7,7 +7,7 @@ if ($_POST) {
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    $sql = "SELECT id_usuarios, password, usuario, id_roles FROM usuarios WHERE usuario='$usuario' ";
+    $sql = "SELECT id_usuarios, password, usuario, id_roles, cedula, nombre FROM usuarios WHERE usuario='$usuario' ";
     $resultado = $mysqli->query($sql);
 
     $num = $resultado->num_rows;
@@ -20,6 +20,8 @@ if ($_POST) {
             $_SESSION['id_usuarios'] = $row['id_usuarios'];
             $_SESSION['usuario'] = $row['usuario'];
             $_SESSION['id_roles'] = $row['id_roles'];
+            //Creación de la sessión para manipular la información a mostrar en el registro historico.
+            $_SESSION['full_identificacion'] = 'C.I: '.$row['cedula'].', USUARIO: '.$row['usuario'].', NOMBRE: '.$row['nombre'];
         //    Comprobación de inicion de sesión y roles
             if (isset($_SESSION['id_roles'])) {
                 switch ($_SESSION['id_roles']) {
