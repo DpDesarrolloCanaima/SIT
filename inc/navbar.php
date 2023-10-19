@@ -64,23 +64,17 @@ $usuario = $_SESSION['usuario'];
                         }
                     }
                    
-<<<<<<< HEAD
                     $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
                     $notiText = "Asignar, ";
                     $filenameDetalles = "detalles.php";
-=======
                     $notiText = "Asignar ";
                     $filenameDetalles = "asignar.php";
->>>>>>> 7b996aebce2c2627ac82c95a8001719f84141bfb
                     
                 break;
             }
     
-<<<<<<< HEAD
             $consultaver = 'SELECT registro, "'.$observacionesT.'", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = "'.$id_usuarios.'" ORDER BY registro DESC';    
-=======
             $consultaver = 'SELECT registro, '.$observacionesT.', id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable, id_estatus FROM datos_del_dispotivo WHERE responsable = '.$id_usuarios.' ORDER BY registro DESC';    
->>>>>>> 7b996aebce2c2627ac82c95a8001719f84141bfb
             $resultadover = $mysqli->query($consultaver);
 
             $numr = $resultadover->num_rows;
