@@ -129,6 +129,7 @@ if ($_POST) {
       });
           </script>";
     }
+    
     $cargoEdit = limpiarDatos($_POST['cargo']);
     $nombreRepreBeneEdit = limpiarDatos($_POST['nombre_del_representanteEdit']);
     $correoEdit = limpiarDatos($_POST['correoBeneEdit']);
@@ -140,6 +141,7 @@ if ($_POST) {
     $descripcionDisEdit = limpiarDatos($_POST['descripcion_discapacidad']);
     $tipoDeEquipoEdit = limpiarDatos($_POST['tipo_de_equipo']);
     $origenEdit = limpiarDatos($_POST['origen']);
+
     require "config/conexionProvi.php";
     $sql = "UPDATE datos_del_entregante SET ic = '$icedit', nombre_del_beneficiario = '$nombreBeneEdit', cedula = '$cedulaBeneEdit', edad = '$edadBeneEdit', Id_genero = '$generoEdit', fecha_de_nacimiento = '$fechadenacimientoEdit', id_area = '$areaEdit', id_cargo = '$cargoEdit', nombre_del_representante = '$nombreRepreBeneEdit', correo = '$correoEdit', telefono = '$telefonoEdit', estado = '$estado', municipio = '$municipioEdit', direccion = '$direccionEdit', posee_discapacidad_o_condicion = '$poseeDiscaEdit',descripcion_discapacidad_condicion = '$descripcionDisEdit', id_tipo_de_equipo = '$tipoDeEquipoEdit', id_origen = '$origenEdit' WHERE id_datos_del_entregante = $idEditBene";
 
