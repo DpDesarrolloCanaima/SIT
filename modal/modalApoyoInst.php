@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
                         <input type="email" class="form-control" id="correoBene" aria-describedby="emailHelp"
-                            name="correoBene">
+                            name="correoApoyo">
                         <span></span>
                     </div>
                     <div class="form-group">

@@ -9,9 +9,9 @@ if ($_POST) {
     $documento = limpiarDatos($_POST['documento']);
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
     $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
-    $AreaInsti = limpiarDatos($_POST['area']);
-    $cargoInsti = limpiarDatos($_POST['cargo']);
-    $correoInsti = limpiarDatos($_POST['correoInsti']);
+    $AreaInsti = limpiarDatos($_POST['areainsti']);
+    $cargoInsti = limpiarDatos($_POST['cargoinsti']);
+    $correoInsti = limpiarDatos($_POST['correoApoyo']);
     $telefonoInsti = limpiarDatos($_POST['phone']);
     $estadoInsti = limpiarDatos($_POST['estado']);
     $municipio = limpiarDatos($_POST['municipio']);
