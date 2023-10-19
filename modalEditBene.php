@@ -128,24 +128,9 @@
                             name="descripcion_discapacidad"><?php echo $row['descripcion_discapacidad_condicion'];?></textarea>
                         <span></span>
                     </div>
-                    <div class="form-group">
-                        <label for="tipo_De_equipo">Tipo de Equipo</label>
-                        <select name="tipo_de_equipo" id="tipo_de_equipo" class="form-control form-control-lg">
-                            <?php foreach ($resultado5 as $row5) : ?>
-                            <option value="<?php echo $row5['id_tipo_de_equipo']; ?>"><?php echo $row5['nombre']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="origen">Origen</label>
-                        <select name="origen" id="origen" class="form-control form-control-lg">
-                            <?php foreach ($resultado6 as $row6) : ?>
-                            <option value="<?php echo $row6['id_origen']; ?>"><?php echo $row6['origen']; ?></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
+                    
                     <input type="hidden" name="ideditbene" value="<?php echo $row['id_datos_del_entregante'];?>">
+                    <input type="hidden" name="origen" value="2">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
