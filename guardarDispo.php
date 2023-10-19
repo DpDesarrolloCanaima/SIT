@@ -34,14 +34,6 @@ $serialCargador = limpiarDatos($_POST['serial_cargador']);
 if ($serialCargador == "") {
     $serialCargador = "No posee serial de cargador";
 }
-$institucionEducativa = limpiarDatos($_POST['institucion_educativa']);
-if ($institucionEducativa == "") {
-    $institucionEducativa = "No posee una institucion educativa";
-}
-$institucionDondeEstudia = limpiarDatos($_POST['institucion_donde_estudia']);
-if ($institucionDondeEstudia == "") {
-    $institucionDondeEstudia = "No posee";
-}
 $fechaRecepcion = $_POST['fecha_de_recepcion'];
 if ($fechaRecepcion == "") {
     echo "
@@ -85,24 +77,6 @@ $observaciones_analista = "No posee observaciones";
 
 $rol = limpiarDatos($_POST['id_roles']);
 $origen = limpiarDatos($_POST['origen']);
-$grado = limpiarDatos($_POST['grado']);
-if ($grado == "") {
-    echo "
-    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Seleccione el grado',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-              }).then(() => {
-                location.assign('dispositivosentrada.php');
-              });
-    });
-        </script>";
-}
 $estatus = limpiarDatos($_POST['estatus']);
 $falla = limpiarDatos($_POST['falla']);
 if ($falla == "") {
@@ -163,7 +137,7 @@ $comprobacion = "Faltan comprobaciones";
 $observaciones_tecnico = "Falta por observaciones";
 $observaciones_verificador = "Falta por observaciones";
 
-$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_analista, comprobaciones, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
+$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_analista, comprobaciones, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$estatus', '$falla','$beneficiario');";
 $resultado = mysqli_query($mysqli, $sql);
 
 if ($resultado) {

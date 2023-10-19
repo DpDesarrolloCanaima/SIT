@@ -114,7 +114,7 @@ require("function.php");
                                 timer: 1500
                               }).then(() => {
             
-                                location.assign('index.php');
+                                location.assign('listadebeneficiario.php');
             
                               });
                     });
@@ -133,7 +133,7 @@ require("function.php");
                                 timer: 1500
                               }).then(() => {
             
-                                location.assign('index.php');
+                                location.assign('listadebeneficiario.php');
             
                              });
                     });
@@ -153,7 +153,7 @@ require("function.php");
                     timer: 1500
                   }).then(() => {
     
-                    location.assign('index.php');
+                    location.assign('listadebeneficiario.php');
     
                  });
         });
@@ -175,7 +175,7 @@ require("function.php");
                 timer: 1500
               }).then(() => {
 
-                location.assign('index.php');
+                location.assign('listadebeneficiario.php');
 
              });
     });
