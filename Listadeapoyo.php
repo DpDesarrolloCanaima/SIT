@@ -155,7 +155,7 @@ $resultado14 = $mysqli->query($sql14);
                                         target="_blank">Beneficiario</a></li>
                                 <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4"
                                         target="_blank">Trabajador</a></li>
-                                <li><a class="dropdown-item" href="report/reporte.php?id=5" target="_blank">Jornadas
+                                <li><a class="dropdown-item" href="report/reportejornadas.php?id=5" target="_blank">Jornadas
                                         Especiales</a></li>
                                 <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
                                         target="_blank">Todos</a></li>
