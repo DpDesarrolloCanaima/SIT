@@ -12,7 +12,7 @@
                 <form  action="registroJornadas.php" method="POST">
                 <div class="form-group">
                         <label for="inputAddress">IC</label>
-                        <input type="number" class="form-control" id="inputAddress" name="ic">
+                        <input type="text" class="form-control" id="inputAddress" name="ic">
                     </div>
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el Nª de Jornada</label>

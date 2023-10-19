@@ -30,7 +30,7 @@ if ($_POST) {
     
     $sql = "INSERT INTO datos_del_entregrante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic', '$nombreInstitucion', '$tipoDocumento','$documento', '$generoTrabajador','$fechaNac','$areaTrabajador','$areainsti','$cargoTrabajador','$cargoinsti','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$origen')";
 
-    $resultado = $conexion->query($sql);
+    $resultado = $mysqli->query($sql);
 
     if ($resultado) {
         echo "
