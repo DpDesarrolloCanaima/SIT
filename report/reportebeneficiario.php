@@ -31,7 +31,7 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(30, 5,"Telefono", 1, 0, "C");
 	$pdf->Cell(30, 5,"Estado", 1, 0, "C");
 	$pdf->Cell(30, 5,"Municipio", 1, 0, "C");
-	$pdf->Cell(80, 5,"Direccion", 1, 0, "C");
+	$pdf->Cell(90, 5,"Direccion", 1, 0, "C");
 	$pdf->Cell(50, 5,"Origen", 1, 1, "C");
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultado->fetch_assoc()) {
@@ -48,7 +48,7 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['estado_nombre'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['municipio'], 1, 0, "C");
-	$pdf->Cell(80, 5,$row['direccion'], 1, 0, "C");
+	$pdf->Cell(90, 5,$row['direccion'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['origen'], 1, 1, "C");
 	
 	}
