@@ -19,6 +19,10 @@ if ($_POST) {
     require "config/conexionProvi.php";
     $sql = "UPDATE datos_del_dispotivo SET id_tipo_de_dispositivo = '$tipoDeEquipoEdit', serial_equipo = '$SerialEquipoEdit', serial_de_cargador = '$serialCargadorEdit', fecha_de_recepcion = '$fechaRecepEdit', estado_recepcion_equipo = '$estadoDeRecepcionEdit', fecha_de_entrega = '$fechaDeEntregaEdit',observaciones = '$observacionesEdit', equipo_reincidio = '$equipoReincidioEdit', motivo_reincidencia = '$motivoReincidenciaEdit', id_roles = '$idRoledit', id_origen = '$origenEdit', id_estatus = '$estatusEdit', id_motivo = '$fallaEdit', id_datos_del_beneficiario = '$beneficiarioEdit' WHERE id_datos_del_dispositivo = $idEditDispo AND id_datos_del_beneficiario = $beneficiarioEdit";
 
+    /** NUEVA CONSULTA */
+    
+    /** $sql = "UPDATE datos_del_dispotivo` SET `id_tipo_de_dispositivo`='$tipoDeEquipoEdit',`serial_equipo`='$SerialEquipoEdit',`serial_de_cargador`='$serialCargadorEdit',`fecha_de_recepcion`='$fechaRecepEdit',`estado_recepcion_equipo`='$estadoDeRecepcionEdit',`fecha_de_entrega`='$fechaDeEntregaEdit',`responsable`='[value-8]',`observaciones_analista`='[value-9]',`observaciones_tecnico`='[value-10]',`observaciones_verificador`='[value-11]',`comprobaciones`='[value-12]',`registro`='[value-13]',`id_roles`='[value-14]',`id_origen`='[value-15]',`id_estatus`='[value-16]',`id_motivo`='[value-17]',`id_datos_del_beneficiario`='[value-18]' WHERE id_datos_del_dispositivo = $idEditDispo AND id_datos_del_beneficiario = $beneficiarioEdit"; */
+
     $resultado = mysqli_query($mysqli, $sql);
 
     if ($resultado) {
