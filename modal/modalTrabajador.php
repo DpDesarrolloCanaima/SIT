@@ -5,22 +5,23 @@
             <div class="modal-header">
                 <h3 class="modal-titlen text-dark mx-auto" id="agregarBene">Registrar Trabajador</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <form  action="registrartrabajador.php" method="POST">
-                <div class="form-group">
+                <form action="registrartrabajador.php" method="POST">
+                    <div class="form-group">
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">
                     </div>
                     <div class="form-group">
-                    <label for="inputAddress">Ingrese la cedula</label>
+                        <label for="inputAddress">Ingrese la cedula</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento">
+                            <input type="text" class="form-control" aria-label="Input group example"
+                                aria-describedby="btnGroupAddon" name="documento">
                             <input type="hidden" name="tipo_documento" value="1">
                         </div>
                     </div>
@@ -81,6 +82,12 @@
                         <span></span>
                     </div>
                     <div class="form-group">
+                        <label for="exampleInputPassword1">Dirección</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            name="direccion"></textarea>
+                        <span></span>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="discapacidad_o_condicion"
@@ -101,12 +108,6 @@
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
                             name="descripcion_discapacidad"></textarea>
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Dirección</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                            name="direccion"></textarea>
                         <span></span>
                     </div>
                     <hr>

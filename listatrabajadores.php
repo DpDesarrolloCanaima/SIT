@@ -8,13 +8,12 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
-
+$idusuario = $_SESSION['id_usuarios'];
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante, e.ic, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.id_datos_del_entregante, e.ic,e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, a.nombre_del_area, c.tipo_de_cargo, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN area AS a ON a.id_area = e.id_area
 INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
-INNER JOIN origen AS o ON o.id_origen = e.id_origen
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 3";
 
@@ -150,11 +149,16 @@ $resultado14 = $mysqli->query($sql14);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                            <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1" target="_blank">Apoyo Institucional</a></li>
-                            <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2" target="_blank">Beneficiario</a></li>
-                            <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4" target="_blank">Trabajador</a></li>
-                            <li><a class="dropdown-item" href="report/reportejornadas.php?id=5" target="_blank">Jornadas Especiales</a></li>
-                            <li><a class="dropdown-item" href="report/reportebeneficiarioall.php" target="_blank">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1"
+                                        target="_blank">Apoyo Institucional</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2"
+                                        target="_blank">Beneficiario</a></li>
+                                <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4"
+                                        target="_blank">Trabajador</a></li>
+                                <li><a class="dropdown-item" href="report/reportejornadas.php?id=5"
+                                        target="_blank">Jornadas Especiales</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
+                                        target="_blank">Todos</a></li>
 
                             </div>
                         </div>
@@ -238,7 +242,7 @@ $resultado14 = $mysqli->query($sql14);
                                             <th>IC</th>
                                             <th>tipo de documento</th>
                                             <th>Cedula</th>
-                                            <th>Nombre de la institución</th>
+                                            <th>Nombre</th>
                                             <th>Area</th>
                                             <th>Cargo</th>
                                             <th>Correo</th>
@@ -246,7 +250,7 @@ $resultado14 = $mysqli->query($sql14);
                                             <th>Estado</th>
                                             <th>Municipio</th>
                                             <th>Dirección</th>
-                                            
+
                                             <?php
                         switch($rol){
                                case 1:
@@ -267,7 +271,7 @@ $resultado14 = $mysqli->query($sql14);
                                             <td><?php echo $row['ic']; ?></td>
                                             <td><?php echo $row['tipo_documento']; ?></td>
                                             <td><?php echo $row['cedula']; ?></td>
-                                            <td><?php echo $row['nombre_del_representante']; ?></td>
+                                            <td><?php echo $row['nombre_del_beneficiario']; ?></td>
                                             <td><?php echo $row['nombre_del_area']; ?></td>
                                             <td><?php echo $row['tipo_de_cargo']; ?></td>
                                             <td><?php echo $row['correo']; ?></td>

@@ -1,5 +1,6 @@
 <!-- Modal -->
-<div class="modal fade" id="modalDispo<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1" aria-labelledby="nuevoModalLabel" aria-hidden="true">
+<div class="modal fade" id="modalDispo<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1"
+    aria-labelledby="nuevoModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -57,13 +58,13 @@
                         <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
                         <span></span>
                     </div>
-                    <input type="hidden" name="origen" value = "<?php echo $row['origen'];?>">
+                    <input type="hidden" name="origen" value="<?php echo $row['id_origen'];?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
-                    <input type="hidden" name="beneficiario" value = "<?php echo $row['id_datos_del_entregante'];?>">
-                    <input type="hidden" name="responsable" value="6">
+                    <input type="hidden" name="beneficiario" value="<?php echo $row['id_datos_del_entregante'];?>">
+                    <input type="hidden" name="responsable" value="<?php echo $idusuario;?>">
                     <hr>
-                    <button type="submit" class="btn btn-success" >Enviar</button>
+                    <button type="submit" class="btn btn-success">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>

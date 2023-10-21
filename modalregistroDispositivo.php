@@ -13,15 +13,16 @@
                     <div class="form-row">
                         <div class="form-group col-md-4">
                             <label for="inputState">Tipo</label>
-                            <select id="inputState" class="form-control" name = "tipo">
-                            <?php foreach ($resultado14 as $row14) : ?>  
-                            <option value = "<?php echo $row14['id_documento'];?>"><?php echo $row14['tipo_documento'];?></option>
-                            <?php endforeach; ?>
+                            <select id="inputState" class="form-control" name="tipo">
+                                <?php foreach ($resultado14 as $row14) : ?>
+                                <option value="<?php echo $row14['id_documento'];?>">
+                                    <?php echo $row14['tipo_documento'];?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                         <div class="form-group col-md-6">
                             <label for="inputCity">ingresar</label>
-                            <input type="text" class="form-control" id="inputCity" name = "cedula">
+                            <input type="text" class="form-control" id="inputCity" name="cedula">
                         </div>
                     </div>
                     <div class="form-group">
@@ -79,10 +80,10 @@
                         <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
                         <span></span>
                     </div>
-                    <input type="hidden" name="id_roles" value="3">
+                    <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
 
-                    <input type="hidden" name="responsable" value="<?php echo $cordinadorID ?>">
+                    <input type="hidden" name="responsable" value="<?php echo $idusuario; ?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

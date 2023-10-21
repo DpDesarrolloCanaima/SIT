@@ -14,8 +14,8 @@
                 <form action="updateBene.php" method="POST">
                     <div class="form-group">
                         <label for="identificador">IC</label>
-                        <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp" name="icedit"
-                            value="<?php echo $row['ic'];?>">
+                        <input type="text" class="form-control" id="identificador" aria-describedby="nameHelp"
+                            name="icedit" value="<?php echo $row['ic'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -46,7 +46,7 @@
                     </div>
                     <div class="form-group">
                         <label for="fechaNacBene">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacBeneEdit" name="fecha_de_nacimiento" value="<?php echo $row['fecha_de_nacimiento'];?>">
+                        <input type="date" class="form-control" id="fechaNacBeneEdit" name="fecha_de_nacimiento">
                     </div>
                     <div class="form-group">
                         <label for="area">Area</label>
@@ -128,7 +128,7 @@
                             name="descripcion_discapacidad"><?php echo $row['descripcion_discapacidad_condicion'];?></textarea>
                         <span></span>
                     </div>
-                    
+
                     <input type="hidden" name="ideditbene" value="<?php echo $row['id_datos_del_entregante'];?>">
                     <input type="hidden" name="origen" value="2">
                     <hr>

@@ -8,12 +8,12 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
+$idusuario = $_SESSION['id_usuarios'];
 
 
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.areainsti, e.cargoinsti, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-INNER JOIN origen AS o ON o.id_origen = e.id_origen
+$sql1 = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.areainsti, e.cargoinsti, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 1 ";
 
@@ -155,7 +155,8 @@ $resultado14 = $mysqli->query($sql14);
                                         target="_blank">Beneficiario</a></li>
                                 <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=4"
                                         target="_blank">Trabajador</a></li>
-                                <li><a class="dropdown-item" href="report/reportejornadas.php?id=5" target="_blank">Jornadas
+                                <li><a class="dropdown-item" href="report/reportejornadas.php?id=5"
+                                        target="_blank">Jornadas
                                         Especiales</a></li>
                                 <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
                                         target="_blank">Todos</a></li>

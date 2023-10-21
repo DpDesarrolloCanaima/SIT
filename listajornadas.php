@@ -8,11 +8,10 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
-
+$idusuario = $_SESSION['id_usuarios'];
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario, e.cedula, e.fecha_de_nacimiento, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
-INNER JOIN origen AS o ON o.id_origen = e.id_origen
+$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario, e.cedula, e.fecha_de_nacimiento, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado WHERE e.id_origen = 4";
 
 $resultado = $mysqli->query($sql1);
@@ -147,11 +146,16 @@ $resultado14 = $mysqli->query($sql14);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                            <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1" target="_blank">Apoyo Institucional</a></li>
-                            <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2" target="_blank">Beneficiario</a></li>
-                            <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=3" target="_blank">Trabajador</a></li>
-                            <li><a class="dropdown-item" href="report/reportejornadas.php?id=4" target="_blank">Jornadas Especiales</a></li>
-                            <li><a class="dropdown-item" href="report/reportebeneficiarioall.php" target="_blank">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1"
+                                        target="_blank">Apoyo Institucional</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2"
+                                        target="_blank">Beneficiario</a></li>
+                                <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=3"
+                                        target="_blank">Trabajador</a></li>
+                                <li><a class="dropdown-item" href="report/reportejornadas.php?id=4"
+                                        target="_blank">Jornadas Especiales</a></li>
+                                <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
+                                        target="_blank">Todos</a></li>
 
                             </div>
                         </div>
@@ -224,7 +228,7 @@ $resultado14 = $mysqli->query($sql14);
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Beneficiario</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Jornadas Especiales</h6>
 
                         </div>
                         <div class="card-body">
