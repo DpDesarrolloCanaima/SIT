@@ -132,12 +132,12 @@ if ($responsable == "") {
     });
         </script>";
 }
-$fechaEntrega = "0000-00-00";
+$fechaEntrega = date('00-00-0000');
 $comprobacion = "Faltan comprobaciones";
 $observaciones_tecnico = "Falta por observaciones";
 $observaciones_verificador = "Falta por observaciones";
 
-$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_analista, comprobaciones, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$estatus', '$falla','$beneficiario');";
+$sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$estatus', '$falla','$beneficiario');";
 $resultado = mysqli_query($mysqli, $sql);
 
 if ($resultado) {

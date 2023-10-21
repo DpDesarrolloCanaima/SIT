@@ -11,7 +11,6 @@ require("function.php");
     if (mysqli_num_rows($resultValidation)>0) {
         
         $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-        // $sqlValidationSerial = ;
         $resultValidationSerial = $mysqli->query("SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo");
         
         if ($resultValidationSerial !== false && $resultValidationSerial->num_rows >0) {
@@ -90,14 +89,13 @@ require("function.php");
                     });
                         </script>";
                 }
-            $fechaEntrega = "0000-00-00";
-            $comprobacion = "Faltan comprobaciones";
-            $responsable = 7;
-            $grado = 4;
-            $institucionEducativa = "No posee una institucion educativa";
-            $institucionDondeEstudia = "No posee";
-    
-            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, institucion_educativa, institucion_donde_estudia, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones, comprobaciones, id_roles, id_origen, id_grado, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$institucionEducativa', '$institucionDondeEstudia','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$comprobacion','$rol','$origen','$grado','$estatus', '$falla','$beneficiario');";
+                $fechaEntrega = date('00-00-0000');
+                $comprobacion = "Faltan comprobaciones";
+                $observaciones_tecnico = "Falta por observaciones";
+                $observaciones_verificador = "Falta por observaciones";
+                $responsable = limpiarDatos($_POST['responsable']);
+                
+            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$estatus', '$falla','$beneficiario');";
             $resultado = mysqli_query($mysqli, $sql);
             
             if ($resultado) {

@@ -1,32 +1,36 @@
 <!-- Modal -->
-<div class="modal fade" id="editrabajador<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="editrabajador<?php echo $row['id_datos_del_entregante'];?>" tabindex="-1"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-titlen text-dark mx-auto" id="agregarBene">Editar Trabajador</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
             <div class="modal-body">
-                <form  action="registrartrabajador.php" method="POST">
-                <div class="form-group">
+                <form action="registrartrabajador.php" method="POST">
+                    <div class="form-group">
                         <label for="inputAddress">IC</label>
-                        <input type="text" class="form-control" id="inputAddress" name="ic" value="<?php echo $row['ic'];?>">
+                        <input type="text" class="form-control" id="inputAddress" name="ic"
+                            value="<?php echo $row['ic'];?>">
                     </div>
                     <div class="form-group">
-                    <label for="inputAddress">Ingrese la cedula</label>
+                        <label for="inputAddress">Ingrese la cedula</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>">
+                            <input type="text" class="form-control" aria-label="Input group example"
+                                aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>">
                             <input type="hidden" name="tipo_documento" value="1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_trabajador" value="<?php echo $row['nombre_del_beneficiario'];?>">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_trabajador"
+                            value="<?php echo $row['nombre_del_beneficiario'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -63,7 +67,8 @@
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone" value="<?php echo $row['telefono'];?>">
+                        <input type="text" class="form-control" id="telfBene" name="phone"
+                            value="<?php echo $row['telefono'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -77,7 +82,8 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>">
+                        <input type="text" class="form-control" id="municipio" name="municipio"
+                            value="<?php echo $row['municipio'];?>">
                         <span></span>
                     </div>
                     <div class="form-group">

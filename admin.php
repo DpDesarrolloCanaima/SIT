@@ -12,7 +12,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
-
+$id_usuario = $_SESSION['id_usuarios'];
 /* Consulta para los opciones de fechas de las graficas */
 
 $consulta2 = "SELECT * FROM  datos_del_dispotivo";

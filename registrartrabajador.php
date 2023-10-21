@@ -23,12 +23,12 @@ if ($_POST) {
 
     // Datos complementarios para el registro
     $edad = 0;
-    $fechaNac = "0000-00-00";
+    $fechaNac = date('00-00-0000');
     $areainsti = "Industria canaima";
     $cargoinsti = "Industria canaima";
     $nombreRepre = "Industria Canaima";
     
-    $sql = "INSERT INTO datos_del_entregrante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic', '$nombreInstitucion', '$tipoDocumento','$documento', '$generoTrabajador','$fechaNac','$areaTrabajador','$areainsti','$cargoTrabajador','$cargoinsti','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$origen')";
+    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic', '$nombreInstitucion', '$tipoDocumento','$documento','$edad','$generoTrabajador','$fechaNac','$areaTrabajador','$areainsti','$cargoTrabajador','$cargoinsti','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$origen')";
 
     $resultado = $mysqli->query($sql);
 
