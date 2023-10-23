@@ -134,7 +134,7 @@ $resultado14 = $mysqli->query($sql14);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div class="btn-group dropright">
                             <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                <img src="img/svg/beneplus.svg " alt="Industrias Canaima" width="15" height="15">
+                                <img src="img/bootstrap-icons-1.10.5/person-fill-add.svg" alt="Industrias Canaima" width="15" height="15">
                                 Registro de Beneficiario
                             </button>
                             <button type="button"
@@ -159,7 +159,7 @@ $resultado14 = $mysqli->query($sql14);
                             </div>
                         </div>
                         <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"><img src="img/svg/benelinea.svg "
+                            data-toggle="modal" data-target="#modalDispo"><img src="img/bootstrap-icons-1.10.5/device-hdd.svg"
                                 alt="Industrias Canaima" width="15" height="15"> Registrar Dispositivo</a>
                     </div>
 

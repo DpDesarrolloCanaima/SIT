@@ -69,8 +69,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <a href="report/reportedispositivoporverificar.php?id=4"
-                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
-                                class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
