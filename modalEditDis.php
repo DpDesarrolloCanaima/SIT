@@ -60,10 +60,11 @@
                         <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega"
                             value="<?php echo $row['fecha_de_entrega'];?>">
                     </div>
-                    <input type="hidden" name="origen" value = "<?php echo $row['origen'];?>">
+                    <input type="hidden" name="origen" value="<?php echo $row['id_origen'];?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
                     <input type="hidden" name="beneficiario" value="<?php echo $row['id_datos_del_beneficiario'];?>">
+                    <input type="hidden" name="idEditDispo" value="<?php echo $row['id_datos_del_dispositivo'];?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
