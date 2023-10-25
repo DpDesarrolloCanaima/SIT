@@ -14,8 +14,8 @@ if ($_POST) {
     $resultado = $mysqli->query($sql);
 
     $row = $resultado->fetch_assoc();
-
-    $sql = 'SET @usuario_actual =: '.$_SESSION['full_identificacion']."; UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = ".$row['id_usuarios'].", id_roles = '$rol'  WHERE id_datos_del_dispositivo = $idDispo";
+// SET @usuario_actual =: '.$_SESSION['full_identificacion'].";
+    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = ".$row['id_usuarios'].", id_roles = '$rol'  WHERE id_datos_del_dispositivo = $idDispo";
 
     $resultado = mysqli_query($mysqli, $sql);
 
