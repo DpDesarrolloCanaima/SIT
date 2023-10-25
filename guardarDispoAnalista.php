@@ -16,7 +16,7 @@ require("function.php");
            $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
            $sqlSerial = "SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo";
            $resultadoSerial = $mysqli->query($sqlSerial);
-           if ($resultadoSerial == "") {
+           if ($resultadoSerial == "" || $resultadoSerial == false) {
             $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
             $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
             $serialCargador = limpiarDatos($_POST['serial_cargador']);
