@@ -48,7 +48,7 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-                                location.assign('listadebeneficiario.php');
+                                location.assign('dispositivoentrada.php');
                               });
                     });
                         </script>";
@@ -66,7 +66,7 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-                                location.assign('listadebeneficiario.php');
+                                location.assign('dispositivoentrada.php');
                              });
                     });
                         </script>";
@@ -88,7 +88,7 @@ require("function.php");
                         confirmButtonText: 'OK',
                         timer: 1500
                       }).then(() => {
-                        location.assign('listadebeneficiario.php');
+                        location.assign('analista.php');
                      });
             });
                 </script>";  
@@ -106,7 +106,7 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-                                location.assign('listadebeneficiario.php');
+                                location.assign('analista.php');
                              });
                     });
                         </script>";
