@@ -16,10 +16,7 @@ require("function.php");
            $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
            $sqlSerial = "SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo";
            $resultadoSerial = $mysqli->query($sqlSerial);
-        foreach ($resultadoSerial as $row2) {
-            $serialdb = $row2['serial_equipo'];    
-        }
-        if ($serialdb == "") {
+           if ($resultadoSerial == "") {
             $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
             $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
             $serialCargador = limpiarDatos($_POST['serial_cargador']);
@@ -51,14 +48,12 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-            
                                 location.assign('listadebeneficiario.php');
-            
                               });
                     });
                         </script>";
             }else {
-                // echo "El serial ya existe en la base de datos";
+                // echo "Hubo un error en la consulta";
                 echo "
                         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                         <script language='JavaScript'>
@@ -71,36 +66,33 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-            
                                 location.assign('listadebeneficiario.php');
-            
                              });
                     });
                         </script>";
             }
+           }else {
+            foreach ($resultadoSerial as $row2) {
+                    $serialdb = $row2['serial_equipo'];    
+                }
+                echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El serial ".$serialdb." ya existe',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 1500
+                      }).then(() => {
+                        location.assign('listadebeneficiario.php');
+                     });
+            });
+                </script>";  
+           }
         }else {
-            echo "
-                        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                        <script language='JavaScript'>
-                        document.addEventListener('DOMContentLoaded', function() {
-                            Swal.fire({
-                                icon: 'error',
-                                title: 'El serial ya existe',
-                                showCancelButton: false,
-                                confirmButtonColor: '#3085d6',
-                                confirmButtonText: 'OK',
-                                timer: 1500
-                              }).then(() => {
-            
-                                location.assign('listadebeneficiario.php');
-            
-                             });
-                    });
-                        </script>";
-        }
-        
-        }else {
-            // echo "El beneficiario no existe";
             echo "
                         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                         <script language='JavaScript'>
@@ -113,9 +105,7 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-            
                                 location.assign('listadebeneficiario.php');
-            
                              });
                     });
                         </script>";
