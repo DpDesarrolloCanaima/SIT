@@ -104,7 +104,7 @@ $resultado14 = $mysqli->query($sql14);
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/error.css">
+    <link href="css/error.css" rel="stylesheet" >
 </head>
 
 <body id="page-top">

@@ -9,8 +9,8 @@ if ($_POST) {
     $fechaRecepEdit = $_POST['fecha_de_recepcion'];
     $estadoDeRecepcionEdit = limpiarDatos($_POST['estado_recepcion']);
     $fechaDeEntregaEdit = limpiarDatos($_POST['fecha_de_entrega']);
-    $fallaEdit = limpiarDatos($_POST['falla']);
-    $observacionesEdit = limpiarDatos($_POST['observaciones']);
+    /**$fallaEdit = limpiarDatos($_POST['falla']);*/
+    /**$observacionesEdit = limpiarDatos($_POST['observaciones']);*/
     $origenEdit = limpiarDatos($_POST['origen']);
     $estatusEdit = limpiarDatos($_POST['estatus']);
     $beneficiarioEdit = limpiarDatos($_POST['beneficiario']);

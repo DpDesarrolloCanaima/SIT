@@ -115,27 +115,27 @@
                             name="direccion"></textarea>
                         <span></span>
                     </div>
+                    <!-- Validacion de discapacidad-->
                     <div class="form-group">
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios1" value="si" checked>
+                            <input class="form-check-input i-radio" type="radio" name="discapacidad_o_condicion"
+                                id="exampleRadios1" value="si" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea2');ch.style.display='inline' ; " >
                             <label class="form-check-label" for="exampleRadios1">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios2" value="no">
+                            <input class="form-check-input " type="radio" name="discapacidad_o_condicion"
+                                id="exampleRadios2" value="no" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea2');ch.style.display='none' ; "checked>
                             <label class="form-check-label" for="exampleRadios2">
                                 No
                             </label>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="exampleFormControlTextarea2" style="display:none">
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
-                            name="descripcion_discapacidad"></textarea>
+                        <textarea class="form-control" rows="3" name="descripcion_discapacidad" ></textarea>
                         <span></span>
                     </div>
                     <hr>
