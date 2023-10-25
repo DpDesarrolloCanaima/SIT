@@ -16,7 +16,7 @@ require("function.php");
            $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
            $sqlSerial = "SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo";
            $resultadoSerial = $mysqli->query($sqlSerial);
-           if ($resultadoSerial == "" || $resultadoSerial == false) {
+           if ($resultadoSerial == 0) {
             $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
             $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
             $serialCargador = limpiarDatos($_POST['serial_cargador']);
@@ -71,7 +71,8 @@ require("function.php");
                     });
                         </script>";
             }
-           }else {
+           }if ($resultadoSerial == $serialEquipo) {
+            
             foreach ($resultadoSerial as $row2) {
                     $serialdb = $row2['serial_equipo'];    
                 }
