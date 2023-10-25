@@ -309,24 +309,7 @@ if ($_POST['registrar']) {
     }
     $descripcionDiscapacidadCondicion = limpiarDatos($_POST['descripcion_discapacidad']);
     if ($descripcionDiscapacidadCondicion == "") {
-        echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Describa la discapacidad que posee',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                timer: 1500
-              }).then(() => {
-
-                location.assign('listadebeneficiario.php');
-
-              });
-    });
-        </script>";
+       $descripcionDiscapacidadCondicion = "No posee";
     }
     $origen = limpiarDatos($_POST['origen']);
     if ($origen == "") {

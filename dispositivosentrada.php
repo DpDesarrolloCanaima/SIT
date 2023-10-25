@@ -42,7 +42,7 @@ $result = $mysqli->query($sql3);
 
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, d.id_datos_del_beneficiario, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, d.id_datos_del_beneficiario, d.id_origen, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
@@ -128,8 +128,7 @@ $resultado8 = $mysqli->query($sql2);
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div class="btn-group dropright">
-                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i>
+                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15">
                                 Generar Reporte
                             </button>
                             <button type="button"
@@ -155,7 +154,7 @@ $resultado8 = $mysqli->query($sql2);
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
                             </div>
-        </div>
+                        </div>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">

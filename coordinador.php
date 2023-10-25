@@ -103,7 +103,8 @@ $resultado2 = $mysqli->query($consulta2);
                                             ?>
                                         </select>
                                         <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button" value="fecha">Buscar</button>
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                value="fecha">Buscar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -203,7 +204,7 @@ $resultado2 = $mysqli->query($consulta2);
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">¿Estas seguro?</h5>
                         <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">×</span>
                         </button>

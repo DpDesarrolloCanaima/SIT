@@ -93,7 +93,7 @@ if ($_POST) {
       });
           </script>";
     }
-    $fechadenacimientoEdit = validar_fecha("fecNacBeneEdit");
+    $fechadenacimientoEdit = limpiarDatos($_POST['fecha_de_nacimiento']);
     if ($fechadenacimientoEdit == "") {
       echo "
       <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -111,26 +111,6 @@ if ($_POST) {
       });
           </script>";
     }
-    $areaEdit = limpiarDatos($_POST['area']);
-    if ($areaEdit == "") {
-      echo "
-      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-          <script language='JavaScript'>
-          document.addEventListener('DOMContentLoaded', function() {
-              Swal.fire({
-                  icon: 'error',
-                  title: 'ingrese el area',
-                  showCancelButton: false,
-                  confirmButtonColor: '#3085d6',
-                  confirmButtonText: 'OK'
-                }).then(() => {
-                  location.assign('listadebeneficiario.php');
-                });
-      });
-          </script>";
-    }
-    
-    $cargoEdit = limpiarDatos($_POST['cargo']);
     $nombreRepreBeneEdit = limpiarDatos($_POST['nombre_del_representanteEdit']);
     $correoEdit = limpiarDatos($_POST['correoBeneEdit']);
     $telefonoEdit = limpiarDatos($_POST['phoneEdit']);
@@ -140,10 +120,16 @@ if ($_POST) {
     $poseeDiscaEdit = limpiarDatos($_POST['discapacidad_o_condicion']);
     $descripcionDisEdit = limpiarDatos($_POST['descripcion_discapacidad']);
     $origenEdit = limpiarDatos($_POST['origen']);
+     //Datos complementarios 
+    $areainsti = "Industria Canaima";
+    $cargoinsti = "Industria Canaima";
+    $idarea = 1;
+    $idcargo = 1;
 
     require "config/conexionProvi.php";
-    $sql = "UPDATE datos_del_entregante SET ic = '$icedit', nombre_del_beneficiario = '$nombreBeneEdit', cedula = '$cedulaBeneEdit', edad = '$edadBeneEdit', Id_genero = '$generoEdit', fecha_de_nacimiento = '$fechadenacimientoEdit', id_area = '$areaEdit', id_cargo = '$cargoEdit', nombre_del_representante = '$nombreRepreBeneEdit', correo = '$correoEdit', telefono = '$telefonoEdit', estado = '$estado', municipio = '$municipioEdit', direccion = '$direccionEdit', posee_discapacidad_o_condicion = '$poseeDiscaEdit',descripcion_discapacidad_condicion = '$descripcionDisEdit', id_origen = '$origenEdit' WHERE id_datos_del_entregante = $idEditBene";
+    $sql = "UPDATE datos_del_entregante SET ic = '$icedit', nombre_del_beneficiario = '$nombreBeneEdit', cedula = '$cedulaBeneEdit', edad = '$edadBeneEdit', Id_genero = '$generoEdit', fecha_de_nacimiento = '$fechadenacimientoEdit', id_area = '$idarea', id_cargo = '$idcargo', nombre_del_representante = '$nombreRepreBeneEdit', correo = '$correoEdit', telefono = '$telefonoEdit', estado = '$estado', municipio = '$municipioEdit', direccion = '$direccionEdit', posee_discapacidad_o_condicion = '$poseeDiscaEdit',descripcion_discapacidad_condicion = '$descripcionDisEdit', id_origen = '$origenEdit' WHERE id_datos_del_entregante = $idEditBene";
 
+    //echo $sql;
     $resultado = mysqli_query($mysqli, $sql);
 
     if ($resultado) {

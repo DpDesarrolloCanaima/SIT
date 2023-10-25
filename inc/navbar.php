@@ -28,6 +28,11 @@ $usuario = $_SESSION['usuario'];
                     $notiText = "Asignar, ";
                     $filenameDetalles = "detalles.php";
                     break;
+                case 2:
+                    $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
+                    $notiText = "Asignar, ";
+                    $filenameDetalles = "detalles.php";
+                    break;    
 
                 case 3:
                     $observacionesT = "observaciones_verificador"; 

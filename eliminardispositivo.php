@@ -11,7 +11,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $iddispo = $_REQUEST['id'];
 $sql = "DELETE FROM datos_del_dispotivo WHERE id_datos_del_dispositivo = '".$iddispo."'" ;
-$respuesta = mysqli_query($mysqli, $sql);
+$respuesta = $mysqli->query($sql);
 
 if ($respuesta) {
     echo "
