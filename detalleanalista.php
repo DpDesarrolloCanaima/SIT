@@ -9,7 +9,7 @@ if (!isset($_SESSION['id_usuarios'])) {
         header("Location: index.php");
     }
 }
-$id_usuario = $_SESSION['id_usuarios'];
+$idusuario = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $idDispositivo = $_GET['id'];
