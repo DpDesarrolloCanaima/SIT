@@ -13,10 +13,10 @@ if (!isset($_SESSION['id_usuarios'])) {
 $idbeneficiario = $_REQUEST['id'];
 
 //Realizamos la consulta para eliminar el benificiario
-$sql = "DELETE FROM datos_del_entregante WHERE id_datos_del_entregante '".$idbeneficiario."'";
+$sql = "DELETE FROM datos_del_entregante WHERE id_datos_del_entregante = '".$idbeneficiario."'";
 
 // Obtenemos la respuesta de esa consulta
-$respuesta = mysqli_query($mysqli, $sql);
+$respuesta = $mysqli->query($sql);
 
 // Comprobamos si la respuesta se realizo o no y mostramos su respectivo mensaje
 if ($respuesta) {
@@ -33,7 +33,7 @@ if ($respuesta) {
             timer: 1500
           }).then(() => {
 
-            location.assign('dispositivosentrada.php');
+            location.assign('listadebeneficiario.php');
 
           });
 });
@@ -52,7 +52,7 @@ if ($respuesta) {
             timer: 1500
           }).then(() => {
 
-            location.assign('dispositivosentrada.php');
+            location.assign('listadebeneficiario.php');
 
          });
 });
