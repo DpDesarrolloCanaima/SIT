@@ -48,7 +48,7 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-                                location.assign('dispositivoentrada.php');
+                                location.assign('dispositivosentrada.php');
                               });
                     });
                         </script>";
@@ -66,7 +66,7 @@ require("function.php");
                                 confirmButtonText: 'OK',
                                 timer: 1500
                               }).then(() => {
-                                location.assign('dispositivoentrada.php');
+                                location.assign('dispositivosentrada.php');
                              });
                     });
                         </script>";
