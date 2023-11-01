@@ -115,11 +115,11 @@
                             name="direccion"></textarea>
                         <span></span>
                     </div>
-                    <!-- Validacion de discapacidad-->
+                     <!-- Validacion de discapacidad -->
                     <div class="form-group">
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
-                            <input class="form-check-input i-radio" type="radio" name="discapacidad_o_condicion"
+                            <input class="form-check-input" type="radio" name="discapacidad_o_condicion"
                                 id="exampleRadios1" value="si" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea2');ch.style.display='inline' ; " >
                             <label class="form-check-label" for="exampleRadios1">
                                 Si
@@ -137,7 +137,7 @@
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
                         <textarea class="form-control" rows="3" name="descripcion_discapacidad" ></textarea>
                         <span></span>
-                    </div>
+                    </div> 
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

@@ -82,7 +82,7 @@
                             name="direccion"></textarea>
                         <span></span>
                     </div>
-                    <!-- Validacion de discapacidad-->
+                    <!-- Validacion de discapacidad -->
                     <div class="form-group">
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
@@ -104,7 +104,7 @@
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
                         <textarea class="form-control" rows="3" name="descripcion_discapacidad" ></textarea>
                         <span></span>
-                    </div>
+                    </div> 
                     <hr>
                     <input type="hidden" name="origen" value="2">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
