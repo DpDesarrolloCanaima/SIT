@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="registroJornadas.php" method="POST">
+                <form action="editjornadas.php" method="POST">
                     <div class="form-group">
                         <label for="inputAddress">IC</label>
                         <input type="number" class="form-control" id="inputAddress" name="ic"

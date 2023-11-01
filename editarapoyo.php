@@ -39,7 +39,7 @@ if ($_POST) {
             timer: 1500
           }).then(() => {
 
-            location.assign('listadeapoyo.php');
+            location.assign('Listadeapoyo.php');
 
           });
 });
@@ -59,7 +59,7 @@ if ($_POST) {
             timer: 1500
           }).then(() => {
 
-            location.assign('listadeapoyo.php');
+            location.assign('Listadeapoyo.php');
 
           });
 });
