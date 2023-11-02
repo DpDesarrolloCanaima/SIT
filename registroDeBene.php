@@ -30,14 +30,14 @@ if ($_POST['registrar']) {
         </script>";
     }else {
         $ic = limpiarDatos($_POST['ic']);
-    if ($ic == "") {
+    if (!preg_match("/\b/", $ic)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
                         icon: 'success',
-                        title: 'Ingrese el identificador unico',
+                        title: 'Ingrese el identificador con el formato solicitado',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
@@ -51,14 +51,14 @@ if ($_POST['registrar']) {
                 </script>";
     }
     $nombre_del_beneficiario = limpiarDatos($_POST['nombre_del_beneficiario']);
-    if ($nombre_del_beneficiario == "") {
+    if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombre_del_beneficiario)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'success',
-                title: 'Ingrese el nombre del beneficiario',
+                title: 'El nombre del beneficiario no coincide con el formato solicitado',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
@@ -73,15 +73,14 @@ if ($_POST['registrar']) {
     }
 
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
-    $cedula = limpiarDatos($_POST['documento']);
-    if ($cedula == "") {
-        echo "
+    if ($tipoDocumento != 1) {
+      echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'success',
-                title: 'Ingrese la cedula del beneficiario',
+                title: 'El tipo de documento fue modificado',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
@@ -94,15 +93,15 @@ if ($_POST['registrar']) {
     });
         </script>";
     }
-    $edad = limpiarDatos($_POST['edadBene']);
-    if ($edad == "") {
+    $cedula = limpiarDatos($_POST['documento']);
+    if (!preg_match("/\b/", $cedula)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'success',
-                title: 'Ingrese la edad del beneficiario',
+                title: 'Debe ingresar la cedula en solo digitos.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
@@ -114,6 +113,66 @@ if ($_POST['registrar']) {
               });
     });
         </script>";
+        if (!preg_match("/[0-9]{8}/", $cedula)) {
+          echo "
+            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+            <script language='JavaScript'>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'La cedula no cumple con el formato deseado.',
+                    showCancelButton: false,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: 'OK',
+                    timer: 1500
+                  }).then(() => {
+
+                    location.assign('listadebeneficiario.php');
+
+                  });
+        });
+            </script>";
+        }
+    }
+    $edad = limpiarDatos($_POST['edadBene']);
+    if (!preg_match("/\b/", $edad)) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'La edad debe de ser un digito.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+        if (!preg_match("/[0-9]{2}/", $edad)) {
+          echo "<script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+          <script language='JavaScript'>
+          document.addEventListener('DOMContentLoaded', function() {
+              Swal.fire({
+                  icon: 'success',
+                  title: 'La edad no cumple el formato solicitado',
+                  showCancelButton: false,
+                  confirmButtonColor: '#3085d6',
+                  confirmButtonText: 'OK',
+                  timer: 1500
+                }).then(() => {
+  
+                  location.assign('listadebeneficiario.php');
+  
+                });
+      });
+          </script>";
+        }
     }
     
     $genero = limpiarDatos($_POST['genero']);
@@ -161,14 +220,14 @@ if ($_POST['registrar']) {
     }
 
     $nombre_del_representante = limpiarDatos($_POST['nombre_del_representante']);
-    if ($nombre_del_representante == "") {
+    if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombre_del_representante)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'success',
-                title: 'Ingrese el nomobre del Representante',
+                title: 'El nombre del representante no cumple con el formato solicitado',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
@@ -203,14 +262,33 @@ if ($_POST['registrar']) {
         </script>";
     }
     $telefono = limpiarDatos($_POST['phone']);
-    if ($telefono == "") {
+    if (!preg_match("/\b/", $telefono)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
-                title: 'Ingrese el telefono del representante',
+                title: 'El telefono debe ser solo digitos.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+    }elseif (!preg_match("/[0-9]{11}/",$telefono)) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El telefono cumple con los caracteres requeridos',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
@@ -245,7 +323,7 @@ if ($_POST['registrar']) {
         </script>";
     }
     $municipio = limpiarDatos($_POST['municipio']);
-    if ($municipio == "") {
+    if (!preg_match("/^[a-zA-Z\s]{10,60}/", $municipio)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>

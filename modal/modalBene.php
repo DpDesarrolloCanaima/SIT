@@ -20,18 +20,18 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
                             <input type="hidden" name="tipo_documento" value="1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre del Beneficiario</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="edadBene">Edad</label>
-                        <input type="text" class="form-control" id="edadBene" name="edadBene">
+                        <input type="text" class="form-control" id="edadBene" name="edadBene" pattern="[0-9]{2}">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -48,7 +48,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nombreRepre">Nombre del Representante</label>
-                        <input type="text" class="form-control" id="nombreRepre" name="nombre_del_representante">
+                        <input type="text" class="form-control" id="nombreRepre" name="nombre_del_representante" pattern="[a-zA-Z\s]{3,80}" title="El maximo de caracteres es 80.">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -59,7 +59,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone">
+                        <input type="text" class="form-control" id="telfBene" name="phone" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -73,7 +73,7 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio">
+                        <input type="text" class="form-control" id="municipio" name="municipio" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">

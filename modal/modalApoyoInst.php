@@ -8,7 +8,6 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
-
             </div>
             <div class="modal-body">
                 <form action="registrarapoyo.php" method="POST">
@@ -16,14 +15,13 @@
                         <label for="inputAddress">IC</label>
                         <input type="text" class="form-control" id="inputAddress" name="ic">
                     </div>
-                    <!--<br> -->
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el RIF</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">RIF</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{9}">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{9}" title="Debe ingresar el RIF en solo digitos">
                             <input type="hidden" name="tipo_documento" value="2">
                         </div>
                     </div>

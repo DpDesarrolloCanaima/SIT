@@ -27,14 +27,14 @@ if ($_POST) {
         ";
     }
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
-    if ($tipoDocumento == "") {
+    if ($tipoDocumento != 2) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
-                title: 'El tipo de documento no cumple el formato',
+                title: 'El tipo de documento fue modificado',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
