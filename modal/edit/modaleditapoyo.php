@@ -23,22 +23,14 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">RIF</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>"  pattern="[0-9]{9}" title="Debe ingresar el RIF en solo digitos">
                             <input type="hidden" name="tipo_documento" value="2">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion" value="<?php echo $row['nombre_del_beneficiario'];?>">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion" value="<?php echo $row['nombre_del_beneficiario'];?>" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres 80">
                         <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="area">Area</label>
-                        <input type="text" name="areainsti" id="area" class="form-control" value="<?php echo $row['areainsti'];?>">
-                    </div>
-                    <div class="form-group">
-                        <label for="cargo">Cargo</label>
-                        <input type="text" name="cargoinsti" id="cargo" class="form-control" value="<?php echo $row['cargoinsti'];?>">
                     </div>
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
@@ -48,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone" value="<?php echo $row['telefono'];?>">
+                        <input type="text" class="form-control" id="telfBene" name="phone" value="<?php echo $row['telefono'];?>"  pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -62,7 +54,7 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>">
+                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">

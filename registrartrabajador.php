@@ -189,22 +189,20 @@ if ($_POST) {
         ";
     }
     $correoTrabajador = limpiarDatos($_POST['correoBene']);
-    if ($correoTrabajador == "") {
+    if (!preg_match("/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/", $correoTrabajador)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
                         icon: 'error',
-                        title: 'Debe ingresar un correo valido',
+                        title: 'El correo no cumple con el formato solicitado',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
                         timer: 3000
                     }).then(() => {
-
-                        location.assign('listatrabajadores.php');
-
+                        location.assign('Listadeapoyo.php');
                     });
             });
                 </script>

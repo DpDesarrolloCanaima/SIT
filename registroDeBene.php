@@ -241,26 +241,26 @@ if ($_POST['registrar']) {
         </script>";
     }
     $correo = limpiarDatos($_POST['correoBene']);
-    if ($correo == "") {
-        echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'Ingrese el correo del representante',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                timer: 1500
-              }).then(() => {
-
-                location.assign('listadebeneficiario.php');
-
-              });
-    });
-        </script>";
-    }
+    if (!preg_match("/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/", $correo)) {
+      echo "
+              <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+              <script language='JavaScript'>
+              document.addEventListener('DOMContentLoaded', function() {
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'El correo no cumple con el formato solicitado',
+                      showCancelButton: false,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'OK',
+                      timer: 3000
+                  }).then(() => {
+                      location.assign('Listadeapoyo.php');
+                  });
+          });
+              </script>
+              
+      ";
+  }
     $telefono = limpiarDatos($_POST['phone']);
     if (!preg_match("/\b/", $telefono)) {
         echo "

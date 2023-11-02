@@ -89,7 +89,7 @@ if ($_POST) {
         }
     }
     $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
-    if (!preg_match("/[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
+    if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>
