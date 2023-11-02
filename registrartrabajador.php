@@ -29,14 +29,14 @@ if ($_POST) {
         ";
     }
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
-    if ($tipoDocumento == "") {
+    if ($tipoDocumento != 1 || $tipoDocumento == "") {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
-                title: 'El tipo de documento no cumple el formato',
+                title: 'El tipo de documento fue modificado',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
@@ -73,7 +73,7 @@ if ($_POST) {
         </script>
         
         ";
-        if (!preg_match("/[0-9]{9}/", $documento)) {
+        if (!preg_match("/[0-9]{8}/", $documento)) {
             echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>
@@ -97,7 +97,7 @@ if ($_POST) {
         }
     }
     $nombreInstitucion = limpiarDatos($_POST['nombre_del_beneficiario']);
-    if (!preg_match("/[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
+    if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>
@@ -120,16 +120,260 @@ if ($_POST) {
         ";
     }
     $generoTrabajador = limpiarDatos($_POST['genero']);
+    if ($generoTrabajador == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe seleccionar un genero.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $areaTrabajador = limpiarDatos($_POST['area']);
+    if ($areaTrabajador == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe seleccionar un area',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $cargoTrabajador = limpiarDatos($_POST['cargo']);
+    if ($cargoTrabajador == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe seleccionar un cargo',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $correoTrabajador = limpiarDatos($_POST['correoBene']);
+    if ($correoTrabajador == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe ingresar un correo valido',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $telefonoTrabajador = limpiarDatos($_POST['phone']);
+    if (!preg_match("/\b/", $telefonoTrabajador)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El telefono debe ser de solo digitos.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }elseif (!preg_match("/[0-9]{11}/", $telefonoTrabajador)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El telefono no cumple con los caracteres necesarios.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $estado = limpiarDatos($_POST['estado']);
+    if ($estado == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe ingresar un estado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $municipio = limpiarDatos($_POST['municipio']);
-    $discapacidad = limpiarDatos($_POST['discapacidad_o_condicion']);
-    $descripcionDisca = limpiarDatos($_POST['descripcion_discapacidad']);
+    if (!preg_match("/^[a-zA-Z\s]{10,60}/", $municipio)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El municipio no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $direccion = limpiarDatos($_POST['direccion']); 
+    if ($direccion == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe ingresar una direccion',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
+    $discapacidad = limpiarDatos($_POST['discapacidad_o_condicion']);
+    if ($discapacidad == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe seleccionar un valor (Si o No)',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
+    $descripcionDisca = limpiarDatos($_POST['descripcion_discapacidad']);
+    if ($descripcionDisca == "") {
+        $descripcionDisca = "No posee";
+    }
     $origen = limpiarDatos($_POST['origen']);
+    if ($origen != 3 || $origen == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El origen fue modificado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
 
     // Datos complementarios para el registro
     $edad = 0;

@@ -27,7 +27,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion" pattern="[a-zA-Z\s]{3,80}">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres 80">
                         <span></span>
                     </div>
                     <div class="form-group">

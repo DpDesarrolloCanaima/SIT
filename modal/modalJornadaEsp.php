@@ -26,7 +26,7 @@
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion_jornada">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion_jornada" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -37,7 +37,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone">
+                        <input type="text" class="form-control" id="telfBene" name="phone" pattern="[0-9]{11}">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -51,7 +51,7 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio">
+                        <input type="text" class="form-control" id="municipio" name="municipio" pattern="[a-zA-Z\s]{3,80}">
                         <span></span>
                     </div>
                     <div class="form-group">
