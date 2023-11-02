@@ -23,14 +23,13 @@
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
                             <input type="text" class="form-control" aria-label="Input group example"
-                                aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>">
+                                aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>" pattern="[0-9]{8}">
                             <input type="hidden" name="tipo_documento" value="1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_trabajador"
-                            value="<?php echo $row['nombre_del_beneficiario'];?>">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_trabajador" value="<?php echo $row['nombre_del_beneficiario'];?>"  pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -68,7 +67,7 @@
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
                         <input type="text" class="form-control" id="telfBene" name="phone"
-                            value="<?php echo $row['telefono'];?>">
+                            value="<?php echo $row['telefono'];?>" pattern="[0-9]{11}">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -82,8 +81,7 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio"
-                            value="<?php echo $row['municipio'];?>">
+                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
