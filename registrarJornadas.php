@@ -22,14 +22,12 @@ if ($_POST) {
     $edad = 0;
     $id_genero = 1;
     $id_area = 1;
-    $areainsti = "Industria Canaima";
     $id_cargo = 1;
-    $cargoinsti = "Industria Canaima";
     $nombreRepresentante = "Industria Canaima c.a";
     $dispcacidad = "no";
     $descripcionDis = "No posee";
 
-    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic', '$NombreInstitucionJor','$tipoDocumento', '$documento', '$edad', '$id_genero','$fechaJornada', '$id_area', '$areainsti', '$id_cargo', '$cargoinsti', '$nombreRepresentante', '$correoJornada', '$telefonoJornada', '$estadoJornada', '$municipioJornada', '$direccionJornada', '$dispcacidad', '$descripcionDis', '$origen')";
+    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area,  id_cargo,  nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic', '$NombreInstitucionJor','$tipoDocumento', '$documento', '$edad', '$id_genero','$fechaJornada', '$id_area', '$id_cargo',  '$nombreRepresentante', '$correoJornada', '$telefonoJornada', '$estadoJornada', '$municipioJornada', '$direccionJornada', '$dispcacidad', '$descripcionDis', '$origen')";
 
     $resultado = $mysqli->query($sql);
 
