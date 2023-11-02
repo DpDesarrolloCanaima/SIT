@@ -110,11 +110,151 @@ if ($_POST) {
         ";
     }
     $correoInsti = limpiarDatos($_POST['correoApoyo']);
+    if (!preg_match("/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/", $correoInsti)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El correo no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $telefonoInsti = limpiarDatos($_POST['phone']);
+    if (!preg_match("/\b/", $telefonoInsti)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El telefono no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+        if (!preg_match("/[0-9]{11}/", $telefonoInsti)) {
+            echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El telefono no cumple con la cantidad de digitos requerida',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+        }
+    }
     $estadoInsti = limpiarDatos($_POST['estado']);
+    if ($estadoInsti == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe seleccionar un estado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $municipio = limpiarDatos($_POST['municipio']);
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $municipio)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El municipio no corresponde a los caracteres requeridos',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $direccionInsti = limpiarDatos($_POST['direccion']);
+    if ($direccionInsti == "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Debe ingresar la direccion',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $origen = limpiarDatos($_POST['origen']);
+    if ($origen == 1) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El origen fue modificado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
 
     //Datos complementarios para el registro
     $edad = 0;
