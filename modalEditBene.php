@@ -19,21 +19,24 @@
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="nombreBene">Nombre del Beneficiario</label>
-                        <input type="text" class="form-control" id="nombreBene" aria-describedby="nameHelp"
-                            name="nombre_del_beneficiario_edit" value="<?php echo $row['nombre_del_beneficiario'];?>">
-                        <span></span>
+                    <label for="inputAddress">Ingrese la cedula</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text" id="btnGroupAddon">C.I</div>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" value="<?php echo $row['cedula'];?>" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
+                            <input type="hidden" name="tipo_documento" value="1">
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="cedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedulaBeneEdit"
-                            value="<?php echo $row['cedula'];?>">
+                        <label for="nombreBene">Nombre del Beneficiario</label>
+                        <input type="text" class="form-control" id="nombreBene" aria-describedby="nameHelp"
+                            name="nombre_del_beneficiario_edit" value="<?php echo $row['nombre_del_beneficiario'];?>" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="edadBene">Edad</label>
-                        <input type="text" class="form-control" id="edadBene" name="edadBeneEdit"
-                            value="<?php echo $row['edad'];?>">
+                        <input type="text" class="form-control" id="edadBene" name="edadBeneEdit" value="<?php echo $row['edad'];?>" pattern="[0-9]{2}">
                         <span></span>
                     </div>
                     <div class="form-group">
