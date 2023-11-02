@@ -6,11 +6,109 @@ require "function.php";
 
 if ($_POST) {
     $ic = limpiarDatos($_POST['ic']);
+    if (!preg_match("/\b/", $ic)) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El IC no cumple el formato',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+                location.assign('Listadeapoyo.php');
+              });
+    });
+        </script>
+        
+        ";
+    }
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
+    if ($tipoDocumento == "") {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El tipo de documento no cumple el formato',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+                location.assign('Listadeapoyo.php');
+              });
+    });
+        </script>
+        
+        ";
+    }
     $documento = limpiarDatos($_POST['documento']);
+    if (!preg_match("/\b/",$documento)) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El documento no cumple con el formato solicitado',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+                location.assign('Listadeapoyo.php');
+              });
+    });
+        </script>
+        
+        ";
+        if (!preg_match("/[0-9]{9}/", $documento)) {
+            echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El documento no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+        }
+    }
     $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
-    $AreaInsti = limpiarDatos($_POST['areainsti']);
-    $cargoInsti = limpiarDatos($_POST['cargoinsti']);
+    if (!preg_match("/[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El nombre de la institucion no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+                        location.assign('Listadeapoyo.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $correoInsti = limpiarDatos($_POST['correoApoyo']);
     $telefonoInsti = limpiarDatos($_POST['phone']);
     $estadoInsti = limpiarDatos($_POST['estado']);
@@ -28,7 +126,7 @@ if ($_POST) {
     $discapacidad = "no";
     $descripcionDis = "no posee";
 
-    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, areainsti, id_cargo, cargoinsti, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic','$nombreInstitucion', '$tipoDocumento', '$documento', '$edad', '$id_genero', '$fechaNac', '$id_area', '$AreaInsti', '$id_cargo','$cargoInsti', '$nombreRepre', '$correoInsti', '$telefonoInsti', '$estadoInsti', '$municipio', '$direccionInsti', '$discapacidad', '$descripcionDis', '$origen')";
+    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo,  nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic','$nombreInstitucion', '$tipoDocumento', '$documento', '$edad', '$id_genero', '$fechaNac', '$id_area', '$AreaInsti', '$id_cargo','$cargoInsti', '$nombreRepre', '$correoInsti', '$telefonoInsti', '$estadoInsti', '$municipio', '$direccionInsti', '$discapacidad', '$descripcionDis', '$origen')";
      
 
     //echo $sql;

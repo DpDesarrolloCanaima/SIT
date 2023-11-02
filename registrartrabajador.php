@@ -6,9 +6,119 @@ require "function.php";
 
 if ($_POST) {
     $ic = limpiarDatos($_POST['ic']);
+    if (!preg_match("/\b/", $ic)) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El IC no cumple el formato',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+
+                location.assign('listatrabajadores.php');
+
+              });
+    });
+        </script>
+        
+        ";
+    }
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
+    if ($tipoDocumento == "") {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El tipo de documento no cumple el formato',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+
+                location.assign('listatrabajadores.php');
+
+              });
+    });
+        </script>
+        
+        ";
+    }
     $documento = limpiarDatos($_POST['documento']);
+    if (!preg_match("/\b/",$documento)) {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El documento no cumple con el formato solicitado',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+
+                location.assign('listatrabajadores.php');
+
+              });
+    });
+        </script>
+        
+        ";
+        if (!preg_match("/[0-9]{9}/", $documento)) {
+            echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El documento no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+        }
+    }
     $nombreInstitucion = limpiarDatos($_POST['nombre_del_beneficiario']);
+    if (!preg_match("/[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El nombre de la institucion no cumple con el formato solicitado',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 3000
+                    }).then(() => {
+
+                        location.assign('listatrabajadores.php');
+
+                    });
+            });
+                </script>
+                
+        ";
+    }
     $generoTrabajador = limpiarDatos($_POST['genero']);
     $areaTrabajador = limpiarDatos($_POST['area']);
     $cargoTrabajador = limpiarDatos($_POST['cargo']);

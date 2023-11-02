@@ -23,22 +23,14 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">RIF</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{9}">
                             <input type="hidden" name="tipo_documento" value="2">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion">
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion" pattern="[a-zA-Z\s]{3,80}">
                         <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="area">Area</label>
-                        <input type="text" name="areainsti" id="area" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="cargo">Cargo</label>
-                        <input type="text" name="cargoinsti" id="cargo" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
