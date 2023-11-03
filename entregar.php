@@ -2,10 +2,96 @@
 if ($_POST) {
     require "function.php";
     $fechaEntrega = $_POST['fecha_de_entrega'];
+    $fechavacia = date('00-00-0000');
+    if ($fechaEntrega == $fechavacia) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Debe ingresar una fecha valida',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesanalista.php');
+              });
+    });
+        </script>";
+    }
     $estatus = $_POST['id_status'];
+    if ($estatus == 7) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El estatus no es el correcto',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesanalista.php');
+              });
+    });
+        </script>";
+    }
     $responsable = limpiarDatos($_POST['responsable']);
+    if ($responsable == "") {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No se realizaron los cambios.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesanalista.php');
+              });
+    });
+        </script>";
+    }
     $rol = limpiarDatos($_POST['id_roles']);
+    if ($rol == "") {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No se realizaron los cambios.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesanalista.php');
+              });
+    });
+        </script>";
+    }
     $idDispo = limpiarDatos($_POST['id_dispositivo']);
+    if ($idDispo == "") {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No posee su identificador.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesanalista.php');
+              });
+    });
+        </script>";
+    }
 
     require "config/conexionProvi.php";
 

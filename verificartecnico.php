@@ -3,10 +3,95 @@
 if ($_POST) {
     require "function.php";
 $observacionT = limpiarDatos($_POST['observaciones']);
+if ($observacionT == "") {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Debe ingresar observaciones.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php');
+              });
+    });
+        </script>";
+}
 $estatus = limpiarDatos($_POST['id_status']);
+if ($estatus != 3) {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No es el estatus correcto.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php');
+              });
+    });
+        </script>";
+}
 $responsable = limpiarDatos($_POST['responsable']);
+if ($responsable == "") {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No se realizaron los cambios',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php');
+              });
+    });
+        </script>";
+}
 $id_roles = limpiarDatos($_POST['id_roles']);
+if ($id_roles == "") {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No se realizaron los cambios',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php');
+              });
+    });
+        </script>";
+}
 $idDispo = limpiarDatos($_POST['id_dispositivo']);
+if ($idDispo == "") {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No se realizaron los cambios',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php');
+              });
+    });
+        </script>";
+}
 
 require "config/conexionProvi.php";
 
