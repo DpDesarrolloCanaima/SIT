@@ -6,6 +6,8 @@
             <div class="modal-header">
                 <h3 class="modal-titlen text-dark mx-auto" id="title-head-modal">Editar Dispositivo</h3>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
             </div>
             <div class="modal-body">
                 <form name="crearusuario" action="updateDispo.php" method="POST">
@@ -21,7 +23,7 @@
                     <div class="form-group">
                         <label for="exampleInputUser1">Serial del Equipo</label>
                         <input type="text" class="form-control" id="serial_del_equipo" aria-describedby="nameHelp"
-                            name="serial_del_equipo" value="<?php echo $row['serial_equipo'];?>">
+                            name="serial_del_equipo" value="<?php echo $row['serial_equipo'];?>" pattern="[a-zA-Z]{18}" title="El serial solo posee 18 caracteres.">
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Serial del Cargador</label>
@@ -54,11 +56,6 @@
                         <label for="exampleInputPassword1">Observaciones</label>
                         <textarea class="form-control" id="observaciones" rows="3"
                             name="observaciones"><?php echo $row['observaciones_analista'];?></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="fechaEntrega">Fecha de Entrega</label>
-                        <input type="date" class="form-control" id="fechaEntrega" name="fecha_de_entrega"
-                            value="<?php echo $row['fecha_de_entrega'];?>">
                     </div>
                     <input type="hidden" name="origen" value="<?php echo $row['id_origen'];?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
