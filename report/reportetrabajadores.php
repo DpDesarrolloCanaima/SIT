@@ -4,7 +4,7 @@
 	require "../config/conexionProvi.php";
 	require "plantillatrabajador.php";
     $id = $_GET['id'];
-$sql = "SELECT e.id_datos_del_entregante, e.ic, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, e.ic, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN area AS a ON a.id_area = e.id_area
 INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
@@ -13,7 +13,7 @@ INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_o
 
 $resultado = $mysqli->query($sql);
 
-	$pdf = new PDF("L", "mm", array(300,620));
+	$pdf = new PDF("L", "mm", array(300,480));
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 
