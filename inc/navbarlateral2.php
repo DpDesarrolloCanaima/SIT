@@ -47,9 +47,8 @@
                     break;    
             }    
         ?>
-
-        <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
-        <span>Home</span></a>
+        <i class="fas fa-home fa-home-alt"></i>
+                    <span>Home</span></a>
     </li>
 
     <!-- divider -->
@@ -62,10 +61,11 @@
 
     <!-- Nav Item - Pages Collapse Menu-->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
-            <img src="img/svg/setting.svg" alt="Industrias Canaima" width="22" height="22">
-            <span>Administrar</span>
+    <i class="fas fa-fw fa-cog"></i>
+                    <span>Administrar</span>
+                    </a>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">

@@ -133,10 +133,8 @@ $resultado14 = $mysqli->query($sql14);
                     </div>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div class="btn-group dropright">
-                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                                <img src="img/bootstrap-icons-1.10.5/person-fill-add.svg" alt="Industrias Canaima"
-                                    width="15" height="15">
-                                Registro de Beneficiario
+                        <a type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-user fa-sm text-white-50"></i> Registro de Beneficiario</a>
                             </button>
                             <button type="button"
                                 class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
@@ -159,10 +157,8 @@ $resultado14 = $mysqli->query($sql14);
                                 </li>
                             </div>
                         </div>
-                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#modalDispo"><img
-                                src="img/bootstrap-icons-1.10.5/device-hdd.svg" alt="Industrias Canaima" width="15"
-                                height="15"> Registrar Dispositivo</a>
+                        <a type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalDispo"><i
+                                class="fas fa-laptop fa-sm text-white-50"></i> Registrar Dispositivo</a>
                     </div>
 
 
