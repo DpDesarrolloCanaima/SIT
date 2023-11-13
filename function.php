@@ -44,13 +44,3 @@ function validar_fecha($fecha)
         return false;
     }
 }
-
-
-function nose(){
-    
-}
-
-
-function yotampoco() {
-    
-}

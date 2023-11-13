@@ -2,18 +2,18 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
     <?php    
     switch($rol){
-    case 3:
-                    echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="analista.php">';
-                    break;
-                case 4:
-                    echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="tecnico.php">';
-                    break;
-                case 5:
-                    echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="verificador.php">';
-                    break;    
-                default:
-                    header("Location: 404.php");
-                    break;} 
+        case 3:
+            echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="analista.php">';
+            break;
+        case 4:
+            echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="tecnico.php">';
+            break;
+        case 5:
+            echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="verificador.php">';
+            break;    
+        default:
+            header("Location: 404.php");
+            break;} 
 
 ?>
     <div class="sidebar-brand-icon rotate-n-15">
