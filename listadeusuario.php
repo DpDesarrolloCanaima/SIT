@@ -94,8 +94,7 @@ $resultado1 = $mysqli->query($consulta1);
                         <?php 
                                                 switch($rol){
                                                     case 1:
-                                                        echo '   <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                            data-toggle="modal" data-target="#registrarUser"> Registrar Usuario</a>';
+                                                        echo '   <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#registrarUser"> <i class="fas fa-user fa-sm text-white-50"></i> Registrar Usuario</a>';
                                                         break;
                                                     }
                                             ?>

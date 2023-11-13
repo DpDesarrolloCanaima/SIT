@@ -167,8 +167,7 @@ $resultado14 = $mysqli->query($sql14);
                                             echo '
                                             
                                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                                data-toggle="modal" data-target="#modalTrabajador"><img src="img/svg/benelinea.svg "
-                                                alt="Industrias Canaima" width="15" height="15"> Registrar Trabajador</a>
+                                                data-toggle="modal" data-target="#modalTrabajador"><i class="fas fa-user fa-sm text-white-50"></i> Registrar Trabajador</a>
                                             
                                             ';
                                             break;
@@ -176,8 +175,7 @@ $resultado14 = $mysqli->query($sql14);
                                             echo '
                                             
                                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                                data-toggle="modal" data-target="#modalTrabajador"><img src="img/svg/benelinea.svg "
-                                                alt="Industrias Canaima" width="15" height="15"> Registrar Trabajador</a>
+                                                data-toggle="modal" data-target="#modalTrabajador"><i class="fas fa-user fa-sm text-white-50"></i> Registrar Trabajador</a>
                                             
                                             ';
                                             break;

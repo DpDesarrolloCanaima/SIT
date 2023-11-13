@@ -52,8 +52,8 @@
             }    
         ?>
 
-        <img src="img/svg/house.svg " alt="Industrias Canaima" width="22" height="22">
-        <span>Home</span></a>
+        <i class="fas fa-home fa-home-alt"></i>
+                    <span>Home</span></a>
     </li>
 
     <!-- divider -->
@@ -66,9 +66,10 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
+
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
             aria-controls="collapsePages">
-            <img src="img/svg/setting.svg" alt="Industrias Canaima" width="22" height="22">
+    <i class="fas fa-fw fa-cog"></i>
 
             <?php
            
@@ -116,11 +117,11 @@
         if($rol != 6){
             echo 
             '<li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                     aria-expanded="true" aria-controls="collapseUtilities">
-                    <img src="img/svg/grafica.svg " alt="Industrias Canaima" width="22" height="22">
+                <i class="fas fa-fw fa-chart-area"></i>
                     <span>Graficas</span>
-                </a>
+                    </a>
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
@@ -136,7 +137,7 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
-            <img src="img/svg/table.svg " alt="Industrias Canaima" width="22" height="22">
+            <i class="fas fa-fw fa-table"></i>
             <span>Tablas</span>
         </a>
         <?php 

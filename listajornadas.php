@@ -164,8 +164,7 @@ $resultado14 = $mysqli->query($sql14);
                                             echo '
                                             
                                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                                data-toggle="modal" data-target="#modalJornada"><img src="img/svg/benelinea.svg "
-                                                alt="Industrias Canaima" width="15" height="15"> Registrar Jornada</a>
+                                                data-toggle="modal" data-target="#modalJornada"><i class="fas fa-user fa-sm text-white-50"></i> Registrar Jornada</a>
                                             
                                             ';
                                             
@@ -174,8 +173,7 @@ $resultado14 = $mysqli->query($sql14);
                                             echo '
                                             
                                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                                data-toggle="modal" data-target="#modalJornada"><img src="img/svg/benelinea.svg "
-                                                alt="Industrias Canaima" width="15" height="15"> Registrar Jornada</a>
+                                                data-toggle="modal" data-target="#modalJornada"><i class="fas fa-user fa-sm text-white-50"></i> Registrar Jornada</a>
                                             
                                             ';
                                             break;
