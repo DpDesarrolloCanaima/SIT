@@ -14,7 +14,7 @@ INNER JOIN tipo_documento AS t ON t.id_documento = e.tipo_documento";
 
 $resultado = $mysqli->query($sql);
 
-	$pdf = new PDF("L", "mm", array(300,630));
+	$pdf = new PDF("L", "mm", array(300,640));
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 
@@ -23,8 +23,8 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(20, 5,"Tipo", 1, 0, "C");
 	$pdf->Cell(30, 5,"Documento", 1, 0, "C");
 	$pdf->Cell(60, 5,"Beneficiario", 1, 0, "C");
-	$pdf->Cell(20, 5,"Edad", 1, 0, "C");
-	$pdf->Cell(20, 5,"Genero", 1, 0, "C");
+	$pdf->Cell(25, 5,"Edad", 1, 0, "C");
+	$pdf->Cell(25, 5,"Genero", 1, 0, "C");
 	$pdf->Cell(50, 5,"Fecha de nacimiento", 1, 0, "C");
 	$pdf->Cell(30, 5,"Area", 1, 0, "C");
 	$pdf->Cell(30, 5,"Cargo", 1, 0, "C");
@@ -38,23 +38,82 @@ $resultado = $mysqli->query($sql);
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultado->fetch_assoc()) {
 		$origen = $row['origen'];
-	$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
-	$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
-	$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
-	$pdf->Cell(60, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
-	$pdf->Cell(20, 5,$row['edad'], 1, 0, "C");
-	$pdf->Cell(20, 5,$row['genero'], 1, 0, "C");
-	$pdf->Cell(50, 5,$row['fecha_de_nacimiento'], 1, 0, "C");
-	$pdf->Cell(30, 5,utf8_decode($row['nombre_del_area']), 1, 0, "C");
-	$pdf->Cell(30, 5,utf8_decode($row['tipo_de_cargo']), 1, 0, "C");
-	$pdf->Cell(40, 5,utf8_decode($row['nombre_del_representante']), 1, 0, "C");
-	$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
-	$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
-	$pdf->Cell(30, 5,utf8_decode($row['estado_nombre']), 1, 0, "C");
-	$pdf->Cell(30, 5,$row['municipio'], 1, 0, "C");
-	$pdf->Cell(80, 5,utf8_decode($row['direccion']), 1, 0, "C");
-	$pdf->Cell(50, 5,$row['origen'], 1, 1, "C");
-	
+
+		switch ($origen) {
+			case 'Apoyo Institucional':
+					$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
+					$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
+					$pdf->Cell(60, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
+					$pdf->Cell(25, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(25, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(50, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(30, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(30, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(40, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['estado_nombre']), 1, 0, "C");
+					$pdf->Cell(30, 5,$row['municipio'], 1, 0, "C");
+					$pdf->Cell(80, 5,utf8_decode($row['direccion']), 1, 0, "C");
+					$pdf->Cell(50, 5,$row['origen'], 1, 1, "C");
+				break;
+			case 'Beneficiario':
+					$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
+					$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
+					$pdf->Cell(60, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
+					$pdf->Cell(25, 5,$row['edad'], 1, 0, "C");
+					$pdf->Cell(25, 5,$row['genero'], 1, 0, "C");
+					$pdf->Cell(50, 5,$row['fecha_de_nacimiento'], 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['nombre_del_area']), 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['tipo_de_cargo']), 1, 0, "C");
+					$pdf->Cell(40, 5,utf8_decode($row['nombre_del_representante']), 1, 0, "C");
+					$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['estado_nombre']), 1, 0, "C");
+					$pdf->Cell(30, 5,$row['municipio'], 1, 0, "C");
+					$pdf->Cell(80, 5,utf8_decode($row['direccion']), 1, 0, "C");
+					$pdf->Cell(50, 5,$row['origen'], 1, 1, "C");
+				break;
+			case 'Trabajadores':
+					$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
+					$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
+					$pdf->Cell(60, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
+					$pdf->Cell(25, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(25, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(50, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['nombre_del_area']), 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['tipo_de_cargo']), 1, 0, "C");
+					$pdf->Cell(40, 5,utf8_decode($row['nombre_del_representante']), 1, 0, "C");
+					$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['estado_nombre']), 1, 0, "C");
+					$pdf->Cell(30, 5,$row['municipio'], 1, 0, "C");
+					$pdf->Cell(80, 5,utf8_decode($row['direccion']), 1, 0, "C");
+					$pdf->Cell(50, 5,$row['origen'], 1, 1, "C");
+				break;
+			case 'Jornadas Especiales':
+					$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
+					$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
+					$pdf->Cell(60, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
+					$pdf->Cell(25, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(25, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(50, 5,$row['fecha_de_nacimiento'], 1, 0, "C");
+					$pdf->Cell(30, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(30, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(40, 5,"No corresponde", 1, 0, "C");
+					$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
+					$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
+					$pdf->Cell(30, 5,utf8_decode($row['estado_nombre']), 1, 0, "C");
+					$pdf->Cell(30, 5,$row['municipio'], 1, 0, "C");
+					$pdf->Cell(80, 5,utf8_decode($row['direccion']), 1, 0, "C");
+					$pdf->Cell(50, 5,$row['origen'], 1, 1, "C");
+				break;				
+		}
+
 	}
 	
 
