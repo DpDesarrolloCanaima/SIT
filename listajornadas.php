@@ -135,29 +135,8 @@ $resultado14 = $mysqli->query($sql14);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="btn-group dropright">
-                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15">
-                                Generar Reporte
-                            </button>
-                            <button type="button"
-                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only"></span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reportebeneficiarioapoyo.php?id=1"
-                                        target="_blank">Apoyo Institucional</a></li>
-                                <li><a class="dropdown-item" href="report/reportebeneficiario.php?id=2"
-                                        target="_blank">Beneficiario</a></li>
-                                <li><a class="dropdown-item" href="report/reportetrabajadores.php?id=3"
-                                        target="_blank">Trabajador</a></li>
-                                <li><a class="dropdown-item" href="report/reportejornadas.php?id=4"
-                                        target="_blank">Jornadas Especiales</a></li>
-                                <li><a class="dropdown-item" href="report/reportebeneficiarioall.php"
-                                        target="_blank">Todos</a></li>
-
-                            </div>
-                        </div>
+                    <a href="report/reportejornadas.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                        
                         <?php
                                     switch ($rol) {
                                         case 1:

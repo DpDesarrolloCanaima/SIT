@@ -11,13 +11,13 @@ INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_o
 
 $resultado = $mysqli->query($sql);
 
-	$pdf = new PDF("L", "mm", array(300,620));
+	$pdf = new PDF("L", "mm", array(300,440));
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 
 	$pdf->SetFont("Arial", "B", 12);
 	$pdf->Cell(40, 5,"IC", 1, 0, "C");
-	$pdf->Cell(30, 5,"Beneficiario", 1, 0, "C");
+	$pdf->Cell(50, 5,"Instituciones", 1, 0, "C");
 	$pdf->Cell(20, 5,"T.D", 1, 0, "C");
 	$pdf->Cell(30, 5,"Documento", 1, 0, "C");
 	$pdf->Cell(50, 5,"Correo", 1, 0, "C");
@@ -29,7 +29,7 @@ $resultado = $mysqli->query($sql);
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultado->fetch_assoc()) {
 	$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
-	$pdf->Cell(30, 5,$row['nombre_del_beneficiario'], 1, 0, "C");
+	$pdf->Cell(50, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
 	$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");

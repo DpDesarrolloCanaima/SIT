@@ -11,7 +11,7 @@ INNER JOIN tipo_documento AS t ON t.id_documento = e.tipo_documento WHERE e.id_o
 
 $resultado = $mysqli->query($sql);
 
-	$pdf = new PDF("L", "mm", array(300,620));
+	$pdf = new PDF("L", "mm", array(300,520));
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 
