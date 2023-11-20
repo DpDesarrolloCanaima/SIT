@@ -73,7 +73,7 @@ $id_usuario = $_SESSION['id_usuarios'];
                 <footer class="sticky-footer bg-white">
                     <div class="container my-auto">
                         <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Industrias Canaima 2022</span>
+                            <span>Copyright &copy; Industrias Canaima 2022 - G-20010288-8</span>
                         </div>
                     </div>
                 </footer>
