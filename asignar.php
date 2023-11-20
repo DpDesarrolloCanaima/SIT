@@ -26,21 +26,25 @@ switch($asignar){
         $estatus = 5;
         $role= 3;
         $observaciones = 'observaciones_analista';
+        $mostrarModal = "Analista";
         break;
     case 'tecnico':
         $estatus = 1;
         $role= 4;
         $observaciones = 'observaciones_tecnico';
+        $mostrarModal = "Tecnico";
         break;
     case 'verificador':
         $estatus = 3;
         $role= 5;
         $observaciones= 'observaciones_verificador';
+        $mostrarModal = "Verificador";
         break;
 }
 
 
-$consulta = "SELECT datos_del_dispotivo.*, usuarios.nombre FROM datos_del_dispotivo INNER JOIN usuarios ON datos_del_dispotivo.Responsable = usuarios.id_usuarios WHERE datos_del_dispotivo.id_estatus = $estatus";
+$consulta = "SELECT datos_del_dispotivo.*, usuarios.nombre FROM datos_del_dispotivo 
+INNER JOIN usuarios ON datos_del_dispotivo.Responsable = usuarios.id_usuarios WHERE datos_del_dispotivo.id_estatus = $estatus";
 $resultado = $mysqli->query($consulta);
 
 $consulta = "SELECT id_roles, roles FROM roles";
@@ -152,12 +156,6 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                     <?php
                                         include "modalAsignar.php";
                                         endwhile;
-                                    ?>
-                                    <?php
-                                    switch($rol){
-
-                                        
-                                    }
                                     ?>
                                 </tbody>
                                 </table>

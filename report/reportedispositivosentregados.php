@@ -21,25 +21,25 @@ $resultado = $mysqli->query($sql);
 	
 	$pdf->SetFont("Arial", "B", 12);
 	$pdf->Cell(40, 5,"Tipo de Equipo", 1, 0, "C");
-	$pdf->Cell(30, 5,"Modelo", 1, 0, "C");
+	$pdf->Cell(45, 5,"Modelo", 1, 0, "C");
 	$pdf->Cell(50, 5,"Serial Del Equipo", 1, 0, "C");
 	$pdf->Cell(50, 5,"Serial Del Cargador", 1, 0, "C");
 	$pdf->Cell(50, 5,"Fecha de Recepcion", 1, 0, "C");
 	$pdf->Cell(50, 5,"Estado De Recepcion", 1, 0, "C");
 	$pdf->Cell(50, 5,"Estado De Entrega", 1, 0, "C");
-	$pdf->Cell(45, 5,"Falla", 1, 0, "C");
+	$pdf->Cell(80, 5,"Falla", 1, 0, "C");
 	$pdf->Cell(30, 5,"Origen", 1, 0, "C");
 	$pdf->Cell(30, 5,"Estatus", 1, 1, "C");
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultado->fetch_assoc()) {
 	$pdf->Cell(40, 5,$row['nombre'], 1, 0, "C"); 
-	$pdf->Cell(30, 5,$row['modelo'], 1, 0, "C");
+	$pdf->Cell(45, 5,$row['modelo'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['serial_equipo'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['serial_de_cargador'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['fecha_de_recepcion'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['estado'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['fecha_de_entrega'], 1, 0, "C");
-	$pdf->Cell(45, 5,$row['tipo_de_motivo'], 1, 0, "C");
+	$pdf->Cell(80, 5,utf8_decode($row['tipo_de_motivo']), 1, 0, "C");
 	$pdf->Cell(30, 5,$row['origen'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['estatus'], 1, 1, "C");
 	}
