@@ -149,7 +149,7 @@ $resultado8 = $mysqli->query($sql2);
                                             <td><?php echo $row['serial_equipo']; ?></td>
                                             <td><?php echo $row['serial_de_cargador']; ?></td>
                                             <td><?php echo $row['fecha_de_recepcion']; ?></td>
-                                            <td><?php echo $row['estado_recepcion_equipo']; ?></td>
+                                            <td><?php echo $row['estado']; ?></td>
                                             <td><?php echo $row['observaciones_analista']; ?></td>
                                             <td><?php echo $row['estatus']; ?></td>
                                         </tr>
