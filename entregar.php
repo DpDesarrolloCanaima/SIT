@@ -94,14 +94,8 @@ if ($_POST) {
     }
 
     require "config/conexionProvi.php";
-
-    $sql = "SELECT id_usuarios FROM usuarios WHERE id_roles = 6";
-
-    $resultado = $mysqli->query($sql);
-
-    $row = $resultado->fetch_assoc();
 // SET @usuario_actual =: '.$_SESSION['full_identificacion'].";
-    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', id_roles = '$rol'  WHERE id_datos_del_dispositivo = $idDispo";
+    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', coordinador = 6, id_roles = '$rol'  WHERE id_datos_del_dispositivo = $idDispo";
 
     $resultado = mysqli_query($mysqli, $sql);
 

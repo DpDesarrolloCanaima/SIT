@@ -95,13 +95,7 @@ if ($idDispo == "") {
 
 require "config/conexionProvi.php";
 
-$sql = "SELECT id_usuarios FROM usuarios WHERE id_roles = 6";
-
-$resultado = $mysqli->query($sql);
-
-$row = $resultado->fetch_assoc();
-
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 
