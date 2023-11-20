@@ -107,7 +107,7 @@ $resultado8 = $mysqli->query($sql2);
                                     switch ($estatusenlace) {
                                         case 6:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            <a href="report/reportedispositivoporentregar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
                                             Generar Reporte
                                             </a>
                                             ';
@@ -126,14 +126,14 @@ $resultado8 = $mysqli->query($sql2);
                                     switch ($estatusenlace) {
                                         case 2:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            <a href="report/reportedispositivosenlinea.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
                                             Generar Reporte
                                             </a>
                                             ';
                                             break;
                                         case 3:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=3" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            <a href="report/reportedispositivoreparados.php?id=3" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
                                             Generar Reporte
                                             </a>
                                             ';
@@ -144,14 +144,14 @@ $resultado8 = $mysqli->query($sql2);
                                     switch ($estatusenlace) {
                                         case 4:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            <a href="report/reportedispositivosentregados.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
                                             Generar Reporte
                                             </a>
                                             ';
                                             break;
                                         case 5:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=5" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            <a href="report/reportedispositivoverificados.php?id=5" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
                                             Generar Reporte
                                             </a>
                                             ';

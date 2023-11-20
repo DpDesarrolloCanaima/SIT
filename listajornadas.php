@@ -135,7 +135,7 @@ $resultado14 = $mysqli->query($sql14);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <a href="report/reportejornadas.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a>
+                    <a href="report/reportejornadas.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
                         
                         <?php
                                     switch ($rol) {

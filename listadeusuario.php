@@ -69,7 +69,7 @@ $resultado1 = $mysqli->query($consulta1);
                          <div class="btn-group dropright">
                             <button  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" > 
                              <i class="fas fa-print fa-sm text-white-50"></i>
-                                Registrar Usuario
+                                Generar Reporte
                             </button>
                                 </button>
                             <button type="button"
