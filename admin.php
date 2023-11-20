@@ -141,7 +141,7 @@ $resultado2 = $mysqli->query($consulta2);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-download fa-sm text-white-50"></i> Generar Reporte</a> -->
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a> -->
                     </div>
 
 

@@ -64,7 +64,7 @@ $resultado8 = $mysqli->query($sql2);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <a href="report/reportedispositivoporverificar.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank">
+                    <a href="report/reportedispositivosenlinea.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank">
                         <i class="fas fa-print fa-sm text-white-50"></i>
                          Generar Reporte
                         </a>

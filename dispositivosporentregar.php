@@ -67,15 +67,15 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <a href="report/reportedispositivoporverificar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank">
+                    <a href="report/reportedispositivoporentregar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank">
                         <i class="fas fa-print fa-sm text-white-50"></i>
                             Generar Reporte
-                         </a>
+                     </a>
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
+                        <h6 class="m-0 font-weight-bold text-primary">Dispositivos por Entreg</h6>
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos Entregados</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -160,8 +160,8 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-success" href="logout.php">Salir</a>
+                    <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
