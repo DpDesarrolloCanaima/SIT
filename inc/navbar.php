@@ -22,198 +22,319 @@ $usuario = $_SESSION['usuario'];
 
         <?php
 
-            switch ($rol) { 
-                case 1:
-                    $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
-                    $notiText = "Asignar, ";
-                    $filenameDetalles = "detalles.php";
-                    break;
-                case 2:
-                    $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
-                    $notiText = "Asignar, ";
-                    $filenameDetalles = "detalles.php";
-                    break;    
+            // Prueba de funcionamiento de notificaciones modificadas por Danyerbert
 
+            switch ($rol) {
                 case 3:
-                    $observacionesT = "observaciones_verificador"; 
+                    $estatusDispo = 6;
                     $filenameDetalles = "detalleanalista.php";
-                    $notiText = "Entregar, "; 
-
-                break;
-
+                    $notiText = "Entregar, ";  
+                    $consultaver = "SELECT registro, observaciones_verificador, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
+                    $resultadover = $mysqli->query($consultaver);
+                    $numr = $resultadover->num_rows;
+                    echo '
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                NOTIFICACIONES
+                            </h6>';
+                            setlocale(LC_TIME, 'es_VE');
+                            $i = 0;
+                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['
+                                id_datos_del_dispositivo'].'">
+                                <div class="mr-3">
+                                    <div class="bg-primary icon-circle">';
+                                        $icono;
+                                        switch($verNot['id_tipo_de_dispositivo']) {
+                                        case 1:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 3:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 4:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 5:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 6:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 7:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 8:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        }
+                                        echo '<img class="img-fluid " src="'.$icono.'">
+                                    </div>
+                                </div>
+                                <div>';
+                                    $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        '.$verNot['observaciones'].'</span>
+                                </div>
+                                </a>';
+                                $i++;
+                                }
+                                echo '
+                        </div>
+                    </li>';
+                    break;
                 case 4:
-                    $observacionesT = "observaciones_analista";
+                    $estatusDispo = 1;
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
-                break;
-
-                case 5:
-                    $observacionesT = "observaciones_tecnico";
-                    $filenameDetalles = "detalles.php";
-                    $notiText = "Verificar, ";  
-                break;
-
-                case 6:
-                    $aObservacionesT = array( 
-                        'observaciones_tecnico',
-                        'observaciones_analista',
-                        'observaciones_verificador'
-                    );
-
-                    for ($i=0; $i < count($aObservacionesT); $i++) { 
-                        if($i==0){
-                            $observacionesT= $aObservacionesT[$i];
-                        
-                        } else{
-                            $observacionesT=$observacionesT.', '.$aObservacionesT[$i];
-                        }
-                    }
-                   
-                    $observacionesT = "observaciones_tecnico, observaciones_analista, observaciones_verificador";
-                    $notiText = "Asignar, ";
-                    $filenameDetalles = "detalles.php";
-                    $notiText = "Asignar ";
-                    $filenameDetalles = "asignar.php";
-                    
-                break;
-            }
-    
-            $consultaver = 'SELECT registro, "'.$observacionesT.'", id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE responsable = "'.$id_usuarios.'" ORDER BY registro DESC';    
-            $resultadover = $mysqli->query($consultaver);
-
-            $numr = $resultadover->num_rows;
-    
-            echo '
-            <!-- Nav Item - Alerts -->
-            <li class="nav-item dropdown no-arrow mx-1">
-                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-bell fa-fw"></i>
-                    <!-- Counter - Alerts -->
-                    <span class="badge badge-danger badge-counter">'.$numr.'+</span>
-                </a>
-                <!-- Dropdown - Alerts -->
-                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                    aria-labelledby="alertsDropdown">
-                    <h6 class="dropdown-header">
-                        NOTIFICACIONES
-                    </h6>';
-    
-                    setlocale(LC_TIME, 'es_VE');
-    
-                    while(($verNot = $resultadover->fetch_assoc())) {
-                        if($rol == 6) {
-                            switch($verNot['id_estatus']) {
-                                case 1:
-                                    $notiTextAsign = "tecnico";
-                                break; 
-                                case 3:
-                                    $notiTextAsign = "verificador";
-                                break;
-                                case 5:
-                                    $notiTextAsign = "analista";
-                                break;
-                            }
-                            echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
-                            <div class="mr-3">
-                                <div class="bg-primary icon-circle">';
-                        } else if ($rol == 3 && $verNot['id_estatus'] == 7) {
-                            continue;
-                        } else { 
-                            echo '<a class="dropdown-item d-flex align-items-center" href="' .$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
-                            <div class="mr-3">
-                                <div class="bg-primary icon-circle">';
-                        }
-                                switch($verNot['id_tipo_de_dispositivo']) {
-                                case 1:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 3:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 4:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 5:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 6:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 7:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                case 8:
-                                    $icono = "img/canaimalogo2.jpg";
-                                break;
-                                }
-    
-    
-                                echo '<img class="img-fluid " src="'.$icono.'">
-                            </div>
-                        </div>
-                        <div>';
-    
-                            $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
-                            if($rol == 6) {
-                                $notificacionDiv = '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.$notiTextAsign.', ';
-
-                                $quien = array(
-                                    "tecnico",
-                                    "analista",
-                                    "verfiricador"
-                                );
-
-                                $bTieneObservacion = false;
-
-                                $i = 0;
-                                foreach ($aObservacionesT as $observacion) {
-                                    if($i == 0) {
-                                        if(!empty($verNot[$observacion])){
-                                            $strObservacion = $quien[$i];
-                                            $bTieneObservacion = true; 
+                    $consultaver = "SELECT registro, observaciones_analista, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable
+                    FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." AND responsable = ".$id_usuario." ORDER BY
+                    registro DESC ";
+                    $resultadover = $mysqli->query($consultaver);
+                    $numr = $resultadover->num_rows;
+                    echo '
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                NOTIFICACIONES
+                            </h6>';
+                            setlocale(LC_TIME, 'es_VE');
+                            $i = 0;
+                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['
+                                id_datos_del_dispositivo'].'">
+                                <div class="mr-3">
+                                    <div class="bg-primary icon-circle">';
+                                        $icono;
+                                        switch($verNot['id_tipo_de_dispositivo']) {
+                                        case 1:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 3:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 4:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 5:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 6:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 7:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 8:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
                                         }
-                                    } else {
-                                        if(!empty($verNot[$observacion])){
-                                            $strObservacion = $strObservacion.", $quien[$i]";
-                                            $bTieneObservacion = true;
-                                         }
+                                        echo '<img class="img-fluid " src="'.$icono.'">
+                                    </div>
+                                </div>
+                                <div>';
+                                    $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        '.$verNot['observaciones'].'</span>
+                                </div>
+                                </a>';
+                                $i++;
+                                }
+                                echo '
+                        </div>
+                    </li>';
+                    break;
+                case 5:
+                    $estatusDispo = 3;
+                    $filenameDetalles = "detalles.php";
+                    $notiText = "Verificar, ";
+                    $consultaver = "SELECT registro, observaciones_tecnico, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM
+                    datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." ORDER BY registro DESC ";
+                    $resultadover = $mysqli->query($consultaver);
+                    $numr = $resultadover->num_rows;
+                    echo '
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                NOTIFICACIONES
+                            </h6>';
+                            setlocale(LC_TIME, 'es_VE');
+                            $i = 0;
+                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['
+                                id_datos_del_dispositivo'].'">
+                                <div class="mr-3">
+                                    <div class="bg-primary icon-circle">';
+                                        $icono;
+                                        switch($verNot['id_tipo_de_dispositivo']) {
+                                        case 1:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 3:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 4:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 5:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 6:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 7:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 8:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        }
+                                        echo '<img class="img-fluid " src="'.$icono.'">
+                                    </div>
+                                </div>
+                                <div>';
+                                    $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        '.$verNot['observaciones'].'</span>
+                                </div>
+                                </a>';
+                                $i++;
+                                }
+                                echo '
+                        </div>
+                    </li>';
+                    break;
+                case 6:
+                    $filenameDetalles = "asignar.php";
+                    $notiText = "Asignar, ";
+                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, id_datos_del_dispositivo, id_tipo_de_dispositivo , id_estatus FROM
+                    datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
+                    $resultadover = $mysqli->query($consultaver);
+                    $numr = $resultadover->num_rows;
+                    echo '
+                    <!-- Nav Item - Alerts -->
+                    <li class="nav-item dropdown no-arrow mx-1">
+                        <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-bell fa-fw"></i>
+                            <!-- Counter - Alerts -->
+                            <span class="badge badge-danger badge-counter">'.$numr.'+</span>
+                        </a>
+                        <!-- Dropdown - Alerts -->
+                        <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                            aria-labelledby="alertsDropdown">
+                            <h6 class="dropdown-header">
+                                NOTIFICACIONES
+                            </h6>';
+                            setlocale(LC_TIME, 'es_VE');
+                            $i = 0;
+                            while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                                if ($rol == 6) {
+                                    switch($verNot['id_estatus']) {
+                                        case 1:
+                                            $notiTextAsign = "tecnico";
+                                        break; 
+                                        case 3:
+                                            $notiTextAsign = "verificador";
+                                        break;
+                                        case 5:
+                                            $notiTextAsign = "analista";
+                                        break;
                                     }
-                                    
-                                    $i++;
                                 }
-
-                                if($bTieneObservacion) {
-                                    $notificacionDiv = $notificacionDiv. " observacion/es de: $strObservacion</span>";
-                                } else {
-                                    $notificacionDiv = $notificacionDiv. " observacion/es de: Sin Observaciones</span>";
-                                }
-                               
-                                $notificacionDiv = $notificacionDiv.'
-                                </div></a>';
-                            echo $notificacionDiv;
-                            } else {
-                                if(!empty($verNot[$observacionesT])){ 
-                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                        '.$verNot[$observacionesT].'</span>
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
+                                <div class="mr-3">
+                                    <div class="bg-primary icon-circle">';
+                                        $icono;
+                                        switch($verNot['id_tipo_de_dispositivo']) {
+                                        case 1:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 3:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 4:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 5:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 6:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 7:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        case 8:
+                                        $icono = "img/canaimalogo2.jpg";
+                                        break;
+                                        }
+                                        echo '<img class="img-fluid " src="'.$icono.'">
+                                    </div>
                                 </div>
-                                </a>';
-                            
-                                }else{
-                                    echo '<div class="small text-gray-500">'.$fechafmt.'</div>
-                                    <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                        Sin observación</span>
-                                </div>
-                                </a>';
+                                <div>';
+                                $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+                                switch ($verNot['id_estatus']) {
+                                    case 1:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:'.$verNot['observaciones_analista'].'</span>';
+                                        
+                                        break;
+                                    case 3:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                        <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                                '.$verNot['observaciones_tecnico'].'</span>';
+                                        break;
+                                    case 5:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                        <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                        '.$verNot['observaciones_verificador'].'</span>';
+                                        break;
+                                    case 7:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                        <span class="font-weight-bold">Equipo Entregado</span>';
+                                        break;
                                 }
-                            }
-                        }
-    
-                        echo '
-                </div>
-            </li>';
+                                echo '</div>
+                                </a>';
+                                $i++;
+                                }
+                                echo '
+                        </div>
+                    </li>';
+                    break;    
+            }
         ?>
 
 

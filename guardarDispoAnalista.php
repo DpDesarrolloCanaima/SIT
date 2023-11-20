@@ -27,12 +27,13 @@ require("function.php");
             $origen = limpiarDatos($_POST['origen']);
             $estatus = limpiarDatos($_POST['estatus']);
             $falla = limpiarDatos($_POST['falla']);
+            $coordinador = limpiarDatos($_POST['coordinador']);
             $fechaEntrega = date('00-00-0000');
             $comprobacion = "Faltan comprobaciones";
             $observaciones_tecnico = "Falta por observaciones";
             $observaciones_verificador = "Falta por observaciones";
             $responsable = limpiarDatos($_POST['responsable']);
-            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$rol','$origen','$estatus', '$falla','$beneficiario');";
+            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
             $resultado = $mysqli->query($sql);
             if ($resultado) {
                 // echo "Se registro el dispositivo";

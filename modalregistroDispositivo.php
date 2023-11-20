@@ -82,7 +82,7 @@
                     </div>
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
-
+                    <input type="hidden" name="coordinador" value="6">           
                     <input type="hidden" name="responsable" value="<?php echo $idusuario; ?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
