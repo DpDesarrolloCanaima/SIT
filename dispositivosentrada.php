@@ -128,7 +128,10 @@ $resultado8 = $mysqli->query($sql2);
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div class="btn-group dropright">
-                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15">
+                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><img <button  class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" > 
+<i class="fas fa-print fa-sm text-white-50"></i>
+                                Registrar Usuario
+                            </button> alt="Industrias Canaima" width="15" height="15">
                                 Generar Reporte
                             </button>
                             <button type="button"

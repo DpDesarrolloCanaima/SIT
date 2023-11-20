@@ -107,14 +107,16 @@ $resultado8 = $mysqli->query($sql2);
                                     switch ($estatusenlace) {
                                         case 6:
                                             echo '
-                                            <a href="report/reportedispositivoporentregar.php?id=6"
-                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
+                                            <a href="report/reportedispositivoporverificar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            Generar Reporte
+                                            </a>
                                             ';
                                             break;
                                         case 7:
                                             echo '
-                                            <a href="report/reportedispositivosentregados.php?id=7"
-                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
+                                            <a href="report/reportedispositivoporverificar.php?id=7" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            Generar Reporte
+                                            </a>
                                             ';
                                             break;
                                     }
@@ -124,14 +126,16 @@ $resultado8 = $mysqli->query($sql2);
                                     switch ($estatusenlace) {
                                         case 2:
                                             echo '
-                                            <a href="report/reportedispositivosenlinea.php?id=2"
-                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
+                                            <a href="report/reportedispositivoporverificar.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            Generar Reporte
+                                            </a>
                                             ';
                                             break;
                                         case 3:
                                             echo '
-                                            <a href="report/reportedispositivoreparados.php?id=3"
-                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
+                                            <a href="report/reportedispositivoporverificar.php?id=3" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            Generar Reporte
+                                            </a>
                                             ';
                                             break;
                                     break;
@@ -140,14 +144,16 @@ $resultado8 = $mysqli->query($sql2);
                                     switch ($estatusenlace) {
                                         case 4:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=4"
-                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
+                                            <a href="report/reportedispositivoporverificar.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            Generar Reporte
+                                            </a>
                                             ';
                                             break;
                                         case 5:
                                             echo '
-                                            <a href="report/reportedispositivoverificados.php?id=5"
-                                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><img src="img/bootstrap-icons-1.10.5/printer.svg" alt="Industrias Canaima" width="15" height="15"> Generar Reporte</a>
+                                            <a href="report/reportedispositivoporverificar.php?id=5" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
+                                            Generar Reporte
+                                            </a>
                                             ';
                                             break;
                                     break;
