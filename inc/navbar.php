@@ -190,8 +190,7 @@ $usuario = $_SESSION['usuario'];
                             setlocale(LC_TIME, 'es_VE');
                             $i = 0;
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['
-                                id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                                         $icono;
@@ -225,7 +224,7 @@ $usuario = $_SESSION['usuario'];
                                     $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
                                     echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                     <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                        '.$verNot['observaciones'].'</span>
+                                        '.$verNot['observaciones_tecnico'].'</span>
                                 </div>
                                 </a>';
                                 $i++;
