@@ -80,7 +80,7 @@ if ($id_roles == "") {
 
 require "config/conexionProvi.php";
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', comprobaciones = '$comprobacion',coordinador = 6 id_roles = '$id_roles' WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', comprobaciones = '$comprobacion',coordinador = 6, id_roles = '$id_roles' WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 
