@@ -236,8 +236,7 @@ $usuario = $_SESSION['usuario'];
                 case 6:
                     $filenameDetalles = "asignar.php";
                     $notiText = "Asignar, ";
-                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, id_datos_del_dispositivo, id_tipo_de_dispositivo , id_estatus FROM
-                    datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
+                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, id_datos_del_dispositivo, id_tipo_de_dispositivo, id_estatus FROM datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
                     echo '
@@ -258,20 +257,38 @@ $usuario = $_SESSION['usuario'];
                             setlocale(LC_TIME, 'es_VE');
                             $i = 0;
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                if ($rol == 6) {
                                     switch($verNot['id_estatus']) {
                                         case 1:
-                                            $notiTextAsign = "tecnico";
-                                        break; 
-                                        case 3:
-                                            $notiTextAsign = "verificador";
-                                        break;
-                                        case 5:
                                             $notiTextAsign = "analista";
-                                        break;
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">';
+                                            break; 
+                                        case 2:
+                                            $notiTextAsign = "tecnico";
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="dispositivosdeSalida.php?id=2">';
+                                            break;
+                                        case 3:
+                                            $notiTextAsign = "tecnico";
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">';
+                                            break;
+                                        case 4:
+                                            $notiTextAsign = "tecnico";
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="dispositivoporverificar.php?id=4">';
+                                            break;
+                                        case 5:
+                                            $notiTextAsign = "verificador";
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">';
+                                            break;
+                                        case 6:
+                                            $notiTextAsign = "verificador";
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="dispositivosporentregar.php?id=6">';
+                                            break;
+                                        case 7:
+                                            $notiTextAsign = "analista";
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="dispositivosEntregados.php?id=7">';
+                                            break;
                                     }
-                                }
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
+                                // echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
+                                echo '
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                                         $icono;
@@ -307,18 +324,29 @@ $usuario = $_SESSION['usuario'];
                                     case 1:
                                         echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                             <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:'.$verNot['observaciones_analista'].'</span>';
-                                        
+                                        break;
+                                    case 2:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                        <span class="font-weight-bold">Equipo En la linea</span>';
                                         break;
                                     case 3:
                                         echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                         <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
                                                 '.$verNot['observaciones_tecnico'].'</span>';
                                         break;
+                                    case 4:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                        <span class="font-weight-bold">Equipo Por Verificar</span>';
+                                        break;
                                     case 5:
                                         echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                         <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
                                         '.$verNot['observaciones_verificador'].'</span>';
                                         break;
+                                    case 6:
+                                        echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                        <span class="font-weight-bold">Equipo Por verificar</span>';
+                                        break;    
                                     case 7:
                                         echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                         <span class="font-weight-bold">Equipo Entregado</span>';
