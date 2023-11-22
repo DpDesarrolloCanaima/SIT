@@ -95,11 +95,11 @@ $usuario = $_SESSION['usuario'];
                     </li>';
                     break;
                 case 4:
-                    $estatusDispo = 1;
+                    $estatusDispo = 2;
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
                     $consultaver = "SELECT registro, observaciones_analista, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable
-                    FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." AND responsable = ".$id_usuario." ORDER BY
+                    FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY
                     registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
@@ -121,8 +121,7 @@ $usuario = $_SESSION['usuario'];
                             setlocale(LC_TIME, 'es_VE');
                             $i = 0;
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['
-                                id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                                         $icono;
@@ -156,7 +155,7 @@ $usuario = $_SESSION['usuario'];
                                     $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
                                     echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                     <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
-                                        '.$verNot['observaciones'].'</span>
+                                        '.$verNot['observaciones_analista'].'</span>
                                 </div>
                                 </a>';
                                 $i++;
@@ -166,11 +165,11 @@ $usuario = $_SESSION['usuario'];
                     </li>';
                     break;
                 case 5:
-                    $estatusDispo = 3;
+                    $estatusDispo = 4;
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";
                     $consultaver = "SELECT registro, observaciones_tecnico, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM
-                    datos_del_dispotivo WHERE id_estatus = ".$estatusDispo ." ORDER BY registro DESC ";
+                    datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
                     echo '
