@@ -145,14 +145,19 @@ $resultado14 = $mysqli->query($sql14);
                                             echo '
                                             <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
                                                 data-toggle="modal" data-target="#modalApoyo">
-                                                <i class="fas fa-user fa-sm text-white-50"></i> Registrar Apoyo Institucional</a>
+                                                <i class="fas fa-user fa-sm text-white-50"></i> 
+                                                Registrar Apoyo Institucional
+                                                </a>
                                             ';
                                             
                                             break;
                                         case 3:
                                                 echo '
                                                 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
-                                                data-toggle="modal" data-target="#modalApoyo"> <i class="fas fa-user fa-sm text-white-50"></i>Registrar Apoyo Institucional</a>
+                                                data-toggle="modal" data-target="#modalApoyo"> 
+                                                <i class="fas fa-user fa-sm text-white-50"></i>
+                                                Registrar Apoyo Institucional
+                                                </a>
                                                 ';
                                             break;
                                     }

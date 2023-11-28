@@ -14,7 +14,7 @@ require("function.php");
         $beneficiario = $row['id_datos_del_entregante'];
         if ($cedula = $comprobacion) {
            $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-           $sqlSerial = "SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo";
+           $sqlSerial = "SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = '$serialEquipo'";
            $resultadoSerial = $mysqli->query($sqlSerial);
            if (mysqli_num_rows($resultadoSerial)==0) {
             $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);

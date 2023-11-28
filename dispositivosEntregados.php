@@ -67,11 +67,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-<<<<<<< HEAD
-                    <a href="report/reportedispositivosentregados.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank">
-=======
                     <a href="report/reportedispositivosentregados.php?id=7" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank">
->>>>>>> 4839fccae324ca7725f875c2082076287b3ec6c4
                         <i class="fas fa-print fa-sm text-white-50"></i>
                         Generar Reporte
                         </a>

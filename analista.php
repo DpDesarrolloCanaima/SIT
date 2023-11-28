@@ -133,8 +133,10 @@ $resultado14 = $mysqli->query($sql14);
                     </div>
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div class="btn-group dropright">
-                        <a type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                class="fas fa-user fa-sm text-white-50"></i> Registro de Beneficiario</a>
+                        <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
+                            <i class="fas fa-user fa-sm text-white-50"></i> 
+                                Registro de Beneficiario
+                            </button>
                             </button>
                             <button type="button"
                                 class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"

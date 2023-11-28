@@ -112,7 +112,7 @@ if ($_POST) {
                 confirmButtonText: 'OK',
                 timer: 1500
               }).then(() => {
-                location.assign('detalleanalista.php?id=".$idDispo."');
+                location.assign('detallesanalista.php?id=".$idDispo."');
               });
     });
         </script>";
@@ -129,7 +129,7 @@ if ($_POST) {
                 confirmButtonText: 'OK',
                 timer: 1500
               }).then(() => {
-                location.assign('detalleanalista.php?id=".$idDispo."');
+                location.assign('detallesanalista.php?id=".$idDispo."');
               });
     });
         </script>";
