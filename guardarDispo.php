@@ -6,7 +6,7 @@ $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
 
 
 $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-$sqlValidation = " SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = $serialEquipo";
+$sqlValidation = " SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = '$serialEquipo'";
 $resultValidation = $mysqli->query($sqlValidation); 
 if (mysqli_num_rows($resultValidation)>0) {
     echo "
