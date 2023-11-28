@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label for="nombreBene">Nombre del Beneficiario</label>
                         <input type="text" class="form-control" id="nombreBene" aria-describedby="nameHelp"
-                            name="nombre_del_beneficiario_edit" value="<?php echo $row['nombre_del_beneficiario'];?>" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
+                            name="nombre_del_beneficiario_edit" value="<?php echo $row['nombre_del_beneficiario'];?>" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
                         <span></span>
                     </div>
                     <div class="form-group">
