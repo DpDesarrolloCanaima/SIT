@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,6 @@
 
 </head>
 <!-- Modal -->
-
 <div class="modal fade" id="registrarUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -24,30 +22,27 @@
                 <form action="registrodeusuario.php" method="POST">
                     <div class="form-group">
                         <label for="usuario">Usuario</label>
-                        <input type="text" class="form-control" id="usuario" aria-describedby="nameHelp"
-                            name="usuario">
+                        <input type="text" class="form-control" id="usuario" aria-describedby="nameHelp" name="usuario" pattern="[a-zA-Z]{6,20}" title="Solo se permite letras mayusculas y minusculas, minimo de caracteres 6">
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp"
-                            name="nombre">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp" name="nombre" pattern="[a-zA-Z\s]{10,50}" title="Solo se permiten 30 numeros">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password">
+                        <input type="password" class="form-control" id="password" name="password" pattern="[A-Z0-9]{9}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="cedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedula">
+                        <input type="text" class="form-control" id="cedula" name="cedula" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="correo">Correo</label>
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp"
-                            name="correo">
+                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo">
                         <span></span>
                     </div>
                     <div class="form-group">
