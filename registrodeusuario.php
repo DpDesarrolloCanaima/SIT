@@ -9,6 +9,43 @@ require "function.php";
  }else {
     
     $cedula = limpiarDatos(htmlspecialchars($_POST['cedula']));
+    if (!preg_match("/\b/", $cedula)) {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Ingrese correctamente la cedula',
+                            showCancelButton: false,
+                            confirmButtonColor: '#3085d6',
+                            confirmButtonText: 'OK',
+                            timer: 1500
+                        }).then(() => {
+                        location.assign('listadeusuario.php');
+                        });
+                    });
+                </script>";
+        if (!preg_match("/[0-9]{8}/", $cedula)) {
+            echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'La cedula no coincide con los caracteres necesarios',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 1500
+                    }).then(() => {
+                        location.assign('listadeusuario.php');
+                    });
+            });
+                </script>";
+        }
+    }
+    
 
     $sqlValidation = " SELECT cedula FROM usuarios WHERE cedula = ". $cedula;
     $resultValidation = mysqli_query($mysqli, $sqlValidation);
@@ -68,26 +105,6 @@ require "function.php";
                 </script>";
         }
         $password = limpiarDatos(htmlspecialchars($_POST['password']));
-        if($password == ""){
-            echo "
-            <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-            <script language='JavaScript'>
-            document.addEventListener('DOMContentLoaded', function() {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Ingrese password',
-                    showCancelButton: false,
-                    confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK',
-                    timer: 1500
-                  }).then(() => {
-
-                    location.assign('listadeusuario.php');
-
-                  });
-        });
-            </script>";
-        }
         if (!preg_match("/[A-Z0-9]{9}/", $password)) {
             echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
