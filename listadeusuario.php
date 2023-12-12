@@ -226,8 +226,9 @@ $resultado1 = $mysqli->query($consulta1);
             </div>
         </div>
     </div>
-
     <?php include "inc/script.php";?>
+    <script src="js/validationUser.js"></script>
+
 </body>
 
 </html>

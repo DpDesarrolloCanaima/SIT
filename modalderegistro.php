@@ -22,27 +22,27 @@
                 <form action="registrodeusuario.php" method="POST">
                     <div class="form-group">
                         <label for="usuario">Usuario</label>
-                        <input type="text" class="form-control" id="usuario" aria-describedby="nameHelp" name="usuario" pattern="[a-zA-Z]{6,20}" title="Solo se permite letras mayusculas y minusculas, minimo de caracteres 6">
+                        <input type="text" class="form-control" id="usuario" name="usuario" pattern="[a-zA-Z]{4,15}" maxlength="15">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="nombre">Nombre y Apellido</label>
-                        <input type="text" class="form-control" id="nombre" aria-describedby="nameHelp" name="nombre" pattern="[a-zA-Z\s]{10,50}" title="Solo se permiten 30 numeros">
+                        <input type="text" class="form-control" id="nombre" name="nombre" pattern="[a-z-A-Z\s]">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" pattern="[A-Z0-9]{9}">
+                        <input type="password" class="form-control" id="password" name="password" pattern="[a-zA-Z0-9]{8,16}" title="La contraseña debe ser de minimo 8 digitos, solo se permiten mayusculas, minusculas y numeros">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="cedula">Cédula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedula" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
+                        <input type="text" class="form-control" id="cedula" name="cedula" pattern="[0-9]{8}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="correo">Correo</label>
-                        <input type="email" class="form-control" id="correo" aria-describedby="emailHelp" name="correo">
+                        <input type="email" class="form-control" id="correo" name="correo">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -56,6 +56,7 @@
                             </option>
                             <?php endforeach;?>
                         </select>
+                        <span></span>
                     </div>
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>

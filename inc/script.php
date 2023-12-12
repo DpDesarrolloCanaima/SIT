@@ -21,6 +21,6 @@
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="js/datatables-demo.js"></script>
     <!--Validation JS-->
-    <script src="js/validationUser.js"></script>
+    <!-- <script src="js/validationUser.js"></script>
     <script src="js/validationDispo.js"></script>
-    <script src="js/validationBene.js"></script>
+    <script src="js/validationBene.js"></script> -->

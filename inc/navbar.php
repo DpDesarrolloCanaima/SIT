@@ -350,6 +350,10 @@ $usuario = $_SESSION['usuario'];
                                         echo '<div class="small text-gray-500">'.$fechafmt.'</div>
                                         <span class="font-weight-bold">Equipo Entregado</span>';
                                         break;
+                                    default:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">No hay equipos</span>';
+                                        break;
                                 }
                                 echo '</div>
                                 </a>';

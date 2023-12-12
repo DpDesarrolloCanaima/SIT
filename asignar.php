@@ -13,10 +13,10 @@ if (!isset($_SESSION['id_usuarios'])) {
 
 $asignar = $_GET['tipo'];
 
-if($asignar != 'verificador' && $asignar != 'tecnico' AND $asignar != 'analista'){
-    header("Location: coordinador.php");
-    exit;
-}
+// if($asignar != 'verificador' && $asignar != 'tecnico' AND $asignar != 'analista'){
+//     header("Location: coordinador.php");
+//     exit;
+// }
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
