@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="fechaNacBene">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacBeneEdit" name="fecha_de_nacimiento">
+                        <input type="date" class="form-control" id="fechaNacBeneEdit" name="fecha_de_nacimiento" value="<?php echo $row['fecha_de_nacimiento'];?>">
                     </div>
                     <div class="form-group">
                         <label for="area">Area</label>

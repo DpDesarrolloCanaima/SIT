@@ -4,26 +4,26 @@ require "function.php";
 if ($_POST) {
     $idEditBene = $_POST['ideditbene'];
     // $icedit = limpiarDatos($_POST['icedit']);
-    if (!preg_match("/\b/", $icedit)) {
-      echo "
-              <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-              <script language='JavaScript'>
-              document.addEventListener('DOMContentLoaded', function() {
-                  Swal.fire({
-                      icon: 'success',
-                      title: 'Ingrese el identificador con el formato solicitado',
-                      showCancelButton: false,
-                      confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'OK',
-                      timer: 1500
-                    }).then(() => {
+  //   if (!preg_match("/\b/", $icedit)) {
+  //     echo "
+  //             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+  //             <script language='JavaScript'>
+  //             document.addEventListener('DOMContentLoaded', function() {
+  //                 Swal.fire({
+  //                     icon: 'success',
+  //                     title: 'Ingrese el identificador con el formato solicitado',
+  //                     showCancelButton: false,
+  //                     confirmButtonColor: '#3085d6',
+  //                     confirmButtonText: 'OK',
+  //                     timer: 1500
+  //                   }).then(() => {
 
-                      location.assign('listadebeneficiario.php');
+  //                     location.assign('listadebeneficiario.php');
 
-                    });
-          });
-              </script>";
-  }
+  //                   });
+  //         });
+  //             </script>";
+  // }
     $nombreBeneEdit = limpiarDatos($_POST['nombre_del_beneficiario_edit']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreBeneEdit)) {
       echo "
@@ -374,7 +374,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 1500
+                timer: 30000
               }).then(() => {
                 location.assign('listadebeneficiario.php');
               });
@@ -391,7 +391,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 1500
+                timer: 30000
               }).then(() => {
                 location.assign('listadebeneficiario.php');
               });
