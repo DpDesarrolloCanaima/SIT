@@ -11,10 +11,6 @@
             <div class="modal-body">
                 <form action="registrartrabajador.php" method="POST">
                     <div class="form-group">
-                        <label for="inputAddress">IC</label>
-                        <input type="text" class="form-control" id="inputAddress" name="ic">
-                    </div>
-                    <div class="form-group">
                         <label for="inputAddress">Ingrese la cedula</label>
                         <div class="input-group">
                             <div class="input-group-prepend">

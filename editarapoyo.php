@@ -25,26 +25,7 @@ if ($_POST) {
       
       ";
   }
-  $ic = limpiarDatos($_POST['ic']);
-  if (!preg_match("/\b/", $ic)) {
-      echo "
-      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-      <script language='JavaScript'>
-      document.addEventListener('DOMContentLoaded', function() {
-          Swal.fire({
-              icon: 'error',
-              title: 'El IC no cumple el formato',
-              showCancelButton: false,
-              confirmButtonColor: '#3085d6',
-              confirmButtonText: 'OK',
-              timer: 3000
-            }).then(() => {
-              location.assign('Listadeapoyo.php');
-            });
-  });
-      </script>
-      
-      ";
+
   }
   $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
     if ($tipoDocumento != 2 || $tipoDocumento == "") {

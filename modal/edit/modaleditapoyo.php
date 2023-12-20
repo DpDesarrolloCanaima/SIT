@@ -12,10 +12,6 @@
             </div>
             <div class="modal-body">
                 <form action="editarapoyo.php" method="POST">
-                    <div class="form-group">
-                        <label for="inputAddress">IC</label>
-                        <input type="text" class="form-control" id="inputAddress" name="ic" value="<?php echo $row['ic'];?>">
-                    </div>
                     <!--<br> -->
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el RIF</label>

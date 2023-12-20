@@ -10,10 +10,6 @@
             </div>
             <div class="modal-body">
                 <form  action="registrarJornadas.php" method="POST">
-                <div class="form-group">
-                        <label for="inputAddress">IC</label>
-                        <input type="text" class="form-control" id="inputAddress" name="ic">
-                    </div>
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el Nª de Jornada</label>
                         <div class="input-group">

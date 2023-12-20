@@ -11,7 +11,7 @@ $rol = $_SESSION['id_roles'];
 $idusuario = $_SESSION['id_usuarios'];
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario, e.cedula, e.fecha_de_nacimiento, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, e.cedula, e.fecha_de_nacimiento, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado WHERE e.id_origen = 4";
 
 $resultado = $mysqli->query($sql1);
@@ -172,7 +172,6 @@ $resultado14 = $mysqli->query($sql14);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>IC</th>
                                             <th>Nª De Jornada</th>
                                             <th>Nombre de la institución</th>
                                             <th>Fecha de Jornada</th>
@@ -198,7 +197,6 @@ $resultado14 = $mysqli->query($sql14);
                                         while ($row = $resultado->fetch_assoc()) :
                                         ?>
                                         <tr>
-                                            <td><?php echo $row['ic']; ?></td>
                                             <td><?php echo $row['cedula']; ?></td>
                                             <td><?php echo $row['nombre_del_beneficiario']; ?></td>
                                             <td><?php echo $row['fecha_de_nacimiento']; ?></td>

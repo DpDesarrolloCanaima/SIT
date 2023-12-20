@@ -3,7 +3,7 @@ require "function.php";
 
 if ($_POST) {
     $idEditBene = $_POST['ideditbene'];
-    $icedit = limpiarDatos($_POST['icedit']);
+    // $icedit = limpiarDatos($_POST['icedit']);
     if (!preg_match("/\b/", $icedit)) {
       echo "
               <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -358,7 +358,7 @@ if ($_POST) {
     $idcargo = 1;
 
     require "config/conexionProvi.php";
-    $sql = "UPDATE datos_del_entregante SET ic = '$icedit', nombre_del_beneficiario = '$nombreBeneEdit', cedula = '$cedula', edad = '$edadBeneEdit', Id_genero = '$generoEdit', fecha_de_nacimiento = '$fechadenacimientoEdit', id_area = '$idarea', id_cargo = '$idcargo', nombre_del_representante = '$nombreRepreBeneEdit', correo = '$correoEdit', telefono = '$telefonoEdit', estado = '$estado', municipio = '$municipioEdit', direccion = '$direccionEdit', posee_discapacidad_o_condicion = '$poseeDiscaEdit',descripcion_discapacidad_condicion = '$descripcionDisEdit', id_origen = '$origenEdit' WHERE id_datos_del_entregante = $idEditBene";
+    $sql = "UPDATE datos_del_entregante SET  nombre_del_beneficiario = '$nombreBeneEdit', cedula = '$cedula', edad = '$edadBeneEdit', Id_genero = '$generoEdit', fecha_de_nacimiento = '$fechadenacimientoEdit', id_area = '$idarea', id_cargo = '$idcargo', nombre_del_representante = '$nombreRepreBeneEdit', correo = '$correoEdit', telefono = '$telefonoEdit', estado = '$estado', municipio = '$municipioEdit', direccion = '$direccionEdit', posee_discapacidad_o_condicion = '$poseeDiscaEdit',descripcion_discapacidad_condicion = '$descripcionDisEdit', id_origen = '$origenEdit' WHERE id_datos_del_entregante = $idEditBene";
 
     //echo $sql;
     $resultado = mysqli_query($mysqli, $sql);
