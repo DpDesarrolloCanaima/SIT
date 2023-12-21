@@ -237,7 +237,7 @@ if ($_POST) {
     require "config/conexionProvi.php";
     
     // Realizamos la consulta a la base de datos.
-    $sql = "UPDATE datos_del_entregante SET ic = '$ic', nombre_del_beneficiario = '$nombreInstitucion', tipo_documento = '$tipoDocumento', cedula = '$documento', fecha_de_nacimiento = '$fechaJornada', correo = '$correoJornada', telefono = '$telefonoJornada', estado = '$estadoJornada', municipio = '$municipioJornada', direccion = '$direccionJornada', id_origen = '$origen' WHERE id_datos_del_entregante = $editjornadas";
+    $sql = "UPDATE datos_del_entregante SET nombre_del_beneficiario = '$nombreInstitucion', tipo_documento = '$tipoDocumento', cedula = '$documento', fecha_de_nacimiento = '$fechaJornada', correo = '$correoJornada', telefono = '$telefonoJornada', estado = '$estadoJornada', municipio = '$municipioJornada', direccion = '$direccionJornada', id_origen = '$origen' WHERE id_datos_del_entregante = $editjornadas";
 
     $resultado = $mysqli->query($sql);
     if ($resultado) {
@@ -280,6 +280,6 @@ if ($_POST) {
         ";
     }
 
-}
+
 
 ?>

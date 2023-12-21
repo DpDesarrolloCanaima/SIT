@@ -8,48 +8,6 @@ if ($_POST['registrar']) {
     header("Location: dispositivoEntrada.php");
 } else {
 
-    $ic = limpiarDatos($_POST['ic']);
-    $sqlvalidation = "SELECT ic FROM datos_del_entregante WHERE ic = ". $ic;
-    $resultvalidation = mysqli_query($mysqli, $sqlvalidation);
-
-    if (mysqli_num_rows($resultvalidation)>0) {
-        echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'El beneficiario ya existe',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-              }).then(() => {
-                location.assign('listadebeneficiario.php');
-              });
-    });
-        </script>";
-    }else {
-        $ic = limpiarDatos($_POST['ic']);
-    if (!preg_match("/\b/", $ic)) {
-        echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                <script language='JavaScript'>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Ingrese el identificador con el formato solicitado',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK',
-                        timer: 1500
-                      }).then(() => {
-
-                        location.assign('listadebeneficiario.php');
-
-                      });
-            });
-                </script>";
-    }
     $nombre_del_beneficiario = limpiarDatos($_POST['nombre_del_beneficiario']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombre_del_beneficiario)) {
         echo "
@@ -414,7 +372,7 @@ if ($_POST['registrar']) {
     $idarea = 1;
     $idcargo = 1;
     $conex = $mysqli;
-    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,id_origen) VALUES ('$ic', '$nombre_del_beneficiario', '$tipoDocumento', '$cedula', '$edad', '$genero', '$fecha_nac','$idarea','$idcargo','$nombre_del_representante','$correo','$telefono','$estado','$municipio','$direccion','$discapacidadCondicion','$descripcionDiscapacidadCondicion','$origen');";
+    $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,id_origen) VALUES ('$nombre_del_beneficiario', '$tipoDocumento', '$cedula', '$edad', '$genero', '$fecha_nac','$idarea','$idcargo','$nombre_del_representante','$correo','$telefono','$estado','$municipio','$direccion','$discapacidadCondicion','$descripcionDiscapacidadCondicion','$origen');";
     
     $resultado = mysqli_query($conex, $sql);
 
@@ -458,6 +416,6 @@ if ($_POST['registrar']) {
       </script>";
     }
     }    
-}
+
 
 													

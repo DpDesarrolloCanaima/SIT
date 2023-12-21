@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="registrartrabajador.php" method="POST">
+                <form action="edittrabajador.php" method="POST">
 
                     <div class="form-group">
                         <label for="inputAddress">Ingrese la cedula</label>
@@ -77,7 +77,7 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>" pattern="[a-zA-Z\s]{6,60}">
                         <span></span>
                     </div>
                     <!-- Validacion de discapacidad -->

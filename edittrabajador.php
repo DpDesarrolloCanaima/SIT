@@ -4,6 +4,28 @@ require "function.php";
 //Comprobamos que el envio del formulrio
 if ($_POST) {
     //Obtenemos todos los valores necesarios enviados mediante el formulario
+    $editTrabajador = limpiarDatos($_POST['id_trabajador']);
+    if ($editTrabajador == "") {
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El identificador esta vacio',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 3000
+              }).then(() => {
+
+                location.assign('listatrabajadores.php');
+
+              });
+    });
+        </script>
+        
+        ";
     }
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
     if ($tipoDocumento != 1 || $tipoDocumento == "") {
@@ -353,7 +375,7 @@ if ($_POST) {
     //Llamamos al archivo que continene la conexion
     require "config/conexionProvi.php";
     //Realizamos la consulta requerida
-    $sql = "UPDATE datos_del_entregante SET ic = '$ic', nombre_del_beneficiario = '$nombre', tipo_documento = '$tipoDocumento', cedula = '$documento', Id_genero = '$genero', id_area = '$idarea', id_cargo = '$idcargo', correo = '$correo', telefono = '$telefono', estado = '$estado', municipio = '$municipio', direccion = '$direccion', posee_discapacidad_o_condicion = '$discapacidad', descripcion_discapacidad_condicion = '$descripDisca', id_origen = '$origen' WHERE id_datos_del_entregante = $editTrabajador ";
+    $sql = "UPDATE datos_del_entregante SET nombre_del_beneficiario = '$nombre', tipo_documento = '$tipoDocumento', cedula = '$documento', Id_genero = '$genero', id_area = '$idarea', id_cargo = '$idcargo', correo = '$correo', telefono = '$telefono', estado = '$estado', municipio = '$municipio', direccion = '$direccion', posee_discapacidad_o_condicion = '$discapacidad', descripcion_discapacidad_condicion = '$descripDisca', id_origen = '$origen' WHERE id_datos_del_entregante = '$editTrabajador' ";
 
     //Obtenemos la respuesta de la consulta
     $resultado = $mysqli->query($sql);
@@ -400,6 +422,8 @@ if ($_POST) {
     });
         </script>";
     }
-}
+
+    }
+    
 
 ?>

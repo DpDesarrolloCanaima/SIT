@@ -5,29 +5,6 @@ require "config/conexionProvi.php";
 require "function.php";
 
 if ($_POST) {
-    $ic = limpiarDatos($_POST['ic']);
-    if (!preg_match("/\b/", $ic)) {
-        echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                <script language='JavaScript'>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Debe ingresar un IC valido, solo digitos.',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK',
-                        timer: 3000
-                    }).then(() => {
-
-                        location.assign('listajornadas.php');
-
-                    });
-            });
-                </script>
-                
-        ";
-    }
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
     if ($tipoDocumento != 4 || $tipoDocumento == "") {
         echo "
@@ -288,7 +265,7 @@ if ($_POST) {
     $dispcacidad = "no";
     $descripcionDis = "No posee";
 
-    $sql = "INSERT INTO datos_del_entregante (ic, nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area,  id_cargo,  nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$ic', '$NombreInstitucionJor','$tipoDocumento', '$documento', '$edad', '$id_genero','$fechaJornada', '$id_area', '$id_cargo',  '$nombreRepresentante', '$correoJornada', '$telefonoJornada', '$estadoJornada', '$municipioJornada', '$direccionJornada', '$dispcacidad', '$descripcionDis', '$origen')";
+    $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area,  id_cargo,  nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion, id_origen) VALUES ('$NombreInstitucionJor','$tipoDocumento', '$documento', '$edad', '$id_genero','$fechaJornada', '$id_area', '$id_cargo',  '$nombreRepresentante', '$correoJornada', '$telefonoJornada', '$estadoJornada', '$municipioJornada', '$direccionJornada', '$dispcacidad', '$descripcionDis', '$origen')";
 
     $resultado = $mysqli->query($sql);
 
