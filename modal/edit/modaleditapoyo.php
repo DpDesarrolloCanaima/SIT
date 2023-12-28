@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="municipio" name="municipio" value="<?php echo $row['municipio'];?>" pattern="[a-zA-Z\s]{6,60}">
                         <span></span>
                     </div>
                     <div class="form-group">

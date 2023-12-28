@@ -259,7 +259,7 @@ if ($_POST) {
     //Llamamos al archivo que continene la conexion
   require "config/conexionProvi.php";
     //Realizamos nuestra consulta de actualizacion de datos
-  $sql = "UPDATE datos_del_entregante SET ic = '$ic', nombre_del_beneficiario = '$nombreIntitucion', tipo_documento = '$tipoDocumento', cedula = '$documento',  correo = '$correo', telefono = '$telefono', estado = '$estado', municipio = '$municipio', direccion =  '$direccion', id_origen = '$origen' WHERE id_datos_del_entregante = $editapoyo ";
+  $sql = "UPDATE datos_del_entregante SET nombre_del_beneficiario = '$nombreInstitucion', tipo_documento = '$tipoDocumento', cedula = '$documento',  correo = '$correo', telefono = '$telefono', estado = '$estado', municipio = '$municipio', direccion =  '$direccion', id_origen = '$origen' WHERE id_datos_del_entregante = $editapoyo ";
     //Guardamos su valor en una variable
   $resultado = $mysqli->query($sql);
     //Comprobamos que la consulta haya sido realizada y su respectiva respuesta positiva o negativa
@@ -304,7 +304,7 @@ if ($_POST) {
 });
     </script>";
   }
-}
+
 
 
 
