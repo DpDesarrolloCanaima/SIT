@@ -368,6 +368,112 @@ if ($_POST['registrar']) {
     });
         </script>";
     }
+    $consejoComunal = limpiarDatos($_POST['consejo_comunal']);
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $consejoComunal)) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Ingrese el consejo comunal con caracteres validos.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+    }
+    $mesaTelecomunicaciones = limpiarDatos($_POST['mesa_telecomunicaciones']);
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $mesaTelecomunicaciones)) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Ingrese el municipio',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+    }
+    $institucionEntrega = limpiarDatos($_POST['institucion_entrega']);
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $institucionEntrega)) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Ingrese el municipio',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+    }
+    $institucionEstudia = limpiarDatos($_POST['institucion_estudia']);
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $institucionEstudia)) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Ingrese el municipio',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+    }
+
+    $responsableEntrega = limpiarDatos($_POST['responsable_entrega']);
+    if (!preg_match("/[a-zA-Z\s]{10,60}/", $responsableEntrega)) {
+      echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Ingrese el municipio',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+
+                location.assign('listadebeneficiario.php');
+
+              });
+    });
+        </script>";
+    }
     //Datos complementarios
     $idarea = 1;
     $idcargo = 1;

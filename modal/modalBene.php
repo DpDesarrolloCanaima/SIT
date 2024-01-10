@@ -100,7 +100,32 @@
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
                         <textarea class="form-control" rows="3" name="descripcion_discapacidad" ></textarea>
                         <span></span>
-                    </div> 
+                    </div>
+                    <div class="form-group">
+                        <label for="consejoComunal">Consejo Comunal</label>
+                        <input type="text" class="form-control" id="consejoComunal" name="consejo_comunal" pattern="[a-zA-Z\s]{10,60}">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="mesaTelecomunicaciones">Mesa de telecomunicaciones</label>
+                        <input type="text" class="form-control" id="mesaTelecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{10,60}">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="institucionEntrega">Institucion Educativa (Entrega)</label>
+                        <input type="text" class="form-control" id="institucionEntrega" name="institucion_entrega" pattern="[a-zA-Z\s]{10,60}">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="institucionEstudia">Institucion Educativa (Estudia Actualmente)</label>
+                        <input type="text" class="form-control" id="institucionEstudia" name="institucion_estudia" pattern="[a-zA-Z\s]{10,60}">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="responsableEntrega">Responsable de entrega</label>
+                        <input type="text" class="form-control" id="responsableEntrega" name="responsable_entrega" pattern="[a-zA-Z\s]{10,60}">
+                        <span></span>
+                    </div>
                     <hr>
                     <input type="hidden" name="origen" value="2">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
