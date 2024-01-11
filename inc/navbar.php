@@ -29,7 +29,7 @@ $usuario = $_SESSION['usuario'];
                     $estatusDispo = 6;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";  
-                    $consultaver = "SELECT registro, observaciones_verificador, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
+                    $consultaver = "SELECT registro, observaciones_verificador, ic_dispositivo, id_tipo_de_dispositivo, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
                     echo '
@@ -50,7 +50,7 @@ $usuario = $_SESSION['usuario'];
                             setlocale(LC_TIME, 'es_VE');
                             $i = 0;
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['ic_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                                         $icono;
@@ -97,7 +97,7 @@ $usuario = $_SESSION['usuario'];
                     $estatusDispo = 2;
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
-                    $consultaver = "SELECT registro, observaciones_analista, id_datos_del_dispositivo, id_tipo_de_dispositivo, responsable
+                    $consultaver = "SELECT registro, observaciones_analista, ic_dispositivo, id_tipo_de_dispositivo, responsable
                     FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY
                     registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
@@ -120,7 +120,7 @@ $usuario = $_SESSION['usuario'];
                             setlocale(LC_TIME, 'es_VE');
                             $i = 0;
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['ic_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                                         $icono;
@@ -167,7 +167,7 @@ $usuario = $_SESSION['usuario'];
                     $estatusDispo = 4;
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";
-                    $consultaver = "SELECT registro, observaciones_tecnico, id_datos_del_dispositivo, id_tipo_de_dispositivo FROM
+                    $consultaver = "SELECT registro, observaciones_tecnico, ic_dispositivo, id_tipo_de_dispositivo FROM
                     datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
@@ -189,7 +189,7 @@ $usuario = $_SESSION['usuario'];
                             setlocale(LC_TIME, 'es_VE');
                             $i = 0;
                             while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
-                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['id_datos_del_dispositivo'].'">
+                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?id='.$verNot['ic_dispositivo'].'">
                                 <div class="mr-3">
                                     <div class="bg-primary icon-circle">';
                                         $icono;
@@ -235,7 +235,7 @@ $usuario = $_SESSION['usuario'];
                 case 6:
                     $filenameDetalles = "asignar.php";
                     $notiText = "Asignar, ";
-                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, id_datos_del_dispositivo, id_tipo_de_dispositivo, id_estatus FROM datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
+                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, ic_dispositivo, id_tipo_de_dispositivo, id_estatus FROM datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
                     echo '
@@ -259,7 +259,7 @@ $usuario = $_SESSION['usuario'];
                                     switch($verNot['id_estatus']) {
                                         case 1:
                                             $notiTextAsign = "analista";
-                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">';
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['ic_dispositivo'].'">';
                                             break; 
                                         case 2:
                                             $notiTextAsign = "tecnico";
@@ -267,7 +267,7 @@ $usuario = $_SESSION['usuario'];
                                             break;
                                         case 3:
                                             $notiTextAsign = "tecnico";
-                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">';
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['ic_dispositivo'].'">';
                                             break;
                                         case 4:
                                             $notiTextAsign = "tecnico";
@@ -275,7 +275,7 @@ $usuario = $_SESSION['usuario'];
                                             break;
                                         case 5:
                                             $notiTextAsign = "verificador";
-                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">';
+                                            echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['ic_dispositivo'].'">';
                                             break;
                                         case 6:
                                             $notiTextAsign = "verificador";
