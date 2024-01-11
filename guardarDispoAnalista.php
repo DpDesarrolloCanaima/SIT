@@ -13,10 +13,6 @@ require("function.php");
         $comprobacion = $row['cedula'];
         $beneficiario = $row['id_datos_del_entregante'];
         if ($cedula = $comprobacion) {
-           $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-           $sqlSerial = "SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = '$serialEquipo'";
-           $resultadoSerial = $mysqli->query($sqlSerial);
-           if (mysqli_num_rows($resultadoSerial)==0) {
             $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
             if ($tipoDeEquipo == "") {
                 echo "
@@ -125,6 +121,7 @@ require("function.php");
             });
                 </script>";
             }
+            $motivoIngreso = limpiarDatos($_POST['']);
             $rol = limpiarDatos($_POST['id_roles']);
             $origen = limpiarDatos($_POST['origen']);
             $estatus = limpiarDatos($_POST['estatus']);
@@ -135,7 +132,7 @@ require("function.php");
             $observaciones_tecnico = "Falta por observaciones";
             $observaciones_verificador = "Falta por observaciones";
             $responsable = limpiarDatos($_POST['responsable']);
-            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
+            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
             $resultado = $mysqli->query($sql);
             if ($resultado) {
                 echo "
@@ -172,28 +169,7 @@ require("function.php");
                     });
                         </script>";
             }
-           }else {
-            
-            foreach ($resultadoSerial as $row2) {
-                    $serialdb = $row2['serial_equipo'];    
-                }
-                echo "
-                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                <script language='JavaScript'>
-                document.addEventListener('DOMContentLoaded', function() {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'El serial ".$serialdb." ya existe',
-                        showCancelButton: false,
-                        confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK',
-                        timer: 1500
-                      }).then(() => {
-                        location.assign('analista.php');
-                     });
-            });
-                </script>";  
-           }
+           
         }else {
             echo "
                         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>

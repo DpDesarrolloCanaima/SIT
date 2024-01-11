@@ -80,6 +80,15 @@
                         <textarea class="form-control" id="observaciones" rows="3" name="observaciones"></textarea>
                         <span></span>
                     </div>
+                    <div class="form-group">
+                        <label for="falla">Motivo de ingreso</label>
+                        <select name="motivo_ingreso" id="motivoIngreso" class="form-control form-control-lg">
+                            <?php foreach ($resultado15 as $row15) : ?>
+                            <option value="<?php echo $row15['id']; ?>"><?php echo $row15['motivo']; ?>
+                            </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
                     <input type="hidden" name="coordinador" value="6">           
