@@ -133,6 +133,9 @@ require("function.php");
             $observaciones_verificador = "Falta por observaciones";
             $responsable = limpiarDatos($_POST['responsable']);
             //Generacion de IC para el registro del dispositivo
+            
+
+
             $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
 
             $resultado = $mysqli->query($sql);
