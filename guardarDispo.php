@@ -243,6 +243,41 @@ if (mysqli_num_rows($resultValidation)>0) {
             });
                 </script>";
         }
+        //Generacion de IC para el registro del dispositivo
+        $datos = "SELECT MAX(ic_dispositivo) AS ic_dispositivo FROM datos_del_dispotivo";
+        $resultado=mysqli_query($mysqli,$datos);
+    
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $valor1 = $row['ic_dispositivo'];
+                $contadordb = 0;
+                for ($i=0; $i <= $valor1 ; $i++) { 
+                    if ($valor1 == 0) {
+                        $contadordb = 1;
+                    }else {
+                        $contadordb++;
+                    }
+                }
+                $año = date("Y", strtotime($fechaRecepcion));
+                $enviaric = $año."-".$contadordb;
+
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Se registro correctamente el dispositivo',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+                location.assign('dispositivosentrada.php');
+              });
+     });
+        </script>";
+        }
+
         $coordinador = limpiarDatos($_POST['coordinador']);
         $fechaEntrega = date('00-00-0000');
         $comprobacion = "Faltan comprobaciones";
