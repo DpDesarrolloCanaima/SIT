@@ -45,19 +45,19 @@
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_tarj_aios">Serial de entrada (Tarjeta IOS)</label>
-                        <input type="text" class="form-control" id="serial_entrada_tarj_aios" name="serial_entrada_tarj_aios">
+                        <input type="text" class="form-control" id="serial_entrada_tarj_aios" name="serial_entrada_tarj_aios" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_tarj_aios">Serial de salida (Tarjeta IOS)</label>
-                        <input type="text" class="form-control" id="serial_salida_tarj_aios" name="serial_salida_tarj_aios">
+                        <input type="text" class="form-control" id="serial_salida_tarj_aios" name="serial_salida_tarj_aios" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_cara_a">Serial de entrada (Cara A)</label>
-                        <input type="text" class="form-control" id="serial_entrada_cara_a" name="serial_entrada_cara_a">
+                        <input type="text" class="form-control" id="serial_entrada_cara_a" name="serial_entrada_cara_a" pattern="[A-Z0-9]{18}" title="Caracteres maximos 18. Solo mayusculas y numeros">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_cara_a">Serial de salida (Cara A)</label>
-                        <input type="text" class="form-control" id="serial_salida_cara_a" name="serial_salida_cara_a">
+                        <input type="text" class="form-control" id="serial_salida_cara_a" name="serial_salida_cara_a" pattern="[A-Z0-9]{18}" title="Caracteres maximos 18. Solo mayusculas y numeros">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_cara_b">Serial de entrada (Cara B)</label>
@@ -81,39 +81,43 @@
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_memoria_ram">Serial de entrada (memoria ram)</label>
-                        <input type="text" class="form-control" id="serial_entrada_memoria_ram" name="serial_entrada_memoria_ram">
+                        <input type="text" class="form-control" id="serial_entrada_memoria_ram" name="serial_entrada_memoria_ram" pattern="[A-Z0-9]{15}" title="Maximo de caracteres 15. Solo numeros y letras mayusculas">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_memoria_ram">Serial de salida (memoria ram)</label>
-                        <input type="text" class="form-control" id="serial_salida_memoria_ram" name="serial_salida_memoria_ram">
+                        <input type="text" class="form-control" id="serial_salida_memoria_ram" name="serial_salida_memoria_ram"pattern="[A-Z0-9]{15}" title="Maximo de caracteres 15. Solo numeros y letras mayusculas">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_teclado">Serial de entrada (teclado)</label>
-                        <input type="text" class="form-control" id="serial_entrada_teclado" name="serial_entrada_teclado">
+                        <input type="text" class="form-control" id="serial_entrada_teclado" name="serial_entrada_teclado" pattern="[A-Z0-9]{25}" title="Maximo de caracteres 21. Solo numeros y letras mayusculas">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_teclado">Serial de salida (teclado)</label>
-                        <input type="text" class="form-control" id="serial_salida_teclado" name="serial_salida_teclado">
+                        <input type="text" class="form-control" id="serial_salida_teclado" name="serial_salida_teclado" pattern="[A-Z0-9]{25}" title="Maximo de caracteres 21. Solo numeros y letras mayusculas">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_cargador">Serial de entrada (cargador)</label>
-                        <input type="text" class="form-control" id="serial_entrada_cargador" name="serial_entrada_cargador">
+                        <input type="text" class="form-control" id="serial_entrada_cargador" name="serial_entrada_cargador" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_cargador">Serial de salida (cargador)</label>
-                        <input type="text" class="form-control" id="serial_salida_cargador" name="serial_salida_cargador">
+                        <input type="text" class="form-control" id="serial_salida_cargador" name="serial_salida_cargador" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_pantalla">Serial de entrada (pantalla)</label>
-                        <input type="text" class="form-control" id="serial_entrada_pantalla" name="serial_entrada_pantalla">
+                        <input type="text" class="form-control" id="serial_entrada_pantalla" name="serial_entrada_pantalla" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                    </div>
+                    <div class="form-group">
+                        <label for="serial_salida_pantalla">Serial de salida (pantalla)</label>
+                        <input type="text" class="form-control" id="serial_salida_pantalla" name="serial_salida_pantalla" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_tarjeta_red">Serial de entrada (tarjeta de red)</label>
-                        <input type="text" class="form-control" id="serial_entrada_tarjeta_red" name="serial_entrada_tarjeta_red">
+                        <input type="text" class="form-control" id="serial_entrada_tarjeta_red" name="serial_entrada_tarjeta_red" pattern="[A-Z0-9]{18}" title="Caracteres maximos 18. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_tarjeta_red">Serial de salida (tarjeta de red)</label>
-                        <input type="text" class="form-control" id="serial_salida_tarjeta_red" name="serial_salida_tarjeta_red">
+                        <input type="text" class="form-control" id="serial_salida_tarjeta_red" name="serial_salida_tarjeta_red" pattern="[A-Z0-9]{18}" title="Caracteres maximos 18. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_fan_cooler">Serial de entrada (fan cooler)</label>
@@ -122,6 +126,23 @@
                     <div class="form-group">
                         <label for="serial_salida_fan_cooler">Serial de salida (fan cooler)</label>
                         <input type="text" class="form-control" id="serial_salida_fan_cooler" name="serial_salida_fan_cooler">
+                    </div>
+                    <div class="form-group">
+                        <label for="fan_cooler">Cambio de fan cooler?</label>
+                        <div class="form-check">
+                            <input class="form-check-input i-radio" type="radio" name="fan_cooler"
+                                id="fan_cooler_1" value="si"  >
+                            <label class="form-check-label" for="fan_cooler_1">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input " type="radio" name="fan_cooler"
+                                id="fan_cooler_2" value="no">
+                            <label class="form-check-label" for="fan_cooler_2">
+                                No
+                            </label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="observaciones">Observaciones</label>
