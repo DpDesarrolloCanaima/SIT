@@ -9,7 +9,7 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $estatus = $_REQUEST['id'];
 
-$sql1 = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.observaciones_verificador, d.comprobaciones, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo FROM datos_del_dispotivo AS d 
+$sql1 = "SELECT d.ic_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.observaciones_verificador, d.comprobaciones, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
