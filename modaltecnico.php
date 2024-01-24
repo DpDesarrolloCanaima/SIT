@@ -3,8 +3,7 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="verificarModalLabel">¿Seguro que quieres realizar
-                    cambios?</h5>
+                <h5 class="modal-title" id="verificarModalLabel">Cambios del equipo</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,27 +12,36 @@
                 <form action="verificartecnico.php" method="POST">
                     <div class="form-group">
                         <label for="serial_entrada_tm">Serial de entrada (Tarjta Madre)</label>
-                        <input type="text" class="form-control" id="serial_entrada_tm" name="serial_entrada_tm">
+                        <input type="text" class="form-control" id="serial_entrada_tm" name="serial_entrada_tm" pattern="[A-Z0-9]{12}" title="Maximo de Caracteres 12. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_tm">Serial de salida (Tarjta Madre)</label>
-                        <input type="text" class="form-control" id="serial_salida_tm" name="serial_salida_tm">
+                        <input type="text" class="form-control" id="serial_salida_tm" name="serial_salida_tm" pattern="[A-Z0-9]{12}" title="Maximo de Caracteres 12. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
-                        <label for="serial_entrada_pb">Serial de entrada (Pila Bios)</label>
-                        <input type="text" class="form-control" id="serial_entrada_pb" name="serial_entrada_pb">
-                    </div>
-                    <div class="form-group">
-                        <label for="serial_salida_pb">Serial de salida (Pila Bios)</label>
-                        <input type="text" class="form-control" id="serial_salida_pb" name="serial_salida_pb">
+                        <label for="pila_bios">Cambio de pila de Bios?</label>
+                        <div class="form-check">
+                            <input class="form-check-input i-radio" type="radio" name="pila_bios"
+                                id="pila_bios_2" value="si"  >
+                            <label class="form-check-label" for="pila_bios_1">
+                                Si
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input " type="radio" name="pila_bios"
+                                id="pila_bios_2" value="no">
+                            <label class="form-check-label" for="pila_bios_2">
+                                No
+                            </label>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_bat">Serial de entrada (Bacteria)</label>
-                        <input type="text" class="form-control" id="serial_entrada_bat" name="serial_entrada_bat">
+                        <input type="text" class="form-control" id="serial_entrada_bat" name="serial_entrada_bat" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
                     </div>
                     <div class="form-group">
                         <label for="serial_salida_bat">Serial de salida (Bacteria)</label>
-                        <input type="text" class="form-control" id="serial_salida_bat" name="serial_salida_bat">
+                        <input type="text" class="form-control" id="serial_salida_bat" name="serial_salida_bat" pattern="[A-Z0-9]{25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
                     </div>
                     <div class="form-group">
                         <label for="serial_entrada_tarj_aios">Serial de entrada (Tarjeta IOS)</label>
