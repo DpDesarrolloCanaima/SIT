@@ -244,11 +244,10 @@ if (mysqli_num_rows($resultValidation)>0) {
                 </script>";
         }
         //Generacion de IC para el registro del dispositivo
-        $datos = "SELECT MAX(ic_dispositivo) AS ic_dispositivo FROM datos_del_dispotivo";
+        $datos = "SELECT MAX(id_dispositivo) AS id_dispositivo FROM datos_del_dispotivo";
         $resultado=mysqli_query($mysqli,$datos);
-    
         while ($row = mysqli_fetch_assoc($resultado)) {
-            $valor1 = $row['ic_dispositivo'];
+            $valor1 = $row['id_dispositivo'];
                 $contadordb = 0;
                 for ($i=0; $i <= $valor1 ; $i++) { 
                     if ($valor1 == 0) {
@@ -257,34 +256,15 @@ if (mysqli_num_rows($resultValidation)>0) {
                         $contadordb++;
                     }
                 }
-                $año = date("Y", strtotime($fechaRecepcion));
-                $enviaric = $año."-".$contadordb;
-
-        echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'success',
-                title: 'Se registro correctamente el dispositivo',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK',
-                timer: 1500
-              }).then(() => {
-                location.assign('dispositivosentrada.php');
-              });
-     });
-        </script>";
+                $ic =  date("Y") . "-". $contadordb ;
         }
-
         $coordinador = limpiarDatos($_POST['coordinador']);
         $fechaEntrega = date('00-00-0000');
         $comprobacion = "Faltan comprobaciones";
         $observaciones_tecnico = "Falta por observaciones";
         $observaciones_verificador = "Falta por observaciones";
 
-        $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
+        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
         $resultado = mysqli_query($mysqli, $sql);
 
         if ($resultado) {
@@ -346,9 +326,9 @@ function limpiarDatos($data)
     $data = str_ireplace("SHOW TABLES;", "", $data);
     $data = str_ireplace("<?php", "", $data);
     $data = str_ireplace("?>", "", $data);
-    $data = str_ireplace("--", "", $data);
-    $data = str_ireplace("^", "", $data);
-    $data = str_ireplace("<", "" , $data); $data=str_ireplace(">", "", $data);
+$data = str_ireplace("--", "", $data);
+$data = str_ireplace("^", "", $data);
+$data = str_ireplace("<", "" , $data); $data=str_ireplace(">", "", $data);
     $data = str_ireplace("[", "", $data);
     $data = str_ireplace("]", "", $data);
     $data = str_ireplace("==", "", $data);
