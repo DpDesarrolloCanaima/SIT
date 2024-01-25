@@ -243,6 +243,7 @@ if (mysqli_num_rows($resultValidation)>0) {
             });
                 </script>";
         }
+        $motivoIngreso = limpiarDatos($_POST['']);
         //Generacion de IC para el registro del dispositivo
         $datos = "SELECT MAX(id_dispositivo) AS id_dispositivo FROM datos_del_dispotivo";
         $resultado=mysqli_query($mysqli,$datos);
@@ -263,8 +264,13 @@ if (mysqli_num_rows($resultValidation)>0) {
         $comprobacion = "Faltan comprobaciones";
         $observaciones_tecnico = "Falta por observaciones";
         $observaciones_verificador = "Falta por observaciones";
+        $responsableAnalistaRecibido = "Aun no";
+        $responsableTecnico = "aun no";
+        $responsableVerficador = "aun no";
+        $responsableAnalistaEntrega = "aun no";
 
-        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
+
+        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, responsable_analista_recibido, responsable_tecnico, responsable_verificador, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$responsableAnalistaRecibido','$responsableTecnico','$responsableVerficador','$responsableAnalistaEntrega','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
         $resultado = mysqli_query($mysqli, $sql);
 
         if ($resultado) {

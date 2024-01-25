@@ -1,10 +1,10 @@
 <?php
 
 //Manera local
-//$mysqli = new mysqli("localhost", "root", "", "sit");
+$mysqli = new mysqli("localhost", "root", "", "sit");
 
 //Manera con servidor
-$mysqli = new mysqli("10.10.5.28", "sistema", "123456", "SIT");
+//$mysqli = new mysqli("10.10.5.28", "sistema", "123456", "SIT");
 
 
 if ($mysqli->connect_error) {

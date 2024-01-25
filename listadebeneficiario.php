@@ -69,6 +69,9 @@ $result = $mysqli->query($sql3);
 //Consulta para traer el tipo de documento
 $sql14 = "SELECT id_documento, tipo_documento FROM tipo_documento";
 $resultado14 = $mysqli->query($sql14);
+//Consulta para traer los datos de los motivos del porque entra el equipo.
+$sql15 = "SELECT id, motivo FROM tipo_de_motivo";
+$resultado15 = $mysqli->query($sql15);
 ?>
 
 <!DOCTYPE html>
