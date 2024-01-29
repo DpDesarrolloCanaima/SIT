@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="verificarModal" tabindex="-1" aria-labelledby="verificarModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="verificarModalLabel">Cambios del equipo</h5>
@@ -12,6 +12,7 @@
                 <form action="verificartecnico.php" method="POST">
                     <div class="form-group">
                         <label for="serial_entrada_tm">Serial de entrada (Tarjta Madre)</label>
+                        <!-- <hr> -->
                         <input type="text" class="form-control" id="serial_entrada_tm" name="serial_entrada_tm" pattern="[A-Z0-9]{12}" title="Maximo de Caracteres 12. Solo mayusculas y numeros.">
                     </div>
                     <div class="form-group">
@@ -151,7 +152,7 @@
                     <input type="hidden" name="id_status" value="3">
                     <input type="hidden" name="responsable" value="<?php echo $id_usuario;?>">
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
-                    <input type="hidden" name="id_dispositivo" value="<?php echo $rowde['id_datos_del_dispositivo']?>">
+                    <input type="hidden" name="id_dispositivo" value="<?php echo $rowde['id_dispositivo']?>">
                     <hr>
                     <button type="submit" class="btn btn-success">Actualizar</button>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
