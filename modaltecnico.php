@@ -129,7 +129,7 @@
                         <input type="text" class="form-control" id="serial_salida_fan_cooler" name="serial_salida_fan_cooler">
                     </div>
                     <div class="form-group">
-                        <label for="fan_cooler">Cambio de fan cooler?</label>
+                        <label for="fan_cooler">¿Cambio el fan cooler?</label>
                         <div class="form-check">
                             <input class="form-check-input i-radio" type="radio" name="fan_cooler"
                                 id="fan_cooler_1" value="si"  >
