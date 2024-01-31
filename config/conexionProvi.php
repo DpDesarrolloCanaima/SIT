@@ -9,13 +9,8 @@ $mysqli = new mysqli("localhost", "root", "", "sit");
 
 if ($mysqli->connect_error) {
     die("Conexion Fallo:" . $mysqli->connect_error);
-<<<<<<< HEAD
+
 }
 
 
 
-
-
-=======
-}
->>>>>>> ba8a306f61b059f958788876b642d88849f39c76
