@@ -29,7 +29,7 @@ $usuario = $_SESSION['usuario'];
                     $estatusDispo = 6;
                     $filenameDetalles = "detalleanalista.php";
                     $notiText = "Entregar, ";  
-                    $consultaver = "SELECT ic_dispositivo, id_tipo_de_dispositivo, registro, observaciones_verificador,  responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
+                    $consultaver = "SELECT id_dispositivo, id_tipo_de_dispositivo, registro, observaciones_verificador,  responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
                     echo '
@@ -97,7 +97,7 @@ $usuario = $_SESSION['usuario'];
                     $estatusDispo = 2;
                     $filenameDetalles = "detalletecnico.php";
                     $notiText = "Reparar, ";
-                    $consultaver = "SELECT ic_dispositivo, id_tipo_de_dispositivo, registro, observaciones_analista, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY
+                    $consultaver = "SELECT id_dispositivo, id_tipo_de_dispositivo, registro, observaciones_analista, responsable FROM datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY
                     registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
@@ -166,7 +166,7 @@ $usuario = $_SESSION['usuario'];
                     $estatusDispo = 4;
                     $filenameDetalles = "detalles.php";
                     $notiText = "Verificar, ";
-                    $consultaver = "SELECT registro, observaciones_tecnico, ic_dispositivo, id_tipo_de_dispositivo FROM
+                    $consultaver = "SELECT registro, observaciones_tecnico, id_dispositivo, id_tipo_de_dispositivo FROM
                     datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
