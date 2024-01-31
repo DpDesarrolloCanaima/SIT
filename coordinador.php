@@ -87,7 +87,7 @@ $resultado2 = $mysqli->query($consulta2);
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
 
-                    <div class="row">
+                    
 
                     <div class="jumbotron">
                         <h1 class="display-5">Realice sus Asignaciones!</h1>

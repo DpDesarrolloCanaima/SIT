@@ -134,17 +134,26 @@ $resultado15 = $mysqli->query($sql15);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
-                    <div class="jumbotron">
-                        <h1 class="display-5">Registre un Beneficiario!</h1>
+                     <div class="jumbotron">
+                        <h1 class="display-5">Registre un Beneficiario y Equipo!</h1>
                             <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                         <hr class="my-4">
-                            <p>Elija el tipo de Beneficiario.</p>
-                                <a class="btn btn-primary btn-ms" href="Listadeapoyo.php" role="button">Apoyo Institucional</a>
-                                <a class="btn btn-primary btn-ms" href="listadebeneficiario.php" role="button">Beneficiario</a>
-                                <a class="btn btn-primary btn-ms" href="listatrabajadores.php" role="button">Trabajador</a>
-                                <a class="btn btn-primary btn-ms" href="listajornadas.php" role="button">Jornadas Especiales</a>
-                        </div>
-                    
+                            <p>Elija el tipo de Beneficiario.</p> 
+                            <center>
+                                <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalApoyo"><i class="fas fa-building fa-sm text-white-50"></i> Apoyo Institucional</a>
+                                <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalBene"><i class="fas fa-user fa-sm text-white-50"></i> Beneficiario</a>
+                                <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalTrabajador"><i class="fas fa-briefcase fa-sm text-white-50"></i> Trabajador</a>
+                                <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalJornada"><i class="fas fa-star fa-sm text-white-50"></i> Jornadas Especiales</a>
+                                <a class="btn btn-secondary btn-ms" data-toggle="modal" data-target="#modalDispo"><i class="fas fa-laptop fa-sm text-white-50"></i> Registrar Dispositivo</a></a>
+                            </center>
+                            <?php
+                                include "modal/modalBene.php";
+                                include "modal/modalApoyoInst.php";
+                                include "modal/modalTrabajador.php";
+                                include "modal/modalJornadaEsp.php";
+                                include "modalregistroDispositivo.php";
+                             ?>
+
                     </div>
 
                     <!-- /.container-fluid -->

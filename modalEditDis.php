@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="editDis<?php echo $row['id_datos_del_dispositivo'];?>" tabindex="-1"
+<div class="modal fade" id="editDis<?php echo $row['ic_dispositivo'];?>" tabindex="-1"
     aria-labelledby="editarModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -61,7 +61,7 @@
                     <input type="hidden" name="id_roles" value="<?php echo $rol;?>">
                     <input type="hidden" name="estatus" value="1">
                     <input type="hidden" name="beneficiario" value="<?php echo $row['id_datos_del_beneficiario'];?>">
-                    <input type="hidden" name="idEditDispo" value="<?php echo $row['id_datos_del_dispositivo'];?>">
+                    <input type="hidden" name="idEditDispo" value="<?php echo $row['ic_dispositivo'];?>">
                     <hr>
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

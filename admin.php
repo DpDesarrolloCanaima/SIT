@@ -75,17 +75,14 @@ $resultado2 = $mysqli->query($consulta2);
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?> | SIT </h1>
                     </div>
 
-                    <div class="row">
+                    
 
                         <div class="jumbotron">
-                            <h1 class="display-8">Bienvenido al Sistema de Inventario y Trazabilidad de Industria
-                                Canaima
-                                (SIT)!</h1>
-                            <!-- <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima
-                                (SIT).</p> -->
+                        <h1 class="display-5">Registre un Usuario Nuevo!</h1>
+                                <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                             <hr class="my-4">
-                            <!-- <p>Crear un usuario</p> -->
-                            <a class="btn btn-primary btn-ms" href="listadeusuario.php" role="button">Crear usuario</a>
+                            <p>De click en el siguente boton.</p>
+                            <a class="btn btn-primary btn-ms" href="listadeusuario.php" role="button"><i class="fas fa-user-plus fa-sm text-white-50"></i> Crear usuario</a>
                         </div>
                     </div>
 
