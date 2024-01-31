@@ -4,7 +4,7 @@
 //$mysqli = new mysqli("localhost", "root", "", "oac_prueba");
 
 //Manera con servidor
-$mysqli = new mysqli("10.10.5.28", "sistema", "123456", "SIT");
+$mysqli = new mysqli("10.10.5.28", "sistema", "123456", "sit");
 
 
 if ($mysqli->connect_error) {
