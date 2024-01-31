@@ -126,16 +126,19 @@ if ($_POST) {
 <body>
 
     <div class="signupFrm">
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" class="form">
+        <form action="login_all.php" method="POST" class="form">
             <h1 class="title">Iniciar Sesión</h1>
 
             <div class="inputContainer">
                 <input type="text" name="usuario" id="inputEmail" class="input" placeholder="a">
+                <!-- <input type="text" name="usuario" id="inputEmail" class="input" placeholder="a"
+                    pattern="[a-zA-Z0-9]{7,10}"> -->
                 <label for="" class="label">Usuario</label>
             </div>
 
             <div class="inputContainer">
                 <input type="password" name="password" id="inputPassword" class="input" placeholder="a">
+                <!-- <input type="password" name="password" id="inputPassword" class="input" placeholder="a" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}" title="La contraseñano cumple con los caracteres establecidos."> -->
                 <label for="" class="label">Contraseña</label>
             </div>
 
