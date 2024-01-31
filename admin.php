@@ -72,97 +72,99 @@ $resultado2 = $mysqli->query($consulta2);
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
+                        <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?> | SIT </h1>
                     </div>
 
-                <div class="row">
-
-                    <div class="jumbotron">
-                        <h1 class="display-5">Registre un Usuario Nuevo!</h1>
-                            <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
-                        <hr class="my-4">
-                            <p>De click en el siguiente boton.</p>
-                                <a class="btn btn-primary btn-ms" href="listadeusuario.php" role="button">Crear usuario</a>
-                                
-                        </div>
-                </div>
-
-                <!-- /.container-fluid -->
-
-                <!-- Begin Page Content -->
-                <div class="container-fluid">
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a> -->
-                    </div>
-
-
-                    <!-- Content Row -->
                     <div class="row">
+
+                        <div class="jumbotron">
+                            <h1 class="display-8">Bienvenido al Sistema de Inventario y Trazabilidad de Industria
+                                Canaima
+                                (SIT)!</h1>
+                            <!-- <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima
+                                (SIT).</p> -->
+                            <hr class="my-4">
+                            <!-- <p>Crear un usuario</p> -->
+                            <a class="btn btn-primary btn-ms" href="listadeusuario.php" role="button">Crear usuario</a>
+                        </div>
+                    </div>
+
+                    <!-- /.container-fluid -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <!-- <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a> -->
+                        </div>
 
 
                         <!-- Content Row -->
                         <div class="row">
 
-                            <!-- Content Column -->
-                            <div class="col-lg-6 mb-4">
+
+                            <!-- Content Row -->
+                            <div class="row">
+
+                                <!-- Content Column -->
+                                <div class="col-lg-6 mb-4">
+
+                                </div>
+
 
                             </div>
+                            <!-- /.container-fluid -->
+
 
 
                         </div>
                         <!-- /.container-fluid -->
 
 
-
                     </div>
-                    <!-- /.container-fluid -->
+                    <!-- End of Main Content -->
 
+                    <!-- Footer -->
+                    <footer class="sticky-footer bg-white">
+                        <div class="container my-auto">
+                            <div class="copyright text-center my-auto">
+                                <span>Copyright &copy; Industrias Canaima 2022 - G-20010288-8</span>
+                            </div>
+                        </div>
+                    </footer>
+                    <!-- End of Footer -->
 
                 </div>
-                <!-- End of Main Content -->
+                <!-- End of Content Wrapper -->
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Industrias Canaima 2022 - G-20010288-8</span>
+            </div>
+            <!-- End of Page Wrapper -->
+
+            <!-- Scroll to Top Button-->
+            <a class="scroll-to-top rounded" href="#page-top">
+                <i class="fas fa-angle-up"></i>
+            </a>
+
+            <!-- Logout Modal-->
+            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
+                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <a class="btn btn-success" href="logout.php">Salir</a>
+                            <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
                         </div>
                     </div>
-                </footer>
-                <!-- End of Footer -->
-
-            </div>
-            <!-- End of Content Wrapper -->
-
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn-success" href="logout.php">Salir</a>
-                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    </div>
                 </div>
             </div>
-        </div>
 
-        <?php include "inc/script.php"; ?>
+            <?php include "inc/script.php"; ?>
 </body>
 
 </html>

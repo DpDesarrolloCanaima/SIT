@@ -48,7 +48,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
 INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo
-INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario WHERE d.id_estatus = 1";
+INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario";
 
 $resultado8 = $mysqli->query($sql2);
 
@@ -155,11 +155,11 @@ $resultado8 = $mysqli->query($sql2);
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
                             </div>
-        </div>
+                        </div>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos Recibidos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

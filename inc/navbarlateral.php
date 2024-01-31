@@ -1,6 +1,5 @@
 <!-- Sidebar -->
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
     <?php    
 	switch($rol){
 	case 1:
@@ -20,7 +19,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
     </div>
-    <div class="sidebar-brand-text mx-1"><?php echo company; ?></div>
+    <div class="sidebar-brand-text mx-2"><?php echo company; ?></div>
     </a>
 
     <!-- Divider -->
@@ -53,7 +52,7 @@
         ?>
 
         <i class="fas fa-home fa-home-alt"></i>
-                    <span>Home</span></a>
+        <span>Home</span></a>
     </li>
 
     <!-- divider -->
@@ -67,9 +66,9 @@
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
 
-    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true"
             aria-controls="collapsePages">
-    <i class="fas fa-fw fa-cog"></i>
+            <i class="fas fa-fw fa-cog"></i>
 
             <?php
            
