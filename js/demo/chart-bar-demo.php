@@ -1,8 +1,11 @@
+<<<<<<< HEAD:js/demo/chart-bar-demo.php
 <?php
 require("config/conexionProvi.php");
 
 $query = "SELECT id_tipo_de_dispositivo, COUNT(*) AS numero_de_repeticiones FROM datos_del_dispotivo GROUP BY id_tipo_de_dispositivo;";
 $result = mysqli_query($mysqli, $query);
+=======
+>>>>>>> ba8a306f61b059f958788876b642d88849f39c76:js/demo/chart-bar-demo.js
 
 // Obtener los datos de la consulta
 $data = [];
