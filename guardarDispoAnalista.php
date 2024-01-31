@@ -134,6 +134,39 @@ require("function.php");
             $responsable = limpiarDatos($_POST['responsable']);
             //Generacion de IC para el registro del dispositivo
             
+        $datos = "SELECT MAX(ic_dispositivo) AS ic_dispositivo FROM datos_del_dispotivo";
+        $resultado=mysqli_query($mysqli,$datos);
+    
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $valor1 = $row['ic_dispositivo'];
+                $contadordb = 0;
+                for ($i=0; $i <= $valor1 ; $i++) { 
+                    if ($valor1 == 0) {
+                        $contadordb = 1;
+                    }else {
+                        $contadordb++;
+                    }
+                }
+                $año = date("Y", strtotime($fechaRecepcion));
+                $enviaric = $año."-".$contadordb;
+
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Se registro correctamente el dispositivo',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+                location.assign('dispositivosentrada.php');
+              });
+     });
+        </script>";
+        }
 
 
             $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";

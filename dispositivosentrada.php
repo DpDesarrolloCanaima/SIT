@@ -48,7 +48,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
 INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo
-INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario WHERE d.id_estatus = 1";
+INNER JOIN datos_del_entregante AS e ON e.id_datos_del_entregante = d.id_datos_del_beneficiario";
 
 $resultado8 = $mysqli->query($sql2);
 
@@ -155,11 +155,11 @@ $resultado8 = $mysqli->query($sql2);
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
                                         target="_blank">Todos</a></li>
                             </div>
-        </div>
+                        </div>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos Recibidos</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Dispositivos</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -180,6 +180,10 @@ $resultado8 = $mysqli->query($sql2);
                                             <?php
                                                 switch ($rol) {
                                                     case 1:
+                                                        echo "<th>Opciones</th>";
+                                                        break;
+                                                    case 3:
+                                                        # code...
                                                         echo "<th>Opciones</th>";
                                                         break;
                                                 }
@@ -216,16 +220,31 @@ $resultado8 = $mysqli->query($sql2);
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                    data-target="#editDis'.$row['id_datos_del_dispositivo'].'"
+                                                                    data-target="#editDis'.$row['ic_dispositivo'].'"
                                                 href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima"
                                                     width="15" height="15">
                                                 Editar</a>
                                                 <a class="dropdown-item btn btn-danger"
-                                                    href="eliminardispositivo.php?id='.$row['id_datos_del_dispositivo'].'"><img
+                                                    href="eliminardispositivo.php?id='.$row['ic_dispositivo'].'"><img
                                                     src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
                                                     height="15"> Eliminar</a>
                          ';
                         break;
+                        case 3:
+                            # Editar para el analista.
+                            echo '
+                                <td>
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        Opciones
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
+                                            data-target="#editDis'.$row['ic_dispositivo'].'"href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15">
+                                                Editar</a>
+                         ';
+                            break;
                         }
 
                         ?>

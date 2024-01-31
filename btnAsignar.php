@@ -9,7 +9,7 @@ if ($_POST) {
 
     require "config/conexionProvi.php";
 
-    $sql = "UPDATE datos_del_dispotivo SET responsable = $usrId, id_estatus = id_estatus + 1, id_roles=$rol WHERE id_datos_del_dispositivo = " . $idDispositivo;
+    $sql = "UPDATE datos_del_dispotivo SET responsable = $usrId, id_estatus = id_estatus + 1, id_roles=$rol WHERE id_dispositivo = " . $idDispositivo;
 
    $result = mysqli_query($mysqli, $sql);
 

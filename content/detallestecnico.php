@@ -17,7 +17,7 @@
                         if ($verestatus == "Recibidos") {
                             echo '
                             <a class="btn btn-primary"
-                            href="actualizartecni.php?id='.$rowde['id_datos_del_dispositivo'].'&responsable='.$id_usuario.'&rol='.$rol.'&estatus=2"
+                            href="actualizartecni.php?id='.$rowde['id_dispositivo'].'&responsable='.$id_usuario.'&rol='.$rol.'&estatus=2"
                             role="button">Actualizar</a>
 
                             ';

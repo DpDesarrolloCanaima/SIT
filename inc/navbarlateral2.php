@@ -23,7 +23,7 @@
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider my-2">
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">

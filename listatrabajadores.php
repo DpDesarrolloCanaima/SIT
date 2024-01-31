@@ -68,6 +68,10 @@ $result = $mysqli->query($sql3);
 //Consulta para traer el tipo de documento
 $sql14 = "SELECT id_documento, tipo_documento FROM tipo_documento";
 $resultado14 = $mysqli->query($sql14);
+
+//Consulta para traer los datos de los motivos del porque entra el equipo.
+$sql15 = "SELECT id, motivo FROM tipo_de_motivo";
+$resultado15 = $mysqli->query($sql15);
 ?>
 
 <!DOCTYPE html>
@@ -138,7 +142,9 @@ $resultado14 = $mysqli->query($sql14);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportetrabajadores.php?id=3" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
+                        <a href="report/reportetrabajadores.php?id=3"
+                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
                         <?php
                                     switch ($rol) {
                                         case 1:
@@ -238,6 +244,7 @@ $resultado14 = $mysqli->query($sql14);
                                         <div class="dropdown-menu">
 
                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
+                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editrabajador'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                             </div>
                                             </div>
                                             </td>';

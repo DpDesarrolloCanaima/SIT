@@ -128,6 +128,7 @@ $rol = $_SESSION['id_roles'];
         </div>
 
         <?php include "inc/script.php"; ?>
+        
 </body>
 
 </html>

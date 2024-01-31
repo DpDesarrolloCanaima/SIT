@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,18 +22,8 @@
             <div class="modal-body">
                 <form action="registrodeusuario.php" method="POST">
                     <div class="form-group">
-                        <label for="usuario">Usuario</label>
-                        <input type="text" class="form-control" id="usuario" name="usuario" pattern="[a-zA-Z]{4,15}" maxlength="15">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
                         <label for="nombre">Nombre y Apellido</label>
                         <input type="text" class="form-control" id="nombre" name="nombre" pattern="[a-z-A-Z\s]">
-                        <span></span>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Contraseña</label>
-                        <input type="password" class="form-control" id="password" name="password" pattern="[a-zA-Z0-9]{8,16}" title="La contraseña debe ser de minimo 8 digitos, solo se permiten mayusculas, minusculas y numeros">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -43,6 +34,19 @@
                     <div class="form-group">
                         <label for="correo">Correo</label>
                         <input type="email" class="form-control" id="correo" name="correo">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">Usuario</label>
+                        <input type="text" class="form-control" id="usuario" name="usuario" pattern="[a-zA-Z]{4,15}"
+                            maxlength="15">
+                        <span></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" class="form-control" id="password" name="password"
+                            pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}"
+                            title="La contraseña debe ser de minimo 8 digitos, solo se permiten mayusculas, minusculas y numeros">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -66,4 +70,5 @@
         </div>
     </div>
 </div>
+
 </html>

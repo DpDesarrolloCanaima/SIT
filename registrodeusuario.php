@@ -105,7 +105,7 @@ require "function.php";
                 </script>";
         }
         $password = limpiarDatos(htmlspecialchars($_POST['password']));
-        if (!preg_match("/[A-Z0-9]{9}/", $password)) {
+        if (!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/", $password)) {
             echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>

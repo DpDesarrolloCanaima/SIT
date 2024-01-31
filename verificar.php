@@ -1,6 +1,5 @@
 <?php
 
-
 if ($_POST) {
   require "function.php";
 $idDispo = limpiarDatos($_POST['id_dispositivo']);
@@ -80,7 +79,18 @@ if ($id_roles == "") {
 
 require "config/conexionProvi.php";
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', comprobaciones = '$comprobacion',coordinador = 6, id_roles = '$id_roles' WHERE id_datos_del_dispositivo = $idDispo"; 
+// Realizamos una consulta para conocer cual es el usuario que esta realizando la reparacion.
+$sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuario = $responsable AND id_roles = 5";
+// Ejecutamos la consulta para obtener la respuesta
+  $respuestaResponsable = $mysqli->query($sqlResponsable);
+  //Nos traemos el resultado de esa consulta 
+  while ($row2 = $respuestaResponsable->fetch_assoc()) {
+          $nombreUsuario = $row2["usuario"];
+      }
+// Guardamos en una variable el resultado de esa consulta.
+$responsableVerificador = $nombreUsuario;
+
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', responsable_verificador = '$responsableVerificador', comprobaciones = '$comprobacion',coordinador = 6, id_roles = '$id_roles' WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 
