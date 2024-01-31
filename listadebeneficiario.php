@@ -92,7 +92,9 @@ $resultado15 = $mysqli->query($sql15);
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -140,7 +142,9 @@ $resultado15 = $mysqli->query($sql15);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <a href="report/reportebeneficiario.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
+                        <a href="report/reportebeneficiario.php?id=2"
+                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
                         <?php
                                     switch ($rol) {
                                         case 1:
@@ -244,6 +248,7 @@ $resultado15 = $mysqli->query($sql15);
                                         <div class="dropdown-menu">
 
                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
+                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                             </div>
                                             </div>
                                             </td>';

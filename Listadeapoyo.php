@@ -142,7 +142,9 @@ $resultado15 = $mysqli->query($sql15);
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <a href="report/reportebeneficiarioapoyo.php?id=1" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
+                        <a href="report/reportebeneficiarioapoyo.php?id=1"
+                            class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                class="fas fa-print fa-sm text-white-50"></i> Generar Reporte</a>
                         <?php
                                     switch ($rol) {
                                         case 1:
@@ -167,7 +169,7 @@ $resultado15 = $mysqli->query($sql15);
                                     }
 
                                 ?>
-                    <!--    <a href=""><img src="img/bootstrap-icons-1.10.5/person-fill-add.svg" alt="Industrias Canaima" width="15" height="15"></a> -->
+                        <!--    <a href=""><img src="img/bootstrap-icons-1.10.5/person-fill-add.svg" alt="Industrias Canaima" width="15" height="15"></a> -->
                     </div>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -240,6 +242,7 @@ $resultado15 = $mysqli->query($sql15);
                                         <div class="dropdown-menu">
 
                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
+                                            <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBeneApoy'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
                                             </div>
                                             </div>
                                             </td>';

@@ -103,7 +103,7 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                   
+
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -114,113 +114,125 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                <thead>
-                                    <tr>
-                                        <th>Serial del Equipo</th>
-                                        <th>Serial del Cargador</th>
-                                        <th>Fecha de Recepción</th>
-                                        <th>Fecha de Entrega</th>
-                                        <th>Responsable</th>
-                                        <th>Observaciones <?php echo $asignar; ?></th>
-                                        <th>Registro</th>
-                                        <th>Origen</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <!-- Mostramos los resultados de las consultas realizadas de la tabla dispositivos -->
-                                    <?php
+                                    <thead>
+                                        <tr>
+                                            <th>Serial del Equipo</th>
+                                            <th>Serial del Cargador</th>
+                                            <th>Fecha de Recepción</th>
+                                            <th>Fecha de Entrega</th>
+                                            <th>Responsable Actual</th>
+                                            <th>Resonsable Recibido</th>
+                                            <th>Responsable Tecnico</th>
+                                            <th>Responsable Verificador</th>
+                                            <th>Responsable Entrega</th>
+                                            <th>Observaciones <?php echo $asignar; ?></th>
+                                            <th>Registro</th>
+                                            <th>Origen</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Mostramos los resultados de las consultas realizadas de la tabla dispositivos -->
+                                        <?php
                                         while ($row = $resultado->fetch_assoc()) :
 
                                     ?>
-                                    <tr>
-                                        <td><?php echo $row['serial_equipo']; ?></td>
-                                        <td><?php echo $row['serial_de_cargador']; ?></td>
-                                        <td><?php echo $row['fecha_de_recepcion']; ?></td>
-
-                                        <td><?php echo $row['fecha_de_entrega']; ?></td>
-                                        <td><?php echo $row['nombre']; ?></td>
-                                        <td><?php echo $row[$observaciones]; ?></td>
-                                        <td><?php echo $row['registro']; ?></td>
-                                        <td>
-                                        <div class="btn-group">
-                                            <button type="button" class="btn btn-info btn-sm dropdown-toggle"
-                                                data-toggle="dropdown" aria-expanded="false">
-                                                Opciones
-                                            </button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item btn btn-primary" id="btnAsign<?php echo  $row['id_dispositivo']?>" data-toggle="modal" data-target="#asignar<?php echo  $row['id_dispositivo']?>"  href="#"><img src="img/bootstrap-icons-1.10.5/check-circle-fill.svg " alt="Industrias Canaima" width="15" height="15"> Asignar</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    </tr>
-                                    <?php
+                                        <tr>
+                                            <td><?php echo $row['serial_equipo']; ?></td>
+                                            <td><?php echo $row['serial_de_cargador']; ?></td>
+                                            <td><?php echo $row['fecha_de_recepcion']; ?></td>
+                                            <td><?php echo $row['fecha_de_entrega']; ?></td>
+                                            <td><?php echo $row['nombre']; ?></td>
+                                            <td><?php echo $row['responsable_analista_recibido'];?></td>
+                                            <td><?php echo $row['responsable_tecnico'];?></td>
+                                            <td><?php echo $row['responsable_verificador'];?></td>
+                                            <td><?php echo $row['responsable_analista_entrega'];?></td>
+                                            <td><?php echo $row[$observaciones]; ?></td>
+                                            <td><?php echo $row['registro']; ?></td>
+                                            <td>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
+                                                        data-toggle="dropdown" aria-expanded="false">
+                                                        Opciones
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item btn btn-primary"
+                                                            id="btnAsign<?php echo  $row['id_dispositivo']?>"
+                                                            data-toggle="modal"
+                                                            data-target="#asignar<?php echo  $row['id_dispositivo']?>"
+                                                            href="#"><img
+                                                                src="img/bootstrap-icons-1.10.5/check-circle-fill.svg "
+                                                                alt="Industrias Canaima" width="15" height="15">
+                                                            Asignar</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <?php
                                         include "modalAsignar.php";
                                         endwhile;
                                     ?>
-                                </tbody>
+                                    </tbody>
                                 </table>
-                            
+
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-                <!-- End of Main Content -->
+            <!-- End of Main Content -->
 
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Industrias Canaima 2022</span>
-                        </div>
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; Industrias Canaima 2022</span>
                     </div>
-                </footer>
-                <!-- End of Footer -->
-
-            </div>
-            <!-- End of Content Wrapper -->
+                </div>
+            </footer>
+            <!-- End of Footer -->
 
         </div>
-        <!-- End of Page Wrapper -->
+        <!-- End of Content Wrapper -->
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+    </div>
+    <!-- End of Page Wrapper -->
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn-success" href="logout.php">Salir</a>
-                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    </div>
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-success" href="logout.php">Salir</a>
+                    <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>
+    </div>
 
-        <?php include "inc/script.php"; ?>
+    <?php include "inc/script.php"; ?>
 </body>
 
 <script>
 window.addEventListener('DOMContentLoaded', (event) => {
-  // Obtén una referencia al modal por su ID
-  var modal = document.getElementById('btnAsign<?php echo $_GET["asignarid"]; ?>')
+    // Obtén una referencia al modal por su ID
+    var modal = document.getElementById('btnAsign<?php echo $_GET["asignarid"]; ?>')
 
-  // Abre el modal utilizando el método show() del modal
-  modal.click();
+    // Abre el modal utilizando el método show() del modal
+    modal.click();
 });
 </script>
+
 </html>
-
-
-

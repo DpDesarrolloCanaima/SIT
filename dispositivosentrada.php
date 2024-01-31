@@ -182,6 +182,10 @@ $resultado8 = $mysqli->query($sql2);
                                                     case 1:
                                                         echo "<th>Opciones</th>";
                                                         break;
+                                                    case 3:
+                                                        # code...
+                                                        echo "<th>Opciones</th>";
+                                                        break;
                                                 }
                                             
                                             ?>
@@ -226,6 +230,21 @@ $resultado8 = $mysqli->query($sql2);
                                                     height="15"> Eliminar</a>
                          ';
                         break;
+                        case 3:
+                            # Editar para el analista.
+                            echo '
+                                <td>
+                                    <div class="btn-group">
+                                    <button type="button" class="btn btn-info btn-sm dropdown-toggle"
+                                        data-toggle="dropdown" aria-expanded="false">
+                                        Opciones
+                                    </button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item btn btn-warning" data-toggle="modal"
+                                            data-target="#editDis'.$row['ic_dispositivo'].'"href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15">
+                                                Editar</a>
+                         ';
+                            break;
                         }
 
                         ?>
