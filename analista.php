@@ -134,94 +134,17 @@ $resultado15 = $mysqli->query($sql15);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="btn-group dropright">
-                        <button class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm">
-                            <i class="fas fa-user fa-sm text-white-50"></i> 
-                                Registro de Beneficiario
-                            </button>
-                            </button>
-                            <button type="button"
-                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only"></span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <li>
-                                    <a class="btn" data-toggle="modal" data-target="#modalApoyo">Apoyo Institucional</a>
-                                </li>
-                                <li>
-                                    <a class="btn" data-toggle="modal" data-target="#modalBene">Beneficiario</a>
-                                </li>
-                                <li>
-                                    <a class="btn" data-toggle="modal" data-target="#modalTrabajador">Trabajador</a>
-                                </li>
-                                <li>
-                                    <a class="btn" data-toggle="modal" data-target="#modalJornada">Jornadas
-                                        Especiales</a>
-                                </li>
-                            </div>
+                    <div class="jumbotron">
+                        <h1 class="display-5">Registre un Beneficiario!</h1>
+                            <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
+                        <hr class="my-4">
+                            <p>Elija el tipo de Beneficiario.</p>
+                                <a class="btn btn-primary btn-ms" href="Listadeapoyo.php" role="button">Apoyo Institucional</a>
+                                <a class="btn btn-primary btn-ms" href="listadebeneficiario.php" role="button">Beneficiario</a>
+                                <a class="btn btn-primary btn-ms" href="listatrabajadores.php" role="button">Trabajador</a>
+                                <a class="btn btn-primary btn-ms" href="listajornadas.php" role="button">Jornadas Especiales</a>
                         </div>
-                        <a type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#modalDispo"><i
-                                class="fas fa-laptop fa-sm text-white-50"></i> Registrar Dispositivo</a>
-                    </div>
-
-
-                    <div class="row">
-
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Productividad de OAC</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <?php
-                         include "modal/modalBene.php";
-                         include "modal/modalApoyoInst.php";
-                         include "modal/modalTrabajador.php";
-                         include "modal/modalJornadaEsp.php";
-                        include "modalregistroDispositivo.php";
-
-                    ?>
+                    
                     </div>
 
                     <!-- /.container-fluid -->

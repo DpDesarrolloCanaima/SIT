@@ -216,12 +216,12 @@ $resultado8 = $mysqli->query($sql2);
                                                             </button>
                                                             <div class="dropdown-menu">
                                                                 <a class="dropdown-item btn btn-warning" data-toggle="modal"
-                                                                    data-target="#editDis'.$row['id_datos_del_dispositivo'].'"
+                                                                    data-target="#editDis'.$row['ic_dispositivo'].'"
                                                 href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima"
                                                     width="15" height="15">
                                                 Editar</a>
                                                 <a class="dropdown-item btn btn-danger"
-                                                    href="eliminardispositivo.php?id='.$row['id_datos_del_dispositivo'].'"><img
+                                                    href="eliminardispositivo.php?id='.$row['ic_dispositivo'].'"><img
                                                     src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15"
                                                     height="15"> Eliminar</a>
                          ';
