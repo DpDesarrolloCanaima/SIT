@@ -86,6 +86,43 @@ if ($_POST) {
     if (!preg_match("/[A-Z0-9]{25}/", $tarjetaIosSalida)) {
       $tarjetaIosSalida = "n/c";
     }
+
+    $serial_entrada_disco_duro = limpiarDatos($_POST['serial_entrada_disco_duro']);
+    if (!preg_match("/[A-Z0-9]{25}/", $serial_entrada_disco_duro)) {
+      echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El serial de disco duro no coincide con el formato solicitado.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        location.assign('detalletecnico.php');
+                    });
+            });
+                </script>";
+    }
+    $serial_salida_disco_duro = limpiarDatos($_POST['serial_salida_disco_duro']);
+    if (!preg_match("/[A-Z0-9]{25}/", $serial_salida_disco_duro)) {
+      echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'El serial del disco duro no coincide con el formato solicitado.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK'
+                    }).then(() => {
+                        location.assign('detalletecnico.php');
+                    });
+            });
+                </script>";
+    }
     $caraAserialEntrada = limpiarDatos($_POST['serial_entrada_cara_a']);
     if (!preg_match("/[A-Z0-9]{18}/", $caraAserialEntrada)) {
       echo "
@@ -405,10 +442,13 @@ if ($id_tipo_de_dispositivo == "") {
 
 require "config/conexionProvi.php";
 
-$sql = "INSERT INTO reparacion (id_reparacion, serial_entrada_tm, serial_salida_tm, cambio_pila_bios, serial_entrada_bat, serial_salida_bat, serial_entreda_tarj_ios, serial_salida_tarj_ios, serial_entreda_disco, serial_salida_disco, serial_entrada_cara_a, serial_entreda_cara_b, serial_entreda_cara_c, serial_entreda_cara_d,serial_salida_cara_a, serial_entrada_memoria_ram, serial_salida_memoria_ram, serial_entrada_teclado, serial_salida_teclado, serial_entrada_cargador, serial_salida_cargador, serial_entrada_pantalla, serial_salida_pantalla, serial_entrada_tarj_red, serial_salida_tarj_red, serial_entrada_fan_cooler, serial_salida_fan_cooler, id_status, id_dispositivo, id_tipo_de_dispositivo) VALUES (NULL, '$serialTarjetaMadreEntrada','$serialTarjetaMadreSalida', '$pilaBios', '$serialBateriaEntrada','$serialBateriaSalida','$tarjetaIosEntrada','$tarjetaIosSalida','',)";
+$sqlReparacion = "INSERT INTO reparacion (id_reparacion, serial_entrada_tm, serial_salida_tm, cambio_pila_bios, serial_entrada_bat, serial_salida_bat, serial_entreda_tarj_ios, serial_salida_tarj_ios, serial_entreda_disco, serial_salida_disco, serial_entrada_cara_a, serial_entreda_cara_b, serial_entreda_cara_c, serial_entreda_cara_d,serial_salida_cara_a, serial_entrada_memoria_ram, serial_salida_memoria_ram, serial_entrada_teclado, serial_salida_teclado, serial_entrada_cargador, serial_salida_cargador, serial_entrada_pantalla, serial_salida_pantalla, serial_entrada_tarj_red, serial_salida_tarj_red, cambio_fan_cooler, id_status, id_dispositivo, id_tipo_de_dispositivo) VALUES (NULL, '$serialTarjetaMadreEntrada','$serialTarjetaMadreSalida', '$pilaBios', '$serialBateriaEntrada','$serialBateriaSalida','$tarjetaIosEntrada','$tarjetaIosSalida','$serial_entrada_disco_duro','$serial_salida_disco_duro','$caraAserialEntrada','$cambio_cara_b','$cambio_cara_c','$cambio_cara_d','$caraAserialSalida','$serialEntradaMemoriaRam','$serialSalidaMemoriaRam','$serialEntradaTeclado','$serialSalidaTeclado','$serialEntradaCargador','$serialSalidaCargador','$serialEntradaPantalla','$serialSalidaPantalla','$serialEntradaTarjetaRed','$serialSalidaTarjetaRed','$fanCooler','$estatus', '$idDispo', '$id_tipo_de_dispositivo',)";
 
-// $sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+$respuesta = $mysqli->query($sqlReparacion);
 
+if ($respuesta === true) {
+  
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 $resultado = $mysqli->query($sql);
 
 if ($resultado) {
@@ -444,5 +484,24 @@ if ($resultado) {
     });
         </script>";
 }
+}else {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Registro de reparacion sin exito.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php?id=".$idDispo."');
+              });
+    });
+        </script>";
+}
+
+
 }
 ?>
