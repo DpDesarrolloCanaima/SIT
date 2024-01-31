@@ -1,16 +1,26 @@
-$(document).ready(function(){
-      
-    
-    $.ajax({
-      url: "ajax/procesos.jax.php",
-      method: "",
-      success: function(respuesta){
-          console.log(respuesta)
-      }
-    })
+<?php
+require("config/conexionProvi.php");
 
-});
+$query = "SELECT id_tipo_de_dispositivo, COUNT(*) AS numero_de_repeticiones FROM datos_del_dispotivo GROUP BY id_tipo_de_dispositivo;";
+$result = mysqli_query($mysqli, $query);
 
+// Obtener los datos de la consulta
+$data = [];
+while ($row = mysqli_fetch_assoc($result)) {
+    $data[] = [
+        "name" => $row["name"],
+        "value" => $row["value"],
+    ];
+}
+?>
+
+// Convertir los datos a JSON
+$json = json_encode($data);
+
+// Enviar los datos JSON a la gráfica
+echo $json;
+
+<script>
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");
 var myBarChart = new Chart(ctx, {
@@ -22,7 +32,7 @@ var myBarChart = new Chart(ctx, {
       backgroundColor: ['#52BE80', '#AF7AC5', '#F5B041', '#85929E'],
       hoverBackgroundColor: "#2e59d9",
       borderColor: "#4e73df",
-      data: [550, 150, 300, 400],
+      data: [20, 5, 300, 150],
     }],
   },
   options: {
@@ -86,3 +96,4 @@ var myBarChart = new Chart(ctx, {
     },
   }
 });
+</script>

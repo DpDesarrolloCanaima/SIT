@@ -20,11 +20,11 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
     </div>
-    <div class="sidebar-brand-text mx-3"><?php echo company; ?></div>
+    <div class="sidebar-brand-text mx-1"><?php echo company; ?></div>
     </a>
 
     <!-- Divider -->
-    <hr class="sidebar-divider my-0">
+    <hr class="sidebar-divider my-3">
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
@@ -114,22 +114,22 @@
 
     <?php
 
-        if($rol != 6){
-            echo 
-            '<li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-                    aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Graficas</span>
-                    </a>
-                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
-                        <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregados</a>
-                    </div>
-                </div>
-            </li>';
-        }
+        // if($rol != 6){
+        //     echo 
+        //     '<li class="nav-item">
+        //     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+        //             aria-expanded="true" aria-controls="collapseUtilities">
+        //         <i class="fas fa-fw fa-chart-area"></i>
+        //             <span>Graficas</span>
+        //             </a>
+        //         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        //             <div class="bg-white py-2 collapse-inner rounded">
+        //                 <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
+        //                 <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregados</a>
+        //             </div>
+        //         </div>
+        //     </li>';
+        // }
     ?>
 
     <!-- Nav Item - Pages Collapse Menu -->

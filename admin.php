@@ -34,7 +34,7 @@ $resultado2 = $mysqli->query($consulta2);
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Sistema de Inventario OAC</title>
+    <title>Sistema de Inventario y Trazabilidad (SIT)</title>
     <!-- FAVICON -->
     <link rel="icon" href="img/Canaima.png">
 
@@ -75,64 +75,16 @@ $resultado2 = $mysqli->query($consulta2);
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
 
-                    <div class="row">
+                <div class="row">
 
-                        <!-- Area Chart -->
-                        <div class="col-xl-8 col-lg-7">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Productividad de OAC</h6>
-                                    <!-- Buscardor de fechas-->
-                                    <div class="input-group">
-                                        <select class="custom-select" id="inputGroupSelect04"
-                                            aria-label="Example select with button addon">
-                                            <option selected>Seleccione la fecha...</option>
-                                            <?php
-                                                while ($row1 = $resultado2->fetch_assoc())  {
-                                                    echo  '<option value="">'.$row1['fecha_de_recepcion'];'</option>';
-                                                }
-                                            ?>
-                                        </select>
-                                        <div class="input-group-append">
-                                            <button class="btn btn-outline-secondary" type="button"
-                                                value="fecha">Buscar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myBarChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="jumbotron">
+                        <h1 class="display-5">Registre un Usuario Nuevo!</h1>
+                            <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
+                        <hr class="my-4">
+                            <p>De click en el siguiente boton.</p>
+                                <a class="btn btn-primary btn-ms" href="listadeusuario.php" role="button">Crear usuario</a>
+                                
                         </div>
-
-                        <!-- Pie Chart -->
-                        <div class="col-xl-4 col-lg-5">
-                            <div class="card shadow mb-4">
-                                <!-- Card Header - Dropdown -->
-                                <div
-                                    class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Estadisticas</h6>
-
-                                    <div class="dropdown no-arrow">
-                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        </a>
-                                    </div>
-                                </div>
-                                <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-pie pt-4 pb-2">
-                                        <canvas id="myPieChart"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- /.container-fluid -->
