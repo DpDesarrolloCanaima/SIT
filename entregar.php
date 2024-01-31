@@ -95,7 +95,17 @@ if ($_POST) {
 
     require "config/conexionProvi.php";
 // SET @usuario_actual =: '.$_SESSION['full_identificacion'].";
-    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', coordinador = 6, id_roles = '$rol'  WHERE id_datos_del_dispositivo = $idDispo";
+        // Realizamos una consulta para conocer cual es el usuario que esta realizando la reparacion.
+    $sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuario = $responsable AND id_roles = 5";
+    // Ejecutamos la consulta para obtener la respuesta
+      $respuestaResponsable = $mysqli->query($sqlResponsable);
+      //Nos traemos el resultado de esa consulta 
+      while ($row2 = $respuestaResponsable->fetch_assoc()) {
+              $nombreUsuario = $row2["usuario"];
+          }
+    // Guardamos en una variable el resultado de esa consulta.
+    $responsableAnalistaEntrega = $nombreUsuario;
+    $sql = "UPDATE datos_del_dispotivo SET fecha_de_entrega = '$fechaEntrega', id_estatus = '$estatus', responsable = '$responsable', responsable_analista_entrega = '$responsableAnalistaEntrega', coordinador = 6, id_roles = '$rol'  WHERE id_datos_del_dispositivo = $idDispo";
 
     $resultado = mysqli_query($mysqli, $sql);
 

@@ -441,14 +441,25 @@ if ($id_tipo_de_dispositivo == "") {
 }
 
 require "config/conexionProvi.php";
+// Realizamos una consulta para conocer cual es el usuario que esta realizando la reparacion.
+  $sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuario = $responsable AND id_roles = 4";
+// Ejecutamos la consulta para obtener la respuesta
+  $respuestaResponsable = $mysqli->query($sqlResponsable);
+  //Nos traemos el resultado de esa consulta 
+  while ($row2 = $respuestaResponsable->fetch_assoc()) {
+          $nombreUsuario = $row2["usuario"];
+      }
+// Guardamos en una variable el resultado de esa consulta.
+$responsableTecnico = $nombreUsuario;
 
 $sqlReparacion = "INSERT INTO reparacion (id_reparacion, serial_entrada_tm, serial_salida_tm, cambio_pila_bios, serial_entrada_bat, serial_salida_bat, serial_entreda_tarj_ios, serial_salida_tarj_ios, serial_entreda_disco, serial_salida_disco, serial_entrada_cara_a, serial_entreda_cara_b, serial_entreda_cara_c, serial_entreda_cara_d,serial_salida_cara_a, serial_entrada_memoria_ram, serial_salida_memoria_ram, serial_entrada_teclado, serial_salida_teclado, serial_entrada_cargador, serial_salida_cargador, serial_entrada_pantalla, serial_salida_pantalla, serial_entrada_tarj_red, serial_salida_tarj_red, cambio_fan_cooler, id_status, id_dispositivo, id_tipo_de_dispositivo) VALUES (NULL, '$serialTarjetaMadreEntrada','$serialTarjetaMadreSalida', '$pilaBios', '$serialBateriaEntrada','$serialBateriaSalida','$tarjetaIosEntrada','$tarjetaIosSalida','$serial_entrada_disco_duro','$serial_salida_disco_duro','$caraAserialEntrada','$cambio_cara_b','$cambio_cara_c','$cambio_cara_d','$caraAserialSalida','$serialEntradaMemoriaRam','$serialSalidaMemoriaRam','$serialEntradaTeclado','$serialSalidaTeclado','$serialEntradaCargador','$serialSalidaCargador','$serialEntradaPantalla','$serialSalidaPantalla','$serialEntradaTarjetaRed','$serialSalidaTarjetaRed','$fanCooler','$estatus', '$idDispo', '$id_tipo_de_dispositivo',)";
 
 $respuesta = $mysqli->query($sqlReparacion);
+// Si la consulta devuelve algun resultado, mostramos el mensaje 
 
 if ($respuesta === true) {
   
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', responsable_tecnico = '$responsableTecnico', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 $resultado = $mysqli->query($sql);
 
 if ($resultado) {
