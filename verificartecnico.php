@@ -110,6 +110,60 @@ if ($_POST) {
     }
 
     //DECISION DE QUE HACER CON LAS DEMAS CARAS DE LOS DISPOSITIVOS.
+    $cambio_cara_b = limpiarDatos($_POST['cara_b']);
+    if ($cambio_cara_b == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script language='JavaScript'>
+      document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              icon: 'error',
+              title: 'Marque alguna de las 2 opciones.',
+              showCancelButton: false,
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'OK'
+          }).then(() => {
+              location.assign('detalletecnico.php');
+          });
+  });
+      </script>";
+    }
+    $cambio_cara_c = limpiarDatos($_POST['cara_c']);
+    if ($cambio_cara_c == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script language='JavaScript'>
+      document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              icon: 'error',
+              title: 'Marque alguna de las 2 opciones.',
+              showCancelButton: false,
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'OK'
+          }).then(() => {
+              location.assign('detalletecnico.php');
+          });
+  });
+      </script>";
+    }
+    $cambio_cara_d = limpiarDatos($_POST['cara_d']);
+    if ($cambio_cara_d == "") {
+      echo "
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script language='JavaScript'>
+      document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              icon: 'error',
+              title: 'Marque alguna de las 2 opciones.',
+              showCancelButton: false,
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'OK'
+          }).then(() => {
+              location.assign('detalletecnico.php');
+          });
+  });
+      </script>";
+    }
     $serialEntradaMemoriaRam = limpiarDatos($_POST['serial_entrada_memoria_ram']);
     if (!preg_match("/[A-Z0-9]{15}/", $serialEntradaMemoriaRam)) {
       echo "
@@ -319,7 +373,26 @@ if ($idDispo == "") {
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
-                title: 'No se realizaron los cambios',
+                title: 'El identificador unico no se envio.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detalletecnico.php');
+              });
+    });
+        </script>";
+}
+
+$id_tipo_de_dispositivo = limpiarDatos($_POST['tipo_de_dispositivo']);
+if ($id_tipo_de_dispositivo == "") {
+  echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'El identificador del tipo de equipo no se envio.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
@@ -332,7 +405,9 @@ if ($idDispo == "") {
 
 require "config/conexionProvi.php";
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "INSERT INTO reparacion (id_reparacion, serial_entrada_tm, serial_salida_tm, cambio_pila_bios, serial_entrada_bat, serial_salida_bat, serial_entreda_tarj_ios, serial_salida_tarj_ios, serial_entreda_disco, serial_salida_disco, serial_entrada_cara_a, serial_entreda_cara_b, serial_entreda_cara_c, serial_entreda_cara_d,serial_salida_cara_a, serial_entrada_memoria_ram, serial_salida_memoria_ram, serial_entrada_teclado, serial_salida_teclado, serial_entrada_cargador, serial_salida_cargador, serial_entrada_pantalla, serial_salida_pantalla, serial_entrada_tarj_red, serial_salida_tarj_red, serial_entrada_fan_cooler, serial_salida_fan_cooler, id_status, id_dispositivo, id_tipo_de_dispositivo) VALUES (NULL, '$serialTarjetaMadreEntrada','$serialTarjetaMadreSalida', '$pilaBios', '$serialBateriaEntrada','$serialBateriaSalida','$tarjetaIosEntrada','$tarjetaIosSalida','',)";
+
+// $sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_tecnico = '$observacionT', responsable = '$responsable', coordinador = 6, id_roles = '$id_roles'  WHERE id_datos_del_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 
