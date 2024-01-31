@@ -2,7 +2,6 @@
 
 require("config/conexionProvi.php");
 
-
 $serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
 if (!preg_match("/[A-Z0-9]{18}/", $serialEquipo)) {
     echo "

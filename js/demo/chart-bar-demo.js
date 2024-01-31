@@ -1,15 +1,3 @@
-$(document).ready(function(){
-      
-    
-    $.ajax({
-      url: "ajax/procesos.jax.php",
-      method: "",
-      success: function(respuesta){
-          console.log(respuesta)
-      }
-    })
-
-});
 
 // Bar Chart Example
 var ctx = document.getElementById("myBarChart");

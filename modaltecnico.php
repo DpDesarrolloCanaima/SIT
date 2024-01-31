@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="verificarModal" tabindex="-1" aria-labelledby="verificarModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="verificarModalLabel">Cambios del equipo</h5>
@@ -158,7 +158,7 @@
                             name="serial_salida_fan_cooler">
                     </div>
                     <div class="form-group">
-                        <label for="fan_cooler">Cambio de fan cooler?</label>
+                        <label for="fan_cooler">¿Cambio el fan cooler?</label>
                         <div class="form-check">
                             <input class="form-check-input i-radio" type="radio" name="fan_cooler" id="fan_cooler_1"
                                 value="si">

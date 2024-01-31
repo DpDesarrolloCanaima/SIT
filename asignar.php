@@ -148,7 +148,7 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                                 Opciones
                                             </button>
                                             <div class="dropdown-menu">
-                                                <a class="dropdown-item btn btn-primary" id="btnAsign<?php echo  $row['id_datos_del_dispositivo']?>" data-toggle="modal" data-target="#asignar<?php echo  $row['id_datos_del_dispositivo']?>"  href="#"><img src="img/bootstrap-icons-1.10.5/check-circle-fill.svg " alt="Industrias Canaima" width="15" height="15"> Asignar</a>
+                                                <a class="dropdown-item btn btn-primary" id="btnAsign<?php echo  $row['id_dispositivo']?>" data-toggle="modal" data-target="#asignar<?php echo  $row['id_dispositivo']?>"  href="#"><img src="img/bootstrap-icons-1.10.5/check-circle-fill.svg " alt="Industrias Canaima" width="15" height="15"> Asignar</a>
                                             </div>
                                         </div>
                                     </td>
