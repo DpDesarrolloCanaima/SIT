@@ -76,7 +76,6 @@ $resultado2 = $mysqli->query($consulta2);
                     </div>
 
                     
-
                         <div class="jumbotron">
                         <h1 class="display-5">Registre un Usuario Nuevo!</h1>
                                 <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
@@ -85,6 +84,7 @@ $resultado2 = $mysqli->query($consulta2);
                             <a class="btn btn-primary btn-ms" href="listadeusuario.php" role="button"><i class="fas fa-user-plus fa-sm text-white-50"></i> Crear usuario</a>
                         </div>
                     </div>
+                </div>
 
                     <!-- /.container-fluid -->
 
