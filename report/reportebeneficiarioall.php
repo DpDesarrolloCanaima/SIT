@@ -4,7 +4,7 @@
 	require "../config/conexionProvi.php";
 	require "plantillabeneficiario.php";
 
-$sql = "SELECT e.ic, e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento,e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion,  g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre, t.tipo_documento FROM datos_del_entregante AS e 
+$sql = "SELECT e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento,e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion,  g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre, t.tipo_documento FROM datos_del_entregante AS e 
 INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN area AS a ON a.id_area = e.id_area
 INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
@@ -19,7 +19,6 @@ $resultado = $mysqli->query($sql);
 	$pdf->AddPage();
 
 	$pdf->SetFont("Arial", "B", 12);
-	$pdf->Cell(40, 5,"IC", 1, 0, "C");
 	$pdf->Cell(20, 5,"Tipo", 1, 0, "C");
 	$pdf->Cell(30, 5,"Documento", 1, 0, "C");
 	$pdf->Cell(60, 5,"Beneficiario", 1, 0, "C");
@@ -41,7 +40,6 @@ $resultado = $mysqli->query($sql);
 
 		switch ($origen) {
 			case 'Apoyo Institucional':
-					$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
 					$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
 					$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
 					$pdf->Cell(60, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");

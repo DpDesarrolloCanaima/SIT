@@ -4,7 +4,7 @@
 	require "../config/conexionProvi.php";
 	require "plantillaapoyo.php";
 	$id = $_REQUEST['id'];
-$sql = "SELECT e.id_datos_del_entregante, e.ic, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql = "SELECT e.id_datos_del_entregante, e.ic_dispositivo, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = $id ";
@@ -16,7 +16,6 @@ $resultado = $mysqli->query($sql);
 	$pdf->AddPage();
 
 	$pdf->SetFont("Arial", "B", 12);
-	$pdf->Cell(40, 5,"IC", 1, 0, "C");
 	$pdf->Cell(50, 5,"Instituciones", 1, 0, "C");
 	$pdf->Cell(20, 5,"T.D", 1, 0, "C");
 	$pdf->Cell(30, 5,"Documento", 1, 0, "C");
@@ -28,7 +27,6 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(50, 5,"Origen", 1, 1, "C");
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultado->fetch_assoc()) {
-	$pdf->Cell(40, 5,$row['ic'], 1, 0, "C");
 	$pdf->Cell(50, 5,utf8_decode($row['nombre_del_beneficiario']), 1, 0, "C");
 	$pdf->Cell(20, 5,$row['tipo_documento'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
