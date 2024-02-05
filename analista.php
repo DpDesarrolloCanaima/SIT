@@ -143,8 +143,8 @@ $resultado15 = $mysqli->query($sql15);
                                 <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalApoyo"><i class="fas fa-building fa-sm text-white-50"></i> Apoyo Institucional</a>
                                 <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalBene"><i class="fas fa-user fa-sm text-white-50"></i> Beneficiario</a>
                                 <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalTrabajador"><i class="fas fa-briefcase fa-sm text-white-50"></i> Trabajador</a>
-                                <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalJornada"><i class="fas fa-star fa-sm text-white-50"></i> Jornadas Especiales</a>
-                                <a class="btn btn-secondary btn-ms" data-toggle="modal" data-target="#modalDispo"><i class="fas fa-laptop fa-sm text-white-50"></i> Registrar Dispositivo</a></a>
+                                <!-- <a class="btn btn-primary btn-ms" data-toggle="modal" data-target="#modalJornada"><i class="fas fa-star fa-sm text-white-50"></i> Jornadas Especiales</a> -->
+                                <!-- <a class="btn btn-secondary btn-ms" data-toggle="modal" data-target="#modalDispo"><i class="fas fa-laptop fa-sm text-white-50"></i> Registrar Dispositivo</a></a> -->
                             </center>
                             <?php
                                 include "modal/modalBene.php";

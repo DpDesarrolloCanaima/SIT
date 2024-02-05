@@ -2,43 +2,7 @@
 
 require("config/conexionProvi.php");
 
-$serialEquipo = limpiarDatos($_POST['serial_del_equipo']);
-if (!preg_match("/[A-Z0-9]{18}/", $serialEquipo)) {
-    echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'El serial no coincide con el formato correspondiente',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-            }).then(() => {
-                location.assign('dispositivosentrada.php');
-            });
-    });
-        </script>";
-}
-$sqlValidation = " SELECT serial_equipo FROM datos_del_dispotivo WHERE serial_equipo = '$serialEquipo'";
-$resultValidation = $mysqli->query($sqlValidation); 
-if (mysqli_num_rows($resultValidation)>0) {
-    echo "
-        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-        <script language='JavaScript'>
-        document.addEventListener('DOMContentLoaded', function() {
-            Swal.fire({
-                icon: 'error',
-                title: 'El equipo ya esta registrado',
-                showCancelButton: false,
-                confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
-              }).then(() => {
-                location.assign('dispositivosentrada.php');
-              });
-    });
-        </script>";
-    }else {
+
         $tipoDeEquipo = limpiarDatos($_POST['tipo_de_equipo']);
         if ($tipoDeEquipo == "") {
             echo "
@@ -292,7 +256,7 @@ if (mysqli_num_rows($resultValidation)>0) {
         $responsableAnalistaEntrega = "aun no";
 
 
-        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, responsable_analista_recibido, responsable_tecnico, responsable_verificador, responsable_analista_entrega, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$responsableAnalistaRecibido','$responsableTecnico','$responsableVerficador','$responsableAnalistaEntrega','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion', '$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
+        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, responsable_analista_recibido, responsable_tecnico, responsable_verificador, responsable_analista_entrega, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$responsableAnalistaRecibido','$responsableTecnico','$responsableVerficador','$responsableAnalistaEntrega','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion', '$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario')";
         $resultado = mysqli_query($mysqli, $sql);
 
         if ($resultado) {
@@ -321,26 +285,7 @@ if (mysqli_num_rows($resultValidation)>0) {
                         });
                 });
                     </script>";
-                    }
-
-                //     echo "
-                //     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-                //     <script language='JavaScript'>
-                //     document.addEventListener('DOMContentLoaded', function() {
-                //         Swal.fire({
-                //             icon: 'success',
-                //             title: 'Se registro correctamente el dispositivo',
-                //             showCancelButton: false,
-                //             confirmButtonColor: '#3085d6',
-                //             confirmButtonText: 'OK',
-                //             timer: 1500
-                //         }).then(() => {
-
-                //             location.assign('dispositivosentrada.php');
-
-                //         });
-                // });
-                //     </script>";
+            }   
                 }else {
                     echo "
                     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -361,7 +306,7 @@ if (mysqli_num_rows($resultValidation)>0) {
                 });
                     </script>";
                 }
-}
+
 													
 function limpiarDatos($data)
 {
