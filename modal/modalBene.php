@@ -123,7 +123,7 @@
                     </div>
                     <div class="form-group">
                         <label for="responsableEntrega">Responsable de entrega</label>
-                        <input type="text" class="form-control" id="responsableEntrega" name="responsable_entrega" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="responsableEntrega" name="responsable_entrega" pattern="[a-zA-Z\s]{5,60}">
                         <span></span>
                     </div>
                     <hr>

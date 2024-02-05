@@ -454,7 +454,7 @@ if ($_POST['registrar']) {
     }
 
     $responsableEntrega = limpiarDatos($_POST['responsable_entrega']);
-    if (!preg_match("/[a-zA-Z\s]{10,60}/", $responsableEntrega)) {
+    if (!preg_match("/[a-zA-Z\s]{5,60}/", $responsableEntrega)) {
       echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
