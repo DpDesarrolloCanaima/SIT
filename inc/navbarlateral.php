@@ -85,7 +85,6 @@
                                 <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
                                 <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
                                 <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
-                                <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
                                 </div>
                             </div>
                            ';
