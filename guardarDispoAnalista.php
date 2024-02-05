@@ -121,7 +121,7 @@ require("function.php");
             });
                 </script>";
             }
-            $motivoIngreso = limpiarDatos($_POST['motivo_ingreso']);
+            $motivoIngreso = limpiarDatos($_POST['']);
             $rol = limpiarDatos($_POST['id_roles']);
             $origen = limpiarDatos($_POST['origen']);
             $estatus = limpiarDatos($_POST['estatus']);
@@ -132,28 +132,44 @@ require("function.php");
             $observaciones_tecnico = "Falta por observaciones";
             $observaciones_verificador = "Falta por observaciones";
             $responsable = limpiarDatos($_POST['responsable']);
-            $responsableAnalistaRecibido = $nombreUsuario;
-            $responsableTecnico = "aun no";
-            $responsableVerficador = "aun no";
-            $responsableAnalistaEntrega = "aun no";
             //Generacion de IC para el registro del dispositivo
             
-            $datos = "SELECT MAX(id_dispositivo) AS id_dispositivo FROM datos_del_dispotivo";
-            $resultado=mysqli_query($mysqli,$datos);
-            while ($row = mysqli_fetch_assoc($resultado)) {
-                $valor1 = $row['id_dispositivo'];
-                    $contadordb = 0;
-                    for ($i=0; $i <= $valor1 ; $i++) { 
-                        if ($valor1 == 0) {
-                            $contadordb = 1;
-                        }else {
-                            $contadordb++;
-                        }
+        $datos = "SELECT MAX(ic_dispositivo) AS ic_dispositivo FROM datos_del_dispotivo";
+        $resultado=mysqli_query($mysqli,$datos);
+    
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            $valor1 = $row['ic_dispositivo'];
+                $contadordb = 0;
+                for ($i=0; $i <= $valor1 ; $i++) { 
+                    if ($valor1 == 0) {
+                        $contadordb = 1;
+                    }else {
+                        $contadordb++;
                     }
-                    $ic =  date("Y", strtotime($fechaRecepcion)) . "-". $contadordb ;
-            }
+                }
+                $año = date("Y", strtotime($fechaRecepcion));
+                $enviaric = $año."-".$contadordb;
 
-            $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, responsable_analista_recibido, responsable_tecnico, responsable_verificador, responsable_analista_entrega, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$responsableAnalistaRecibido','$responsableTecnico','$responsableVerficador','$responsableAnalistaEntrega','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion', '$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario')";
+        echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'success',
+                title: 'Se registro correctamente el dispositivo',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+                timer: 1500
+              }).then(() => {
+                location.assign('dispositivosentrada.php');
+              });
+     });
+        </script>";
+        }
+
+
+            $sql = "INSERT INTO datos_del_dispotivo (id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable,  observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario) VALUES ('$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$observaciones', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion','$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario');";
 
             $resultado = $mysqli->query($sql);
             if ($resultado) {
@@ -167,6 +183,7 @@ require("function.php");
                                 showCancelButton: false,
                                 confirmButtonColor: '#3085d6',
                                 confirmButtonText: 'OK',
+                                timer: 1500
                               }).then(() => {
                                 location.assign('dispositivosentrada.php');
                               });
@@ -183,6 +200,7 @@ require("function.php");
                                 showCancelButton: false,
                                 confirmButtonColor: '#3085d6',
                                 confirmButtonText: 'OK',
+                                timer: 1500
                               }).then(() => {
                                 location.assign('dispositivosentrada.php');
                              });
@@ -201,6 +219,7 @@ require("function.php");
                                 showCancelButton: false,
                                 confirmButtonColor: '#3085d6',
                                 confirmButtonText: 'OK',
+                                timer: 1500
                               }).then(() => {
                                 location.assign('analista.php');
                              });

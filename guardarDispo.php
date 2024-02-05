@@ -246,7 +246,7 @@ require("config/conexionProvi.php");
             $nombreUsuario = $row2["usuario"];
         }
         $coordinador = limpiarDatos($_POST['coordinador']);
-        $fechaEntrega = date('00-00-0000');
+        $fechaEntrega = "0000-00-00";
         $comprobacion = "Faltan comprobaciones";
         $observaciones_tecnico = "Falta por observaciones";
         $observaciones_verificador = "Falta por observaciones";
