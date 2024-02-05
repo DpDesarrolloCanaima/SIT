@@ -63,16 +63,18 @@ $id_usuario = $_SESSION['id_usuarios'];
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?php echo company; ?></h1>
                     </div>
-                    <div class="row">
+                    
                     <div class="jumbotron">
                         <h1 class="display-5">Realice sus Reparaciones y Diagnosticos!</h1>
                             <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                         <hr class="my-4">
                             <p>Elija el estatus de la Reparacion o Diagnosticos.</p>
-                                <a class="btn btn-primary btn-ms" href="#" role="button">En linea</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button">Reparado</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-arrow-right fa-sm text-white-50"></i>En linea</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i>Reparado</a>
                         </div>
                     </div>
+</div>
+
 
                     <!-- Footer -->
                     <footer class="sticky-footer bg-white">

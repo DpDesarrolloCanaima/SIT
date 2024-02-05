@@ -153,8 +153,8 @@ $resultado15 = $mysqli->query($sql15);
                                 include "modal/modalJornadaEsp.php";
                                 include "modalregistroDispositivo.php";
                              ?>
-
-                    </div>
+                             </div>
+                        </div>
 
                     <!-- /.container-fluid -->
 
