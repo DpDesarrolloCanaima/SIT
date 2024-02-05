@@ -276,7 +276,7 @@ if (mysqli_num_rows($resultValidation)>0) {
                 $ic =  date("Y", strtotime($fechaRecepcion)) . "-". $contadordb ;
         }
 
-        $sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuario = $responsable AND id_roles = 3";
+        $sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuarios = $responsable AND id_roles = 3";
         $respuestaResponsable = $mysqli->query($sqlResponsable);
         while ($row2 = $respuestaResponsable->fetch_assoc()) {
             $nombreUsuario = $row2["usuario"];
