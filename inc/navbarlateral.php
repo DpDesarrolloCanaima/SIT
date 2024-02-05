@@ -108,28 +108,6 @@
     </li>
     </li>
 
-    <!-- Nav Item - Utilities Collapse Menu -->
-
-    <?php
-
-        // if($rol != 6){
-        //     echo 
-        //     '<li class="nav-item">
-        //     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-        //             aria-expanded="true" aria-controls="collapseUtilities">
-        //         <i class="fas fa-fw fa-chart-area"></i>
-        //             <span>Graficas</span>
-        //             </a>
-        //         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-        //             <div class="bg-white py-2 collapse-inner rounded">
-        //                 <a class="collapse-item" href="dispositivoRecibidosGraficas.php">Recibidos</a>
-        //                 <a class="collapse-item" href="dispositivoEntregadosGraficas.php">Entregados</a>
-        //             </div>
-        //         </div>
-        //     </li>';
-        // }
-    ?>
-
     <!-- Nav Item - Pages Collapse Menu -->
 
     <li class="nav-item">
