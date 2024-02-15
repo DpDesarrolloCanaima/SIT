@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="guardarDispo.php" method="POST">
+                <form action="guardarDispo.php" method="POST" id="comprobacion">
                     <div class="form-group">
                         <label for="tipo_De_equipo">Tipo de Equipo</label>
                         <select name="tipo_de_equipo" id="tipo_De_equipo" class="form-control form-control-lg">

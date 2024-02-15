@@ -318,6 +318,7 @@ $resultado15 = $mysqli->query($sql15);
     </div>
 
     <?php include "inc/script.php"; ?>
+    <script src="js/pruebadebarra.js"></script>
 </body>
 
 </html>
