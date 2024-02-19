@@ -40,6 +40,9 @@ switch($asignar){
         $observaciones= 'observaciones_verificador';
         $mostrarModal = "Verificador";
         break;
+    default:
+        header("content/404-view.php");
+    break;
 }
 
 
@@ -116,6 +119,7 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>IC</th>
                                             <th>Serial del Equipo</th>
                                             <th>Serial del Cargador</th>
                                             <th>Fecha de Recepción</th>
@@ -136,7 +140,7 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                         while ($row = $resultado->fetch_assoc()) :
 
                                     ?>
-                                        <tr>
+                                        <tr><td><?php echo $row['ic_dispositivo']; ?></td>
                                             <td><?php echo $row['serial_equipo']; ?></td>
                                             <td><?php echo $row['serial_de_cargador']; ?></td>
                                             <td><?php echo $row['fecha_de_recepcion']; ?></td>
