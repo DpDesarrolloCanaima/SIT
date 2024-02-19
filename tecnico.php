@@ -69,8 +69,8 @@ $id_usuario = $_SESSION['id_usuarios'];
                             <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                         <hr class="my-4">
                             <p>Elija el estatus de la Reparacion o Diagnosticos.</p>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-arrow-right fa-sm text-white-50"></i>En linea</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i>Reparado</a>
+                                <a class="btn btn-primary btn-ms" href="dispositivos.php?idenlace=2" role="button"><i class="fas fa-arrow-right fa-sm text-white-50"></i>En linea</a>
+                                <a class="btn btn-primary btn-ms" href="dispositivos.php?idenlace=3" role="button"><i class="fas fa-check fa-sm text-white-50"></i>Reparado</a>
                         </div>
                     </div>
 </div>
