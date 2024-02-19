@@ -6,7 +6,7 @@ session_start();
 //  Verificacion para el inicio de sesion.
 if ($_POST) {
     $usuario = limpiarDatos($_POST['usuario']);
-    if (!preg_match("/[a-zA-Z0-9]{7,10}/", $usuario)) {
+    if (!preg_match("/[a-zA-Z0-9]{4,10}/", $usuario)) {
         echo  "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
