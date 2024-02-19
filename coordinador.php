@@ -94,9 +94,9 @@ $resultado2 = $mysqli->query($consulta2);
                             <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                         <hr class="my-4">
                             <p>Elija el tipo de Asignacion.</p>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-user fa-sm text-white-50"></i> Analista</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-screwdriver fa-sm text-white-50"></i> Tecnico</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-user-check fa-sm text-white-50"></i> Verificador</a>
+                                <a class="btn btn-primary btn-ms" href="asignar.php?tipo=analista" role="button"><i class="fas fa-user fa-sm text-white-50"></i> Analista</a>
+                                <a class="btn btn-primary btn-ms" href="asignar.php?tipo=tecnico" role="button"><i class="fas fa-screwdriver fa-sm text-white-50"></i> Tecnico</a>
+                                <a class="btn btn-primary btn-ms" href="asignar.php?tipo=verificador" role="button"><i class="fas fa-user-check fa-sm text-white-50"></i> Verificador</a>
                         </div>
                     </div>
                 </div>
