@@ -44,7 +44,7 @@ $result = $mysqli->query($sql3);
 
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql2 = "SELECT d.ic_dispositivo, d.serial_equipo, d.serial_de_cargador,d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, d.observaciones_tecnico, d.observaciones_verificador,d.responsable, d.id_estatus, j.nombre, j.modelo,  k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql2 = "SELECT d.ic_dispositivo, d.id_dispositivo, d.serial_equipo, d.serial_de_cargador,d.fecha_de_recepcion, d.estado_recepcion_equipo,d.fecha_de_entrega, d.observaciones_analista, d.observaciones_tecnico, d.observaciones_verificador,d.responsable, d.id_estatus, j.nombre, j.modelo,  k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
@@ -174,6 +174,7 @@ $resultado8 = $mysqli->query($sql2);
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
+                                            <th>IC</th>
                                             <th>Tipo de Dispositivo</th>
                                             <th>Modelo</th>
                                             <th>Serial del Equipo</th>
@@ -205,6 +206,7 @@ $resultado8 = $mysqli->query($sql2);
                                         while ($row = $resultado8->fetch_assoc()) :
                                         ?>
                                         <tr>
+                                            <td><?php echo $row['ic_dispositivo'];?></td>
                                             <td><?php echo $row['nombre']; ?></td>
                                             <td><?php echo $row['modelo']; ?></td>
                                             <td><?php echo $row['serial_equipo']; ?></td>
@@ -233,13 +235,13 @@ $resultado8 = $mysqli->query($sql2);
                                             <?php
                                                     switch ($rol) {
                                                         case 3:
-                                                            echo '<td><a class="btn btn-primary" href="detalleanalista.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                            echo '<td><a class="btn btn-primary" href="detalleanalista.php?id='.$row['id_dispositivo'].'" role="button">Detalles</a></td>';
                                                             break;
                                                             case 4:
-                                                                echo '<td><a class="btn btn-primary" href="detalletecnico.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                                echo '<td><a class="btn btn-primary" href="detalletecnico.php?id='.$row['id_dispositivo'].'" role="button">Detalles</a></td>';
                                                             break;
                                                             case 5:
-                                                                echo '<td><a class="btn btn-primary" href="detalles.php?id='.$row['id_datos_del_dispositivo'].'" role="button">Detalles</a></td>';
+                                                                echo '<td><a class="btn btn-primary" href="detalles.php?id='.$row['id_dispositivo'].'" role="button">Detalles</a></td>';
                                                             break;
                                                     }
 

@@ -24,6 +24,13 @@
                             }
                             ?>
                             <tr>
+                                <th> IC
+                                    <td>
+                                        <?php echo $rowde['ic_dispositivo'];?>
+                                    </td>
+                                </th>
+                            </tr>
+                            <tr>
                                 <th>Tipo de Dispositivo</th>
                                 <td><?php echo $rowde['nombre'];?></td>
                             </tr>
