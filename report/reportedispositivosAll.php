@@ -1,7 +1,7 @@
 <?php
 
 
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantillaall.php";
 
 	$sql = "SELECT d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 

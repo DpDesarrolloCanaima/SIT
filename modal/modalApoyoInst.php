@@ -10,31 +10,31 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="registrarapoyo.php" method="POST">
+                <form id="formularioApoyoRegistro">
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el RIF</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">RIF</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{9}" title="Debe ingresar el RIF en solo digitos">
-                            <input type="hidden" name="tipo_documento" value="2">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" id="documento" pattern="[0-9]{9}" title="Debe ingresar el RIF en solo digitos">
+                            <input type="hidden" name="tipo_documento" value="2" id="tipo_documento">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_de_institucion" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres 80">
+                        <input type="text" class="form-control" id="nombre_de_institucion" name="nombre_de_institucion" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres 80">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="correoBene">Correo</label>
-                        <input type="email" class="form-control" id="correoBene" aria-describedby="emailHelp"
+                        <input type="email" class="form-control" id="correoApoyo" aria-describedby="emailHelp"
                             name="correoApoyo">
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
+                        <label for="phone">Telefono</label>
+                        <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -53,13 +53,14 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Dirección</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea class="form-control" id="direccion" rows="3"
                             name="direccion"></textarea>
                         <span></span>
                     </div>
                     <hr>
-                    <input type="hidden" name="origen" value="1">
-                    <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
+                    <input type="hidden" name="origen" id="origen" value="1">
+                    <!-- <button type="submit" class="btn btn-success" onclick="registroApoyo()">Enviar</button> -->
+                    <input type="button" class="btn btn-success" onclick="registroApoyo()" value="Registrar">
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>

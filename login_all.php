@@ -1,12 +1,12 @@
 <?php
-require "config/conexionProvi.php";
+require "config/conexion.php";
 require "function.php";
 session_start();
 
 //  Verificacion para el inicio de sesion.
 if ($_POST) {
     $usuario = limpiarDatos($_POST['usuario']);
-    if (!preg_match("/[a-zA-Z0-9]{4,10}/", $usuario)) {
+    if (!preg_match("/[a-zA-Z0-9]{4,30}/", $usuario)) {
         echo  "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -24,24 +24,24 @@ if ($_POST) {
         </script>";
     }
     $password = limpiarDatos($_POST['password']);
-    // if (!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/", $password)) {
-    //     # code...
-    //     echo  "
-    //     <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-    //     <script language='JavaScript'>
-    //     document.addEventListener('DOMContentLoaded', function() {
-    //         Swal.fire({
-    //             icon: 'error',
-    //             title: 'Las caracteristicas no cumplen con el formato preestablecido.',
-    //             showCancelButton: false,
-    //             confirmButtonColor: '#3085d6',
-    //             confirmButtonText: 'OK'
-    //           }).then(() => {
-    //             location.assign('index.php');
-    //           });
-    //         });
-    //     </script>";
-    // }
+    if (!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/", $password)) {
+        # code...
+        echo  "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Las caracteristicas no cumplen con el formato preestablecido.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('index.php');
+              });
+            });
+        </script>";
+    }
 
     $sql = "SELECT id_usuarios, password, usuario, id_roles, cedula, nombre FROM usuarios WHERE usuario='$usuario' ";
     $resultado = $mysqli->query($sql);

@@ -1,7 +1,7 @@
 <?php
 
 
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "planillajornadas.php";
 	$id = $_REQUEST['id'];
 $sql = "SELECT e.id_datos_del_entregante,  e.ic, e.nombre_del_beneficiario,t.tipo_documento, e.cedula, e.fecha_de_nacimiento, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 

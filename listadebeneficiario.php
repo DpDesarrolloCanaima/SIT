@@ -1,6 +1,6 @@
 <?php
 require "config/app.php";
-require "config/conexionProvi.php";
+require "config/conexion.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
@@ -13,7 +13,7 @@ $idusuario = $_SESSION['id_usuarios'];
 
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, e.id_origen, g.genero, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.edad, e.fecha_de_nacimiento, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion, e.id_origen, e.descontinuado, g.genero, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN genero AS g ON  g.id_genero=e.id_genero
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 2 ";
@@ -72,6 +72,11 @@ $resultado14 = $mysqli->query($sql14);
 //Consulta para traer los datos de los motivos del porque entra el equipo.
 $sql15 = "SELECT id, motivo FROM tipo_de_motivo";
 $resultado15 = $mysqli->query($sql15);
+
+$sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuarios = $idusuario AND id_roles = '$rol'";
+$resultadoResponsable = $mysqli->query($sqlResponsable);
+
+
 ?>
 
 <!DOCTYPE html>
@@ -206,6 +211,9 @@ $resultado15 = $mysqli->query($sql15);
                                     <tbody>
                                         <?php
                                         while ($row = $resultado->fetch_assoc()) :
+
+                                            $validacion = $row['descontinuado'];
+                                            if ($validacion == 2) {
                                         ?>
                                         <tr>
                                             <td><?php echo $row['nombre_del_beneficiario']; ?></td>
@@ -232,7 +240,7 @@ $resultado15 = $mysqli->query($sql15);
                                                         <div class="dropdown-menu">
 
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editBene'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
+                                                            <a class="dropdown-item btn btn-danger" href="php/eliminar/eliminarbeneficiario.php?id='.$row['id_datos_del_entregante'].'&origen2"><img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                                             <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#modalDispo'.$row['id_datos_del_entregante'].'" href="#"><img src="img/svg/circulorelleno.svg " alt="Industrias Canaima" width="15" height="15"> Agregar</a>
                                                             </div>
                                                             </div>
@@ -258,9 +266,9 @@ $resultado15 = $mysqli->query($sql15);
 
 
                                             <?php
-                            include "modalEditBene.php";
-                            include "modalDeRegistroDis.php";
-
+                            include "modal/edit/modalEditBene.php";
+                            include "modal/modalDeRegistroDis.php";
+                            }
                             endwhile;
                         ?>
                                         </tr>
@@ -273,56 +281,21 @@ $resultado15 = $mysqli->query($sql15);
 
                     <?php 
                      include "modal/modalBene.php";
-                     include "modal/modalApoyoInst.php";
-                     include "modal/modalTrabajador.php";
-                     include "modal/modalJornadaEsp.php";
+                     
                     ?>
 
                 </div>
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Industrias Canaima 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
+            
 
-        </div>
-        <!-- End of Content Wrapper -->
+    <?php require "inc/footer.php";?>
+    <script src="js/function.js"></script>
+    <script src="js/registros/registroBeneficiario.js"></script>
+    <script src="js/registros/registrarDispositivo.js"></script>
+    <?php require "inc/script.php";?>
 
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-success" href="logout.php">Salir</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php include "inc/script.php"; ?>
 </body>
 
 </html>

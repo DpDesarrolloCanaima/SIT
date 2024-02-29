@@ -1,7 +1,7 @@
 <?php
 
 
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantillatrabajador.php";
     $id = $_GET['id'];
 $sql = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 

@@ -12,7 +12,7 @@
             echo '<a class="sidebar-brand d-flex align-items-center justify-content-center" href="verificador.php">';
             break;    
         default:
-            header("Location: 404.php");
+            header("Location: 404.html");
             break;} 
 
 ?>
@@ -101,7 +101,6 @@
                     <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
                     <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
                     <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
-                    <a class ="dropdown-item" href="listajornadas.php">Jornadas Especiales</a>
                     </div>
                 </div>
                     ';

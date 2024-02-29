@@ -1,7 +1,7 @@
 <?php
 
 
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantillaenlinea.php";
 
 

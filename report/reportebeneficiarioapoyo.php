@@ -1,10 +1,10 @@
 <?php
 
 
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantillaapoyo.php";
 	$id = $_REQUEST['id'];
-$sql = "SELECT e.id_datos_del_entregante, e.ic_dispositivo, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = $id ";

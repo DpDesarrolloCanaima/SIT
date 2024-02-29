@@ -17,7 +17,7 @@
 
 
     <div class="sidebar-brand-icon rotate-n-15">
-        <img src="img/Canaima.png " alt="Industrias Canaima" width="42" height="42">
+        <img src="img/Canaima.png" alt="Industrias Canaima" width="42" height="42">
     </div>
     <div class="sidebar-brand-text mx-2"><?php echo company; ?></div>
     </a>
