@@ -25,7 +25,7 @@
             </div>
 
             <div class="inputContainer">
-                <input type="password" name="password" id="inputPassword" class="input" placeholder="a" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}" title="La contraseñano cumple con los caracteres establecidos.">
+                <input type="password" name="password" id="inputPassword" class="input" placeholder="a" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,25}" title="La contraseñano cumple con los caracteres establecidos.">
                 <label for="" class="label">Contraseña</label>
             </div>
 
