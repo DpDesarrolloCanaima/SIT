@@ -1,7 +1,7 @@
 <?php
 
 //Manera local
-//$mysqli = new mysqli("localhost", "root", "", "sit");
+// $mysqli = new mysqli("localhost", "root", "", "sit");
 
 //Manera con servidor
 
