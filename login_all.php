@@ -24,7 +24,7 @@ if ($_POST) {
         </script>";
     }
     $password = limpiarDatos($_POST['password']);
-    if (!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/", $password)) {
+    if (!preg_match("/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,25}$/", $password)) {
         # code...
         echo  "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
