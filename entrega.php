@@ -33,7 +33,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detallesanalista.php');
+                location.assign('detalleanalista.php');
               });
     });
         </script>";
