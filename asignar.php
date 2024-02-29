@@ -1,6 +1,6 @@
 <?php
 require "config/app.php";
-require "config/conexionProvi.php";
+require "config/conexion.php";
 
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
@@ -41,7 +41,7 @@ switch($asignar){
         $mostrarModal = "Verificador";
         break;
     default:
-        header("content/404-view.php");
+        header("404.html");
     break;
 }
 
@@ -172,7 +172,7 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
                                             </td>
                                         </tr>
                                         <?php
-                                        include "modalAsignar.php";
+                                        include "modal/modalAsignar.php";
                                         endwhile;
                                     ?>
                                     </tbody>
@@ -186,57 +186,9 @@ $usuarios = mysqli_fetch_all($result, $resulttype = MYSQLI_ASSOC);
             </div>
             <!-- End of Main Content -->
 
-            <!-- Footer -->
-            <footer class="sticky-footer bg-white">
-                <div class="container my-auto">
-                    <div class="copyright text-center my-auto">
-                        <span>Copyright &copy; Industrias Canaima 2022</span>
-                    </div>
-                </div>
-            </footer>
-            <!-- End of Footer -->
-
-        </div>
-        <!-- End of Content Wrapper -->
-
-    </div>
-    <!-- End of Page Wrapper -->
-
-    <!-- Scroll to Top Button-->
-    <a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">¿Estas seguro?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn-success" href="logout.php">Salir</a>
-                    <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <?php include "inc/script.php"; ?>
+            
+    <?php require "inc/footer.php";?>
+    <?php require "inc/script.php";?>
 </body>
-
-<script>
-window.addEventListener('DOMContentLoaded', (event) => {
-    // Obtén una referencia al modal por su ID
-    var modal = document.getElementById('btnAsign<?php echo $_GET["asignarid"]; ?>')
-
-    // Abre el modal utilizando el método show() del modal
-    modal.click();
-});
-</script>
 
 </html>

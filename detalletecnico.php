@@ -1,6 +1,6 @@
 <?php
 require "config/app.php";
-require "config/conexionProvi.php";
+require "config/conexion.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
@@ -9,9 +9,9 @@ if (!isset($_SESSION['id_usuarios'])) {
         header("Location: index.php");
     }
 }
-$id_usuario = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
+$id_usuario = $_SESSION['id_usuarios'];
 $idDispositivo = $_GET['id'];
 
 $_SESSION['lastId'] = $idDispositivo;
@@ -28,6 +28,8 @@ WHERE d.id_dispositivo = $idDispositivo";
 
 $resultado = $mysqli->query($sql);
 
+$sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuarios = $id_usuario AND id_roles = '$rol'";
+$resultadoResponsable = $mysqli->query($sqlResponsable);
 ?>
 
 <!DOCTYPE html>
@@ -72,54 +74,141 @@ $resultado = $mysqli->query($sql);
 
                 <?php include "inc/navbar.php"; ?>
                 <!-- End of Topbar -->
-
-                <?php
-
-                   include "content/detallestecnico.php";
-
-                ?>
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Industrias Canaima 2022</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
-
-            </div>
-            <!-- End of Content Wrapper -->
-
+                <!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Dispositivo</h6>
         </div>
-        <!-- End of Page Wrapper -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <div class="form-inline" action="verificartecnico.php" method="get">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
 
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
+                        <tbody>
 
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Estas seguro?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn-success" href="logout.php">Salir</a>
-                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    </div>
+                            <?php
+                        $rowde = $resultado->fetch_assoc();
+                         
+                            ?>
+                            <tr>
+                                <th> IC
+                                    <td>
+                                        <?php echo $rowde['ic_dispositivo'];?>
+                                    </td>
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Tipo de Dispositivo</th>
+                                <td><?php echo $rowde['nombre'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Modelo</th>
+                                <td><?php echo $rowde['modelo'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Serial Del Equipo</th>
+                                <td><?php echo $rowde['serial_equipo'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Serial del Cargador</th>
+                                <td><?php echo $rowde['serial_de_cargador'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Fecha de recepcion</th>
+                                <td><?php echo $rowde['fecha_de_recepcion'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Estado de Recepcion del Equipo</th>
+                                <td><?php echo $rowde['estado'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Falla</th>
+                                <td><?php echo $rowde['tipo_de_motivo'];?></td>
+                            </tr>
+                            <tr>
+                                <th>Observaciones</th>
+                                <td>
+                                    <?php echo $rowde['observaciones_analista'];?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Origen</th>
+                                <td>
+                                    <?php echo $rowde['origen'];?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Estatus</th>
+                                <td>
+                                    <?php echo $rowde['estatus'];?>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    
                 </div>
+                <?php
+                     $verestatus = $rowde['estatus'];
+                     $tipoDeEquipo = $rowde['id_tipo_de_dispositivo'];
+                     if ($verestatus == "En la linea") {
+                         
+
+                         switch ($tipoDeEquipo) {
+                            case 1:
+                                echo '
+                         <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#verificarModalTablet">
+                        Reparado
+                    </button>
+                         ';
+                                break;
+                            case 2:
+                                echo '
+                         <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#verificarModalTablet">
+                        Reparado
+                    </button>
+                         ';
+                                break;
+                            case 9:
+                                echo '
+                         <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                        data-target="#verificarModalTablet">
+                        Reparado
+                    </button>
+                         ';
+                                break;
+                            default:
+                            echo '
+                            <!-- Button trigger modal -->
+                       <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                           data-target="#verificarModal">
+                           Reparado
+                       </button>
+                            ';
+                                break;
+                         }
+                         }
+                            include "modal/modaltecnicoEquipo.php";
+                            include "modal/modalreparaciontablet.php";
+                            
+                        ?>
             </div>
         </div>
+    </div>
 
-        <?php include "inc/script.php"; ?>
+</div>
+</div>
+<!-- End of Main Content -->
+    <?php require "inc/footer.php";?>
+    <script src="js/function.js"></script>
+    <script src="js/registros/registroReparacion.js"></script>
+    <?php require "inc/script.php";?>
 </body>
 
 </html>

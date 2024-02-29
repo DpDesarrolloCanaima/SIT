@@ -1,8 +1,25 @@
 <?php
+require "function.php";
 
 if ($_POST) {
-  require "function.php";
 $idDispo = limpiarDatos($_POST['id_dispositivo']);
+if ($idDispo == "") {
+    echo "
+    <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+    <script language='JavaScript'>
+    document.addEventListener('DOMContentLoaded', function() {
+        Swal.fire({
+            icon: 'error',
+            title: 'No se envio el identificador.',
+            showCancelButton: false,
+            confirmButtonColor: '#3085d6',
+            confirmButtonText: 'OK'
+          }).then(() => {
+            location.assign('detallesverificador.php');
+          });
+});
+    </script>";
+}
 $observacion = $_POST['observaciones'];
 if ($observacion == "") {
   echo "
@@ -16,12 +33,29 @@ if ($observacion == "") {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalles.php');
+                location.assign('detallesverificador.php');
               });
     });
         </script>";
 }
 $comprobacion = implode(',', $_POST['comprobaciones']);
+if ($comprobacion == "") {
+    echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'Marca las casillas.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesverificador.php');
+              });
+    });
+        </script>";
+}
 $estatus =limpiarDatos($_POST['id_status']);
 if ($estatus != 5) {
   echo "
@@ -35,7 +69,7 @@ if ($estatus != 5) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalles.php');
+                location.assign('detallesverificador.php');
               });
     });
         </script>";
@@ -53,7 +87,7 @@ if ($responsable == "") {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalles.php');
+                location.assign('detallesverificador.php');
               });
     });
         </script>";
@@ -66,31 +100,40 @@ if ($id_roles == "") {
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
-                title: 'No se realizaron los cambios',
+                title: 'No se envio el identificador.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalles.php');
+                location.assign('detallesverificador.php');
+              });
+    });
+        </script>";
+}
+$responsableRecepcion = limpiarDatos($_POST['responsableRecepcion']);
+if ($responsableRecepcion == "") {
+    echo "
+        <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+        <script language='JavaScript'>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'No se envia el responsable.',
+                showCancelButton: false,
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK'
+              }).then(() => {
+                location.assign('detallesverificador.php');
               });
     });
         </script>";
 }
 
-require "config/conexionProvi.php";
+require "config/conexion.php";
 
-// Realizamos una consulta para conocer cual es el usuario que esta realizando la reparacion.
-$sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuario = $responsable AND id_roles = 5";
-// Ejecutamos la consulta para obtener la respuesta
-  $respuestaResponsable = $mysqli->query($sqlResponsable);
-  //Nos traemos el resultado de esa consulta 
-  while ($row2 = $respuestaResponsable->fetch_assoc()) {
-          $nombreUsuario = $row2["usuario"];
-      }
-// Guardamos en una variable el resultado de esa consulta.
-$responsableVerificador = $nombreUsuario;
+$responsableVerificador = $responsableRecepcion;
 
-$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', responsable_verificador = '$responsableVerificador', comprobaciones = '$comprobacion',coordinador = 6, id_roles = '$id_roles' WHERE id_datos_del_dispositivo = $idDispo"; 
+$sql = "UPDATE datos_del_dispotivo SET id_estatus = '$estatus',  observaciones_verificador = '$observacion', responsable = '$responsable', responsable_verificador = '$responsableVerificador', comprobaciones = '$comprobacion',coordinador = 6, id_roles = '$id_roles' WHERE id_dispositivo = $idDispo"; 
 
 $resultado = $mysqli->query($sql);
 
@@ -106,7 +149,7 @@ if ($resultado) {
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'OK'
           }).then(() => {
-            location.assign('detalles.php?id=".$idDispo."');
+            location.assign('detallesverificador.php?id=".$idDispo."');
           });
 });
     </script>";
@@ -122,7 +165,7 @@ if ($resultado) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalles.php?id=".$idDispo."');
+                location.assign('detallesverificador.php?id=".$idDispo."');
               });
     });
         </script>";

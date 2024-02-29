@@ -1,5 +1,5 @@
 <?php
-require "config/conexionProvi.php";
+require "config/conexion.php";
 
 $id_usuarios = $_SESSION['id_usuarios'];
 $usuario = $_SESSION['usuario'];
@@ -164,7 +164,7 @@ $usuario = $_SESSION['usuario'];
                     break;
                 case 5:
                     $estatusDispo = 4;
-                    $filenameDetalles = "detalles.php";
+                    $filenameDetalles = "detallesverificador.php";
                     $notiText = "Verificar, ";
                     $consultaver = "SELECT registro, observaciones_tecnico, id_dispositivo, id_tipo_de_dispositivo FROM
                     datos_del_dispotivo WHERE id_estatus = ".$estatusDispo." AND responsable = ".$id_usuarios." ORDER BY registro DESC ";
@@ -234,7 +234,7 @@ $usuario = $_SESSION['usuario'];
                 case 6:
                     $filenameDetalles = "asignar.php";
                     $notiText = "Asignar, ";
-                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, ic_dispositivo, id_tipo_de_dispositivo, id_estatus FROM datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
+                    $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, id_estatus FROM datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
                     $resultadover = $mysqli->query($consultaver);
                     $numr = $resultadover->num_rows;
                     echo '

@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="edittrabajador.php" method="POST">
+                <form action="editartrabajador.php" method="POST">
 
                     <div class="form-group">
                         <label for="inputAddress">Ingrese la cedula</label>

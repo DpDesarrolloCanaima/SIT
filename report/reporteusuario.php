@@ -1,5 +1,5 @@
 <?php
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantilla.php";
 
 	$id = $_REQUEST['id'];
@@ -12,16 +12,16 @@ $resultado = $mysqli->query($consulta);
 	$pdf->AddPage();
 	
 	$pdf->SetFont("Arial", "B", 12);
-	$pdf->Cell(30, 5,"Usuario", 1, 0, "C");
-	$pdf->Cell(20, 5,"Nombre", 1, 0, "C");
+	$pdf->Cell(20, 5,"Usuario", 1, 0, "C");
+	$pdf->Cell(30, 5,"Nombre", 1, 0, "C");
 	$pdf->Cell(30, 5,"Cedula", 1, 0, "C");
 	$pdf->Cell(50, 5,"Correo", 1, 0, "C");
 	$pdf->Cell(30, 5,"Perfil", 1, 0, "C");
 	$pdf->Cell(40, 5,"Fecha De Registro", 1, 1, "C");
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultado->fetch_assoc()) {
-	$pdf->Cell(30, 5,$row['usuario'], 1, 0, "C");
-	$pdf->Cell(20, 5,$row['nombre'], 1, 0, "C");
+	$pdf->Cell(20, 5,$row['usuario'], 1, 0, "C");
+	$pdf->Cell(30, 5,$row['nombre'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['roles'], 1, 0, "C");

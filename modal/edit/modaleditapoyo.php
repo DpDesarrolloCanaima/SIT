@@ -11,7 +11,7 @@
 
             </div>
             <div class="modal-body">
-                <form action="editarapoyo.php" method="POST">
+                <form action="editarApoyoInst.php" method="POST">
                     <!--<br> -->
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el RIF</label>

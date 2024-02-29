@@ -17,13 +17,13 @@
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
                             <input type="text" class="form-control" aria-label="Input group example"
-                                aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{8}">
-                            <input type="hidden" name="tipo_documento" value="1">
+                                aria-describedby="btnGroupAddon" id="documento" name="documento" pattern="[0-9]{8}">
+                            <input type="hidden" id="tipo_documento" name="tipo_documento" value="1">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
+                        <input type="text" class="form-control" id="nombre_del_beneficiario" name="nombre_del_beneficiario" pattern="[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]{3,80}" title="Maximo de caracteres de 80">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -60,7 +60,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone" pattern="[0-9]{11}">
+                        <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]{11}">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -79,7 +79,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Dirección</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea class="form-control" id="direccion" rows="3"
                             name="direccion"></textarea>
                         <span></span>
                     </div>
@@ -88,26 +88,26 @@
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
                             <input class="form-check-input i-radio" type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios1" value="si" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea3');ch.style.display='inline' ; " >
+                                id="discapacidad_o_condicion" value="si" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='inline' ; " >
                             <label class="form-check-label" for="exampleRadios1">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input " type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios2" value="no" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea3');ch.style.display='none' ; "checked>
+                                id="discapacidad_o_condicion" value="no" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='none' ; "checked>
                             <label class="form-check-label" for="exampleRadios2">
                                 No
                             </label>
                         </div>
                     </div>
-                    <div class="form-group" id="exampleFormControlTextarea3" style="display:none">
+                    <div class="form-group" id="descripcionDiscapacidad1" style="display:none">
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
-                        <textarea class="form-control" rows="3" name="descripcion_discapacidad" ></textarea>
+                        <textarea class="form-control" rows="3" id="descripcionDiscapacidad" name="descripcionDiscapacidad" ></textarea>
                         <span></span>
                     </div>
                     <hr>
-                    <input type="hidden" name="origen" value="3">
+                    <input type="hidden" id="origen" name="origen" value="3">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>

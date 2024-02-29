@@ -1,6 +1,6 @@
 <?php
 require "config/app.php";
-require "config/conexionProvi.php";
+require "config/conexion.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
@@ -81,7 +81,7 @@ $resultado2 = $mysqli->query($consulta2);
                                 <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                             <hr class="my-4">
                             <p>De click en el siguente boton.</p>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#registrarUser"> <i class="fas fa-user fa-sm text-white-50"></i> Crear Usuario</a>
+                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#RegistroUsuario"> <i class="fas fa-user fa-sm text-white-50"></i> Crear Usuario</a>
                         </div>
                     </div>
                 </div>
@@ -120,53 +120,15 @@ $resultado2 = $mysqli->query($consulta2);
 
                     </div>
                     <!-- End of Main Content -->
+                    <?php
+                        include "modal/modalRegistroUsuario.php";
+                    ?>
 
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Industrias Canaima 2022 - G-20010288-8</span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
+    <?php require "inc/footer.php";?>
+    <script src="js/function.js"></script>
+    <script src="js/registrousuario.js"></script>
+    <?php require "inc/script.php";?>
 
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">¿Estas seguro?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-success" href="logout.php">Salir</a>
-                            <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <?php 
-                include "inc/script.php"; 
-                include "modalderegistro.php";
-            ?>
-            
-                            
-                        
+</body>
 
 </html>

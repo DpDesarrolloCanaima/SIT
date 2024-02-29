@@ -9,20 +9,20 @@
         </button>
             </div>
             <div class="modal-body">
-                <form  action="registroDeBene.php" method="POST">
+                <form id="RegistroBeneficiario">
                     <div class="form-group">
                     <label for="inputAddress">Ingrese la cedula</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
-                            <input type="hidden" name="tipo_documento" value="1">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" id="documento" name="documento" pattern="[0-9]{8}" title="Debe ingresar la cedula sin (.) solo numeros">
+                            <input type="hidden" name="tipo_documento" value="1" id="tipo_documento">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre del Beneficiario</label>
-                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_beneficiario" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
+                        <input type="text" class="form-control" id="nombre_del_beneficiario" name="nombre_del_beneficiario" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -39,12 +39,12 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="fechaNacBene">Fecha de Nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNacBene" name="fecha_de_nacimiento">
+                        <label for="fecha_de_nacimiento">Fecha de Nacimiento</label>
+                        <input type="date" class="form-control" id="fecha_de_nacimiento" name="fecha_de_nacimiento">
                     </div>
                     <div class="form-group">
                         <label for="nombreRepre">Nombre del Representante</label>
-                        <input type="text" class="form-control" id="nombreRepre" name="nombre_del_representante" pattern="[a-zA-Z\s]{3,80}" title="El maximo de caracteres es 80.">
+                        <input type="text" class="form-control" id="nombre_del_representante" name="nombre_del_representante" pattern="[a-zA-Z\s]{3,80}" title="El maximo de caracteres es 80.">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="form-group">
                         <label for="telfBene">Telefono</label>
-                        <input type="text" class="form-control" id="telfBene" name="phone" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
+                        <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Dirección</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                        <textarea class="form-control" id="direccion" rows="3"
                             name="direccion"></textarea>
                         <span></span>
                     </div>
@@ -83,52 +83,52 @@
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
                             <input class="form-check-input i-radio" type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios1" value="si" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea2');ch.style.display='inline' ; " >
-                            <label class="form-check-label" for="exampleRadios1">
+                                id="discapacidad_o_condicion" value="si" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad');ch.style.display='inline' ; " >
+                            <label class="form-check-label" for="discapacidad_o_condicion">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input " type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios2" value="no" onclick = "javascript: var ch=document.getElementById('exampleFormControlTextarea2');ch.style.display='none' ; "checked>
+                                id="exampleRadios2" value="no" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='none' ; "checked>
                             <label class="form-check-label" for="exampleRadios2">
                                 No
                             </label>
                         </div>
                     </div>
-                    <div class="form-group" id="exampleFormControlTextarea2" style="display:none">
+                    <div class="form-group" id="descripcionDiscapacidad" style="display:none">
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
-                        <textarea class="form-control" rows="3" name="descripcion_discapacidad" ></textarea>
+                        <textarea class="form-control" rows="3" name="descripcionDiscapacidad" id="descripcionDiscapacidad"></textarea>
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="consejoComunal">Consejo Comunal</label>
-                        <input type="text" class="form-control" id="consejoComunal" name="consejo_comunal" pattern="[a-zA-Z\s]{10,60}">
+                        <label for="consejo_comunal">Consejo Comunal</label>
+                        <input type="text" class="form-control" id="consejo_comunal" name="consejo_comunal" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="mesaTelecomunicaciones">Mesa de telecomunicaciones</label>
-                        <input type="text" class="form-control" id="mesaTelecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{10,60}">
+                        <label for="mesa_telecomunicaciones">Mesa de telecomunicaciones</label>
+                        <input type="text" class="form-control" id="mesa_telecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="institucionEntrega">Institucion Educativa (Entrega)</label>
-                        <input type="text" class="form-control" id="institucionEntrega" name="institucion_entrega" pattern="[a-zA-Z\s]{10,60}">
+                        <label for="institucion_entrega">Institucion Educativa (Entrega)</label>
+                        <input type="text" class="form-control" id="institucion_entrega" name="institucion_entrega" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
-                        <label for="institucionEstudia">Institucion Educativa (Estudia Actualmente)</label>
-                        <input type="text" class="form-control" id="institucionEstudia" name="institucion_estudia" pattern="[a-zA-Z\s]{10,60}">
+                        <label for="institucion_estudia">Institucion Educativa (Estudia Actualmente)</label>
+                        <input type="text" class="form-control" id="institucion_estudia" name="institucion_estudia" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="responsableEntrega">Responsable de entrega</label>
-                        <input type="text" class="form-control" id="responsableEntrega" name="responsable_entrega" pattern="[a-zA-Z\s]{5,60}">
+                        <input type="text" class="form-control" id="responsable_entrega" name="responsable_entrega" pattern="[a-zA-Z\s]{5,60}">
                         <span></span>
                     </div>
                     <hr>
-                    <input type="hidden" name="origen" value="2">
-                    <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
+                    <input type="hidden" id="origen" name="origen" value="2">
+                    <input type="button" class="btn btn-success" onclick="RegistroBeneficiario()" value="Registrar">
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>

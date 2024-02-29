@@ -1,5 +1,5 @@
 <?php
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantilla.php";
 
 $consulta = "SELECT u.id_usuarios, u.usuario, u.nombre, u.cedula, u.password, u.correo, u.registro, r.roles FROM usuarios AS u INNER JOIN roles AS r ON r.id_roles=u.id_roles";

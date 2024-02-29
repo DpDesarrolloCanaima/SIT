@@ -12,13 +12,13 @@
                             <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                         <hr class="my-4">
                             <p>Elija la tabla a Consultar.</p>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-arrow-down fa-sm text-white-50"></i> Recibidos</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-arrow-right fa-sm text-white-50"></i> En linea</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i> Reparados</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check-circle fa-sm text-white-50"></i> Por verificar</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i> Verificados</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check-circle fa-sm text-white-50"></i> Por entregar</a>
-                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i> Entregados</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-arrow-down fa-sm text-white-50"></i>Recibidos</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-arrow-right fa-sm text-white-50"></i>En linea</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i>Reparados</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check-circle fa-sm text-white-50"></i>Por verificar</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i>Verificados</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check-circle fa-sm text-white-50"></i>Por entregar</a>
+                                <a class="btn btn-primary btn-ms" href="#" role="button"><i class="fas fa-check fa-sm text-white-50"></i>Entregados</a>
                         </div>
                     </div>
     </div>

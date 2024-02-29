@@ -1,6 +1,6 @@
 <?php
 // Conexion a la base de datos
-require "config/conexionProvi.php";
+require "config/conexion.php";
 //  Funciones requeridas para la validacion de los datos.
 require "function.php";
 
@@ -73,7 +73,7 @@ require "function.php";
         }
     }
     $nombreInstitucion = limpiarDatos($_POST['nombre_del_beneficiario']);
-    if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
+    if (!preg_match("/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]{3,80}/", $nombreInstitucion)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
                 <script language='JavaScript'>
@@ -321,7 +321,7 @@ require "function.php";
                 
         ";
     }
-    $descripcionDisca = limpiarDatos($_POST['descripcion_discapacidad']);
+    $descripcionDisca = limpiarDatos($_POST['descripcionDiscapacidad']);
     if ($descripcionDisca == "") {
         $descripcionDisca = "No posee";
     }
@@ -358,8 +358,9 @@ require "function.php";
     $institucionEstudia = "no posee";
     $responsableEntrega = "No posee";
     $consejoComunal = "no posee";
+    $descontinuado = 2;
     
-    $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,consejo_comunal, mesa_telecom, intitucion_entrega, institucion_estudia, responsable, id_origen) VALUES ('$nombreInstitucion', '$tipoDocumento','$documento','$edad','$generoTrabajador','$fechaNac','$areaTrabajador','$cargoTrabajador','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$consejoComunal', '$mesaTelecomunicaciones','$institucionEntrega','$institucionEstudia','$responsableEntrega','$origen')";
+    $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,consejo_comunal, mesa_telecom, intitucion_entrega, institucion_estudia, responsable, id_origen, descontinuado) VALUES ('$nombreInstitucion', '$tipoDocumento','$documento','$edad','$generoTrabajador','$fechaNac','$areaTrabajador','$cargoTrabajador','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$consejoComunal', '$mesaTelecomunicaciones','$institucionEntrega','$institucionEstudia','$responsableEntrega','$origen', '$descontinuado')";
 
     $resultado = $mysqli->query($sql);
 

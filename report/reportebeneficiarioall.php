@@ -1,7 +1,7 @@
 <?php
 
 
-	require "../config/conexionProvi.php";
+	require "../config/conexion.php";
 	require "plantillabeneficiario.php";
 
 $sql = "SELECT e.nombre_del_beneficiario, e.cedula, e.edad, e.fecha_de_nacimiento,e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.posee_discapacidad_o_condicion, e.descripcion_discapacidad_condicion,  g.genero, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre, t.tipo_documento FROM datos_del_entregante AS e 

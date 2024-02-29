@@ -1,6 +1,6 @@
 <?php
 require "config/app.php";
-require "config/conexionProvi.php";
+require "config/conexion.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
@@ -19,15 +19,18 @@ $_SESSION['lastId'] = $idDispositivo;
 
 //Consulta para traer los datos almacenados de los dispositivos
 
-$sql = "SELECT d.id_datos_del_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones_verificador, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
+$sql = "SELECT d.id_dispositivo, ic_dispositivo, d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.observaciones_verificador, j.nombre, j.modelo, k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
 INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
 INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
 INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo
-WHERE d.id_datos_del_dispositivo = $idDispositivo";
+WHERE d.id_dispositivo = $idDispositivo";
 
 $resultado = $mysqli->query($sql);
+
+$sqlResponsable = "SELECT usuario FROM usuarios WHERE id_usuarios = $idusuario AND id_roles = '$rol'";
+$resultadoResponsable = $mysqli->query($sqlResponsable);
 ?>
 
 <!DOCTYPE html>
@@ -74,53 +77,120 @@ $resultado = $mysqli->query($sql);
                 <?php include "inc/navbar.php"; ?>
                 <!-- End of Topbar -->
 
+                <!-- Begin Page Content -->
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Dispositivo</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+
+                    <tbody>
+                        <?php
+                        $rowde = $resultado->fetch_assoc();
+                       
+                        $verestatus = $rowde['estatus'];
+                        if ($verestatus == "Verificado") {
+                                    echo '
+                                    <a class="btn btn-primary"
+                                    href="actualizaranalist.php?id='.$rowde['id_dispositivo'].'&responsable='. $id_usuario.'&rol='. $rol.'&estatus=6"
+                            role="button">Actualizar</a>
+                            ';
+                            }
+
+
+                            ?>
+                        <tr>
+                                <th> IC
+                                    <td>
+                                        <?php echo $rowde['ic_dispositivo'];?>
+                                    </td>
+                                </th>
+                            </tr>
+                        <tr>
+                            <th>Tipo de Dispositivo</th>
+                            <td><?php echo $rowde['nombre'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Modelo</th>
+                            <td><?php echo $rowde['modelo'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Serial Del Equipo</th>
+                            <td><?php echo $rowde['serial_equipo'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Serial del Cargador</th>
+                            <td><?php echo $rowde['serial_de_cargador'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Fecha de recepcion</th>
+                            <td><?php echo $rowde['fecha_de_recepcion'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Estado de Recepcion del Equipo</th>
+                            <td><?php echo $rowde['estado'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Falla</th>
+                            <td><?php echo $rowde['tipo_de_motivo'];?></td>
+                        </tr>
+                        <tr>
+                            <th>Observaciones</th>
+                            <td>
+                                <?php echo $rowde['observaciones_verificador'];?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Origen</th>
+                            <td>
+                                <?php echo $rowde['origen'];?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Estatus</th>
+                            <td>
+                                <?php echo $rowde['estatus'];?>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
                 <?php
+                 $verestatus = $rowde['estatus'];
+                 if ($verestatus == "Por entregar") {
+                             echo '
+                             <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                    data-target="#entregarDispo">
+                    Entregado
+                </button>
+                     ';
+                     }
 
-                   include "content/detallesanalista.php";
-
+                
                 ?>
-
-                <!-- Footer -->
-                <footer class="sticky-footer bg-white">
-                    <div class="container my-auto">
-                        <div class="copyright text-center my-auto">
-                            <span>Copyright &copy; Industrias Canaima 2022</span>
-                        </div>
-                    </div>
-                </footer>
-                <!-- End of Footer -->
-
-            </div>
-            <!-- End of Content Wrapper -->
-
-        </div>
-        <!-- End of Page Wrapper -->
-
-        <!-- Scroll to Top Button-->
-        <a class="scroll-to-top rounded" href="#page-top">
-            <i class="fas fa-angle-up"></i>
-        </a>
-
-        <!-- Logout Modal-->
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">¿Estas seguro?</h5>
-                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn-success" href="logout.php">Salir</a>
-                        <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                    </div>
-                </div>
+                <?php
+                        include "modal/modalentrega.php";
+                    ?>
             </div>
         </div>
+    </div>
+</div>
 
-        <?php include "inc/script.php"; ?>
+</div>
+
+               </div>
+</div>
+<!-- End of Main Content -->
+    <?php require "inc/footer.php";?>
+    <?php require "inc/script.php";?>            
+
+
+
+</body>
 </body>
 
 </html>

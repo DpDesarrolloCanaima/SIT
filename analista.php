@@ -1,6 +1,6 @@
 <?php
 require "config/app.php";
-require "config/conexionProvi.php";
+require "config/conexion.php";
 session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
@@ -150,55 +150,22 @@ $resultado15 = $mysqli->query($sql15);
                                 include "modal/modalBene.php";
                                 include "modal/modalApoyoInst.php";
                                 include "modal/modalTrabajador.php";
-                                include "modal/modalJornadaEsp.php";
-                                include "modalregistroDispositivo.php";
+                                // include "modalregistroDispositivo.php";
                              ?>
                              </div>
                         </div>
 
                     <!-- /.container-fluid -->
-
-                    <!-- Footer -->
-                    <footer class="sticky-footer bg-white">
-                        <div class="container my-auto">
-                            <div class="copyright text-center my-auto">
-                                <span>Copyright &copy; Industrias Canaima 2022 - G-20010288-8</span>
-                            </div>
-                        </div>
-                    </footer>
-                    <!-- End of Footer -->
-
-                </div>
-                <!-- End of Content Wrapper -->
-
-            </div>
-            <!-- End of Page Wrapper -->
-
-            <!-- Scroll to Top Button-->
-            <a class="scroll-to-top rounded" href="#page-top">
-                <i class="fas fa-angle-up"></i>
-            </a>
-
-            <!-- Logout Modal-->
-            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">¿Estas seguro?</h5>
-                            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">×</span>
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-                            <a class="btn btn-success" href="logout.php">Salir</a>
-                            <button class="btn btn-danger" type="button" data-dismiss="modal">Cancelar</button>
-                        </div>
                     </div>
-                </div>
-            </div>
+</div>
+</div>
 
-            <?php include "inc/script.php"; ?>
+    <?php require "inc/footer.php";?>
+    <script src="js/function.js"></script>
+    <script src="js/registros/registroapoyo.js"></script>
+    <script src="js/registros/registroBeneficiario.js"></script>
+    <?php require "inc/script.php";?>
+
 </body>
 
 </html>

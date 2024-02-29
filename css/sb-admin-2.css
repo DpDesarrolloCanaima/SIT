@@ -1825,7 +1825,7 @@ pre code {
   border: 0;
 }
 
-.form-control{
+.form-control {
   display: block;
   width: 100%;
   height: calc(1.5em + 0.75rem + 2px);
@@ -1840,7 +1840,6 @@ pre code {
   border-radius: 0.35rem;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-
 
 @media (prefers-reduced-motion: reduce) {
   .form-control {
@@ -2013,7 +2012,6 @@ textarea.form-control {
   margin-top: 0.3rem;
   margin-left: -1.25rem;
 }
-
 
 .form-check-input[disabled] ~ .form-check-label,
 .form-check-input:disabled ~ .form-check-label {
@@ -3364,8 +3362,6 @@ input[type="button"].btn-block {
   width: 100%;
 }
 
-
-
 .input-group > .form-control,
 .input-group > .form-control-plaintext,
 .input-group > .custom-select,
@@ -3476,7 +3472,7 @@ input[type="button"].btn-block {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #272d58;
+  color: #6e707e;
   text-align: center;
   white-space: nowrap;
   background-color: #eaecf4;
