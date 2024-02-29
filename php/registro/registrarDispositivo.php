@@ -100,9 +100,10 @@ if ($_POST) {
         $responsableTecnico = "aun no";
         $responsableVerficador = "aun no";
         $responsableAnalistaEntrega = "aun no";
+        $observacionesAnalistaEntrega = "aun no";
         $descontinuado = 2;
 
-        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, responsable_analista_recibido, responsable_tecnico, responsable_verificador, responsable_analista_entrega, observaciones_analista, observaciones_tecnico, observaciones_verificador, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario, descontinuado) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$responsableAnalistaRecibido','$responsableTecnico','$responsableVerficador','$responsableAnalistaEntrega','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$comprobacion', '$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario' , '$descontinuado')";
+        $sql = "INSERT INTO datos_del_dispotivo (id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, serial_equipo, serial_de_cargador, fecha_de_recepcion, estado_recepcion_equipo, fecha_de_entrega, responsable, responsable_analista_recibido, responsable_tecnico, responsable_verificador, responsable_analista_entrega, observaciones_analista, observaciones_tecnico, observaciones_verificador, observaciones_analista_entrega, comprobaciones, motivo_de_ingreso, coordinador, id_roles, id_origen, id_estatus, id_motivo, id_datos_del_beneficiario, descontinuado) VALUES (NULL, '$ic','$tipoDeEquipo','$serialEquipo','$serialCargador','$fechaRecepcion','$estadoRecepcion', '$fechaEntrega', '$responsable','$responsableAnalistaRecibido','$responsableTecnico','$responsableVerficador','$responsableAnalistaEntrega','$observaciones_analista', '$observaciones_tecnico', '$observaciones_verificador', '$observacionesAnalistaEntrega', '$comprobacion', '$motivoIngreso','$coordinador','$rol','$origen','$estatus', '$falla','$beneficiario' , '$descontinuado')";
         $resultado = mysqli_query($mysqli, $sql);
 
 if ($resultado) {
