@@ -46,7 +46,7 @@ if ($_POST) {
     
     $pass_c = sha1($password);
     $descontinuado = 2;
-    $sql = "SELECT correo FROM usuarios WHERE cedula = '$cedula'";
+    $sql = "SELECT cedula FROM usuarios WHERE cedula = '$cedula'";
     $resultado = $mysqli->query($sql);
     $n = $resultado->num_rows;
 
