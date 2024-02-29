@@ -357,7 +357,7 @@ if ($_POST) {
     }
 
     //Llamamos al archivo que continene la conexion
-    require "config/conexion.php";
+    require "../../config/conexion.php";
     //Realizamos la consulta requerida
     $sql = "UPDATE datos_del_entregante SET nombre_del_beneficiario = '$nombre', tipo_documento = '$tipoDocumento', cedula = '$documento', Id_genero = '$genero', id_area = '$idarea', id_cargo = '$idcargo', correo = '$correo', telefono = '$telefono', estado = '$estado', municipio = '$municipio', direccion = '$direccion', posee_discapacidad_o_condicion = '$discapacidad', descripcion_discapacidad_condicion = '$descripDisca', id_origen = '$origen' WHERE id_datos_del_entregante = '$editTrabajador' ";
 

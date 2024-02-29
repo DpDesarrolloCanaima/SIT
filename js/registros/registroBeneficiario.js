@@ -182,7 +182,7 @@ const RegistroBeneficiario = async ()=>{
     datos.append("municipio", municipio);
     datos.append("direccion", direccion);
     datos.append("discapacidad_o_condicion", discapacidadOCondicion);
-    datos.append("descripcion_discapacidad", descripcionDiscapacidad);
+    datos.append("descripcionDiscapacidad", descripcionDiscapacidad);
     datos.append("consejo_comunal", consejoComunal);
     datos.append("mesa_telecomunicaciones", mesaTelecomunicaciones);
     datos.append("institucion_entrega", institucionEntrega);

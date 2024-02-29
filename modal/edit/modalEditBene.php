@@ -11,7 +11,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="updateBene.php" method="POST">
+                <form action="php/update/editbene.php" method="POST">
                     <div class="form-group">
                     <label for="inputAddress">Ingrese la cedula</label>
                     <div class="input-group">

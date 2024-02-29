@@ -96,7 +96,7 @@
                             </label>
                         </div>
                     </div>
-                    <div class="form-group" id="descripcionDiscapacidad" style="display:none">
+                    <div class="form-group" id="descripcionDiscapacidad1" style="display:none">
                         <label for="exampleInputPassword1">Descripción De Discapacidad o Condición</label>
                         <textarea class="form-control" rows="3" name="descripcionDiscapacidad" id="descripcionDiscapacidad"></textarea>
                         <span></span>

@@ -84,7 +84,7 @@ if ($_POST) {
         $valido['success']=false;
         $valido['mensaje']="Debe marcar una opción.";
     }
-    $descripcionDiscapacidadCondicion = limpiarDatos($_POST['descripcion_discapacidad']);
+    $descripcionDiscapacidadCondicion = limpiarDatos($_POST['descripcionDiscapacidad']);
     if ($descripcionDiscapacidadCondicion == "") {
        $descripcionDiscapacidadCondicion = "No posee";
     }

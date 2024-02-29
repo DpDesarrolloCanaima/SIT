@@ -3,26 +3,25 @@ require "../../function.php";
 
 if ($_POST) {
     $idEditBene = $_POST['ideditbene'];
-    $icedit = limpiarDatos($_POST['icedit']);
-    if (!preg_match("/\b/", $icedit)) {
+    if ($idEditBene == "") {
       echo "
-              <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
-              <script language='JavaScript'>
-              document.addEventListener('DOMContentLoaded', function() {
-                  Swal.fire({
-                      icon: 'success',
-                      title: 'Ingrese el identificador con el formato solicitado',
-                      showCancelButton: false,
-                      confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'OK',
-                    }).then(() => {
+      <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+      <script language='JavaScript'>
+      document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              icon: 'error',
+              title: 'El identificador no se esta enviando',
+              showCancelButton: false,
+              confirmButtonColor: '#3085d6',
+              confirmButtonText: 'OK'
+            }).then(() => {
 
-                      location.assign('../../listadebeneficiario.php');
+              location.assign('../../listadebeneficiario.php');
 
-                    });
-          });
-              </script>";
-  }
+            });
+  });
+      </script>";
+    }
     $nombreBeneEdit = limpiarDatos($_POST['nombre_del_beneficiario_edit']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreBeneEdit)) {
       echo "
@@ -30,7 +29,7 @@ if ($_POST) {
       <script language='JavaScript'>
       document.addEventListener('DOMContentLoaded', function() {
           Swal.fire({
-              icon: 'success',
+              icon: 'error',
               title: 'El nombre del beneficiario no coincide con el formato solicitado',
               showCancelButton: false,
               confirmButtonColor: '#3085d6',
@@ -50,7 +49,7 @@ if ($_POST) {
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
-                icon: 'success',
+                icon: 'error',
                 title: 'Debe ingresar la cedula en solo digitos.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
@@ -68,7 +67,7 @@ if ($_POST) {
             <script language='JavaScript'>
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
-                    icon: 'success',
+                    icon: 'error',
                     title: 'La cedula no cumple con el formato deseado.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
@@ -89,7 +88,7 @@ if ($_POST) {
       <script language='JavaScript'>
       document.addEventListener('DOMContentLoaded', function() {
           Swal.fire({
-              icon: 'success',
+              icon: 'error',
               title: 'La edad debe de ser un digito.',
               showCancelButton: false,
               confirmButtonColor: '#3085d6',
@@ -106,7 +105,7 @@ if ($_POST) {
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
-                icon: 'success',
+                icon: 'error',
                 title: 'La edad no cumple el formato solicitado',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
@@ -163,7 +162,7 @@ if ($_POST) {
       <script language='JavaScript'>
       document.addEventListener('DOMContentLoaded', function() {
           Swal.fire({
-              icon: 'success',
+              icon: 'error',
               title: 'El nombre del representante no cumple con el formato solicitado',
               showCancelButton: false,
               confirmButtonColor: '#3085d6',
@@ -342,7 +341,7 @@ if ($_POST) {
     $idarea = 1;
     $idcargo = 1;
 
-    require "config/conexion.php";
+    require "../../config/conexion.php";
     $sql = "UPDATE datos_del_entregante SET  nombre_del_beneficiario = '$nombreBeneEdit', cedula = '$cedula', edad = '$edadBeneEdit', Id_genero = '$generoEdit', fecha_de_nacimiento = '$fechadenacimientoEdit', id_area = '$idarea', id_cargo = '$idcargo', nombre_del_representante = '$nombreRepreBeneEdit', correo = '$correoEdit', telefono = '$telefonoEdit', estado = '$estado', municipio = '$municipioEdit', direccion = '$direccionEdit', posee_discapacidad_o_condicion = '$poseeDiscaEdit',descripcion_discapacidad_condicion = '$descripcionDisEdit', id_origen = '$origenEdit' WHERE id_datos_del_entregante = $idEditBene";
 
     //echo $sql;
