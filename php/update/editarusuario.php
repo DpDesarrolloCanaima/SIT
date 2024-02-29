@@ -140,9 +140,13 @@ if ($_POST) {
         foreach ($resultadoPassword as $rowPassword) {
             $passwordDB = $rowPassword['password'];
         }
+        $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate',  cedula = '$cedulaupdate', password = '$passwordDB', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = " . $idUpdate;
+    }else {
+      $password_cd = sha1($password);
+      $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate',  cedula = '$cedulaupdate', password = '$password_cd', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = " . $idUpdate;
     }
 
-    $sql = "UPDATE usuarios SET usuario = '$usuarioupdate', nombre = '$nombreupdate',  cedula = '$cedulaupdate', password = '$passwordDB', correo = '$correoupdate', id_roles = '$rolesupdate' WHERE id_usuarios = " . $idUpdate;
+   
 
    $result = mysqli_query($mysqli, $sql);
 
