@@ -2,22 +2,22 @@ const registrarReparacionTablet = async()=>{
     document.getElementById('registroReparacionTablet').onsubmit = function(e) {
         e.preventDefault();
     };
-    var serialEntradaPantalla = document.querySelector("#serial_entrada_pantalla").value;
-    var serialSalidaPantalla = document.querySelector("#serial_salida_pantalla").value;
-    var pinCarga = document.querySelector("#pin_carga").value;
-    var serialEntradaBat = document.querySelector("#serial_entrada_bat").value;
-    var serialSalidaBat = document.querySelector("#serial_salida_bat").value;
-    var serialEntradaCargador= document.querySelector("#serial_entrada_cargador").value;
-    var serialSalidaCargador = document.querySelector("#serial_salida_cargador").value;
-    var botonEncendido = document.querySelector("#boton_encendido").value;
-    var observaciones = document.querySelector("#observaciones").value;
-    var responsableRecepcion = document.querySelector("#responsableRecepcion").value;
-    var responsable = document.querySelector("#responsable").value;
-    var estatus = document.querySelector("#id_status").value;
-    var rol = document.querySelector("#id_roles").value;
-    var idDispositivo = document.querySelector("#id_dispositivo").value;
-    var tipoDeEquipo = document.querySelector("#tipo_de_dispositivo").value;
-    var icDispositivo = document.querySelector("#ic_dispositivo").value;
+    var serialEntradaPantalla = document.querySelector("#serial_entrada_pantalla_tablet").value;
+    var serialSalidaPantalla = document.querySelector("#serial_salida_pantalla_tablet").value;
+    var pinCarga = document.querySelector("#pin_carga_tablet").value;
+    var serialEntradaBat = document.querySelector("#serial_entrada_bat_tablet").value;
+    var serialSalidaBat = document.querySelector("#serial_salida_bat_tablet").value;
+    var serialEntradaCargador= document.querySelector("#serial_entrada_cargador_tablet").value;
+    var serialSalidaCargador = document.querySelector("#serial_salida_cargador_tablet").value;
+    var botonEncendido = document.querySelector("#boton_encendido_tablet").value;
+    var observaciones = document.querySelector("#observaciones_tablet").value;
+    var responsableRecepcion = document.querySelector("#responsableRecepcion_tablet").value;
+    var responsable = document.querySelector("#responsable_tablet").value;
+    var estatus = document.querySelector("#id_status_tablet").value;
+    var rol = document.querySelector("#id_roles_tablet").value;
+    var idDispositivo = document.querySelector("#id_dispositivo_tablet").value;
+    var tipoDeEquipo = document.querySelector("#tipo_de_dispositivo_tablet").value;
+    var icDispositivo = document.querySelector("#ic_dispositivo_tablet").value;
     
     if (
         serialEntradaPantalla === "" ||

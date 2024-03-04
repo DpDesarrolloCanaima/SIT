@@ -208,6 +208,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
     <?php require "inc/footer.php";?>
     <script src="js/function.js"></script>
     <script src="js/registros/registroReparacion.js"></script>
+    <script src="js/registros/registroTablet.js"></script>
     <?php require "inc/script.php";?>
 </body>
 
