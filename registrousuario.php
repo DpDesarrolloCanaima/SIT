@@ -62,7 +62,7 @@ if ($_POST) {
 
     }else {
         $valido['success']=false;
-        $valido['mensaje']="El correo esta en uso";    
+        $valido['mensaje']="El usuario ya existe.";    
     }
 
 }else {
