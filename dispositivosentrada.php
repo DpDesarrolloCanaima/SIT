@@ -140,22 +140,23 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
-                                        target="_blank">Recibidos</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
-                                        target="_blank">En la linea</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3"
-                                        target="_blank">Reparados</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4"
-                                        target="_blank">Por verificar</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5"
-                                        target="_blank">Verificados</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6"
-                                        target="_blank">Por entregar</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7"
-                                        target="_blank">Entregados</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
-                                        target="_blank">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1" target="_blank">Recibidos (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2" target="_blank">En la linea (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3" target="_blank">Reparados (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4" target="_blank">Por verificar (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5" target="_blank">Verificados (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6" target="_blank">Por entregar (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7" target="_blank">Entregados (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php" target="_blank">Todos (PDF)</a></li>
+                                    <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos_exel.php?id=1" target="_blank">Recibidos (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea_exel.php?id=2" target="_blank">En la linea (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados_exel.php?id=3" target="_blank">Reparados (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar_exel.php?id=4" target="_blank">Por verificar (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados_exel.php?id=5" target="_blank">Verificados (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar_exel.php?id=6" target="_blank">Por entregar (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados_exel.php?id=7" target="_blank">Entregados (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosexel_all.php" target="_blank">Todos (EXEL)</a></li>
                             </div>
                         </div>
                     </div>

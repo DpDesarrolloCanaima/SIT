@@ -74,11 +74,9 @@ if ($_POST) {
         $responsableVerficador = "aun no";
         $responsableAnalistaEntrega = "aun no";
 
-        $sql = "UPDATE datos_del_dispotivo SET id_tipo_de_dispositivo='$tipoDeEquipo',serial_equipo='$serialEquipo',serial_de_cargador='$serialCargador',fecha_de_recepcion ='$fechaRecepcion',estado_recepcion_equipo ='$estadoRecepcion',observaciones_analista ='$observaciones_analista', id_roles ='$rol',id_origen ='$origen',id_estatus='$estatus',id_motivo='$falla',id_datos_del_beneficiario='$beneficiarioEdit' WHERE id_dispositivo = $idEditDispo AND id_datos_del_beneficiario = $beneficiarioEdit";
+        $sql = "UPDATE datos_del_dispotivo SET id_tipo_de_dispositivo='$tipoDeEquipo',serial_equipo='$serialEquipo',serial_de_cargador='$serialCargador',fecha_de_recepcion ='$fechaRecepcion',estado_recepcion_equipo ='$estadoRecepcion',observaciones_analista ='$observaciones_analista', id_roles ='$rol',id_origen ='$origen',id_estatus='$estatus',id_motivo='$falla',id_datos_del_beneficiario='$beneficiarioEdit' WHERE id_dispositivo = $idEditDispo AND id_datos_del_beneficiario = '$beneficiarioEdit'";
 
-        $resultado = mysqli_query($mysqli, $sql);
-
-        if ($resultado === true) {
+        if ($mysqli->query($sql)===true) {
             $valido['success']=true;
             $valido['mensaje']="Se actualizo el equipo.";
         }else {

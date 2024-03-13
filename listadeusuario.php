@@ -72,24 +72,23 @@ $resultado1 = $mysqli->query($consulta1);
                                 Generar Reporte
                             </button>
                                 </button>
-                            <button type="button"
-                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
+                            <button type="button" class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-expanded="false">
                                 <span class="sr-only">Toggle Dropright</span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=1"
-                                        target="_blank">Administrador</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=2"
-                                        target="_blank">Presidencia</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=3"
-                                        target="_blank">Analista</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=4"
-                                        target="_blank">Tecnico</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=5"
-                                        target="_blank">Verificador</a></li>
-                                <li><a class="dropdown-item" href="report/reporteusuarioAll.php"
-                                        target="_blank">Todos</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=1" target="_blank">Administrador (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=2" target="_blank">Presidencia (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=3" target="_blank">Analista (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=4" target="_blank">Tecnico (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuario.php?id=5" target="_blank">Verificador (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteusuarioAll.php" target="_blank">Todos (PDF)</a></li>
+                                        <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=1" target="_blank">Administrador (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=2" target="_blank">Presidencia (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=3" target="_blank">Analista (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=4" target="_blank">Tecnico (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=5" target="_blank">Verificador (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel_all.php" target="_blank">Todos (EXEL)</a></li>
 
                             </div>
                         </div>
