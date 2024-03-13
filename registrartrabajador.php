@@ -352,7 +352,7 @@ require "function.php";
     // Datos complementarios para el registro
     $edad = 0;
     $fechaNac = date('00-00-0000');
-    $nombreRepre = "Industria Canaima";
+    $nombreRepre = "Industria Canaima C.A";
     $mesaTelecomunicaciones = "No posee";
     $institucionEntrega = "No posee";
     $institucionEstudia = "no posee";
