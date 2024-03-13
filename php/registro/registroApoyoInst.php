@@ -67,13 +67,13 @@ if ($_POST) {
     $id_area = 1;
     $id_cargo = 1;
     $nombreRepre = limpiarDatos($_POST['nombre_de_institucion']);
-    $discapacidad = "no";
-    $descripcionDis = "no posee";
-    $consejoComunal = "no posee";
-    $mesaTelecomunicaciones = "No posee";
-    $institucionEntrega = "No posee";
-    $institucionEstudia = "no posee";
-    $responsableEntrega = "No posee";
+    $discapacidad = "No aplica";
+    $descripcionDis = "No aplica";
+    $consejoComunal = "No aplica";
+    $mesaTelecomunicaciones = "No aplica";
+    $institucionEntrega = "No aplica";
+    $institucionEstudia = "no aplica";
+    $responsableEntrega = "No aplica";
     $descontinuado = 2;
     // Validacion de rif por si se repite la institucion a registrar
 

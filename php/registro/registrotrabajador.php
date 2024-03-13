@@ -86,12 +86,12 @@ if ($_POST) {
     // Datos complementarios para el registro
     $edad = 0;
     $fechaNac = '00-00-0000';
-    $nombreRepre = "Industria Canaima";
-    $mesaTelecomunicaciones = "No posee";
-    $institucionEntrega = "No posee";
-    $institucionEstudia = "no posee";
-    $responsableEntrega = "No posee";
-    $consejoComunal = "no posee";
+    $nombreRepre = "Industria Canaima C.A";
+    $mesaTelecomunicaciones = "No aplica";
+    $institucionEntrega = "No aplica";
+    $institucionEstudia = "No aplica";
+    $responsableEntrega = "No aplica";
+    $consejoComunal = "No aplica";
     $descontinuado = 2;
 
     $sqlValidation = "SELECT cedula FROM datos_del_entregante WHERE cedula = '$cedula' AND id_origen = '$origen'";
