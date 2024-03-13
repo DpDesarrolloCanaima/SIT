@@ -79,7 +79,7 @@ const validarMesaTelecomunicaciones = (mesaTelecomunicaciones)=>{
 }
 // Validar entrada de datos de institucion educativa, tanto como la entrada y estudia actualmente
 const validarInstitucionEducativa = (institucionEducativa)=>{
-    return /^[a-zA-Z\s]{4,60}/.test(institucionEducativa.trim());
+    return /[a-zA-Z\s]{2,60}/.test(institucionEducativa.trim());
 }
 // Validar entrada de datos de responsable de entrega
 const validarResponsableEntrega = (responsableEntrega)=>{

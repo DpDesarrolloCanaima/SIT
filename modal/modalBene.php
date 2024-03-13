@@ -118,7 +118,7 @@
                     </div>
                     <div class="form-group">
                         <label for="institucion_estudia">Institucion Educativa (Estudia Actualmente)</label>
-                        <input type="text" class="form-control" id="institucion_estudia" name="institucion_estudia" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="institucion_estudia" name="institucion_estudia" pattern="[a-zA-Z\s]{2,60}">
                         <span></span>
                     </div>
                     <div class="form-group">

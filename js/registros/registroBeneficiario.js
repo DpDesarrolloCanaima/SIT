@@ -209,5 +209,3 @@ const RegistroBeneficiario = async ()=>{
         });
       }
 }
-
-console.log("Archivo conectado. ");

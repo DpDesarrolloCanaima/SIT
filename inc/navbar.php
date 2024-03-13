@@ -374,28 +374,7 @@ $usuario = $_SESSION['usuario'];
                 aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
                     <?php 
-                    switch ($rol) {
-                   case 1:
-                        echo "Administrador";
-                        
-                        break;
-                    case 2:
-                        echo "Presidencia";
-                        break;
-                    case 3:
-                        echo "Analista";
-                        break;
-                    case 4:
-                        echo "Técnico";
-                        break;
-                    case 5:
-                        echo "Verificador";
-                        break;
-                    case 6:
-                        echo "Coordinador de Área";
-                        break;
-                }
-
+                    echo $usuario;
                     ?>
 
                 </span>
