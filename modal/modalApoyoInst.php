@@ -17,7 +17,7 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">RIF</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" id="documento" pattern="[0-9]{9}" title="Debe ingresar el RIF en solo digitos">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" id="documento" pattern="[0-9]{8,9}" title="Debe ingresar el RIF en solo digitos">
                             <input type="hidden" name="tipo_documento" value="2" id="tipo_documento">
                         </div>
                     </div>

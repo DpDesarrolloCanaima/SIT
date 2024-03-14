@@ -17,7 +17,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="cedula">Cédula</label>
-                                        <input type="text" class="form-control" id="cedula" name="cedula" pattern="[0-9]{8}">
+                                        <input type="text" class="form-control" id="cedula" name="cedula" pattern="[0-9]{7,8}">
                                         <span></span>
                                     </div>
                                     <div class="form-group">

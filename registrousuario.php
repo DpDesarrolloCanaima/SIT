@@ -28,7 +28,7 @@ if ($_POST) {
         $valido['success']=false;
         $valido['mensaje']="El usuario no cumple con los caracteres establecidos.";
 
-        if (!preg_match("/^[0-9]{8}/", $cedula || $cedula == "")) {
+        if (!preg_match("/^[0-9]{7,8}/", $cedula || $cedula == "")) {
             $valido['success']=false;
             $valido['mensaje']="El usuario no cumple con los caracteres establecidos.";
         }

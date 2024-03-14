@@ -21,7 +21,7 @@ const validarusuario = (usuario) =>{
 }
 // Validacion de cedula, que comprende los 8 digitos que tiene la cedula
 const validarcedula = (cedula) =>{
-    return /^[0-9]{8}/.test(cedula.trim());
+    return /^[0-9]{7,8}/.test(cedula.trim());
 }
 
 
@@ -34,7 +34,7 @@ const validarTipoDeDocumento = (tipo_documento) =>{
 }
 // Validacion de cedula, que comprende los 8 digitos que tiene la cedula
 const validarRIF = (rif) =>{
-    return /^[0-9]{9}/.test(rif.trim());
+    return /^[0-9]{8,9}/.test(rif.trim());
 }
 
 // Validacion de nombre, que comprende solo letras, y con espacio para que pueda escribir el apellido

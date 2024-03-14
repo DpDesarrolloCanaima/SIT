@@ -17,7 +17,7 @@
                                 <div class="input-group-text" id="btnGroupAddon">C.I</div>
                             </div>
                             <input type="text" class="form-control" aria-label="Input group example"
-                                aria-describedby="btnGroupAddon" id="documento" name="documento" pattern="[0-9]{8}">
+                                aria-describedby="btnGroupAddon" id="documento" name="documento" pattern="[0-9]{7,8}">
                             <input type="hidden" id="tipo_documento" name="tipo_documento" value="1">
                         </div>
                     </div>
