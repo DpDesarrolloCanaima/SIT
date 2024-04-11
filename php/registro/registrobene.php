@@ -99,7 +99,7 @@ if ($_POST) {
         $valido['mensaje']="Los datos ingresados en el campo de consejo comunal no cumplen con los caracteres especificados.";
     }
     $mesaTelecomunicaciones = limpiarDatos($_POST['mesa_telecomunicaciones']);
-    if (!preg_match("/[a-zA-Z\s]{10,60}/", $mesaTelecomunicaciones)) {
+    if (!preg_match("/[a-zA-Z\s]{2,60}/", $mesaTelecomunicaciones)) {
         $valido['success']=false;
         $valido['mensaje']="Los datos ingresados en el campo de mesa de telecomunicaciones no cumplen con los caracteres especificados.";
     }

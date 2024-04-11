@@ -75,7 +75,7 @@ const validarConsejoComunal = (consejoComunal)=>{
 }
 // Validar entrada de datos de la mesa de telecomunicaciones
 const validarMesaTelecomunicaciones = (mesaTelecomunicaciones)=>{
-    return /^[a-zA-Z\s]{4,60}/.test(mesaTelecomunicaciones.trim());
+    return /^[a-zA-Z\s]{2,60}/.test(mesaTelecomunicaciones.trim());
 }
 // Validar entrada de datos de institucion educativa, tanto como la entrada y estudia actualmente
 const validarInstitucionEducativa = (institucionEducativa)=>{
