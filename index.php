@@ -8,7 +8,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" rel="stylesheet"/>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="./estilos.css">
+  <link rel="stylesheet" href="css/estilos.css">
   <title>Login</title>
 </head>
 <body class="vh-100" style="border: 1px solid black;">
@@ -49,7 +49,7 @@
                 </div>
               </div>
               <div class="col-lg-6 d-flex align-items-center gradient-custom-2 border-custom-img" style="
-                background: url(./indus2.jpg) rgba(0, 0, 0, .3);
+                background: url(img/indus2.jpg) rgba(0, 0, 0, .3);
                 background-position: center;
                 background-size: cover;
                 background-blend-mode: overlay;
