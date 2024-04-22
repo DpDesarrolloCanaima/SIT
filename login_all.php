@@ -93,7 +93,7 @@ if ($_POST) {
               }).then(() => {
                 location.assign('index.php');
               });
-    });
+        });
         </script>";
     
                         break;

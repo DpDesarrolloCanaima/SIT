@@ -124,7 +124,7 @@ if ($resultado) {
     
 }else {
     $valido['success']=false;
-        $valido['mensaje']="Data no enviada.";
+    $valido['mensaje']="Data no enviada.";
 }
 
 echo json_encode($valido);
