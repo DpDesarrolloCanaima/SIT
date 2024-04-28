@@ -6,7 +6,7 @@ include "content/inc/header.php";
 include "content/inc/navbar.php";
 
 
-$sqlPersonas = "SELECT cedula, nombre_completo, correo_inst FROM persona";
+$sqlPersonas = "SELECT cedula, nombre_completo, correo_inst, telefono FROM persona";
 $resultadoPersonas = $conexion->query($sqlPersonas);
 
 ?>
@@ -37,6 +37,7 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
+                                            <th>Cedula</th>
                                             <th>Nombre</th>
                                             <th>Correo Institucional</th>
                                             <th>Telefono</th>
@@ -45,6 +46,7 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Cedula</th>
                                             <th>Nombre</th>
                                             <th>Correo Institucional</th>
                                             <th>Telefono</th>
@@ -61,6 +63,7 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
                                             <td><?php echo $rowPersonas['cedula'];?></td>
                                             <td><?php echo $rowPersonas['nombre_completo'];?></td>
                                             <td><?php echo $rowPersonas['correo_inst'];?></td>
+                                            <td><?php echo $rowPersonas['telefono'];?></td>
                                             <th>
                                                 <div class="btn-group">
                                                     <button type="button" class="btn btn-info dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,5 +94,6 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
         <?php
             include "content/inc/script.php";
         ?>
+        <script src="js/register/registrarPersona.js"></script>
     </body>
 </html>

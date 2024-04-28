@@ -27,5 +27,6 @@ include "content/inc/navbar.php";
             include "content/modal/admin/registarPersona.php";
             include "content/inc/script.php";
         ?>
+        <script src="js/register/registrarPersona.js"></script>
     </body>
 </html>
