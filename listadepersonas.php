@@ -71,12 +71,14 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
                                                     </button>
                                                     <ul class="dropdown-menu">
                                                         <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#AgregarUsuario<?php echo $rowPersonas['cedula'];?>"><i class="bi bi-person-add"></i> Agregar usuario</a></li>
+                                                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#CambiarArea<?php echo $rowPersonas['cedula'];?>"><i class="bi bi-person-add"></i> Cambiar Area</a></li>
                                                     </ul>
                                                 </div>
                                             </th>
                                         </tr>
                                         <?php
                                                 include "content/modal/admin/agregarUsuario.php";
+                                                include "content/modal/admin/cambiarArea.php";
                                             endwhile;
                                         ?>
 

@@ -9,21 +9,18 @@
       <div class="modal-body">
         <form action="">
             <div class="mb-3">
-                <label for="serialBateria" class="form-label">Cedula</label>
-                <input type="text" class="form-control" id="serialBateria" name="serialBateria">
+                <label for="Usuario" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="Usuario" name="Usuario">
             </div>
             <div class="mb-3">
-                <label for="serialBateria" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="serialBateria" name="serialBateria">
+                <label for="password" class="form-label">Contrasena</label>
+                <input type="text" class="form-control" id="password" name="password">
             </div>
             <div class="mb-3">
-                <label for="serialBateria" class="form-label">Correo Institucional</label>
+                <label for="serialBateria" class="form-label">Area</label>
                 <input type="text" class="form-control" id="serialBateria" name="serialBateria">
             </div>
-            <div class="mb-3">
-                <label for="serialBateria" class="form-label">Telefono</label>
-                <input type="text" class="form-control" id="serialBateria" name="serialBateria">
-            </div>
+            <input type="hidden" name="cedulaUsuario" id="cedulaUsuario" value="<?php echo $rowPersonas['cedula'];?>">
         </form>
       </div>
       <div class="modal-footer">
