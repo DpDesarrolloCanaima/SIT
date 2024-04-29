@@ -34,7 +34,7 @@ if ($_POST) {
         $valido['success'] = false;
         $valido['mensaje'] = "La persona ya se encuentra registrada.";
     }else {
-        $sqlRegister = "INSERT INTO persona (cedula, nombre_completo, correo_inst, telefono) VALUES ('$cedula','$nombre_completo','$correo_inst','$telefono')";
+        $sqlRegister = "INSERT INTO persona (cedula, nombre, telefono,correo_inst) VALUES ('$cedula','$nombre_completo','$telefono','$correo_inst')";
         $resultadoRegister = $conexion->query($sqlRegister);
 
         if ($resultadoRegister === true) {

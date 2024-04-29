@@ -3,7 +3,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar area de : <?php echo $rowPersonas['nombre_completo'];?>  <i class="bi bi-repeat"></i></h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Cambiar area de : <?php echo $rowPersonas['nombre'];?>  <i class="bi bi-repeat"></i></h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">

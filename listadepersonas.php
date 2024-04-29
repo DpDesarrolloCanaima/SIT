@@ -6,7 +6,7 @@ include "content/inc/header.php";
 include "content/inc/navbar.php";
 
 
-$sqlPersonas = "SELECT cedula, nombre_completo, correo_inst, telefono FROM persona";
+$sqlPersonas = "SELECT cedula, nombre,telefono, correo_inst FROM persona";
 $resultadoPersonas = $conexion->query($sqlPersonas);
 
 ?>
@@ -61,7 +61,7 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
                                         ?>
                                         <tr>
                                             <td><?php echo $rowPersonas['cedula'];?></td>
-                                            <td><?php echo $rowPersonas['nombre_completo'];?></td>
+                                            <td><?php echo $rowPersonas['nombre'];?></td>
                                             <td><?php echo $rowPersonas['correo_inst'];?></td>
                                             <td><?php echo $rowPersonas['telefono'];?></td>
                                             <th>
@@ -97,5 +97,6 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
             include "content/inc/script.php";
         ?>
         <script src="js/register/registrarPersona.js"></script>
+        <script src="js/register/registrarUsuario.js"></script>
     </body>
 </html>
