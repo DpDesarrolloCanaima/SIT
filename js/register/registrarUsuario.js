@@ -1,7 +1,7 @@
 const RegistrarUsuario = async() => {
     var usuario = document.querySelector("#Usuario").value;
     var password = document.querySelector("#password").value;
-    var area = document.querySelector("#Area").value;
+    var area = document.querySelector("#area").value;
     var cedulaPersona = document.querySelector("#cedulaUsuario").value;
 
 

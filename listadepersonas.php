@@ -9,6 +9,9 @@ include "content/inc/navbar.php";
 $sqlPersonas = "SELECT cedula, nombre,telefono, correo_inst FROM persona";
 $resultadoPersonas = $conexion->query($sqlPersonas);
 
+// Consulta para traer los diferentes perfiles
+$sqlPerfiles = "SELECT id_perfil , tipo FROM perfiles";
+$resultadoPerfiles = $conexion->query($sqlPerfiles);
 ?>
         
         <div id="layoutSidenav">
@@ -98,5 +101,6 @@ $resultadoPersonas = $conexion->query($sqlPersonas);
         ?>
         <script src="js/register/registrarPersona.js"></script>
         <script src="js/register/registrarUsuario.js"></script>
+        <script src="js/update/updateArea.js"></script>
     </body>
 </html>

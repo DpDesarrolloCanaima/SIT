@@ -17,8 +17,13 @@
                 <input type="text" class="form-control" id="password" name="password">
             </div>
             <div class="mb-3">
-                <label for="Area" class="form-label">Area</label>
-                <input type="text" class="form-control" id="Area" name="Area">
+              <label for="tipo_De_equipo">Tipo de Equipo</label>
+              <select name="area" id="area" class="form-control form-control-lg">
+                            <?php foreach ($resultadoPerfiles as $rowPerfiles) : ?>
+                            <option value="<?php echo $rowPerfiles['id_perfil']; ?>"><?php echo $rowPerfiles['tipo']; ?>
+                            </option>
+                            <?php endforeach; ?>
+                </select>
             </div>
             <input type="hidden" name="cedulaUsuario" id="cedulaUsuario" value="<?php echo $rowPersonas['cedula'];?>">
         </form>
