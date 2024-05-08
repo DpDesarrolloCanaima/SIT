@@ -14,8 +14,7 @@ include "content/inc/navbar.php";
                             <li class="breadcrumb-item active">Administrador</li>
                         </ol>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistrarPersona">
-                        <i class="bi bi-journal-plus"></i> Registar Persona
-                        </button>
+                        <i class="bi bi-journal-plus"></i> Registar Persona </button>
                     </div>
                 </main>
                 <?php
