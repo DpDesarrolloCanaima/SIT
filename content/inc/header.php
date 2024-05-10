@@ -14,3 +14,11 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     </head>
     <body class="sb-nav-fixed">
+
+    <?php
+    
+    date_default_timezone_set('America/Caracas');
+
+    $fechaActual = date("Y-m-d");
+    
+    ?>
