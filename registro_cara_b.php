@@ -20,13 +20,15 @@ include "content/inc/navbar.php";
                                 <div class="card">
                                     <div class="card-body">
                                     <div class="mb-3">
-                                        <form class="task-form">
+                                        <form id="RegistroCaraB">
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1" class="form-label">Serial de Cara B</label>
-                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="SZLEF10MI252208416">
+                                                <input type="text" class="form-control" id="serial_carab" placeholder="SZLEF10MI252208416">
                                             </div>
                                             <div class="my-3">
                                                 <button type="submit" class="btn btn-success"><i class="bi bi-check-circle-fill"></i> Guardar</button>
+                                                <a href="" class="btn btn-success" onclick="RegistroCaraB()">Guardar</a>
+                                                <input type="submit" class="btn btn-success" onclick="RegistroCaraB()" value="Enviar">
                                                 <button type="reset" class="btn btn-warning" ><i class="bi bi-backspace-reverse"></i> Limpiar</button>
                                             </div>
                                         </form>
@@ -55,12 +57,8 @@ include "content/inc/navbar.php";
             </div>
         </div>
         <?php
-            include "content/modal/aduana/memoriaRam.php";
-            include "content/modal/aduana/bateria.php";
-            include "content/modal/aduana/caraB.php";
-            include "content/modal/aduana/cargador.php";
-            include "content/modal/aduana/pantalla.php";
             include "content/inc/script.php";
         ?>
+        <script src="js/register/registroCarab.js"></script>
     </body>
 </html>

@@ -23,7 +23,7 @@ include "content/inc/navbar.php";
                                         <form class="task-form">
                                             <div class="form-group">
                                                 <label for="exampleFormControlInput1" class="form-label">Serial de Baterias</label>
-                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="13B803FP81343073032009155">
+                                                <input type="text" class="form-control" id="serial_bateria" placeholder="13B803FP81343073032009155">
                                             </div>
                                             <div class="my-3">
                                                 <button type="submit" class="btn btn-success"><i class="bi bi-check-circle-fill"></i> Guardar</button>
