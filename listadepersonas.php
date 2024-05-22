@@ -59,8 +59,6 @@ $resultadoPerfiles = $conexion->query($sqlPerfiles);
                                     <tbody>
                                         <?php 
                                             while ($rowPersonas = $resultadoPersonas->fetch_assoc()) :
-                                                
-                                            
                                         ?>
                                         <tr>
                                             <td><?php echo $rowPersonas['cedula'];?></td>

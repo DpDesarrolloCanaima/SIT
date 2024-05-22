@@ -20,13 +20,15 @@ include "content/inc/navbar.php";
                                 <div class="card">
                                     <div class="card-body">
                                     <div class="mb-3">
-                                        <form class="task-form">
+                                        <form class="task-form" id="RegistroDisco">
                                             <div class="form-group">
-                                                <label for="exampleFormControlInput1" class="form-label">Serial de Disco Duro</label>
-                                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="S2T0J9ED315028">
+                                                <label for="serialDisco" class="form-label">Serial de Disco Duro</label>
+                                                <input type="text" class="form-control" id="serialDisco" name="serialDisco" placeholder="S2T0J9ED315028">
+                                                <input type="hidden" name="fechaRegistro" id="fechaRegistro">
                                             </div>
                                             <div class="my-3">
-                                                <button type="submit" class="btn btn-success"><i class="bi bi-check-circle-fill"></i> Guardar</button>
+                                                <!-- <button class="btn btn-success" onclick="RegistrarDisco()"><i class="bi bi-check-circle-fill"></i> Guardar</button> -->
+                                                <input type="submit" class="btn btn-success" onclick="RegistrarDisco()" value="Guardar">
                                                 <button type="reset" class="btn btn-warning" ><i class="bi bi-backspace-reverse"></i> Limpiar</button>
                                             </div>
                                         </form>
@@ -62,5 +64,7 @@ include "content/inc/navbar.php";
             include "content/modal/aduana/pantalla.php";
             include "content/inc/script.php";
         ?>
+
+        <script src="js/register/registrarDisco.js"></script>
     </body>
 </html>
