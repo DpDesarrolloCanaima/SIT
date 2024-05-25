@@ -1,6 +1,6 @@
 <?php
 
-require "../../config/conexion.php";
+require "../../config/conexionDBextra.php";
 
 $valido['success']=array('success', false, 'mensaje'=>"");
 
@@ -16,7 +16,7 @@ if ($_POST) {
         $valido['mensaje'] = "Fecha de registro no tomada.";
     }
 
-    $sqlRegistro = "INSERT INTO disco_duro (id_disco_duro, serial_disco, fecha_registro) VALUES (NULL, '$serial_disco','$fecha_registro',)";
+    $sqlRegistro = "INSERT INTO disco_duro (id_disco_duro, serial_disco, fecha_registro) VALUES (NULL, '$serial_disco','$fecha_registro')";
     $resultadoRegistro = $conexion->query($sqlRegistro);
 
     if ($resultadoRegistro === true) {
