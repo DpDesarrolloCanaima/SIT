@@ -14,10 +14,10 @@ const RegistrarBateria = async() => {
 
     const datos = new FormData();
 
-    datos.append("serialDisco", SerialDisco);
+    datos.append("serialBateria", SerialDisco);
     datos.append("fechaRegistro", fechaRegistro);
 
-    var respuesta = await fetch("php/register/registrarDiscoDuro.php", {
+    var respuesta = await fetch("php/register/registrarBateria.php", {
         method: 'POST',
         body: datos
       })
@@ -30,7 +30,7 @@ const RegistrarBateria = async() => {
           title: "EXITO",
           text: resultado.mensaje,
         });
-        document.querySelector("#RegistroDisco").reset();
+        document.querySelector("#RegistroBateria").reset();
         window.location.reload();
       }else{
         Swal.fire({

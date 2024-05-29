@@ -9,7 +9,7 @@ include "config/conexionDBextra.php";
 date_default_timezone_set('America/Caracas');
 $fecha = date("Y-m-d");
 
-$sqlRegistroDisco = "SELECT serial_cara_b, fecha_registro FROM cara_b WHERE fecha_registro = '$fecha'";
+$sqlRegistroDisco = "SELECT serial_cara_a, fecha_registro FROM cara_a WHERE fecha_registro = '$fecha'";
 $resultadoDisco = $conexion->query($sqlRegistroDisco);
 ?>
         
@@ -27,7 +27,7 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                                 <div class="col-md-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="" id="RegistroDisco">
+                                            <form action="" id="RegistroCaraA">
                                                 <div class="form-group">
                                                     <label for="">Serial de Cara A</label>
                                                     <input type="text" name="serialCaraA" id="serialCaraA" class="form-control">
@@ -56,7 +56,7 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                                             while ($rowRegistroDisco = $resultadoDisco->fetch_assoc()) :
                                         ?>
                                         <tr>
-                                            <td><?php echo $rowRegistroDisco['serial_disco'];?></td>
+                                            <td><?php echo $rowRegistroDisco['serial_cara_a'];?></td>
                                             <td><?php echo $rowRegistroDisco['fecha_registro'];?></td>
                                         </tr>
                                         <?php
