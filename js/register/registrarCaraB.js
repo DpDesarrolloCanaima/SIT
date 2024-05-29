@@ -1,5 +1,5 @@
-const RegistrarMemoria = async() => {
-    var SerialDisco = document.querySelector("#serialMemoria").value;
+const RegistrarCaraB = async() => {
+    var SerialDisco = document.querySelector("#serialCaraB").value;
     var fechaRegistro = document.querySelector("#fechaRegistro").value;
 
     if (SerialDisco.trim() === '' ||

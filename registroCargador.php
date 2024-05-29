@@ -29,12 +29,12 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                                         <div class="card-body">
                                             <form action="" id="RegistroDisco">
                                                 <div class="form-group">
-                                                    <label for="">Serial de Pantalla</label>
-                                                    <input type="text" name="serialPantalla" id="serialPantalla" class="form-control">
+                                                    <label for="">Serial de Cargador</label>
+                                                    <input type="text" name="serialCargador" id="serialCargador" class="form-control">
                                                     <input type="hidden" name="fechaRegistro" id="fechaRegistro" value="<?php echo $fecha;?>">
                                                 </div>
                                                 <div class="my-3">
-                                                    <input type="button" class="btn btn-success" onclick="RegistrarPantalla()" value="Enviar">
+                                                    <input type="button" class="btn btn-success" onclick="RegistrarCargador()" value="Enviar">
                                                 </div>
                                             </form>
                                         </div>
@@ -80,6 +80,6 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
         <?php
             include "content/inc/script.php";
         ?>
-        <script src="js/register/registrarPantalla.js"></script>
+        <script src="js/register/registrarCargador.js"></script>
     </body>
 </html>

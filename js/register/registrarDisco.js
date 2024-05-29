@@ -30,7 +30,7 @@ const RegistrarDisco = async() => {
           title: "EXITO",
           text: resultado.mensaje,
         });
-        windows.location.reload();
+        window.location.reload();
         document.querySelector("#RegistroDisco").reset();
       }else{
         Swal.fire({
