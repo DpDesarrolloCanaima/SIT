@@ -1,5 +1,5 @@
-const RegistrarDisco = async() => {
-    var SerialDisco = document.querySelector("#serialDisco").value;
+const RegistrarMemoria = async() => {
+    var SerialDisco = document.querySelector("#serialMemoria").value;
     var fechaRegistro = document.querySelector("#fechaRegistro").value;
 
     if (SerialDisco.trim() === '' ||
@@ -30,8 +30,8 @@ const RegistrarDisco = async() => {
           title: "EXITO",
           text: resultado.mensaje,
         });
-        windows.location.reload();
         document.querySelector("#RegistroDisco").reset();
+        windows.location.reload();
       }else{
         Swal.fire({
           icon: "error",
