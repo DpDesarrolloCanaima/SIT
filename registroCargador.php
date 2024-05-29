@@ -27,7 +27,7 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                                 <div class="col-md-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="" id="RegistroDisco">
+                                            <form action="" id="RegistroCargador">
                                                 <div class="form-group">
                                                     <label for="">Serial de Cargador</label>
                                                     <input type="text" name="serialCargador" id="serialCargador" class="form-control">
@@ -56,7 +56,7 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                                             while ($rowRegistroDisco = $resultadoDisco->fetch_assoc()) :
                                         ?>
                                         <tr>
-                                            <td><?php echo $rowRegistroDisco['serial_disco'];?></td>
+                                            <td><?php echo $rowRegistroDisco['serial_cargador'];?></td>
                                             <td><?php echo $rowRegistroDisco['fecha_registro'];?></td>
                                         </tr>
                                         <?php
