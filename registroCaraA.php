@@ -9,7 +9,7 @@ include "config/conexionDBextra.php";
 date_default_timezone_set('America/Caracas');
 $fecha = date("Y-m-d");
 
-$sqlRegistroDisco = "SELECT serial_disco, fecha_registro FROM disco_duro WHERE fecha_registro = '$fecha'";
+$sqlRegistroDisco = "SELECT serial_cara_b, fecha_registro FROM cara_b WHERE fecha_registro = '$fecha'";
 $resultadoDisco = $conexion->query($sqlRegistroDisco);
 ?>
         
