@@ -20,12 +20,13 @@
                                     </a>
                                     <div class="collapse" id="pagesCollapsePartesypiezas" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
                                         <nav class="sb-sidenav-menu-nested nav">
-                                            <a class="nav-link" href="registro_disco_duro.php">Discos Duros</a>
-                                            <a class="nav-link" href="registro_memorias_ram.php">Memorias Ram</a>
-                                            <a class="nav-link" href="registro_pantallas.php">Pantallas</a>
-                                            <a class="nav-link" href="registro_baterias.php">Baterias</a>
-                                            <a class="nav-link" href="registro_cargadores.php">Cargadores</a>
-                                            <a class="nav-link" href="registro_cara_b.php">Caras B</a>
+                                            <a class="nav-link" href="registroDisco.php">Discos Duros</a>
+                                            <a class="nav-link" href="registroMemoria.php">Memorias Ram</a>
+                                            <a class="nav-link" href="registroPantalla.php">Pantallas</a>
+                                            <a class="nav-link" href="registroBateria.php">Baterias</a>
+                                            <a class="nav-link" href="registroCargador.php">Cargadores</a>
+                                            <a class="nav-link" href="registroCaraB.php">Caras B</a>
+                                            <a class="nav-link" href="registroCaraA.php">Caras A</a>
                                         </nav>
                                     </div>
                                 </nav>
