@@ -26,6 +26,8 @@ if ($_POST) {
         $valido['mensaje'] = "Dato invalido.";
     }
 
+    $passDB = sha1($password);
+
     $sqlValidation = "SELECT cedula_usuario FROM usuarios WHERE cedula_usuario = '$cedulaPersona'";
     $resultadoValidation = $conexion->query($sqlValidation);
     $num = $resultadoValidation->num_rows;
@@ -34,7 +36,7 @@ if ($_POST) {
         $valido['success'] = false;
         $valido['mensaje'] = "Ya cuenta con usuario.";
     }else {
-        $sqlRegister = "INSERT INTO usuarios (id_usuario, usuario, password, rol, cedula_usuario) VALUES (NULL,'$usuario','$password','$area','$cedulaPersona')";
+        $sqlRegister = "INSERT INTO usuarios (id_usuario, usuario, password, rol, cedula_usuario) VALUES (NULL,'$usuario','$passDB','$area','$cedulaPersona')";
         $resultadoRegister = $conexion->query($sqlRegister);
 
         if ($resultadoRegister === true) {

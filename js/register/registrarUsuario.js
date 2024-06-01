@@ -1,14 +1,13 @@
 const RegistrarUsuario = async() => {
     var usuario = document.querySelector("#Usuario").value;
-    var password = document.querySelector("#password").value;
+    var passwordUsuario = document.querySelector("#passwordUsuario").value;
     var area = document.querySelector("#area").value;
     var cedulaPersona = document.querySelector("#cedulaUsuario").value;
-
 
     if (
         cedulaPersona.trim() === '' ||
         usuario.trim() === '' ||
-        password.trim() === '' ||
+        passwordUsuario.trim() === '' ||
         area.trim() === ''
     ) {
         Swal.fire({
@@ -24,7 +23,7 @@ const RegistrarUsuario = async() => {
     const datos = new FormData();
     datos.append("cedulaPersona", cedulaPersona);
     datos.append("usuario", usuario);
-    datos.append("password", password);
+    datos.append("password", passwordUsuario);
     datos.append("area", area);
 
     var respuesta = await fetch("php/register/registrarUsuario.php", {
