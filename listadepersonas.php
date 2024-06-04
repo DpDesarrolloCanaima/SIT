@@ -1,4 +1,5 @@
 <?php 
+require "config/conexion.php";
 session_start();
 if (!isset($_SESSION['id_usuario'])) {
     header("Location: index.php");
@@ -7,7 +8,9 @@ if (!isset($_SESSION['id_usuario'])) {
         header("Location: 404.php");
     }
 }
-require "config/conexion.php";
+
+$usuario = $_SESSION['usuario'];
+$rol = $_SESSION['rol'];
 
 include "content/inc/header.php";
 

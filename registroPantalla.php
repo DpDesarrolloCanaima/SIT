@@ -8,6 +8,8 @@ if (!isset($_SESSION['id_usuario'])) {
     }
 }
 
+$usuario = $_SESSION['usuario'];
+$rol = $_SESSION['rol'];
 include "content/inc/header.php";
 
 include "content/inc/navbar.php";
