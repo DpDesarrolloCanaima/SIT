@@ -9,7 +9,13 @@ if (!isset($_SESSION['id_usuario'])) {
     }
 }
 
+
+$usuario = $_SESSION['usuario'];
+$rol = $_SESSION['rol'];
+
 date_default_timezone_set('America/Caracas');
+
+
 include "content/inc/header.php";
 
 include "content/inc/navbar.php";

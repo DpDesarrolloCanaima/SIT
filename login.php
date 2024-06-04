@@ -75,19 +75,19 @@ if ($_POST) {
                         // Comprobacion para rederigir al supervisor
                         header("Location:armador.php");
                         break;
-                    case 3:
+                    case 4:
                         // Comprobacion para rederigir al supervisor
                         header("Location:ensamblador.php");
                         break;
-                    case 3:
+                    case 5:
                         // Comprobacion para rederigir al supervisor
                         header("Location:prueba-inicial.php");
                         break;
-                    case 3:
+                    case 6:
                         // Comprobacion para rederigir al supervisor
                         header("Location:prueba-final.php");
                         break;
-                    case 3:
+                    case 7:
                         // Comprobacion para rederigir al supervisor
                         header("Location:Empaquetador.php");
                         break;
