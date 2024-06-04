@@ -26,22 +26,22 @@
                       style="width: 250px;" alt="logo">
                   </div>
   
-                  <form class="m-auto" style="width: 90%">
+                  <form class="m-auto" style="width: 90%" action="login.php" method="POST">
                     <p class="text-center">Por favor, ingresa tus credenciales</p>
   
                     <div class="form-group has-feedback mb-4">
                       <i class="fa fa-user form-control-feedback"></i>
-                      <input type="text" class="form-control my-input" placeholder="Usuario">
+                      <input type="text" class="form-control my-input" name="usuario" placeholder="Usuario">
                     </div>
 
                     <div class="form-outline has-feedback mb-4">
                       <i class="fa fa-lock form-control-feedback"></i>
-                      <input type="password" class="form-control my-input" placeholder="Contraseña">
+                      <input type="password" class="form-control my-input" name="password" placeholder="Contraseña">
 
                     </div>
   
                     <div class="text-center pt-1 mb-5 pb-1">
-                      <button class="btn btn-outline-danger btn-custom fa-lg mb-3" type="button" style="padding: 10px 0; width: 100%;">Ingresar</button>
+                      <button class="btn btn-outline-danger btn-custom fa-lg mb-3" type="submit" style="padding: 10px 0; width: 100%;">Ingresar</button>
                       
                     </div>
                   </form>

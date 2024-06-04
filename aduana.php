@@ -1,4 +1,15 @@
 <?php 
+
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: index.php");
+}else{
+    if ($_SESSION['rol'] != 2) {
+        header("Location: 404.php");
+    }
+}
+
+date_default_timezone_set('America/Caracas');
 include "content/inc/header.php";
 
 include "content/inc/navbar.php";
@@ -13,23 +24,6 @@ include "content/inc/navbar.php";
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Aduana</li>
                         </ol>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistroDeMemoria">
-                            Registrar Memoria Ram
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistroDePantalla">
-                            Registrar Pantalla
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistroDeBateria">
-                            Registrar Bateria
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistroDeCargador">
-                            Registrar Cargador
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistroDeCaraB">
-                            Registrar Cara B
-                        </button>
-
                     </div>
                 </main>
                 <?php
@@ -38,11 +32,6 @@ include "content/inc/navbar.php";
             </div>
         </div>
         <?php
-            include "content/modal/aduana/memoriaRam.php";
-            include "content/modal/aduana/bateria.php";
-            include "content/modal/aduana/caraB.php";
-            include "content/modal/aduana/cargador.php";
-            include "content/modal/aduana/pantalla.php";
             include "content/inc/script.php";
         ?>
     </body>

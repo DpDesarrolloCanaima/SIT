@@ -48,7 +48,7 @@ if ($_POST) {
 
     $sql = "SELECT id_usuario, usuario, password, rol, cedula_usuario FROM usuarios WHERE usuario = '$usuario'";
 
-    $resultado = $mysqli->query($sql);
+    $resultado = $conexion->query($sql);
 
     $num = $resultado->num_rows;
 

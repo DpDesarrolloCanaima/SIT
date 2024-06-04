@@ -1,4 +1,14 @@
 <?php 
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: index.php");
+}else{
+    if ($_SESSION['rol'] != 5) {
+        header("Location: 404.php");
+    }
+}
+
+date_default_timezone_set('America/Caracas');
 include "content/inc/header.php";
 
 include "content/inc/navbar.php";
