@@ -4,3 +4,4 @@
         <script src="js/datatables-simple-demo.js"></script>
         <!-- SweetAlert Scripts -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> 
+        <script src="js/function.js"></script>

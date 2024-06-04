@@ -18,6 +18,38 @@ const RegistrarUsuario = async() => {
         return;
     }
 
+    if (!validarusuario(usuario)) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "El usuario no cumple con los caracteres establecidos",
+        });
+      return;
+    }
+    if (!validarpassword(passwordUsuario)) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "La contraseña no cumple con los caracteres establecidos",
+        });
+      return;
+    }
+    if (!validarcedula(cedulaPersona)) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "La cedula no cumple con los caracteres establecidos",
+        });
+      return;
+    }
+    if (!validarArea(area)) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "El area no cumple con los caracteres establecidos",
+        });
+      return;
+    }
     // Envio de los datos al backend 
 
     const datos = new FormData();
@@ -30,9 +62,7 @@ const RegistrarUsuario = async() => {
         method: 'POST',
         body: datos
       })
-  
       var resultado=await respuesta.json();
-    
       if (resultado.success == true) {
         Swal.fire({
           icon: "success",

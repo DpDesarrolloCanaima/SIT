@@ -18,6 +18,40 @@ const RegistrarPersona = async() => {
             return;
     }
 
+    if (!validarcedula(cedula)) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "La cedula no cumple con los caracteres establecidos",
+        });
+      return;
+    }
+    if (!validarnombre(nombreCompleto)) {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "La cedula no cumple con los caracteres establecidos",
+        });
+      return;
+    }
+    if (!validarcorreo(correoInst)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El correo no cumple con los caracteres establecidos",
+      });
+    return;
+    }
+
+    if (!validarTelefono(telefono)) {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "El telefono no cumple con los caracteres establecidos",
+      });
+    return;
+    }
+
     // Envio de datos al backend 
 
     const datos = new FormData();
