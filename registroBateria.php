@@ -1,4 +1,13 @@
 <?php 
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: index.php");
+}else{
+    if ($_SESSION['rol'] != 2) {
+        header("Location: 404.php");
+    }
+}
+
 include "content/inc/header.php";
 
 include "content/inc/navbar.php";
@@ -20,7 +29,7 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Sistema de Inventario y Trazabilidad | Produccion</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Administrador</li>
+                            <li class="breadcrumb-item active">Aduana | Registro de Bateria</li>
                         </ol>
                         <div class="container my-4">
                             <div class="row p-4">
