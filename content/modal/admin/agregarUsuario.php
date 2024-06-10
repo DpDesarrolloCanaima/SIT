@@ -10,11 +10,11 @@
         <form action="" id="AgregarUsuario">
             <div class="mb-3">
                 <label for="Usuario" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="Usuario" name="Usuario">
+                <input type="text" class="form-control" id="Usuario" name="Usuario" pattern="[a-zA-Z]{4,30}">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contrasena</label>
-                <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario">
+                <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{12,25}">
             </div>
             <div class="mb-3">
               <label for="tipo_De_equipo">Tipo de Equipo</label>
