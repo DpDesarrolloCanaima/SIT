@@ -20,7 +20,7 @@ if ($_POST) {
         $valido['mensaje'] = "Fecha de registro no enviada.";
     }
 
-    $sqlRegistro = "INSERT INTO equipo_diario (id_equipo_diario, equipo, fecha) VALUES (NULL, '$equipoSeleccionado', $fechaRegistro)";
+    $sqlRegistro = "INSERT INTO equipo_diario (id_equipo_diario, equipo, fecha) VALUES (NULL, '$equipoSeleccionado', '$fechaRegistro')";
     $resultadoRegistro = $conexion->query($sqlRegistro);
 
     if ($resultadoRegistro ===  true) {
