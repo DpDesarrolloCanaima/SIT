@@ -18,6 +18,7 @@ include "content/inc/header.php";
 include "content/inc/navbar.php";
 ?>
         
+        
         <div id="layoutSidenav">
             <?php include "content/inc/sidebar.php";?>
             <div id="layoutSidenav_content">
@@ -25,15 +26,81 @@ include "content/inc/navbar.php";
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Sistema de Inventario y Trazabilidad | Produccion</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Armador</li>
+                            <li class="breadcrumb-item active">Aduana | Armar Equipo Canaima</li>
                         </ol>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ArmarEquipoCanaima">
-                            Armar Equipo Canaima
-                        </button>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ArmarTabletCanaima">
-                            Armar Tablet Canaima
-                        </button>
+                        <div class="container my-4">
+                            <div class="row p-4">
+                                <div class="col-md-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="" id="RegistroCaraB">
+                                                <div class="form-group">
+                                                    <label for="">Equipo del dia : </label>
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label for="">Serial Cara A</label>
+                                                    <input type="text" name="serialCaraB" id="serialCaraB" class="form-control">
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label for="">Serial Cara B</label>
+                                                    <input type="text" name="serialCaraB" id="serialCaraB" class="form-control">
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label for="">Serial Cargador</label>
+                                                    <input type="text" name="serialCaraB" id="serialCaraB" class="form-control">
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label for="">Serial Pantalla</label>
+                                                    <input type="text" name="serialCaraB" id="serialCaraB" class="form-control">
+                                                </div>
+                                                <br>
+                                                <div class="form-group">
+                                                    <label for="">Serial Disco Duro</label>
+                                                    <input type="text" name="serialCaraB" id="serialCaraB" class="form-control">
+                                                </div>
+                                                <input type="hidden" name="fechaRegistro" id="fechaRegistro" value="<?php echo $fecha;?>">
+                                                <div class="my-3">
+                                                    <input type="button" class="btn btn-success" onclick="RegistrarCaraB()" value="Enviar">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                <table class="table table-bordered">
+                                    <thead>
+                                       
+                                        <tr>
+                                            <td class="text-center">Serial Disco</td>
+                                            <td class="text-center">Fecha Registro</td>
+                                        </tr>
+
+                                        
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                                            while ($rowRegistroDisco = $resultadoDisco->fetch_assoc()) :
+                                        ?>
+                                        <tr>
+                                            <td><?php echo $rowRegistroDisco['serial_cara_b'];?></td>
+                                            <td><?php echo $rowRegistroDisco['fecha_registro'];?></td>
+                                        </tr>
+                                        <?php
+
+                                            endwhile;
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                            </div>
+
+                        </div>
                     </div>
+
                 </main>
                 <?php
                     include "content/inc/footer.php";

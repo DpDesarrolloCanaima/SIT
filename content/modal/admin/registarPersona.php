@@ -27,7 +27,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" onclick="RegistrarPersona()" value="Guardar"> <i class="bi bi-check-circle-fill"></i>
+        <input type="submit" class="btn btn-success" onclick="RegistrarPersona()" value="Guardar">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-backspace-reverse"></i> Cerrar</button>
       </div>
     </div>

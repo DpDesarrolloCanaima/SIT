@@ -19,7 +19,7 @@ const validarusuario = (usuario) =>{
 }
 // Validacion de cedula, que comprende los 8 digitos que tiene la cedula
 const validarcedula = (cedula) =>{
-    return /^[0-9]{8}/.test(cedula.trim());
+    return /^[0-9]{7,8}/.test(cedula.trim());
 }
 
 // Validación de area

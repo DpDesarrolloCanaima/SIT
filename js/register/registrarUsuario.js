@@ -26,14 +26,14 @@ const RegistrarUsuario = async() => {
         });
       return;
     }
-    if (!validarpassword(passwordUsuario)) {
-        Swal.fire({
-          icon: "error",
-          title: "Error",
-          text: "La contraseña no cumple con los caracteres establecidos",
-        });
-      return;
-    }
+    // if (!validarpassword(passwordUsuario)) {
+    //     Swal.fire({
+    //       icon: "error",
+    //       title: "Error",
+    //       text: "La contraseña no cumple con los caracteres establecidos",
+    //     });
+    //   return;
+    // }
     if (!validarcedula(cedulaPersona)) {
         Swal.fire({
           icon: "error",

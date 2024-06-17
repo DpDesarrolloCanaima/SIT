@@ -8,13 +8,16 @@ if (!isset($_SESSION['id_usuario'])) {
         header("Location: 404.php");
     }
 }
-
-
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['rol'];
-
 date_default_timezone_set('America/Caracas');
+$fecha = date("Y-m-d");
 
+// CONSULTAS PARA OBTENER DATOS.
+include "config/conexion.php";
+
+$sqlTipoEquipo = "SELECT id_tipo_de_equipo, nombre FROM tipo_de_equipo";
+$resultadoEquipo = $conexion->query($sqlTipoEquipo);
 
 include "content/inc/header.php";
 
@@ -32,6 +35,8 @@ include "content/inc/navbar.php";
                         </ol>
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#RegistrarPersona">
                         <i class="bi bi-journal-plus"></i> Registar Persona </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#SeleccionEquipo">
+                        <i class="bi bi-easel2"></i> Elección Equipo</button>
                     </div>
                 </main>
                 <?php
@@ -41,8 +46,10 @@ include "content/inc/navbar.php";
         </div>
         <?php
             include "content/modal/admin/registarPersona.php";
+            include "content/modal/admin/seleccionEquipo.php";
             include "content/inc/script.php";
         ?>
         <script src="js/register/registrarPersona.js"></script>
+        <script src="js/register/seleccionEquipo.js"></script>
     </body>
 </html>

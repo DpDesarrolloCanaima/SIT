@@ -13,8 +13,9 @@
                 <input type="text" class="form-control" id="Usuario" name="Usuario" pattern="[a-zA-Z]{4,30}">
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Contrasena</label>
-                <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{12,25}">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario">
+                <!-- <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{12,25}"> -->
             </div>
             <div class="mb-3">
               <label for="tipo_De_equipo">Tipo de Equipo</label>
@@ -29,7 +30,7 @@
         </form>
       </div>
       <div class="modal-footer">
-        <input type="submit" class="btn btn-success" onclick="RegistrarUsuario()" value="Guardar"> <i class="bi bi-check-circle-fill"></i>
+        <input type="submit" class="btn btn-success" onclick="RegistrarUsuario()" value="Guardar">
         <button type="button" class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-backspace-reverse"></i> Cerrar</button>
       </div>
     </div>
