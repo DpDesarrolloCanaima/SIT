@@ -9,24 +9,24 @@
       <div class="modal-body">
         <form action="" id="AgregarUsuario">
             <div class="mb-3">
-                <label for="Usuario" class="form-label">Usuario</label>
-                <input type="text" class="form-control" id="Usuario" name="Usuario" pattern="[a-zA-Z]{4,30}">
+                <label for="usuarioRegistro" class="form-label">Usuario</label>
+                <input type="text" class="form-control" id="usuarioRegistroa" name="usuarioRegistroa" pattern="[a-zA-Z]{4,30}">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario">
+                <input type="password" class="form-control" id="passwordUsuarioa" name="passwordUsuarioa">
                 <!-- <input type="password" class="form-control" id="passwordUsuario" name="passwordUsuario" pattern="(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{12,25}"> -->
             </div>
             <div class="mb-3">
               <label for="tipo_De_equipo">Tipo de Equipo</label>
-              <select name="area" id="area" class="form-control form-control-lg">
+              <select name="areausuario" id="areausuario" class="form-control form-control-lg">
                             <?php foreach ($resultadoPerfiles as $rowPerfiles) : ?>
                             <option value="<?php echo $rowPerfiles['id_perfil']; ?>"><?php echo $rowPerfiles['tipo']; ?>
                             </option>
                             <?php endforeach; ?>
                 </select>
             </div>
-            <input type="hidden" name="cedulaUsuario" id="cedulaUsuario" value="<?php echo $rowPersonas['cedula'];?>">
+            <input type="hidden" name="cedulaUsuarioa" id="cedulaUsuarioa" value="<?php echo $rowPersonas['cedula'];?>">
         </form>
       </div>
       <div class="modal-footer">

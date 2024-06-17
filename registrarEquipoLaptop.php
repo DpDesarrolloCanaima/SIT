@@ -116,6 +116,11 @@ include "content/inc/navbar.php";
                                         <tr>
                                             <td><?php echo $rowRegistroLaptop['serial_id_c'];?></td>
                                             <td><?php echo $rowRegistroLaptop['serial_cara_b'];?></td>
+                                            <td class="text-center">
+                                                <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#detallesLaptop">
+                                                Detalles
+                                                </button>
+                                            </td>
                                         </tr>
                                         <?php
 
@@ -130,6 +135,7 @@ include "content/inc/navbar.php";
 
                 </main>
                 <?php
+                    include "content/modal/armador/detallesLaptop.php";
                     include "content/inc/footer.php";
                 ?>
             </div>

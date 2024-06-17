@@ -1,9 +1,9 @@
 const RegistrarUsuario = async() => {
-    var usuario = document.querySelector("#Usuario").value;
-    var passwordUsuario = document.querySelector("#passwordUsuario").value;
-    var area = document.querySelector("#area").value;
-    var cedulaPersona = document.querySelector("#cedulaUsuario").value;
-
+    var usuario = document.querySelector("#usuarioRegistroa").value;
+    var passwordUsuario = document.querySelector("#passwordUsuarioa").value;
+    var area = document.querySelector("#areausuario").value;
+    var cedulaPersona = document.querySelector("#cedulaUsuarioa").value;
+    console.log(usuario + passwordUsuario + area + cedulaPersona);
     if (
         cedulaPersona.trim() === '' ||
         usuario.trim() === '' ||
