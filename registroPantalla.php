@@ -21,7 +21,7 @@ date_default_timezone_set('America/Caracas');
 $fecha = date("Y-m-d");
 
 $sqlRegistroDisco = "SELECT serial_pantalla, fecha_registro FROM pantalla WHERE fecha_registro = '$fecha'";
-$resultadoDisco = $conexion->query($sqlRegistroDisco);
+$resultadoDisco = $conexionExtra->query($sqlRegistroDisco);
 ?>
         
         <div id="layoutSidenav">

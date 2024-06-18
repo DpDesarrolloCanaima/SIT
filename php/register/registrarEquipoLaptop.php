@@ -11,57 +11,57 @@ if ($_POST) {
     if ($serialCaraB == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
-    }elseif ($numCaraB != $serialCaraB) {
+    }elseif ($serialCaraBDB != $serialCaraB) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial de Cara B no registrado por Aduana";
     }
     $serialMR = limpiarDatos($_POST['serialMR']);
     if ($serialMR == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
-    }elseif ($serialMR != $numMR) {
+    }elseif ($serialMRdb != $serialMR) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial de Memoria Ram no registrado por Aduana";
     }
     $serialCargador = limpiarDatos($_POST['serialCargador']);
-    if ($serialCargador) {
+    if ($serialCargador == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
-    }elseif ($serialCargador != $numCargador) {
+    }elseif ($serialCargador != $serialCargadorDB) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial de Cargador no registrado por Aduana";
     }
     $serialTarjetaMadre = limpiarDatos($_POST['serialTarjetaMadre']);
-    if ($serialTarjetaMadre) {
+    if ($serialTarjetaMadre == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
-    }elseif ($serialTarjetaMadre != $numTarjetaMadre) {
+    }elseif ($serialTarjetaMadre != $serialrowTarjetaMadre) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial Tarjeta Madre no registrado por Aduana";
     }
     $serialPantalla = limpiarDatos($_POST['serialPantalla']);
-    if ($serialPantalla) {
+    if ($serialPantalla == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
-    }elseif ($serialPantalla != $numPantalla) {
+    }elseif ($serialPantalla != $serialPantallaDB) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial de Pantalla no registrado por Aduana";
     }
     $serialDiscoDuro = limpiarDatos($_POST['serialDiscoDuro']);
-    if ($serialDiscoDuro) {
+    if ($serialDiscoDuro == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
     }elseif ($serialDiscoDuro != $numDiscoDuro) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial de Disco Duro no registrado por Aduana";
     }
     $serialBateria = limpiarDatos($_POST['serialBateria']);
-    if ($serialBateria) {
+    if ($serialBateria == '') {
         $valido['success'] = false;
         $valido['mensaje'] = "Debe Ingresar un serial";
     }elseif ($serialBateria != $numBateria) {
         $valido['success'] = false;
-        $valido['mensaje'] = "Serial no registrado por Aduana";
+        $valido['mensaje'] = "Serial de Bateria no registrado por Aduana";
     }
     $fechaRegistro = limpiarDatos($_POST['fechaRegistro']);
     if ($fechaRegistro != $fecha) {

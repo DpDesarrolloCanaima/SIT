@@ -21,7 +21,7 @@ date_default_timezone_set('America/Caracas');
 $fecha = date("Y-m-d");
 
 $sqlRegistroDisco = "SELECT serial_cargador, fecha_registro FROM cargador WHERE fecha_registro = '$fecha'";
-$resultadoDisco = $conexion->query($sqlRegistroDisco);
+$resultadoDisco = $conexionExtra->query($sqlRegistroDisco);
 ?>
         
         <div id="layoutSidenav">
