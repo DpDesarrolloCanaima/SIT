@@ -26,6 +26,51 @@ include "content/inc/navbar.php";
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Ensamblador</li>
                         </ol>
+                        <div class="container my-4">
+                            <div class="row p-4">
+                                <div class="col-md-5">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <form action="" id="RegistroEquipoTablet">
+                                               <div class="form-group">
+                                                <label for="">Buscar Dispositivo</label>
+                                                <br>
+                                                <input type="text" name="" id="" class="form-control">
+                                               </div>
+                                                <div class="my-3">
+                                                    <input type="button" class="btn btn-success" onclick="RegistrarArmadoTablet()" value="Enviar">
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                    
+                                
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <td class="text-center">Identificador</td>
+                                                <td class="text-center">Cara B</td>
+                                                <td class="text-center">Serial Memoria Ram</td>
+                                                <td class="text-center">Serial Cargador</td>
+                                                <td class="text-center">Serial Tarjeta Madre</td>
+                                                <td class="text-center">Serial Pantalla</td>
+                                                <td class="text-center">Serial Disco Duro</td>
+                                                <td class="text-center">Serial Bateria</td>
+                                                <td class="text-center">Opciones</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
                 </main>
                 <?php

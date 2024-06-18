@@ -1,4 +1,7 @@
 const RegistrarArmado = async() =>{
+  document.getElementById('RegistroEquipoLaptop').onsubmit = function(e) {
+    e.preventDefault();
+};
     var serialCaraB = document.querySelector("#serialCaraB").value;
     var serialMR = document.querySelector("#serialMR").value;
     var serialCargador = document.querySelector("#serialCargador").value;
