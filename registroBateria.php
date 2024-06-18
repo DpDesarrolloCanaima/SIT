@@ -21,7 +21,7 @@ date_default_timezone_set('America/Caracas');
 $fecha = date("Y-m-d");
 
 $sqlRegistroDisco = "SELECT serial_baterias, fecha_registro FROM baterias WHERE fecha_registro = '$fecha'";
-$resultadoDisco = $conexion->query($sqlRegistroDisco);
+$resultadoDisco = $conexionExtra->query($sqlRegistroDisco);
 ?>
         
         <div id="layoutSidenav">
@@ -38,7 +38,7 @@ $resultadoDisco = $conexion->query($sqlRegistroDisco);
                                 <div class="col-md-5">
                                     <div class="card">
                                         <div class="card-body">
-                                            <form action="" id="RegistroBateria">
+                                            <form id="RegistroBateria">
                                                 <div class="form-group">
                                                     <label for="">Serial de Bateria</label>
                                                     <input type="text" name="serialBateria" id="serialBateria" class="form-control">

@@ -1,6 +1,6 @@
 <?php
 
-$conexion = mysqli_connect("localhost", "root", "", "partes_y_piezas");
+$conexionExtra = mysqli_connect("localhost", "root", "", "partes_y_piezas");
 
 
 ?>

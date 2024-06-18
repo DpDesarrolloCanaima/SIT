@@ -17,7 +17,7 @@ if ($_POST) {
     }
 
     $sqlRegistro = "INSERT INTO cara_b (id_cara_b, serial_cara_b, fecha_registro) VALUES (NULL, '$serial_cara_b','$fecha_registro')";
-    $resultadoRegistro = $conexion->query($sqlRegistro);
+    $resultadoRegistro = $conexionExtra->query($sqlRegistro);
 
     if ($resultadoRegistro === true) {
         $valido['success'] = true;

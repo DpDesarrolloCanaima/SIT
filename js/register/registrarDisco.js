@@ -1,4 +1,7 @@
 const RegistrarDisco = async() => {
+  document.getElementById('RegistroDisco').onsubmit = function(e) {
+    e.preventDefault();
+};
     var SerialDisco = document.querySelector("#serialDisco").value;
     var fechaRegistro = document.querySelector("#fechaRegistro").value;
 

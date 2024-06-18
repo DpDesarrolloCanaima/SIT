@@ -17,7 +17,7 @@ if ($_POST) {
     }
 
     $sqlRegistro = "INSERT INTO pantalla (id_pantalla, serial_pantalla, fecha_registro) VALUES (NULL, '$serial_pantalla','$fecha_registro')";
-    $resultadoRegistro = $conexion->query($sqlRegistro);
+    $resultadoRegistro = $conexionExtra->query($sqlRegistro);
 
     if ($resultadoRegistro === true) {
         $valido['success'] = true;

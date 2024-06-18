@@ -17,7 +17,7 @@ if ($_POST) {
     }
 
     $sqlRegistro = "INSERT INTO disco_duro (id_disco_duro, serial_disco, fecha_registro) VALUES (NULL, '$serial_disco','$fecha_registro')";
-    $resultadoRegistro = $conexion->query($sqlRegistro);
+    $resultadoRegistro = $conexionExtra->query($sqlRegistro);
 
     if ($resultadoRegistro === true) {
         $valido['success'] = true;

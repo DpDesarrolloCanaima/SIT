@@ -17,7 +17,7 @@ if ($_POST) {
     }
 
     $sqlRegistro = "INSERT INTO memoria_ram (id_m_r, serial_m_r, fecha_registro) VALUES (NULL, '$serial_memoria','$fecha_registro')";
-    $resultadoRegistro = $conexion->query($sqlRegistro);
+    $resultadoRegistro = $conexionExtra->query($sqlRegistro);
 
     if ($resultadoRegistro === true) {
         $valido['success'] = true;

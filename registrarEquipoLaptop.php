@@ -46,11 +46,54 @@ include "content/inc/navbar.php";
                                             <form action="" id="RegistroEquipoLaptop">
                                                 <div class="form-group">
                                                     <?php 
-                                                       while ($rowEquipos = $resultadoEquipoDiario->fetch_assoc()) :
+                                                     while ($rowEquipos = 
+                                                     $resultadoEquipoDiario->fetch_assoc()) :
+                                                    switch ($rowEquipos['equipo']) {
+                                                        case 3:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                        case 4:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                        case 5:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                        case 6:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                        case 7:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                        case 8:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                        case 10:
+                                                            echo '
+                                                            <label for="">Equipo del dia :'.$rowEquipos['nombre'].'</label>
+                                                            <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="'.$rowEquipos['equipo'].'">
+                                                            ';
+                                                            break;
+                                                       }
+                                                    endwhile;
                                                     ?>
-                                                    <label for="">Equipo del dia :  <?php echo $rowEquipos['nombre'];?></label>
-                                                    <input type="hidden" name="tipoEquipo" id="tipoEquipo" value="<?php echo $rowEquipos['equipo'];?>">
-                                                    <?php endwhile;?>
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
