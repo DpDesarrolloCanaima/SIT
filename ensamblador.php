@@ -9,11 +9,14 @@ if (!isset($_SESSION['id_usuario'])) {
     }
 }
 
+$cedula_usuario =$_SESSION['cedula'];
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['rol'];
-date_default_timezone_set('America/Caracas');
-include "content/inc/header.php";
 
+date_default_timezone_set('America/Caracas');
+$fecha = date("Y-m-d");
+
+include "content/inc/header.php";
 include "content/inc/navbar.php";
 ?>
         
@@ -22,7 +25,7 @@ include "content/inc/navbar.php";
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid px-4">
-                        <h1 class="mt-4">Sistema de Inventario y Trazabilidad | Produccion</h1>
+                        <h1 class="mt-4">Sistema de Inventario y Trazabilidad | Operaciones</h1>
                         <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item active">Ensamblador</li>
                         </ol>
@@ -35,10 +38,11 @@ include "content/inc/navbar.php";
                                                <div class="form-group">
                                                 <label for="">Buscar Dispositivo</label>
                                                 <br>
-                                                <input type="text" name="" id="" class="form-control">
+                                                <input type="text" name="SerialEquipo" id="SerialEquipo" class="form-control">
+                                                <input type="hidden" name="fechaDeEquipo" id="fechaDeEquipo" value="<?php echo $fecha?>">
                                                </div>
                                                 <div class="my-3">
-                                                    <input type="button" class="btn btn-success" onclick="RegistrarArmadoTablet()" value="Enviar">
+                                                    <input type="button" class="btn btn-success" onclick="buscarEquipo()" value="Enviar">
                                                 </div>
                                             </form>
                                         </div>
