@@ -103,7 +103,7 @@
                     </div>
                     <div class="form-group">
                         <label for="consejo_comunal">Consejo Comunal</label>
-                        <input type="text" class="form-control" id="consejo_comunal" name="consejo_comunal" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="consejo_comunal" name="consejo_comunal" pattern="[a-zA-Z\s]{6,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -129,7 +129,7 @@
                     <hr>
                     <input type="hidden" id="origen" name="origen" value="2">
                     <!-- <input type="button" class="btn btn-success" onclick="RegistroBeneficiario()" value="Registrar"> -->
-                    <button type="submit" class="btn btn-success">Refrescar</button>
+                    <button type="submit" class="btn btn-success">Guardar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>

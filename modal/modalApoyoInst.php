@@ -59,8 +59,6 @@
                     </div>
                     <hr>
                     <input type="hidden" name="origenApoyo" id="origenApoyo" value="1">
-                    <!-- <button type="submit" class="btn btn-success" onclick="registroApoyo()">Enviar</button> -->
-                    <!-- <input type="button" class="btn btn-success" onclick="registroApoyo()" value="Registrar"> -->
                     <button type="submit" class="btn btn-success">Refrescar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
