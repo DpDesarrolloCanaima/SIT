@@ -9,7 +9,7 @@
         </button>
             </div>
             <div class="modal-body">
-                <form id="RegistroBeneficiario">
+                <form id="RegistroBeneficiario" action="php/registro/registroProviBene.php" method="POST">
                     <div class="form-group">
                     <label for="inputAddress">Ingrese la cedula</label>
                         <div class="input-group">
@@ -83,14 +83,14 @@
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
                             <input class="form-check-input i-radio" type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios1" value="si" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='inline' ; " >
+                                id="discapacidad_o_condicion" value="si" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='inline' ; " >
                             <label class="form-check-label" for="exampleRadios1">
                                 Si
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input " type="radio" name="discapacidad_o_condicion"
-                                id="exampleRadios2" value="no" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='none' ; "checked>
+                                id="discapacidad_o_condicion" value="no" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='none' ; "checked>
                             <label class="form-check-label" for="exampleRadios2">
                                 No
                             </label>
@@ -128,7 +128,8 @@
                     </div>
                     <hr>
                     <input type="hidden" id="origen" name="origen" value="2">
-                    <input type="button" class="btn btn-success" onclick="RegistroBeneficiario()" value="Registrar">
+                    <!-- <input type="button" class="btn btn-success" onclick="RegistroBeneficiario()" value="Registrar"> -->
+                    <button type="submit" class="btn btn-success">Refrescar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>
