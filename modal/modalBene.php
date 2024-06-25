@@ -83,8 +83,8 @@
                         <label for="exampleInputPassword1">Posee Alguna Discapacidad o Condición</label>
                         <div class="form-check">
                             <input class="form-check-input i-radio" type="radio" name="discapacidad_o_condicion"
-                                id="discapacidad_o_condicion" value="si" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='inline' ; " >
-                            <label class="form-check-label" for="discapacidad_o_condicion">
+                                id="exampleRadios1" value="si" onclick = "javascript: var ch=document.getElementById('descripcionDiscapacidad1');ch.style.display='inline' ; " >
+                            <label class="form-check-label" for="exampleRadios1">
                                 Si
                             </label>
                         </div>
