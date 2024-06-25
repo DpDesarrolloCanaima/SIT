@@ -291,6 +291,7 @@ const registrarReparacion = async()=>{
           text: resultado.mensaje,
         });
         document.querySelector("#registroReparacion").reset();
+        window.location.reload();
       }else{
         Swal.fire({
           icon: "error",

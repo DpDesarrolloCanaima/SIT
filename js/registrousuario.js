@@ -88,6 +88,7 @@ const registrarUsuario = async()=>{
         text: resultado.mensaje,
       });
       document.querySelector("#formularioRegistro").reset();
+      window.location.reload();
     }else{
       Swal.fire({
         icon: "error",

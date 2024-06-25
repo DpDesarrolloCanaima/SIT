@@ -106,6 +106,7 @@ const registroApoyo = async() => {
           text: resultado.mensaje,
         });
         document.querySelector("#formularioApoyoRegistro").reset();
+        window.location.reload();
       }else{
         Swal.fire({
           icon: "error",
@@ -114,6 +115,3 @@ const registroApoyo = async() => {
         });
       }
 }
-
-
-console.log("Archivo conectado");

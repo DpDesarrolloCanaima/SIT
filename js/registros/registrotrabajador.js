@@ -119,6 +119,7 @@ const registrarTrabajador = async()=>{
            text: resultado.mensaje,
          });
          document.querySelector("#registrarTrabajador").reset();
+         window.location.reload();
        }else{
          Swal.fire({
            icon: "error",

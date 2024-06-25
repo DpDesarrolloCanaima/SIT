@@ -201,6 +201,7 @@ const RegistroBeneficiario = async ()=>{
           text: resultado.mensaje,
         });
         document.querySelector("#RegistroBeneficiario").reset();
+        window.location.reload();
       }else{
         Swal.fire({
           icon: "error",

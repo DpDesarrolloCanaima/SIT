@@ -133,6 +133,7 @@ const registrarReparacionTablet = async()=>{
           text: resultado.mensaje,
         });
         document.querySelector("#registroReparacionTablet").reset();
+        window.location.reload();
       }else{
         Swal.fire({
           icon: "error",

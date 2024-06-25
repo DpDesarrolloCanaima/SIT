@@ -96,6 +96,7 @@ const registrarDispositivo = async () =>{
           text: resultado.mensaje,
         });
         document.querySelector("#registroDispositivo").reset();
+        window.location.reload();
       }else{
         Swal.fire({
           icon: "error",
