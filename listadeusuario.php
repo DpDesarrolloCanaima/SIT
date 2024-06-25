@@ -154,7 +154,7 @@ $resultado1 = $mysqli->query($consulta1);
                                                     <div class="dropdown-menu">
                                                         <a class="dropdown-item btn btn-warning" data-toggle="modal" data-target="#editarUser'.$row['id_usuarios'].'" href="#">
                                                         <img src="img/svg/editar.svg " alt="Industrias Canaima" width="15" height="15"> Editar</a>
-                                                            <a class="dropdown-item btn btn-danger" href="eliminarusuario.php?id='.$row['id_usuarios'].'">
+                                                            <a class="dropdown-item btn btn-danger" href="php/eliminar/eliminarusuario.php?id='.$row['id_usuarios'].'">
                                                             <img src="img/svg/eliminar.svg " alt="Industrias Canaima" width="15" height="15"> Eliminar</a>
                                                         </div>
                                                     </div>

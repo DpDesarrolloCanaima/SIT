@@ -1,18 +1,18 @@
 const registrarTrabajador = async()=>{
-    var tipo_documento = document.querySelector("#tipo_documento").value;
-    var cedula = document.querySelector("#documento").value;
-    var nombreTrabajador = document.querySelector("#nombre_del_beneficiario").value;
-    var genero = document.querySelector("#genero").value;
-    var areaTrabajador = document.querySelector("#area").value;
-    var cargoTrabajador = document.querySelector("#cargo").value;
-    var correoBene = document.querySelector("#correoBene").value;
-    var phone = document.querySelector("#phone").value;
-    var estado = document.querySelector("#estado").value;
-    var municipio = document.querySelector("#municipio").value;
-    var direccion = document.querySelector("#direccion").value;
-    var discapacidadOCondicion = document.querySelector("#discapacidad_o_condicion").value;
-    var descripcionDiscapacidad = document.querySelector("#descripcionDiscapacidad").value;
-    var origen = document.querySelector("#origen").value;
+    var tipo_documento = document.querySelector("#tipo_documentoTrabajador").value;
+    var cedula = document.querySelector("#documentoTrabajador").value;
+    var nombreTrabajador = document.querySelector("#nombre_del_beneficiarioTrabajador").value;
+    var genero = document.querySelector("#generoTrabajador").value;
+    var areaTrabajador = document.querySelector("#areaTrabajador").value;
+    var cargoTrabajador = document.querySelector("#cargoTrabajador").value;
+    var correoBene = document.querySelector("#correoBeneTrabajador").value;
+    var phone = document.querySelector("#phoneTrabajador").value;
+    var estado = document.querySelector("#estadoTrabajador").value;
+    var municipio = document.querySelector("#municipioTrabajador").value;
+    var direccion = document.querySelector("#direccionTrabajador").value;
+    var discapacidadOCondicion = document.querySelector("#discapacidad_o_condicionTrabajador").value;
+    var descripcionDiscapacidad = document.querySelector("#descripcionDiscapacidadTrabajador").value;
+    var origen = document.querySelector("#origenTrabajador").value;
 
     if (tipo_documento.trim() === ''||
     cedula.trim() === '' ||

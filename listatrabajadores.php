@@ -11,13 +11,12 @@ $rol = $_SESSION['id_roles'];
 $idusuario = $_SESSION['id_usuarios'];
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, e.descontinuado, a.nombre_del_area, c.tipo_de_cargo, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.id_cargo, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, e.descontinuado, a.nombre_del_area, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN area AS a ON a.id_area = e.id_area
-INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
-INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 3";
+INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE id_origen = 3";
 
-$resultado = $mysqli->query($sql1);
+$resultadoConsulta = $mysqli->query($sql1);
 
 
 // Consulta para mostrar los datos e enviar
@@ -195,21 +194,22 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                             <th>Dirección</th>
 
                                             <?php
-                        switch($rol){
-                               case 1:
-                                echo ' <th>Opciones</th> ';
-                               break;
-                               case 3:
-                                echo ' <th>Opciones</th> ';
-                               break;
-                            }
+                                                switch($rol){
+                                                    case 1:
+                                                        echo ' <th>Opciones</th> ';
+                                                    break;
+                                                    case 3:
+                                                        echo ' <th>Opciones</th> ';
+                                                    break;
+                                                    }
                                             ?>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        while ($row = $resultado->fetch_assoc()) :
+                                        while ($row = $resultadoConsulta->fetch_assoc()) :
                                             $validacion = $row['descontinuado'];
+                                            
                                             if ($validacion == 2) {
                                         ?>
                                         <tr>
@@ -217,16 +217,16 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                             <td><?php echo $row['cedula']; ?></td>
                                             <td><?php echo $row['nombre_del_beneficiario']; ?></td>
                                             <td><?php echo $row['nombre_del_area']; ?></td>
-                                            <td><?php echo $row['tipo_de_cargo']; ?></td>
+                                            <td><?php echo $row['id_cargo']; ?></td>
                                             <td><?php echo $row['correo']; ?></td>
                                             <td><?php echo $row['telefono']; ?></td>
                                             <td><?php echo $row['estado_nombre']; ?></td>
                                             <td><?php echo $row['municipio']; ?></td>
                                             <td><?php echo $row['direccion']; ?></td>
                                             <?php
-                           switch($rol){
-                                  case 1:
-                                    echo '  <td>
+                                                switch($rol){
+                                                    case 1:
+                                                        echo '  <td>
                                                     <div class="btn-group">
                                                         <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                                                             Opciones
@@ -262,7 +262,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                             <?php
                             include "modal/edit/modaledittrabajador.php";
                             include "modal/modalDeRegistroDis.php";
-                            }
+                        }   
                             endwhile;
                         ?>
                                         </tr>

@@ -1,10 +1,7 @@
 <?php
 require "../../config/conexion.php";
 require "../../function.php";
-
 $valido['success']=array('success', false, 'mensaje'=>"");
-
-
 if ($_POST) {
     $serialTarjetaMadreEntrada = limpiarDatos($_POST['serial_entrada_tm']);
     if (!preg_match("/[A-Z0-9\s]{8,30}/" , $serialTarjetaMadreEntrada)) {
@@ -38,7 +35,6 @@ if ($_POST) {
     if (!preg_match("/[A-Z0-9\s]{8,25}/", $tarjetaIosSalida)) {
       $tarjetaIosSalida = "N/A";
     }
-
     $serial_entrada_disco_duro = limpiarDatos($_POST['serial_entrada_disco_duro']);
     if (!preg_match("/[A-Z0-9\s]{8,15}/", $serial_entrada_disco_duro)) {
         $valido['success']=false;
@@ -57,7 +53,6 @@ if ($_POST) {
     if (!preg_match("/[A-Z0-9]{18}/", $caraAserialSalida)) {
       $caraAserialSalida = "N/A";
     }
-
     //DECISION DE QUE HACER CON LAS DEMAS CARAS DE LOS DISPOSITIVOS.
     $cambio_cara_b = limpiarDatos($_POST['cara_b']);
     if ($cambio_cara_b == "") {
@@ -168,14 +163,9 @@ if ($_POST) {
         $valido['success']=false;
         $valido['mensaje']="IC no enviado.";
     } 
-
-
-
     $sqlValidation = "SELECT ic_dispositivo FROM reparacion WHERE ic_dispositivo = '$ic_dispositivo'";
     $resultadoValidation = $mysqli->query($sqlValidation);
     $n = $resultadoValidation->num_rows;
-
-
     if ($n == 0) {
         $sqlReparacion = "INSERT INTO reparacion (id_reparacion, ic_dispositivo, serial_entrada_tm, serial_salida_tm, cambio_pila_bios, serial_entrada_bat, serial_salida_bat, serial_entreda_tarj_ios, serial_salida_tarj_ios, serial_entreda_disco, serial_salida_disco, serial_entrada_cara_a, serial_entreda_cara_b, serial_entreda_cara_c, serial_entreda_cara_d,serial_salida_cara_a, serial_entrada_memoria_ram, serial_salida_memoria_ram, serial_entrada_teclado, serial_salida_teclado, serial_entrada_cargador, serial_salida_cargador, serial_entrada_pantalla, serial_salida_pantalla, serial_entrada_tarj_red, serial_salida_tarj_red, cambio_fan_cooler, id_status, id_dispositivo, id_tipo_de_dispositivo, responsable) VALUES (NULL, '$ic_dispositivo', '$serialTarjetaMadreEntrada','$serialTarjetaMadreSalida', '$pilaBios', '$serialBateriaEntrada','$serialBateriaSalida','$tarjetaIosEntrada','$tarjetaIosSalida','$serial_entrada_disco_duro','$serial_salida_disco_duro','$caraAserialEntrada','$cambio_cara_b','$cambio_cara_c','$cambio_cara_d','$caraAserialSalida','$serialEntradaMemoriaRam','$serialSalidaMemoriaRam','$serialEntradaTeclado','$serialSalidaTeclado','$serialEntradaCargador','$serialSalidaCargador','$serialEntradaPantalla','$serialSalidaPantalla','$serialEntradaTarjetaRed','$serialSalidaTarjetaRed','$fanCooler','$estatus', '$idDispo', '$id_tipo_de_dispositivo', '$responsable')";
         if ($mysqli->query($sqlReparacion)===true) {

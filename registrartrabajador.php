@@ -4,7 +4,7 @@ require "config/conexion.php";
 //  Funciones requeridas para la validacion de los datos.
 require "function.php";
 
-    $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
+    $tipoDocumento = limpiarDatos($_POST['tipo_documentoTrabajador']);
     if ($tipoDocumento != 1 || $tipoDocumento == "") {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -27,7 +27,7 @@ require "function.php";
         
         ";
     }
-    $documento = limpiarDatos($_POST['documento']);
+    $documento = limpiarDatos($_POST['documentoTrabajador']);
     if (!preg_match("/\b/",$documento)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -72,7 +72,7 @@ require "function.php";
         ";
         }
     }
-    $nombreInstitucion = limpiarDatos($_POST['nombre_del_beneficiario']);
+    $nombreInstitucion = limpiarDatos($_POST['nombre_del_beneficiarioTrabajador']);
     if (!preg_match("/^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]{3,80}/", $nombreInstitucion)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -95,7 +95,7 @@ require "function.php";
                 
         ";
     }
-    $generoTrabajador = limpiarDatos($_POST['genero']);
+    $generoTrabajador = limpiarDatos($_POST['generoTrabajador']);
     if ($generoTrabajador == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -118,7 +118,7 @@ require "function.php";
                 
         ";
     }
-    $areaTrabajador = limpiarDatos($_POST['area']);
+    $areaTrabajador = limpiarDatos($_POST['areaTrabajador']);
     if ($areaTrabajador == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -141,7 +141,7 @@ require "function.php";
                 
         ";
     }
-    $cargoTrabajador = limpiarDatos($_POST['cargo']);
+    $cargoTrabajador = limpiarDatos($_POST['cargoTrabajador']);
     if ($cargoTrabajador == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -164,7 +164,7 @@ require "function.php";
                 
         ";
     }
-    $correoTrabajador = limpiarDatos($_POST['correoBene']);
+    $correoTrabajador = limpiarDatos($_POST['correoTrabajador']);
     if (!preg_match("/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/", $correoTrabajador)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -185,7 +185,7 @@ require "function.php";
                 
         ";
     }
-    $telefonoTrabajador = limpiarDatos($_POST['phone']);
+    $telefonoTrabajador = limpiarDatos($_POST['phoneTrabajador']);
     if (!preg_match("/\b/", $telefonoTrabajador)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -229,7 +229,7 @@ require "function.php";
                 
         ";
     }
-    $estado = limpiarDatos($_POST['estado']);
+    $estado = limpiarDatos($_POST['estadoTrabajador']);
     if ($estado == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -252,7 +252,7 @@ require "function.php";
                 
         ";
     }
-    $municipio = limpiarDatos($_POST['municipio']);
+    $municipio = limpiarDatos($_POST['municipioTrabajador']);
     if (!preg_match("/^[a-zA-Z\s]{10,60}/", $municipio)) {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -275,7 +275,7 @@ require "function.php";
                 
         ";
     }
-    $direccion = limpiarDatos($_POST['direccion']); 
+    $direccion = limpiarDatos($_POST['direccionTrabajador']); 
     if ($direccion == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -298,7 +298,7 @@ require "function.php";
                 
         ";
     }
-    $discapacidad = limpiarDatos($_POST['discapacidad_o_condicion']);
+    $discapacidad = limpiarDatos($_POST['discapacidad_o_condicionTrabajador']);
     if ($discapacidad == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -321,11 +321,11 @@ require "function.php";
                 
         ";
     }
-    $descripcionDisca = limpiarDatos($_POST['descripcionDiscapacidad']);
+    $descripcionDisca = limpiarDatos($_POST['descripcionDiscapacidadTrabajador']);
     if ($descripcionDisca == "") {
         $descripcionDisca = "No posee";
     }
-    $origen = limpiarDatos($_POST['origen']);
+    $origen = limpiarDatos($_POST['origenTrabajador']);
     if ($origen != 3 || $origen == "") {
         echo "
                 <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
