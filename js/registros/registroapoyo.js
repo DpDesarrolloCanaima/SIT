@@ -1,13 +1,13 @@
 const registroApoyo = async() => {
-    var tipo_documento = document.querySelector("#tipo_documento").value;
-    var rif = document.querySelector("#documento").value;
-    var nombreInstitucion = document.querySelector("#nombre_de_institucion").value;
+    var tipo_documento = document.querySelector("#tipo_documentoApoyo").value;
+    var rif = document.querySelector("#documentoApoyo").value;
+    var nombreInstitucion = document.querySelector("#nombre_de_institucionApoyo").value;
     var correo = document.querySelector("#correoApoyo").value;
-    var telefono = document.getElementById("phone").value;
-    var estado = document.querySelector("#estado").value;
-    var municipio = document.querySelector("#municipio").value;
-    var direccion = document.querySelector("#direccion").value;
-    var origen = document.getElementById("origen").value;
+    var telefono = document.querySelector("#phoneApoyo").value;
+    var estado = document.querySelector("#estadoApoyo").value;
+    var municipio = document.querySelector("#municipioApoyo").value;
+    var direccion = document.querySelector("#direccionApoyo").value;
+    var origen = document.querySelector("#origenApoyo").value;
 
     if (tipo_documento.trim() === ''||
         rif.trim() === '' ||

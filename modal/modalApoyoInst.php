@@ -17,13 +17,13 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text" id="btnGroupAddon">RIF</div>
                             </div>
-                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documento" id="documento" pattern="[0-9]{8,9}" title="Debe ingresar el RIF en solo digitos">
-                            <input type="hidden" name="tipo_documento" value="2" id="tipo_documento">
+                            <input type="text" class="form-control" aria-label="Input group example" aria-describedby="btnGroupAddon" name="documentoApoyo" id="documentoApoyo" pattern="[0-9]{8,9}" title="Debe ingresar el RIF en solo digitos">
+                            <input type="hidden" name="tipo_documentoApoyo" value="2" id="tipo_documentoApoyo">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="nombre_bene">Nombre de la institucion</label>
-                        <input type="text" class="form-control" id="nombre_de_institucion" name="nombre_de_institucion" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres 80">
+                        <input type="text" class="form-control" id="nombre_de_institucionApoyo" name="nombre_de_institucionApoyo" pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres 80">
                         <span></span>
                     </div>
                     <div class="form-group">
@@ -34,12 +34,12 @@
                     </div>
                     <div class="form-group">
                         <label for="phone">Telefono</label>
-                        <input type="text" class="form-control" id="phone" name="phone" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
+                        <input type="text" class="form-control" id="phoneApoyo" name="phoneApoyo" pattern="[0-9]{11}" title="El numero debe ingresarse con solo digitos">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="estado">Estado</label>
-                        <select name="estado" id="estado" class="form-control form-control-lg">
+                        <select name="estadoApoyo" id="estadoApoyo" class="form-control form-control-lg">
                             <?php foreach ($resultado7 as $row7) : ?>
                             <option value="<?php echo $row7['id_estados']; ?>"><?php echo $row7['estado_nombre']; ?>
                             </option>
@@ -48,17 +48,17 @@
                     </div>
                     <div class="form-group">
                         <label for="municipio">Municipio</label>
-                        <input type="text" class="form-control" id="municipio" name="municipio" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="municipioApoyo" name="municipioApoyo" pattern="[a-zA-Z\s]{10,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Dirección</label>
-                        <textarea class="form-control" id="direccion" rows="3"
+                        <textarea class="form-control" id="direccionApoyo" rows="3"
                             name="direccion"></textarea>
                         <span></span>
                     </div>
                     <hr>
-                    <input type="hidden" name="origen" id="origen" value="1">
+                    <input type="hidden" name="origen" id="origenApoyo" value="1">
                     <!-- <button type="submit" class="btn btn-success" onclick="registroApoyo()">Enviar</button> -->
                     <input type="button" class="btn btn-success" onclick="registroApoyo()" value="Registrar">
                     <button type="reset" class="btn btn-danger">Refrescar</button>

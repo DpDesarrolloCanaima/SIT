@@ -11,9 +11,8 @@ $rol = $_SESSION['id_roles'];
 $idusuario = $_SESSION['id_usuarios'];
 // Consulta para traer los datos almacenados
 
-$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, e.descontinuado, a.nombre_del_area, c.tipo_de_cargo, v.estado_nombre FROM datos_del_entregante AS e 
+$sql1 = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario, d.tipo_documento, e.cedula, e.nombre_del_representante, e.id_cargo, e.correo, e.telefono, e.municipio, e.direccion, e.id_origen, e.descontinuado, a.nombre_del_area, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN area AS a ON a.id_area = e.id_area
-INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = 3";
 
@@ -30,8 +29,8 @@ $resultado3 = $mysqli->query($consulta3);
 
 
 // Consulta para mostrar los datos e enviar
-$consulta4 = "SELECT * FROM cargo";
-$resultado4 = $mysqli->query($consulta4);
+// $consulta4 = "SELECT * FROM cargo";
+// $resultado4 = $mysqli->query($consulta4);
 
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
@@ -49,9 +48,9 @@ $resultado7 = $mysqli->query($consulta7);
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
 
-// Consulta para mostrar los datos e enviar
-$consulta10 = "SELECT * FROM grado";
-$resultado10 = $mysqli->query($consulta10);
+// // Consulta para mostrar los datos e enviar
+// $consulta10 = "SELECT * FROM grado";
+// $resultado10 = $mysqli->query($consulta10);
 
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";
@@ -216,7 +215,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                             <td><?php echo $row['cedula']; ?></td>
                                             <td><?php echo $row['nombre_del_beneficiario']; ?></td>
                                             <td><?php echo $row['nombre_del_area']; ?></td>
-                                            <td><?php echo $row['tipo_de_cargo']; ?></td>
+                                            <td><?php echo $row['id_cargo']; ?></td>
                                             <td><?php echo $row['correo']; ?></td>
                                             <td><?php echo $row['telefono']; ?></td>
                                             <td><?php echo $row['estado_nombre']; ?></td>
