@@ -471,7 +471,7 @@ if ($_POST) {
                 <script language='JavaScript'>
                 document.addEventListener('DOMContentLoaded', function() {
                     Swal.fire({
-                        icon: 'error',
+                        icon: 'success',
                         title: 'Registro exitoso',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',

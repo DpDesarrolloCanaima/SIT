@@ -77,7 +77,7 @@ if ($_POST) {
 
         if ($mysqli->query($sql)===true) {
             $valido['success']=true;
-            $valido['mensaje']="Se actualizo el equipo.";
+            $valido['mensaje']="Se actualizo el equipo." . $falla;
         }else {
             $valido['success']=false;
             $valido['mensaje']="Fallo al actualizar el equipo.";

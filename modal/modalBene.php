@@ -108,7 +108,7 @@
                     </div>
                     <div class="form-group">
                         <label for="mesa_telecomunicaciones">Mesa de telecomunicaciones</label>
-                        <input type="text" class="form-control" id="mesa_telecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{10,60}">
+                        <input type="text" class="form-control" id="mesa_telecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{6,60}">
                         <span></span>
                     </div>
                     <div class="form-group">

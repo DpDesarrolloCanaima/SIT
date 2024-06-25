@@ -59,7 +59,7 @@
                     </div>
                     <hr>
                     <input type="hidden" name="origenApoyo" id="origenApoyo" value="1">
-                    <button type="submit" class="btn btn-success">Refrescar</button>
+                    <button type="submit" class="btn btn-success">Gaurdar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>
