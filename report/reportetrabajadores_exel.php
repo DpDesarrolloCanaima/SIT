@@ -7,9 +7,8 @@
 
 
  $id = $_GET['id'];
- $consulta = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+ $consulta = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.nombre_del_representante, e.id_cargo, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
  INNER JOIN area AS a ON a.id_area = e.id_area
- INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
  INNER JOIN origen AS o ON o.id_origen = e.id_origen
  INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
  INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = $id";
@@ -50,7 +49,7 @@ while($rows = $resultado->fetch_assoc()){
         $hojaActiva->setCellValue('B'.$fila, $rows['cedula']);
         $hojaActiva->setCellValue('C'.$fila, $rows['nombre_del_beneficiario']);
         $hojaActiva->setCellValue('D'.$fila, $rows['nombre_del_area']);
-        $hojaActiva->setCellValue('E'.$fila, $rows['tipo_de_cargo']);
+        $hojaActiva->setCellValue('E'.$fila, $rows['id_cargo']);
         $hojaActiva->setCellValue('F'.$fila, $rows['correo']);
         $hojaActiva->setCellValue('G'.$fila, $rows['telefono']);
         $hojaActiva->setCellValue('H'.$fila, $rows['estado_nombre']);

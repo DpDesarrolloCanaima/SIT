@@ -4,9 +4,8 @@
 	require "../config/conexion.php";
 	require "plantillatrabajador.php";
     $id = $_GET['id'];
-$sql = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.nombre_del_representante, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, c.tipo_de_cargo, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
+$sql = "SELECT e.id_datos_del_entregante, e.nombre_del_beneficiario,d.tipo_documento, e.cedula, e.nombre_del_representante, e.id_cargo, e.correo, e.telefono, e.municipio, e.direccion, a.nombre_del_area, o.origen, v.estado_nombre FROM datos_del_entregante AS e 
 INNER JOIN area AS a ON a.id_area = e.id_area
-INNER JOIN cargo AS c ON c.id_cargo = e.id_cargo
 INNER JOIN origen AS o ON o.id_origen = e.id_origen
 INNER JOIN estados_venezuela AS v ON v.id_estados = e.estado
 INNER JOIN tipo_documento AS d ON d.id_documento = e.tipo_documento WHERE e.id_origen = $id";
@@ -35,7 +34,7 @@ $resultado = $mysqli->query($sql);
 	$pdf->Cell(30, 5,$row['cedula'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['nombre_del_beneficiario'], 1, 0, "C");
 	$pdf->Cell(30, 5,utf8_decode($row['nombre_del_area']), 1, 0, "C");
-	$pdf->Cell(30, 5,utf8_decode($row['tipo_de_cargo']), 1, 0, "C");
+	$pdf->Cell(30, 5,utf8_decode($row['id_cargo']), 1, 0, "C");
 	$pdf->Cell(50, 5,$row['correo'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['telefono'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['estado_nombre'], 1, 0, "C");

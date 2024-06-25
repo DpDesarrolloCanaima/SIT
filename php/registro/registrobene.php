@@ -124,7 +124,7 @@ if ($_POST) {
     $idcargo = 1;
     $conex = $mysqli;
     $descontinuado = 2;
-    $sqlValidation = "SELECT cedula FROM datos_del_entregante WHERE cedula = '$cedula'";
+    $sqlValidation = "SELECT cedula FROM datos_del_entregante WHERE cedula = '$cedula' AND descontinuado = 2";
     $resultadoValidation = $conex->query($sqlValidation);
     $n = $resultadoValidation->num_rows;
 
