@@ -69,7 +69,6 @@ if ($_POST) {
         $comprobacion = "Faltan comprobaciones";
         $observaciones_tecnico = "Falta por observaciones";
         $observaciones_verificador = "Falta por observaciones";
-        // $responsableAnalistaRecibido = $responsableRecepcion;
         $responsableTecnico = "aun no";
         $responsableVerficador = "aun no";
         $responsableAnalistaEntrega = "aun no";

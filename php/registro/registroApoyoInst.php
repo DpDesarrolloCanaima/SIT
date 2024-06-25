@@ -6,12 +6,12 @@ $valido['success']=array('success', false, 'mensaje'=>"");
 
 
 if ($_POST) {
-    $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
+    $tipoDocumento = limpiarDatos($_POST['tipo_documentoApoyo']);
     if ($tipoDocumento != 2) {
         $valido['success']=false;
         $valido['mensaje']="Tipo de documento no valido.";
     }
-    $documento = limpiarDatos($_POST['documento']);
+    $documento = limpiarDatos($_POST['documentoApoyo']);
     if (!preg_match("/\b/",$documento)) {
         $valido['success']=false;
         $valido['mensaje']="Debe ingresar solo numeros.";
@@ -20,7 +20,7 @@ if ($_POST) {
             $valido['mensaje']="Los datos ingresados no cumplen con los caracteres especificados.";
         }
     }
-    $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
+    $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucionApoyo']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
         $valido['success']=false;
         $valido['mensaje']="El nombre de la institucion no cumple con los caracteres especificados.";
@@ -30,7 +30,7 @@ if ($_POST) {
         $valido['success']=false;
         $valido['mensaje']="El correo no cumple con los caracteres necesarios.";
     }
-    $telefonoInsti = limpiarDatos($_POST['phone']);
+    $telefonoInsti = limpiarDatos($_POST['phoneApoyo']);
     if (!preg_match("/\b/", $telefonoInsti)) {
         $valido['success']=false;
         $valido['mensaje']="El telefono no cumple con el formato establecido.";
@@ -39,22 +39,22 @@ if ($_POST) {
             $valido['mensaje']="El telefono no cumple con el formato establecido.";
         }
     }
-    $estadoInsti = limpiarDatos($_POST['estado']);
+    $estadoInsti = limpiarDatos($_POST['estadoApoyo']);
     if ($estadoInsti == "") {
         $valido['success']=false;
         $valido['mensaje']="Debe seleccionar un estado.";
     }
-    $municipio = limpiarDatos($_POST['municipio']);
+    $municipio = limpiarDatos($_POST['municipioApoyo']);
     if (!preg_match("/[a-zA-Z\s]{10,60}/", $municipio)) {
         $valido['success']=false;
         $valido['mensaje']="El municipio no cumple con los caracteres establecidos.";
     }
-    $direccionInsti = limpiarDatos($_POST['direccion']);
+    $direccionInsti = limpiarDatos($_POST['direccionApoyo']);
     if ($direccionInsti == "") {
         $valido['success']=false;
         $valido['mensaje']="La direccion ingresada no cumple con los caracteres establecidos.";
     }
-    $origen = limpiarDatos($_POST['origen']);
+    $origen = limpiarDatos($_POST['origenApoyo']);
     if ($origen == "") {
         $valido['success']=false;
         $valido['mensaje']="No se envia el origen del beneficiario.";

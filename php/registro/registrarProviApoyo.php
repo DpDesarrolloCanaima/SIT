@@ -6,7 +6,7 @@ require "../../function.php";
 
 
 if ($_POST) {
-    $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
+    $tipoDocumento = limpiarDatos($_POST['tipo_documentoApoyo']);
     if ($tipoDocumento != 2) {
         // $valido['success']=false;
         // $valido['mensaje']="Tipo de documento no valido.";
@@ -21,12 +21,12 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../../listadebeneficiario.php');
+                location.assign('../../Listadeapoyo.php');
               });
     });
         </script>";
     }
-    $documento = limpiarDatos($_POST['documento']);
+    $documento = limpiarDatos($_POST['documentoApoyo']);
     if (!preg_match("/\b/",$documento)) {
         // $valido['success']=false;
         // $valido['mensaje']="Debe ingresar solo numeros.";
@@ -41,7 +41,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('../../listadebeneficiario.php');
+                location.assign('../../Listadeapoyo.php');
               });
     });
         </script>";
@@ -59,13 +59,13 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
         }
     }
-    $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucion']);
+    $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucionApoyo']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
         // $valido['success']=false;
         // $valido['mensaje']="El nombre de la institucion no cumple con los caracteres especificados.";
@@ -80,7 +80,7 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
@@ -100,12 +100,12 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
     }
-    $telefonoInsti = limpiarDatos($_POST['phone']);
+    $telefonoInsti = limpiarDatos($_POST['phoneApoyo']);
     if (!preg_match("/\b/", $telefonoInsti)) {
         $valido['success']=false;
         $valido['mensaje']="El telefono no cumple con el formato establecido.";
@@ -120,7 +120,7 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
@@ -138,13 +138,13 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
         }
     }
-    $estadoInsti = limpiarDatos($_POST['estado']);
+    $estadoInsti = limpiarDatos($_POST['estadoApoyo']);
     if ($estadoInsti == "") {
         // $valido['success']=false;
         // $valido['mensaje']="Debe seleccionar un estado.";
@@ -159,12 +159,12 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
     }
-    $municipio = limpiarDatos($_POST['municipio']);
+    $municipio = limpiarDatos($_POST['municipioApoyo']);
     if (!preg_match("/[a-zA-Z\s]{10,60}/", $municipio)) {
         // $valido['success']=false;
         // $valido['mensaje']="El municipio no cumple con los caracteres establecidos.";
@@ -179,12 +179,12 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
     }
-    $direccionInsti = limpiarDatos($_POST['direccion']);
+    $direccionInsti = limpiarDatos($_POST['direccionApoyo']);
     if ($direccionInsti == "") {
         // $valido['success']=false;
         // $valido['mensaje']="La direccion ingresada no cumple con los caracteres establecidos.";
@@ -199,12 +199,12 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
     }
-    $origen = limpiarDatos($_POST['origen']);
+    $origen = limpiarDatos($_POST['origenApoyo']);
     if ($origen == "") {
         // $valido['success']=false;
         // $valido['mensaje']="No se envia el origen del beneficiario.";
@@ -219,7 +219,7 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
@@ -231,7 +231,7 @@ if ($_POST) {
     $fechaNac = date('00-00-0000');
     $id_area = 1;
     $id_cargo = 1;
-    $nombreRepre = limpiarDatos($_POST['nombre_de_institucion']);
+    $nombreRepre = limpiarDatos($_POST['nombre_de_institucionApoyo']);
     $discapacidad = "no";
     $descripcionDis = "no posee";
     $consejoComunal = "no posee";
@@ -256,13 +256,13 @@ if ($_POST) {
             <script language='JavaScript'>
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
-                    icon: 'error',
+                    icon: 'success',
                     title: 'Registro exitoso.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
@@ -280,7 +280,7 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>"; 
@@ -299,7 +299,7 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>"; 
@@ -319,7 +319,7 @@ if ($_POST) {
                     confirmButtonColor: '#3085d6',
                     confirmButtonText: 'OK'
                   }).then(() => {
-                    location.assign('../../listadebeneficiario.php');
+                    location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>"; 

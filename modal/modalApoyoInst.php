@@ -10,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="formularioApoyoRegistro" action="php/registro/registrarProviApoyo.php">
+                <form id="formularioApoyoRegistro" action="php/registro/registrarProviApoyo.php" method="POST">
                     <div class="form-group">
                     <label for="inputAddress">Ingrese el RIF</label>
                         <div class="input-group">
