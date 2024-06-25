@@ -28,9 +28,9 @@ $consulta3 = "SELECT * FROM area";
 $resultado3 = $mysqli->query($consulta3);
 
 
-// Consulta para mostrar los datos e enviar
-$consulta4 = "SELECT * FROM cargo";
-$resultado4 = $mysqli->query($consulta4);
+// // Consulta para mostrar los datos e enviar
+// $consulta4 = "SELECT * FROM cargo";
+// $resultado4 = $mysqli->query($consulta4);
 
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
@@ -48,9 +48,9 @@ $resultado7 = $mysqli->query($consulta7);
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
 
-// Consulta para mostrar los datos e enviar
-$consulta10 = "SELECT * FROM grado";
-$resultado10 = $mysqli->query($consulta10);
+// // Consulta para mostrar los datos e enviar
+// $consulta10 = "SELECT * FROM grado";
+// $resultado10 = $mysqli->query($consulta10);
 
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";

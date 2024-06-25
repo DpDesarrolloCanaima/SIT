@@ -22,9 +22,9 @@ $resultado6 = $mysqli->query($consulta6);
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
 
-// Consulta para mostrar los datos e enviar
-$consulta10 = "SELECT * FROM grado";
-$resultado10 = $mysqli->query($consulta10);
+// // Consulta para mostrar los datos e enviar
+// $consulta10 = "SELECT * FROM grado";
+// $resultado10 = $mysqli->query($consulta10);
 
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";
