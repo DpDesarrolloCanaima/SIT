@@ -13,7 +13,7 @@ if (!isset($_SESSION['id_usuarios'])) {
 $idbeneficiario = $_REQUEST['id'];
 $origen = $_REQUEST['origen'];
 //Realizamos la consulta para eliminar el benificiario
-$sql = "UPDATE datos_del_entregante SET descontinuado = 1 WHERE id_del_entregante = '$idbeneficiario' AND id_origen = '$origen'";
+$sql = "UPDATE datos_del_entregante SET descontinuado = 1 WHERE id_datos_del_entregante = '$idbeneficiario' AND id_origen = '$origen'";
 
 // Obtenemos la respuesta de esa consulta
 $respuesta = $mysqli->query($sql);
