@@ -261,9 +261,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    </div>
+   
     
     <?php require "inc/footer.php";?>
     <?php require "inc/script.php";?>

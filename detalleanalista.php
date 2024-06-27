@@ -25,7 +25,7 @@ INNER JOIN origen AS k ON k.id_origen = d.id_origen
 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
 INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo
-WHERE d.id_dispositivo = $idDispositivo";
+WHERE d.id_dispositivo = '$idDispositivo'";
 
 $resultado = $mysqli->query($sql);
 

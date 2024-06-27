@@ -81,7 +81,7 @@ $resultado2 = $mysqli->query($consulta2);
                                 <p class="lead">Bienvenido al Sistema de Inventario y Trazabilidad de Industria Canaima (SIT).</p>
                             <hr class="my-4">
                             <p>De click en el siguente boton.</p>
-                            <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-toggle="modal" data-target="#RegistroUsuario"> <i class="fas fa-user fa-sm text-white-50"></i> Crear Usuario</a>
+                            <a  class="btn btn-primary btn-ms" data-toggle="modal" data-target="#RegistroUsuario"> <i class="fas fa-user fa-sm text-white-50"></i> Crear Usuario</a>
                         </div>
                     </div>
                 </div>

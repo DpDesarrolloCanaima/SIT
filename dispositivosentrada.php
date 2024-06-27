@@ -149,13 +149,13 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                 <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7" target="_blank">Entregados (PDF)</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosAll.php" target="_blank">Todos (PDF)</a></li>
                                     <div class="dropdown-divider"></div>
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos_exel.php?id=1" target="_blank">Recibidos (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea_exel.php?id=2" target="_blank">En la linea (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoreparados_exel.php?id=3" target="_blank">Reparados (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar_exel.php?id=4" target="_blank">Por verificar (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados_exel.php?id=5" target="_blank">Verificados (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar_exel.php?id=6" target="_blank">Por entregar (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados_exel.php?id=7" target="_blank">Entregados (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos_exel.php?id=1" target="_blank">Recibidos (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea_exel.php?id=2" target="_blank">En la linea (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados_exel.php?id=3" target="_blank">Reparados (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar_exel.php?id=4" target="_blank">Por verificar (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados_exel.php?id=5" target="_blank">Verificados (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar_exel.php?id=6" target="_blank">Por entregar (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados_exel.php?id=7" target="_blank">Entregados (EXCEL)</a></li>
                                 <li><a class="dropdown-item" href="report/reportedispositivosexel_all.php" target="_blank">Todos (EXEL)</a></li>
                             </div>
                         </div>
@@ -278,9 +278,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                         include "modal/modalDeRegistroDis.php";
                     ?>
         </div>
-    </div>
-    </div>
-                    </div>
+
     <!-- End of Main Content -->
 
     <?php require "inc/footer.php";?>

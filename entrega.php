@@ -15,7 +15,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('dispositivos.php?idenlace=7');
               });
     });
         </script>";
@@ -33,7 +33,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('dispositivos.php?idenlace=7');
               });
     });
         </script>";
@@ -51,7 +51,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('dispositivos.php?idenlace=7');
               });
     });
         </script>";
@@ -69,7 +69,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('dispositivos.php?idenlace=7');
               });
     });
         </script>";
@@ -87,7 +87,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";
@@ -106,7 +106,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";
@@ -126,7 +126,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK'
               }).then(() => {
-                location.assign('detalleanalista.php');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";
@@ -150,7 +150,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
               }).then(() => {
-                location.assign('dispositivos.php?idenlace=7');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";
@@ -166,7 +166,7 @@ if ($_POST) {
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
               }).then(() => {
-                location.assign('dispositivos.php?idenlace=7');
+                location.assign('detalleanalista.php?id=".$idDispo."');
               });
     });
         </script>";

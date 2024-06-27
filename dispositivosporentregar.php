@@ -69,7 +69,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
                             <a href="report/reportedispositivoporentregar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportedispositivoporentregar_exel.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXEL)</a>
+                            <a href="report/reportedispositivoporentregar_exel.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
                         </div>    
                     </div>
                     <!-- DataTales Example -->

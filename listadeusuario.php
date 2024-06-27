@@ -83,12 +83,12 @@ $resultado1 = $mysqli->query($consulta1);
                                 <li><a class="dropdown-item" href="report/reporteusuario.php?id=5" target="_blank">Verificador (PDF)</a></li>
                                 <li><a class="dropdown-item" href="report/reporteusuarioAll.php" target="_blank">Todos (PDF)</a></li>
                                         <div class="dropdown-divider"></div>
-                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=1" target="_blank">Administrador (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=2" target="_blank">Presidencia (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=3" target="_blank">Analista (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=4" target="_blank">Tecnico (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=5" target="_blank">Verificador (EXEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reporteususariosexel_all.php" target="_blank">Todos (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=1" target="_blank">Administrador (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=2" target="_blank">Presidencia (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=3" target="_blank">Analista (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=4" target="_blank">Tecnico (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel.php?id=5" target="_blank">Verificador (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reporteususariosexel_all.php" target="_blank">Todos (EXCEL)</a></li>
 
                             </div>
                         </div>
