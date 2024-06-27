@@ -14,11 +14,17 @@ if ($_POST) {
     if (!preg_match("/[A-Z0-9]{18}/", $serialEquipo)) {
         $valido['success']=false;
         $valido['mensaje']="El serial del equipo no cumple con las caracteristicas establecidas.";
+    }elseif (!preg_match("[/#@+-&/]", $serialEquipo)) {
+        $valido['success']=false;
+        $valido['mensaje']="No se admiten caracteres especiales en el campo de serial del equipo.";
     }
     $serialCargador = limpiarDatos($_POST['serial_cargador']);
     if (!preg_match("/[A-Z0-9]{21}/", $serialCargador)) {
         $valido['success']=false;
         $valido['mensaje']="El serial del cargador no cumple con las caracteristicas establecidas.";
+    }elseif (!preg_match("[/#@+-&/]", $serialCargador)) {
+        $valido['success']=false;
+        $valido['mensaje']="No se admiten caracteres especial en el campo de serial del cargador.";
     }
     $fechaRecepcion = $_POST['fecha_de_recepcion'];
     if ($fechaRecepcion == "") {
