@@ -268,7 +268,8 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
 
                                             <?php
                             include "modal/edit/modalEditBene.php";
-                            include "modal/modalDeRegistroDis.php";
+                            // include "modal/modalDeRegistroDis.php";
+                            include "modal/modalDispoPrueba.php";
                             }
                             endwhile;
                         ?>
@@ -292,6 +293,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
             
 
     <?php require "inc/footer.php";?>
+    <!-- <script src="js/registros/cancelarLector.js"></script> -->
     <script src="js/function.js"></script>
     <script src="js/registros/registroBeneficiario.js"></script>
     <script src="js/registros/registrarDispositivo.js"></script>

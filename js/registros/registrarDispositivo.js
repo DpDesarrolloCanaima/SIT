@@ -3,8 +3,8 @@ const registrarDispositivo = async () =>{
         e.preventDefault();
     };
     var tipoDeEquipo = document.querySelector("#tipo_De_equipo").value;
-    var serialEquipo = document.querySelector("#serial_del_equipo").value;
-    var serialCargador = document.querySelector("#serial_cargador").value;
+    var serialEquipo = document.getElementById("serial_del_equipo").value;
+    var serialCargador = document.getElementById("serial_cargador").value;
     var fechaRecepcion = document.querySelector("#fecha_de_recepcion").value;
     var EstadoRecepcion = document.querySelector("#estado_recepcion").value;
     var fallaDelEquipo = document.querySelector("#falla").value;
