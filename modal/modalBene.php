@@ -103,27 +103,27 @@
                     </div>
                     <div class="form-group">
                         <label for="consejo_comunal">Consejo Comunal</label>
-                        <input type="text" class="form-control" id="consejo_comunal" name="consejo_comunal" pattern="[a-zA-Z\s]{6,60}">
+                        <input type="text" class="form-control" id="consejo_comunal" name="consejo_comunal" pattern="[a-zA-Z\s]{2,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="mesa_telecomunicaciones">Mesa de telecomunicaciones</label>
-                        <input type="text" class="form-control" id="mesa_telecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{6,60}">
+                        <input type="text" class="form-control" id="mesa_telecomunicaciones" name="mesa_telecomunicaciones" pattern="[a-zA-Z\s]{2,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="institucion_entrega">Institucion Educativa (Entrega)</label>
-                        <input type="text" class="form-control" id="institucion_entrega" name="institucion_entrega" pattern="[a-zA-Z\s]{6,60}">
+                        <input type="text" class="form-control" id="institucion_entrega" name="institucion_entrega" pattern="[a-zA-Z\s]{2,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="institucion_estudia">Institucion Educativa (Estudia Actualmente)</label>
-                        <input type="text" class="form-control" id="institucion_estudia" name="institucion_estudia" pattern="[a-zA-Z\s]{5,60}">
+                        <input type="text" class="form-control" id="institucion_estudia" name="institucion_estudia" pattern="[a-zA-Z\s]{2,60}">
                         <span></span>
                     </div>
                     <div class="form-group">
                         <label for="responsableEntrega">Responsable de entrega</label>
-                        <input type="text" class="form-control" id="responsable_entrega" name="responsable_entrega" pattern="[a-zA-Z\s]{5,60}">
+                        <input type="text" class="form-control" id="responsable_entrega" name="responsable_entrega" pattern="[a-zA-Z\s]{2,60}">
                         <span></span>
                     </div>
                     <hr>
