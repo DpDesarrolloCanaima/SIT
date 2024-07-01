@@ -75,7 +75,9 @@
                     
                     <input type="hidden" id="coordinador" name="coordinador" value="6">
                     <hr>
-                    <input type="button" class="btn btn-success" onclick="registrarDispositivo()" value="Registrar">
+                    <!-- <input type="button" class="btn btn-success" onclick="registrarDispositivo()" value="Registrar"> -->
+                    
+                    <button type="submit" class="btn btn-success">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>
             </div>
