@@ -33,7 +33,8 @@ if ($_POST) {
                 title: 'Serial de equipo ingresado no valido.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -51,7 +52,8 @@ if ($_POST) {
                 title: 'Serial de cargador ingresado no valido.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -69,7 +71,8 @@ if ($_POST) {
                 title: 'Ingrese una fecha de recepcion.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -87,7 +90,8 @@ if ($_POST) {
                 title: 'Seleccione un estado de equipo.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -110,7 +114,8 @@ if ($_POST) {
                 title: 'Rol no enviado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -128,7 +133,8 @@ if ($_POST) {
                 title: 'Origen no enviado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -146,7 +152,8 @@ if ($_POST) {
                 title: 'Estatus no enviado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -164,7 +171,8 @@ if ($_POST) {
                 title: 'Seleccione una falla.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -182,7 +190,8 @@ if ($_POST) {
                 title: 'Beneficiario no enviado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -200,14 +209,15 @@ if ($_POST) {
                 title: 'Responsable no enviado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
     });
         </script>";
     }
-    $motivoIngreso = limpiarDatos($_POST['motivo_ingreso']);
+    $motivoIngreso = limpiarDatos($_POST['motivoIngreso']);
     if ($motivoIngreso == "") {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
@@ -218,7 +228,8 @@ if ($_POST) {
                 title: 'Seleccione el motivo de ingreso.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -236,7 +247,8 @@ if ($_POST) {
                 title: 'Responsable no enviado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -288,7 +300,7 @@ if ($resultado) {
                     <script language='JavaScript'>
                     document.addEventListener('DOMContentLoaded', function() {
                         Swal.fire({
-                            icon: 'error',
+                            icon: 'Success',
                             title: 'Equipo Registrado IC: . ".$icMuestra."',
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
@@ -310,7 +322,8 @@ if ($resultado) {
                 title: 'Fallo al ingresar el equipo.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -328,7 +341,8 @@ if ($resultado) {
             title: 'Data solicitada no enviada.',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
+            timer: 50000
           }).then(() => {
             location.assign('../../dispositivosentrada.php');
           });
