@@ -14,7 +14,8 @@ if ($_POST) {
                 title: 'Seleccione un tipo de equipo',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 50000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -288,10 +289,11 @@ if ($resultado) {
                     document.addEventListener('DOMContentLoaded', function() {
                         Swal.fire({
                             icon: 'error',
-                            title: 'Seleccione un estado de equipo. ".$icMuestra."',
+                            title: 'Equipo Registrado IC: . ".$icMuestra."',
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
-                            confirmButtonText: 'OK'
+                            confirmButtonText: 'OK',
+                            timer: 50000
                         }).then(() => {
                             location.assign('../../dispositivosentrada.php');
                         });

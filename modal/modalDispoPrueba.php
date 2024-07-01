@@ -22,13 +22,10 @@
                     </div>
                     <div class="form-group">
                         <label for="serial_del_equipo">Serial del Equipo</label>
-                        <input type="text" class="form-control" id="serial_del_equipo" aria-describedby="nameHelp" name="serial_del_equipo" pattern="[A-Z0-9]{18}" title="El serial contigo 18 digitos entre letras y numeros">
-                        <span></span>
-                    </div>
+                        <textarea class="form-control" name="serial_del_equipo" id="serial_del_equipo" pattern="[A-Z0-9]{18}" maxlength="18" minlength="18"></textarea>
                     <div class="form-group">
                         <label for="serial_del_cargador">Serial del Cargador</label>
-                        <input type="text" class="form-control" id="serial_cargador" name="serial_cargador" pattern="[A-Z0-9]{18}" title="El serial contigo 18 digitos entre letras y numeros">
-                        <span></span>
+                        <textarea class="form-control" name="serial_cargador" id="serial_cargador" pattern="[A-Z0-9]{18}" maxlength="18" minlength="18"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="fecha_de_recepcion">Fecha de Recepcion</label>
