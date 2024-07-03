@@ -16,7 +16,8 @@ if ($_POST) {
                 title: 'El nombre del beneficiario no cumple con los caracteres establecidos',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
               }).then(() => {
                 location.assign('../../listadebeneficiario.php');
               });
@@ -37,7 +38,8 @@ if ($_POST) {
                 title: 'Tipo de documento no valido',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
               }).then(() => {
                 location.assign('../../listadebeneficiario.php');
               });
@@ -57,7 +59,8 @@ if ($_POST) {
                 title: 'Debe ingresar solo numeros.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
               }).then(() => {
                 location.assign('../../listadebeneficiario.php');
               });
@@ -75,7 +78,8 @@ if ($_POST) {
                     title: 'Los datos ingresados de la cedula no cumplen con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -96,7 +100,8 @@ if ($_POST) {
                     title: 'Debe ingresar solo numeros en la edad.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -114,7 +119,8 @@ if ($_POST) {
                     title: 'Debe ingresar solo numeros en la edad.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -136,7 +142,8 @@ if ($_POST) {
                     title: 'Debe seleccionar un genero.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -157,7 +164,8 @@ if ($_POST) {
                     title: 'Debe ingresar una fecha de nacimiento.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -178,7 +186,8 @@ if ($_POST) {
                     title: 'El nombre del representante no cumple con los caracteres especificos.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -198,7 +207,8 @@ if ($_POST) {
                     title: 'El correo no cumple con los caracteres necesarios.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -218,7 +228,8 @@ if ($_POST) {
                     title: 'Debe ingresar solo numeros en el telefono.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -236,7 +247,8 @@ if ($_POST) {
                     title: 'Debe ingresar solo numeros en el telefono.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -256,7 +268,8 @@ if ($_POST) {
                     title: 'Debe seleccionar un estado.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -276,7 +289,8 @@ if ($_POST) {
                     title: 'Los datos ingresados en el campo de municipio no cumplen con los caracteres especificados..',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -296,7 +310,8 @@ if ($_POST) {
                     title: 'Los datos ingresados en el campo de direccion no cumplen con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -316,7 +331,8 @@ if ($_POST) {
                     title: 'Debe marcar una opción.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -329,8 +345,6 @@ if ($_POST) {
     }
     $origen = limpiarDatos($_POST['origen']);
     if ($origen != 2 || $origen == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="El origen no existe o fue modificado.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -340,7 +354,8 @@ if ($_POST) {
                     title: 'El origen no existe o fue modificado.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -348,9 +363,9 @@ if ($_POST) {
             </script>";
     }
     $consejoComunal = limpiarDatos($_POST['consejo_comunal']);
-    if (!preg_match("/[a-zA-Z\s]{10,60}/", $consejoComunal)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados en el campo de consejo comunal no cumplen con los caracteres especificados.";
+    if ($consejoComunal == "") {
+        $consejoComunal = "N/A";
+    }elseif (!preg_match("/[a-zA-Z\s]{10,60}/", $consejoComunal)) {
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -360,7 +375,8 @@ if ($_POST) {
                     title: 'Los datos ingresados en el campo de consejo comunal no cumplen con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -368,9 +384,9 @@ if ($_POST) {
             </script>";
     }
     $mesaTelecomunicaciones = limpiarDatos($_POST['mesa_telecomunicaciones']);
-    if (!preg_match("/[a-zA-Z\s]{10,60}/", $mesaTelecomunicaciones)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados en el campo de mesa de telecomunicaciones no cumplen con los caracteres especificados.";
+    if ($mesaTelecomunicaciones == "") {
+        $mesaTelecomunicaciones = "N/A";
+    }elseif (!preg_match("/[a-zA-Z\s]{10,60}/", $mesaTelecomunicaciones)) {
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -380,7 +396,8 @@ if ($_POST) {
                     title: 'Los datos ingresados en el campo de consejo comunal no cumplen con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 5000
                 }).then(() => {
                     location.assign('../../listadebeneficiario.php');
                 });
@@ -388,9 +405,9 @@ if ($_POST) {
             </script>";
     }
     $institucionEntrega = limpiarDatos($_POST['institucion_entrega']);
-    if (!preg_match("/[a-zA-Z\s]{10,60}/", $institucionEntrega)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados en el campo de institución entrega no cumplen con los caracteres especificados.";
+    if ($institucionEntrega == "") {
+        $institucionEntrega = "N/A";
+    }elseif (!preg_match("/[a-zA-Z\s]{10,60}/", $institucionEntrega)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -400,7 +417,8 @@ if ($_POST) {
                 title: 'Los datos ingresados en el campo de institución entrega no cumplen con los caracteres especificados.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
             }).then(() => {
                 location.assign('../../listadebeneficiario.php');
             });
@@ -408,19 +426,20 @@ if ($_POST) {
         </script>";
     }
     $institucionEstudia = limpiarDatos($_POST['institucion_estudia']);
-    if (!preg_match("/[a-zA-Z\s]{10,60}/", $institucionEstudia)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe seleccionar una opcion.";
+    if ($institucionEstudia == "") {
+        $institucionEstudia = "N/A";
+    }elseif (!preg_match("/[a-zA-Z\s]{10,60}/", $institucionEstudia)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
                 icon: 'error',
-                title: 'Debe seleccionar una opcion.',
+                title: 'Debe ingresar la institución.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
             }).then(() => {
                 location.assign('../../listadebeneficiario.php');
             });
@@ -441,7 +460,8 @@ if ($_POST) {
                 title: 'Los datos ingresados en el campo de responsable de entrega no cumplen con los caracteres especificados.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 5000
             }).then(() => {
                 location.assign('../../listadebeneficiario.php');
             });
@@ -475,7 +495,8 @@ if ($_POST) {
                         title: 'Registro exitoso',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        timer: 5000
                     }).then(() => {
                         location.assign('../../listadebeneficiario.php');
                     });
@@ -493,7 +514,8 @@ if ($_POST) {
                         title: 'Fallo al registar la institucion.',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        timer: 5000
                     }).then(() => {
                         location.assign('../../listadebeneficiario.php');
                     });
@@ -512,7 +534,8 @@ if ($_POST) {
                         title: 'El beneficiario ya se encuentra registrado.',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        timer: 5000
                     }).then(() => {
                         location.assign('../../listadebeneficiario.php');
                     });
@@ -532,7 +555,8 @@ if ($_POST) {
                         title: 'No se enviaron los datos',
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
-                        confirmButtonText: 'OK'
+                        confirmButtonText: 'OK',
+                        timer: 5000
                     }).then(() => {
                         location.assign('../../listadebeneficiario.php');
                     });

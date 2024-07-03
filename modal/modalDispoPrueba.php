@@ -25,7 +25,7 @@
                         <textarea class="form-control" name="serial_del_equipo" id="serial_del_equipo" pattern="[A-Z0-9]{18}" maxlength="18" minlength="18"></textarea>
                     <div class="form-group">
                         <label for="serial_del_cargador">Serial del Cargador</label>
-                        <textarea class="form-control" name="serial_cargador" id="serial_cargador" pattern="[A-Z0-9]{18}" maxlength="18" minlength="18"></textarea>
+                        <textarea class="form-control" name="serial_cargador" id="serial_cargador" pattern="[A-Z0-9]{18}" maxlength="25" minlength="18"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="fecha_de_recepcion">Fecha de Recepcion</label>
