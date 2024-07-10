@@ -45,7 +45,7 @@ if ($_POST) {
         </script>";
     }
 
-    $sql = "SELECT id_usuarios, password, usuario, id_roles, cedula, nombre FROM usuarios WHERE usuario='$usuario' ";
+    $sql = "SELECT id_usuarios, password, usuario, id_roles, cedula, nombre FROM usuarios WHERE usuario='$usuario' AND descontinuado = 2 ";
     $resultado = $mysqli->query($sql);
 
     $num = $resultado->num_rows;
@@ -98,10 +98,8 @@ if ($_POST) {
               });
     });
         </script>";
-    
                         break;
                 }
-
             }
         } else {
             // Envia un mensaje de alerta por si el password no coincide
@@ -117,9 +115,7 @@ if ($_POST) {
                         confirmButtonText: 'OK',
                         timer: 55000
                       }).then(() => {
-
                         location.assign('index.php');
-
                       });
             });
                 </script>";
@@ -138,9 +134,7 @@ if ($_POST) {
                         confirmButtonText: 'OK',
                         timer: 55000
                       }).then(() => {
-
                         location.assign('index.php');
-
                       });
             });
                 </script>";
