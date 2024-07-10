@@ -1,5 +1,5 @@
 <?php
-require "../config/conexion.php";
+require "config/conexion.php";
 
 //Datos para Graficos de torta (Recibidos.)
 

@@ -1,5 +1,5 @@
 <?php
-require "../config/conexion.php";
+require "config/conexion.php";
 
 //Consulta para traernos los datos de los equipos (Tablet One).
 
