@@ -42,7 +42,7 @@ if ($_POST) {
         </script>";
     }
     $serialCargador = limpiarDatos($_POST['serial_cargador']);
-    if (!preg_match("/[A-Z0-9]{21}/", $serialCargador)) {
+    if (!preg_match("/[A-Z0-9]{25}/", $serialCargador)) {
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
