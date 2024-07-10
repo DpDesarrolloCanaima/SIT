@@ -13,7 +13,8 @@ if ($_POST) {
                 title: 'Debe ingresar una fecha valida',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('dispositivos.php?idenlace=7');
               });
@@ -31,7 +32,8 @@ if ($_POST) {
                 title: 'El estatus no es el correcto',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('dispositivos.php?idenlace=7');
               });
@@ -49,7 +51,8 @@ if ($_POST) {
                 title: 'No se realizaron los cambios.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('dispositivos.php?idenlace=7');
               });
@@ -67,7 +70,8 @@ if ($_POST) {
                 title: 'No se realizaron los cambios.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('dispositivos.php?idenlace=7');
               });
@@ -85,7 +89,8 @@ if ($_POST) {
                 title: 'No posee su identificador.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detalleanalista.php?id=".$idDispo."');
               });
@@ -104,7 +109,8 @@ if ($_POST) {
                 title: 'No se envio el responsable.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detalleanalista.php?id=".$idDispo."');
               });
@@ -124,7 +130,8 @@ if ($_POST) {
                 title: 'Debe ingresar una observacion.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detalleanalista.php?id=".$idDispo."');
               });
@@ -149,6 +156,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detalleanalista.php?id=".$idDispo."');
               });
@@ -165,6 +173,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detalleanalista.php?id=".$idDispo."');
               });

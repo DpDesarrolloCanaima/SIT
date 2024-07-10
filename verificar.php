@@ -13,7 +13,8 @@ if ($idDispo == "") {
             title: 'No se envio el identificador.',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
+            timer: 55000
           }).then(() => {
             location.assign('detallesverificador.php');
           });
@@ -31,7 +32,8 @@ if ($observacion == "") {
                 title: 'Debe ingresar observaciones.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php');
               });
@@ -49,7 +51,8 @@ if ($comprobacion == "") {
                 title: 'Marca las casillas.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php');
               });
@@ -67,7 +70,8 @@ if ($estatus != 5) {
                 title: 'El estatus no es lo indicado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php');
               });
@@ -85,7 +89,8 @@ if ($responsable == "") {
                 title: 'No existe ningun responsable',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php');
               });
@@ -103,7 +108,8 @@ if ($id_roles == "") {
                 title: 'No se envio el identificador.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php');
               });
@@ -121,7 +127,8 @@ if ($responsableRecepcion == "") {
                 title: 'No se envia el responsable.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php');
               });
@@ -147,7 +154,8 @@ if ($resultado) {
             title: 'Se realizaron los cambios',
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
+            timer: 55000
           }).then(() => {
             location.assign('detallesverificador.php?id=".$idDispo."');
           });
@@ -163,7 +171,8 @@ if ($resultado) {
                 title: 'No se realizaron los cambios',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('detallesverificador.php?id=".$idDispo."');
               });
