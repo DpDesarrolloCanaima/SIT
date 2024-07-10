@@ -127,15 +127,10 @@ if ($_POST) {
     $pNombre = substr($mNombre, 0, 1);
     //Generamos el usuario con la primera letra del nombre + el apellido
     $usuario = $pNombre . $mApellido;
-
     //Generar Password 
     $pMnombre = substr($nombre, 0, 1);
-
     $password = $pMnombre . $mApellido . "#" . $cedula;
-
     //Codigo PHP de registro de Usuario
-
-
     $pass_c = sha1($password);
     $descontinuado = 2;
 

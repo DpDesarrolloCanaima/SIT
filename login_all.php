@@ -16,7 +16,8 @@ if ($_POST) {
                 title: 'El nombre de usuario no cumple con las caracteristicas establecidas.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('index.php');
               });
@@ -35,7 +36,8 @@ if ($_POST) {
                 title: 'Las caracteristicas no cumplen con el formato preestablecido.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('index.php');
               });
@@ -89,7 +91,8 @@ if ($_POST) {
                 title: 'Rol no existente',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('index.php');
               });
@@ -112,7 +115,7 @@ if ($_POST) {
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 1500
+                        timer: 55000
                       }).then(() => {
 
                         location.assign('index.php');
@@ -133,7 +136,7 @@ if ($_POST) {
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 1500
+                        timer: 55000
                       }).then(() => {
 
                         location.assign('index.php');
@@ -143,8 +146,4 @@ if ($_POST) {
                 </script>";
     }
 }
-
-
-
-
 ?>
