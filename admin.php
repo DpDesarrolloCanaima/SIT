@@ -70,13 +70,37 @@ $id_usuario = $_SESSION['id_usuarios'];
                         <div class="col-xl-4 col-lg-5">
                             <div class="card shadow mb-4">
                                 <!-- Card Header - Dropdown -->
-                                <div class="card-header py-3">
-                                    <h6 class="m-0 font-weight-bold text-primary">Estatus Equipos</h6>
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Estatus de Equipos</h6>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
-                                    <div class="chart-pie pt-4">
+                                    <div class="chart-pie pt-4 pb-2">
                                         <canvas id="myPieChart"></canvas>
+                                    </div>
+                                    <hr>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Recibidos
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-secondary"></i> En linea
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Reparado
+                                        </span><br>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-danger"></i> Por verificar
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-warning"></i> Verificado
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-info"></i> Por entregar
+                                        </span><br>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-dark"></i> Entregado
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -230,11 +254,11 @@ $id_usuario = $_SESSION['id_usuarios'];
                             labels: xValuesTorta,
                             datasets: [{
                                 data: yValuesTorta,
-                                backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc', '#b91d47',
-                                    '#1e7145', '#cb5f0b', '#0edb52'
+                                backgroundColor: ['#4e73df', '#858796', '#1cc88a', '#e74a3b',
+                                    '#f6c23e', '#36b9cc', '#5a5c69'
                                 ],
-                                hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf', '#b91d47',
-                                    '#1e7145', '#cb5f0b', '#0edb52'
+                                hoverBackgroundColor: ['#4e73df', '#858796', '#1cc88a', '#e74a3b',
+                                    '#f6c23e', '#36b9cc', '#5a5c69'
                                 ],
                                 hoverBorderColor: "rgba(234, 236, 244, 1)",
                             }],
@@ -252,7 +276,7 @@ $id_usuario = $_SESSION['id_usuarios'];
                                 caretPadding: 10,
                             },
                             legend: {
-                                display: true
+                                display: false
                             },
                             cutoutPercentage: 70,
                         },
