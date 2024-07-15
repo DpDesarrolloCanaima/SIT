@@ -173,9 +173,6 @@ $resultado1 = $mysqli->query($consulta1);
 
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Modales -->
 
                     <?php
