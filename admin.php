@@ -13,6 +13,11 @@ if (!isset($_SESSION['id_usuarios'])) {
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
+
+//Consulta para modal
+$sqlMestatus = "SELECT id_estatus, estatus FROM estatus";
+$resultadoMestatus = $mysqli->query($sqlMestatus);
+
 ?>
 
 <!DOCTYPE html>
@@ -59,6 +64,7 @@ $id_usuario = $_SESSION['id_usuarios'];
                                     <h6 class="m-0 font-weight-bold text-primary">
                                         Dispositivos en Atención al Ciudadano
                                     </h6>
+                                    
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-area">
@@ -72,6 +78,9 @@ $id_usuario = $_SESSION['id_usuarios'];
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Estatus Equipos</h6>
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#generarReporteDispositivo">
+                                        Generar Reporte
+                                    </button>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -117,6 +126,7 @@ $id_usuario = $_SESSION['id_usuarios'];
                     <!-- End of Main Content -->
                     <?php
                         include "modal/modalRegistroUsuario.php";
+                        include "modal/report/generarReporteDispositivo.php";
                     ?>
 
 
@@ -252,7 +262,7 @@ $id_usuario = $_SESSION['id_usuarios'];
                                 caretPadding: 10,
                             },
                             legend: {
-                                display: true
+                                display: false
                             },
                             cutoutPercentage: 70,
                         },
