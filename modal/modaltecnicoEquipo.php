@@ -13,14 +13,16 @@
                 <form id="registroReparacion">
                     <div class="form-group">
                         <label for="serial_entrada_tm">Serial de entrada (Tarjta Madre)</label>
-                        <input type="text" class="form-control" id="serial_entrada_tm" name="serial_entrada_tm"
-                            pattern="[A-Z0-9\s]{8,30}" title="Maximo de Caracteres 12. Solo mayusculas y numeros.">
+                        <!--<input type="text" class="form-control" id="serial_entrada_tm" name="serial_entrada_tm"
+                            pattern="[A-Z0-9\s]{8,30}" title="Maximo de Caracteres 12. Solo mayusculas y numeros."> -->
+                        <textarea class="from-control" id="serial_entrada_tm" name="serial_entrada_tm" pattern="[A-Z0-9\s]{8,30}" title="Maximo de Caracteres 12. Solo mayusculas y numeros." maxlength="30"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_tm">Serial de salida (Tarjta Madre)</label>
-                        <input type="text" class="form-control" id="serial_salida_tm" name="serial_salida_tm"
-                            pattern="[A-Z0-9]{8,30}" title="Maximo de Caracteres 12. Solo mayusculas y numeros.">
+                        <!-- <input type="text" class="form-control" id="serial_salida_tm" name="serial_salida_tm"
+                            pattern="[A-Z0-9]{8,30}" title="Maximo de Caracteres 12. Solo mayusculas y numeros."> -->
+                        <textarea class="from-control" id="serial_salida_tm" name="serial_salida_tm" pattern="[A-Z0-9\s]{8,30}" title="Maximo de Caracteres 30. Solo mayusculas y numeros." maxlength="30"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -43,54 +45,62 @@
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_bat">Serial de entrada (Bateria)</label>
-                        <input type="text" class="form-control" id="serial_entrada_bat" name="serial_entrada_bat"
-                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
+                        <!-- <input type="text" class="form-control" id="serial_entrada_bat" name="serial_entrada_bat"
+                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="from-control" id="serial_entrada_bat" name="serial_entrada_bat" pattern="[A-Z0-9\s]{8,30}" title="Maximo de Caracteres 25. Solo mayusculas y numeros." maxlength="25"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_bat">Serial de salida (Bateria)</label>
-                        <input type="text" class="form-control" id="serial_salida_bat" name="serial_salida_bat"
-                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
+                        <!-- <input type="text" class="form-control" id="serial_salida_bat" name="serial_salida_bat"
+                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_salida_bat" name="serial_salida_bat" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_tarj_aios">Serial de entrada (Tarjeta IOS)</label>
-                        <input type="text" class="form-control" id="serial_entrada_tarj_aios"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_tarj_aios"
                             name="serial_entrada_tarj_aios" pattern="[A-Z0-9\s]{8,25}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_entrada_tarj_aios" name="serial_entrada_tarj_aios" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_tarj_aios">Serial de salida (Tarjeta IOS)</label>
-                        <input type="text" class="form-control" id="serial_salida_tarj_aios"
+                        <!-- <input type="text" class="form-control" id="serial_salida_tarj_aios"
                             name="serial_salida_tarj_aios" pattern="[A-Z0-9\s]{8,25}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_entrada_tarj_aios" name="serial_entrada_tarj_aios" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_disco_duro">Serial de entrada (Disco Duro)</label>
-                        <input type="text" class="form-control" id="serial_entrada_disco_duro"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_disco_duro"
                             name="serial_entrada_disco_duro" pattern="[A-Z0-9\s]{8,15}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_entrada_disco_duro" name="serial_entrada_disco_duro" pattern="[A-Z0-9\s]{8,15}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_disco_duro">Serial de salida (Disco Duro)</label>
-                        <input type="text" class="form-control" id="serial_salida_disco_duro"
+                        <!-- <input type="text" class="form-control" id="serial_salida_disco_duro"
                             name="serial_salida_disco_duro" pattern="[A-Z0-9\s]{8,15}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_salida_disco_duro" name="serial_salida_disco_duro" pattern="[A-Z0-9\s]{8,15}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_cara_a">Serial de entrada (Cara A)</label>
-                        <input type="text" class="form-control" id="serial_entrada_cara_a" name="serial_entrada_cara_a"
-                            pattern="[A-Z0-9\s]{8,18}" title="Caracteres maximos 18. Solo mayusculas y numeros">
+                        <!-- <input type="text" class="form-control" id="serial_entrada_cara_a" name="serial_entrada_cara_a"
+                            pattern="[A-Z0-9\s]{8,18}" title="Caracteres maximos 18. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_entrada_cara_a" name="serial_entrada_cara_a" pattern="[A-Z0-9\s]{8,18}" title="Caracteres maximos 18. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_cara_a">Serial de salida (Cara A)</label>
-                        <input type="text" class="form-control" id="serial_salida_cara_a" name="serial_salida_cara_a"
-                            pattern="[A-Z0-9\s]{8,18}" title="Caracteres maximos 18. Solo mayusculas y numeros">
+                        <!-- <input type="text" class="form-control" id="serial_salida_cara_a" name="serial_salida_cara_a"
+                            pattern="[A-Z0-9\s]{8,18}" title="Caracteres maximos 18. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_salida_cara_a" name="serial_salida_cara_a" pattern="[A-Z0-9\s]{8,18}" title="Caracteres maximos 18. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -149,69 +159,79 @@
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_memoria_ram">Serial de entrada (memoria ram)</label>
-                        <input type="text" class="form-control" id="serial_entrada_memoria_ram"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_memoria_ram"
                             name="serial_entrada_memoria_ram" pattern="[A-Z0-9\s]{8,15}"
-                            title="Maximo de caracteres 15. Solo numeros y letras mayusculas">
+                            title="Maximo de caracteres 15. Solo numeros y letras mayusculas"> -->
+                        <textarea class="form-control" id="serial_entrada_memoria_ram" name="serial_entrada_memoria_ram" pattern="[A-Z0-9\s]{8,15}" title="Maximo de caracteres 15. Solo numeros y letras mayusculas"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_memoria_ram">Serial de salida (memoria ram)</label>
-                        <input type="text" class="form-control" id="serial_salida_memoria_ram"
+                        <!-- <input type="text" class="form-control" id="serial_salida_memoria_ram"
                             name="serial_salida_memoria_ram" pattern="[A-Z0-9\s]{8,15}"
-                            title="Maximo de caracteres 15. Solo numeros y letras mayusculas">
+                            title="Maximo de caracteres 15. Solo numeros y letras mayusculas"> -->
+                        <textarea class="form-control" id="serial_salida_memoria_ram" name="serial_salida_memoria_ram" pattern="[A-Z0-9\s]{8,15}" title="Maximo de caracteres 15. Solo numeros y letras mayusculas"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_teclado">Serial de entrada (teclado)</label>
-                        <input type="text" class="form-control" id="serial_entrada_teclado"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_teclado"
                             name="serial_entrada_teclado" pattern="[A-Z0-9\s]{8,22}"
-                            title="Maximo de caracteres 21. Solo numeros y letras mayusculas">
+                            title="Maximo de caracteres 21. Solo numeros y letras mayusculas"> -->
+                        <textarea class="form-control" id="serial_entrada_teclado" name="serial_entrada_teclado" pattern="[A-Z0-9\s]{8,22}" title="Maximo de caracteres 21. Solo numeros y letras mayusculas"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_teclado">Serial de salida (teclado)</label>
-                        <input type="text" class="form-control" id="serial_salida_teclado" name="serial_salida_teclado"
-                            pattern="[A-Z0-9\s]{8,22}" title="Maximo de caracteres 21. Solo numeros y letras mayusculas">
+                        <!-- <input type="text" class="form-control" id="serial_salida_teclado" name="serial_salida_teclado"
+                            pattern="[A-Z0-9\s]{8,22}" title="Maximo de caracteres 21. Solo numeros y letras mayusculas"> -->
+                        <textarea class="form-control" id="serial_salida_teclado" name="serial_salida_teclado" pattern="[A-Z0-9\s]{8,22}" title="Maximo de caracteres 21. Solo numeros y letras mayusculas"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_cargador">Serial de entrada (cargador)</label>
-                        <input type="text" class="form-control" id="serial_entrada_cargador"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_cargador"
                             name="serial_entrada_cargador" pattern="[A-Z0-9\s]{8,21}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_entrada_cargador" name="serial_entrada_cargador" pattern="[A-Z0-9\s]{8,21}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_cargador">Serial de salida (cargador)</label>
-                        <input type="text" class="form-control" id="serial_salida_cargador"
+                        <!-- <input type="text" class="form-control" id="serial_salida_cargador"
                             name="serial_salida_cargador" pattern="[A-Z0-9\s]{8,21}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_salida_cargador" name="serial_salida_cargador" pattern="[A-Z0-9\s]{8,21}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_pantalla">Serial de entrada (pantalla)</label>
-                        <input type="text" class="form-control" id="serial_entrada_pantalla"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_pantalla"
                             name="serial_entrada_pantalla" pattern="[A-Z0-9\s]{8,25}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_entrada_pantalla" name="serial_entrada_pantalla" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_pantalla">Serial de salida (pantalla)</label>
-                        <input type="text" class="form-control" id="serial_salida_pantalla"
+                        <!-- <input type="text" class="form-control" id="serial_salida_pantalla"
                             name="serial_salida_pantalla" pattern="[A-Z0-9\s]{8,25}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_salida_pantalla" name="serial_salida_pantalla" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_tarjeta_red">Serial de entrada (tarjeta de red)</label>
-                        <input type="text" class="form-control" id="serial_entrada_tarjeta_red"
-                            name="serial_entrada_tarjeta_red" pattern="[A-Z0-9\s]{8,18}">
+                        <!-- <input type="text" class="form-control" id="serial_entrada_tarjeta_red"
+                            name="serial_entrada_tarjeta_red" pattern="[A-Z0-9\s]{8,18}"> -->
+                        <textarea class="form-control" id="serial_entrada_tarjeta_red" name="serial_entrada_tarjeta_red" pattern="[A-Z0-9\s]{8,18}"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_tarjeta_red">Serial de salida (tarjeta de red)</label>
-                        <input type="text" class="form-control" id="serial_salida_tarjeta_red"
-                            name="serial_salida_tarjeta_red" pattern="[A-Z0-9\s]{8,18}">
+                        <!-- <input type="text" class="form-control" id="serial_salida_tarjeta_red"
+                            name="serial_salida_tarjeta_red" pattern="[A-Z0-9\s]{8,18}"> -->
+                        <textarea class="form-control" id="serial_salida_tarjeta_red" name="serial_salida_tarjeta_red" pattern="[A-Z0-9\s]{8,18}"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">

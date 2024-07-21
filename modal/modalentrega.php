@@ -1,5 +1,5 @@
 <div class="modal fade" id="entregarDispo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Entrega Dispositivo</h5>

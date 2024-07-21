@@ -14,8 +14,6 @@ $resultado = $mysqli->query($consulta);
 
 $consulta1 = "SELECT id_roles, roles FROM roles";
 $resultado1 = $mysqli->query($consulta1);
-
-
 ?>
 
 <!DOCTYPE html>
@@ -175,15 +173,14 @@ $resultado1 = $mysqli->query($consulta1);
 
                                     </tbody>
                                 </table>
-                            </div>
-                        </div>
-                    </div>
                     <!-- Modales -->
 
                     <?php
-                            include "modal/modalRegistroUsuario.php";
+                            // include "modal/modalRegistroUsuario.php";
+                            include "modal/modalRegistroUsuarioProvi.php"
                         ?>
-
+                </div>
+                    </div>
                 </div>
             </div>
             <!-- End of Main Content -->

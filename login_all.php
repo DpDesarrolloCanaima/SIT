@@ -16,7 +16,8 @@ if ($_POST) {
                 title: 'El nombre de usuario no cumple con las caracteristicas establecidas.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('index.php');
               });
@@ -35,7 +36,8 @@ if ($_POST) {
                 title: 'Las caracteristicas no cumplen con el formato preestablecido.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('index.php');
               });
@@ -43,7 +45,7 @@ if ($_POST) {
         </script>";
     }
 
-    $sql = "SELECT id_usuarios, password, usuario, id_roles, cedula, nombre FROM usuarios WHERE usuario='$usuario' ";
+    $sql = "SELECT id_usuarios, password, usuario, id_roles, cedula, nombre FROM usuarios WHERE usuario='$usuario' AND descontinuado = 2 ";
     $resultado = $mysqli->query($sql);
 
     $num = $resultado->num_rows;
@@ -89,16 +91,15 @@ if ($_POST) {
                 title: 'Rol no existente',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 55000
               }).then(() => {
                 location.assign('index.php');
               });
     });
         </script>";
-    
                         break;
                 }
-
             }
         } else {
             // Envia un mensaje de alerta por si el password no coincide
@@ -112,11 +113,9 @@ if ($_POST) {
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 1500
+                        timer: 55000
                       }).then(() => {
-
                         location.assign('index.php');
-
                       });
             });
                 </script>";
@@ -133,18 +132,12 @@ if ($_POST) {
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 1500
+                        timer: 55000
                       }).then(() => {
-
                         location.assign('index.php');
-
                       });
             });
                 </script>";
     }
 }
-
-
-
-
 ?>

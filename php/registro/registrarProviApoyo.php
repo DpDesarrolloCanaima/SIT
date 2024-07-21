@@ -1,15 +1,9 @@
 <?php
 require "../../config/conexion.php";
 require "../../function.php";
-
-// $valido['success']=array('success', false, 'mensaje'=>"");
-
-
 if ($_POST) {
     $tipoDocumento = limpiarDatos($_POST['tipo_documentoApoyo']);
     if ($tipoDocumento != 2) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Tipo de documento no valido.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -19,7 +13,8 @@ if ($_POST) {
                 title: 'Tipo de documento no valido.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
               }).then(() => {
                 location.assign('../../Listadeapoyo.php');
               });
@@ -28,8 +23,6 @@ if ($_POST) {
     }
     $documento = limpiarDatos($_POST['documentoApoyo']);
     if (!preg_match("/\b/",$documento)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe ingresar solo numeros.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -39,15 +32,14 @@ if ($_POST) {
                 title: 'Debe ingresar solo numeros.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
               }).then(() => {
                 location.assign('../../Listadeapoyo.php');
               });
     });
         </script>";
         if (!preg_match("/[0-9]{9}/", $documento)) {
-            // $valido['success']=false;
-            // $valido['mensaje']="Los datos ingresados no cumplen con los caracteres especificados.";
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -57,7 +49,8 @@ if ($_POST) {
                     title: 'Los datos ingresados no cumplen con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -67,8 +60,6 @@ if ($_POST) {
     }
     $nombreInstitucion = limpiarDatos($_POST['nombre_de_institucionApoyo']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreInstitucion)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="El nombre de la institucion no cumple con los caracteres especificados.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -78,7 +69,8 @@ if ($_POST) {
                     title: 'El nombre de la institucion no cumple con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -87,8 +79,6 @@ if ($_POST) {
     }
     $correoInsti = limpiarDatos($_POST['correoApoyo']);
     if (!preg_match("/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/", $correoInsti)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="El correo no cumple con los caracteres necesarios.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -98,7 +88,8 @@ if ($_POST) {
                     title: 'El correo no cumple con los caracteres necesarios.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -118,15 +109,14 @@ if ($_POST) {
                     title: 'El telefono no cumple con el formato establecido.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
         if (!preg_match("/[0-9]{11}/", $telefonoInsti)) {
-            // $valido['success']=false;
-            // $valido['mensaje']="El telefono no cumple con el formato establecido.";
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -136,7 +126,8 @@ if ($_POST) {
                     title: 'El telefono no cumple con el formato establecido.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -146,8 +137,6 @@ if ($_POST) {
     }
     $estadoInsti = limpiarDatos($_POST['estadoApoyo']);
     if ($estadoInsti == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe seleccionar un estado.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -157,7 +146,8 @@ if ($_POST) {
                     title: 'Debe seleccionar un estado.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -166,8 +156,6 @@ if ($_POST) {
     }
     $municipio = limpiarDatos($_POST['municipioApoyo']);
     if (!preg_match("/[a-zA-Z\s]{10,60}/", $municipio)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="El municipio no cumple con los caracteres establecidos.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -177,7 +165,8 @@ if ($_POST) {
                     title: 'El municipio no cumple con los caracteres establecidos.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -186,8 +175,6 @@ if ($_POST) {
     }
     $direccionInsti = limpiarDatos($_POST['direccionApoyo']);
     if ($direccionInsti == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="La direccion ingresada no cumple con los caracteres establecidos.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -197,7 +184,8 @@ if ($_POST) {
                     title: 'La direccion ingresada no cumple con los caracteres establecidos.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -206,8 +194,6 @@ if ($_POST) {
     }
     $origen = limpiarDatos($_POST['origenApoyo']);
     if ($origen == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="No se envia el origen del beneficiario.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -217,7 +203,8 @@ if ($_POST) {
                     title: 'No se envia el origen del beneficiario..',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -248,9 +235,7 @@ if ($_POST) {
     
     if ($n == 0) {
         $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo,  nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,consejo_comunal, mesa_telecom, intitucion_entrega, institucion_estudia, responsable, id_origen, descontinuado) VALUES ('$nombreInstitucion', '$tipoDocumento', '$documento', '$edad', '$id_genero', '$fechaNac', '$id_area', '$id_cargo','$nombreRepre', '$correoInsti', '$telefonoInsti', '$estadoInsti', '$municipio', '$direccionInsti', '$discapacidad', '$descripcionDis', '$consejoComunal', '$mesaTelecomunicaciones','$institucionEntrega','$institucionEstudia','$responsableEntrega','$origen', '$descontinuado')";
-        if ($mysqli->query($sql)===true) {
-            // $valido['success']=true;
-            // $valido['mensaje']="Registro exitoso";  
+        if ($mysqli->query($sql)===true) {  
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -260,15 +245,14 @@ if ($_POST) {
                     title: 'Registro exitoso.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>";
         }else {
-            // $valido['success']=false;
-            // $valido['mensaje']="Fallo al registar la institucion."; 
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -278,7 +262,8 @@ if ($_POST) {
                     title: 'Fallo al registar la institucion.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -286,8 +271,6 @@ if ($_POST) {
             </script>"; 
         }
     }else {
-        // $valido['success']=false;
-        // $valido['mensaje']="La institucion ya se encuentra registrada.";
         echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -297,7 +280,8 @@ if ($_POST) {
                     title: 'La institucion ya se encuentra registrada.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
@@ -306,8 +290,6 @@ if ($_POST) {
     }
    
 }else {
-    // $valido['success']=false;
-    // $valido['mensaje']="No se enviaron los datos.";
     echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -317,16 +299,12 @@ if ($_POST) {
                     title: 'No se enviaron los datos.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                   }).then(() => {
                     location.assign('../../Listadeapoyo.php');
                   });
         });
             </script>"; 
 }
-
-// echo json_encode($valido);
-
-
-
 ?>

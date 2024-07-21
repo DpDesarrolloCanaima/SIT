@@ -1,14 +1,9 @@
 <?php
 require "../../config/conexion.php";
 require "../../function.php";
-
-// $valido['success']=array('success', false, 'mensaje'=>"");
-
 if ($_POST) {
     $tipoDocumento = limpiarDatos($_POST['tipo_documento']);
     if ($tipoDocumento != 1) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Tipo de documento no valido.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -18,7 +13,8 @@ if ($_POST) {
                 title: 'Tipo de documento no valido.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
               }).then(() => {
                 location.assign('../../listatrabajadores.php');
               });
@@ -27,8 +23,6 @@ if ($_POST) {
     }
     $cedula = limpiarDatos($_POST['documento']);
     if (!preg_match("/\b/", $cedula)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe ingresar solo numeros.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -38,15 +32,14 @@ if ($_POST) {
                 title: 'Debe ingresar solo numeros.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
               }).then(() => {
                 location.assign('../../listatrabajadores.php');
               });
     });
         </script>";
         if (!preg_match("/[0-9]{8}/", $cedula)) {
-            // $valido['success']=false;
-            // $valido['mensaje']="Los datos ingresados no cumplen con los caracteres especificados.";
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -56,7 +49,8 @@ if ($_POST) {
                     title: 'Los datos ingresados de la cedula no cumplen con los caracteres especificados.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                 }).then(() => {
                     location.assign('../../listatrabajadores.php');
                 });
@@ -66,8 +60,6 @@ if ($_POST) {
     }
     $nombreTrabajador = limpiarDatos($_POST['nombre_del_beneficiario']);
     if (!preg_match("/^[a-zA-Z\s]{3,80}/", $nombreTrabajador)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="El nombre del trabajador no cumple con los caracteres establecidos.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -77,7 +69,8 @@ if ($_POST) {
                 title: 'El nombre del trabajador no cumple con los caracteres establecidos.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -86,8 +79,6 @@ if ($_POST) {
     }
     $generoTrabajador = limpiarDatos($_POST['genero']);
     if ($generoTrabajador == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe seleccionar un genero.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -97,7 +88,8 @@ if ($_POST) {
                 title: 'Debe seleccionar un genero.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -106,8 +98,6 @@ if ($_POST) {
     }
     $areaTrabajador = limpiarDatos($_POST['area']);
     if ($areaTrabajador == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe seleccionar un area.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -117,7 +107,8 @@ if ($_POST) {
                 title: 'Debe seleccionar un area.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -126,8 +117,6 @@ if ($_POST) {
     }
     $cargoTrabajador = limpiarDatos($_POST['cargo']);
     if ($cargoTrabajador == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe seleccionar un cargo.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -137,7 +126,8 @@ if ($_POST) {
                 title: 'Debe seleccionar un cargo.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -146,8 +136,6 @@ if ($_POST) {
     }
     $correoTrabajador = limpiarDatos($_POST['correoBene']);
     if (!preg_match("/^[A-z0-9\\._-]+@[A-z0-9][A-z0-9-]*(\\.[A-z0-9_-]+)*\\.([A-z]{2,6})$/", $correoTrabajador)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="El correo no cumple con los caracteres necesarios.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -157,7 +145,8 @@ if ($_POST) {
                 title: 'El correo no cumple con los caracteres necesarios.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -166,8 +155,6 @@ if ($_POST) {
     }
     $telefonoTrabajador = limpiarDatos($_POST['phone']);
     if (!preg_match("/\b/", $telefonoTrabajador)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Debe ingresar solo numeros.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -177,15 +164,14 @@ if ($_POST) {
                 title: 'Debe ingresar solo numeros en el telefono.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
     });
         </script>";
     }elseif (!preg_match("/[0-9]{11}/",$telefonoTrabajador)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados no cumplen con los caracteres especificados.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -195,7 +181,8 @@ if ($_POST) {
                 title: 'Debe ingresar solo numeros en el telefono.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -204,8 +191,6 @@ if ($_POST) {
     }
     $estado = limpiarDatos($_POST['estado']);
     if ($estado == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados no cumplen con los caracteres especificados.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -215,7 +200,8 @@ if ($_POST) {
                 title: 'Los datos ingresados no cumplen con los caracteres especificados.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -224,8 +210,6 @@ if ($_POST) {
     }
     $municipio = limpiarDatos($_POST['municipio']);
     if (!preg_match("/^[a-zA-Z\s]{10,60}/", $municipio)) {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados en el campo de municipio no cumplen con los caracteres especificados.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -235,7 +219,8 @@ if ($_POST) {
                 title: 'Los datos ingresados en el campo de municipio no cumplen con los caracteres especificados.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -244,8 +229,6 @@ if ($_POST) {
     }
     $direccion = limpiarDatos($_POST['direccion']);
     if ($direccion == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="Los datos ingresados en el campo de direccion no cumplen con los caracteres especificados.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -255,7 +238,8 @@ if ($_POST) {
                 title: 'Los datos ingresados en el campo de direccion no cumplen con los caracteres especificados.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -275,7 +259,8 @@ if ($_POST) {
                 title: 'Debe marcar una opcion.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -288,8 +273,6 @@ if ($_POST) {
     }
     $origen = limpiarDatos($_POST['origen']);
     if ($origen != 3 || $origen == "") {
-        // $valido['success']=false;
-        // $valido['mensaje']="El origen no existe o fue modificado.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -299,7 +282,8 @@ if ($_POST) {
                 title: 'El origen no existe o fue modificado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -329,8 +313,6 @@ if ($_POST) {
         $resultadoTrabajador = $mysqli->query($sql);
 
         if ($resultadoTrabajador === true) {
-            // $valido['success']=true;
-            // $valido['mensaje']="Trabajad@r registrado correctamente.";
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -340,15 +322,14 @@ if ($_POST) {
                     title: 'Trabajad@r registrado correctamente.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                 }).then(() => {
                     location.assign('../../listatrabajadores.php');
                 });
         });
             </script>";
         }else {
-            // $valido['success']=false;
-            // $valido['mensaje']="Error al registrar trabajador.";
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
             <script language='JavaScript'>
@@ -358,7 +339,8 @@ if ($_POST) {
                     title: 'Error al registrar trabajador.',
                     showCancelButton: false,
                     confirmButtonColor: '#3085d6',
-                    confirmButtonText: 'OK'
+                    confirmButtonText: 'OK',
+                    timer: 35000
                 }).then(() => {
                     location.assign('../../listatrabajadores.php');
                 });
@@ -367,8 +349,6 @@ if ($_POST) {
         }
 
     }else {
-        // $valido['success']=false;
-        // $valido['mensaje']="El trabajad@r ya se encuentra registrado.";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -378,7 +358,8 @@ if ($_POST) {
                 title: 'El trabajad@r ya se encuentra registrado.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
@@ -387,8 +368,6 @@ if ($_POST) {
     }
 
     }else {
-        // $valido['success']=false;
-        // $valido['mensaje']="No se enviaron los datos";
         echo "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
         <script language='JavaScript'>
@@ -398,12 +377,12 @@ if ($_POST) {
                 title: 'No se enviaron los datos.',
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
-                confirmButtonText: 'OK'
+                confirmButtonText: 'OK',
+                timer: 35000
             }).then(() => {
                 location.assign('../../listatrabajadores.php');
             });
     });
         </script>";
     }
-    // echo json_encode($valido);  
 ?>

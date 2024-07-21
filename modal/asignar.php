@@ -1,7 +1,7 @@
 <!-- Modal -->
 <div class="modal fade" id="asignar<?php echo  $row['id_dispositivo']?>" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-titlen text-dark mx-auto" id="title-head-modal">Asignar <?php echo $mostrarModal;?>, id de dispositivo: <?php echo $row['id_dispositivo'] ?> </h3>

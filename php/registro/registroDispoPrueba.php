@@ -15,7 +15,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -34,7 +34,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -53,7 +53,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -72,7 +72,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -91,7 +91,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -115,7 +115,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -134,7 +134,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -153,7 +153,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -172,7 +172,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -191,7 +191,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -210,7 +210,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -229,7 +229,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -248,7 +248,7 @@ if ($_POST) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 5000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -305,7 +305,7 @@ if ($resultado) {
                             showCancelButton: false,
                             confirmButtonColor: '#3085d6',
                             confirmButtonText: 'OK',
-                            timer: 50000
+                            timer: 35000
                         }).then(() => {
                             location.assign('../../dispositivosentrada.php');
                         });
@@ -323,7 +323,7 @@ if ($resultado) {
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 50000
+                timer: 35000
               }).then(() => {
                 location.assign('../../dispositivosentrada.php');
               });
@@ -342,14 +342,11 @@ if ($resultado) {
             showCancelButton: false,
             confirmButtonColor: '#3085d6',
             confirmButtonText: 'OK',
-            timer: 50000
+            timer: 35000
           }).then(() => {
             location.assign('../../dispositivosentrada.php');
           });
 });
     </script>";
 }
-
-// echo json_encode($valido);
-
-    ?>
+?>

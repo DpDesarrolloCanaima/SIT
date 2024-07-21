@@ -16,11 +16,9 @@ require "function.php";
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 3000
+                timer: 55000
               }).then(() => {
-
                 location.assign('listatrabajadores.php');
-
               });
     });
         </script>
@@ -39,7 +37,7 @@ require "function.php";
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 3000
+                timer: 55000
               }).then(() => {
 
                 location.assign('listatrabajadores.php');
@@ -60,15 +58,12 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
-                
         ";
         }
     }
@@ -84,11 +79,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -107,11 +100,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -130,11 +121,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -153,11 +142,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -176,7 +163,7 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
                         location.assign('Listadeapoyo.php');
                     });
@@ -197,11 +184,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -218,11 +203,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -241,15 +224,12 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
-                
         ";
     }
     $municipio = limpiarDatos($_POST['municipioTrabajador']);
@@ -264,15 +244,12 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
-                
         ";
     }
     $direccion = limpiarDatos($_POST['direccionTrabajador']); 
@@ -287,11 +264,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -310,15 +285,12 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
-                
         ";
     }
     $descripcionDisca = limpiarDatos($_POST['descripcionDiscapacidadTrabajador']);
@@ -337,11 +309,9 @@ require "function.php";
                         showCancelButton: false,
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
-                        timer: 3000
+                        timer: 55000
                     }).then(() => {
-
                         location.assign('listatrabajadores.php');
-
                     });
             });
                 </script>
@@ -375,11 +345,9 @@ require "function.php";
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 3000
+                timer: 55000
               }).then(() => {
-
                 location.assign('listatrabajadores.php');
-
               });
     });
         </script>";
@@ -394,11 +362,9 @@ require "function.php";
                 showCancelButton: false,
                 confirmButtonColor: '#3085d6',
                 confirmButtonText: 'OK',
-                timer: 1500
+                timer: 55000
               }).then(() => {
-
                 location.assign('listatrabajadores.php');
-
              });
     });
         </script>";

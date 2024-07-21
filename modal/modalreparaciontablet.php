@@ -13,16 +13,18 @@
                 <form id="registroReparacionTablet">
                     <div class="form-group">
                         <label for="serial_salida_pantalla">Serial de entrada (pantalla)</label>
-                        <input type="text" class="form-control" id="serial_entrada_pantalla_tablet"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_pantalla_tablet"
                             name="serial_salida_pantalla_tablet" pattern="[A-Z0-9\s]{8,25}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_entrada_pantalla_tablet" name="serial_salida_pantalla_tablet" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_pantalla">Serial de salida (pantalla)</label>
-                        <input type="text" class="form-control" id="serial_salida_pantalla_tablet"
+                       <!-- <input type="text" class="form-control" id="serial_salida_pantalla_tablet"
                             name="serial_salida_pantalla_tablet" pattern="[A-Z0-9\s]{8,25}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_salida_pantalla_tablet" name="serial_salida_pantalla_tablet" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -63,28 +65,32 @@
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_cargador">Serial de entrada (cargador)</label>
-                        <input type="text" class="form-control" id="serial_entrada_cargador_tablet"
+                        <!-- <input type="text" class="form-control" id="serial_entrada_cargador_tablet"
                             name="serial_entrada_cargador_tablet" pattern="[A-Z0-9\s]{8,21}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_entrada_cargador_tablet" name="serial_entrada_cargador_tablet" pattern="[A-Z0-9\s]{8,21}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_cargador">Serial de salida (cargador)</label>
-                        <input type="text" class="form-control" id="serial_salida_cargador_tablet"
+                        <!-- <input type="text" class="form-control" id="serial_salida_cargador_tablet"
                             name="serial_salida_cargador_tablet" pattern="[A-Z0-9\s]{8,21}"
-                            title="Caracteres maximos 25. Solo mayusculas y numeros.">
+                            title="Caracteres maximos 25. Solo mayusculas y numeros."> -->
+                        <textarea class="form-control" id="serial_salida_cargador_tablet" name="serial_salida_cargador_tablet" pattern="[A-Z0-9\s]{8,21}" title="Caracteres maximos 25. Solo mayusculas y numeros."></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_entrada_bat">Serial de entrada (Bateria)</label>
-                        <input type="text" class="form-control" id="serial_entrada_bat_tablet" name="serial_entrada_bat_tablet"
-                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
+                       <!-- <input type="text" class="form-control" id="serial_entrada_bat_tablet" name="serial_entrada_bat_tablet"
+                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_entrada_bat_tablet" name="serial_entrada_bat_tablet" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
                         <label for="serial_salida_bat">Serial de salida (Bateria)</label>
-                        <input type="text" class="form-control" id="serial_salida_bat_tablet" name="serial_salida_bat_tablet"
-                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros">
+                        <!-- <input type="text" class="form-control" id="serial_salida_bat_tablet" name="serial_salida_bat_tablet"
+                            pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"> -->
+                        <textarea class="form-control" id="serial_salida_bat_tablet" name="serial_salida_bat_tablet" pattern="[A-Z0-9\s]{8,25}" title="Caracteres maximos 25. Solo mayusculas y numeros"></textarea>
                     </div>
                     <hr>
                     <div class="form-group">
@@ -104,7 +110,6 @@
                         value="<?php echo $rowde['id_tipo_de_dispositivo'];?>">
                     <input type="hidden" name="ic_dispositivo_tablet" id="ic_dispositivo_tablet" value="<?php echo $rowde['ic_dispositivo'];?>"> 
                     <hr>
-                    <!-- <button type="submit" class="btn btn-success">Actualizar</button> -->
                     <input type="button" class="btn btn-success" onclick="registrarReparacionTablet()" value="Registrar"> 
                     <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
                 </form>
