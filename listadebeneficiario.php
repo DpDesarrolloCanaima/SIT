@@ -131,6 +131,9 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 case 5:
                     include "inc/navbarlateral2.php";
                 break;
+                case 7:
+                    include "inc/navbarlateral.php";
+                break;  
             }
          ?>
         <!-- End of Sidebar -->
@@ -148,8 +151,12 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                        <a href="report/reportebeneficiario.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                        <a href="report/reportebeneficiario_exel.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <a href="report/reportebeneficiario.php?id=2"
+                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
+                            <a href="report/reportebeneficiario_exel.php?id=2"
+                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
                         </div>
                         <?php
                                     switch ($rol) {
@@ -290,14 +297,14 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
             </div>
             <!-- End of Main Content -->
 
-            
 
-    <?php require "inc/footer.php";?>
-    <!-- <script src="js/registros/cancelarLector.js"></script> -->
-    <script src="js/function.js"></script>
-    <script src="js/registros/registroBeneficiario.js"></script>
-    <script src="js/registros/registrarDispositivo.js"></script>
-    <?php require "inc/script.php";?>
+
+            <?php require "inc/footer.php";?>
+            <!-- <script src="js/registros/cancelarLector.js"></script> -->
+            <script src="js/function.js"></script>
+            <script src="js/registros/registroBeneficiario.js"></script>
+            <script src="js/registros/registrarDispositivo.js"></script>
+            <?php require "inc/script.php";?>
 
 </body>
 

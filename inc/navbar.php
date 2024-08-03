@@ -361,7 +361,138 @@ $usuario = $_SESSION['usuario'];
                                 echo '
                         </div>
                     </li>';
-                    break;    
+                    break;
+                case 7:
+                        $filenameDetalles = "asignar.php";
+                        $notiText = "Asignar, ";
+                        $consultaver = "SELECT observaciones_analista, observaciones_tecnico, observaciones_verificador, registro, id_dispositivo, ic_dispositivo, id_tipo_de_dispositivo, id_estatus FROM datos_del_dispotivo WHERE coordinador = 6 ORDER BY registro DESC ";
+                        $resultadover = $mysqli->query($consultaver);
+                        $numr = $resultadover->num_rows;
+                        echo '
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">'.$numr.'+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    NOTIFICACIONES
+                                </h6>';
+                                setlocale(LC_TIME, 'es_VE');
+                                $i = 0;
+                                while(($verNot = $resultadover->fetch_assoc()) && ($i < 5)) {
+                                        switch($verNot['id_estatus']) {
+                                            case 1:
+                                                $notiTextAsign = "analista";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_dispositivo'].'">';
+                                                break; 
+                                            case 2:
+                                                $notiTextAsign = "tecnico";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="dispositivosdeSalida.php?id=2">';
+                                                break;
+                                            case 3:
+                                                $notiTextAsign = "tecnico";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_dispositivo'].'">';
+                                                break;
+                                            case 4:
+                                                $notiTextAsign = "tecnico";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="dispositivoporverificar.php?id=4">';
+                                                break;
+                                            case 5:
+                                                $notiTextAsign = "verificador";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_dispositivo'].'">';
+                                                break;
+                                            case 6:
+                                                $notiTextAsign = "verificador";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="dispositivosporentregar.php?id=6">';
+                                                break;
+                                            case 7:
+                                                $notiTextAsign = "analista";
+                                                echo '<a class="dropdown-item d-flex align-items-center" href="dispositivosEntregados.php?id=7">';
+                                                break;
+                                        }
+                                    // echo '<a class="dropdown-item d-flex align-items-center" href="'.$filenameDetalles.'?tipo='.$notiTextAsign."&asignarid=".$verNot['id_datos_del_dispositivo'].'">
+                                    echo '
+                                    <div class="mr-3">
+                                        <div class="bg-primary icon-circle">';
+                                            $icono;
+                                            switch($verNot['id_tipo_de_dispositivo']) {
+                                            case 1:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            case 3:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            case 4:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            case 5:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            case 6:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            case 7:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            case 8:
+                                            $icono = "img/canaimalogo2.jpg";
+                                            break;
+                                            }
+                                            echo '<img class="img-fluid " src="'.$icono.'">
+                                        </div>
+                                    </div>
+                                    <div>';
+                                    $fechafmt = strftime("%d de %B de %Y", strtotime($verNot['registro']));
+                                    switch ($verNot['id_estatus']) {
+                                        case 1:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                                <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:'.$verNot['observaciones_analista'].'</span>';
+                                            break;
+                                        case 2:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Equipo En la linea</span>';
+                                            break;
+                                        case 3:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                                    '.$verNot['observaciones_tecnico'].'</span>';
+                                            break;
+                                        case 4:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Equipo Por Verificar</span>';
+                                            break;
+                                        case 5:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Nuevo equipo por '.$notiText.' observación:
+                                            '.$verNot['observaciones_verificador'].'</span>';
+                                            break;
+                                        case 6:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Equipo Por verificar</span>';
+                                            break;    
+                                        case 7:
+                                            echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                            <span class="font-weight-bold">Equipo Entregado</span>';
+                                            break;
+                                        default:
+                                                echo '<div class="small text-gray-500">'.$fechafmt.'</div>
+                                                <span class="font-weight-bold">No hay equipos</span>';
+                                            break;
+                                    }
+                                    echo '</div>
+                                    </a>';
+                                    $i++;
+                                    }
+                                    echo '
+                            </div>
+                        </li>';
+                        break;    
             }
         ?>
 
@@ -393,6 +524,9 @@ $usuario = $_SESSION['usuario'];
                         break;
                     case 6:
                         echo "Coordinador de Área";
+                        break;
+                    case 7:
+                        echo "Superadministrador";
                         break;
                 }
 

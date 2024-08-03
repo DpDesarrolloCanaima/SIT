@@ -28,11 +28,6 @@ $resultado2 = $mysqli->query($consulta2);
 $consulta3 = "SELECT * FROM area";
 $resultado3 = $mysqli->query($consulta3);
 
-
-// // Consulta para mostrar los datos e enviar
-// $consulta4 = "SELECT * FROM cargo";
-// $resultado4 = $mysqli->query($consulta4);
-
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
 $resultado5 = $mysqli->query($consulta5);
@@ -48,10 +43,6 @@ $resultado7 = $mysqli->query($consulta7);
 // Consulta para mostrar los datos e enviar
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
-
-// // Consulta para mostrar los datos e enviar
-// $consulta10 = "SELECT * FROM grado";
-// $resultado10 = $mysqli->query($consulta10);
 
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";
@@ -129,6 +120,9 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 case 5:
                     include "inc/navbarlateral2.php";
                 break;
+                case 7:
+                    include "inc/navbarlateral.php";
+                break;  
             }
          ?>
         <!-- End of Sidebar -->
@@ -146,8 +140,12 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <a href="report/reportebeneficiarioapoyo.php?id=1" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportebeneficiarioapoyo_exel.php?id=1" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <a href="report/reportebeneficiarioapoyo.php?id=1"
+                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
+                            <a href="report/reportebeneficiarioapoyo_exel.php?id=1"
+                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
                         </div>
                         <?php
                                     switch ($rol) {
@@ -277,12 +275,12 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
             </div>
             <!-- End of Main Content -->
 
-    <?php require "inc/footer.php";?>
-    <script src="js/function.js"></script>
-    <script src="js/registros/registroapoyo.js"></script>
-    <script src="js/registros/registrarDispositivo.js"></script>
-    <?php require "inc/script.php";?>
-    
+            <?php require "inc/footer.php";?>
+            <script src="js/function.js"></script>
+            <script src="js/registros/registroapoyo.js"></script>
+            <script src="js/registros/registrarDispositivo.js"></script>
+            <?php require "inc/script.php";?>
+
 
 </body>
 

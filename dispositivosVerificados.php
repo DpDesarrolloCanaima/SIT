@@ -16,14 +16,6 @@ INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo WHERE d.id_estatus = $estatus";
 
 $resultado1 = $mysqli->query($sql1);
-
-// $sqlComprobaciones = "SELECT comprobaciones FROM datos_del_dispotivo WHERE id_estatus = 5";
-// $comprobaciones = array();
-// $resultadoComprobaciones = mysqli_query($mysqli, $sqlComprobaciones);
-
-// while ($objeto =  mysqli_fetch_object($resultadoComprobaciones) ) {
-//     array_push($comprobaciones, $objeto);
-// }
 ?>
 
 <!DOCTYPE html>
@@ -73,8 +65,12 @@ $resultado1 = $mysqli->query($sql1);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <a href="report/reportedispositivoverificados.php?id=5" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportedispositivoverificados_exel.php?id=5" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <a href="report/reportedispositivoverificados.php?id=5"
+                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
+                            <a href="report/reportedispositivoverificados_exel.php?id=5"
+                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
+                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
                         </div>
                     </div>
                     <!-- DataTales Example -->
@@ -128,8 +124,8 @@ $resultado1 = $mysqli->query($sql1);
             </div>
             <!-- End of Main Content -->
 
-    <?php require "inc/footer.php";?>
-    <?php require "inc/script.php";?>
+            <?php require "inc/footer.php";?>
+            <?php require "inc/script.php";?>
 </body>
 
 </html>

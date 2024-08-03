@@ -95,21 +95,22 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
             switch ($rol) {
                 case 1:
                         include "inc/navbarlateral.php";
-                    ;
                     break;
                 case 2:
                         include "inc/navbarlateral.php";
                     break;
-                
                 case 3:
-                         include "inc/navbarlateral2.php";
-                break; 
+                        include "inc/navbarlateral2.php";
+                    break; 
                 case 4:
                         include "inc/navbarlateral2.php";
                     break;
                 case 5:
-                    include "inc/navbarlateral2.php";
-                break;   
+                        include "inc/navbarlateral2.php";
+                break;
+                case 7:
+                    include "inc/navbarlateral.php";
+                break;  
             }
          ?>
         <!-- End of Sidebar -->
@@ -140,23 +141,39 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                 <span class="sr-only"></span>
                             </button>
                             <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1" target="_blank">Recibidos (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2" target="_blank">En la linea (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3" target="_blank">Reparados (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4" target="_blank">Por verificar (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5" target="_blank">Verificados (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6" target="_blank">Por entregar (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7" target="_blank">Entregados (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php" target="_blank">Todos (PDF)</a></li>
-                                    <div class="dropdown-divider"></div>
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos_exel.php?id=1" target="_blank">Recibidos (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea_exel.php?id=2" target="_blank">En la linea (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoreparados_exel.php?id=3" target="_blank">Reparados (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar_exel.php?id=4" target="_blank">Por verificar (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados_exel.php?id=5" target="_blank">Verificados (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar_exel.php?id=6" target="_blank">Por entregar (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados_exel.php?id=7" target="_blank">Entregados (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosexel_all.php" target="_blank">Todos (EXEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
+                                        target="_blank">Recibidos (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
+                                        target="_blank">En la linea (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3"
+                                        target="_blank">Reparados (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4"
+                                        target="_blank">Por verificar (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5"
+                                        target="_blank">Verificados (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6"
+                                        target="_blank">Por entregar (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7"
+                                        target="_blank">Entregados (PDF)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
+                                        target="_blank">Todos (PDF)</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos_exel.php?id=1"
+                                        target="_blank">Recibidos (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea_exel.php?id=2"
+                                        target="_blank">En la linea (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoreparados_exel.php?id=3"
+                                        target="_blank">Reparados (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar_exel.php?id=4"
+                                        target="_blank">Por verificar (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoverificados_exel.php?id=5"
+                                        target="_blank">Verificados (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar_exel.php?id=6"
+                                        target="_blank">Por entregar (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosentregados_exel.php?id=7"
+                                        target="_blank">Entregados (EXCEL)</a></li>
+                                <li><a class="dropdown-item" href="report/reportedispositivosexel_all.php"
+                                        target="_blank">Todos (EXEL)</a></li>
                             </div>
                         </div>
                     </div>
@@ -265,7 +282,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                         ?>
 
                         </tr>
-                    <?php
+                        <?php
                      } 
                         endwhile;
                     ?>
@@ -279,13 +296,13 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                     ?>
         </div>
 
-    <!-- End of Main Content -->
+        <!-- End of Main Content -->
 
-    <?php require "inc/footer.php";?>
-    <script src="js/function.js"></script>
-    <script src="js/update/editarDispositivo.js"></script>
-    <?php require "inc/script.php";?>
-    
+        <?php require "inc/footer.php";?>
+        <script src="js/function.js"></script>
+        <script src="js/update/editarDispositivo.js"></script>
+        <?php require "inc/script.php";?>
+
 </body>
 
 </html>
