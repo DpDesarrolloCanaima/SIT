@@ -81,6 +81,9 @@ if ($_POST) {
                     case 6:
                             header("Location: coordinador.php");
                             break;
+                    case 7:
+                            header("Location: superadmin.php");
+                        break;
                     default:
                            echo  "
         <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>

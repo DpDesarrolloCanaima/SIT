@@ -10,7 +10,10 @@
 	break;
     case 6:
 		echo ' <a class="sidebar-brand d-flex align-items-center justify-content-center" href="coordinador.php">';
-	break;  
+	break; 
+    case 7:
+		echo ' <a class="sidebar-brand d-flex align-items-center justify-content-center" href="superadmin.php">';
+	break; 
 } 
 
 ?>
@@ -47,6 +50,9 @@
                     break;  
                 case 6:
                     echo '<a class="nav-link" href="coordinador.php">';
+                    break;    
+                case 7:
+                    echo '<a class="nav-link" href="superadmin.php">';
                     break;    
             }    
         ?>

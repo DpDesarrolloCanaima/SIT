@@ -38,6 +38,9 @@ require "config/conexion.php";
                     case 6:
                         echo "Coordinador";
                         break;
+                    case 7:
+                        echo "SuperAdministrador";
+                        break;
                 }
 
                     ?>

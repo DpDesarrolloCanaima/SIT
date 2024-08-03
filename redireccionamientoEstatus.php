@@ -21,6 +21,9 @@ if ($_POST) {
         case 6:
             $ruta = "coordinador.php";
             break;
+        case 7:
+            $ruta = "superadmin.php";
+            break;
         default:
             echo "
             <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>

@@ -29,22 +29,25 @@ if ($_GET) {
     } else {
         switch ($rol) {
             case 1:
-                $ruta = "admin.php";
+                $ruta = "../admin.php";
                 break;
             case 2:
-                $ruta = "presidencia.php";
+                $ruta = "../presidencia.php";
                 break;
             case 3:
-                $ruta = "analista.php";
+                $ruta = "../analista.php";
                 break;
             case 4:
-                $ruta = "tecnico.php";
+                $ruta = "../tecnico.php";
                 break;
             case 5:
-                $ruta = "verificador.php";
+                $ruta = "../verificador.php";
                 break;
             case 6:
-                $ruta = "coordinador.php";
+                $ruta = "../coordinador.php";
+                break;
+            case 7:
+                $ruta = "../superadmin.php";
                 break;
             default:
                 echo "
@@ -59,7 +62,7 @@ if ($_GET) {
                         confirmButtonText: 'OK',
                         timer: 35000
                     }).then(() => {
-                        location.assign('404.php');
+                        location.assign('../404.php');
                     });
             });
                 </script>";
