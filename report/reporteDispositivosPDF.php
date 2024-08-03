@@ -1,12 +1,7 @@
 <?php
 require "../function.php";
 require "../config/conexion.php";
-require '../vendor/autoload.php';
-date_default_timezone_set('America/Caracas');
-$fecha = date("Y-m-d");
- // Añadimos la liberia Spreadsheet para la generación de reportes en Excel
- use PhpOffice\PhpSpreadsheet\Spreadsheet;
- use PhpOffice\PhpSpreadsheet\IOFactory;
+require "plantillaall.php";
 if ($_GET) {
     $rol = limpiarDatos($_GET['r']);
     if (!preg_match("/\b/", $rol)) {
@@ -29,22 +24,22 @@ if ($_GET) {
     } else {
         switch ($rol) {
             case 1:
-                $ruta = "admin.php";
+                $ruta = "../admin.php";
                 break;
             case 2:
-                $ruta = "presidencia.php";
+                $ruta = "../presidencia.php";
                 break;
             case 3:
-                $ruta = "analista.php";
+                $ruta = "../analista.php";
                 break;
             case 4:
-                $ruta = "tecnico.php";
+                $ruta = "../tecnico.php";
                 break;
             case 5:
-                $ruta = "verificador.php";
+                $ruta = "../verificador.php";
                 break;
             case 6:
-                $ruta = "coordinador.php";
+                $ruta = "../coordinador.php";
                 break;
             default:
                 echo "
@@ -69,11 +64,7 @@ if ($_GET) {
     $primeraFecha = limpiarDatos($_GET['fd']);
     if ($primeraFecha == "") {
         header("location: $ruta");
-    }elseif ($primeraFecha == "0000-00-00") {if (!preg_match("/\b/", $estatus)) {
-        header("location: $ruta");
-    }elseif (!preg_match("/[0-9]{1}/", $estatus)) {
-        header("location: $ruta");
-    }
+    }elseif ($primeraFecha == "0000-00-00") {
         header("location: $ruta");
     }
     $segundaFecha = limpiarDatos($_GET['fh']);
@@ -82,14 +73,15 @@ if ($_GET) {
     }elseif ($segundaFecha == "0000-00-00") {
         header("location: $ruta");
     }
-    $estatus = limpiarDatos($_GET['est']);
-    if (!preg_match("/\b/", $estatus)) {
+    $dispositivos = limpiarDatos($_GET['dis']);
+    if (!preg_match("/\b/", $dispositivos)) {
         header("location: $ruta");
-    }elseif (!preg_match("/[0-9]{1}/", $estatus)) {
+    }elseif (!preg_match("/[0-9]{1}/", $dispositivos)) {
         header("location: $ruta");
     }
-    switch ($estatus) {
-        case 8:
+
+    switch ($dispositivos) {
+        case 11:
             $sqlRfechas = "SELECT d.serial_equipo, d.serial_de_cargador, d.fecha_de_recepcion, d.estado_recepcion_equipo, d.fecha_de_entrega,d.comprobaciones,j.nombre, j.modelo,  k.origen, m.estatus, b.tipo_de_motivo , t.estado FROM datos_del_dispotivo AS d 
             INNER JOIN tipo_de_equipo AS j ON j.id_tipo_de_equipo=d.id_tipo_de_dispositivo
             INNER JOIN origen AS k ON k.id_origen = d.id_origen
@@ -108,65 +100,46 @@ if ($_GET) {
                 INNER JOIN origen AS k ON k.id_origen = d.id_origen
                 INNER JOIN estatus AS m ON m.id_estatus = d.id_estatus
                 INNER JOIN motivo AS b ON b.id_motivo = d.id_motivo
-                INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE fecha_de_recepcion BETWEEN '$primeraFecha' AND '$segundaFecha' AND d.id_estatus = '$estatus'";
+                INNER JOIN tipo_estado AS t ON t.id = d.estado_recepcion_equipo WHERE fecha_de_recepcion BETWEEN '$primeraFecha' AND '$segundaFecha' AND d.id_tipo_de_equipo = '$dispositivos'";
 
-                $slqCount = "SELECT COUNT(*) ic_dispositivo FROM datos_del_dispotivo WHERE fecha_de_recepcion BETWEEN '$primeraFecha' AND '$segundaFecha' AND id_estatus = '$estatus'";
+                $slqCount = "SELECT COUNT(*) ic_dispositivo FROM datos_del_dispotivo WHERE fecha_de_recepcion BETWEEN '$primeraFecha' AND '$segundaFecha' AND id_tipo_de_equipo = '$dispositivos'";
                 $resultadoCount = $mysqli->query($slqCount);
                 $rowCantidad = mysqli_fetch_assoc($resultadoCount);
                 $Cantidad = $rowCantidad['ic_dispositivo'];
             break;
     }
-    $resultadoRd = $mysqli->query($sqlRfechas);     
-   
-    $exel = new Spreadsheet();
-    $hojaActiva = $exel->getActiveSheet();
-    $hojaActiva->setTitle("Dispositivos");
-
-    $hojaActiva->getColumnDimension('A')->setWidth(20);
-    $hojaActiva->setCellValue('A2', 'Tipo de Equipo');
-    $hojaActiva->getColumnDimension('B')->setWidth(10);
-    $hojaActiva->setCellValue('B2', 'Modelo');
-    $hojaActiva->getColumnDimension('C')->setWidth(30);
-    $hojaActiva->setCellValue('C2', 'Serial Del Equipo');
-    $hojaActiva->getColumnDimension('D')->setWidth(30);
-    $hojaActiva->setCellValue('D2', 'Serial Del Cargador');
-    $hojaActiva->getColumnDimension('E')->setWidth(30);
-    $hojaActiva->setCellValue('E2', 'Fecha de Recepcion');
-    $hojaActiva->getColumnDimension('F')->setWidth(30);
-    $hojaActiva->setCellValue('F2', 'Estado De Recepcion');
-    $hojaActiva->getColumnDimension('G')->setWidth(30);
-    $hojaActiva->setCellValue('G2', 'Fecha de Entrega');
-    $hojaActiva->getColumnDimension('H')->setWidth(20);
-    $hojaActiva->setCellValue('H2', 'Falla');
-    $hojaActiva->getColumnDimension('I')->setWidth(20);
-    $hojaActiva->setCellValue('I2', 'Origen');
-    $hojaActiva->getColumnDimension('J')->setWidth(20);
-    $hojaActiva->setCellValue('J2', 'Estatus');
-
-    $fila = 3;
-
-    while($rows = $resultadoRd->fetch_assoc()){
-            $hojaActiva->setCellValue('A'.$fila, $rows['nombre']);
-            $hojaActiva->setCellValue('B'.$fila, $rows['modelo']);
-            $hojaActiva->setCellValue('C'.$fila, $rows['serial_equipo']);
-            $hojaActiva->setCellValue('D'.$fila, $rows['serial_de_cargador']);
-            $hojaActiva->setCellValue('E'.$fila, $rows['fecha_de_recepcion']);
-            $hojaActiva->setCellValue('F'.$fila, $rows['estado']);
-            $hojaActiva->setCellValue('G'.$fila, $rows['fecha_de_entrega']);
-            $hojaActiva->setCellValue('H'.$fila, $rows['tipo_de_motivo']);
-            $hojaActiva->setCellValue('I'.$fila, $rows['origen']);
-            $hojaActiva->setCellValue('J'.$fila, $rows['estatus']);
-            $fila++;
-        }
-    $hojaActiva->getColumnDimension('L')->setWidth(40);
-    $hojaActiva->setCellValue('L2', 'Cantidad de dispositivos');
-    $hojaActiva->setCellValue('L3', $Cantidad);
-    header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment;filename="DispositivosEstatus_'.$fecha.'.xlsx"');
-    header('Cache-Control: max-age=0');
-
-    $writer = IOFactory::createWriter($exel, 'Xlsx');
-    $writer->save('php://output');
-    exit;
+    $resultadoRd = $mysqli->query($sqlRfechas);
+    $pdf = new PDF("L", "mm", array(300,500));
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	
+	$pdf->SetFont("Arial", "B", 12);
+	$pdf->Cell(40, 5,"Tipo de Equipo", 1, 0, "C");
+	$pdf->Cell(30, 5,"Modelo", 1, 0, "C");
+	$pdf->Cell(50, 5,"Serial Del Equipo", 1, 0, "C");
+	$pdf->Cell(50, 5,"Serial Del Cargador", 1, 0, "C");
+	$pdf->Cell(50, 5,"Fecha de Recepcion", 1, 0, "C");
+	$pdf->Cell(50, 5,"Estado De Recepcion", 1, 0, "C");
+	$pdf->Cell(50, 5,"Fecha de Entrega", 1, 0, "C");
+	$pdf->Cell(45, 5,"Falla", 1, 0, "C");
+	$pdf->Cell(30, 5,"Origen", 1, 0, "C");
+	$pdf->Cell(30, 5,"Estatus", 1, 1, "C");
+	$pdf->SetFont("Arial", "", 9);
+	while ($row = $resultadoRd->fetch_assoc()) {
+	$pdf->Cell(40, 5,$row['nombre'], 1, 0, "C"); 
+	$pdf->Cell(30, 5,$row['modelo'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['serial_equipo'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['serial_de_cargador'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['fecha_de_recepcion'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['estado'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['fecha_de_entrega'], 1, 0, "C");
+	$pdf->Cell(45, 5,utf8_decode($row['tipo_de_motivo']), 1, 0, "C");
+	$pdf->Cell(30, 5,$row['origen'], 1, 0, "C");
+	$pdf->Cell(30, 5,$row['estatus'], 1, 1, "C");
+	}
+    $pdf->Ln(20);
+    $pdf->SetFont("Arial", "B", 12);
+    $pdf->Cell(60, 5, "Cantidad de dispositivos: $Cantidad", 1, 1, "C");
+	$pdf-> Output();
 
 }

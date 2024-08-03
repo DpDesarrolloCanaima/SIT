@@ -14,10 +14,13 @@ $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $id_usuario = $_SESSION['id_usuarios'];
 
-//Consulta para modal
+//Consulta para modal de reportes estatus
 $sqlMestatus = "SELECT id_estatus, estatus FROM estatus";
 $resultadoMestatus = $mysqli->query($sqlMestatus);
 
+// Consulta para modal de reportes de dispositivos.
+$sqlDispositivos = "SELECT id_tipo_de_equipo, nombre FROM tipo_de_equipo";
+$resultadoDispositivos = $mysqli->query($sqlDispositivos);
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +67,10 @@ $resultadoMestatus = $mysqli->query($sqlMestatus);
                                     <h6 class="m-0 font-weight-bold text-primary">
                                         Dispositivos en Atención al Ciudadano
                                     </h6>
-                                    
+                                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal"
+                                        data-target="#generarReporteDispositivos">
+                                        Generar Reporte
+                                    </button>
                                 </div>
                                 <div class="card-body">
                                     <div class="chart-area">
@@ -78,9 +84,6 @@ $resultadoMestatus = $mysqli->query($sqlMestatus);
                                 <!-- Card Header - Dropdown -->
                                 <div class="card-header py-3">
                                     <h6 class="m-0 font-weight-bold text-primary">Estatus Equipos</h6>
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#generarReporteDispositivo">
-                                        Generar Reporte
-                                    </button>
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
@@ -110,6 +113,13 @@ $resultadoMestatus = $mysqli->query($sqlMestatus);
                                         <span class="mr-2">
                                             <i class="fas fa-circle text-dark"></i> Entregado
                                         </span>
+                                    </div>
+                                    <hr>
+                                    <div class="mt-4 text-center small">
+                                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                            data-target="#generarReporteEstatus">
+                                            Generar Reporte
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -150,10 +160,9 @@ $resultadoMestatus = $mysqli->query($sqlMestatus);
                     <!-- End of Main Content -->
                     <?php
                         include "modal/modalRegistroUsuario.php";
-                        include "modal/report/generarReporteDispositivo.php";
+                        include "modal/report/generarReporteEstatus.php";
+                        include "modal/report/generarReporteDispositivos.php";
                     ?>
-
-
                     <?php require "inc/footer.php";?>
                     <?php require "inc/script.php";?>
                     <script>

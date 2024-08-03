@@ -1,6 +1,4 @@
 <?php
-
-
 	require "../config/conexion.php";
 	require "plantillaall.php";
 
@@ -43,11 +41,4 @@ $resultado = $mysqli->query($sql);
 	}
 
 	$pdf-> Output();
-
-
-
-
-
-
-
 ?>

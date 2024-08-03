@@ -1,14 +1,14 @@
-<div class="modal fade" id="generarReporteDispositivo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="generarReporteEstatus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Generar Reporte de Dispositivos</h5>
+                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Generar Reporte de Estatus</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="redireccionamiento.php" method="POST">
+                <form action="redireccionamientoEstatus.php" method="POST">
                     <div class="form-group">
                         <label for="fechaEntrega">Desde</label>
                         <input type="date" class="form-control" id="fechaDesde" name="fechaDesde">
@@ -21,7 +21,8 @@
                         <label for="estatus">Seleccione</label>
                         <select name="estatus" id="estatus" class="form-control form-control-lg">
                             <?php foreach ($resultadoMestatus as $rowMestatus) :?>
-                            <option value="<?php echo $rowMestatus['id_estatus'];?>"><?php echo $rowMestatus['estatus'];?></option>
+                            <option value="<?php echo $rowMestatus['id_estatus'];?>">
+                                <?php echo $rowMestatus['estatus'];?></option>
                             <?php endforeach; ?>
                             <option value="8">General</option>
                         </select>
@@ -29,7 +30,8 @@
                     <div class="form-group">
                         <label for="">Escoga el formato</label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="formato" id="exampleRadios1" value="1" checked>
+                            <input class="form-check-input" type="radio" name="formato" id="exampleRadios1" value="1"
+                                checked>
                             <label class="form-check-label" for="exampleRadios1">
                                 PDF
                             </label>

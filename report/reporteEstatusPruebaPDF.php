@@ -1,7 +1,7 @@
 <?php
 require "../function.php";
 require "../config/conexion.php";
-
+require "plantillaall.php";
 if ($_GET) {
     $rol = limpiarDatos($_GET['r']);
     if (!preg_match("/\b/", $rol)) {
@@ -64,11 +64,7 @@ if ($_GET) {
     $primeraFecha = limpiarDatos($_GET['fd']);
     if ($primeraFecha == "") {
         header("location: $ruta");
-    }elseif ($primeraFecha == "0000-00-00") {if (!preg_match("/\b/", $estatus)) {
-        header("location: $ruta");
-    }elseif (!preg_match("/[0-9]{1}/", $estatus)) {
-        header("location: $ruta");
-    }
+    }elseif ($primeraFecha == "0000-00-00") {
         header("location: $ruta");
     }
     $segundaFecha = limpiarDatos($_GET['fh']);
@@ -112,14 +108,39 @@ if ($_GET) {
             break;
     }
     $resultadoRd = $mysqli->query($sqlRfechas);
-    while ($rowRd = $resultadoRd->fetch_assoc()) {
-        echo $rowRd['serial_equipo'] . "<br>";
-    }
     
-    $slqCount = "SELECT COUNT(*) ic_dispositivo FROM datos_del_dispotivo WHERE fecha_de_recepcion BETWEEN '$primeraFecha' AND '$segundaFecha' AND id_estatus = '$estatus'";
-    $resultadoCount = $mysqli->query($slqCount);
-    $rowCantidad = mysqli_fetch_assoc($resultadoCount);
-    $Cantidad = $rowCantidad['ic_dispositivo'];
+	$pdf = new PDF("L", "mm", array(300,500));
+	$pdf->AliasNbPages();
+	$pdf->AddPage();
+	
+	$pdf->SetFont("Arial", "B", 12);
+	$pdf->Cell(40, 5,"Tipo de Equipo", 1, 0, "C");
+	$pdf->Cell(30, 5,"Modelo", 1, 0, "C");
+	$pdf->Cell(50, 5,"Serial Del Equipo", 1, 0, "C");
+	$pdf->Cell(50, 5,"Serial Del Cargador", 1, 0, "C");
+	$pdf->Cell(50, 5,"Fecha de Recepcion", 1, 0, "C");
+	$pdf->Cell(50, 5,"Estado De Recepcion", 1, 0, "C");
+	$pdf->Cell(50, 5,"Fecha de Entrega", 1, 0, "C");
+	$pdf->Cell(45, 5,"Falla", 1, 0, "C");
+	$pdf->Cell(30, 5,"Origen", 1, 0, "C");
+	$pdf->Cell(30, 5,"Estatus", 1, 1, "C");
+	$pdf->SetFont("Arial", "", 9);
+	while ($row = $resultadoRd->fetch_assoc()) {
+	$pdf->Cell(40, 5,$row['nombre'], 1, 0, "C"); 
+	$pdf->Cell(30, 5,$row['modelo'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['serial_equipo'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['serial_de_cargador'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['fecha_de_recepcion'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['estado'], 1, 0, "C");
+	$pdf->Cell(50, 5,$row['fecha_de_entrega'], 1, 0, "C");
+	$pdf->Cell(45, 5,$row['tipo_de_motivo'], 1, 0, "C");
+	$pdf->Cell(30, 5,$row['origen'], 1, 0, "C");
+	$pdf->Cell(30, 5,$row['estatus'], 1, 1, "C");
+	}
+    $pdf->Ln(20);
+    $pdf->SetFont("Arial", "B", 12);
+    $pdf->Cell(60, 5, "Cantidad de dispositivos: $Cantidad", 1, 1, "C");
+	$pdf-> Output();
 
-    echo $Cantidad;
+    
 }
