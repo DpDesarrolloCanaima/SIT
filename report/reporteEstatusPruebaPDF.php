@@ -115,7 +115,8 @@ if ($_GET) {
 	$pdf = new PDF("L", "mm", array(300,500));
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
-	
+
+	$pdf->setXY(30,60);
 	$pdf->SetFont("Arial", "B", 12);
 	$pdf->Cell(40, 5,"Tipo de Equipo", 1, 0, "C");
 	$pdf->Cell(30, 5,"Modelo", 1, 0, "C");
@@ -140,7 +141,7 @@ if ($_GET) {
 	$pdf->Cell(30, 5,$row['origen'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['estatus'], 1, 1, "C");
 	}
-    $pdf->Ln(20);
+    $pdf->setXY(30,80);
     $pdf->SetFont("Arial", "B", 12);
     $pdf->Cell(60, 5, "Cantidad de dispositivos: $Cantidad", 1, 1, "C");
 	$pdf-> Output();
