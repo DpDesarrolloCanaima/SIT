@@ -6,16 +6,18 @@ class PDF extends FPDF
 // Cabecera de página
 function Header()
 {
+    // Cabezera
+    $this->Image("../img/cabezera.png",20,10,400,);
     // Logo
-    $this->Image('../img/Canaima.png',10,8,33);
+    $this->Image('../img/CanaimaDifuminada3.png',123, 50, 200, 200);
     // Arial bold 15
     $this->SetFont('Arial','B',15);
     // Movernos a la derecha
-    $this->Cell(80);
+    $this->Cell(100);
     // Título
-    $this->Cell(220,10,'Apoyo Institucional',0,0,'C');
+    $this->Cell(220,60,'Apoyo Institucional',0,0,'C');
     // Salto de línea
-    $this->Ln(20);
+    $this->Ln(40);
 }
 
 // Pie de página
