@@ -77,92 +77,120 @@
             <i class="fas fa-fw fa-cog"></i>
 
             <?php
-           
-            if($rol != 6){
-                $nombreBoton = "Administrar";
-                
-                 $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
-                           <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-                           <div class="btn-group dropright">
-                                <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                                    Beneficiario
-                                </a>
-                                <div class="dropdown-menu">
-                                <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
-                                <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
-                                <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
-                                </div>
-                            </div>
-                           ';
-            } else{
-                $nombreBoton = "Asignar";
-
-                $items = '<a class="collapse-item" href="asignar.php?tipo=analista">Analista</a>
-                         <a class="collapse-item" href="asignar.php?tipo=tecnico">Técnico</a>
-                         <a class="collapse-item" href="asignar.php?tipo=verificador">Verificador</a>';
+            switch ($rol) {
+                case 1:
+                        echo '
+                        <span>Administrar</span>
+                    ';
+                    break;
+                case 6:
+                        echo '
+                            <span>Asignar</span>
+                        ';
+                    break;
+                case 7:
+                    echo '
+                            <span>Administrar</span>
+                        ';
+                    break;
             }
-            echo "<span>$nombreBoton</span>";
+           
+            // if($rol != 6){
+            //     $nombreBoton = "Administrar";
+                
+            //      $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+            //                <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+            //                <div class="btn-group dropright">
+            //                     <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+            //                         Beneficiario
+            //                     </a>
+            //                     <div class="dropdown-menu">
+            //                     <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
+            //                     <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+            //                     <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+            //                     </div>
+            //                 </div>
+            //                ';
+            // } else{
+            //     $nombreBoton = "Asignar";
+
+            //     $items = '<a class="collapse-item" href="asignar.php?tipo=analista">Analista</a>
+            //              <a class="collapse-item" href="asignar.php?tipo=tecnico">Técnico</a>
+            //              <a class="collapse-item" href="asignar.php?tipo=verificador">Verificador</a>';
+            // }
+            // echo "<span>$nombreBoton</span>";
             ?>
 
         </a>
         <div id="collapseAdmin" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <?php 
-                echo $items;
-            ?>
+                    switch ($rol) {
+                        case 1:
+                                echo '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                                <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+                                <div class="btn-group dropright">
+                                     <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                         Beneficiario
+                                     </a>
+                                     <div class="dropdown-menu">
+                                     <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
+                                     <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                     <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                                   </div>
+                                 </div>
+                                ';
+                            break;
+                        case 6:
+                                echo '<a class="collapse-item" href="asignar.php?tipo=analista">Analista</a>
+                                        <a class="collapse-item" href="asignar.php?tipo=tecnico">Técnico</a>
+                                        <a class="collapse-item" href="asignar.php?tipo=verificador">Verificador</a>';
+                            break;
+                        case 7:
+                            echo '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                            <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+                            <div class="btn-group dropright">
+                                 <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                     Beneficiario
+                                 </a>
+                                 <div class="dropdown-menu">
+                                 <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
+                                 <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                 <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                               </div>
+                             </div>
+                            ';
+                            break;
+                    }
+                ?>
             </div>
     </li>
-    </li>
-
     <!-- Nav Item - Pages Collapse Menu -->
-
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true"
             aria-controls="collapsePages">
             <i class="fas fa-fw fa-table"></i>
             <span>Tablas</span>
         </a>
-        <?php 
-            switch($rol){
-                case 6: 
-                    echo
-                    '<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">'.
-                    '<div class="bg-white py-2 collapse-inner rounded">'.
-                    '<a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>'.
-                    '<a class="collapse-item" href="dispositivosdeSalida.php?id=2">En Linea</a>'.
-                    '<a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>'.
-                    '<a class="collapse-item" href="dispositivoporverificar.php?id=4">Por verificar</a>'. 
-                    '<a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>'.
-                    '<a class="collapse-item" href="dispositivosporentregar.php?id=6">Por entregar</a>'.
-                    '<a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>'.
-                    '</div>'.
-                    '</div>'.
-                    '</li>';
-                break;
-                default: 
-                    echo
-                    '<div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">'.
-                    '<div class="bg-white py-2 collapse-inner rounded">'.
-                    '<a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>'.
-                    '<a class="collapse-item" href="dispositivosdeSalida.php?id=2">En Linea</a>'. 
-                    '<a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>'.
-                    '<a class="collapse-item" href="dispositivoporverificar.php?id=4">Por verificar</a>'. 
-                    '<a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>'.
-                    '<a class="collapse-item" href="dispositivosporentregar.php?id=6">Por entregar</a>'.
-                    '<a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>'.
-                    '</div>'.
-                    '</div>'.
-                    '</li>';
-                break;
-            }
-        ?>
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-
-        <!-- Sidebar Toggler (Sidebar) -->
-        <div class="text-center d-none d-md-inline">
-            <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="dispositivosRecibidos.php?id=1">Recibidos</a>
+                <a class="collapse-item" href="dispositivosdeSalida.php?id=2">En Linea</a>
+                <a class="collapse-item" href="dispositivosreparados.php?id=3">Reparados</a>
+                <a class="collapse-item" href="dispositivoporverificar.php?id=4">Por verificar</a>
+                <a class="collapse-item" href="dispositivosVerificados.php?id=5">Verificados</a>
+                <a class="collapse-item" href="dispositivosporentregar.php?id=6">Por entregar</a>
+                <a class="collapse-item" href="dispositivosEntregados.php?id=7">Entregados</a>
+            </div>
         </div>
+    </li>
 
+    <!-- Divider -->
+    <hr class="sidebar-divider d-none d-md-block">
+
+    <!-- Sidebar Toggler (Sidebar) -->
+    <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+    </div>
 </ul>
 <!-- End of Sidebar -->
