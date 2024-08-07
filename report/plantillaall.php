@@ -24,7 +24,7 @@ function Header()
     // Título
     $this->Cell(300,80,'Dispositivos',0,0,'C');
     // Salto de línea
-    $this->Ln(20);
+    $this->Ln(50);
 }
 
 // Pie de página

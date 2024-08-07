@@ -5,7 +5,8 @@ session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }
-
+date_default_timezone_set('America/Caracas');
+$fecha = date("Y-m-d");
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $idusuario = $_SESSION['id_usuarios'];
@@ -27,11 +28,6 @@ $resultado2 = $mysqli->query($consulta2);
 $consulta3 = "SELECT * FROM area";
 $resultado3 = $mysqli->query($consulta3);
 
-
-// // Consulta para mostrar los datos e enviar
-// $consulta4 = "SELECT * FROM cargo";
-// $resultado4 = $mysqli->query($consulta4);
-
 // Consulta para mostrar los datos e enviar
 $consulta5 = "SELECT * FROM tipo_de_equipo";
 $resultado5 = $mysqli->query($consulta5);
@@ -47,10 +43,6 @@ $resultado7 = $mysqli->query($consulta7);
 // Consulta para mostrar los datos e enviar
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
-
-// // Consulta para mostrar los datos e enviar
-// $consulta10 = "SELECT * FROM grado";
-// $resultado10 = $mysqli->query($consulta10);
 
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";
@@ -148,12 +140,8 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <a href="report/reportetrabajadores.php?id=3"
-                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
-                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportetrabajadores_exel.php?id=3"
-                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
-                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteTrabajador"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                            </button>
                         </div>
                         <?php
                                     switch ($rol) {
@@ -283,6 +271,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                     <?php 
                     
                      include "modal/modalTrabajador.php";
+                     require "modal/report/generarReporteDeTrabajador.php";
                     
                     ?>
 

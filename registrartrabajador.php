@@ -321,7 +321,7 @@ require "function.php";
 
     // Datos complementarios para el registro
     $edad = 0;
-    $fechaNac = date('00-00-0000');
+    $fechaNac = limpiarDatos($_POST['fecha_ingreso']);
     $nombreRepre = "Industria Canaima";
     $mesaTelecomunicaciones = "No posee";
     $institucionEntrega = "No posee";
@@ -329,8 +329,47 @@ require "function.php";
     $responsableEntrega = "No posee";
     $consejoComunal = "no posee";
     $descontinuado = 2;
-    
-    $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,consejo_comunal, mesa_telecom, intitucion_entrega, institucion_estudia, responsable, id_origen, descontinuado) VALUES ('$nombreInstitucion', '$tipoDocumento','$documento','$edad','$generoTrabajador','$fechaNac','$areaTrabajador','$cargoTrabajador','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$consejoComunal', '$mesaTelecomunicaciones','$institucionEntrega','$institucionEstudia','$responsableEntrega','$origen', '$descontinuado')";
+    $fecha_ingreso = limpiarDatos($_POST['fecha_ingreso']);
+    if ($fecha_ingreso === "") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Fecha de ingreso no enviada.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 55000
+                    }).then(() => {
+                        location.assign('listatrabajadores.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }elseif ($fecha_ingreso == "0000-00-00") {
+        echo "
+                <script src='https://cdn.jsdelivr.net/npm/sweetalert2@11'></script>
+                <script language='JavaScript'>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Fecha de ingreso incorrecta.',
+                        showCancelButton: false,
+                        confirmButtonColor: '#3085d6',
+                        confirmButtonText: 'OK',
+                        timer: 55000
+                    }).then(() => {
+                        location.assign('listatrabajadores.php');
+                    });
+            });
+                </script>
+                
+        ";
+    }
+    $sql = "INSERT INTO datos_del_entregante (nombre_del_beneficiario, tipo_documento, cedula, edad, Id_genero, fecha_de_nacimiento, id_area, id_cargo, nombre_del_representante, correo, telefono, estado, municipio, direccion, posee_discapacidad_o_condicion, descripcion_discapacidad_condicion,consejo_comunal, mesa_telecom, intitucion_entrega, institucion_estudia, responsable, fecha_ingreso, id_origen, descontinuado) VALUES ('$nombreInstitucion', '$tipoDocumento','$documento','$edad','$generoTrabajador','$fechaNac','$areaTrabajador','$cargoTrabajador','$nombreRepre', '$correoTrabajador','$telefonoTrabajador', '$estado', '$municipio', '$direccion', '$discapacidad', '$descripcionDisca', '$consejoComunal', '$mesaTelecomunicaciones','$institucionEntrega','$institucionEstudia','$responsableEntrega', '$fecha_ingreso','$origen', '$descontinuado')";
 
     $resultado = $mysqli->query($sql);
 

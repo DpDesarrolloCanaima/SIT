@@ -69,8 +69,8 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <a href="report/reportedispositivoporverificar.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportedispositivoporverificar_exel.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusPorVerificar"> Generar Reporte
+                            </button>
                         </div>
                     </div>
                     <!-- DataTales Example -->
@@ -125,7 +125,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
 
             </div>
             <!-- End of Main Content -->
-
+    <?php require "modal/report/estatus/generarReportePorVerificiar.php";?>
     <?php require "inc/footer.php";?>
     <?php require "inc/script.php";?>
 </body>

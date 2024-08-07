@@ -116,10 +116,10 @@ if ($_GET) {
 	$pdf->AliasNbPages();
 	$pdf->AddPage();
 
-	$pdf->setXY(30,60);
+	//$pdf->setXY(30,60);
 	$pdf->SetFont("Arial", "B", 12);
 	$pdf->Cell(40, 5,"Tipo de Equipo", 1, 0, "C");
-	$pdf->Cell(30, 5,"Modelo", 1, 0, "C");
+	$pdf->Cell(40, 5,"Modelo", 1, 0, "C");
 	$pdf->Cell(50, 5,"Serial Del Equipo", 1, 0, "C");
 	$pdf->Cell(50, 5,"Serial Del Cargador", 1, 0, "C");
 	$pdf->Cell(50, 5,"Fecha de Recepcion", 1, 0, "C");
@@ -131,7 +131,7 @@ if ($_GET) {
 	$pdf->SetFont("Arial", "", 9);
 	while ($row = $resultadoRd->fetch_assoc()) {
 	$pdf->Cell(40, 5,$row['nombre'], 1, 0, "C"); 
-	$pdf->Cell(30, 5,$row['modelo'], 1, 0, "C");
+	$pdf->Cell(40, 5,$row['modelo'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['serial_equipo'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['serial_de_cargador'], 1, 0, "C");
 	$pdf->Cell(50, 5,$row['fecha_de_recepcion'], 1, 0, "C");
@@ -141,7 +141,7 @@ if ($_GET) {
 	$pdf->Cell(30, 5,$row['origen'], 1, 0, "C");
 	$pdf->Cell(30, 5,$row['estatus'], 1, 1, "C");
 	}
-    $pdf->setXY(30,80);
+    //$pdf->setXY(30,80);
     $pdf->SetFont("Arial", "B", 12);
     $pdf->Cell(60, 5, "Cantidad de dispositivos: $Cantidad", 1, 1, "C");
 	$pdf-> Output();

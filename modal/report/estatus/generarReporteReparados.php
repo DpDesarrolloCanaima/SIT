@@ -1,14 +1,14 @@
-<div class="modal fade" id="generarReporteBeneficiario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="generarReporteEstatusReparados" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Generar Reporte de Beneficiarios</h5>
+                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Generar Reporte de Estatus de Reparados</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                <form action="php/redireccionamientoBeneficiarios.php" method="POST">
+                <form action="redireccionamientoEstatus.php" method="POST">
                     <div class="form-group">
                         <label for="fechaEntrega">Desde</label>
                         <input type="date" class="form-control" id="fechaDesde" name="fechaDesde">
@@ -33,8 +33,8 @@
                             </label>
                         </div>
                     </div>
-                    <input type="hidden" name="origenBeneficiario" value="2">
                     <hr>
+                    <input type="hidden" name="estatus" value="3">
                     <input type="hidden" name="rol" value="<?php echo $rol;?>">
                     <button type="submit" class="btn btn-success">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

@@ -65,8 +65,8 @@ $resultado8 = $mysqli->query($sql2);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <a href="report/reportedispositivosenlinea.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportedispositivosenlinea_exel.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusEnLinea"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                            </button>
                         </div> 
                 </div>
                     <!-- DataTales Example -->
@@ -121,7 +121,7 @@ $resultado8 = $mysqli->query($sql2);
                 <!-- End of Main Content -->
 
                 
-        
+    <?php require "modal/report/estatus/generarReporteEnlinea.php";?>
     <?php require "inc/footer.php";?>
     <?php require "inc/script.php";?>
 

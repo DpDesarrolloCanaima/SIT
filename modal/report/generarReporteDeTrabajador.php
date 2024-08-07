@@ -1,8 +1,8 @@
-<div class="modal fade" id="generarReporteBeneficiario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="generarReporteTrabajador" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Generar Reporte de Beneficiarios</h5>
+                <h5 class="modal-titlen text-dark mx-auto" id="title-head-modal">Generar Reporte de Trabajador</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -33,7 +33,7 @@
                             </label>
                         </div>
                     </div>
-                    <input type="hidden" name="origenBeneficiario" value="2">
+                    <input type="hidden" name="origenBeneficiario" value="3">
                     <hr>
                     <input type="hidden" name="rol" value="<?php echo $rol;?>">
                     <button type="submit" class="btn btn-success">Enviar</button>

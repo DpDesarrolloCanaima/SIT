@@ -37,22 +37,8 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="area">Area</label>
-                        <select name="area" id="area" class="form-control form-control-lg">
-                            <?php foreach ($resultado3 as $row3) : ?>
-                            <option value="<?php echo $row3['id_area']; ?>"><?php echo $row3['nombre_del_area']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group">
                         <label for="cargo">Cargo</label>
-                        <select name="cargo" id="cargo" class="form-control form-control-lg">
-                            <?php foreach ($resultado4 as $row4) : ?>
-                            <option value="<?php echo $row4['id_cargo']; ?>"><?php echo $row4['tipo_de_cargo']; ?>
-                            </option>
-                            <?php endforeach; ?>
-                        </select>
+                        <input type="text" class="form-control" id="nombre_bene" name="nombre_del_trabajador" value="<?php echo $row['id_cargo'];?>"  pattern="[a-zA-Z\s]{3,80}" title="Maximo de caracteres de 80">
                     </div>
                     <div class="form-group">
                         <label for="correoBene">Correo</label>

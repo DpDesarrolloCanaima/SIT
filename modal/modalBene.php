@@ -127,8 +127,8 @@
                         <span></span>
                     </div>
                     <hr>
+                    <input type="hidden" name="fecha_ingreso" value="<?php echo $fecha; ?>">
                     <input type="hidden" id="origen" name="origen" value="2">
-                    <!-- <input type="button" class="btn btn-success" onclick="RegistroBeneficiario()" value="Registrar"> -->
                     <button type="submit" class="btn btn-success">Guardar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>
                 </form>

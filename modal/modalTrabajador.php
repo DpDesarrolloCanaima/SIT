@@ -102,6 +102,7 @@
                         <span></span>
                     </div>
                     <hr>
+                    <input type="hidden" name="fecha_ingreso" value="<?php echo $fecha;?>">
                     <input type="hidden" id="origen" name="origenTrabajador" value="3">
                     <button type="submit" class="btn btn-success" name="registrar">Enviar</button>
                     <button type="reset" class="btn btn-danger">Refrescar</button>

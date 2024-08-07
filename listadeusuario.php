@@ -5,6 +5,8 @@ session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }
+date_default_timezone_set('America/Caracas');
+$fecha = date("Y-m-d");
 
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];

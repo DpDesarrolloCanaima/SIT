@@ -5,7 +5,8 @@ session_start();
 if (!isset($_SESSION['id_usuarios'])) {
     header("Location: index.php");
 }
-
+date_default_timezone_set('America/Caracas');
+$fecha = date("Y-m-d");
 $usuario = $_SESSION['usuario'];
 $rol = $_SESSION['id_roles'];
 $idusuario = $_SESSION['id_usuarios'];
@@ -140,12 +141,8 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <a href="report/reportebeneficiarioapoyo.php?id=1"
-                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
-                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (PDF)</a>
-                            <a href="report/reportebeneficiarioapoyo_exel.php?id=1"
-                                class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i
-                                    class="fas fa-print fa-sm text-white-50"></i> Generar Reporte (EXCEL)</a>
+                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteApoyo"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                            </button>
                         </div>
                         <?php
                                     switch ($rol) {
@@ -270,11 +267,12 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                     <!-- Modal de registro -->
                     <?php
                         include "modal/modalApoyoInst.php";
+                        require "modal/report/generarReporteApoyoInst.php";
                     ?>
                 </div>
             </div>
             <!-- End of Main Content -->
-
+        
             <?php require "inc/footer.php";?>
             <script src="js/function.js"></script>
             <script src="js/registros/registroapoyo.js"></script>

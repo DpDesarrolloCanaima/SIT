@@ -33,8 +33,6 @@
             <!-- Main Content -->
             <div id="content">
 
-               <?php include "inc/navbar.php"; ?>
-
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
@@ -43,6 +41,7 @@
                         <div class="error mx-auto" data-text="404">404</div>
                         <p class="lead text-gray-800 mb-5">Pagina No Encontrada</p>
                         <p class="text-gray-500 mb-0">Error al conseguir la pagina. Regrese a la pagina inicial</p>
+                        <a href="index.php" class="btn btn-info">Regresar</a>
                     </div>
 
                 </div>
