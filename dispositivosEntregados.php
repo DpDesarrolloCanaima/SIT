@@ -68,7 +68,7 @@ $resultadoEntregados = $mysqli->query($sqlEntregados);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusEntregados"> Generar Reporte
+                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusEntregados"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
                             </button>
                         </div>
                     </div>

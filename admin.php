@@ -68,7 +68,7 @@ $resultadoDispositivos = $mysqli->query($sqlDispositivos);
                                         Dispositivos en Atención al Ciudadano
                                     </h6>
                                     <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal"
-                                        data-target="#generarReporteDispositivos">
+                                        data-target="#generarReporteDispositivos"><i class="fas fa-print fa-sm text-white-50"></i>
                                         Generar Reporte
                                     </button>
                                 </div>
@@ -117,7 +117,7 @@ $resultadoDispositivos = $mysqli->query($sqlDispositivos);
                                     <hr>
                                     <div class="mt-4 text-center small">
                                         <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#generarReporteEstatus">
+                                            data-target="#generarReporteEstatus"><i class="fas fa-print fa-sm text-white-50"></i>
                                             Generar Reporte
                                         </button>
                                     </div>

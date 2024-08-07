@@ -24,10 +24,6 @@ $resultado6 = $mysqli->query($consulta6);
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
 
-// // Consulta para mostrar los datos e enviar
-// $consulta10 = "SELECT * FROM grado";
-// $resultado10 = $mysqli->query($consulta10);
-
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";
 $resultado11 = $mysqli->query($consulta11);
@@ -111,16 +107,14 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                     switch ($estatusenlace) {
                                         case 6:
                                             echo '
-                                            <a href="report/reportedispositivoporentregar.php?id=6" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
-                                            Generar Reporte
-                                            </a>
+                                                <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusPorEntregar"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                                                </button>
                                             ';
                                             break;
                                         case 7:
                                             echo '
-                                            <a href="report/reportedispositivoporverificar.php?id=7" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
-                                            Generar Reporte
-                                            </a>
+                                                <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusPorVerificar"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                                                </button>
                                             ';
                                             break;
                                     }
@@ -130,16 +124,14 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                     switch ($estatusenlace) {
                                         case 2:
                                             echo '
-                                            <a href="report/reportedispositivosenlinea.php?id=2" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
-                                            Generar Reporte
-                                            </a>
+                                                <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusEnLinea"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                                                </button>
                                             ';
                                             break;
                                         case 3:
                                             echo '
-                                            <a href="report/reportedispositivoreparados.php?id=3" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
-                                            Generar Reporte
-                                            </a>
+                                                <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusReparados"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                                                </button>
                                             ';
                                             break;
                                     break;
@@ -148,16 +140,14 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                                     switch ($estatusenlace) {
                                         case 4:
                                             echo '
-                                            <a href="report/reportedispositivosentregados.php?id=4" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
-                                            Generar Reporte
-                                            </a>
+                                                <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusEntregados"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                                                </button>
                                             ';
                                             break;
                                         case 5:
                                             echo '
-                                            <a href="report/reportedispositivoverificados.php?id=5" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" target="_blank"><i class="fas fa-print fa-sm text-white-50"></i>
-                                            Generar Reporte
-                                            </a>
+                                                <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusVerificados"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                                                </button>
                                             ';
                                             break;
                                     break;
@@ -262,7 +252,16 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
             </div>
         </div>
    
-    
+    <?php 
+        require "modal/report/estatus/generarReporteRecibidos.php";
+        require "modal/report/estatus/generarReporteEnlinea.php";
+        require "modal/report/estatus/generarReporteReparados.php";
+        require "modal/report/estatus/generarReportePorVerificiar.php";
+        require "modal/report/estatus/generarReporteVerificados.php";
+        require "modal/report/estatus/generarReportePorEntregar.php";
+        require "modal/report/estatus/generarReporteEntregados.php";
+
+    ?>
     <?php require "inc/footer.php";?>
     <?php require "inc/script.php";?>
 

@@ -22,10 +22,6 @@ $resultado6 = $mysqli->query($consulta6);
 $consulta9 = "SELECT * FROM motivo";
 $resultado9 = $mysqli->query($consulta9);
 
-// // Consulta para mostrar los datos e enviar
-// $consulta10 = "SELECT * FROM grado";
-// $resultado10 = $mysqli->query($consulta10);
-
 // Consulta para mostrar los datos e enviar
 $consulta11 = "SELECT * FROM tipo_estado";
 $resultado11 = $mysqli->query($consulta11);
@@ -39,6 +35,9 @@ $resultado14 = $mysqli->query($consulta14);
 
 $sql3 = "SELECT id_datos_del_entregante, nombre_del_beneficiario FROM datos_del_entregante";
 $result = $mysqli->query($sql3);
+// Consulta para modal de reportes de dispositivos.
+$sqlDispositivos = "SELECT id_tipo_de_equipo, nombre FROM tipo_de_equipo";
+$resultadoDispositivos = $mysqli->query($sqlDispositivos);
 
 //Consulta para traer los datos almacenados de los dispositivos
 
@@ -130,52 +129,8 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
                     <!-- Modal de registro -->
 
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <div class="btn-group dropright">
-                            <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                                    class="fas fa-print fa-sm text-white-50"></i>
-                                Generar Reporte
-                            </button>
-                            <button type="button"
-                                class="btn btn-primary d-none d-sm-inline-block dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-expanded="false">
-                                <span class="sr-only"></span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos.php?id=1"
-                                        target="_blank">Recibidos (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea.php?id=2"
-                                        target="_blank">En la linea (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoreparados.php?id=3"
-                                        target="_blank">Reparados (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar.php?id=4"
-                                        target="_blank">Por verificar (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados.php?id=5"
-                                        target="_blank">Verificados (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar.php?id=6"
-                                        target="_blank">Por entregar (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados.php?id=7"
-                                        target="_blank">Entregados (PDF)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosAll.php"
-                                        target="_blank">Todos (PDF)</a></li>
-                                <div class="dropdown-divider"></div>
-                                <li><a class="dropdown-item" href="report/reportedipositivosrecibidos_exel.php?id=1"
-                                        target="_blank">Recibidos (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosenlinea_exel.php?id=2"
-                                        target="_blank">En la linea (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoreparados_exel.php?id=3"
-                                        target="_blank">Reparados (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporverificar_exel.php?id=4"
-                                        target="_blank">Por verificar (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoverificados_exel.php?id=5"
-                                        target="_blank">Verificados (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivoporentregar_exel.php?id=6"
-                                        target="_blank">Por entregar (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosentregados_exel.php?id=7"
-                                        target="_blank">Entregados (EXCEL)</a></li>
-                                <li><a class="dropdown-item" href="report/reportedispositivosexel_all.php"
-                                        target="_blank">Todos (EXEL)</a></li>
-                            </div>
-                        </div>
+                        <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteDispositivos"> <i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
+                        </button>
                     </div>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -293,6 +248,7 @@ $resultadoResponsable = $mysqli->query($sqlResponsable);
             </div>
             <?php
                         include "modal/modalDeRegistroDis.php";
+                        require "modal/report/generarReporteDispositivos.php";
                     ?>
         </div>
 

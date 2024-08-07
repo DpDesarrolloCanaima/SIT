@@ -65,7 +65,7 @@ $resultado1 = $mysqli->query($sql1);
                 <div class="container-fluid">
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <div>
-                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusVerificados"> Generar Reporte
+                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#generarReporteEstatusVerificados"><i class="fas fa-print fa-sm text-white-50"></i> Generar Reporte
                             </button>
                         </div>
                     </div>
