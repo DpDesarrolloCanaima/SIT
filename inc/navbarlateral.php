@@ -17,8 +17,6 @@
 } 
 
 ?>
-
-
     <div class="sidebar-brand-icon rotate-n-15">
         <img src="img/Canaima.png" alt="Industrias Canaima" width="42" height="42">
     </div>
@@ -83,6 +81,11 @@
                         <span>Administrar</span>
                     ';
                     break;
+                case 2:
+                    echo '
+                        <span>Administrar</span>
+                    ';
+                    break;
                 case 6:
                         echo '
                             <span>Asignar</span>
@@ -94,31 +97,6 @@
                         ';
                     break;
             }
-           
-            // if($rol != 6){
-            //     $nombreBoton = "Administrar";
-                
-            //      $items = '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
-            //                <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
-            //                <div class="btn-group dropright">
-            //                     <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-            //                         Beneficiario
-            //                     </a>
-            //                     <div class="dropdown-menu">
-            //                     <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
-            //                     <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
-            //                     <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
-            //                     </div>
-            //                 </div>
-            //                ';
-            // } else{
-            //     $nombreBoton = "Asignar";
-
-            //     $items = '<a class="collapse-item" href="asignar.php?tipo=analista">Analista</a>
-            //              <a class="collapse-item" href="asignar.php?tipo=tecnico">Técnico</a>
-            //              <a class="collapse-item" href="asignar.php?tipo=verificador">Verificador</a>';
-            // }
-            // echo "<span>$nombreBoton</span>";
             ?>
 
         </a>
@@ -127,6 +105,21 @@
                 <?php 
                     switch ($rol) {
                         case 1:
+                                echo '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
+                                <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
+                                <div class="btn-group dropright">
+                                     <a type="button" class="collapse-item dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                         Beneficiario
+                                     </a>
+                                     <div class="dropdown-menu">
+                                     <a class ="dropdown-item" href="Listadeapoyo.php">Apoyo Institucional</a>
+                                     <a class ="dropdown-item" href="listadebeneficiario.php">Beneficiario</a>
+                                     <a class ="dropdown-item" href="listatrabajadores.php">Trabajador</a>
+                                   </div>
+                                 </div>
+                                ';
+                            break;
+                        case 2:
                                 echo '<a class="collapse-item" href="listadeusuario.php">Usuarios</a>
                                 <a class="collapse-item" href="dispositivosentrada.php">Dispositivos</a>
                                 <div class="btn-group dropright">
